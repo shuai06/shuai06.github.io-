@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+  <meta name="baidu-site-verification" content="d5sacIPNJl">
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/wenwu.jpg?v=5.1.4" color="#fff">
+
+
+
+
+
+  <meta name="keywords" content="Linux,ubuntu,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="偷得浮生半日闲" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="基本篇  存储 对磁盘的所有操作都要小心小心再小心     磁盘是计算机中最主要的存储设备 传统磁盘分区与逻辑卷管理 事前合理规划很重要 对磁盘的所有操作都要小心小心再小心  磁盘空间管理 df  查看硬盘总体使用情况 123456789101112131415df&quot;&quot;&quot;第一列： 文件系统第二列： 存储空间（多少数据块）第三列： 使用量第四列： 可用量第五列：使用率第六列：挂载点&quot;&quot;&quot;df -h">
+<meta name="keywords" content="Linux,ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu Server-存储管理">
+<meta property="og:url" content="http://www.xpshuai.cn/ubuntu server-存储管理/index.html">
+<meta property="og:site_name" content="偷得浮生半日闲">
+<meta property="og:description" content="基本篇  存储 对磁盘的所有操作都要小心小心再小心     磁盘是计算机中最主要的存储设备 传统磁盘分区与逻辑卷管理 事前合理规划很重要 对磁盘的所有操作都要小心小心再小心  磁盘空间管理 df  查看硬盘总体使用情况 123456789101112131415df&quot;&quot;&quot;第一列： 文件系统第二列： 存储空间（多少数据块）第三列： 使用量第四列： 可用量第五列：使用率第六列：挂载点&quot;&quot;&quot;df -h">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-存储管理/_v_images/20200207110021066_291689330.png%20=600x">
+<meta property="og:updated_time" content="2020-02-20T10:13:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu Server-存储管理">
+<meta name="twitter:description" content="基本篇  存储 对磁盘的所有操作都要小心小心再小心     磁盘是计算机中最主要的存储设备 传统磁盘分区与逻辑卷管理 事前合理规划很重要 对磁盘的所有操作都要小心小心再小心  磁盘空间管理 df  查看硬盘总体使用情况 123456789101112131415df&quot;&quot;&quot;第一列： 文件系统第二列： 存储空间（多少数据块）第三列： 使用量第四列： 可用量第五列：使用率第六列：挂载点&quot;&quot;&quot;df -h">
+<meta name="twitter:image" content="http://www.xpshuai.cn/ubuntu%20server-存储管理/_v_images/20200207110021066_291689330.png%20=600x">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.xpshuai.cn/ubuntu server-存储管理/">
+
+
+
+
+
+  <title>ubuntu Server-存储管理 | 偷得浮生半日闲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">偷得浮生半日闲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再偷浮生两吊钱</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            我的主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            文章标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            文章分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档时光
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br>
+            
+            记录美好生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于作者
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索本站
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+<!-- tq -->
+<script type="text/javascript">WIDGET = {FID: 'a5qxJi5vKF'}</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/ubuntu server-存储管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="浮生">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="偷得浮生半日闲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ubuntu Server-存储管理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-09T10:20:20+08:00">
+                2020-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ubuntu server-存储管理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/ubuntu server-存储管理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10  分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>基本篇</p>
+</blockquote>
+<h1 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h1><blockquote>
+<p>对磁盘的所有操作都要小心小心再小心  </p>
+</blockquote>
+<ul>
+<li>磁盘是计算机中最主要的存储设备</li>
+<li>传统磁盘分区与逻辑卷管理</li>
+<li>事前合理规划很重要</li>
+<li>对磁盘的所有操作都要小心小心再小心</li>
+</ul>
+<h1 id="磁盘空间管理"><a href="#磁盘空间管理" class="headerlink" title="磁盘空间管理"></a>磁盘空间管理</h1><ul>
+<li><p><code>df</code>  查看硬盘总体使用情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">第一列： 文件系统</span></span><br><span class="line"><span class="string">第二列： 存储空间（多少数据块）</span></span><br><span class="line"><span class="string">第三列： 使用量</span></span><br><span class="line"><span class="string">第四列： 可用量</span></span><br><span class="line"><span class="string">第五列：使用率</span></span><br><span class="line"><span class="string">第六列：挂载点</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line">df -h   <span class="comment"># 人性化的方式</span></span><br><span class="line"></span><br><span class="line">df -i    <span class="comment"># 查看inodes使用量</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>du</code>   查看详细信息</p>
+<blockquote>
+<p>是谁拿走了我的存储空间</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">du   <span class="comment"># 查看所有</span></span><br><span class="line"></span><br><span class="line">du /   <span class="comment"># 查看根目录/目录下的文件大小</span></span><br><span class="line"></span><br><span class="line"><span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">结合sudo权限</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="string">'-h   # 人类易于阅读方式'</span></span><br><span class="line">sudo du  /  -h    </span><br><span class="line"></span><br><span class="line"><span class="string">'- s   # 汇总'</span></span><br><span class="line">sudo du  /*  -hs    <span class="comment"># 显示汇总结果</span></span><br><span class="line"></span><br><span class="line"><span class="string">'-c   # 除了子文件和子目录之外，外加一个总和 '</span></span><br><span class="line">sudo du  /usr/*  -hsc</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三方工具 <code>ncdu</code>   （比较人性化的工具）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">apt install ncdu  <span class="comment"># 安装</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ncdu    <span class="comment"># 使用（可以方向键和回车进入返回从 查看）</span></span><br><span class="line">按住<span class="string">'t'</span>  先显示目录，再显示文件</span><br><span class="line">按住<span class="string">'g'</span>  显示百分比</span><br><span class="line"><span class="string">'q'</span>退出</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="添加硬盘"><a href="#添加硬盘" class="headerlink" title="添加硬盘"></a>添加硬盘</h1><blockquote>
+<p>扩容</p>
+</blockquote>
+<p>用vbox模拟添加硬盘：存储-&gt;SATA-&gt;添加硬盘</p>
+<h6 id="1-磁盘设备名称"><a href="#1-磁盘设备名称" class="headerlink" title="1.磁盘设备名称"></a>1.磁盘设备名称</h6><p><code>dmsg</code>命令查看设备日志</p>
+<p><code>/dev/</code>目录下面可以查看设备的名称</p>
+<p><code>ls /dev/sd</code> </p>
+<h6 id="2-硬盘分区"><a href="#2-硬盘分区" class="headerlink" title="2.硬盘分区"></a>2.硬盘分区</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 1. fdisk</span></span><br><span class="line">-m  帮助菜单（查看参数）</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有硬盘设备和分区情况</span></span><br><span class="line">sudo fdisk -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分区</span></span><br><span class="line">sudo fdisk /dev/sdb   <span class="comment"># 进入向导</span></span><br><span class="line"><span class="comment"># 先创建分区表</span></span><br><span class="line">O   <span class="comment"># dos， MBR分区（基本分区） 传统分区格式，最大四个(主)分区，2T容量限制</span></span><br><span class="line">g   <span class="comment"># GPT     未来标准，128个分区，无容量限制，推荐使用</span></span><br><span class="line"><span class="comment"># 会生成一个16进制的guid</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 再创建分区</span></span><br><span class="line">n</span><br><span class="line">输入数字编号（后门会递增）</span><br><span class="line">第一个扇区在哪个位置【让扇区决定磁盘大小】</span><br><span class="line">输入结束扇区（默认最后一个扇区）</span><br><span class="line">【也可以直接输入100M这种方式】</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再保存分区</span></span><br><span class="line">w</span><br><span class="line"><span class="comment"># 查看分区结果</span></span><br><span class="line">sudo fdisk -l</span><br></pre></td></tr></table></figure>
+<h6 id="3-文件系统格式化"><a href="#3-文件系统格式化" class="headerlink" title="3.文件系统格式化"></a>3.文件系统格式化</h6><p><code>mkfs</code> 命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo mkfs.ext4 /dev/sdb1</span><br><span class="line">sudo mkfs.xfs /dev/sdb2</span><br></pre></td></tr></table></figure></p>
+<p><strong>Linux上常用的格式：</strong><br>ext4 （普通日常使用推荐）<br>xfs （适用与超大空间比如100T, 多文件，数据库）</p>
+<h6 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h6><blockquote>
+<p>绑定访问路径</p>
+</blockquote>
+<p><strong>一般两个挂载目录:</strong><br><code>/mnt/</code>  一般是硬盘等  （下面创建空的子目录再挂到子目录下）<br><code>/media/</code>   一般习惯使用挂： u盘等移动存储</p>
+<p>1.<code>mount</code>命令   (临时性的，重启之后失效)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sdb代表那块硬盘， sdb1代表那个分区</span></span><br><span class="line">sudo mount /dev/sdb1 /mnt/storge/</span><br><span class="line"></span><br><span class="line"><span class="comment"># -t 声明格式</span></span><br><span class="line">sudo mount /dev/sdb1 -t ext4 /mnt/storge/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载目录下面的设备（如果busy就先退出这个目录先不要使用）</span></span><br><span class="line">sudo umount /storage</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>自动挂载 <code>/etc/fstab</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">第一列：设备ID         UUID， 唯一的标号/ 设备名也可以，推荐id</span></span><br><span class="line"><span class="string">第二列：挂载点         swap无需挂载(none)</span></span><br><span class="line"><span class="string">第三列：文件系统      ext4, swap...</span></span><br><span class="line"><span class="string">第四列：options     （ 参数， error=remount-ro的意思是发生错误只读形式挂） 一般填写默认就行 defaults:rw,exec,auto,nouser.asynchronous（异步存储）           nouser表示当前用户才可以</span></span><br><span class="line"><span class="string">第五列：dump        （基本没用，写0不备份就行，   备份的时候才设置1）     一般写 0</span></span><br><span class="line"><span class="string">第六列：pass            (FS错误时fsck是否检查错误，0不检查，1优先，2后查）  一般写 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'</span><span class="string">''</span></span><br><span class="line">实践：</span><br><span class="line">1.</span><br><span class="line">blkid  查看设备UUID</span><br><span class="line">lsblk -fP  查看设备id</span><br><span class="line"></span><br><span class="line">2.编辑文件</span><br><span class="line"></span><br><span class="line">3.</span><br><span class="line">reboot   </span><br><span class="line">或者</span><br><span class="line">mount -a   <span class="comment">#将/etc/fstab的所有内容重新加载</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p>高级篇</p>
+</blockquote>
+<h1 id="SWAP管理"><a href="#SWAP管理" class="headerlink" title="SWAP管理"></a>SWAP管理</h1><blockquote>
+<p>可能是你的救命稻草</p>
+</blockquote>
+<ul>
+<li>关于swap的争论<ul>
+<li>需要/不需要  （Raspberry Pi）</li>
+<li>大小多少才合理（2-16G）</li>
+<li>Swap分区，swap文件</li>
+</ul>
+</li>
+<li>理想状态下应该无事可做的swap<ul>
+<li>大量的swap空间使用意味着服务器已疲于奔命</li>
+<li>free -m      free -h     查看内存以及swap的</li>
+</ul>
+</li>
+<li>某些云主机默认没有swap  </li>
+</ul>
+<p>ubuntu中，是swap文件  </p>
+<h6 id="Swap文件"><a href="#Swap文件" class="headerlink" title="Swap文件"></a>Swap文件</h6><p>/swapfile</p>
+<p>#创建文件 制定大小，位置<br><code>sudo fallocate -l 8G  /swapfile</code></p>
+<p>#查看文件<br><code>sudo xxd  /swapfile</code></p>
+<p>#格式成swap文件  (记下 UUID)<br><code>sudo mkswap  /swapfile</code></p>
+<p>#把权限调小<br><code>sudo chmod 0600  /swapfile</code></p>
+<p>#修改挂载文件<br>sudo vim /etv/fstab/<br>        <code>/swapfile none swap sw 0 0</code></p>
+<p>#关闭原来的swap<br><code>sudo swapoff -a</code></p>
+<p>#开启<br><code>sudo swapon -a</code></p>
+<h6 id="Swap分区"><a href="#Swap分区" class="headerlink" title="Swap分区"></a>Swap分区</h6><p>1.新增加一块硬盘<br>（如果vox提示已经创建过了，打开目录，删除那个硬盘[不要误删主硬盘和快照]，和.pre文件； 编辑.vobx文件，把新增硬盘配置项删掉）  </p>
+<p><code>ls /dev/sd*</code></p>
+<ol start="2">
+<li>分区<br><code>fdisk /dev/sdb</code></li>
+</ol>
+<p>3.新建主分区，<code>t</code>修改分区表类型为swap分区的格式 <code>82</code>，<code>w</code>保存退出  (L 列出所有支持的分区类型)<br>可以看到：<code>/dev/sdb</code>已经分出了<code>/dev/sdb1</code></p>
+<ol start="4">
+<li>格式化为swap<br>sudo mkswap /dev/sdb1</li>
+</ol>
+<p>5修改挂载文件<br>sudo vim /etv/fstab/<br>        <code>UUID=xxxxxx none swap sw 0 0</code></p>
+<p>6.关闭原来的swap<br><code>sudo swapoff -a</code></p>
+<p>#7.重新开启<br><code>sudo swapon -a</code></p>
+<p>原有的swap就可以删除啦～～～</p>
+<h1 id="LVM管理"><a href="#LVM管理" class="headerlink" title="LVM管理"></a>LVM管理</h1><blockquote>
+<p>一项值得感谢的技术</p>
+</blockquote>
+<ul>
+<li>无须重启计算机灵活调整硬盘空间大小<ul>
+<li>硬盘分区太大浪费，太小无法满足业务发展需要</li>
+<li>将传统的硬盘分区逻辑的组合为资源池，按需分配</li>
+</ul>
+</li>
+<li>概念<ul>
+<li>Volumn Groups  （卷组）（池化）： 把物理资源的变成逻辑的</li>
+<li>Physical Volumns (物理卷) </li>
+<li>Logical Volumnes （基本分区、RAID）： 可以存储数据的逻辑的概念，VG一部分资源的分割  </li>
+</ul>
+</li>
+<li>安装包<ul>
+<li>sudo apt install lvm2</li>
+</ul>
+</li>
+</ul>
+<p>添加硬盘， 先创建PV, 再创建VG, 再创建LV</p>
+<p><strong>1.物理卷：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建物理卷</span></span><br><span class="line">sudo pvcreate /dev/sdb</span><br><span class="line"><span class="comment"># 查看物理卷</span></span><br><span class="line">sudo pvdisplay</span><br><span class="line"><span class="comment"># 查看简略的摘要信息</span></span><br><span class="line">sudo pvs</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.卷组：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo vgvreate vg01 /dev/sdb</span><br><span class="line"><span class="comment"># 可以一次性指定多个pv</span></span><br><span class="line">sudo vgextend vg01 /dev/sdc /dev/sdd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看概要信息</span></span><br><span class="line">vgscan / vgs</span><br><span class="line"></span><br><span class="line">sudo vgs</span><br></pre></td></tr></table></figure></p>
+<p><strong>3.逻辑卷</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建逻辑卷， -n 名称, -L 大小， 从哪个vg里面分割的</span></span><br><span class="line">sudo lvcreate -n lv-database -L 1G vg01</span><br><span class="line">    <span class="comment"># 查看简要信息</span></span><br><span class="line">    sudo lvdisplay</span><br><span class="line">    sudo lvscan / lvs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式化，(fstab自动)挂载</span></span><br><span class="line">sudo mkfs.ext4 /dev/vg01/lv-database</span><br><span class="line">    sudo mount /dev/vg01/lv-database/  /mnt/lv-01</span><br><span class="line">    df -h</span><br><span class="line"></span><br><span class="line"><span class="comment"># 灵活拓展的特性</span></span><br><span class="line">sudo lvextend /dev/vg01/lv-01 -l  256   <span class="comment"># 增加完毕后大大小 256</span></span><br><span class="line">sudo lvextend /dev/vg01/lv-01 -l +256  <span class="comment"># 带加号，又增加大小 256个块</span></span><br><span class="line"></span><br><span class="line">sudo lvextend /dev/vg01/lv-01 -L +2G    <span class="comment"># 增加2G</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># VG FREE  谁的百分比</span></span><br><span class="line">sudo lvextend /dev/vg01/lv-01 -l 50%VG   <span class="comment"># 拓展到vg的50%</span></span><br><span class="line">sudo lvextend /dev/vg01/lv-01 -l +50%VG   <span class="comment"># 再拓展vg的50%</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 逻辑卷扩充了</span></span><br><span class="line">df -h  <span class="comment"># 是文件系统的查看。 这之后还没有告诉文件系统</span></span><br><span class="line"><span class="comment"># 把逻辑卷的扩充告诉文件系统，就可以用啦</span></span><br><span class="line">sudo resize2fs /dev/vg01/lv-01</span><br></pre></td></tr></table></figure></p>
+<p><strong>逻辑卷缩小</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">umount /dev/vg01/lv-01  <span class="comment"># 必须下线</span></span><br><span class="line">e2fsck -f /dev/vg01/lv-01  <span class="comment"># 检查文件系统</span></span><br><span class="line">resize2fs /dev/vg01/lv-01 1G <span class="comment"># 缩小文件系统</span></span><br><span class="line">lvresize /dev/vg01/lv-01 -L 1G  <span class="comment"># 缩小逻辑卷</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新挂载查看</span></span><br><span class="line">sudo mount /dev/vg01/lv-01 /mnt/lv-01/</span><br></pre></td></tr></table></figure></p>
+<p><strong>快照</strong></p>
+<ul>
+<li>故障时可回退</li>
+<li><strong>临时可回退机制，不可视为备份</strong> (备份应该是异地备份)<ul>
+<li>本地保存，安全性无法保证</li>
+</ul>
+</li>
+<li>系统根目录使用快照可以用于测试补丁更新<ul>
+<li>测试完成合并并删除快照</li>
+</ul>
+</li>
+<li>创建快照等同创建一个新的LV（默认是空的）<ul>
+<li>初始不占空间，但文件发生修改时原块数据被拷贝</li>
+<li>回退时将快照中原始数据覆盖当前快照已经被修改的</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 快照  -s 是快照lv，   -L大小</span></span><br><span class="line">sudo lvcreate -s -n s01 -L 2G vg01/lv-01</span><br><span class="line"><span class="comment"># 快照LV可以被直接挂在，用于恢复单个文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复快照（恢复后快照被删除）  --mergr 哪个快照</span></span><br><span class="line">sudo lvconvet --merge vg01/s01</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接是不能恢复的，我们查看一下</span></span><br><span class="line">sudo lvscan  <span class="comment"># 让他不是active才行</span></span><br><span class="line"></span><br><span class="line">sudo umount /mnt/lv-01  <span class="comment"># 退出当前目录，执行此命令卸载目录</span></span><br><span class="line">sudo lvchange -an vg01/lv-01  <span class="comment"># -n 让他不active</span></span><br><span class="line">sudo lvchange -ay vg01/lv-01  <span class="comment"># -y 让他active</span></span><br><span class="line">sudo mount dev/vg01/lv-01  /mnt/lv-01   <span class="comment"># 重新挂载</span></span><br></pre></td></tr></table></figure>
+<p><strong>移动物理卷数据</strong><br>当磁盘性能或老旧等因素需要更换硬盘，提前转移数据<br><code># 后门是目标盘，前面 -n 是指定lv数据,   -i 数值，每隔几秒显示一下运行状态</code><br><code>sudo promove -n lv-01 /dev/sdb  /dev/sdc -i 1</code><br><code>sudo pvdislpay</code></p>
+<hr>
+<blockquote>
+<p>从业务的角度来思考技术，不要做书呆子技术人员</p>
+</blockquote>
+<hr>
+<h1 id="RAID-高级管理"><a href="#RAID-高级管理" class="headerlink" title="RAID 高级管理"></a>RAID 高级管理</h1><blockquote>
+<p>与LVM结合将达到完美</p>
+</blockquote>
+<p><strong><code>软RAID</code>基于<code>mdadm</code>驱动实现</strong><br>软RAID并不比硬RAID差<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mdadm</span><br><span class="line">sudo mdadm -C -v /dev/md0 -l1 -n2 /dev/sdb /dev/sdc -z100M -x1 /dev/sdd</span><br><span class="line">-C    创建</span><br><span class="line">-v    详细信息</span><br><span class="line">-l    RAID类型（0，1，5，6，10）</span><br><span class="line">-n    RAID盘数量</span><br><span class="line">-z    从每个硬盘占用多少空间创建RAID</span><br><span class="line">-x    Spare盘（备用盘）数量+盘名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 约定俗成： 逻辑设备：以0结尾，物理设备以1结尾</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>常用管理命令：</strong><br><img src="_v_images/20200207110021066_291689330.png =600x" alt></p>
+<p>查看raid盘的状况：    <code>cat /proc/mdstat</code> （开机之后临时生成的）<br>-r 删除物理硬盘（如果正常状态下是提示busy的， 可以-f设置失效, –re-add重新加入磁盘阵列）<br>-A 手动出发数据同步</p>
+<ul>
+<li><p>替换硬盘后安装Grub(系统启动盘)<br><code>sudo grub-install /dev/md0</code></p>
+</li>
+<li><p>格式化和加载<br><code>sudo mkfs.ext4 /dev/md0</code></p>
+</li>
+</ul>
+<hr>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><ul>
+<li>符号链接(软链接) 和 硬链接<br>  ls -li （查看inode值）<br>  inode: 存放文件元数据的数据对象，表现为一个数值编号</li>
+</ul>
+<ul>
+<li><p>创建<code>硬链接</code>（inode值是相同的， 给不同数据起了不同的名）<br>  ln fileS fileD<br>  ln log2013.log  ln2013</p>
+<p>  目录不能创建硬链接<br>  不能移动硬链接到不同分区（inode改变）</p>
+</li>
+<li><p>创建软<code>链接</code><br>  不共用inode<br>  ln -s fileS fileD （可以跨设备，可以给目录… , 相对路径和绝对路径， 建议源文件是绝对路径，目标链接是相对路径）</p>
+</li>
+</ul>
+<hr>
+<h1 id="数据加密-磁盘加密"><a href="#数据加密-磁盘加密" class="headerlink" title="数据加密/磁盘加密"></a>数据加密/磁盘加密</h1><blockquote>
+<p>数据最值钱  </p>
+</blockquote>
+<p><strong>清除所有数据：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把磁盘所有字节数据全覆盖为0</span></span><br><span class="line">sudo dd <span class="keyword">if</span>=/dev/zero of=/dev/sdc</span><br></pre></td></tr></table></figure></p>
+<p><strong>磁盘加密：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件包</span></span><br><span class="line">sudo apt install cryptsetup             </span><br><span class="line"><span class="comment"># 加密分区（需提前分区 fdisk）  （boot/引导分区是不能加密的）</span></span><br><span class="line">sudo cryptsetup luksFormat /dev/sdc1</span><br><span class="line"><span class="comment"># 打开加密分区（随意命名）</span></span><br><span class="line">sudo cryptsetup luksOpen /dev/sdc1 srypt1</span><br><span class="line"><span class="comment"># 格式化加密分区</span></span><br><span class="line">sudo mkfs.ext4 /dev/mapper/crypt1</span><br><span class="line"><span class="comment"># 挂载在加密分区</span></span><br><span class="line">sudo mount  /dev/mapper/crypt1  /mnt/crypt1</span><br><span class="line"><span class="comment"># 更改所有者</span></span><br><span class="line">sudo chown xps:xps /mnt/crypt1</span><br><span class="line"><span class="comment"># 关闭加密分区(先umount)</span></span><br><span class="line">sudo umount /mnt/crypt1</span><br><span class="line">sudo cryptsetup:luksClose crypt1</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>不仅对硬盘有用， 也可以对U盘进行加密<br>可以用cryptsetup对u盘加密，设置一个足够强度的密码， 也可以再格式化为ext4格式，让win用户不能直接打开</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你觉得这篇文章还满意的话，请我喝杯咖啡喝吧^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="浮生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="浮生 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    浮生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.xpshuai.cn/ubuntu server-存储管理/" title="ubuntu Server-存储管理">http://www.xpshuai.cn/ubuntu server-存储管理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"> <i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/ubuntu/" rel="tag"> <i class="fa fa-tag"></i> ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ubuntu server-进程管理&打包压缩/" rel="next" title="ubuntu Server-进程管理&打包压缩">
+                <i class="fa fa-chevron-left"></i> ubuntu Server-进程管理&打包压缩
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/中缀表达式转换为后缀表达式/" rel="prev" title="中缀表达式转换为后缀表达式">
+                中缀表达式转换为后缀表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="浮生">
+            
+              <p class="site-author-name" itemprop="name">浮生</p>
+              <p class="site-description motion-element" itemprop="description">侠之大者，为国为民</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shuai06" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_37622608" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          <div id="music163player">
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=247172&auto=0&height=32"></iframe>
+          </div>
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://muyuuuu.github.io/" title="兰铃" target="_blank">兰铃</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://luxiancao.github.io/" title="林深时见鹿衔草" target="_blank">林深时见鹿衔草</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.aigisss.com/" title="aigisss" target="_blank">aigisss</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.blts.xyz/" title="帅气小学弟" target="_blank">帅气小学弟</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#存储"><span class="nav-number">1.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#磁盘空间管理"><span class="nav-number">2.</span> <span class="nav-text">磁盘空间管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加硬盘"><span class="nav-number">3.</span> <span class="nav-text">添加硬盘</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-磁盘设备名称"><span class="nav-number">3.0.0.0.0.1.</span> <span class="nav-text">1.磁盘设备名称</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-硬盘分区"><span class="nav-number">3.0.0.0.0.2.</span> <span class="nav-text">2.硬盘分区</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-文件系统格式化"><span class="nav-number">3.0.0.0.0.3.</span> <span class="nav-text">3.文件系统格式化</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-挂载"><span class="nav-number">3.0.0.0.0.4.</span> <span class="nav-text">4. 挂载</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#SWAP管理"><span class="nav-number">4.</span> <span class="nav-text">SWAP管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Swap文件"><span class="nav-number">4.0.0.0.0.1.</span> <span class="nav-text">Swap文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Swap分区"><span class="nav-number">4.0.0.0.0.2.</span> <span class="nav-text">Swap分区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LVM管理"><span class="nav-number">5.</span> <span class="nav-text">LVM管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RAID-高级管理"><span class="nav-number">6.</span> <span class="nav-text">RAID 高级管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">7.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据加密-磁盘加密"><span class="nav-number">8.</span> <span class="nav-text">数据加密/磁盘加密</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">  <i class="fa fa-heart"></i>   </span>
+  <span class="author" itemprop="copyrightHolder">浮生</span> |
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+</div>
+
+
+
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,04,20,15,00,00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 博客已健康运行"+ diffYears+" 年 "+ diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+<span id="sitetime"></span>
+
+<div class="BbeiAn-info">
+    冀ICP备 -
+    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="nofollow">18027796-1</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src https: busuanzi.ibruce.info busuanzi 2.3 busuanzi.pure.mini.js""></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zlxLDm8dLo0s1Vz10PEvfuNh-gzGzoHsz',
+        appKey: 'UAKrQBSOGPavRUKC9ztdFBLK',
+        placeholder: '来来来，发言啦',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- canvas曲线 -->
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</body>
+</html>

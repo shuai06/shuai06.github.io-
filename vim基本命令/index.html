@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+  <meta name="baidu-site-verification" content="d5sacIPNJl">
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/wenwu.jpg?v=5.1.4" color="#fff">
+
+
+
+
+
+  <meta name="keywords" content="Linux,vim,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="偷得浮生半日闲" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="三种模式:  一般命令模式(默认,按住esc进入) 命令模式 编辑模式     h 左     j 下   l 右   k 上   w 移动到下一个单词词首   e 移动到下一个单词词尾   b 移动到上一个单词词首    2.进入插入模式   i 在当前光标出处编辑     I   大写的i 在行首插入   A 在行末插入   a 在光标后插入编辑   o 在当前行后插入一个新行   O 在当前">
+<meta name="keywords" content="Linux,vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim基本命令">
+<meta property="og:url" content="http://www.xpshuai.cn/vim基本命令/index.html">
+<meta property="og:site_name" content="偷得浮生半日闲">
+<meta property="og:description" content="三种模式:  一般命令模式(默认,按住esc进入) 命令模式 编辑模式     h 左     j 下   l 右   k 上   w 移动到下一个单词词首   e 移动到下一个单词词尾   b 移动到上一个单词词首    2.进入插入模式   i 在当前光标出处编辑     I   大写的i 在行首插入   A 在行末插入   a 在光标后插入编辑   o 在当前行后插入一个新行   O 在当前">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-20T10:13:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vim基本命令">
+<meta name="twitter:description" content="三种模式:  一般命令模式(默认,按住esc进入) 命令模式 编辑模式     h 左     j 下   l 右   k 上   w 移动到下一个单词词首   e 移动到下一个单词词尾   b 移动到上一个单词词首    2.进入插入模式   i 在当前光标出处编辑     I   大写的i 在行首插入   A 在行末插入   a 在光标后插入编辑   o 在当前行后插入一个新行   O 在当前">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.xpshuai.cn/vim基本命令/">
+
+
+
+
+
+  <title>vim基本命令 | 偷得浮生半日闲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">偷得浮生半日闲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再偷浮生两吊钱</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            我的主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            文章标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            文章分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档时光
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br>
+            
+            记录美好生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于作者
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索本站
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+<!-- tq -->
+<script type="text/javascript">WIDGET = {FID: 'a5qxJi5vKF'}</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/vim基本命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="浮生">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="偷得浮生半日闲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vim基本命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T13:47:44+08:00">
+                2018-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vim/" itemprop="url" rel="index">
+                    <span itemprop="name">vim</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/vim基本命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/vim基本命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13  分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>三种模式:</strong></p>
+<ul>
+<li>一般命令模式(默认,按住esc进入)</li>
+<li>命令模式</li>
+<li>编辑模式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>h</th>
+<th>左</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>j</td>
+<td>下</td>
+</tr>
+<tr>
+<td>l</td>
+<td>右</td>
+</tr>
+<tr>
+<td>k</td>
+<td>上</td>
+</tr>
+<tr>
+<td>w</td>
+<td>移动到下一个单词词首</td>
+</tr>
+<tr>
+<td>e</td>
+<td>移动到下一个单词词尾</td>
+</tr>
+<tr>
+<td>b</td>
+<td>移动到上一个单词词首</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-进入插入模式"><a href="#2-进入插入模式" class="headerlink" title="2.进入插入模式"></a>2.进入插入模式</h4><table>
+<thead>
+<tr>
+<th>i</th>
+<th>在当前光标出处编辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I   大写的i</td>
+<td>在行首插入</td>
+</tr>
+<tr>
+<td>A</td>
+<td>在行末插入</td>
+</tr>
+<tr>
+<td>a</td>
+<td>在光标后插入编辑</td>
+</tr>
+<tr>
+<td>o</td>
+<td>在当前行后插入一个新行</td>
+</tr>
+<tr>
+<td>O</td>
+<td>在当前行前插入一个新行</td>
+</tr>
+<tr>
+<td>cw</td>
+<td>替换从光标所在位置后到一个单词结尾的字符</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-1命令行模式下退出vim"><a href="#3-1命令行模式下退出vim" class="headerlink" title="3.1命令行模式下退出vim"></a>3.1命令行模式下退出vim</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:q!</code></td>
+<td>强制退出，不保存</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td>退出</td>
+</tr>
+<tr>
+<td><code>:wq!</code></td>
+<td>强制保存并退出</td>
+</tr>
+<tr>
+<td><code>:w &lt;文件路径&gt;</code></td>
+<td>另存为</td>
+</tr>
+<tr>
+<td><code>:saveas 文件路径</code></td>
+<td>另存为</td>
+</tr>
+<tr>
+<td><code>:x</code></td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td><code>:wq</code></td>
+<td>保存并退出</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-2普通模式下退出vim"><a href="#3-2普通模式下退出vim" class="headerlink" title="3.2普通模式下退出vim"></a>3.2普通模式下退出vim</h4><p>普通模式下输入<code>Shift+zz</code>即可保存退出vim</p>
+<h4 id="4-普通模式下删除vim文本信息"><a href="#4-普通模式下删除vim文本信息" class="headerlink" title="4. 普通模式下删除vim文本信息"></a>4. 普通模式下删除vim文本信息</h4><p>进入普通模式，使用下列命令可以进行文本快速删除：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>删除游标所在的字符</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>删除游标所在前一个字符</td>
+</tr>
+<tr>
+<td><code>Delete</code></td>
+<td>同<code>x</code></td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>删除整行</td>
+</tr>
+<tr>
+<td><code>dw</code></td>
+<td>删除一个单词（不适用中文）</td>
+</tr>
+<tr>
+<td><code>d$</code>或<code>D</code></td>
+<td>删除至行尾</td>
+</tr>
+<tr>
+<td><code>d^</code></td>
+<td>删除至行首</td>
+</tr>
+<tr>
+<td><code>dG</code></td>
+<td>删除到文档结尾处</td>
+</tr>
+<tr>
+<td><code>d1G</code></td>
+<td>删至文档首部</td>
+</tr>
+</tbody>
+</table>
+<p>除此之外，你还可以在命令之前加上数字，表示一次删除多行，如：</p>
+<p><code>2dd</code>表示一次删除2行</p>
+<h4 id="2-1-1-重复执行上次命令"><a href="#2-1-1-重复执行上次命令" class="headerlink" title="　2.1.1 重复执行上次命令"></a>　2.1.1 重复执行上次命令</h4><p>在普通模式下<code>.</code>(小数点)表示重复上一次的命令操作</p>
+<p>普通模式下输入<code>x</code>，删除第一个字符，输入<code>.</code>(小数点)会再次删除一个字符，除此之外也可以重复<code>dd</code>的删除操作</p>
+<h4 id="2-1-2-执行指定次数相同的命令"><a href="#2-1-2-执行指定次数相同的命令" class="headerlink" title="2.1.2 执行指定次数相同的命令"></a>2.1.2 执行指定次数相同的命令</h4><p>进入普通模式输入<code>N&lt;command&gt;</code>，N 表示重复后面的次数，下面来练习：</p>
+<p>打开文件文件进行编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim protocols</span><br></pre></td></tr></table></figure>
+<p>下面你可以依次进行如下操作练习：</p>
+<ul>
+<li>输入<code>10x</code>，删除10个连续字符</li>
+<li>输入<code>3dd</code>，将会删除3行文本</li>
+</ul>
+<p>在普通模式下，你还可以使用<code>dw</code>或者<code>daw</code>(delete a word)删除一个单词，所以你可以很容易的联想到<code>dnw</code>(<strong>n替换为相应数字</strong>) 表示删除n个单词</p>
+<h4 id="2-2-1-行间跳转"><a href="#2-2-1-行间跳转" class="headerlink" title="2.2.1 行间跳转"></a>2.2.1 行间跳转</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nG</code>(n Shift+g)</td>
+<td>游标移动到第 n 行<strong>(如果默认没有显示行号，请先进入命令模式，输入:set nu以显示行号)</strong></td>
+</tr>
+<tr>
+<td><code>gg</code></td>
+<td>游标移动到到第一行</td>
+</tr>
+<tr>
+<td><code>G</code>(Shift+g)</td>
+<td>到最后一行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>你在完成依次跳转后，可以使用 Ctrl+o 快速回到上一次(跳转前)光标所在位置</strong>,这个技巧很实用，比如当你在写代码时，忽然想起有个 bug，需要修改，这时候你跳过去改好了，只需要按下 <code>Ctrl+o</code> 就可以回到你之前的位置。vim 中会用很多类似的小技巧就等着你去发掘。</p>
+<h4 id="2-2-2-行内跳转"><a href="#2-2-2-行内跳转" class="headerlink" title="2.2.2 行内跳转"></a>2.2.2 行内跳转</h4><p>普通模式下使用下列命令在行内按照单词为单位进行跳转</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>w</code></td>
+<td>到下一个单词的开头</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>到当前单词的结尾</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>到前一个单词的开头</td>
+</tr>
+<tr>
+<td><code>ge</code></td>
+<td>到前一个单词的结尾</td>
+</tr>
+<tr>
+<td><code>0</code>或<code>^</code></td>
+<td>到行头</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>到行尾</td>
+</tr>
+<tr>
+<td><code>f&lt;字母&gt;</code></td>
+<td>向后搜索&lt;字母&gt;并跳转到第一个匹配的位置(非常实用)</td>
+</tr>
+<tr>
+<td><code>F&lt;字母&gt;</code></td>
+<td>向前搜索&lt;字母&gt;并跳转到第一个匹配的位置</td>
+</tr>
+<tr>
+<td><code>t&lt;字母&gt;</code></td>
+<td>向后搜索&lt;字母&gt;并跳转到第一个匹配位置之前的一个字母(不常用)</td>
+</tr>
+<tr>
+<td><code>T&lt;字母&gt;</code></td>
+<td>向前搜索&lt;字母&gt;并跳转到第一个匹配位置之后的一个字母(不常用)</td>
+</tr>
+</tbody>
+</table>
+<p>使用 <code>~</code> 将游标所在字母变成大写或小写</p>
+<h4 id="2-3-1-复制及粘贴文本"><a href="#2-3-1-复制及粘贴文本" class="headerlink" title="2.3.1 复制及粘贴文本"></a>2.3.1 复制及粘贴文本</h4><ul>
+<li>普通模式中使用<code>y</code>复制<ul>
+<li>普通模式中，<code>yy</code>复制游标所在的整行（<code>3yy</code>表示复制3行）</li>
+<li>普通模式中，<code>y^</code> 复制至行首，或<code>y0</code>。不含光标所在处字符。</li>
+<li>普通模式中，<code>y$</code> 复制至行尾。含光标所在处字符。</li>
+<li>普通模式中，<code>yw</code> 复制一个单词。</li>
+<li>普通模式中，<code>y2w</code> 复制两个单词。</li>
+<li>普通模式中，<code>yG</code> 复制至文本末。</li>
+<li>普通模式中，<code>y1G</code> 复制至文本开头。</li>
+</ul>
+</li>
+<li>普通模式中使用 <code>p</code> 粘贴<ul>
+<li>普通模式中，<code>p</code>(小写)代表粘贴至光标后（下）</li>
+<li>普通模式中，<code>P</code>(大写)代表粘贴至光标前（上）</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-3-2-剪切及粘贴"><a href="#2-3-2-剪切及粘贴" class="headerlink" title="2.3.2 剪切及粘贴"></a>2.3.2 剪切及粘贴</h4><p>其实前面讲得 <code>dd</code> 删除命令就是剪切，你每次 <code>dd</code> 删除文档内容后，便可以使用 <code>p</code> 来粘贴，也这一点可以让我们实现一个很爽快的功能——交换上下行：</p>
+<p><code>ddp</code> ,就这么简单，即实现了快速交换光标所在行与它下面的行</p>
+<h4 id="2-1-1-替换和撤销-Undo-命令"><a href="#2-1-1-替换和撤销-Undo-命令" class="headerlink" title="2.1.1 替换和撤销(Undo)命令"></a>2.1.1 替换和撤销(Undo)命令</h4><p>替换和Undo命令都是针对普通模式下的操作</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r</code>+&lt;待替换字母&gt;</td>
+<td>将游标所在字母替换为指定字母</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>连续替换，直到按下<code>Esc</code></td>
+</tr>
+<tr>
+<td><code>cc</code></td>
+<td>替换整行，即删除游标所在行，并进入插入模式</td>
+</tr>
+<tr>
+<td><code>cw</code></td>
+<td>替换一个单词，即删除一个单词，并进入插入模式</td>
+</tr>
+<tr>
+<td><code>C</code>(大写)</td>
+<td>替换游标以后至行末</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>反转游标所在字母大小写</td>
+</tr>
+<tr>
+<td><code>u</code>{n}</td>
+<td>撤销一次或n次操作</td>
+</tr>
+<tr>
+<td><code>U</code>(大写)</td>
+<td>撤销当前行的所有修改</td>
+</tr>
+<tr>
+<td><code>Ctrl+r</code></td>
+<td>redo，即撤销undo的操作</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>输入<code>2G</code>，跳转到 2 行</li>
+</ul>
+<h4 id="2-2-1-使用命令进行快速调整缩进操作"><a href="#2-2-1-使用命令进行快速调整缩进操作" class="headerlink" title="2.2.1 使用命令进行快速调整缩进操作"></a>2.2.1 使用命令进行快速调整缩进操作</h4><p>这一小节学习如何在vim中进行快速缩进，缩进操作均在普通模式下有效</p>
+<p>打开文件进行编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim protocols</span><br></pre></td></tr></table></figure>
+<ul>
+<li>普通模式下输入<code>15G</code>，跳转到15行</li>
+<li>普通模式下输入<code>&gt;&gt;</code> 整行将向右缩进（使用，用于格式化代码超爽）</li>
+<li>普通模式下输入<code>&lt;&lt;</code> 整行向左回退</li>
+<li>普通模式下输入<code>:</code>进入命令行模式下对<code>shiftwidth</code>值进行设置可以控制缩进和回退的字符数</li>
+</ul>
+<h4 id="2-2-2-shiftwidth命令"><a href="#2-2-2-shiftwidth命令" class="headerlink" title="2.2.2 shiftwidth命令"></a>2.2.2 shiftwidth命令</h4><p><code>shiftwidth</code>命令是指上一节<code>&gt;&gt;</code>命令产生的缩进（可以简写成<code>sw</code>） 普通模式下输入<code>:</code>进入命令行模式下对<code>shiftwidth</code>值进行设置可以控制缩进和回退的字符数 获取目前的设定值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:set shiftwidth?</span><br></pre></td></tr></table></figure>
+<p>设置缩进为10个字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:set shiftwidth=10</span><br></pre></td></tr></table></figure>
+<p>输入 <code>ESC</code> 回到普通模式，再次尝试 <code>&gt;&gt;</code> 看缩进量是否变化</p>
+<h4 id="2-2-3-调整文本位置"><a href="#2-2-3-调整文本位置" class="headerlink" title="2.2.3 调整文本位置"></a>2.2.3 调整文本位置</h4><p>命令行模式下输入<code>:ce</code>(center)命令使本行内容居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:ce</span><br></pre></td></tr></table></figure>
+<p>命令行模式下输入<code>:ri</code>(right)命令使本行文本靠右</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:ri</span><br></pre></td></tr></table></figure>
+<p>命令行模式下输入:<code>le</code>(left)命令使本行内容靠左</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:le</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-1-快速查找"><a href="#2-3-1-快速查找" class="headerlink" title="2.3.1 快速查找"></a>2.3.1 快速查找</h4><p>普通模式下输入 <code>/</code> 然后键入需要查找的字符串 按回车后就会进行查找。<code>？</code> 与<code>/</code> 功能相同，只不过 <code>？</code> 是向上而 <code>/</code> 是向下查找。 进入查找之后，输入<code>n</code> 和 <code>N</code> 可以继续查找 <code>n</code>表示继续查找，<code>N</code> 反向查找</p>
+<h4 id="2-3-2-快速查找练习"><a href="#2-3-2-快速查找练习" class="headerlink" title="2.3.2 快速查找练习"></a>2.3.2 快速查找练习</h4><p>使用 vim 打开文件进行编辑（搜索高亮需要在配置文件 <code>.vimrc</code> 中设置 <code>set hls</code> ，实验环境中已经设置好了）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim protocols</span><br></pre></td></tr></table></figure>
+<ul>
+<li>普通模式下输入<code>/icmp</code>然后回车即可查找字符串 <code>icmp</code></li>
+<li>普通模式下输入<code>n</code>查找下一个 <code>icmp</code></li>
+<li>普通模式下输入<code>？tcp</code>向上查找字符串 <code>tcp</code></li>
+<li>普通模式下输入<code>N</code>查找上一个出现的 <code>tcp</code></li>
+<li>命令行模式下输入 <code>noh</code> 然后回车即可取消搜索</li>
+</ul>
+<h4 id="2-3-3-高级查找"><a href="#2-3-3-高级查找" class="headerlink" title="2.3.3 高级查找"></a>2.3.3 高级查找</h4><ul>
+<li>普通模式下输入<code>\*</code>寻找游标所在处的单词</li>
+<li>普通模式下输入<code>\#</code>同上，但 <code>\#</code> 是向前（上）找，<code>\*</code>则是向后（下）找</li>
+<li>普通模式下输入<code>g\*</code>同<code>\*</code> ，但部分符合该单词即可</li>
+<li>普通模式下输入<code>g\#</code>同<code>\#</code> ，但部分符合该单词即可</li>
+</ul>
+<p>以上查找<code>n</code>,<code>N</code> 的继续查找命令依然可以用</p>
+<h4 id="2-1-1-使用vim编辑多个文件"><a href="#2-1-1-使用vim编辑多个文件" class="headerlink" title="2.1.1 使用vim编辑多个文件"></a>2.1.1 使用vim编辑多个文件</h4><p>编辑多个文件有两种形式，一种是在进入vim前使用的参数就是多个文件。另一种就是进入vim后再编辑其他的文件。 同时创建两个新文件并编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim 1.txt 2.txt</span><br></pre></td></tr></table></figure>
+<p>默认进入<code>1.txt</code>文件的编辑界面</p>
+<ul>
+<li>命令行模式下输入 <code>:n</code> 编辑 2.txt 文件，可以加 <code>!</code> 即 <code>:n!</code> 强制切换，之前一个文件的输入没有保存，仅仅切换到另一个文件</li>
+<li>命令行模式下输入 <code>:N</code> 编辑 1.txt 文件，可以加 <code>!</code> 即 <code>:N!</code> 强制切换，之前文件内的输入没有保存，仅仅是切换到另一个文件</li>
+</ul>
+<h4 id="2-1-2-进入vim后打开新文件"><a href="#2-1-2-进入vim后打开新文件" class="headerlink" title="2.1.2 进入vim后打开新文件"></a>2.1.2 进入vim后打开新文件</h4><ul>
+<li>命令行模式下输入<code>:e 3.txt</code> 打开新文件3.txt</li>
+<li>命令行模式下输入<code>:e#</code> 回到前一个文件</li>
+<li>命令行模式下输入<code>:ls</code>可以列出以前编辑过的文档</li>
+<li>命令行模式下输入<code>:b 2.txt</code>（或者编号）可以直接进入文件2.txt编辑</li>
+<li>命令行模式下输入<code>:bd 2.txt</code>（或者编号）可以删除以前编辑过的列表中的文件项目</li>
+<li>命令行模式下输入<code>:e! 4.txt</code>，新打开文件4.txt，放弃正在编辑的文件</li>
+<li>命令行模式下输入<code>:f</code> 显示正在编辑的文件名</li>
+<li>命令行模式下输入<code>:f new.txt</code>，改变正在编辑的文件名字为new.txt</li>
+</ul>
+<h4 id="2-1-3-恢复文件"><a href="#2-1-3-恢复文件" class="headerlink" title="2.1.3 恢复文件"></a>2.1.3 恢复文件</h4><blockquote>
+<p>由于在线环境的特殊性，请在本机尝试</p>
+</blockquote>
+<p>如果因为断电等原因造成文档没有保存，可以采用恢复方式，<code>vim -r</code>进入文档后，输入<code>:ewcover 1.txt</code>来恢复</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim -r 1.txt</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-1-可视模式命令简介"><a href="#2-2-1-可视模式命令简介" class="headerlink" title="2.2.1 可视模式命令简介"></a>2.2.1 可视模式命令简介</h4><ul>
+<li>在普通模式下输入 <code>v</code>（小写），进入字符选择模式，就可以移动光标，光标走过的地方就会选取。再次按下v会后就会取消选取。</li>
+<li>在普通模式下输入 <code>Shift+v</code>（小写），进入行选择模式，按下V之后就会把整行选取，您可以上下移动光标选更多的行，同样，再按一次 <code>Shift+v</code> 就可以取消选取。</li>
+<li>在普通模式下输入 <code>Ctrl+v</code>（小写），这是区域选择模式，可以进行矩形区域选择，再按一次 <code>Ctrl+v</code> 取消选取。</li>
+<li>在可视模式下输入 <code>d</code> 删除选取区域内容</li>
+<li>在可视模式下输入<code>y</code>复制选取区域内容</li>
+</ul>
+<h4 id="2-3-1-视窗操作简介"><a href="#2-3-1-视窗操作简介" class="headerlink" title="2.3.1 视窗操作简介"></a>2.3.1 视窗操作简介</h4><p>vim 可以在一个界面里打开多个窗口进行编辑，这些编辑窗口称为 vim 的视窗。 打开方法有很多种，例如可以使用在命令行模式下输入 <code>:new</code> 打开一个新的 vim 视窗，并进入视窗编辑一个新文件（普通模式下输入 <code>Ctrl+w</code>也可以），除了 <code>:new</code> 命令，下述列举的多种方法也可以在命令模式或普通模式下打开新的视窗：</p>
+<p><strong>注意：快捷键可能会与浏览器的快捷键冲突，可换为 IE 浏览器进行实验或者在浏览器设置里禁用浏览器快捷键。</strong></p>
+<ul>
+<li>命令行模式下输入<code>:sp 1.txt</code> 打开新的水平分屏视窗来编辑1.txt</li>
+<li>命令行模式下输入<code>:vsp 2.txt</code> 打开新的垂直分屏视窗来编辑2.txt</li>
+<li>普通模式下<code>Ctrl+w s</code> 将当前窗口分割成两个水平的窗口</li>
+<li>普通模式下<code>Ctrl+w v</code> 将当前窗口分割成两个垂直的窗口</li>
+<li>普通模式下<code>Ctrl+w q</code> 即 :q 结束分割出来的视窗。如果在新视窗中有输入需要使用强制符！即:q!</li>
+<li>普通模式下<code>Ctrl+w o</code> 打开一个视窗并且隐藏之前的所有视窗</li>
+<li>普通模式下<code>Ctrl+w j</code> 移至下面视窗</li>
+<li>普通模式下<code>Ctrl+w k</code> 移至上面视窗</li>
+<li>普通模式下<code>Ctrl+w h</code> 移至左边视窗</li>
+<li>普通模式下<code>Ctrl+w l</code> 移至右边视窗</li>
+<li>普通模式下<code>Ctrl+w J</code> 将当前视窗移至下面</li>
+<li>普通模式下<code>Ctrl+w K</code> 将当前视窗移至上面</li>
+<li>普通模式下<code>Ctrl+w H</code> 将当前视窗移至左边</li>
+<li>普通模式下<code>Ctrl+w L</code> 将当前视窗移至右边</li>
+<li>普通模式下<code>Ctrl+w -</code> 减小视窗的高度</li>
+<li>普通模式下<code>Ctrl+w +</code> 增加视窗的高度</li>
+</ul>
+<h4 id="2-4-1-创建加密文档"><a href="#2-4-1-创建加密文档" class="headerlink" title="2.4.1 创建加密文档"></a>2.4.1 创建加密文档</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim -x file1</span><br></pre></td></tr></table></figure>
+<p>输入您的密码 确认密码 这样在下一次打开时，vim就会要求你输入密码</p>
+<p>在命令行模式中输入<code>!</code>可以执行外部的shell命令</p>
+<ul>
+<li><code>:!ls</code> 用于显示当前目录的内容</li>
+<li><code>:!rm FILENAME</code>用于删除名为 FILENAME 的文件</li>
+<li><code>:w FILENAME</code>可将当前 VIM 中正在编辑的文件另存为 FILENAME 文件</li>
+</ul>
+<h4 id="2-7-1-vim的功能设定"><a href="#2-7-1-vim的功能设定" class="headerlink" title="2.7.1 vim的功能设定"></a>2.7.1 vim的功能设定</h4><p>可以在编辑文件的时候进行功能设定，如命令行模式下输入<code>:set nu</code>（显示行数），设定值退出vim后不会保存。要永久保存配置需要修改vim配置文件。 vim的配置文件<code>~/.vimrc</code>(实验楼环境中配置文件在/etc/vim/vimrc)，可以打开文件进行修改，不过务必小心不要影响vim正常使用</p>
+<h4 id="2-7-2-获取目前的设定"><a href="#2-7-2-获取目前的设定" class="headerlink" title="2.7.2 获取目前的设定"></a>2.7.2 获取目前的设定</h4><ul>
+<li>命令行模式下输入<code>:set</code>或者<code>:se</code>显示所有修改过的配置</li>
+<li>命令行模式下输入<code>:set all</code> 显示所有的设定值</li>
+<li>命令行模式下输入<code>:set option?</code> 显示option的设定值</li>
+<li>命令行模式下输入<code>:set nooption</code> 取消当前设定值</li>
+</ul>
+<h4 id="2-7-3-set功能的说明"><a href="#2-7-3-set功能的说明" class="headerlink" title="2.7.3 set功能的说明"></a>2.7.3 set功能的说明</h4><ul>
+<li>命令行模式下输入<code>:set autoindent(ai)</code> 设置自动缩进</li>
+<li>命令行模式下输入<code>:set autowrite(aw)</code> 设置自动存档，默认未打开</li>
+<li>命令行模式下输入<code>:set background=dark</code>或<code>light</code>，设置背景风格</li>
+<li>命令行模式下输入<code>:set backup(bk)</code> 设置自动备份，默认未打开</li>
+<li>命令行模式下输入<code>: set cindent(cin)</code> 设置C语言风格缩进</li>
+</ul>
+<p>更多详细参数请参考vim手册</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ctrl + f   # 向后翻一页</span><br><span class="line">ctrl + b   # 向前翻一页</span><br><span class="line">ZZ         # 保存修改并且退出</span><br><span class="line">D          # 删除光标到行尾内容</span><br><span class="line">       </span><br><span class="line">/字符串      # 向前搜索关键字</span><br><span class="line">?name       # 向后搜索关键字</span><br><span class="line">:149,$s/iii/xxx/gc   # 替换指定行的iii为xxx, 全局替换,c是确认提示</span><br><span class="line"></span><br><span class="line">:150    # 跳到150行</span><br><span class="line"></span><br><span class="line">e a.txt   # 打开并编辑指定文件</span><br><span class="line"></span><br><span class="line">:n     # 编辑下一个文件</span><br><span class="line">:f     # 显示当前的文件名</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你觉得这篇文章还满意的话，请我喝杯咖啡喝吧^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="浮生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="浮生 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    浮生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.xpshuai.cn/vim基本命令/" title="vim基本命令">http://www.xpshuai.cn/vim基本命令/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"> <i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/vim/" rel="tag"> <i class="fa fa-tag"></i> vim</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ArcgisEngine 鹰眼功能/" rel="next" title="ArcgisEngine鹰眼功能">
+                <i class="fa fa-chevron-left"></i> ArcgisEngine鹰眼功能
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/virtualenv虚拟环境/" rel="prev" title="virtualenv">
+                virtualenv <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="浮生">
+            
+              <p class="site-author-name" itemprop="name">浮生</p>
+              <p class="site-description motion-element" itemprop="description">侠之大者，为国为民</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shuai06" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_37622608" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          <div id="music163player">
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=247172&auto=0&height=32"></iframe>
+          </div>
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://muyuuuu.github.io/" title="兰铃" target="_blank">兰铃</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://luxiancao.github.io/" title="林深时见鹿衔草" target="_blank">林深时见鹿衔草</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.aigisss.com/" title="aigisss" target="_blank">aigisss</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.blts.xyz/" title="帅气小学弟" target="_blank">帅气小学弟</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进入插入模式"><span class="nav-number">1.</span> <span class="nav-text">2.进入插入模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1命令行模式下退出vim"><span class="nav-number">2.</span> <span class="nav-text">3.1命令行模式下退出vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2普通模式下退出vim"><span class="nav-number">3.</span> <span class="nav-text">3.2普通模式下退出vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-普通模式下删除vim文本信息"><span class="nav-number">4.</span> <span class="nav-text">4. 普通模式下删除vim文本信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-重复执行上次命令"><span class="nav-number">5.</span> <span class="nav-text">　2.1.1 重复执行上次命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-执行指定次数相同的命令"><span class="nav-number">6.</span> <span class="nav-text">2.1.2 执行指定次数相同的命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-行间跳转"><span class="nav-number">7.</span> <span class="nav-text">2.2.1 行间跳转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-行内跳转"><span class="nav-number">8.</span> <span class="nav-text">2.2.2 行内跳转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-复制及粘贴文本"><span class="nav-number">9.</span> <span class="nav-text">2.3.1 复制及粘贴文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-剪切及粘贴"><span class="nav-number">10.</span> <span class="nav-text">2.3.2 剪切及粘贴</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-替换和撤销-Undo-命令"><span class="nav-number">11.</span> <span class="nav-text">2.1.1 替换和撤销(Undo)命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-使用命令进行快速调整缩进操作"><span class="nav-number">12.</span> <span class="nav-text">2.2.1 使用命令进行快速调整缩进操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-shiftwidth命令"><span class="nav-number">13.</span> <span class="nav-text">2.2.2 shiftwidth命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-调整文本位置"><span class="nav-number">14.</span> <span class="nav-text">2.2.3 调整文本位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-快速查找"><span class="nav-number">15.</span> <span class="nav-text">2.3.1 快速查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-快速查找练习"><span class="nav-number">16.</span> <span class="nav-text">2.3.2 快速查找练习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3-高级查找"><span class="nav-number">17.</span> <span class="nav-text">2.3.3 高级查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-使用vim编辑多个文件"><span class="nav-number">18.</span> <span class="nav-text">2.1.1 使用vim编辑多个文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-进入vim后打开新文件"><span class="nav-number">19.</span> <span class="nav-text">2.1.2 进入vim后打开新文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-恢复文件"><span class="nav-number">20.</span> <span class="nav-text">2.1.3 恢复文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-可视模式命令简介"><span class="nav-number">21.</span> <span class="nav-text">2.2.1 可视模式命令简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-视窗操作简介"><span class="nav-number">22.</span> <span class="nav-text">2.3.1 视窗操作简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-1-创建加密文档"><span class="nav-number">23.</span> <span class="nav-text">2.4.1 创建加密文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-1-vim的功能设定"><span class="nav-number">24.</span> <span class="nav-text">2.7.1 vim的功能设定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-2-获取目前的设定"><span class="nav-number">25.</span> <span class="nav-text">2.7.2 获取目前的设定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-3-set功能的说明"><span class="nav-number">26.</span> <span class="nav-text">2.7.3 set功能的说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">  <i class="fa fa-heart"></i>   </span>
+  <span class="author" itemprop="copyrightHolder">浮生</span> |
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+</div>
+
+
+
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,04,20,15,00,00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 博客已健康运行"+ diffYears+" 年 "+ diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+<span id="sitetime"></span>
+
+<div class="BbeiAn-info">
+    冀ICP备 -
+    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="nofollow">18027796-1</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src https: busuanzi.ibruce.info busuanzi 2.3 busuanzi.pure.mini.js""></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zlxLDm8dLo0s1Vz10PEvfuNh-gzGzoHsz',
+        appKey: 'UAKrQBSOGPavRUKC9ztdFBLK',
+        placeholder: '来来来，发言啦',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- canvas曲线 -->
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</body>
+</html>
