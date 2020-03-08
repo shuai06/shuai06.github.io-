@@ -115,17 +115,17 @@
 <meta name="description" content="获取帮助man123456789101112131415man cmdman -k keyword    #搜索关键词（不知道具体命令）man -k &apos;list directory contents&apos;   # 多个关键字# 每个命令的 手册页 可以使用数字编号引用片段（section）man 5 passwd   #（ 按section查看）- 1：  用户命令- 2：  系统调用- 3：  高级">
 <meta name="keywords" content="Linux,ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu Server-帮助&amp;输出与重定向">
-<meta property="og:url" content="http://www.xpshuai.cn/ubuntu Server-输出与重定向/index.html">
+<meta property="og:title" content="ubuntu server-帮助&amp;输出与重定向">
+<meta property="og:url" content="http://www.xpshuai.cn/ubuntu server-输出与重定向/index.html">
 <meta property="og:site_name" content="偷得浮生半日闲">
 <meta property="og:description" content="获取帮助man123456789101112131415man cmdman -k keyword    #搜索关键词（不知道具体命令）man -k &apos;list directory contents&apos;   # 多个关键字# 每个命令的 手册页 可以使用数字编号引用片段（section）man 5 passwd   #（ 按section查看）- 1：  用户命令- 2：  系统调用- 3：  高级">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20Server-输出与重定向/error.png">
-<meta property="og:updated_time" content="2020-02-20T10:13:37.000Z">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-输出与重定向/error.png">
+<meta property="og:updated_time" content="2020-03-08T09:49:47.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu Server-帮助&amp;输出与重定向">
+<meta name="twitter:title" content="ubuntu server-帮助&amp;输出与重定向">
 <meta name="twitter:description" content="获取帮助man123456789101112131415man cmdman -k keyword    #搜索关键词（不知道具体命令）man -k &apos;list directory contents&apos;   # 多个关键字# 每个命令的 手册页 可以使用数字编号引用片段（section）man 5 passwd   #（ 按section查看）- 1：  用户命令- 2：  系统调用- 3：  高级">
-<meta name="twitter:image" content="http://www.xpshuai.cn/ubuntu%20Server-输出与重定向/error.png">
+<meta name="twitter:image" content="http://www.xpshuai.cn/ubuntu%20server-输出与重定向/error.png">
 
 
 
@@ -155,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="http://www.xpshuai.cn/ubuntu Server-输出与重定向/">
+  <link rel="canonical" href="http://www.xpshuai.cn/ubuntu server-输出与重定向/">
 
 
 
 
 
-  <title>ubuntu Server-帮助&输出与重定向 | 偷得浮生半日闲</title>
+  <title>ubuntu server-帮助&输出与重定向 | 偷得浮生半日闲</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/ubuntu Server-输出与重定向/">
+    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/ubuntu server-输出与重定向/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="浮生">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu Server-帮助&输出与重定向</h1>
+          <h1 class="post-title" itemprop="name headline">ubuntu server-帮助&输出与重定向</h1>
         
 
         <div class="post-meta">
@@ -422,8 +422,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/ubuntu Server-输出与重定向/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/ubuntu Server-输出与重定向/" itemprop="commentCount"></span>
+                <a href="/ubuntu server-输出与重定向/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/ubuntu server-输出与重定向/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -494,7 +494,7 @@
 <h4 id="Shell输入与输出"><a href="#Shell输入与输出" class="headerlink" title="Shell输入与输出"></a>Shell输入与输出</h4><h6 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ls a/ &gt; file   # 会覆盖</span><br><span class="line"></span><br><span class="line">ls a &gt;&gt; file    # 追加</span><br><span class="line"></span><br><span class="line">head /proc/cpuinfo </span><br><span class="line"></span><br><span class="line">head  &lt; /proc/cpuinfo    # 输入重定向</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">`set -C` 之后不得覆盖</span><br></pre></td></tr></table></figure>
 <h6 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head /proc/cpuinfo | tar a-z A-Z</span><br><span class="line"></span><br><span class="line">ifconfig | grep inet | awk<span class="string">'&#123;print $2&#125;'</span> | awk -F. <span class="string">'&#123;print $2&#125;'</span>   <span class="comment"># -F 指定分隔符，这里以.分割</span></span><br></pre></td></tr></table></figure>
 <h6 id="标准错误-stderr-报错包含重要信息"><a href="#标准错误-stderr-报错包含重要信息" class="headerlink" title="标准错误 stderr(报错包含重要信息)"></a>标准错误 stderr(报错包含重要信息)</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写脚本的时候有用，可以把错误信息报错到某个文件</span></span><br><span class="line">ls /abc 2&gt;e   <span class="comment"># 2:标准错误      1:标准输出          0:标准输入</span></span><br><span class="line">ls 0&lt; a/</span><br><span class="line">ls 1&gt; file1</span><br><span class="line">ls b 2&gt; err1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ls a/ &gt; f1 2&gt;&amp;1   <span class="comment"># 标准输出、标准错误都输出到文件f1  （&amp;1代表标准输出）</span></span><br></pre></td></tr></table></figure>
-<h6 id="常见报错信息"><a href="#常见报错信息" class="headerlink" title="常见报错信息"></a>常见报错信息</h6><p><img src="/ubuntu Server-输出与重定向/error.png"></p>
+<h6 id="常见报错信息"><a href="#常见报错信息" class="headerlink" title="常见报错信息"></a>常见报错信息</h6><p><img src="/ubuntu server-输出与重定向/error.png"></p>
 
       
     </div>
@@ -544,7 +544,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.xpshuai.cn/ubuntu Server-输出与重定向/" title="ubuntu Server-帮助&输出与重定向">http://www.xpshuai.cn/ubuntu Server-输出与重定向/</a>
+    <a href="http://www.xpshuai.cn/ubuntu server-输出与重定向/" title="ubuntu server-帮助&输出与重定向">http://www.xpshuai.cn/ubuntu server-输出与重定向/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -599,8 +599,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/ubuntu server-进程管理&打包压缩/" rel="prev" title="ubuntu Server-进程管理&打包压缩">
-                ubuntu Server-进程管理&打包压缩 <i class="fa fa-chevron-right"></i>
+              <a href="/ubuntu server-进程管理&打包压缩/" rel="prev" title="ubuntu server-进程管理&打包压缩">
+                ubuntu server-进程管理&打包压缩 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -721,7 +721,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

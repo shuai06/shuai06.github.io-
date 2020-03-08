@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+  <meta name="baidu-site-verification" content="d5sacIPNJl">
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/wenwu.jpg?v=5.1.4" color="#fff">
+
+
+
+
+
+  <meta name="keywords" content="Linux,ubuntu,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="偷得浮生半日闲" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="网络原理 ping 127.0.0.1 如果能通，说明本机的TCP/IP协议已经配置成功啦arping 网卡配置网卡接口-enp2s0 (最近使用)、eth0   （以前这么使用） 1234567891011121314#wl 开头的是无线网卡# ifconfig 命令# 查看所有网卡ifconfig -a    字段意义：MTU,发包，收包，`collisions`发生多少次冲突# ip 命令">
+<meta name="keywords" content="Linux,ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu server-网络相关知识">
+<meta property="og:url" content="http://www.xpshuai.cn/ubuntu server-网络相关知识/index.html">
+<meta property="og:site_name" content="偷得浮生半日闲">
+<meta property="og:description" content="网络原理 ping 127.0.0.1 如果能通，说明本机的TCP/IP协议已经配置成功啦arping 网卡配置网卡接口-enp2s0 (最近使用)、eth0   （以前这么使用） 1234567891011121314#wl 开头的是无线网卡# ifconfig 命令# 查看所有网卡ifconfig -a    字段意义：MTU,发包，收包，`collisions`发生多少次冲突# ip 命令">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200214100233476_240785919.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200214114820323_1273216811.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200218132001375_1018333933.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308150835487_32007.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308153026228_153.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308154004613_29225.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308170606501_6440.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308171832987_9157.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308172254102_12604.png">
+<meta property="og:updated_time" content="2020-03-08T09:56:33.062Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu server-网络相关知识">
+<meta name="twitter:description" content="网络原理 ping 127.0.0.1 如果能通，说明本机的TCP/IP协议已经配置成功啦arping 网卡配置网卡接口-enp2s0 (最近使用)、eth0   （以前这么使用） 1234567891011121314#wl 开头的是无线网卡# ifconfig 命令# 查看所有网卡ifconfig -a    字段意义：MTU,发包，收包，`collisions`发生多少次冲突# ip 命令">
+<meta name="twitter:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200214100233476_240785919.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.xpshuai.cn/ubuntu server-网络相关知识/">
+
+
+
+
+
+  <title>ubuntu server-网络相关知识 | 偷得浮生半日闲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">偷得浮生半日闲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再偷浮生两吊钱</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            我的主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            文章标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            文章分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档时光
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br>
+            
+            记录美好生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于作者
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索本站
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+<!-- tq -->
+<script type="text/javascript">WIDGET = {FID: 'a5qxJi5vKF'}</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/ubuntu server-网络相关知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="浮生">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="偷得浮生半日闲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ubuntu server-网络相关知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-08T17:48:37+08:00">
+                2020-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ubuntu server-网络相关知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/ubuntu server-网络相关知识/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15  分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><p><img src="/ubuntu server-网络相关知识/20200214100233476_240785919.png"></p>
+<p><code>ping 127.0.0.1</code> 如果能通，说明本机的TCP/IP协议已经配置成功啦<br><code>arping</code></p>
+<h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><h6 id="网卡接口"><a href="#网卡接口" class="headerlink" title="网卡接口"></a>网卡接口</h6><p>-enp2s0 (最近使用)、eth0   （以前这么使用）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#wl 开头的是无线网卡</span><br><span class="line"></span><br><span class="line"># ifconfig 命令</span><br><span class="line"># 查看所有网卡</span><br><span class="line">ifconfig -a</span><br><span class="line">    字段意义：MTU,发包，收包，`collisions`发生多少次冲突</span><br><span class="line"></span><br><span class="line"># ip 命令</span><br><span class="line"> ip link     # 查看所有网卡和信息</span><br><span class="line"> ip address</span><br><span class="line"></span><br><span class="line"># lshw   查看系统硬件命令</span><br><span class="line"># 只查看网卡的命令</span><br><span class="line">sudo lshw -class network</span><br></pre></td></tr></table></figure>
+<h6 id="管理网卡"><a href="#管理网卡" class="headerlink" title="管理网卡"></a>管理网卡</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看网卡参数</span></span><br><span class="line">sud ethtool enp0s3</span><br><span class="line"></span><br><span class="line"><span class="comment"># -s   配置 ： speed 速度 半双工 </span></span><br><span class="line">sud ethtool -s duplex half | full speed 1000</span><br></pre></td></tr></table></figure>
+<h6 id="网络基本设置"><a href="#网络基本设置" class="headerlink" title="网络基本设置"></a>网络基本设置</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 临时设置IP地址</span></span><br><span class="line">sudo ifconfig eth0 10.0.0.00 netmask 255.255.255.0</span><br><span class="line"><span class="comment"># 24位掩码</span></span><br><span class="line">sudo ifconfig eth0 10.0.0.100/24</span><br><span class="line"><span class="comment"># 设置网关 gw</span></span><br><span class="line">sudo route add default gw 10.0.0.1 eth0</span><br><span class="line"><span class="comment"># 网段路由 add-net   （静态路由：去哪个网段，应该怎么转发）</span></span><br><span class="line">sudo route add-net 0.0.0.0 netmask 0.0.0.0 gw 1.1.1.1</span><br><span class="line"><span class="comment"># 主机路由 add-host    </span></span><br><span class="line">sudo route add-host 2.2.2.2 gw 1.1.1.1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除网卡配置</span></span><br><span class="line">ip addr fulsh eth0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向网络中要一个IP</span></span><br><span class="line">sudo dhcpclient</span><br><span class="line"></span><br><span class="line"><span class="comment"># 禁用网卡</span></span><br><span class="line">sudo ifconfig eth0 down</span><br><span class="line"><span class="comment"># 启用网卡</span></span><br><span class="line">sudo ifconfig eth0 up</span><br><span class="line"><span class="comment"># 重启网络服务</span></span><br><span class="line">sudo systemctrl restart networking.service</span><br></pre></td></tr></table></figure>
+<h6 id="网卡配置文件"><a href="#网卡配置文件" class="headerlink" title="网卡配置文件"></a>网卡配置文件</h6><p><code>/etc/nwtwork/interfaces</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">文件字段：</span><br><span class="line">iface 网卡name inet 网络配置（loopback/dhcp/static）</span><br><span class="line"></span><br><span class="line">    sudo eth0</span><br><span class="line">    iface eth0 inet static|DHCP</span><br><span class="line"></span><br><span class="line">    <span class="comment"># pre-up 系统启动中(网卡运行前)  设置为1000M，全双工</span></span><br><span class="line">    pre-up/sbin/ethtool -s eth0 speed 1000 duplex full</span><br></pre></td></tr></table></figure></p>
+<h6 id="动态获取IP地址"><a href="#动态获取IP地址" class="headerlink" title="动态获取IP地址"></a>动态获取IP地址</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo vim /etc/network/interfaces</span></span><br><span class="line">auto eth0</span><br><span class="line">iface inet dhcp</span><br></pre></td></tr></table></figure>
+<h6 id="静态IP地址"><a href="#静态IP地址" class="headerlink" title="静态IP地址"></a>静态IP地址</h6><p>一般服务器是静态的IP<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo vim /etc/network/interfaces</span></span><br><span class="line">auto eth0</span><br><span class="line">iface inet static</span><br><span class="line">    address 192.168.123.9</span><br><span class="line">    netmask 255.255.255.0        <span class="comment"># 掩码</span></span><br><span class="line">    gateway 192.168.123.1        <span class="comment"># 网关</span></span><br><span class="line">    dns-nameservers 192.168.123.1 202.99.96.68   <span class="comment"># 一般dns地址写俩</span></span><br><span class="line">    <span class="comment"># 上面是基本配置, 下面是额外其他配置项</span></span><br><span class="line">    broadcast 192.168.123.255   <span class="comment"># 网段的广播地址</span></span><br><span class="line">    <span class="comment"># dns-search  abc.com  # 如果属于某个dns域,就默认去找这个</span></span><br><span class="line">    up route add -net 172.16.0.0/24  gw 192.168.23.1 eth0   <span class="comment"># 开机之后,添加一个网段(要指定具体网关)</span></span><br><span class="line">    mtu 1460   <span class="comment"># 指定MTU 字节</span></span><br><span class="line">    <span class="comment"># hwaddress 00:11:22:33:44:55   # 指定硬件mac地址</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 刷新,重启网络, 配置文件的网络生效(实在不行就重启计算机)</span></span><br><span class="line">sudo ip address fulsh eth0 </span><br><span class="line">sudo systemctrl restart networking.service</span><br></pre></td></tr></table></figure></p>
+<p><img src="/ubuntu server-网络相关知识/20200214114820323_1273216811.png"><br>指定路由<br>清除信息<br>ip addr flush ens32</p>
+<blockquote>
+<p>Note： VmWare对网络的支持要好于VirtualBox(比如有些网络的配置可能有限制)</p>
+</blockquote>
+<h2 id="DNS配置"><a href="#DNS配置" class="headerlink" title="DNS配置"></a>DNS配置</h2><h6 id="DNS配置文件"><a href="#DNS配置文件" class="headerlink" title="DNS配置文件"></a>DNS配置文件</h6><p><code>/etc/resolve.conf</code>    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/etc/resolve.conf    <span class="comment"># DNS设置（软连接）</span></span><br><span class="line">格式:</span><br><span class="line">    nameserver 114.114.114.114</span><br><span class="line">    nameserver 127.0.0.53</span><br><span class="line">    options edns0</span><br><span class="line">    search www.tendawifi.com</span><br></pre></td></tr></table></figure>
+<h6 id="主机名解析"><a href="#主机名解析" class="headerlink" title="主机名解析"></a>主机名解析</h6><p>1.配置文件 <code>/etc/hosts</code>    优先级别<code>高</code>于resolve.conf里面的dns服务器的信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ip 和名称做解析</span></span><br><span class="line">127.0.0.1 localhost</span><br><span class="line">192.168.0.111 www.qq.com</span><br><span class="line"><span class="comment"># 现在这里找映射，有的话就不去resolve里面找了</span></span><br></pre></td></tr></table></figure></p>
+<p>2.配置文件 <code>/etc/nsswitch.conf</code>        名称解析顺序配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按照优先级先后排序来解析  （前面的不满足，才调用后面的）</span></span><br><span class="line">- files        /etc/hosts</span><br><span class="line">- Resolve        全称systemd-resolved.service(缓存、localhost、本机名)   （默认安装）</span><br><span class="line">- [NOTFOUND=<span class="built_in">return</span>]        结果即权威  （正则表达式）  （当找不给我到的之后，返回）</span><br><span class="line">- dns                    dns服务器（resolve文件配置的那些）</span><br><span class="line">- mdns4_minimal            MulticastDNS(多播dns服务)     现在很多dns厂家用的就是多播dns服务</span><br><span class="line"></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">hosts:          files mdns4_minimal [NOTFOUND=<span class="built_in">return</span>] dns myhostname</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>关于解析优先级：有的攻击者会修改你hosts文件映射到自己的恶意网址，此时如果把dns的顺序放到hosts前面，他就利用不成了</p>
+</blockquote>
+<h6 id="查看路由"><a href="#查看路由" class="headerlink" title="查看路由"></a>查看路由</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 路由信息</span></span><br><span class="line">route -n</span><br><span class="line"></span><br><span class="line">netstat -nr</span><br></pre></td></tr></table></figure>
+<h2 id="网桥配置"><a href="#网桥配置" class="headerlink" title="网桥配置"></a>网桥配置</h2><blockquote>
+<p>把服务器当交换机用实在是大材小用<br>把多个以太网段以上层透明的方式连接在一起</p>
+</blockquote>
+<p><strong>应用场景：</strong><br>1.可做防火墙<br>2.可以做虚拟机的服务器（搭建云平台，进行虚拟化的时候）<br>3.桥接有线网与无线网（比如我的笔记本：连接网线访问互联网，另外让别人通过我的电脑无线上网，相当于一个AP）<br>4.链路荣誉容错（需启用STP）<br>5.通过网桥管理工具实现 <code>bridge-utils</code></p>
+<p><img src="/ubuntu server-网络相关知识/20200218132001375_1018333933.png"></p>
+<h6 id="在ubunut搭建网桥"><a href="#在ubunut搭建网桥" class="headerlink" title="在ubunut搭建网桥"></a>在ubunut搭建网桥</h6><p>在虚拟机添加2块网卡(一块NAT，另一块随便)</p>
+<p><strong>安装网桥管理包：</strong><br><code>sudo apt install bridge-utils</code></p>
+<p><strong>临时配置网桥：</strong><br>命令： <code>btctl</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo btctl addr br0     <span class="comment"># 添加一个网桥的网卡接口</span></span><br><span class="line">sudo btctl addif br0 eth0 eth1  <span class="comment"># 往网桥接口添加2块网卡</span></span><br><span class="line"><span class="comment"># sudo ifconfig eth0 down   # 把网卡down掉</span></span><br><span class="line">sudo ifconfig eth0 0.0.0.0 up    <span class="comment"># 2者的ip变没了</span></span><br><span class="line">sudo ifconfig eth1 0.0.0.0 up</span><br><span class="line">sudo ifconfig br0 1.1.1.1/24 up   <span class="comment"># 手动配置网桥网卡的ip并up</span></span><br><span class="line">sudo dhclient br0    <span class="comment"># 或者 dhcp自动获取网桥网卡的ip地址</span></span><br><span class="line">sudo route add default gw 1.1.1.10    <span class="comment"># 添加一个网关，就可以访问外网了</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>持久配置网桥：</strong><br>修改配置文件： <code>/etc/network/interfaces</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">iface eth0 inet manual</span><br><span class="line"></span><br><span class="line">auto eth1</span><br><span class="line">iface eth1 inet manual</span><br><span class="line"></span><br><span class="line">auto br0</span><br><span class="line">iface br0 inet dhcp   <span class="comment"># dncp  ， 也可以static，下面手动配置address，netmask和gateway</span></span><br><span class="line">bridge_ports eth0 eth1  <span class="comment"># 加入网卡</span></span><br><span class="line">bridge_stop off   <span class="comment">#关闭生成树 ,也可以 on开启成树，参与生成树计算</span></span><br></pre></td></tr></table></figure></p>
+<p>修改保存，然后 重启网络服务/重启服务器</p>
+<p><strong>查看网桥运行状态</strong><br><code>sudo brctl show</code><br><strong>查看mac情况</strong><br><code>sudo brctl showmacs br0</code><br><strong>查看生成树情况</strong><br><code>sudo brctl showstp br0</code></p>
+<h2 id="网卡绑定-经常使用"><a href="#网卡绑定-经常使用" class="headerlink" title="网卡绑定   (经常使用)"></a>网卡绑定   (经常使用)</h2><blockquote>
+<p>还记得小时候这段一把筷子的故事吗</p>
+</blockquote>
+<p>实现多块网卡的绑定，实现高可用、负载均衡、更大发挥能力</p>
+<h6 id="一些常用称呼："><a href="#一些常用称呼：" class="headerlink" title="一些常用称呼："></a>一些常用称呼：</h6><p>Bonding == Port Trunking == Link aggregation(链路聚合)  == Team</p>
+<h6 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h6><p>将多个物理网卡组合为一个逻辑网卡</p>
+<ul>
+<li>高可用、负载平衡、高吞吐量</li>
+</ul>
+<h4 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h4><p>在虚拟机做实验：先给虚拟机添加至少两块网卡<br>1.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">echo</span> bonding &gt;&gt; /etc/modules        <span class="comment"># 添加内核支持</span></span><br><span class="line">sudo modprobe bonding       <span class="comment"># 手动加载内核(临时)， modeprobe加载bonding</span></span><br><span class="line">ifconfig -a    <span class="comment"># 可以看到自动生成了一个bonding0的网卡(但是没有up)</span></span><br><span class="line">sudo systemctl stop networking     </span><br><span class="line"><span class="comment"># 永久配置，文件</span></span><br><span class="line"><span class="comment"># sudo vim /etc/network/interfaces</span></span><br><span class="line">bounding    <span class="comment"># 添加一个模块</span></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">sudo systemctl restart networking</span><br></pre></td></tr></table></figure></p>
+<p>2.配置网卡配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Mode 1 配置</span><br><span class="line"># sudo vim /etc/network/interfaces</span><br><span class="line">auto eth0 </span><br><span class="line">iface eth0 inet manual</span><br><span class="line">bond-master  bond0    # 绑定到哪个bound上</span><br><span class="line">bond-primary  eth0    # 默认做的主的网卡</span><br><span class="line"></span><br><span class="line">auto eth01</span><br><span class="line">iface eth01 inet manual</span><br><span class="line">bond-master  bond0      # 备的网卡，协商要绑定那个</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">auto bond0</span><br><span class="line">iface bond0 inet dhcp   # 让ip地址dhcp； 或者static 手动制定</span><br><span class="line">bond-mode   1    # 绑定模式   active-backup</span><br><span class="line">bond-miimon 100    # 故障检测间隔： 100ms</span><br><span class="line">bond-slaves none         # 指定作为的的成员的网卡, 这里写none是因为：加入在自己物理网卡片段里面写了</span><br><span class="line"></span><br><span class="line">--</span><br><span class="line"># 重启服务</span><br><span class="line">sudo systemctl restart networking</span><br></pre></td></tr></table></figure></p>
+<p>PS: 绑定模式<br>bound-mode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1     一个主，一个备(主的故障后才工作)  也叫： active-backup</span><br></pre></td></tr></table></figure></p>
+<h4 id="6种模式"><a href="#6种模式" class="headerlink" title="6种模式"></a>6种模式</h4><h6 id="Mode-0-：-round-robin-轮询"><a href="#Mode-0-：-round-robin-轮询" class="headerlink" title="Mode 0  ： round-robin(轮询)"></a>Mode 0  ： round-robin(轮询)</h6><ul>
+<li>网络流量（数据包） 顺序平均分配给Bond中所有物理网卡（可以同时使用三个网卡发送和接收数据）</li>
+<li>高可用（容错，一个坏了，另一个网卡接管）、负载均衡（多个网卡，单独是，就是拥有了多G的带宽）</li>
+</ul>
+<h6 id="Mode-1-ative-backup"><a href="#Mode-1-ative-backup" class="headerlink" title="Mode 1 : ative-backup"></a>Mode 1 : ative-backup</h6><ul>
+<li>Bond中只有一个网卡Active， 其他网卡全部Stanby（效率并不是很高）</li>
+<li>对外只有一个网卡的MAC地址可见</li>
+<li>高可用<br>实现不了负载均衡，有多个接口也没用</li>
+</ul>
+<h6 id="Mode-2-balance-XOR"><a href="#Mode-2-balance-XOR" class="headerlink" title="Mode 2:  balance-XOR"></a>Mode 2:  balance-XOR</h6><ul>
+<li>根据源目的MAC/IP/Port进行计算，确定从哪个网卡发出（性能优于Mode0）</li>
+<li>高可用，负载均衡</li>
+</ul>
+<p>（XOR — &gt; 异或）<br>只要不出现故障，不改变mac地址，第一次使用的第一个物理网卡进行的通信，以后所有的通信都是继续使用第一个物理网卡<br>流量不是平均的</p>
+<h6 id="Mode-3-broadcast"><a href="#Mode-3-broadcast" class="headerlink" title="Mode 3   broadcast"></a>Mode 3   broadcast</h6><ul>
+<li>发包广播给Bond中所有网卡，提供最短的故障恢复时间，应用连接不中断</li>
+<li>高可用</li>
+</ul>
+<h6 id="Mode-4-802-3ad（Dynamic-link-aggregation）"><a href="#Mode-4-802-3ad（Dynamic-link-aggregation）" class="headerlink" title="Mode 4   802.3ad（Dynamic link aggregation）"></a>Mode 4   802.3ad（Dynamic link aggregation）</h6><ul>
+<li>链路聚合LACP组内的网卡使用相同速率、双工设置</li>
+<li>要求：计算机安装ethtool；交换机支持IEEE802.3ad标准，并进行额外配置</li>
+<li>高可用、负载均衡</li>
+</ul>
+<h6 id="Mode-5-balance-tlb-（Adaptive-transmit-load-balancing）"><a href="#Mode-5-balance-tlb-（Adaptive-transmit-load-balancing）" class="headerlink" title="Mode 5    balance-tlb （Adaptive transmit load balancing）"></a>Mode 5    balance-tlb （Adaptive transmit load balancing）</h6><ul>
+<li>隧道绑定不需要上连交换机额外配置，根据网卡负载出站负载均衡</li>
+<li>高可用、负载均衡</li>
+</ul>
+<h6 id="Mode-6-balance-alb-Adaptive-load-balance"><a href="#Mode-6-balance-alb-Adaptive-load-balance" class="headerlink" title="Mode 6:   balance-alb (Adaptive load balance)"></a>Mode 6:   balance-alb (Adaptive load balance)</h6><ul>
+<li>Mode 5 + balance-rlb (入站流量负载均衡)<ul>
+<li>Bond驱动拦截本机的ARP响应包，使用不同网卡硬件MAC替换源MAC</li>
+<li>不同的对端使用不同的服务器MAC地址，实现入站负载均衡<ul>
+<li>不需要上连交换机额外配置</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="查看bond端口和状态"><a href="#查看bond端口和状态" class="headerlink" title="查看bond端口和状态"></a>查看bond端口和状态</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/net/bonding/bond0</span><br></pre></td></tr></table></figure>
+<h6 id="Model-4-配置"><a href="#Model-4-配置" class="headerlink" title="Model 4 配置"></a>Model 4 配置</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo vim /etc/network/interfaces</span></span><br><span class="line">auto eth0     <span class="comment"># 其他物理网卡配置项同</span></span><br><span class="line">iface eth0 inet manual</span><br><span class="line">bond-master  boud0    <span class="comment"># 绑定到哪个bound上</span></span><br><span class="line"></span><br><span class="line">auto bon</span><br><span class="line">d0</span><br><span class="line">iface bond0 inet dhcp   <span class="comment"># 让ip地址dhcp； 或者static 手动制定</span></span><br><span class="line">bond-mode 4    <span class="comment"># 绑定模式   active-backup</span></span><br><span class="line">bond-miimon 100    <span class="comment"># 故障检测间隔： 100ms</span></span><br><span class="line">bond-lacp-rate 1         <span class="comment"># 每1s发送LACPDU（默认为0，即30s）</span></span><br><span class="line">bond-slaves eth0 eth1         <span class="comment"># 指定作为的的成员的网卡</span></span><br></pre></td></tr></table></figure>
+<h2 id="DHCP服务"><a href="#DHCP服务" class="headerlink" title="DHCP服务"></a>DHCP服务</h2><p>通常给客户端自动分配IP地址</p>
+<h6 id="Dynamic-Host-Configuration-Protocol"><a href="#Dynamic-Host-Configuration-Protocol" class="headerlink" title="Dynamic Host Configuration Protocol"></a>Dynamic Host Configuration Protocol</h6><ul>
+<li>透明的配置网络参数</li>
+<li>IP/掩码、网关、DNS、域名、时间服务器、打印服务器(常用的参数是前三个)</li>
+<li>通过地址租约循环使用IP地址（有租约期，循环利用）</li>
+<li>基于UDP， 标准使用 端口： 67(服务端)，68(客户端)</li>
+</ul>
+<p>ps: 一般企业，dhcp都在核心交换机上，只有当企业网络非常大复杂时候，才会单独使用一个服务器来提供dhcp服务</p>
+<p><strong>请求和分配步骤：</strong><br>1.客户端发生第一个广播(二层，因为此时还没有ip)，数据包：<code>dhcp discover</code><br>2.dhcp服务器回复数据包<code>dhcp offer</code><br>3.客户端就再发一个广播包<code>dhcp request</code><br>4.服务器端发送数据包<code>ack</code>， 包含ip等参数，标记这个ip为已分配</p>
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>1.在vmware上，打开虚拟网络设置，以vmnet8为例，关闭vmware自带的dhcp服务（如果同时有两台dhcp服务:使用响应快的服务提供的ip），将这台虚拟机使用nat，<br>让其他虚拟机都使用这台虚拟机的dhcp服务，把这个虚拟机修改为静态ip, 修改配置文件<code>/etc/network/inertface</code>到vmnet8的网段，<code>sudo ip addr fulsh eth0</code>清除原来配置，重启网络服务</p>
+<p>2.安装dhcp服务的软件包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里用的isc的</span></span><br><span class="line">sudo apt install isc-dhcp-server</span><br></pre></td></tr></table></figure></p>
+<p>3.配置dhcp服务</p>
+<blockquote>
+<p>Note：能不安装的服务和软件就不要安装，反非必须，就不启用（缩小攻击面）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##1.先修改配置文件1</span></span><br><span class="line"><span class="comment">#sudo vim /etc/default/isc-dhcp-server   # 指定启动DHCP服务的网卡</span></span><br><span class="line">    INTERFACE=<span class="string">"eth0"</span>   <span class="comment"># 要启动shcp的网卡name(一般是针对内网的那一块网卡)，可以多个网卡（空格隔开）</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">##2.再修改主配置文件（指定地址池和选项） </span></span><br><span class="line"><span class="comment">#sudo vim /etc/dhcp/dhcpd.conf       </span></span><br><span class="line"><span class="comment">#option只对dhcp的作用域起效；其他的很对整个服务器起效</span></span><br><span class="line"><span class="comment">#一致的配置写在文件起始位置，其他的个性的单独设置在各个网段的位置</span></span><br><span class="line">default-lease-time 600;  <span class="comment">#租约期限， 单位：s</span></span><br><span class="line">max-lease-time 7200;  <span class="comment">#最大租约期限(到达时间的一半，就刷新使用期；如果到达最大时间，就重新通过dhcp获取)</span></span><br><span class="line">authoritative;   <span class="comment">#启用之后，证明这个是权威的授权dhcp服务器（一般情况下，网络中如果出现其他的dhcp就不会影响了）</span></span><br><span class="line"><span class="comment">#配置地址池(可以手动写，也可以在原注释的基础上配置) 网段</span></span><br><span class="line">subnet 10.1.8.0 netmask 255.255.255.0 &#123;</span><br><span class="line">    range 10.1.8.100 10.1.8.200;   <span class="comment">#可分配的地址段</span></span><br><span class="line">    option routers 10.1.8.1;  <span class="comment">#网关地址</span></span><br><span class="line">    option domain-name-servers 192.168.1.1,192.168.1.2;  <span class="comment">#dns服务器地址，多个用逗号隔开; 一般配到这里就够了</span></span><br><span class="line">    option ntp-server 1.1.1.1;     <span class="comment">#时间服务器</span></span><br><span class="line">    option domain-name <span class="string">"local.lan"</span>;   <span class="comment">#统一的域名</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">##3.重启服务</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#客户端一些操作</span></span><br><span class="line">ipconfig /all</span><br><span class="line">ipconfig /release   <span class="comment"># 释放这个ip</span></span><br><span class="line">ipconfig /renew    <span class="comment">#重新获取ip</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>3.特殊情况(指定某个ip只分配给某台计算机，IP保留)</p>
+<blockquote>
+<p>通过MAC地址来识别<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#sudo vim /etc/dhcp/dhcpd.conf       </span></span><br><span class="line"></span><br><span class="line">host yourname &#123;</span><br><span class="line">    hardware ethernet 00:11:22:33:44:55;</span><br><span class="line">    fixed-address 10.1.8.8;   <span class="comment">#尽量用上面地址池以外的地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#保存，重启</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h6 id="日常的维护"><a href="#日常的维护" class="headerlink" title="日常的维护"></a>日常的维护</h6><p>日志与状态查询<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#服务器地址租约结果（可查看分发详细信息）</span></span><br><span class="line">cat /var/lib/dhcp/dhcpd.leases</span><br><span class="line"><span class="comment">#系统日志文件(客户端直接关机不会记录，release的时候会记录)</span></span><br><span class="line">tail -f /var/<span class="built_in">log</span>/syslog</span><br><span class="line"><span class="comment">#查看服务运行状态</span></span><br><span class="line">systemctl status isc-dhcp-server.service</span><br><span class="line"><span class="comment">#客户端来查看获得地址历史(客户端是Linux时)</span></span><br><span class="line">less /var/lib/dhcp/dhcpd.leases</span><br></pre></td></tr></table></figure></p>
+<h2 id="NTP服务-（网络时间协议）"><a href="#NTP服务-（网络时间协议）" class="headerlink" title="NTP服务 （网络时间协议）"></a>NTP服务 （网络时间协议）</h2><blockquote>
+<p>时间都去哪了</p>
+</blockquote>
+<p><img src="/ubuntu server-网络相关知识/20200308150835487_32007.png"></p>
+<p><strong>时间表准：</strong></p>
+<ul>
+<li>GMT：格林威治标准时间</li>
+<li>UTC：世界协调时间</li>
+<li>CST：China Standard Time UT+8:00</li>
+</ul>
+<p><img src="/ubuntu server-网络相关知识/20200308153026228_153.png"></p>
+<h4 id="NTP协议"><a href="#NTP协议" class="headerlink" title="NTP协议"></a>NTP协议</h4><p><img src="/ubuntu server-网络相关知识/20200308154004613_29225.png"></p>
+<h6 id="NTP客户端"><a href="#NTP客户端" class="headerlink" title="NTP客户端"></a>NTP客户端</h6><ul>
+<li>客户端程序从时间服务器同步时间</li>
+<li>系统启动时自动同步时间</li>
+<li>网口激活时自动同步运行</li>
+<li>手动同步时间</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新版系统，查看客户端时间</span></span><br><span class="line">timedatectl</span><br><span class="line"></span><br><span class="line"><span class="comment"># RTC时间：硬件时间</span></span><br></pre></td></tr></table></figure>
+<p>新版系统使用<code>timesyncd</code>客户端同步时间<br>向这个域名请求：ntp.ubuntu.com</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">timedatectrl list-timezones   <span class="comment">#列出所有时区</span></span><br><span class="line">timedatectrl <span class="built_in">set</span>-timezone    <span class="comment">#设置时区</span></span><br><span class="line">timedatectrl <span class="built_in">set</span>-time <span class="string">"2019-10-01 18:18:18"</span> <span class="comment">#设置系统时间</span></span><br><span class="line"></span><br><span class="line">timedatectl <span class="built_in">set</span>-ntp <span class="literal">true</span>  <span class="comment">#开始网络同步</span></span><br><span class="line">systemctl status systemd-timesyncd.service  <span class="comment"># 查看时间服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 硬件时间(RTC)与UTC时间同步</span></span><br><span class="line">sudo hwclock -w   <span class="comment"># 将系统时间写入到RTC时间</span></span><br><span class="line">sudo hwlock -s     <span class="comment"># 将硬件</span></span><br><span class="line">hwclock --<span class="built_in">set</span> --date=<span class="string">'2019-10-01 18:18:18'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件</span></span><br><span class="line">/etc/systemd/timesyncd.conf</span><br></pre></td></tr></table></figure>
+<h6 id="一个过时的东西-ntpdate"><a href="#一个过时的东西-ntpdate" class="headerlink" title="一个过时的东西(ntpdate)"></a>一个过时的东西(ntpdate)</h6><p><img src="/ubuntu server-网络相关知识/20200308170606501_6440.png"><br>新版本系统使用<code>timesyncd</code>替换<code>ntpd</code>的客户端功能<br>一旦安装了ntpdate / ntp,   timedatectrl将被禁用</p>
+<h6 id="ntpd-–-客户端-服务器"><a href="#ntpd-–-客户端-服务器" class="headerlink" title="ntpd – 客户端+服务器"></a>ntpd – 客户端+服务器</h6><blockquote>
+<p>把机器设置成时间服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">apt install ntp  <span class="comment"># 安装ntp服务</span></span><br><span class="line">systemctl start ntp  <span class="comment"># 启动服务(123端口就被打开了)</span></span><br><span class="line">systemctl status ntp  <span class="comment"># 查询服务状态</span></span><br><span class="line">systemctl restart ntp  <span class="comment"># 重启服务</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##配置文件（我也要跟上一级的时间服务器同步）</span></span><br><span class="line">vim /etc/ntp.conf</span><br><span class="line"><span class="comment">#如果不使用官方的时间服务器，可以自己指定</span></span><br><span class="line">server 1.1.1.1</span><br><span class="line"><span class="comment">#首选网络时间服务器不可用的时候，使用本机始终作为备用时间源</span></span><br><span class="line">fudge 127.127.1.1 startum 10  <span class="comment"># 层级设置低点( startum 10, 这里设置为10层)</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>配置文件中，主要的时间服务器如下<br><img src="/ubuntu server-网络相关知识/20200308171832987_9157.png"></p>
+<h6 id="命令-ntpq-–-ntp服务端的查询命令"><a href="#命令-ntpq-–-ntp服务端的查询命令" class="headerlink" title="命令: ntpq – ntp服务端的查询命令"></a>命令: ntpq – ntp服务端的查询命令</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ntpq -p   </span><br><span class="line"><span class="comment">#命令执行结果详解如下图：</span></span><br></pre></td></tr></table></figure>
+<p><img src="/ubuntu server-网络相关知识/20200308172254102_12604.png"><br>每行前面第一个字符含义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">空  表示无效主机</span><br><span class="line">x   已不再使用</span><br><span class="line">-   已不再使用</span><br><span class="line">#   状态良好但为使用</span><br><span class="line">+   良好且优先使用</span><br><span class="line">*   首选主同步主机    （一般是startum层级最高的）</span><br></pre></td></tr></table></figure>
+<h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看日期</span></span><br><span class="line">date</span><br><span class="line"><span class="comment">#设置</span></span><br><span class="line">date --<span class="built_in">set</span> 1998-11-11  <span class="comment">#手动设置日期（要通过 sudo timedatectl set-ntp 0 来关掉ntp）</span></span><br><span class="line">date --<span class="built_in">set</span> 21:21:21    <span class="comment">#设置时间</span></span><br><span class="line"></span><br><span class="line">cat /etc/timezone      <span class="comment">#查看时区</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你觉得这篇文章还满意的话，请我喝杯咖啡喝吧^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="浮生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="浮生 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    浮生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.xpshuai.cn/ubuntu server-网络相关知识/" title="ubuntu server-网络相关知识">http://www.xpshuai.cn/ubuntu server-网络相关知识/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"> <i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/ubuntu/" rel="tag"> <i class="fa fa-tag"></i> ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/内网渗透/" rel="next" title="内网渗透">
+                <i class="fa fa-chevron-left"></i> 内网渗透
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="浮生">
+            
+              <p class="site-author-name" itemprop="name">浮生</p>
+              <p class="site-description motion-element" itemprop="description">侠之大者，为国为民</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shuai06" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_37622608" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          <div id="music163player">
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=247172&auto=0&height=32"></iframe>
+          </div>
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://muyuuuu.github.io/" title="兰铃" target="_blank">兰铃</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://luxiancao.github.io/" title="林深时见鹿衔草" target="_blank">林深时见鹿衔草</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.aigisss.com/" title="aigisss" target="_blank">aigisss</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.blts.xyz/" title="帅气小学弟" target="_blank">帅气小学弟</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络原理"><span class="nav-number">1.</span> <span class="nav-text">网络原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网卡配置"><span class="nav-number">2.</span> <span class="nav-text">网卡配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#网卡接口"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">网卡接口</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#管理网卡"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">管理网卡</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#网络基本设置"><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">网络基本设置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#网卡配置文件"><span class="nav-number">2.0.0.0.4.</span> <span class="nav-text">网卡配置文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#动态获取IP地址"><span class="nav-number">2.0.0.0.5.</span> <span class="nav-text">动态获取IP地址</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#静态IP地址"><span class="nav-number">2.0.0.0.6.</span> <span class="nav-text">静态IP地址</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS配置"><span class="nav-number">3.</span> <span class="nav-text">DNS配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#DNS配置文件"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">DNS配置文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#主机名解析"><span class="nav-number">3.0.0.0.2.</span> <span class="nav-text">主机名解析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#查看路由"><span class="nav-number">3.0.0.0.3.</span> <span class="nav-text">查看路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网桥配置"><span class="nav-number">4.</span> <span class="nav-text">网桥配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#在ubunut搭建网桥"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">在ubunut搭建网桥</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网卡绑定-经常使用"><span class="nav-number">5.</span> <span class="nav-text">网卡绑定   (经常使用)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一些常用称呼："><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">一些常用称呼：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#目的："><span class="nav-number">5.0.0.0.2.</span> <span class="nav-text">目的：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置："><span class="nav-number">5.0.1.</span> <span class="nav-text">配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6种模式"><span class="nav-number">5.0.2.</span> <span class="nav-text">6种模式</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Mode-0-：-round-robin-轮询"><span class="nav-number">5.0.2.0.1.</span> <span class="nav-text">Mode 0  ： round-robin(轮询)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Mode-1-ative-backup"><span class="nav-number">5.0.2.0.2.</span> <span class="nav-text">Mode 1 : ative-backup</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Mode-2-balance-XOR"><span class="nav-number">5.0.2.0.3.</span> <span class="nav-text">Mode 2:  balance-XOR</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Mode-3-broadcast"><span class="nav-number">5.0.2.0.4.</span> <span class="nav-text">Mode 3   broadcast</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Mode-4-802-3ad（Dynamic-link-aggregation）"><span class="nav-number">5.0.2.0.5.</span> <span class="nav-text">Mode 4   802.3ad（Dynamic link aggregation）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Mode-5-balance-tlb-（Adaptive-transmit-load-balancing）"><span class="nav-number">5.0.2.0.6.</span> <span class="nav-text">Mode 5    balance-tlb （Adaptive transmit load balancing）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Mode-6-balance-alb-Adaptive-load-balance"><span class="nav-number">5.0.2.0.7.</span> <span class="nav-text">Mode 6:   balance-alb (Adaptive load balance)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#查看bond端口和状态"><span class="nav-number">5.0.2.0.8.</span> <span class="nav-text">查看bond端口和状态</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Model-4-配置"><span class="nav-number">5.0.2.0.9.</span> <span class="nav-text">Model 4 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DHCP服务"><span class="nav-number">6.</span> <span class="nav-text">DHCP服务</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Dynamic-Host-Configuration-Protocol"><span class="nav-number">6.0.0.0.1.</span> <span class="nav-text">Dynamic Host Configuration Protocol</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装"><span class="nav-number">6.0.0.0.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#日常的维护"><span class="nav-number">6.0.0.0.3.</span> <span class="nav-text">日常的维护</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NTP服务-（网络时间协议）"><span class="nav-number">7.</span> <span class="nav-text">NTP服务 （网络时间协议）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NTP协议"><span class="nav-number">7.0.1.</span> <span class="nav-text">NTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#NTP客户端"><span class="nav-number">7.0.1.0.1.</span> <span class="nav-text">NTP客户端</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一个过时的东西-ntpdate"><span class="nav-number">7.0.1.0.2.</span> <span class="nav-text">一个过时的东西(ntpdate)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ntpd-–-客户端-服务器"><span class="nav-number">7.0.1.0.3.</span> <span class="nav-text">ntpd – 客户端+服务器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#命令-ntpq-–-ntp服务端的查询命令"><span class="nav-number">7.0.1.0.4.</span> <span class="nav-text">命令: ntpq – ntp服务端的查询命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其他命令"><span class="nav-number">7.0.1.0.5.</span> <span class="nav-text">其他命令</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">  <i class="fa fa-heart"></i>   </span>
+  <span class="author" itemprop="copyrightHolder">浮生</span> |
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+</div>
+
+
+
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,04,20,15,00,00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 博客已健康运行"+ diffYears+" 年 "+ diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+<span id="sitetime"></span>
+
+<div class="BbeiAn-info">
+    冀ICP备 -
+    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="nofollow">18027796-1</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src https: busuanzi.ibruce.info busuanzi 2.3 busuanzi.pure.mini.js""></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zlxLDm8dLo0s1Vz10PEvfuNh-gzGzoHsz',
+        appKey: 'UAKrQBSOGPavRUKC9ztdFBLK',
+        placeholder: '来来来，发言啦',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- canvas曲线 -->
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</body>
+</html>
