@@ -129,7 +129,7 @@
 <meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308170606501_6440.png">
 <meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308171832987_9157.png">
 <meta property="og:image" content="http://www.xpshuai.cn/ubuntu%20server-网络相关知识/20200308172254102_12604.png">
-<meta property="og:updated_time" content="2020-03-08T10:02:41.195Z">
+<meta property="og:updated_time" content="2020-03-08T10:15:45.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu server-网络相关知识">
 <meta name="twitter:description" content="网络原理 ping 127.0.0.1 如果能通，说明本机的TCP/IP协议已经配置成功啦arping 网卡配置网卡接口-enp2s0 (最近使用)、eth0   （以前这么使用） 1234567891011121314#wl 开头的是无线网卡# ifconfig 命令# 查看所有网卡ifconfig -a    字段意义：MTU,发包，收包，`collisions`发生多少次冲突# ip 命令">
@@ -495,7 +495,7 @@
       
 
       
-        <h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><p><img src="/ubuntu server-网络相关知识/20200214100233476_240785919.png"></p>
+        <h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><p><img src="/ubuntu server-网络相关知识/20200214100233476_240785919.png" alt></p>
 <p><code>ping 127.0.0.1</code> 如果能通，说明本机的TCP/IP协议已经配置成功啦<br><code>arping</code></p>
 <h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><h6 id="网卡接口"><a href="#网卡接口" class="headerlink" title="网卡接口"></a>网卡接口</h6><p>-enp2s0 (最近使用)、eth0   （以前这么使用）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#wl 开头的是无线网卡</span><br><span class="line"></span><br><span class="line"># ifconfig 命令</span><br><span class="line"># 查看所有网卡</span><br><span class="line">ifconfig -a</span><br><span class="line">    字段意义：MTU,发包，收包，`collisions`发生多少次冲突</span><br><span class="line"></span><br><span class="line"># ip 命令</span><br><span class="line"> ip link     # 查看所有网卡和信息</span><br><span class="line"> ip address</span><br><span class="line"></span><br><span class="line"># lshw   查看系统硬件命令</span><br><span class="line"># 只查看网卡的命令</span><br><span class="line">sudo lshw -class network</span><br></pre></td></tr></table></figure>
