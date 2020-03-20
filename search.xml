@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[查找域控的几个常用方法]]></title>
+    <url>%2F%E6%9F%A5%E6%89%BE%E5%9F%9F%E6%8E%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[查找域控的几个常用方法1.net view 1net view /domain 2.set log 1set log 3.通过srv记录 1nslookup -type=SRV _ldap._tcp.corp 4.使用nltest 1nltest /dclist:corp 5.使用dsquery 1DsQuery Server -domain corp 6.使用netdom 1netdom query pdc]]></content>
+      <categories>
+        <category>渗透测试</category>
+      </categories>
+      <tags>
+        <tag>渗透测试</tag>
+        <tag>域控</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux找出最近或者今天被修改的文件]]></title>
     <url>%2FLinux%E6%89%BE%E5%87%BA%E6%9C%80%E8%BF%91%E6%88%96%E8%80%85%E4%BB%8A%E5%A4%A9%E8%A2%AB%E4%BF%AE%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[参考：http://www.hackdig.com/01/hack-42547.htm 0x01 列出某个目录下今天创建或者修改的文件1 显示目录home/ym下，今天创建或者修改的文件ls -al --time-style=+%D | grep &#39;date +%D&#39; 参数解释： 1234567-a - 列出所有文件，包括隐藏文件-l - 启用长列表格式--time-style=FORMAT - 显示指定 FORMAT 的时间+％D - 以 ％m/％d/％y （月/日/年）格式显示或使用日期-a - 列出所有文件，包括隐藏文件-l - 启用长列表格式--time-style=FORMAT - 显示指定 FORMAT 的时间+％D - 以 ％m/％d/％y （月/日/年）格式显示或使用日期 2 按字母顺序对结果排序显示ls -alX --time-style=+%D | grep &#39;date +%D&#39; 3 按文件大小从大到小对结果排序显示ls -alS --time-style=+%D | grep &#39;date +%D&#39; 0x02 列出某天所有被修改文件1 列出当前目录今天被修改的文件find . -maxdepth 1 -newermt &quot;2017-1-8&quot; find . -maxdepth 1 -newermt &quot;1/8/2017&quot; 2 列出系统中今天被修改的所有文件find . -newermt &quot;2017-1-8&quot; find . -newermt &quot;1/8/2017&quot; 0x03 查找被访问过的文件1 今天被访问的文件find /home -atime 0 #查看home 目录下今天被访问的文件 2 查看几天之内被访问的文件find . -atime +2 # -atime n, File was last accessed n*24 hours ago.；查看当前目录三天之内被访问的文件 0x04 查看被修改过的文件1 今天被访问的文件find /home -ctime 0 #查看home 目录下今天被修改过的文件 2 查看几天之内被访问的文件find . -ctime +2 # -ctime n, File was last changed n*24 hours ago.；查看当前目录三天之内被修改过的文件 0x05 更多查看文件的用法… …]]></content>
@@ -732,8 +744,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
         <tag>数据库</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -767,8 +779,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
         <tag>数据库</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -779,8 +791,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>MongoDB</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -858,6 +870,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[ArcgisEngine实现地图浏览]]></title>
+    <url>%2FArcEngine%E5%9C%B0%E5%9B%BE%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[全图12345private void FullExtentTSButton_Click(object sender, EventArgs e) &#123; mainMapControl.Extent = mainMapControl.FullExtent; &#125; 等比例放大123456789private void btnZoomInStep_Click(object sender, EventArgs e)&#123; IEnvelope pEnvelope; pEnvelope = mainMapControl.Extent; pEnvelope.Expand(0.5, 0.5, true); //放大2倍 mainMapControl.Extent = pEnvelope; mainMapControl.ActiveView.Refresh();&#125; 等比例缩小1234567891011121314151617181920private void btnZoomIOutStep_Click(object sender, EventArgs e)&#123; IActiveView pActiveView = mainMapControl.ActiveView; IPoint centerPoint = new PointClass(); centerPoint.PutCoords((pActiveView.Extent.XMin + pActiveView.Extent.XMax) / 2, (pActiveView.Extent.YMax + pActiveView.Extent.YMin) / 2); IEnvelope envlop = pActiveView.Extent; envlop.Expand(1.5, 1.5, true); //与放大的区别在于Expand的参数不同 pActiveView.Extent.CenterAt(centerPoint); pActiveView.Extent = envlop; pActiveView.Refresh(); //如果觉得乱的话，直接修改放大的参数也将就可以 非万不得已不用 //IEnvelope pEnvelope; //pEnvelope = mainMapControl.Extent; //pEnvelope.Expand(1.5, 1.5, true); //放大2倍 //mainMapControl.Extent = pEnvelope; //mainMapControl.ActiveView.Refresh();&#125; 上一视图123456789101112131415161718// 定义全局变量IExtentStack pExtentStack;private void PreViewTSButton_Click(object sender, EventArgs e)&#123; pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到前一视图，第一个视图没有前视图 if (pExtentStack.CanUndo()) &#123; pExtentStack.Undo(); //撤销到上一视图范围 NextViewTSButton.Enabled = true; //后一视图可以使用 if (!pExtentStack.CanUndo()) &#123; PreViewTSButton.Enabled = false; //前一视图不能使用 &#125; &#125; mainMapControl.ActiveView.Refresh();&#125; 下一视图12345678910111213141516private void NextViewTSButton_Click(object sender, EventArgs e)&#123; pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到后一视图，最后一个视图没有后一视图 if (pExtentStack.CanRedo()) //如果可以重做下一视图 &#123; pExtentStack.Redo(); //重做到下一视图 PreViewTSButton.Enabled = true; //上一视图按钮可以使用 if (!pExtentStack.CanRedo()) //如果不可以重做下一视图 &#123; NextViewTSButton.Enabled = false; //下一视图不能用 &#125; &#125; mainMapControl.ActiveView.Refresh();&#125;]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcEngine</tag>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ArcEngine初识 -- 打开地图]]></title>
     <url>%2FArcgisEngine%20%E6%89%93%E5%BC%80%E6%96%87%E6%A1%A3%2F</url>
     <content type="text"><![CDATA[一句代码 创建winform程序 必须要添加12341. ```TOCControl```视图控件 =&gt; 属性,设置关联属性绑定(Buddy)到地图控件上1. ```ToolbalControl```工具条控件 伙伴控价 =&gt; 设置关联属性绑定到地图控件上1. ```MapControl```地图控件 也可以设置属性设置默认打开的地图1. 引用```ESRI.ArcGIS.Version 在主程序代码中加入： 123//在窗口加载前添加 绑定产品码// 注意是 program.cs文件 ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop); 才能正常运行 常见的AE控价 PageLayoutControl 布局视图 TOOControl 内容列表 MapControl 数据视图 打开地图文档F1 自己写的12345678910111213141516171819202122232425262728293031323334353637//打开mxd文档 F1 try &#123; //实例化一个对象 OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = "地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt";|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf"/文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; // 存储打开的文件路径 //判断如果文件正常打开 if (open.ShowDialog() == DialogResult.OK) &#123; // 获取文件路径 path+name string fileName = open.FileName; // 数据窗口加载地图文档 axMapControl1.LoadMxFile(fileName); // 刷新一下页面 axMapControl1.ActiveView.Refresh(); // 伙伴控件可以通过下面的方式来进行绑定 axTOCControl1.SetBuddyControl(axMapControl1); &#125; &#125; catch(Exception) &#123; MessageBox.Show("请打开正确的文档!", "提醒", MessageBoxButtons.OK, MessageBoxIcon.Information); &#125; &#125; F2 使用IMapControl接口的LoadMxFile方法123456789101112131415161718192021222324252627282930313233OpenFileDialog open = new OpenFileDialog();//设置参数//检查文件是否存在open.CheckFileExists = true;open.Title = "打开地图文档";// 不允许多个文件同时打开open.Multiselect = false;// 存储时打开的文件路径open.RestoreDirectory = true;//打开文件格式open.Filter = "地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt;|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf";//文件过滤条件open.Multiselect = false;//禁止多选open.RestoreDirectory = true; // 存储打开的文件路径open.ShowDialog();//文件名string fileName = open.FileName;if (fileName == "")&#123; return;&#125;//检查地图文档有效性if (mainMapControl.CheckMxFile(fileName))&#123; mainMapControl.LoadMxFile(fileName); mainMapControl.ActiveView.Refresh();&#125;else&#123; MessageBox.Show(fileName + "是无效的地图文档!", "信息提示"); return;&#125; F3 使用IMapDocument接口123456789101112131415161718192021222324252627// using ESRI.ArcGIS.Carto; OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = @"地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt;|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf";//文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; //打开窗口 open.ShowDialog(); // 存储打开的文件路径 string fileName = open.FileName; if (mainMapControl.CheckMxFile(fileName)) &#123; //将数据载入pMapDocument并与Map控件关联 IMapDocument pMapDocument = new MapDocument(); // using ESRI.ArcGIS.Carto; pMapDocument.Open(fileName, ""); //获取Map地图中激活的地图文档 mainMapControl.Map = pMapDocument.ActiveView.FocusMap; mainMapControl.ActiveView.Refresh(); &#125; F4 使用ControlsOpenDocCommandClass类库资源 =》 适合比赛用12345//using ESRI.ArcGIS.Controls; ICommand command = new ControlsOpenDocCommandClass(); //using ESRI.ArcGIS.Controls; command.OnCreate(mainMapControl.Object); command.OnClick(); mainTOCControl.SetBuddyControl(mainMapControl); 待改进之处： 窗口的大小以及出现的位置，美化 Form的name随着文档的名字改变]]></content>
@@ -870,9 +894,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ArcgisEngine实现地图浏览]]></title>
-    <url>%2FArcEngine%E5%9C%B0%E5%9B%BE%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[全图12345private void FullExtentTSButton_Click(object sender, EventArgs e) &#123; mainMapControl.Extent = mainMapControl.FullExtent; &#125; 等比例放大123456789private void btnZoomInStep_Click(object sender, EventArgs e)&#123; IEnvelope pEnvelope; pEnvelope = mainMapControl.Extent; pEnvelope.Expand(0.5, 0.5, true); //放大2倍 mainMapControl.Extent = pEnvelope; mainMapControl.ActiveView.Refresh();&#125; 等比例缩小1234567891011121314151617181920private void btnZoomIOutStep_Click(object sender, EventArgs e)&#123; IActiveView pActiveView = mainMapControl.ActiveView; IPoint centerPoint = new PointClass(); centerPoint.PutCoords((pActiveView.Extent.XMin + pActiveView.Extent.XMax) / 2, (pActiveView.Extent.YMax + pActiveView.Extent.YMin) / 2); IEnvelope envlop = pActiveView.Extent; envlop.Expand(1.5, 1.5, true); //与放大的区别在于Expand的参数不同 pActiveView.Extent.CenterAt(centerPoint); pActiveView.Extent = envlop; pActiveView.Refresh(); //如果觉得乱的话，直接修改放大的参数也将就可以 非万不得已不用 //IEnvelope pEnvelope; //pEnvelope = mainMapControl.Extent; //pEnvelope.Expand(1.5, 1.5, true); //放大2倍 //mainMapControl.Extent = pEnvelope; //mainMapControl.ActiveView.Refresh();&#125; 上一视图123456789101112131415161718// 定义全局变量IExtentStack pExtentStack;private void PreViewTSButton_Click(object sender, EventArgs e)&#123; pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到前一视图，第一个视图没有前视图 if (pExtentStack.CanUndo()) &#123; pExtentStack.Undo(); //撤销到上一视图范围 NextViewTSButton.Enabled = true; //后一视图可以使用 if (!pExtentStack.CanUndo()) &#123; PreViewTSButton.Enabled = false; //前一视图不能使用 &#125; &#125; mainMapControl.ActiveView.Refresh();&#125; 下一视图12345678910111213141516private void NextViewTSButton_Click(object sender, EventArgs e)&#123; pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到后一视图，最后一个视图没有后一视图 if (pExtentStack.CanRedo()) //如果可以重做下一视图 &#123; pExtentStack.Redo(); //重做到下一视图 PreViewTSButton.Enabled = true; //上一视图按钮可以使用 if (!pExtentStack.CanRedo()) //如果不可以重做下一视图 &#123; NextViewTSButton.Enabled = false; //下一视图不能用 &#125; &#125; mainMapControl.ActiveView.Refresh();&#125;]]></content>
+    <title><![CDATA[ArcEngine同步数据视图与布局视图]]></title>
+    <url>%2FArcgisEngine%20%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE%E4%B8%8E%E5%B8%83%E5%B1%80%E8%A7%86%E5%9B%BE%E7%9A%84%E5%90%8C%E6%AD%A5%2F</url>
+    <content type="text"><![CDATA[12345678910// 数据视图与布局视图同步private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_OnAfterScreenDrawEvent e)&#123; IActiveView pActiveView = (IActiveView)mainPageLayoutControl1.ActiveView.FocusMap; IDisplayTransformation displayTransformation = pActiveView.ScreenDisplay.DisplayTransformation; displayTransformation.VisibleBounds = mainMapControl.Extent; mainPageLayoutControl1.ActiveView.Refresh(); CopyToPageLayout(); // 调用下面的函数&#125; 1234567891011// CopyToPageLayout() 布局视图与数据视图同步private void CopyToPageLayout()&#123; IObjectCopy pObjectCopy = new ObjectCopyClass(); object copyFromMap = mainMapControl.Map; object copiedMap = pObjectCopy.Copy(copyFromMap); // 复制地图到copiedMap中 object copyToMap = mainPageLayoutControl1.ActiveView.FocusMap; pObjectCopy.Overwrite(copiedMap, ref copyToMap); // 复制地图 mainPageLayoutControl1.ActiveView.Refresh();&#125;]]></content>
       <categories>
         <category>GIS</category>
       </categories>
@@ -907,18 +931,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ArcEngine同步数据视图与布局视图]]></title>
-    <url>%2FArcgisEngine%20%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE%E4%B8%8E%E5%B8%83%E5%B1%80%E8%A7%86%E5%9B%BE%E7%9A%84%E5%90%8C%E6%AD%A5%2F</url>
-    <content type="text"><![CDATA[12345678910// 数据视图与布局视图同步private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_OnAfterScreenDrawEvent e)&#123; IActiveView pActiveView = (IActiveView)mainPageLayoutControl1.ActiveView.FocusMap; IDisplayTransformation displayTransformation = pActiveView.ScreenDisplay.DisplayTransformation; displayTransformation.VisibleBounds = mainMapControl.Extent; mainPageLayoutControl1.ActiveView.Refresh(); CopyToPageLayout(); // 调用下面的函数&#125; 1234567891011// CopyToPageLayout() 布局视图与数据视图同步private void CopyToPageLayout()&#123; IObjectCopy pObjectCopy = new ObjectCopyClass(); object copyFromMap = mainMapControl.Map; object copiedMap = pObjectCopy.Copy(copyFromMap); // 复制地图到copiedMap中 object copyToMap = mainPageLayoutControl1.ActiveView.FocusMap; pObjectCopy.Overwrite(copiedMap, ref copyToMap); // 复制地图 mainPageLayoutControl1.ActiveView.Refresh();&#125;]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ArcEngine</tag>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[MongoDB初试及基本操作]]></title>
     <url>%2FMongoDB%E5%88%9D%E8%AF%86%E5%8F%8A%E5%BA%93%E7%BA%A7%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[#### 分布式： 一个任务分成多个子任务完成 （副手） 集群：一个任务由多态服务器同时服务 大数据 文档结构，海量数据，大容量存储，高校存储大量二进制文件 场景： 1.需要不断扩容； 2.新应用，需求会变，数据模型无法确定； 3.高可用（不宕机） 4.需要整合多个外部数据源 SQL术语 MongoDB术语 解释说明 database database 数据库 table collection 数据库表/集合 row document 数据记录行/文档 column field 字段/域 index index 索引 table joins 表连接，MongoDB不支持 primary key primary key 主键，MongoDB自动将_id字段设置为主键 文档：就是一个对象，由键值对构成，是json的一种扩展 Bson形式 字段(域)之间可以是不同类型: {‘book’:’xxx’, ‘hero’:’yyy’}` {&#39;name&#39;:&#39;sjz&#39;, &#39;age&#39;:18} 下载完成后，将可执行文件添加到PATH路径中 export PATH=/user/local/mondodb/bin:$PATH 服务端mongod 配置文件位置 etc/mongod.conf 默认端口 27017 查看端口： 1ss -tnl 数据库服务启动/停止/重启 1sudo service mongodb start/stop/restart 查看状态： 1sudo service mongodb status 客户端启动 1mongo 连接mongodb: 1234# 进入mongo # 退出exit 或者 ctrl + c 或 quit() 数据库级操作：1.查看所有数据库 1show dbs 2.创建数据库 123use mydb# 创建之后，如果不插入数据的话， show dbs是看不到刚建立的数据库的 3.显示当前数据库 1db 4.删除数据库 1db.dropDatabase() # 注意大小写]]></content>
@@ -926,8 +938,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>MongoDB</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
