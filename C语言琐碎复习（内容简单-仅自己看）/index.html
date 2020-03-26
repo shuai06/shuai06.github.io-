@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+  <meta name="baidu-site-verification" content="d5sacIPNJl">
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/wenwu.jpg?v=5.1.4" color="#fff">
+
+
+
+
+
+  <meta name="keywords" content="C语言,琐碎复习,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="偷得浮生半日闲" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="由于好久时间不看C了，好多东西都忘了 本文是跟着郝斌老师的视频做的随堂笔记，课下也没做整理，并不成系统，只是一些简单堆叠，且编码规范都没有，看看就好哈哈  字符串12345678910111213141516171819202122232425262728293031323334353637383940char greeting[6] = &amp;#123;&apos;H&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o">
+<meta name="keywords" content="C语言,琐碎复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言琐碎复习（内容简单,仅自己看）">
+<meta property="og:url" content="http://www.xpshuai.cn/C语言琐碎复习（内容简单-仅自己看）/index.html">
+<meta property="og:site_name" content="偷得浮生半日闲">
+<meta property="og:description" content="由于好久时间不看C了，好多东西都忘了 本文是跟着郝斌老师的视频做的随堂笔记，课下也没做整理，并不成系统，只是一些简单堆叠，且编码规范都没有，看看就好哈哈  字符串12345678910111213141516171819202122232425262728293031323334353637383940char greeting[6] = &amp;#123;&apos;H&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-26T04:44:54.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C语言琐碎复习（内容简单,仅自己看）">
+<meta name="twitter:description" content="由于好久时间不看C了，好多东西都忘了 本文是跟着郝斌老师的视频做的随堂笔记，课下也没做整理，并不成系统，只是一些简单堆叠，且编码规范都没有，看看就好哈哈  字符串12345678910111213141516171819202122232425262728293031323334353637383940char greeting[6] = &amp;#123;&apos;H&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.xpshuai.cn/C语言琐碎复习（内容简单-仅自己看）/">
+
+
+
+
+
+  <title>C语言琐碎复习（内容简单,仅自己看） | 偷得浮生半日闲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">偷得浮生半日闲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再偷浮生两吊钱</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            我的主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            文章标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            文章分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档时光
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br>
+            
+            记录美好生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于作者
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索本站
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+<!-- tq -->
+<script type="text/javascript">WIDGET = {FID: 'a5qxJi5vKF'}</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/C语言琐碎复习（内容简单-仅自己看）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="浮生">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="偷得浮生半日闲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C语言琐碎复习（内容简单,仅自己看）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-26T12:26:22+08:00">
+                2020-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/C语言琐碎复习（内容简单-仅自己看）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/C语言琐碎复习（内容简单-仅自己看）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  24  分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>由于好久时间不看C了，好多东西都忘了</p>
+<p>本文是跟着郝斌老师的视频做的随堂笔记，课下也没做整理，并不成系统，只是一些简单堆叠，且编码规范都没有，看看就好哈哈</p>
+</blockquote>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> greeting[<span class="number">6</span>] = &#123;<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'\0'</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//1	strcpy(s1, s2);</span></span><br><span class="line">复制字符串 s2 到字符串 s1。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//2	strcat(s1, s2);</span></span><br><span class="line">连接字符串 s2 到字符串 s1 的末尾。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//3	strlen(s1);</span></span><br><span class="line">返回字符串 s1 的长度。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//4	strcmp(s1, s2);</span></span><br><span class="line">如果 s1 和 s2 是相同的，则返回 <span class="number">0</span>；如果 s1&lt;s2 则返回小于 <span class="number">0</span>；如果 s1&gt;s2 则返回大于 <span class="number">0</span>。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//5	strchr(s1, ch);</span></span><br><span class="line">返回一个指针，指向字符串 s1 中字符 ch 的第一次出现的位置。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//6	strstr(s1, s2);</span></span><br><span class="line">返回一个指针，指向字符串 s1 中字符串 s2 的第一次出现的位置。</span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line"><span class="comment">//strlen 与 sizeof的区别：</span></span><br><span class="line"><span class="built_in">strlen</span> 是函数</span><br><span class="line"><span class="keyword">sizeof</span> 是运算操作符</span><br><span class="line">二者得到的结果类型为 <span class="keyword">size_t</span>，即 <span class="keyword">unsigned</span> <span class="keyword">int</span> 类型。</span><br><span class="line"></span><br><span class="line"><span class="keyword">sizeof</span> 计算的是变量的大小，不受字符 \<span class="number">0</span> 影响；</span><br><span class="line"><span class="built_in">strlen</span> 计算的是字符串的长度，以 \<span class="number">0</span> 作为长度判定依据。</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line"><span class="comment">// 'a' 表示是一个字符，"a" 表示一个字符串相当于 'a'+'\0';</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//字符串遍历</span></span><br><span class="line"><span class="keyword">char</span> hi[] = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">for</span>(i==<span class="number">0</span>, i&lt;<span class="number">6</span>,i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>,hi[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>main.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.二维数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">int a[3][4];</span></span><br><span class="line"><span class="comment">总共12个元素，可以当做3行4列看待，依次是:</span></span><br><span class="line"><span class="comment">a[0][0],a[0][1],a[0][2],a[0][3]</span></span><br><span class="line"><span class="comment">a[1][0],a[1][1],a[1][2],a[1][3]</span></span><br><span class="line"><span class="comment">a[2][0],a[2][1],a[2][2],a[2][3]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">a[i][j]  ==&gt; i+1行，j+1列的元素</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">int a[m][n];  该二位数组的右下角位置的元素只能是a[m-1][n-1]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_double</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//1.最笨的初始化</span></span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">4</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2.分开写（格式要写正确）</span></span><br><span class="line">	<span class="keyword">int</span> b[<span class="number">3</span>][<span class="number">4</span>]=&#123;</span><br><span class="line">		&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,</span><br><span class="line">		&#123;<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;,</span><br><span class="line">		&#123;<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//3.其他各种初始化</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 输出二维数组内容</span></span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">4</span>; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%-5d \t"</span>, b[i][j]);    <span class="comment">// 付好：左对齐，5代表占5个位置（这不是重点，格式控制有其他控制办法）</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);  <span class="comment">// 格式化(每四个一行)</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 二维数组排序</span></span><br><span class="line">	<span class="comment">//求每一行最大值</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 多维数组：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 不存在! 因为内存是线性一维的</span></span><br><span class="line"><span class="comment">2. n维数组可以当做 每个元素是n-1维数组的一维数组 的数组</span></span><br><span class="line"><span class="comment">比如：a[3][4]，可以当做含有三个元素的一维数组，只不过每个元素都可以划分为4个小元素</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>func.h</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">after_func</span><span class="params">()</span></span>;   <span class="comment">// 函数的声明， 可以不写变量名</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_max</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;  <span class="comment">// 函数声明，记得加分号</span></span><br></pre></td></tr></table></figure>
+<p>main.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"func.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">before_func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"我是函数测试，在主函数之前定义的。"</span>);</span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数定义写在主函数之前的时候，那么就无需在主函数里面声明这个函数，只需要把函数体写在主函数前即可</span></span><br><span class="line"><span class="comment">//否则，需要先声明.</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 此函数定义在主函数之前，直接调用即可，无须声明</span></span><br><span class="line">	<span class="comment">//before_func();</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//在主函数之后定义的，需要先声明才能调用。</span></span><br><span class="line">	<span class="comment">//1.声明(要放在main外面，我放在了自定义的头文件里面)</span></span><br><span class="line">	<span class="comment">//2.调用</span></span><br><span class="line">	<span class="comment">//after_func();</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 求最大值</span></span><br><span class="line">	<span class="comment">//int i,j;</span></span><br><span class="line">	<span class="comment">//i=5;j=10;</span></span><br><span class="line">	<span class="comment">//get_max(i, j);</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">20</span>;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		get_max(i,i+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	getchar();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">after_func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"我是函数测试，在主函数之后定义的，需要先声明才能调用。"</span>);</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//求最大值</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> max_val = a&gt;b?a:b;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d和%d比较，最大值为: %d \n"</span>, a,b,max_val);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">return和break的区别：</span></span><br><span class="line"><span class="comment">1.break:循环、switch</span></span><br><span class="line"><span class="comment">2.return终止函数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">函数的分类：</span></span><br><span class="line"><span class="comment">1.有参函数和无参函数</span></span><br><span class="line"><span class="comment">2.有返回值和无返回值</span></span><br><span class="line"><span class="comment">3.库函数和用户自定义函数</span></span><br><span class="line"><span class="comment">4.普通函数和主函数(main)：一个程序只能有一个主函数，主函数既是程序的入口，也是程序的出口</span></span><br><span class="line"><span class="comment">主函数能调用主函数，其他函数不能调用main函数，普通函数可以相互调用</span></span><br><span class="line"><span class="comment">5.值传递和引用传递(其实这样说是不对的)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">如何在软件开发中，合理的设计函数来解决实际问题：</span></span><br><span class="line"><span class="comment">功能划分的详细一些，提高利用率</span></span><br><span class="line"><span class="comment">函数是C语言的基本单位，类是Java，C#等的基本单位</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">常用的系统函数:</span></span><br><span class="line"><span class="comment">1. doulbe sqrt(double x)           求x的平方根</span></span><br><span class="line"><span class="comment">2. int abs(int x)				   求整数的绝对值</span></span><br><span class="line"><span class="comment">3. double fabs(double x)	       			</span></span><br><span class="line"><span class="comment">推荐书籍：</span></span><br><span class="line"><span class="comment">机械工业出版社：《turboc2.0使用大全》</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">递归：</span></span><br><span class="line"><span class="comment">栈：先进先出</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">变量的作用于和存储方式：</span></span><br><span class="line"><span class="comment">1.按作用域分：全局变量，局部变量（函数内部定义的变量/函数的形参）</span></span><br><span class="line"><span class="comment">2.按变量的存储方式：静态变量，自动变量，寄存器变量</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> k=<span class="number">99</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_var</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//局部变量与全局变量命名相同：局部变量会屏蔽掉全局变量</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><p>test.h</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test6</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test7</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test8</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">base_pointer</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">free_test</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exchange_two</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_exchange1</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_exchange2</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_exchange3</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">two_pointer</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo1</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo2</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo3</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo4</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo5</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo6</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>main.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//base_pointer();</span></span><br><span class="line">	exchange_two();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j=<span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> * q; <span class="comment">// q是变量名, int *表示q变量存放的是int类型变量的地址（int * 是数据类型）</span></span><br><span class="line">	<span class="comment">// 错误写法：q=55;   后面不能是值，只能跟地址</span></span><br><span class="line">	q=&amp;j;   <span class="comment">//*q与j是等同的</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.q保存了j的地址，引起：q指向j。</span></span><br><span class="line"><span class="comment">	2.q不是j，j不是q。修改q的值不会影响j,修改j的值也不会影响q的值</span></span><br><span class="line"><span class="comment">	3.如果一个指针变量指向一个普通变量，则*指针变量完全等同于普通变量</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	指针：就是地址，地址就是指针</span></span><br><span class="line"><span class="comment">	指针变量：存放地址的变量</span></span><br><span class="line"><span class="comment">	两者不是一个概念</span></span><br><span class="line"><span class="comment">	但是，通常在叙述中，会把指针变量简称为指针</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 一级指针</span></span><br><span class="line">    <span class="comment">// 指针的本质： 存地址(内存单元的编号)，间接访问</span></span><br><span class="line">    <span class="comment">// 指针使用场景：</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &amp; 取地址操作符/【引用】</span></span><br><span class="line">    <span class="comment">// * 取值操作符/【解引用】</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	指针的重要性;</span></span><br><span class="line"><span class="comment">	表示一些复杂的数据结构;</span></span><br><span class="line"><span class="comment">	快速的传递数据</span></span><br><span class="line"><span class="comment">	使函数返回一个以上的值</span></span><br><span class="line"><span class="comment">	能直接访问硬件</span></span><br><span class="line"><span class="comment">	能方便的处理字符串</span></span><br><span class="line"><span class="comment">	是理解面向对象语言中引用的基础</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//地址：</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		内存单元的编号</span></span><br><span class="line"><span class="comment">		从零开始的非负整数</span></span><br><span class="line"><span class="comment">		范围：</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">    </span><br><span class="line">	<span class="comment">//指针：</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	指针就是地址，地址就是指针</span></span><br><span class="line"><span class="comment">	指针变量就是存放内存单元的变量，</span></span><br><span class="line"><span class="comment">	两者不是一个概念</span></span><br><span class="line"><span class="comment">	但是，通常在叙述中，会把指针变量简称为指针</span></span><br><span class="line"><span class="comment">	指针的本质就是一个操作受限的非负整数</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//指针的分类：</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.基本类型的指针</span></span><br><span class="line"><span class="comment">	int *p;</span></span><br><span class="line"><span class="comment">	int i=10;</span></span><br><span class="line"><span class="comment">	int j;</span></span><br><span class="line"><span class="comment">	p = &amp;i;</span></span><br><span class="line"><span class="comment">	i=*p;</span></span><br><span class="line"><span class="comment">	printf("%d",j);</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	例子，见函数base_pointer</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">base_pointer</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *p;</span><br><span class="line">	<span class="keyword">int</span> *q;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//*p = i; //【错误】，*p代表的是p指向的地址的变量的值，p现在指向的垃圾值(还没有初始化)</span></span><br><span class="line">	<span class="comment">//应该这样</span></span><br><span class="line">	p = &amp;i;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//*q=p;  //【错误】，有语法错误，*q是整形，p是int*类型</span></span><br><span class="line">	<span class="comment">//*q =  *p; //【错误】,语法没错，但是q指向垃圾值（没初始化）</span></span><br><span class="line">	<span class="comment">//应该这样：</span></span><br><span class="line">	<span class="comment">//p=q;  // 【错误】，q赋给p，p也变成垃圾值</span></span><br><span class="line">	<span class="comment">//printf("%d\n", *p);  // q的空间是属于本程序的，所以本程序可以读写q的内容，但是如果q的内部是垃圾值，则本程序不能读写*p的内容,因为*q所代表的的内存单元的控制权限并没有分配给本程序</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 指针变量的运算：</span></span><br><span class="line">	<span class="comment">// 指针变量不能相加、相乘、相除（能相减：如果两个指针变量指向的是【同一块连续空间中的不同存储单元】）</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		p = &amp;a[1];</span></span><br><span class="line"><span class="comment">		q = &amp;a[3];</span></span><br><span class="line"><span class="comment">		printf("%d", q-p);</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//指针的偏移</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[N]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> *p;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    p = &amp;a[<span class="number">4</span>];  <span class="comment">// 指向a最后一个元素</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;N; i++)     <span class="comment">// 指针偏移</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%3d"</span>, *(p-i));     <span class="comment">// p +sizeof(int)</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//指针与自增</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">3</span>]=&#123;<span class="number">2</span>,<span class="number">7</span>,<span class="number">8</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> *p;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line"></span><br><span class="line">    p = a;</span><br><span class="line">    j = *p++;     <span class="comment">// j = *p; p=p+1。     </span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a[0]=%d, j=%d, *p=%d \n"</span>, a[<span class="number">0</span>], j, *p);  <span class="comment">// 2,2,7</span></span><br><span class="line"></span><br><span class="line">    j = p[<span class="number">0</span>]++; <span class="comment">// j=p[0],  p[0] = p[0] +1</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a[0]=%d, j=%d, *p=%d \n"</span>, a[<span class="number">0</span>], j, *p);  <span class="comment">// 2,7,8  ？？？  </span></span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//野指针: free以后的指针未被赋值为NULL  (指向了一个未知的空间)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">int</span> *p, *p1, *p2, *p3;</span><br><span class="line">    p = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="number">4</span>);</span><br><span class="line">    *p = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line"></span><br><span class="line">    p = <span class="literal">NULL</span>;   <span class="comment">// 赋值null以后，后面用的话会崩溃，能迅速找到问题</span></span><br><span class="line"></span><br><span class="line">    p1 = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="number">4</span>);  </span><br><span class="line">    *p1 = <span class="number">2</span>;  <span class="comment">// 没有free</span></span><br><span class="line"></span><br><span class="line">    p2 = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="number">4</span>);</span><br><span class="line">    *p2 = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">free</span>(p1);</span><br><span class="line"></span><br><span class="line">    p3 = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="number">4</span>);</span><br><span class="line">    *p3 = <span class="number">3</span>;</span><br><span class="line">    *p1 = <span class="number">20</span>; <span class="comment">// 以为p1free了，这里又赋值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"p3 = %d"</span>, *p3);   <span class="comment">//  20了    malloc有缓存机制</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 经典程序：互换两个数字</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exchange_two</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b=<span class="number">5</span>;</span><br><span class="line">	<span class="comment">//int t;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//之前的做法</span></span><br><span class="line">	<span class="comment">//t=a;</span></span><br><span class="line">	<span class="comment">//a=b;</span></span><br><span class="line">	<span class="comment">//b=t;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 现在要求调用一个函数实现</span></span><br><span class="line">	test_exchange3(&amp;a, &amp;b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"a=%d,b=%d"</span>,a,b);</span><br><span class="line"></span><br><span class="line">	getchar();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不能完成互换功能</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_exchange1</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line"></span><br><span class="line">	t=a;</span><br><span class="line">	a=b;</span><br><span class="line">	b=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不能完成互换功能，只是把q和p的值换了，a和b并没有互换</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_exchange2</span><span class="params">(<span class="keyword">int</span> *p, <span class="keyword">int</span> *q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *t; <span class="comment">// 如果要互换，变量类型必须一致	</span></span><br><span class="line">	t = p; </span><br><span class="line">	p = q;</span><br><span class="line">	q = t;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 形参的改变，不会改变实参的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以完成互换: p是a的地址，*p就是a</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_exchange3</span><span class="params">(<span class="keyword">int</span> *p, <span class="keyword">int</span> *q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t; <span class="comment">// 如果要互换，变量类型必须一致	</span></span><br><span class="line">	t = *p;  <span class="comment">// *p是int，p是int* </span></span><br><span class="line">	*p = *q;</span><br><span class="line">	*q = t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// *的含义</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test6</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//1.乘法</span></span><br><span class="line">	<span class="comment">//2.定义指针变量 </span></span><br><span class="line">	<span class="keyword">int</span> *p;  <span class="comment">//定义了一个叫p的变，int *表示p只能存放地址</span></span><br><span class="line">	<span class="comment">//3.指针运算符：取地址的逆运算/间接访问</span></span><br><span class="line">	<span class="comment">// 放在已经定义好的指针变量的前面，取改指针的值</span></span><br><span class="line">	<span class="comment">//*p 表示以p的内容为地址的变量</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//写法：下面三种是等价的</span></span><br><span class="line">	<span class="comment">//int * p;</span></span><br><span class="line">	<span class="comment">//int *p;</span></span><br><span class="line">	<span class="comment">//int* p;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">free_test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">脏数据</span></span><br><span class="line"><span class="comment">申请的空间不释放：内存泄露</span></span><br><span class="line"><span class="comment">堆空间：一旦申请，一直占用，除非free</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">char</span> *p;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;i);</span><br><span class="line">    p = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(i);</span><br><span class="line">    <span class="built_in">strcpy</span>(p, <span class="string">"hello"</span>);   <span class="comment">// p指向堆空间</span></span><br><span class="line">    <span class="comment">// p = "hellp";</span></span><br><span class="line">    <span class="built_in">puts</span>(p);</span><br><span class="line">    <span class="built_in">free</span>(p);  <span class="comment">// 释放</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"free p ~~~~~~~~~~~"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test7</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 一个指针变量到底占几个字节？</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	指向不同类型，是不同的，比如int 一般是4个字节, char就是1个。     sizeof()可以查看：sizeof(double)</span></span><br><span class="line"><span class="comment">	p,q,r所占的字节数是一样的</span></span><br><span class="line"><span class="comment">	【总结：】一个指针变量，无论他指向的变量占几个字节，该指针变量只占四个字节。</span></span><br><span class="line"><span class="comment">	一个变量的地址使用该变量首字节的地址来表示</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//动态内存分配（重点）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test8</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.传统数组的缺点</span></span><br><span class="line"><span class="comment">		a.数组长度必须事先制定，且只能是长整数，不能是变量（int len=5; int a[len]; 这样是错误的）</span></span><br><span class="line"><span class="comment">		b.传统形式定义的数组，该数组的内存，程序员无法手动释放（一旦定义，该分配空间一直存在，直到数组所在的函数运行结束，数组的空间才会被系统释放）</span></span><br><span class="line"><span class="comment">		c.数组的长度不能再函数运行过程中动态扩充或缩小(长度一旦定义，其长度就不能再更改)</span></span><br><span class="line"><span class="comment">		d.A函数定义的数组，在A函数运行期间可以被其他函数使用；但A函数执行完毕后，A函数中的数组将无法再被其他函数使用</span></span><br><span class="line"><span class="comment">		传统数组也叫静态数组</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">	2.为什么需要动态分配内存</span></span><br><span class="line"><span class="comment">		解决了传统数组的4个缺陷</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	3.动态内存分配举例_  动态数组的构造</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	4.静态内存和动态内存的比较</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	5.跨函数使用内存的问题</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// malloc 是memory(内存) allocate(分配)的缩写</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">char</span> *p;</span><br><span class="line">    p = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(i);  </span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">		1.要使用malloc，必须添加malloc.h或stdlib.h头文件</span></span><br><span class="line"><span class="comment">		2.malloc只有一个形参，且形参必须是整数类型</span></span><br><span class="line"><span class="comment">		3.上面，表示请求系统为本程序分配5个字节</span></span><br><span class="line"><span class="comment">		4.malloc函数只能返回第一个字节的地址，所以前面要把地址强制转换为int*</span></span><br><span class="line"><span class="comment">		5.p本身的内存是静态分配的，p所指向的内存是动态分配的</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">strcpy</span>(p, <span class="string">"hello"</span>);   <span class="comment">// p指向堆空间</span></span><br><span class="line">    <span class="comment">// p = h e l l o \o;</span></span><br><span class="line">    <span class="built_in">puts</span>(p);</span><br><span class="line">    <span class="built_in">free</span>(p);  <span class="comment">// 释放p所指向的内存 （p本身的内存是静态的，不能由程序员手动释放）</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"free p ~~~~~~~~~~~"</span>);</span><br><span class="line"><span class="comment">// 脏数据</span></span><br><span class="line"><span class="comment">// 申请的空间不释放：内存泄露</span></span><br><span class="line"><span class="comment">// 堆空间：一旦申请，一直占用，除非free</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> *q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// *p = 200; // error</span></span><br><span class="line">	<span class="comment">// q = 20   //error</span></span><br><span class="line">	<span class="comment">// q是p的一份拷贝(副本)</span></span><br><span class="line">	<span class="comment">// **q=200  // error</span></span><br><span class="line">	*q=<span class="number">200</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//int *arr = (int*)malloc(20);</span></span><br><span class="line"> <span class="comment">//   int *p;</span></span><br><span class="line"> <span class="comment">//   arr[0] = 1;</span></span><br><span class="line"> <span class="comment">//   arr[1] = 1;</span></span><br><span class="line"> <span class="comment">//   arr[2] = 1;</span></span><br><span class="line"> <span class="comment">//   arr[3] = 1;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//   p = (int*)realloc(arr, 40);    // 扩展</span></span><br><span class="line"> <span class="comment">//   p[4] = 6;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> *p = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	*p = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, *p); <span class="comment">//10</span></span><br><span class="line">	f(p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, *p); <span class="comment">//200</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//动态内存分配举例 动态一维数组的构造</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo3</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len;</span><br><span class="line">	<span class="keyword">int</span> *pArr;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输出要存放元素的个数："</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;len); <span class="comment">// 5</span></span><br><span class="line">	pArr = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="number">4</span>*len);  <span class="comment">// 数组长度为len； 5*4=20,（默认pArr指向第一个字节，但是由于进行了int强转，所以pArr指向前四个字节,pArr指向后面4个字节）</span></span><br><span class="line">	<span class="comment">//类似于 int pArr[len];</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//赋值</span></span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;len; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;pArr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//输出</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"一维数组的内容是: \n"</span>);</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;len; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d, "</span>, pArr[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">realloc</span>(pArr, <span class="number">40</span>);    <span class="comment">// 扩展</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//释放数组</span></span><br><span class="line">	<span class="built_in">free</span>(pArr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//动态内存和静态内存的比较</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo4</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	静态内存是由系统自动分配，由系统自动释放，是在栈分配的</span></span><br><span class="line"><span class="comment">	动态内存是由程序员手动分配，手动释放，是由堆分配的</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	malloc是堆分配的</span></span><br><span class="line"><span class="comment">	栈是存储结构，堆是排序方式</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">multi_test</span><span class="params">(<span class="keyword">int</span> **pp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j=<span class="number">300</span>;</span><br><span class="line">	<span class="comment">//  pp是p的地址，那*pp 就是p</span></span><br><span class="line">	*pp = &amp;j;   <span class="comment">// 修改</span></span><br><span class="line">	**pp = <span class="number">200</span>; <span class="comment">// 修改</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//多级指针（意义：跨函数使用内存）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">two_pointer</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 【场景】：当在子函数中需要修改主函数某一个一级指针变量的值，就需要二级指针</span></span><br><span class="line">    <span class="comment">//char b[N][10] = &#123;"lilei","hanmeimei","xiyangyang","huitailang", "xiongda"&#125;;</span></span><br><span class="line">    <span class="comment">//char * p[N];  // 指针数组，里面存储的指针类型就是 二级指针   // &amp;p[0]        每次偏移是固定的，64位数下就是8个字节</span></span><br><span class="line">    <span class="comment">//// char **p2;</span></span><br><span class="line">    <span class="comment">//int i;</span></span><br><span class="line">    <span class="comment">//for(i=0; i&lt;N; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    p[i] = b[i];</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//for(i=0; i&lt;N; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    puts(p[i]);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> *p = &amp;i;</span><br><span class="line">	<span class="keyword">int</span> **q = &amp;p;</span><br><span class="line">	<span class="keyword">int</span> ***r = &amp;q;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//r = &amp;p;   // 错误，因为r是int**类型，r只能存放int**类型变量的地址</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,***r); <span class="comment">// r的值</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//在另一个函数内部改变变量值</span></span><br><span class="line">	multi_test(&amp;p);  <span class="comment">// p是int *, 那么 &amp;p是int**</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f1</span><span class="params">(<span class="keyword">int</span> **q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">5</span>;</span><br><span class="line">	<span class="comment">//*q等价于p，q和**q都不等价于p</span></span><br><span class="line">	<span class="comment">// *q=i // error</span></span><br><span class="line">	*q = &amp;i;  <span class="comment">// p=&amp;i</span></span><br><span class="line">	<span class="comment">//**q=i;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态变量不能跨函数使用</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo5</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *p;</span><br><span class="line"></span><br><span class="line">	f1(&amp;p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, *p);  <span class="comment">// 本语句语法没有问题，但逻辑上有问题（因为f函数中i的静态分配的，f结束，i的空间就释放了）</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f2</span><span class="params">(<span class="keyword">int</span> **q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	*q = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	<span class="comment">// 等价于p = (int *)malloc(sizeof(int));</span></span><br><span class="line">	<span class="comment">//q=5;  // error</span></span><br><span class="line">	<span class="comment">//*q=5; // p=5   error</span></span><br><span class="line">	**q=<span class="number">5</span>; <span class="comment">// *p=5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//动态内存可以跨函数使用（重点）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dynami_memo6</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *p;</span><br><span class="line">	f2(&amp;p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, *p); <span class="comment">// 能改变。p指向的是上面堆里面分配的空间</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><p>jiegouti.h</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">struc_func</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InputStudent</span><span class="params">(struct Student *)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OutputStudent</span><span class="params">(struct Student)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OutputStudent2</span><span class="params">(struct Student *)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_union</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>main.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"jiegouti.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;       </span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		为什么需要结构体？</span></span><br><span class="line"><span class="comment">			为了表示一些复杂的事物，而普通的数据类型无法满足实际需求</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		结构体：</span></span><br><span class="line"><span class="comment">			把一些基本类型组合到一起，形成的一个新的符合数据类型</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		大小：</span></span><br><span class="line"><span class="comment">			结构体：总大小一般情况下等于各成员大小之和(先不考虑内存对齐)</span></span><br><span class="line"><span class="comment">			共用体：大小等于成员中最大的那个大小。（通常和结构体一起使用）</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		如何定义(推荐第一种)：</span></span><br><span class="line"><span class="comment">			1. 推荐（这只是定义了一个新的数据类型，并没有定义变量）</span></span><br><span class="line"><span class="comment">			 struct student&#123;</span></span><br><span class="line"><span class="comment">				int num;</span></span><br><span class="line"><span class="comment">				char name[20];</span></span><br><span class="line"><span class="comment">				int age;</span></span><br><span class="line"><span class="comment">			 &#125;;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			2. 这样只能定义一次</span></span><br><span class="line"><span class="comment">			 struct student&#123;</span></span><br><span class="line"><span class="comment">				int num;</span></span><br><span class="line"><span class="comment">				char name[20];</span></span><br><span class="line"><span class="comment">				int age;</span></span><br><span class="line"><span class="comment">			 &#125; st1;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			 3. 类型都没写...</span></span><br><span class="line"><span class="comment">			 struct &#123;</span></span><br><span class="line"><span class="comment">				int num;</span></span><br><span class="line"><span class="comment">				char name[20];</span></span><br><span class="line"><span class="comment">				int age;</span></span><br><span class="line"><span class="comment">			 &#125; st1;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			 //赋值和初始化(定义同时可以整体赋值,定义玩之后只能单个赋值)</span></span><br><span class="line"><span class="comment">				 定义同时初始化： struct student s1 = &#123;1,'xxx',18&#125;;</span></span><br><span class="line"><span class="comment">				 先定义，后赋值：</span></span><br><span class="line"><span class="comment">								  struct student s2;</span></span><br><span class="line"><span class="comment">								  s2.num=1;</span></span><br><span class="line"><span class="comment">								  s2.name='yyy';</span></span><br><span class="line"><span class="comment">								  s2.age=19;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			 //取出结构体变量中每一个成员【重点】</span></span><br><span class="line"><span class="comment">				1.结构体指针变量名.成员名</span></span><br><span class="line"><span class="comment">				2.指针变量名-&gt;成员名    （第二种更常用）</span></span><br><span class="line"><span class="comment">							struct student *p = &amp;s;  //注意是&amp;</span></span><br><span class="line"><span class="comment">							p-&gt;name; //第一种方式(指针变量-&gt;成员变量名,在计算机内部会被转换为(*指针变量名).成员名)</span></span><br><span class="line"><span class="comment">							(*p).name; //第二种方式，与 s.name; 等价</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			//结构体变量的运算</span></span><br><span class="line"><span class="comment">				结构体变量不能相加，相减，也不能相互乘除。</span></span><br><span class="line"><span class="comment">				但结构体变量可以相互赋值</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			//结构体变量和结构体变量指针作为函数参数传递的问题</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			//动态构造结构体数组</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			//链表</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line">	    <span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">			<span class="keyword">int</span> num;</span><br><span class="line">			<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">			<span class="keyword">char</span> gender;</span><br><span class="line">			<span class="keyword">int</span> age;</span><br><span class="line">			<span class="keyword">float</span> score;</span><br><span class="line">			<span class="keyword">char</span> addr[<span class="number">30</span>];</span><br><span class="line">		&#125; ss=&#123;1,'xx','nan',20,99.9,'hhh'&#125;;   // ss就是变量 可以直接在这里初始化</span><br><span class="line"></span><br><span class="line">		<span class="comment">//赋值和初始化</span></span><br><span class="line">		struct student ss2 = &#123;2,'yy','bei',20,99.9,'zzz'&#125;;</span><br><span class="line">		struct student s = &#123;100,'lala','M',20,99.5, 'beij'&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 结构体数组</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">sArr</span>[3];</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%s %c%d%f%s"</span>, &amp;sArr[i].num, sArr[i].name, &amp;sArr[i].gender, &amp;sArr[i].age,&amp;sArr[i].score, &amp;sArr[i].addr); <span class="comment">// %c 忽略空格</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 结构体指针</span></span><br><span class="line"></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">student</span> *<span class="title">p</span> = &amp;<span class="title">s</span>;</span>  <span class="comment">//注意是&amp;</span></span><br><span class="line">		<span class="comment">//p = &amp;s;</span></span><br><span class="line">		<span class="comment">// 获取成员</span></span><br><span class="line"></span><br><span class="line">		p-&gt;name; <span class="comment">//第一种方式(指针变量-&gt;成员变量名,在计算机内部会被转换为(*指针变量名).成员名)</span></span><br><span class="line">		(*p).name; <span class="comment">//第二种方式，与 s.name; 等价</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// p-&gt;name的含义：p所指向的那个结构体变量中的name这个成员</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		num = p-&gt;num++;   <span class="comment">// num = p-&gt;num, num=p-&gt;num+1;   //优先级</span></span><br><span class="line">		<span class="comment">// 第一时间去掉++</span></span><br><span class="line">		num = p++-&gt;num;    <span class="comment">// 没问题, num=p-&gt;num,  p=p+1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="comment">//浮点型默认在C语言中是double，如果要定义成float，则在后面加f或F， 但是不能准确存储</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">///////////////////////////////////////////</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过函数完成对结构体变量的输入和输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">struc_func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Student</span> <span class="title">st</span>;</span></span><br><span class="line"></span><br><span class="line">	InputStudent(&amp;st);  <span class="comment">//对结构体变量输入</span></span><br><span class="line">	OutputStudent(st);  <span class="comment">//对结构体变量输出</span></span><br><span class="line">	OutputStudent2(&amp;st);  <span class="comment">//对结构体变量输出</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InputStudent</span><span class="params">(struct Student * pstu)</span> <span class="comment">//pstu只占4个字节</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	(*pstu).num=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">strcpy</span>(pstu-&gt;name, <span class="string">"xxx"</span>);  </span><br><span class="line">	pstu-&gt;age=<span class="number">18</span>;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  这是无法改变主函数的值的</span></span><br><span class="line"><span class="comment">void InputStudent(struct Student stu)</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">	stu.num=1;</span></span><br><span class="line"><span class="comment">	strcpy(stu.name, "xxx");  </span></span><br><span class="line"><span class="comment">	stu.age=18;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">&#125;;*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">////应该发送内容还是传送地址？</span></span><br><span class="line"><span class="comment">//如果传递的是内容，内存消耗大</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OutputStudent</span><span class="params">(struct Student stu)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d, %s %d"</span>, stu.num,stu.name, stu.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果传递的是地址，可能不安全，但是提高了速度，节省了内存（推荐这种方法）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OutputStudent2</span><span class="params">(struct Student *pstu)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d, %s %d"</span>, pstu-&gt;num,pstu-&gt;name, pstu-&gt;age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">【指针优点大总结：】</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">快速的传递数据，较少了内存的消耗 【重点】</span></span><br><span class="line"><span class="comment">使函数返回一个以上的值  【重点】</span></span><br><span class="line"><span class="comment">能直接访问硬件</span></span><br><span class="line"><span class="comment">能方便的处理字符串</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//共用体</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_union</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//共用体：大小等于成员中最大的那个大小（通常和结构体一起使用）</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// union 共用体name</span></span><br><span class="line">	<span class="comment">// &#123;</span></span><br><span class="line">	<span class="comment">//     成员表列</span></span><br><span class="line">	<span class="comment">// &#125; 变量表列;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">union</span> data&#123;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">char</span> c;</span><br><span class="line">		<span class="keyword">float</span> f;</span><br><span class="line">	&#125;u1;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 共用体的起始地址和每个成员的起始地址是相同的</span></span><br><span class="line">	<span class="comment">// 一个时间内只能存取一个成员</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">union</span> data d; <span class="comment">// 现在最大的就是4</span></span><br><span class="line">	d.i = <span class="number">4</span>;</span><br><span class="line">	d.c=<span class="string">'A'</span>;</span><br><span class="line">	d.f = <span class="number">99.9</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1) 为基本数据类型定义新的类型名</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> REAL;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment">//2) 为自定义数据类型（结构体、共用体和枚举类型）定义简洁的类型名称</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPoint</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="keyword">double</span> y;</span><br><span class="line">    <span class="keyword">double</span> z;</span><br><span class="line">&#125; Point;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">实际上完成了两个操作：</span></span><br><span class="line"><span class="comment">1、定义了一个新的结构类型</span></span><br><span class="line"><span class="comment">struct tagPoint</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    double x;</span></span><br><span class="line"><span class="comment">    double y;</span></span><br><span class="line"><span class="comment">    double z;</span></span><br><span class="line"><span class="comment">&#125; ;</span></span><br><span class="line"><span class="comment">2、使用 typedef 为这个新的结构起了一个别名，叫 Point</span></span><br><span class="line"><span class="comment">typedef struct tagPoint Point</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//3) 为数组定义简洁的类型名称</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* PCHAR;</span><br><span class="line">PCHAR pa</span><br></pre></td></tr></table></figure>
+<h4 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">二进制全部为0的含义：  </span><br><span class="line">    1.数值为0</span><br><span class="line">    2.字符串结束标记符 &apos;\0&apos;</span><br><span class="line">    3.空指针NULL</span><br><span class="line">        NULL表示编号为0的地址</span><br><span class="line">        NULL表示的是零，不是数字，而是代表内存单元的编号</span><br><span class="line"></span><br><span class="line">        计算机规定了，以零为编号的存储单元的内存不可读、不可写</span><br></pre></td></tr></table></figure>
+<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//文件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_file</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="meta"># <span class="meta-keyword">define</span> N 20</span></span><br><span class="line"></span><br><span class="line">	FILE *fp;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">char</span> p;</span><br><span class="line">    <span class="keyword">char</span> ret;</span><br><span class="line">    <span class="keyword">char</span> buf[N] = &#123;<span class="number">0</span>&#125;;   <span class="comment">// 先初始化</span></span><br><span class="line">    <span class="comment">// fp = fopen("file.txt", "r");</span></span><br><span class="line">    fp = fopen(<span class="string">"D:\Desktop\1.txt"</span>, <span class="string">"r+"</span>);    <span class="comment">// argv[1] 是传递的第一个参数</span></span><br><span class="line">    <span class="keyword">if</span>(fp == <span class="literal">NULL</span>)   <span class="comment">// 判断打开是否成功， -&gt; 失败</span></span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"fopen"</span>);   <span class="comment">// 定位函数执行错误原因（只能定位刚刚执行的）</span></span><br><span class="line">        <span class="keyword">goto</span> error;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// fgetc   读取，一次读取一个字节</span></span><br><span class="line">   <span class="keyword">while</span> ((c = fgetc(fp)) != EOF)</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">"%c"</span>,c);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">    <span class="comment">// fputs   写入，一次写入一个字节</span></span><br><span class="line">    p = <span class="string">'H'</span>;</span><br><span class="line">    ret = fputc(p, fp);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// printf(FILE *fp,const char *format, ...) 函数来写把一个字符串写入到文件中</span></span><br><span class="line">	<span class="built_in">fprintf</span>(fp, <span class="string">"This is testing for fprintf...\n"</span>);</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="comment">// fread:      buf没有\0</span></span><br><span class="line">    ret = fread(buf, <span class="keyword">sizeof</span>(<span class="keyword">char</span>), N, fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d, %s \n"</span>, ret, buf);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// fwrite:</span></span><br><span class="line">    <span class="built_in">strcpy</span>(buf, <span class="string">"word"</span>);</span><br><span class="line">    ret = fwrite(buf, <span class="keyword">sizeof</span>(<span class="keyword">char</span>), <span class="built_in">strlen</span>(buf), fp);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清空buffer</span></span><br><span class="line">    <span class="built_in">memset</span>(buf,<span class="number">0</span>,<span class="keyword">sizeof</span>(buf));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// fseek</span></span><br><span class="line">    fseek(fp, <span class="number">0</span>, SEEK_SET);   <span class="comment">//  移动到开头。	SEEK_SET,偏移量的起始点:文件开始处</span></span><br><span class="line"></span><br><span class="line">    fseek(fp, <span class="number">-12</span>, SEEK_CUR);   <span class="comment">// 往回偏移, 与磁盘上实际的字节数对应。	SEEK_CUT:文件当前位置 </span></span><br><span class="line">							    <span class="comment">// SEEK_END,偏移量的起始点：SEEK_END</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ftell      获取文件读写指针的当前位置</span></span><br><span class="line">	<span class="keyword">long</span> last = ftell(fp);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    fclose(fp);  </span><br><span class="line"></span><br><span class="line">    error:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"error!!!"</span>);</span><br><span class="line">        <span class="comment">// fclose(fp);  // 关闭文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你觉得这篇文章还满意的话，请我喝杯咖啡喝吧^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="浮生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="浮生 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    浮生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.xpshuai.cn/C语言琐碎复习（内容简单-仅自己看）/" title="C语言琐碎复习（内容简单,仅自己看）">http://www.xpshuai.cn/C语言琐碎复习（内容简单-仅自己看）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C语言/" rel="tag"> <i class="fa fa-tag"></i> C语言</a>
+          
+            <a href="/tags/琐碎复习/" rel="tag"> <i class="fa fa-tag"></i> 琐碎复习</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/查找域控的几个常用方法/" rel="next" title="查找域控的几个常用方法">
+                <i class="fa fa-chevron-left"></i> 查找域控的几个常用方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/sqlmap参数简介/" rel="prev" title="sqlmap参数简介">
+                sqlmap参数简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="浮生">
+            
+              <p class="site-author-name" itemprop="name">浮生</p>
+              <p class="site-description motion-element" itemprop="description">侠之大者，为国为民</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shuai06" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_37622608" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          <div id="music163player">
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=247172&auto=0&height=32"></iframe>
+          </div>
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://muyuuuu.github.io/" title="兰铃" target="_blank">兰铃</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.aigisss.com/" title="aigisss" target="_blank">aigisss</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.blts.xyz/" title="帅气小学弟" target="_blank">帅气小学弟</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zlh.giserhub.com" title="GIS大神阿昊哥" target="_blank">GIS大神阿昊哥</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xbeichen.cn/" title="X北辰北" target="_blank">X北辰北</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.farmsec.cn/" title="农夫安全博客" target="_blank">农夫安全博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xiaodi8.com/" title="小迪渗透吧" target="_blank">小迪渗透吧</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针"><span class="nav-number">4.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构体"><span class="nav-number">5.</span> <span class="nav-text">结构体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typedef"><span class="nav-number">6.</span> <span class="nav-text">typedef</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NULL"><span class="nav-number">7.</span> <span class="nav-text">NULL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件"><span class="nav-number">8.</span> <span class="nav-text">文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">  <i class="fa fa-heart"></i>   </span>
+  <span class="author" itemprop="copyrightHolder">浮生</span> |
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+</div>
+
+
+
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,04,20,15,00,00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 博客已健康运行"+ diffYears+" 年 "+ diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+<span id="sitetime"></span>
+
+<div class="BbeiAn-info">
+    冀ICP备 -
+    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="nofollow">18027796-1</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src https: busuanzi.ibruce.info busuanzi 2.3 busuanzi.pure.mini.js""></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zlxLDm8dLo0s1Vz10PEvfuNh-gzGzoHsz',
+        appKey: 'UAKrQBSOGPavRUKC9ztdFBLK',
+        placeholder: '欢迎发表意见',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- canvas曲线 -->
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</body>
+</html>
