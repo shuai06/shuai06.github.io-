@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="偷得浮生半日闲">
 <meta property="og:description" content="由于好久时间不看C了，好多东西都忘了 本文是跟着郝斌老师的视频做的随堂笔记，课下也没做整理，并不成系统，只是一些简单堆叠，且编码规范都没有，看看就好哈哈  字符串12345678910111213141516171819202122232425262728293031323334353637383940char greeting[6] = &amp;#123;&apos;H&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-26T04:44:54.505Z">
+<meta property="og:updated_time" content="2020-03-27T02:57:01.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言琐碎复习（内容简单,仅自己看）">
 <meta name="twitter:description" content="由于好久时间不看C了，好多东西都忘了 本文是跟着郝斌老师的视频做的随堂笔记，课下也没做整理，并不成系统，只是一些简单堆叠，且编码规范都没有，看看就好哈哈  字符串12345678910111213141516171819202122232425262728293031323334353637383940char greeting[6] = &amp;#123;&apos;H&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o">
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.7k 字
+                  6.4k 字
                 </span>
               
 
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  24  分钟
+                  26  分钟
                 </span>
               
             </div>
@@ -490,6 +490,383 @@
 <p>本文是跟着郝斌老师的视频做的随堂笔记，课下也没做整理，并不成系统，只是一些简单堆叠，且编码规范都没有，看看就好哈哈</p>
 </blockquote>
 <h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> greeting[<span class="number">6</span>] = &#123;<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'\0'</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//1	strcpy(s1, s2);</span></span><br><span class="line">复制字符串 s2 到字符串 s1。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//2	strcat(s1, s2);</span></span><br><span class="line">连接字符串 s2 到字符串 s1 的末尾。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//3	strlen(s1);</span></span><br><span class="line">返回字符串 s1 的长度。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//4	strcmp(s1, s2);</span></span><br><span class="line">如果 s1 和 s2 是相同的，则返回 <span class="number">0</span>；如果 s1&lt;s2 则返回小于 <span class="number">0</span>；如果 s1&gt;s2 则返回大于 <span class="number">0</span>。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//5	strchr(s1, ch);</span></span><br><span class="line">返回一个指针，指向字符串 s1 中字符 ch 的第一次出现的位置。</span><br><span class="line">    </span><br><span class="line"><span class="comment">//6	strstr(s1, s2);</span></span><br><span class="line">返回一个指针，指向字符串 s1 中字符串 s2 的第一次出现的位置。</span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line"><span class="comment">//strlen 与 sizeof的区别：</span></span><br><span class="line"><span class="built_in">strlen</span> 是函数</span><br><span class="line"><span class="keyword">sizeof</span> 是运算操作符</span><br><span class="line">二者得到的结果类型为 <span class="keyword">size_t</span>，即 <span class="keyword">unsigned</span> <span class="keyword">int</span> 类型。</span><br><span class="line"></span><br><span class="line"><span class="keyword">sizeof</span> 计算的是变量的大小，不受字符 \<span class="number">0</span> 影响；</span><br><span class="line"><span class="built_in">strlen</span> 计算的是字符串的长度，以 \<span class="number">0</span> 作为长度判定依据。</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line"><span class="comment">// 'a' 表示是一个字符，"a" 表示一个字符串相当于 'a'+'\0';</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//字符串遍历</span></span><br><span class="line"><span class="keyword">char</span> hi[] = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">for</span>(i==<span class="number">0</span>, i&lt;<span class="number">6</span>,i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>,hi[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="运算符优先级nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhjjjjjjjjjjjjjjj"><a href="#运算符优先级nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhjjjjjjjjjjjjjjj" class="headerlink" title="运算符优先级nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhjjjjjjjjjjjjjjj"></a>运算符优先级nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhjjjjjjjjjjjjjjj</h4><table>
+<thead>
+<tr>
+<th><strong>优先级</strong></th>
+<th><strong>运算符</strong></th>
+<th><strong>名称或含义</strong></th>
+<th><strong>使用形式</strong></th>
+<th><strong>结合方向</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>[]</td>
+<td>数组下标</td>
+<td>数组名[常量表达式]</td>
+<td>左到右</td>
+<td></td>
+</tr>
+<tr>
+<td>()</td>
+<td>圆括号</td>
+<td>（表达式）/函数名(形参表)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>.</td>
+<td>成员选择（对象）</td>
+<td>对象.成员名</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-&gt;</td>
+<td>成员选择（指针）</td>
+<td>对象指针-&gt;成员名</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>-</td>
+<td>负号运算符</td>
+<td>-表达式</td>
+<td><strong>右到左</strong></td>
+<td>单目运算符</td>
+</tr>
+<tr>
+<td>(类型)</td>
+<td>强制类型转换</td>
+<td>(数据类型)表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>++</td>
+<td>自增运算符</td>
+<td>++变量名/变量名++</td>
+<td>单目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>–</td>
+<td>自减运算符</td>
+<td>–变量名/变量名–</td>
+<td>单目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>*</td>
+<td>取值运算符</td>
+<td>*指针变量</td>
+<td>单目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>取地址运算符</td>
+<td>&amp;变量名</td>
+<td>单目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>!</td>
+<td>逻辑非运算符</td>
+<td>!表达式</td>
+<td>单目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位取反运算符</td>
+<td>~表达式</td>
+<td>单目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sizeof</td>
+<td>长度运算符</td>
+<td>sizeof(表达式)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>/</td>
+<td>除</td>
+<td>表达式/表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td>表达式*表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>%</td>
+<td>余数（取模）</td>
+<td>整型表达式/整型表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>+</td>
+<td>加</td>
+<td>表达式+表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td>表达式-表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>&lt;&lt;</td>
+<td>左移</td>
+<td>变量&lt;&lt;表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+<td>变量&gt;&gt;表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>&gt;</td>
+<td>大于</td>
+<td>表达式&gt;表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+<td>表达式&gt;=表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+<td>表达式&lt;表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+<td>表达式&lt;=表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>==</td>
+<td>等于</td>
+<td>表达式==表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+<td>表达式!= 表达式</td>
+<td>双目运算符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>&amp;</td>
+<td>按位与</td>
+<td>表达式&amp;表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td>^</td>
+<td>按位异或</td>
+<td>表达式^表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td>\</td>
+<td></td>
+<td>按位或</td>
+<td>表达式\</td>
+<td>表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td>&amp;&amp;</td>
+<td>逻辑与</td>
+<td>表达式&amp;&amp;表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td>\</td>
+<td>\</td>
+<td></td>
+<td>逻辑或</td>
+<td>表达式\</td>
+<td>\</td>
+<td>表达式</td>
+<td>左到右</td>
+<td>双目运算符</td>
+</tr>
+<tr>
+<td><strong>13</strong></td>
+<td>?:</td>
+<td>条件运算符</td>
+<td>表达式1? 表达式2: 表达式3</td>
+<td>右到左</td>
+<td>三目运算符</td>
+</tr>
+<tr>
+<td><strong>14</strong></td>
+<td>=</td>
+<td>赋值运算符</td>
+<td>变量=表达式</td>
+<td><strong>右到左</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>/=</td>
+<td>除后赋值</td>
+<td>变量/=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>*=</td>
+<td>乘后赋值</td>
+<td>变量*=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>%=</td>
+<td>取模后赋值</td>
+<td>变量%=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+=</td>
+<td>加后赋值</td>
+<td>变量+=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-=</td>
+<td>减后赋值</td>
+<td>变量-=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;&lt;=</td>
+<td>左移后赋值</td>
+<td>变量&lt;&lt;=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;&gt;=</td>
+<td>右移后赋值</td>
+<td>变量&gt;&gt;=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&amp;=</td>
+<td>按位与后赋值</td>
+<td>变量&amp;=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>^=</td>
+<td>按位异或后赋值</td>
+<td>变量^=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>\</td>
+<td>=</td>
+<td>按位或后赋值</td>
+<td>变量\</td>
+<td>=表达式</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td>,</td>
+<td>逗号运算符</td>
+<td>表达式,表达式,…</td>
+<td>左到右</td>
+<td>从左向右顺序运算</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：同一优先级的运算符，运算次序由结合方向所决定。</p>
+</blockquote>
 <h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>main.c</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.二维数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">int a[3][4];</span></span><br><span class="line"><span class="comment">总共12个元素，可以当做3行4列看待，依次是:</span></span><br><span class="line"><span class="comment">a[0][0],a[0][1],a[0][2],a[0][3]</span></span><br><span class="line"><span class="comment">a[1][0],a[1][1],a[1][2],a[1][3]</span></span><br><span class="line"><span class="comment">a[2][0],a[2][1],a[2][2],a[2][3]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">a[i][j]  ==&gt; i+1行，j+1列的元素</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">int a[m][n];  该二位数组的右下角位置的元素只能是a[m-1][n-1]</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_double</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//1.最笨的初始化</span></span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">4</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2.分开写（格式要写正确）</span></span><br><span class="line">	<span class="keyword">int</span> b[<span class="number">3</span>][<span class="number">4</span>]=&#123;</span><br><span class="line">		&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,</span><br><span class="line">		&#123;<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;,</span><br><span class="line">		&#123;<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//3.其他各种初始化</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 输出二维数组内容</span></span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">4</span>; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%-5d \t"</span>, b[i][j]);    <span class="comment">// 付好：左对齐，5代表占5个位置（这不是重点，格式控制有其他控制办法）</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);  <span class="comment">// 格式化(每四个一行)</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 二维数组排序</span></span><br><span class="line">	<span class="comment">//求每一行最大值</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 多维数组：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 不存在! 因为内存是线性一维的</span></span><br><span class="line"><span class="comment">2. n维数组可以当做 每个元素是n-1维数组的一维数组 的数组</span></span><br><span class="line"><span class="comment">比如：a[3][4]，可以当做含有三个元素的一维数组，只不过每个元素都可以划分为4个小元素</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>func.h</p>
@@ -611,6 +988,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/Node-js-入门一下/" rel="prev" title="Node.js 入门一下">
+                Node.js 入门一下 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -729,7 +1110,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -740,7 +1121,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -751,7 +1132,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -851,7 +1232,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针"><span class="nav-number">4.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构体"><span class="nav-number">5.</span> <span class="nav-text">结构体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typedef"><span class="nav-number">6.</span> <span class="nav-text">typedef</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NULL"><span class="nav-number">7.</span> <span class="nav-text">NULL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件"><span class="nav-number">8.</span> <span class="nav-text">文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符优先级nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhjjjjjjjjjjjjjjj"><span class="nav-number">2.</span> <span class="nav-text">运算符优先级nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnhjjjjjjjjjjjjjjj</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针"><span class="nav-number">5.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构体"><span class="nav-number">6.</span> <span class="nav-text">结构体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typedef"><span class="nav-number">7.</span> <span class="nav-text">typedef</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NULL"><span class="nav-number">8.</span> <span class="nav-text">NULL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件"><span class="nav-number">9.</span> <span class="nav-text">文件</span></a></li></ol></div>
             
 
           </div>
