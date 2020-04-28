@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+  <meta name="baidu-site-verification" content="d5sacIPNJl">
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/wenwu.jpg?v=5.1.4" color="#fff">
+
+
+
+
+
+  <meta name="keywords" content="Linux,Ubuntu,Web服务,Apache,Nginx,Tomcat,反向代理,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="偷得浮生半日闲" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="WWW介绍www 万维网  静态网站：所有人看到的内容都一样 动态应用程序：  数据库、中间件 每个用户看到的内容不同 根据用户输入返回不同结果    访问方式FQDN：(Fully Qualified Domain Name)全限定域名：同时带有主机名和域名的名称。（通过符号“.”） 传输协议SSL基本被替代了，TSL使用最多put常用于上传文件options查看都支持哪些方法header只是头">
+<meta name="keywords" content="Linux,Ubuntu,Web服务,Apache,Nginx,Tomcat,反向代理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu server-Web服务">
+<meta property="og:url" content="http://www.xpshuai.cn/ubuntu-server-Web服务/index.html">
+<meta property="og:site_name" content="偷得浮生半日闲">
+<meta property="og:description" content="WWW介绍www 万维网  静态网站：所有人看到的内容都一样 动态应用程序：  数据库、中间件 每个用户看到的内容不同 根据用户输入返回不同结果    访问方式FQDN：(Fully Qualified Domain Name)全限定域名：同时带有主机名和域名的名称。（通过符号“.”） 传输协议SSL基本被替代了，TSL使用最多put常用于上传文件options查看都支持哪些方法header只是头">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200424214945523_10883.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200424215120585_7753.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200424235043151_8198.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425094030209_15175.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425094625729_615.png%20=400x">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425100139669_32000.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425131432963_15883.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425142824240_1739.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425144457182_27054.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425145333762_14082.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425145724172_15710.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425145944914_17134.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200425150429971_9910.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200428150102394_2075358316.png%20=700x">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200428152651153_2000734872.png">
+<meta property="og:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200428154603944_415659665.png">
+<meta property="og:updated_time" content="2020-04-28T10:16:23.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu server-Web服务">
+<meta name="twitter:description" content="WWW介绍www 万维网  静态网站：所有人看到的内容都一样 动态应用程序：  数据库、中间件 每个用户看到的内容不同 根据用户输入返回不同结果    访问方式FQDN：(Fully Qualified Domain Name)全限定域名：同时带有主机名和域名的名称。（通过符号“.”） 传输协议SSL基本被替代了，TSL使用最多put常用于上传文件options查看都支持哪些方法header只是头">
+<meta name="twitter:image" content="http://www.xpshuai.cn/ubuntu-server-Web服务/20200424214945523_10883.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.xpshuai.cn/ubuntu-server-Web服务/">
+
+
+
+
+
+  <title>ubuntu server-Web服务 | 偷得浮生半日闲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">偷得浮生半日闲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再偷浮生两吊钱</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            我的主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            文章标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            文章分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档时光
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br>
+            
+            记录美好生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于作者
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索本站
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+<!-- tq -->
+<script type="text/javascript">WIDGET = {FID: 'a5qxJi5vKF'}</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/ubuntu-server-Web服务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="浮生">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="偷得浮生半日闲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ubuntu server-Web服务</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T18:11:19+08:00">
+                2020-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ubuntu-server-Web服务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/ubuntu-server-Web服务/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  26  分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="WWW介绍"><a href="#WWW介绍" class="headerlink" title="WWW介绍"></a><font color="red">WWW介绍</font></h2><p>www 万维网</p>
+<ul>
+<li>静态网站：所有人看到的内容都一样</li>
+<li>动态应用程序： <ul>
+<li>数据库、中间件</li>
+<li>每个用户看到的内容不同</li>
+<li>根据用户输入返回不同结果</li>
+</ul>
+</li>
+</ul>
+<p><strong>访问方式</strong><br><img src="/ubuntu-server-Web服务/20200424214945523_10883.png" alt><br>FQDN：(Fully Qualified Domain Name)全限定域名：同时带有主机名和域名的名称。（通过符号“.”）</p>
+<p><strong>传输协议</strong><br>SSL基本被替代了，TSL使用最多<br><img src="/ubuntu-server-Web服务/20200424215120585_7753.png" alt><br>put常用于上传文件<br>options查看都支持哪些方法<br>header只是头部的信息(请求/响应)</p>
+<p><img src="/ubuntu-server-Web服务/20200424235043151_8198.png" alt></p>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a><font color="red">HTTP协议</font></h2><p><strong>常见服务端响应状态码</strong><br><img src="/ubuntu-server-Web服务/20200425094030209_15175.png" alt><br>更多详细状态码，见地址：<br><img src="/ubuntu-server-Web服务/20200425094625729_615.png =400x" alt></p>
+<h2 id="Apache2"><a href="#Apache2" class="headerlink" title="Apache2"></a><font color="red">Apache2</font></h2><p>Apache软件基金会的一个开源Web服务器<br><strong>模块化强大的扩展能力：</strong></p>
+<ul>
+<li>SSO模块</li>
+<li>并发限制模块</li>
+<li>日志监控模块</li>
+<li>WAF模块</li>
+<li>负载均衡模块</li>
+<li>音乐/图像处理模块</li>
+</ul>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apache2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认侦听端口 TCP 80</span></span><br></pre></td></tr></table></figure>
+<h4 id="通过众多directives进行配置"><a href="#通过众多directives进行配置" class="headerlink" title="通过众多directives进行配置"></a>通过众多<code>directives</code>进行配置</h4><p>在Ubuntu中，directives分散于多个配置文件中<br><img src="/ubuntu-server-Web服务/20200425100139669_32000.png" alt></p>
+<p>配置文件：<code>conf-enabled</code>(启用的)中的文件都是链接到<code>conf-available</code>(可用的)下的配置文件（创建了链接的才生效的，所以可以配置一些备用的不设置链接），修改完需要重启服务<br>模块目录：mods-enabled与mods-available，跟上面两者关系类似<br>站点：sites-enabled与sites-available<br>      不同ip以及不同端口可以映射不同的网站 –&gt; 同一个ip同一个端口来设置多个网站(不同域名都解析到这个ip, 服务端根据域名字段[主机头]来判断返回哪个页面) –&gt; 即为虚拟主机</p>
+<h6 id="虚拟主机简单配置"><a href="#虚拟主机简单配置" class="headerlink" title="虚拟主机简单配置"></a>虚拟主机简单配置</h6><blockquote>
+<p>一般先从available目录开始创建，至于启用与否还得配置enabled<br>本质上配置指令可以位于任何一个配置文件中</p>
+</blockquote>
+<p><strong>配置<code>sites-available</code>下讲解：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/apache2/sites-available/000-default.conf  # 默认虚拟主机</span></span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;    <span class="comment"># 匹配ip，*代表任意ip  , 侦听任意ip的80端口</span></span><br><span class="line">	ServerName www.example.com			<span class="comment"># 设置主机头（虚拟主机的域名）</span></span><br><span class="line">	ServerAdmin webmaster@localhost		<span class="comment"># 报错时显示的管理员邮箱</span></span><br><span class="line">	DocumentRoot /var/www/html			<span class="comment"># 指定Web根目录</span></span><br><span class="line">	ErrorLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/error.log		<span class="comment"># 报错日志</span></span><br><span class="line">	CustomLog <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/access.log combined		<span class="comment"># 访问日志</span></span><br><span class="line">	<span class="comment"># 侦听端口</span></span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>实验</strong><br>创建<code>ali</code>和<code>baid</code>两个域名的虚拟主机<br>1.创建新的虚拟主机（在sites-available）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制两个配置文件</span></span><br><span class="line">sudo cp 000-default.conf ali.conf</span><br><span class="line">sudo cp 000-default.conf baid.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分别进行配置</span></span><br><span class="line">ServerName www.ali.com</span><br><span class="line">DocumentRoot /var/www/ali</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ServerName www.baid.com</span><br><span class="line">DocumentRoot /var/www/baid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分别编辑页面文件</span></span><br><span class="line">sudo vim /var/www/ali/index.html</span><br><span class="line">sudo vim /var/www/baid/index.html</span><br></pre></td></tr></table></figure></p>
+<p>2.创建链接(在sites-enabled)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以用ln 创建</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># apache提供了更简单的方式</span></span><br><span class="line">sudo a2ensite ali  </span><br><span class="line">sudo a2ensite baid</span><br><span class="line"><span class="comment"># 重新加载</span></span><br><span class="line">service apache2 reload</span><br><span class="line"></span><br><span class="line"><span class="comment">## Note：</span></span><br><span class="line">ServerAlias *.lab.com  <span class="comment"># 域名通配符</span></span><br><span class="line">sudo a2ensite mynewSite	<span class="comment"># 启用虚拟主机</span></span><br><span class="line">sudo systemctl restart apache2.service  <span class="comment"># 重启服务</span></span><br><span class="line">sudo a2dissite mynewSite	<span class="comment"># 停用虚拟主机（禁用某个站点）</span></span><br></pre></td></tr></table></figure></p>
+<p>3.这里做实验，域名就简单通过hosts文件做了解析<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.11.130 www.ali.com</span><br><span class="line">192.168.11.130 www.baid.com</span><br></pre></td></tr></table></figure></p>
+<p>3.访问</p>
+<h6 id="侦听端口"><a href="#侦听端口" class="headerlink" title="侦听端口"></a>侦听端口</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/apaches/ports.conf</span><br></pre></td></tr></table></figure>
+<h6 id="Apache中默认基本配置"><a href="#Apache中默认基本配置" class="headerlink" title="Apache中默认基本配置"></a>Apache中默认基本配置</h6><p><strong>1.索引文件index：</strong><br>DirectoryIndex<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 可以根据需求,手动修改索引页的名称（一般不建议修改）</span></span><br><span class="line"><span class="comment"># /etc/apache2/mods-available/dir.conf</span></span><br><span class="line">&lt;IfModule mod_dir.c&gt;</span><br><span class="line">    DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm  <span class="comment"># 有先后的执行顺序</span></span><br><span class="line">&lt;/IfModule&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note：</span></span><br><span class="line">若没有正确放置index索引文件，会看到文件列表，可能会有安全隐患</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.html格式展示目录列表：Options</strong><br>【安全考虑】–&gt;去掉由于没有索引文件会显示文件列表的选项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## /etc/apache2/apache2.conf   主配置文件</span></span><br><span class="line">&lt;Directory /var/www/&gt;   <span class="comment"># 对文件目录权限的配置</span></span><br><span class="line">    Options Indexes FollowSymLinks  <span class="comment"># Indexes:若没有索引文件,就会显示目录列表;去掉Indexes就不会显示列表了，提示"权限拒绝"</span></span><br><span class="line">    AllowOverride None</span><br><span class="line">    Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>3.Permission Denied </strong><br>以上1,2两项都不匹配，就会显示”权限拒绝”</p>
+<p><strong>4.ErrorDocument  报错提示</strong><br>【安全考虑】–&gt; 默认404或报错页面会泄露信息或扫描器，建议替换为我们自定义的页面–&gt;不告诉用户不成功的具体原因,只告诉他出错了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/apache2/conf-available/localized-error-pages.conf  </span></span><br><span class="line">ErrorDocument 404 /error/404.html       <span class="comment"># 定义自己的页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br></pre></td></tr></table></figure></p>
+<p>5.基于目录的Options<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## /etc/apache2/apache2.conf   主配置文件</span></span><br><span class="line">&lt;Directory /var/www/&gt; </span><br><span class="line">    Options Indexes </span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他配置项(权限要最小化原则，安全起见)</span></span><br><span class="line">ExecCGI		<span class="comment"># 允许CGI脚本执行的目录(/usr/lib/cgi-bin)</span></span><br><span class="line">Includes	<span class="comment"># 允许服务端包含（一个html包含另一个html,模板化）</span></span><br><span class="line">IncludeNOEXEC	<span class="comment"># 允许包含，但进展CGI脚本exec、include</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br></pre></td></tr></table></figure></p>
+<p>6.环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/apache2/envvars	可以修改用户和组和pid等</span></span><br><span class="line">User /Group 	<span class="comment"># 服务器端应答客户端访问的账号(www-data)</span></span><br><span class="line">PidFile			<span class="comment"># /var/run/apache2/apache2.pid</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最大并发数（默认8192）</span></span><br><span class="line">APACHE_ULIMIT_MAX_FILES=<span class="string">'ulimit -n 65536'</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><p>服务器核心只实现了基本功能<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apache2 -l  <span class="comment"># 查看默认被编译到apache核心包里面的模块</span></span><br></pre></td></tr></table></figure></p>
+<p>其他功能通过模块实现<br>ubuntu编译动态加载模块实现运行时模块调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt search libapache2-mod		<span class="comment"># 搜索模块</span></span><br><span class="line">sudo apt install libapache2-mod0auth-mysql	<span class="comment"># 安装模块</span></span><br><span class="line">sudo a2enmod auth_mysql			<span class="comment"># 启用模块</span></span><br><span class="line">sudo a2dismod auth_mysql		<span class="comment"># 禁用模块</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="开启HTTPS"><a href="#开启HTTPS" class="headerlink" title="开启HTTPS"></a>开启HTTPS</h4><p><code>传输过程中</code>的CIA (机密性、完整性、可用性)，但是不提供<code>应用层</code>安全<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/apache2/sites-available/default-ssl.conf</span></span><br><span class="line">sudo a2ensite default-ssl  <span class="comment"># 开始ssl加密(默认未启动)</span></span><br><span class="line">sudo a2ebmod ssl	<span class="comment"># 默认未启动</span></span><br><span class="line"></span><br><span class="line">_default_:443	<span class="comment"># 未指定虚拟主机情况下的443端口访问, 默认是443(除了其他指定了虚拟主机名的，未指定的就访问到这里)</span></span><br><span class="line">SSLEngine on	<span class="comment"># 开启SSl/TSL</span></span><br><span class="line">SSLCertificateFile  /etc/ssl/certs/ssl-cert-snakeoil.pem  <span class="comment"># 证书文件(默认已经自带了一张证书)</span></span><br><span class="line">SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key</span><br><span class="line">SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt  <span class="comment"># 证书的加密链文件</span></span><br><span class="line">SSLCARevocationFile /etc/apache2/ssl.crl/ca-bundle.crl      <span class="comment"># 证书吊销列表</span></span><br><span class="line">SSLVerifyClient require   <span class="comment"># 要求客户端提供证书(不可抵赖性)</span></span><br><span class="line"></span><br><span class="line">&lt;FilesMatch <span class="string">"\.(cgi|shtml|phtml|php)$"</span>&gt;   <span class="comment"># 基于文件类型，设置不同环境变量进行加密</span></span><br><span class="line">      SSLOptions +StdEnvVars</span><br><span class="line">&lt;/FilesMatch&gt;</span><br><span class="line">&lt;Directory /usr/lib/cgi-bin&gt;    <span class="comment"># 对指定目录</span></span><br><span class="line">      SSLOptions +StdEnvVars    <span class="comment"># 标准环境变量</span></span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">ssl-unclean-shutdown   <span class="comment"># 只是服务器端向客户端断开连接(追求速度)</span></span><br><span class="line">ssl-accurate-shutdown	<span class="comment"># 服务器端与客户端的连接端口了，客户端还有向服务端再确认(追求稳定性)</span></span><br><span class="line"></span><br><span class="line">nokeepalive ssl-unclean-shutdown</span><br><span class="line">downgrade-1.0 force-response-1.0	<span class="comment"># 降级响应</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 还可以按自己需要...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 启用并重启服务</span></span><br><span class="line">sudo a2ensite default-ssl</span><br><span class="line">service apache2 reload</span><br><span class="line">sudo systemctl restart apache.service</span><br><span class="line"></span><br><span class="line"><span class="comment">## 可以访问了(ubuntu自己生成的证书浏览器会提示不安全)</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h6><p>向证书颁发机构申请的合法证书就可以替换ubuntu自带的证书<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用CA机构签名证书</span></span><br><span class="line">sudo openssl req -newkey rsa:2048 -nodes -keyout server.key -out server.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用自签名证书</span></span><br><span class="line">sudo openssl req -x509 -days 365 -sha256 -newkey rsa:2048 -nodes -keyout /etc/ssl/private/mysite.key -out /etc/ssl/certs/mysite.pem</span><br></pre></td></tr></table></figure></p>
+<h6 id="创建HTTPS虚拟主机"><a href="#创建HTTPS虚拟主机" class="headerlink" title="创建HTTPS虚拟主机"></a>创建<code>HTTPS</code>虚拟主机</h6><p>和创建一般虚拟主机是类似的<br><img src="/ubuntu-server-Web服务/20200425131432963_15883.png" alt><br>建议商业证书颁发机构(权威机构颁发，默认受信，增强特性，收费高昂，有效期长)</p>
+<p><strong>那没钱怎么办呢？</strong><br>有几家机构已经有免费的了，比如<code>Let&#39;s encrypt</code><br><strong>Let’s encrypt</strong></p>
+<ul>
+<li>致力于加速全文实现https的免费证书颁发机构</li>
+<li>证书有效期90天(可刷新)</li>
+<li>专门客户端程序 <code>Certbot</code>，简化证书步骤<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:certbot/certbot  <span class="comment"># 添加仓库</span></span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install cerbot  python-cerbot-apache</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前提</span></span><br><span class="line">域名正常解析、设置好虚拟主机</span><br><span class="line"></span><br><span class="line"><span class="comment"># 申请证书 (--apache意思是给apache用的， -d是域名,还有子域名)</span></span><br><span class="line">sudo certbot --apache -d example.com -d www.example.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 证书位置</span></span><br><span class="line">/etc/letsencrypt/live</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看证书状态(换成自己的域名)</span></span><br><span class="line">https://www.ssllab.com/ssltest/analyze.html?d=example.com&amp;latest</span><br></pre></td></tr></table></figure></p>
+<h4 id="Apache支持PHP"><a href="#Apache支持PHP" class="headerlink" title="Apache支持PHP"></a>Apache支持PHP</h4><p>1.安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install php7.2 libapache2-mod-php7.2   <span class="comment"># mod-php模块</span></span><br><span class="line"><span class="comment"># 验证 </span></span><br><span class="line">php -v</span><br></pre></td></tr></table></figure></p>
+<p>2.启用模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接启用即可</span></span><br><span class="line">a2enmod php7.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apache对php的支持是模块化的，而Nginx对php支持的配置方式比较原始</span></span><br></pre></td></tr></table></figure></p>
+<p>索引文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim  /etc/apache2/mods-available/dir.conf       <span class="comment"># index.php</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure></p>
+<p>配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/php/7.2/    <span class="comment"># 下面不同的目录，是针对不同应用的，这里apache的在apache子目录下面</span></span><br><span class="line">/usr/lib/php/7.2/    <span class="comment"># 为不同的使用场景的配置文件(开发环境与生产环境，一般情况下会把这里的文件链接到上面的配置中)</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Keepalived"><a href="#Keepalived" class="headerlink" title="Keepalived"></a><font color="red">Keepalived</font></h2><p>高可用的一种解决方案：Keepalived</p>
+<h4 id="实现高可用-HA"><a href="#实现高可用-HA" class="headerlink" title="实现高可用(HA)"></a>实现高可用(HA)</h4><ul>
+<li>在服务器组内漂移的VIP（多台服务器实现一个组，但也是一个域名，解析到一个ip）</li>
+<li>Master独占VIP，其他Server检查Master可用性</li>
+<li>Keepalives并非专门针对Apache而设计</li>
+<li>常用于负载均衡技术环境</li>
+<li>组内服务器应提供相同内容和配置</li>
+</ul>
+<p>组内不同服务器有优先级，多个服务器共用一个漂移的ip地址(VIP)，处于正常状态的服务器叫Maste</p>
+<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install keepalived</span><br><span class="line"></span><br><span class="line"><span class="comment"># 因为无配置，所有默认启动失败</span></span><br><span class="line">/etc/keepalived/keepalived.conf		<span class="comment"># 配置文件（需要创建）</span></span><br></pre></td></tr></table></figure>
+<p>配置文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可选配置项，但是一般建议配置</span></span><br><span class="line">global_defs &#123;  </span><br><span class="line">    notification_email &#123;</span><br><span class="line">    myemail@mycompany.com   <span class="comment"># 发送邮件给谁</span></span><br><span class="line">    &#125;</span><br><span class="line">    notification_email_from keepalives@mycompany</span><br><span class="line">    smtp_server 192.168.1.150</span><br><span class="line">    smtp_connect_timeout 30</span><br><span class="line">    router_id mycompany_web_prod</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 关键配置</span></span><br><span class="line"><span class="comment"># 1号配置实例</span></span><br><span class="line">vrrp_instance VI_1 &#123;</span><br><span class="line">    smtp_alter</span><br><span class="line">    interface enp0s3	 <span class="comment"># 网卡接口优先级</span></span><br><span class="line">    virtual_router_id 51 <span class="comment"># 定义服务器组</span></span><br><span class="line">    priority 100		 <span class="comment"># 优先级(自己定义，保证顺序即可)</span></span><br><span class="line">    advert_int 5		 <span class="comment"># 周期性通告的间隔时间</span></span><br><span class="line">    virtual_ipaddress &#123;  </span><br><span class="line">        192.168.1.200	 <span class="comment"># VIP（DHCP以外）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">systemctl start keepalived </span><br><span class="line">systemctl status -l keeplived</span><br><span class="line"><span class="comment"># 网卡绑定VIP</span></span><br><span class="line">	 ip a</span><br><span class="line">	 等待30s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装第二台服务器，并进行类似的配置(优先级修改,vip地址填写一样的)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 模拟切换</span></span><br><span class="line">systemctl stop keepalived </span><br><span class="line">systemctl start keepalived</span><br></pre></td></tr></table></figure>
+<p>不仅可以配合Apache使用，还可配合其他使用</p>
+<h2 id="Ubuntu-18-04新特性"><a href="#Ubuntu-18-04新特性" class="headerlink" title="Ubuntu 18.04新特性"></a><font color="red">Ubuntu 18.04新特性</font></h2><p>哈哈哈，前几天20.04都已经正式发布了，我听课进度太慢</p>
+<blockquote>
+<p>内核是关键<br><img src="/ubuntu-server-Web服务/20200425142824240_1739.png" alt><br><img src="/ubuntu-server-Web服务/20200425144457182_27054.png" alt></p>
+</blockquote>
+<h6 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h6><p><img src="/ubuntu-server-Web服务/20200425145333762_14082.png" alt><br><img src="/ubuntu-server-Web服务/20200425145724172_15710.png" alt><br>多个地址，要用逗号分隔<br>重启服务：<code>sudo netplan apply</code></p>
+<p><img src="/ubuntu-server-Web服务/20200425145944914_17134.png" alt><br>桥接的物理网卡设置为没有ip</p>
+<p><strong>桌面端：</strong><br><img src="/ubuntu-server-Web服务/20200425150429971_9910.png" alt></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ifconfig / ifup / if down  已经默认不安装了</span></span><br><span class="line"><span class="comment"># 对应上面</span></span><br><span class="line">ip link <span class="built_in">set</span> eth0 up  / ip link <span class="built_in">set</span> eth0 down</span><br></pre></td></tr></table></figure>
+<p><strong>networkctl命令</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此命令地位更加突出</span></span><br><span class="line">networkctl status / networkctl status eth0   <span class="comment"># 查看不同网卡的状态和详细信息</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>ip命令</strong><br>ip link<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo ip link ens33 down  <span class="comment"># down掉, 相当于ifup</span></span><br><span class="line">sudo ip link ens33 up    <span class="comment"># 启动网卡, 相当于 ifdown</span></span><br><span class="line"></span><br><span class="line">ip link ls ens33  <span class="comment"># 查看网卡的link信息</span></span><br><span class="line">ip -s -d link ls ens33  <span class="comment"># 查看网卡的link信息(更详细)</span></span><br><span class="line">ip -s -s -d link ls ens33  <span class="comment"># 查看网卡的link信息(更更详细)</span></span><br><span class="line">ip link <span class="built_in">set</span> dev ens33 mtu 1500  <span class="comment"># 修改MTU</span></span><br><span class="line">ip link <span class="built_in">set</span> dev ens33  address 00:11:22:33:44:55  <span class="comment"># 修改MAC</span></span><br></pre></td></tr></table></figure></p>
+<p>ip addr<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ip addr    <span class="comment"># ip a</span></span><br><span class="line">ip addr show  <span class="comment"># 跟上面没什么差别</span></span><br><span class="line"></span><br><span class="line">ip addr add dev ens33 192.168.1.10/24  <span class="comment"># 手动给网卡添加ip</span></span><br><span class="line">ip addr del dev ens33 192.168.1.10/24  <span class="comment"># 手动给网卡删除ip</span></span><br><span class="line">ip addr fulsh dev ens33  <span class="comment"># 清除网卡信息</span></span><br></pre></td></tr></table></figure></p>
+<p>ip route<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip route show  <span class="comment"># 查看路由信息   ip route</span></span><br><span class="line">ip route get 1.1.1.1   <span class="comment"># 查看到达指定目的ip，计算要经过的路由</span></span><br><span class="line">sudo ip route default via 192.168.1.2  <span class="comment"># 添加默认路由(网关地址)</span></span><br><span class="line">sudo ip route dev ens33 2.0.0.0/8 via 192.168.1.1 <span class="comment"># 指定去往某个网络，都要经过1.1这个路由，并指定网卡进行转发</span></span><br></pre></td></tr></table></figure></p>
+<p>ip maddress<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 组播地址</span></span><br><span class="line">ip maddress <span class="comment"># 查看所有网卡都属于哪个组播地址</span></span><br><span class="line">ip maddress ls ens33  <span class="comment"># 查看指定网卡属于哪个组播地址</span></span><br><span class="line">ip maddress add 33:33:00:00:00:01 dev ens33 <span class="comment"># 把哪个网卡加入到某个组播地址</span></span><br></pre></td></tr></table></figure></p>
+<p>ip neighbor<br>查arp缓存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看</span></span><br><span class="line">ip neigh</span><br><span class="line">ip -s -s neighbor show</span><br><span class="line"><span class="comment"># 手动绑定ip与mac地址（防止arp欺骗）  lladdr即逻辑链路层地址， perm是永久生效</span></span><br><span class="line">ip neighbor add dev ens33 192.168.0.131 lladdr 00:11:22:33:44:55 nud perm</span><br></pre></td></tr></table></figure></p>
+<p>ip monitor<br>监视网络里面地址等解析的变化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip monitor all</span><br><span class="line"><span class="comment"># 有着不同的状态</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a><font color="red">Nginx</font></h2><ul>
+<li>开源，轻量，快速，可扩展的Web服务器</li>
+<li>Github, Netflix, Wordpress都基于Nginx</li>
+<li>但是可配置能力弱于Apache</li>
+<li>适用于大流量，高并发环境（稳定快速，占用资源少–C10K问题）</li>
+<li>在Top 1000个网站中使用率最高</li>
+</ul>
+<p><strong>Apache基于线程</strong></p>
+<ul>
+<li>基于进程(运行中的文件就叫进程)消耗资源多</li>
+<li>同进程下的多线程共享内存（一损俱损）</li>
+</ul>
+<p><strong>Nginx使用事件驱动的架构</strong></p>
+<ul>
+<li>新客户端请求时不创建新的进程/线程</li>
+<li>事件处理器处理请求任务</li>
+<li>更少的处理时间，更少的内存消耗</li>
+</ul>
+<p><strong>Apache与Nginx共用</strong></p>
+<ul>
+<li>Apache处理动态内容</li>
+<li>Nginx处理静态内容</li>
+</ul>
+<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件在 /etc/nginx</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/nginx</span></span><br><span class="line"><span class="comment"># 主配置文件 nginx.conf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 虚拟主机配置文件</span></span><br><span class="line">sites-available</span><br><span class="line">sites-enabled    <span class="comment"># 启用的，是个链接</span></span><br><span class="line"></span><br><span class="line">snippets    <span class="comment"># 可以复用的片段</span></span><br></pre></td></tr></table></figure>
+<h6 id="主配置文件"><a href="#主配置文件" class="headerlink" title="主配置文件"></a>主配置文件</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/nginx/nginx.conf</span></span><br><span class="line">user www-data;        <span class="comment"># 用户</span></span><br><span class="line">worker_processes auto;    <span class="comment"># 进程数</span></span><br><span class="line">include /etc/nginx/modules-enabled/*.conf;    <span class="comment"># 引入的模块配置</span></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 768;  <span class="comment"># 每个进程最大的并发连接数</span></span><br><span class="line">    <span class="comment"># multi_accept on;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    sendfile on;    <span class="comment"># 对内核 静态资源的访问速度(都要开着)</span></span><br><span class="line">    tcp_nopush on;    <span class="comment"># 优化了对tcp协议栈性能(优化了数据包的大小,多个小包变成大包再发)</span></span><br><span class="line">    tcp_nodelay on;   <span class="comment"># 与上面的参数相反(从发包的延时进行优化,来一个包就发)</span></span><br><span class="line">    keepalive_timeout 65;        <span class="comment"># 没一个TCP连接最大的保活的时间</span></span><br><span class="line">    types_hash_max_size 2048;    <span class="comment"># MIME类型镜头内容hash表大小</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    <span class="comment"># Virtual Host Configs</span></span><br><span class="line">    <span class="comment">##</span></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">    include /etc/nginx/sites-enabled/*;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="虚拟主机配置文件"><a href="#虚拟主机配置文件" class="headerlink" title="虚拟主机配置文件"></a>虚拟主机配置文件</h6><p>ip和端口一样，使用不同域名来指向不同站点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/nginx/sites-available/    # 可用站点</span></span><br><span class="line"><span class="comment"># /etc/nginx/sites-enabled/      # 已启用站点</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /etc/nginx/sites-available/default</span></span><br><span class="line">server&#123;</span><br><span class="line">    listen 80 default_server;    <span class="comment"># 侦听的端口</span></span><br><span class="line">    root /var/www/htmll;    <span class="comment"># 根目录</span></span><br><span class="line">    index index.html index.htm index.nginx-debian.html;    <span class="comment"># 索引文件</span></span><br><span class="line">    server_name www.xpsshuai.cn;    <span class="comment"># 主机名(域名)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">location / &#123;    <span class="comment"># 主url</span></span><br><span class="line">    <span class="comment"># First attempt to serve request as file, then</span></span><br><span class="line">    <span class="comment"># as directory, then fall back to displaying a 404.</span></span><br><span class="line">    try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ =404;    <span class="comment"># 资源没有就404</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="新建虚拟主机-Server-Blocks-实例"><a href="#新建虚拟主机-Server-Blocks-实例" class="headerlink" title="新建虚拟主机(Server Blocks)实例"></a>新建虚拟主机(Server Blocks)实例</h4><blockquote>
+<p>Nginx中叫<code>服务器块</code>，但东西跟Apache中虚拟主机是一样的</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /var/www/qq.com</span><br><span class="line"><span class="comment"># 每个单独的Server Block一个配置文件</span></span><br><span class="line">sudo cp /etc/nginx/sites-available/default  /etc/nginx/sites-available/qq.com</span><br><span class="line">sudo vim /etc/nginx/sites-available/qq.com </span><br><span class="line"><span class="comment"># 内容</span></span><br><span class="line">server&#123;</span><br><span class="line">    listen 80;   <span class="comment"># 因为这里都侦听80端口，所以为了和默认站点区分，要指定不同域名   </span></span><br><span class="line">    server_name www.qqq.com;   </span><br><span class="line">    root /var/www/qq.com;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 其他配置项可以取消注释自行配置</span></span><br><span class="line">location ~ /\.ht &#123;   <span class="comment"># 这个建议启用，以..开头,以ht结尾的你我们就拒绝访问--&gt;当然也可以增加更多策略</span></span><br><span class="line">   deny all;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建启用的符号链接(Apache是site2enable，这里没有专门的命令)</span></span><br><span class="line">sudo ln -s /etc/nginx/sites-available/qq.com  /etc/nginx/sites-enabled/qq.com </span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">sudo systemctl restart nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问域名，就会访问到qq.com，因为请求中的host字段是不一样的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他站点同上</span></span><br></pre></td></tr></table></figure>
+<h4 id="Nginx支持PHP"><a href="#Nginx支持PHP" class="headerlink" title="Nginx支持PHP"></a>Nginx支持PHP</h4><p>WebServer本身只是提供资源的，必须配合php等脚本才能进行逻辑的运算</p>
+<p>1.安装fastCGI process manager(FPM)  –&gt; 就能配合Nginx配合进行处理(Nginx把接收到的请求转发给php处理)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install php-fpm   <span class="comment"># 安装</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看位置  ls /var/run/php/</span></span><br><span class="line">/var/run/php/php7.2-fpm.sock  <span class="comment"># 进程名称(记住路径)</span></span><br><span class="line"><span class="comment"># 验证 </span></span><br><span class="line">php-v</span><br></pre></td></tr></table></figure></p>
+<p>2.配置Nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改配置  sudo vim /etc/nginx/sites-available/qq.com</span></span><br><span class="line">location ~ \.php$ &#123;   <span class="comment"># 匹配所有访问.php的请求</span></span><br><span class="line">        include snippets/fastcgi-php.conf;</span><br><span class="line">        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;    <span class="comment"># 意思是: 把所有访问.php的拓展名的资源，都转发给这里pass的php进程</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment"># 还有，索引页面也要添加 index.php</span></span><br></pre></td></tr></table></figure></p>
+<p>3.配置PHP<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo vim /etc/php/7.2/fpm/php.ini</span></span><br><span class="line"><span class="comment"># 这里只简单讲几个配置</span></span><br><span class="line">cgi.fix_pathinfo=0       <span class="comment"># 必须修改为0, 安全</span></span><br><span class="line">file_uploads = On         <span class="comment"># 如果不需要就关掉，看自己需求</span></span><br><span class="line">max_file_uploads = 20    <span class="comment"># 限制单个文件上传大小</span></span><br><span class="line">allow_url_fopen = On     <span class="comment"># 是否允许文件包含(如果没业务需要，建议关闭)</span></span><br><span class="line">allow_url_include = Off</span><br><span class="line">memory_limit = 128M      <span class="comment"># 指定内存大小(最小128M,看业务需求)</span></span><br></pre></td></tr></table></figure></p>
+<p>4.重新加载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t</span><br><span class="line">sudo systemctl reload nginx</span><br><span class="line"><span class="comment"># 重启php</span></span><br><span class="line">sudo systemctl restart php7.2-fpm</span><br></pre></td></tr></table></figure></p>
+<p>5.重新访问php页面，查看是否正确解析</p>
+<h4 id="Nginx支持SSL"><a href="#Nginx支持SSL" class="headerlink" title="Nginx支持SSL"></a>Nginx支持SSL</h4><p><strong>自签名证书</strong> (自己测试或者不需要那么安全的情况下) –&gt; 机密性和完整性可以保证，但是身份认证是不会被公网所信任的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># x509标准格式的, 私钥是绝对不能泄漏的, 后面是绑定的一个证书</span></span><br><span class="line">sudo openssl req -x509 -days 365 -sha256 -newkey rsa:2048 -nodes -keyout /etc/ssl/private/qq.key -out /etc/ssl/certs/qq.pem</span><br><span class="line"><span class="comment"># 一旦域名绑定了证书，就必须通过这个域名来访问</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 若向CA证书颁发机构申请证书方法 同上Apache</span></span><br></pre></td></tr></table></figure></p>
+<p>服务块配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sudo vim /etc/nginx/sites-available/qq.com</span></span><br><span class="line">server &#123;</span><br><span class="line">     listen 443 ssl;        <span class="comment"># 443端口是 ssl, 通过https访问</span></span><br><span class="line">     server_name www.qqq.com;</span><br><span class="line">     ssl_certificate /etc/ssl/certs/qq.pem;</span><br><span class="line">     ssl_certificate_key /etc/ssl/private/qq.key;</span><br><span class="line"></span><br><span class="line">     root /var/www/qq.com</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问https://xxxxxx    会发现浏览器会提示证书不信任</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Let’s encrypt</strong><br>第三方的https的开源的免费证书颁发机构，向他来申请证书</p>
+<p>1.安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:certbot/certbot  <span class="comment"># 添加仓库</span></span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install cerbot    <span class="comment"># 客户端程序(简化了申请流程)</span></span><br><span class="line">sudo apt install python-cerbot-nginx</span><br></pre></td></tr></table></figure></p>
+<p>2.使用方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前提</span></span><br><span class="line">域名正常解析、设置好虚拟主机</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.1申请证书 (--nginx意思是给nginx用的， -d是域名,还有子域名) , -m是管理员邮箱</span></span><br><span class="line">sudo certbot --nginx -d example.com -d www.example.com -m admin@example.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 证书存放位置</span></span><br><span class="line">/etc/letsencrypt/live</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.2修改自己配置文件中证书的位置</span></span><br><span class="line"><span class="comment"># sudo vim /etc/nginx/sites-available/qq.com</span></span><br><span class="line">ssl_certificate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.3 手动证书更新(因为默认证书有效期是90天)</span></span><br><span class="line">sudo certbot renew --dry-run</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.4测试 查看证书状态(输入自己的域名) 可以查看到一些安全隐患等详细信息</span></span><br><span class="line">https://www.ssllab.com/ssltest/</span><br><span class="line"><span class="comment"># ssl的信息扫描(不安全的地方)也可以使用自己本地的工具</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h4><blockquote>
+<p>很多情况下，Nginx不是作为WebServer使用的，最常见的就是作为<code>反向代理</code></p>
+</blockquote>
+<p>首先说一下<code>代理</code>:     代理客户端访问外网服务器。代理是重新生成的请求(比如公司内部限制员工上网的场景)<br><code>反向代理</code>：</p>
+<pre><code>- 代理服务器对外提供服务，接受客户端请求
+- 安全层过滤客户端恶意请求(云)
+- 可以放在防火墙外面，甚至放在云上(云WAF本质上就是反向代理, 请求通过DNS解析到云waf上，进行过滤)
+</code></pre><ul>
+<li>Apache不适用于高并发，高负载环境</li>
+<li>Nginx没有内建支持动态内容处理能力</li>
+</ul>
+<p><strong>结合Apache/Nginx的优势</strong></p>
+<ul>
+<li>Nginx接受入站请求和静态内容缓存，动态请求发给Apache</li>
+<li>Apache完成动态内容处理</li>
+<li>Nginx作为反向代理（动态请求转发给Apache）</li>
+<li>Nginx放在WebServer前面，再将请求发给WebServer。然后服务端把数据通过Nginx向用户交付数据</li>
+<li>不仅减缓了Apache的流量压力，也进行了一定的安全过滤</li>
+</ul>
+<h4 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a>Nginx实现反向代理</h4><blockquote>
+<p>同一台服务器的流量转发</p>
+</blockquote>
+<p>1.本机安装Apache<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">注意: 先停掉nginx的服务</span><br><span class="line">systemctl stop nginx</span><br><span class="line">再安装</span><br><span class="line">sudo apt install apache2</span><br></pre></td></tr></table></figure></p>
+<p>2.修改Apache侦听端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br><span class="line"><span class="comment"># vim /etc/apache2/ports.conf</span></span><br><span class="line"><span class="comment">#让apache不占用80, 让nginx侦听80端口</span></span><br><span class="line"> Listen 8080</span><br><span class="line">&lt;IfModule ssl_module&gt;</span><br><span class="line">   Listen 8443</span><br><span class="line">&lt;/IfModule&gt;</span><br><span class="line">&lt;IfModule mod_gnutls.c&gt;</span><br><span class="line">    Listen 8443</span><br><span class="line">&lt;/IfModule&gt;</span><br><span class="line"></span><br><span class="line">2.修改apache虚拟站点默认侦听端口</span><br><span class="line">vim /etc/apache2/sites-available/000-default.conf</span><br><span class="line">也改为8080</span><br><span class="line"></span><br><span class="line">3.重启服务</span><br><span class="line">systemctl restart apache2</span><br></pre></td></tr></table></figure></p>
+<p>3.Nginx反向代理设置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/nginx/sites-available/default</span></span><br><span class="line"><span class="comment">#修改nginx配置，侦听80端口，然后动态部分的流量转发给apache,而静态文件还是放Nginx上读取(这里以php为例)</span></span><br><span class="line"><span class="comment"># 动态内容进行转发</span></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">     include snippets/fastcgi-php.conf;</span><br><span class="line">     <span class="comment"># fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;   # 这里就不用nginx解析php了，用apache(配置在上面小结)</span></span><br><span class="line">     proxy_pass  http://127.0.0.1:8080;  <span class="comment"># 凡是php的动态内容都转发给本机的8080(即Apache)</span></span><br><span class="line">     proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;  <span class="comment"># 通常会添加一些代理请求头(便于区分)</span></span><br><span class="line">     proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>; <span class="comment"># 这个头部虽然不是RFC标准，但是也是记录了经过了哪些代理地址</span></span><br><span class="line">     proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">    proxy_set_header X-Forward-Proto <span class="variable">$scheme</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment"># 静态内容留给自己（增加一个location）      </span></span><br><span class="line">location ~* \.(js|css|jpg|png|svg|html|htm)$ &#123;</span><br><span class="line">   expires 10d;   <span class="comment"># 指定过期时间 10天</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.检查Nginx配置并重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t  <span class="comment"># 检查配置语法</span></span><br><span class="line">sudo systemctl restart nginx  <span class="comment"># 重启</span></span><br></pre></td></tr></table></figure></p>
+<p>5.配置Apache支持php解析<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.安装</span></span><br><span class="line">sudo apt install php7.2 libapache2-mod-php7.2   <span class="comment"># mod-php模块</span></span><br><span class="line"><span class="comment"># 验证 </span></span><br><span class="line">php -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.启用模块</span></span><br><span class="line">a2enmod php7.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.索引文件</span></span><br><span class="line">vim  /etc/apache2/mods-available/dir.conf       <span class="comment"># 增加index.php</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.重启apache</span></span><br><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure></p>
+<p>6.测试能否正常访问</p>
+<h4 id="多台服务器的Nginx反响代理，进行流量转发"><a href="#多台服务器的Nginx反响代理，进行流量转发" class="headerlink" title="多台服务器的Nginx反响代理，进行流量转发"></a>多台服务器的Nginx反响代理，进行流量转发</h4><p>实验环境：一台ubuntu安装apache, 两台虚拟机安装Nginx<br>客户端向第一台Nginx服务器发送请求，转发给第二台Nginx服务器，然后转发给最后一台Apache<br>链式代理</p>
+<p><strong>1.Nginx机器 N1</strong><br>1.安装Nginx<br>2.配置(这里做实验就简单地用了默认的配置了)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/nginx/sites-available/default</span></span><br><span class="line">location / &#123;   <span class="comment"># 所有发到我这里的请求都转发给N2</span></span><br><span class="line">    proxy_pass http://192.168.0.104;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.重启Nginx</p>
+<p><strong>2.Nginx机器 N2</strong><br>1.安装Nginx<br>2.配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/nginx/sites-available/default</span></span><br><span class="line">location / &#123;   <span class="comment"># 所有发到我这里的请求都转发给N2</span></span><br><span class="line">    proxy_pass http://192.168.0.105;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.重启Nginx</p>
+<p><strong>3.Apache机器 A3</strong><br>安装apache<br>然后客户端访问N1, 就会看到A3的页面</p>
+<h4 id="Nginx负载均衡"><a href="#Nginx负载均衡" class="headerlink" title="Nginx负载均衡"></a>Nginx负载均衡</h4><blockquote>
+<p>基于反向代理实现负载均衡</p>
+</blockquote>
+<p><strong>负载均衡：</strong> 前面放一个Nginx进行反向代理，后面放多个Apache作为WebServer</p>
+<p><strong>基本配置</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个服务器组(要转发到的目标组)</span></span><br><span class="line">upstream srvs &#123;  <span class="comment"># upstream只是一个组的名称</span></span><br><span class="line">    least_conn;        <span class="comment"># 负载均衡方法规则 --最少连接数优先 (详细见下面)</span></span><br><span class="line">    server 192.168.106:80  weight=1;  <span class="comment"># server 是后面的一个WebServer(apache或Nginx)的地址， weight 是权重(越大接收的流量就越多)</span></span><br><span class="line">    server 192.168.106:80  weight=2;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置</span></span><br><span class="line">server &#123;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://srvs;   <span class="comment"># 上面定义的组的名称(不需要被DNS解析，仅仅是一个标识)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>负载均衡方法</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">round-robin       <span class="comment"># 论询</span></span><br><span class="line">least_conn        <span class="comment"># 最少连接数优先(已经建立的连接数)</span></span><br><span class="line">least_time        <span class="comment"># 响应速度最快</span></span><br><span class="line"><span class="built_in">hash</span>              <span class="comment"># 基于请求的Hash值</span></span><br><span class="line">ip_hash           <span class="comment"># 基于ip地址的hash值(适用于需要会话保持的场景)</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/var/<span class="built_in">log</span>/nginx/access.log</span><br><span class="line">/var/<span class="built_in">log</span>/nginx/error.log</span><br></pre></td></tr></table></figure>
+<h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a><font color="red">Tomcat</font></h2><p>Tomcat是由Apache组织开发的一个Servlet(Server Applet)容器</p>
+<ul>
+<li>实现对servlet, JSP, JAVA Socket等支持</li>
+<li>包含http服务器</li>
+<li>作为中间件使用</li>
+<li>可与Nginx结合使用(只用Tomcat的话, 抗压能力强)</li>
+</ul>
+<p>servlet是优于CGI的方式的</p>
+<h6 id="安装-open-jdk"><a href="#安装-open-jdk" class="headerlink" title="安装 open jdk"></a>安装 open jdk</h6><p>一般tomcat和java配合较多<br>jdk是开发环境，jre是运行环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install default-jdk  <span class="comment">#安装openjdk。 使用默认版本 或者指定openjdk-8-jdk</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="安装-oracle-jdk"><a href="#安装-oracle-jdk" class="headerlink" title="安装 oracle jdk"></a>安装 oracle jdk</h6><p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install software-properties-common -y</span><br><span class="line">sudo add-apt-repository ppa:webupd8team/java</span><br><span class="line">sudo apt install oracle-java8-installer -y</span><br></pre></td></tr></table></figure></p>
+<p>java版本选择<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br><span class="line">sudo update-alternatives --config javac</span><br><span class="line"></span><br><span class="line">java --version</span><br></pre></td></tr></table></figure></p>
+<p>或者手动下载oracle jdk包</p>
+<h6 id="官方库安装tomcat"><a href="#官方库安装tomcat" class="headerlink" title="官方库安装tomcat"></a>官方库安装tomcat</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ubuntu中收录的8</span></span><br><span class="line">sudo apt install tomcat8</span><br><span class="line">sudo apt install tomcat8-docs</span><br><span class="line">sudo apt install tomcat8-admin</span><br><span class="line">sudo apt install tomcat8-examples</span><br><span class="line"></span><br><span class="line"><span class="comment"># tomcat默认不是主要作为WebServer的，一般是配合Apache和Nginx，所以默认使用8080端口</span></span><br></pre></td></tr></table></figure>
+<h6 id="手动安装tomcat"><a href="#手动安装tomcat" class="headerlink" title="手动安装tomcat"></a>手动安装tomcat</h6><p>适用于指定具体版本<br>1.先安装jdk<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt install default-jdk  <span class="comment">#安装openjdk。 使用默认版本 或者指定openjdk-8-jdk   </span></span><br><span class="line"><span class="comment"># 验证</span></span><br><span class="line">java --version</span><br><span class="line"></span><br><span class="line">sudo useradd -m -U -d /opt/tomcat -s /bin/<span class="literal">false</span> tomcat       <span class="comment"># 创建tomcat帐号（home放在opt下面）</span></span><br></pre></td></tr></table></figure></p>
+<p>2.再下载安装包<br><img src="/ubuntu-server-Web服务/20200428150102394_2075358316.png =700x" alt></p>
+<p>3.移动到/opt/tomcat目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv apache-tomcat-8.5.31 /opt/tomcat/</span><br></pre></td></tr></table></figure></p>
+<p>4.修改该文件递归的属主属组改为新建的<code>tomcat</code>用户<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建议建立符号链接 </span></span><br><span class="line">sudo ln -s /opt/tomcat/apache-tomcat-8.5.31 /opt/tomcat/latest  <span class="comment"># 把新版本添加链接即可(版本更新之后不需要更改配置文件，配置文件都配置latest,而只需把latest修改指向即可)</span></span><br><span class="line"></span><br><span class="line">sudo chown -R tomcat:/opt/tomcat</span><br><span class="line">sudo chmod +x /opt/tomcat/latest/bin/*.sh</span><br><span class="line"><span class="comment"># sudo chmod +x /opt/tomcat/apache-tomcat-8.5.31/bin/*.sh</span></span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>手动创建systemd管理文件(手动安装就没有systemd的后台管理文件)<br><code>/etc/systemd/system/</code><br><code>sudo vim tomcat.service</code><br>配置内容如下<br><img src="/ubuntu-server-Web服务/20200428152651153_2000734872.png" alt></li>
+</ol>
+<p>6.启动服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重新reload</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动tomcat</span></span><br><span class="line">sudo systemctl start tomcat</span><br><span class="line">sudo systemctl status tomcat</span><br><span class="line"><span class="comment"># 设置开机启动启动</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> tomcat</span><br></pre></td></tr></table></figure></p>
+<p>7.Web管理接口配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># http://ip:8080/manager/</span></span><br><span class="line"><span class="comment"># tomcat管理页面，默认是只允许本机访问的</span></span><br><span class="line"><span class="comment">## 1.若想开启，就需进行配置（这里指定允许某个ip访问）</span></span><br><span class="line">sudo vim /opt/tomcat/latest/conf/tomcat-user.xml       <span class="comment"># 自动安装tomcat后的路径在/etc</span></span><br><span class="line">&lt;tomcat-user&gt;</span><br><span class="line">    &lt;role rolename=<span class="string">"admin-gui"</span>/&gt;    <span class="comment"># 定义两个角色</span></span><br><span class="line">    &lt;role rolename=<span class="string">"manager-gui"</span>/&gt;</span><br><span class="line">    &lt;user username=<span class="string">"admin"</span> password=<span class="string">"qwe123"</span> roles=<span class="string">"admin-gui, manager-gui"</span>/&gt;   <span class="comment"># 定义用户</span></span><br><span class="line">&lt;/tomcat-user&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">## 2.指定登录主机</span></span><br><span class="line"><span class="comment"># sudo vim /opt/tomcat/latest/webapps/manager/META-INF/context.xml   #  自动安装tomcat后的路径自己找</span></span><br><span class="line">如下图(懒得弄格式了)</span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo vim /opt/tomcat/latest/webapps/host-manager/META-INF/context.xml</span></span><br><span class="line">这是管理主机的配置文件</span><br><span class="line"></span><br><span class="line"><span class="comment">## 3.重启服务，然后测试</span></span><br><span class="line">systemctl restart tomcat8</span><br><span class="line">xxx:8080/manager/html        <span class="comment"># 管理页面就可以部署war包等操</span></span><br><span class="line">xxx:8080/host-manager/html</span><br></pre></td></tr></table></figure></p>
+<p><img src="/ubuntu-server-Web服务/20200428154603944_415659665.png" alt></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你觉得这篇文章还满意的话，请我喝杯咖啡喝吧^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="浮生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="浮生 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    浮生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.xpshuai.cn/ubuntu-server-Web服务/" title="ubuntu server-Web服务">http://www.xpshuai.cn/ubuntu-server-Web服务/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"> <i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"> <i class="fa fa-tag"></i> Ubuntu</a>
+          
+            <a href="/tags/Web服务/" rel="tag"> <i class="fa fa-tag"></i> Web服务</a>
+          
+            <a href="/tags/Apache/" rel="tag"> <i class="fa fa-tag"></i> Apache</a>
+          
+            <a href="/tags/Nginx/" rel="tag"> <i class="fa fa-tag"></i> Nginx</a>
+          
+            <a href="/tags/Tomcat/" rel="tag"> <i class="fa fa-tag"></i> Tomcat</a>
+          
+            <a href="/tags/反向代理/" rel="tag"> <i class="fa fa-tag"></i> 反向代理</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/【PHP代码审计】-那些年我们一起挖掘SQL注入-集合/" rel="next" title="【PHP代码审计】 那些年我们一起挖掘SQL注入--集合">
+                <i class="fa fa-chevron-left"></i> 【PHP代码审计】 那些年我们一起挖掘SQL注入--集合
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="浮生">
+            
+              <p class="site-author-name" itemprop="name">浮生</p>
+              <p class="site-description motion-element" itemprop="description">侠之大者，为国为民</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shuai06" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_37622608" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          <div id="music163player">
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=247172&auto=0&height=32"></iframe>
+          </div>
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://muyuuuu.github.io/" title="兰铃" target="_blank">兰铃</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.aigisss.com/" title="aigisss" target="_blank">aigisss</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.blts.xyz/" title="帅气小学弟" target="_blank">帅气小学弟</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zlh.giserhub.com" title="GIS大神阿昊哥" target="_blank">GIS大神阿昊哥</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xbeichen.cn/" title="X北辰北" target="_blank">X北辰北</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.farmsec.cn/" title="农夫安全博客" target="_blank">农夫安全博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xiaodi8.com/" title="小迪渗透吧" target="_blank">小迪渗透吧</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WWW介绍"><span class="nav-number">1.</span> <span class="nav-text">WWW介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP协议"><span class="nav-number">2.</span> <span class="nav-text">HTTP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache2"><span class="nav-number">3.</span> <span class="nav-text">Apache2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.0.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过众多directives进行配置"><span class="nav-number">3.0.2.</span> <span class="nav-text">通过众多directives进行配置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#虚拟主机简单配置"><span class="nav-number">3.0.2.0.1.</span> <span class="nav-text">虚拟主机简单配置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#侦听端口"><span class="nav-number">3.0.2.0.2.</span> <span class="nav-text">侦听端口</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Apache中默认基本配置"><span class="nav-number">3.0.2.0.3.</span> <span class="nav-text">Apache中默认基本配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块化"><span class="nav-number">3.0.3.</span> <span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启HTTPS"><span class="nav-number">3.0.4.</span> <span class="nav-text">开启HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#证书"><span class="nav-number">3.0.4.0.1.</span> <span class="nav-text">证书</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建HTTPS虚拟主机"><span class="nav-number">3.0.4.0.2.</span> <span class="nav-text">创建HTTPS虚拟主机</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#Apache支持PHP"><span class="nav-number">3.0.5.</span> <span class="nav-text">Apache支持PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keepalived"><span class="nav-number">4.</span> <span class="nav-text">Keepalived</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现高可用-HA"><span class="nav-number">4.0.1.</span> <span class="nav-text">实现高可用(HA)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-1"><span class="nav-number">4.0.2.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-18-04新特性"><span class="nav-number">5.</span> <span class="nav-text">Ubuntu 18.04新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#网络配置"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">网络配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx"><span class="nav-number">6.</span> <span class="nav-text">Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-2"><span class="nav-number">6.0.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件"><span class="nav-number">6.0.2.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#主配置文件"><span class="nav-number">6.0.2.0.1.</span> <span class="nav-text">主配置文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#虚拟主机配置文件"><span class="nav-number">6.0.2.0.2.</span> <span class="nav-text">虚拟主机配置文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建虚拟主机-Server-Blocks-实例"><span class="nav-number">6.0.3.</span> <span class="nav-text">新建虚拟主机(Server Blocks)实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx支持PHP"><span class="nav-number">6.0.4.</span> <span class="nav-text">Nginx支持PHP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx支持SSL"><span class="nav-number">6.0.5.</span> <span class="nav-text">Nginx支持SSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx反向代理"><span class="nav-number">6.0.6.</span> <span class="nav-text">Nginx反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx实现反向代理"><span class="nav-number">6.0.7.</span> <span class="nav-text">Nginx实现反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多台服务器的Nginx反响代理，进行流量转发"><span class="nav-number">6.0.8.</span> <span class="nav-text">多台服务器的Nginx反响代理，进行流量转发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx负载均衡"><span class="nav-number">6.0.9.</span> <span class="nav-text">Nginx负载均衡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#日志"><span class="nav-number">6.0.10.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat"><span class="nav-number">7.</span> <span class="nav-text">Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装-open-jdk"><span class="nav-number">7.0.0.0.1.</span> <span class="nav-text">安装 open jdk</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装-oracle-jdk"><span class="nav-number">7.0.0.0.2.</span> <span class="nav-text">安装 oracle jdk</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#官方库安装tomcat"><span class="nav-number">7.0.0.0.3.</span> <span class="nav-text">官方库安装tomcat</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#手动安装tomcat"><span class="nav-number">7.0.0.0.4.</span> <span class="nav-text">手动安装tomcat</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">  <i class="fa fa-heart"></i>   </span>
+  <span class="author" itemprop="copyrightHolder">浮生</span> |
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+</div>
+
+
+
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,04,20,15,00,00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 博客已健康运行"+ diffYears+" 年 "+ diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+<span id="sitetime"></span>
+
+<div class="BbeiAn-info">
+    冀ICP备 -
+    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="nofollow">18027796-1</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src https: busuanzi.ibruce.info busuanzi 2.3 busuanzi.pure.mini.js""></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zlxLDm8dLo0s1Vz10PEvfuNh-gzGzoHsz',
+        appKey: 'UAKrQBSOGPavRUKC9ztdFBLK',
+        placeholder: '欢迎发表意见',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- canvas曲线 -->
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</body>
+</html>
