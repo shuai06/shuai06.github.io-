@@ -1,0 +1,1769 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ubuntu server-远程管理, 浮生">
+    <meta name="description" content="侠之大者，为国为民">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ubuntu server-远程管理 | 浮生</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">浮生</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">浮生</div>
+        <div class="logo-desc">
+            
+            侠之大者，为国为民
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shuai06" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shuai06" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ubuntu server-远程管理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/Ubuntu/">
+                                <span class="chip bg-color">Ubuntu</span>
+                            </a>
+                        
+                            <a href="/tags/远程管理/">
+                                <span class="chip bg-color">远程管理</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-03-31
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第七章-远程管理"><a href="#第七章-远程管理" class="headerlink" title="第七章-远程管理"></a>第七章-远程管理</h1><blockquote>
+<p>看我遥控你</p>
+</blockquote>
+<h2 id="远程访问方式"><a href="#远程访问方式" class="headerlink" title="远程访问方式"></a><font color="red">远程访问方式</font></h2><p><strong>为什么要远程管理？</strong><br>服务器大多部署与专门的机房：</p>
+<ul>
+<li>电磁、噪声、氧气、温度湿度等都不适宜人类长期居住</li>
+<li>避免闲杂人等结束业务服务器</li>
+</ul>
+<p><strong>远程管理</strong></p>
+<ul>
+<li>不同的操作系统都支持远程管理技术</li>
+<li>命令行远程管理工具</li>
+<li>图形化远程管理工具</li>
+</ul>
+<h4 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet"></a>Telnet</h4><blockquote>
+<p>账号证明就是你</p>
+</blockquote>
+<p>古老的命令行远程管理工具（保底的，建议能不用就不用）</p>
+<ul>
+<li>不安全（明文）</li>
+<li>应尽量避免适用（适用于不支持ssh的环境）</li>
+<li>客户端程序包含在所有系统的默认安装中</li>
+<li>服务端口默认TCP 23</li>
+</ul>
+<p><strong>客户端</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#可以连接任何域名和端口</span>
+telnet 1.1.1.1 80
+
+<span class="token comment" spellcheck="true">#和80端口建立socket连接后，可以发送http数据</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>服务器端程序安装</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> telnetd
+
+vim /etc/issus.net <span class="token comment" spellcheck="true"># 避免泄露版本信息,</span>
+<span class="token comment" spellcheck="true">#打开文件，修改tenlet的banner信息（可以修改为一些告知的警告信息:"本公司的服务器,出问题承担法律责任"哈哈）</span>
+
+<span class="token comment" spellcheck="true"># 查看服务状态</span>
+systemctl status inetd.service
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><blockquote>
+<p>账号证明就是你</p>
+</blockquote>
+<p><strong>服务器安装</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ubuntu中ssh-server和ssh-client都默认安装了</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> openssh-server  <span class="token comment" spellcheck="true"># openssh是个工具套件(包含了sftp,scp等)</span>
+
+<span class="token comment" spellcheck="true"># sftp(替代了sftp)  &lt;--->  ftp(明文传输,不太安全)</span>
+<span class="token comment" spellcheck="true"># scp(替代了rcp)   &lt;--->  rcp(远程拷贝文件,明文传输,不太安全)</span>
+
+
+<span class="token comment" spellcheck="true">#查看服务状态</span>
+systemctl status sshd.service
+
+
+<span class="token comment" spellcheck="true"># 服务端口默认`22`  </span>
+
+<span class="token comment" spellcheck="true"># 配置文件(ubuntu上来就可以直接使用不用配置)</span>
+vim /etc/ssh/sshd_config
+<span class="token comment" spellcheck="true">#修改配置在这个文件</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>SSH1、SSH2两个版本(版本2更安全)</p>
+<p><strong>配置文件</strong><br><code>vim /etc/ssh/sshd_config</code><br>常用配置项：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">Banner /etc/ssh_banner.sh   <span class="token comment" spellcheck="true"># 登录前的banner,指定文件</span>
+Port  2222        <span class="token comment" spellcheck="true"># 修改默认端口(修改后，下次连接会改变端口)</span>
+PubkeyAuthentication <span class="token function">yes</span>    <span class="token comment" spellcheck="true"># 开启后使用公钥登录/关闭(no)</span>
+ListenAddress 12.34.56.78  <span class="token comment" spellcheck="true"># 指定哪块网卡才能侦听22(被ssh连接)</span>
+PermitRootLogin    <span class="token function">yes</span>        <span class="token comment" spellcheck="true"># 是否允许root远程登录(不过还是建议使用普通账号),建议设置为no是禁止所有方式登录   #prohibit-password是禁用账号密码方式</span>
+Protocol 2  <span class="token comment" spellcheck="true"># 默认是2.0的协议，可以加一下这条配置，指定只接受2.0版本的连接</span>
+Allowsers user1 user2        <span class="token comment" spellcheck="true"># DenyUsers user3    允许/禁止ssh连接的用户</span>
+AllowGroup sshusers            <span class="token comment" spellcheck="true"># 允许/禁止ssh连接的用户`组`</span>
+PasswordAuthentication no  <span class="token comment" spellcheck="true"># 禁止使用密码登录(单一密码认证的安全性很低)</span>
+
+<span class="token comment" spellcheck="true"># 更多配置查文档</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>一些零散问题  — SSH工具</strong><br>1.scp</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#默认连接22端口，如果修改了就需要指定端口号</span>
+<span class="token function">scp</span> a.txt 192.168.1.10:  <span class="token comment" spellcheck="true"># 拷贝一个文件(默认本地账号与原创系统账号同名，默认目标是主目录)   注意冒号</span>
+<span class="token function">scp</span> a.txt user1@192.168.1.10:/home/b.txt   <span class="token comment" spellcheck="true"># 指定用户名、目标路径</span>
+
+<span class="token function">scp</span> -rv dirs/ user1@192.168.1.10:   <span class="token comment" spellcheck="true"># 拷贝一个目录， -r递归,-v详细信息</span>
+
+<span class="token function">scp</span> user1@192.168.1.10:/tmp/b.txt <span class="token keyword">.</span> <span class="token comment" spellcheck="true"># 拷贝目标服务器的文件到我的机器当前目录上(下载)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.SFTP（ssh和ftp的组合）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 登录</span>
+<span class="token function">sftp</span> xps@192.168.1.10
+
+<span class="token comment" spellcheck="true"># 下载文件</span>
+get a.txt
+
+<span class="token comment" spellcheck="true"># 上传</span>
+put
+
+<span class="token comment" spellcheck="true"># 一些命令：help, ls, cd, get, wget, put, mput</span>
+<span class="token comment" spellcheck="true"># 退出 quit   exit</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>ssh公钥登录</strong><br>非对称算法（公钥算法）</p>
+<ul>
+<li>公钥</li>
+<li>私钥<br>公钥加密，私钥解密；私钥加密，公钥解密</li>
+</ul>
+<p>生成秘钥对</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 1.在我的机器(客户端)产生一对， 选择rsa算法，秘钥长度选择4096</span>
+ssh-keygen -t rsa -b 4096
+
+<span class="token comment" spellcheck="true"># 修改...</span>
+<span class="token comment" spellcheck="true"># 命名秘钥对</span>
+ssh-keygen -t rsa -b 4096 -f id_mail
+<span class="token comment" spellcheck="true"># 修改私钥密码文(这个密码要设置更加安全一点) -p， -f指定修改哪个key的</span>
+ssh-keygen -p -f ~/.ssh/id_rsa    <span class="token comment" spellcheck="true"># 有多个的话，-f指定</span>
+
+
+<span class="token comment" spellcheck="true"># 2.设置公私钥保存的位置，和打开的密码</span>
+<span class="token comment" spellcheck="true"># 存放在下面两个文件</span>
+~/.ssh/id_rsa  <span class="token comment" spellcheck="true"># 私钥</span>
+~/.ssh/id_rsa.pub  <span class="token comment" spellcheck="true"># 公钥</span>
+<span class="token comment" spellcheck="true">#ps：know_hosts是连接过的主机</span>
+
+<span class="token comment" spellcheck="true"># 3.把公钥文件-->传送到目标服务器上(服务器上会变成.ssh/authorized_key)</span>
+ssh-copy-id  xps@192.168.0.10  <span class="token comment" spellcheck="true">#如果有多个，-i选择公钥</span>
+
+
+
+<span class="token comment" spellcheck="true"># 4. 建议设本地私钥文件权限</span>
+<span class="token function">chmod</span> 400 .ssh/id_rsa
+<span class="token comment" spellcheck="true"># 5.服务端公钥权限也要修改</span>
+.ssh/authorized_key
+
+<span class="token comment" spellcheck="true"># 6.现在可放心登录了(现在输入的密码是对私钥加密的密码)</span>
+<span class="token function">ssh</span> xps@192.168.0.10
+
+<span class="token comment" spellcheck="true"># Note：记得配置文件修改为禁止使用ssh密码登录,使用公钥登录：</span>
+PasswordAuthentication no
+PubkeyAuthentication <span class="token function">yes</span>
+<span class="token comment" spellcheck="true"># Note:私钥千万不能泄露哦</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="SSH隧道"><a href="#SSH隧道" class="headerlink" title="SSH隧道"></a><font color="red">SSH隧道</font></h2><p>通过ssh隧道，封装一些其他的服务数据，保证安全性</p>
+<p><strong>登录</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> xps@192.168.0.10
+
+<span class="token comment" spellcheck="true"># 登录之后，不进入shell界面（只是获得会话后运行一个命令，但效果是一样的） -- 命令服务端去ping另外一台机器</span>
+<span class="token comment" spellcheck="true"># -i指定私钥，-p指定端口</span>
+<span class="token function">ssh</span> -i ~/.ssh/id_main <span class="token function">ssh</span> xps@192.168.0.10 -p 2222 <span class="token function">ping</span> 192.168.0.1
+
+<span class="token comment" spellcheck="true"># (cstream -t限制传输速度通信带宽)拷贝文件夹到目标机器（本地打包, 在服务端解包），pv显示带宽占用情况 </span>
+<span class="token comment" spellcheck="true"># --- 企业用的网络带宽(质量好)比家用的成本很贵</span>
+<span class="token function">tar</span> -cj dir/ <span class="token operator">|</span> <span class="token function">pv</span> <span class="token operator">|</span>cstream -t 100k <span class="token operator">|</span> <span class="token function">ssh</span> xps@192.168.0.10 <span class="token string">'tar -xj'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>ssh隧道 – 实现远程映射</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">###### 端口映射（两个机器之间，添加一个加密的管道 来连接）</span>
+<span class="token comment" spellcheck="true"># 映射远程端口23到本机2001端口</span>
+<span class="token comment" spellcheck="true">#（-f端口转发,-N不占用命令行窗口, -L侦听本机的端口，localhost理解为隧道，23为目标机器端口，最后是目标机器ip）</span>
+<span class="token function">ssh</span> -fN -L2001:localhost:23 xps@192.168.0.10 
+<span class="token comment" spellcheck="true"># 现在，telnet本机的2001端口，就相当于通过机密的隧道来映射到目标的23端口</span>
+<span class="token comment" spellcheck="true"># 其他类型的服务也可以封装...</span>
+
+<span class="token comment" spellcheck="true">### 拓展：远程映射</span>
+<span class="token comment" spellcheck="true"># 隧道的起点：我的机器，隧道的终点：'另外机器'。然后通过'另外机器',访问目标机器(sina)</span>
+<span class="token comment" spellcheck="true"># 本机的2002端口，通过ssh隧道，映射到'另外机器'(世界上随便一个机器)的ip的80端口，</span>
+<span class="token comment" spellcheck="true"># 用途：内网特殊的服务器运行访问外网(进行映射)，就能突破对内容不能上网的限制</span>
+<span class="token comment" spellcheck="true"># 限制：一对一，针对的外网的某一台（提高：一个端口访问外网所有资源，自己找资料）</span>
+<span class="token function">ssh</span> -fN -L2002:123.206.96.26:80 xps@192.168.0.10  
+<span class="token comment" spellcheck="true"># 再telnet 127.0.0.1:2002,就是达到了访问123.206.96.26的80端口的目的(最后的ip只是建立隧道,类似中间的一个)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/ubuntu server-远程管理/20200330152732562_32379.png" alt=""></p>
+<p><img src="/ubuntu server-远程管理/20200330154229749_5054.png" alt=""></p>
+<p><strong>ssh隧道 – 实现文件系统挂载</strong><br>比如，一开机，就自动把远程机器的目录/分区挂载到我本机上，跟访问本地目录一样的效果</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## ssh隧道实现文件系统的挂载</span>
+<span class="token comment" spellcheck="true"># 第一个ip的要挂载的远程机器，后面的本机目录</span>
+sshfs xps@192.168.0.10:home/test  /mnt/myfiles    <span class="token comment" spellcheck="true"># 远程挂载远程机器目录到本地</span>
+<span class="token comment" spellcheck="true"># 再查看，会发现本地目录多了远程服务器目录的文件（如果网络带宽不够，性能和体验就比较差）</span>
+<span class="token comment" spellcheck="true"># 在客户端/服务端对文件进行操作，都是可以的</span>
+<span class="token function">umount</span> /mnt/myfiles        <span class="token comment" spellcheck="true"># 卸载1</span>
+fusermount -u /mnt/myfiles    <span class="token comment" spellcheck="true"># 卸载2</span>
+
+<span class="token comment" spellcheck="true">#配置文件使用持久化挂载    </span>
+vim /etc/fstab
+user1@192.168.0.10:/path  /mntpotin   fuse,sshfs,    rw,noauto,user,_netdev0
+<span class="token comment" spellcheck="true"># 目标机器的路径，本机的挂载点</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>SSH客户端</strong><br>若要管理的服务器的数目众多，对每台服务器做一个方便记忆的<code>标签</code>，简化登录</p>
+<p>在本机(客户端)创建一个客户端配置文件：<code>~/.ssh/config</code><br>内容</p>
+<pre class="line-numbers language-bash"><code class="language-bash">host server1  <span class="token comment" spellcheck="true"># 别名随意</span>
+    Hostname 192.168.1.10  <span class="token comment" spellcheck="true"># 对应主机ip，端口，用户名</span>
+    Port 22
+    User xps
+
+host db2
+    Hostname 192.168.1.10
+    Port 22
+    User xps
+
+host mail1
+    Hostname 192.168.1.10
+    Port 22
+    User xps
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以后登录的话，直接：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 直接登录别名即可(不仅方便，还隐藏了ip，更加安全)</span>
+<span class="token function">ssh</span> db1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="SSH安全"><a href="#SSH安全" class="headerlink" title="SSH安全"></a><font color="red">SSH安全</font></h2><p><strong>SSH防爆破</strong><br>密码爆破防护</p>
+<p>方法：监视：次数太多就禁止该ip访问</p>
+<p>借助<code>fail2ban</code>来实现:<br>fail2ban原理：周期性的检查登录日志，对异常的ip进行屏蔽(调用防火墙实现)</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装</span>
+apt <span class="token function">install</span> fail2ban
+
+<span class="token comment" spellcheck="true"># 默认主配置文件，软件更新时被覆盖(`所以一般不会使用它`)   jail --> 监狱</span>
+/etc/fail2ban/jail.conf
+<span class="token comment" spellcheck="true"># 本地配置文件，软件更新不被覆盖，优先级更高（`一般常修改这个文件`） 复制一份：cp jail.conf jail.local</span>
+/etc/fail2ban/jail.local
+<span class="token comment" spellcheck="true">#配置项(一般只需配置几项)</span>
+<span class="token comment" spellcheck="true">#1.全局的：</span>
+ignoreip<span class="token operator">=</span>127.0.0.1/8 19.168.0.10  <span class="token comment" spellcheck="true"># 忽略并不进行监视的地址（受信的ip地址段）</span>
+bantime<span class="token operator">=</span>-1   <span class="token comment" spellcheck="true"># 禁用的时间(单位是s)， -1是永远屏蔽</span>
+findtime<span class="token operator">=</span>1   <span class="token comment" spellcheck="true"># 查询间隔时间</span>
+maxretry<span class="token operator">=</span>5   <span class="token comment" spellcheck="true"># 连着失败输入多少次密码，我就屏蔽你</span>
+<span class="token comment" spellcheck="true">#2.Actions: 有异常做什么动作(比如报警邮件，默认是防火墙屏蔽)</span>
+<span class="token comment" spellcheck="true">#3.Jails设置：针对不同类型的服务(并不仅限于ssh服务)，配置不同的（这里的优先级比全局配置项高）</span>
+    <span class="token punctuation">[</span>sshd<span class="token punctuation">]</span>
+    ecabled<span class="token operator">=</span>true <span class="token comment" spellcheck="true"># 启用对ssh的jails</span>
+    filter<span class="token operator">=</span>sshd  <span class="token comment" spellcheck="true"># 查找的关键词</span>
+    logpath <span class="token operator">=</span> xxxxxx.log
+    <span class="token comment" spellcheck="true"># 以ssh服务为例(见下图)</span>
+
+<span class="token comment" spellcheck="true"># 重启服务生效 </span>
+<span class="token function">sudo</span> systemctl restart fail2ban.service
+
+
+<span class="token comment" spellcheck="true"># 查看身份认证日志文件</span>
+<span class="token function">tail</span> -f /var/log/auth.log
+
+<span class="token comment" spellcheck="true"># 查看jail列表(都有哪些jail，jail的情况)</span>
+<span class="token function">sudo</span> fail2ban -client status
+<span class="token function">sudo</span> fail2ban -client status sshd <span class="token comment" spellcheck="true"># 查看ssh的jail的详细信息</span>
+
+<span class="token comment" spellcheck="true"># 查看防火墙规则</span>
+<span class="token function">sudo</span> iptables -S
+<span class="token function">sudo</span> iptables -L -n
+
+<span class="token comment" spellcheck="true"># 手动解除被禁IP</span>
+<span class="token function">sudo</span> iptables -D f2b-sshd-s 192.168.1.111 -j REJECT   <span class="token comment" spellcheck="true"># 通过删除防火墙某一个规则 -D,  REJECT或DROP看自己的情况</span>
+<span class="token function">sudo</span> fail2ban-client <span class="token keyword">set</span> sshd unbanip 192.168.1.8
+
+<span class="token comment" spellcheck="true"># 手动解除禁用之后，但是如果重启服务，会再自动查看日志：还没有超过被禁期限的ip会再次被禁</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/ubuntu server-远程管理/20200330164545399_6809.png" alt=""></p>
+<h2 id="VNC服务"><a href="#VNC服务" class="headerlink" title="VNC服务"></a><font color="red">VNC服务</font></h2><blockquote>
+<p>这里只介绍vnc，还有其他更优秀的工具，但是vnc的适用范围最广</p>
+</blockquote>
+<p>图形化界面（类似于windows下的远程桌面）</p>
+<ul>
+<li>使用图形化界面及工具</li>
+<li>是Linux系统最通用的远程图形管理工具（通用适用于windows）</li>
+</ul>
+<p>安装图形环境</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#这里安装简化版的xfce4桌面环境，这里选择vnc的一个软件包:tightvncserver. 也可以自己选择别的版本的</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> gnome-core xfce4 xfce4-goodies tightvncserver
+
+<span class="token comment" spellcheck="true"># 一个vnc可以启动多个侦听端口(默认从5901开始)，从不同端口连接，打开不同会话(每个用户看到的桌面是不一样的)</span>
+<span class="token comment" spellcheck="true"># 若只侦听一个端口，通过一个端口连接，多个用户看到的都是一个桌面</span>
+
+<span class="token comment" spellcheck="true"># 建议：多用户，在每一个不同权限的用户下(su进去，运行启动实例)，这样不同用户连接就是不同的桌面了</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行配置</p>
+<pre class="line-numbers language-bash"><code class="language-bash">vncserver  <span class="token comment" spellcheck="true"># 启动vnc服务（接下来会让你输入连接密码和只读密码）</span>
+~/.vnc/xstartup   <span class="token comment" spellcheck="true"># 会生成运行文件</span>
+vncserver -kill:1 <span class="token comment" spellcheck="true"># 删掉自动生成的实例（因为不一定最适合我们的桌面环境。冒号后面是1是5901,如果是2就是5902）</span>
+<span class="token comment" spellcheck="true"># 备份一下文件</span>
+<span class="token function">mv</span> xstartup xstartup.bak
+<span class="token comment" spellcheck="true"># 创建新运行文件， 手动配置适合我们xfce4的vnc配置</span>
+vim xstartup
+    <span class="token comment" spellcheck="true">#!/bin/bash</span>
+    xrdb <span class="token variable">$HOME</span>/.Xresources
+    startxfce4 <span class="token operator">&amp;</span>
+
+<span class="token comment" spellcheck="true"># 修改权限</span>
+<span class="token function">chmod</span> +x ~/.vnc/xstartup
+<span class="token comment" spellcheck="true"># 重新运行</span>
+vncserver   <span class="token comment" spellcheck="true"># tcp的5901端口</span>
+
+<span class="token comment" spellcheck="true"># 就可以在客户端用客户端软件连接了(比如：Remote Desktop Viewer) 输入ip:端口</span>
+
+<span class="token comment" spellcheck="true"># Note: 服务器上，能少开端口就少开端口，能少开服务就少开服务</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>多用户</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 每个用户不用会话</span>
+<span class="token comment" spellcheck="true"># 在每一个不同权限的用户下(su进去，运行启动实例)，这样不同用户连接就是不同的桌面了</span>
+<span class="token function">su</span> newuser1
+vncserver
+~/.vnc/xstartup  
+vncserver -kill:2
+vim xstartup
+    <span class="token comment" spellcheck="true">#!/bin/bash</span>
+    xrdb <span class="token variable">$HOME</span>/.Xresources
+    startxfce4 <span class="token operator">&amp;</span>
+
+<span class="token function">chmod</span> +x ~/.vnc/xstartup
+vncserver :2   <span class="token comment" spellcheck="true"># tcp的5902端口</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>ps: vnc的加密强度不是很高，所以：在不需要vnc的时候，建议杀掉vnc进程(<code>vncserver -kill:2</code>)</p>
+</blockquote>
+<p>因为 vnc的加密强度没有ssh高，所以，尝试：先建立ssh隧道，再在隧道的基础上建立图形化的连接</p>
+<h2 id="PUPPET"><a href="#PUPPET" class="headerlink" title="PUPPET"></a><font color="red">PUPPET</font></h2><p>也是一个远程管理工具，可以不登录到被管理服务器上<br>利用puppet的服务端(我的机器)来管理puppet的客户端(安装在远程服务器上)，进行批量管理…  </p>
+<p>全生命周期的远程管理方案  </p>
+<ul>
+<li>软件安装部署(可以写一个脚本，然后批量下发给安装有puppet客户端的服务器上)</li>
+<li>权限设置</li>
+<li>账号管理</li>
+<li>支持云平台</li>
+<li>支持容器(Docker)</li>
+<li>适合大量服务器管理</li>
+</ul>
+<p><strong>准备</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 这里以两台机器做实验</span>
+<span class="token comment" spellcheck="true"># 为了区分，改一下两台计算机名</span>
+hostnamectrl set-hostname puppet
+hostnamectrl set-hostname client
+
+<span class="token comment" spellcheck="true"># 修改hosts文件，修改解析域名(这个随便起) -- 两台机器都要修改</span>
+vim /etv/hosts
+    192.168.1.10    puppet.lab.com        puppet
+    192.168.1.11    client.lab.com        client
+    <span class="token comment" spellcheck="true"># 其他行都删掉就行</span>
+    <span class="token comment" spellcheck="true"># 可以在dns服务器上修改，这里通过hosts修改域名解析只是权宜之计(下一章学完DNS之后就在dns服务器修改域名的解析)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>安装</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装puppet服务端程序</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> puppetmaster 
+
+<span class="token comment" spellcheck="true"># 安装puppet客户端程序</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> puppet
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>配置</strong><br>服务端配置-1</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> /etc/puppet
+<span class="token function">sudo</span> <span class="token function">mkdir</span> -p modules/apache2/manifests  <span class="token comment" spellcheck="true"># manifests 目录下面就是资源文件</span>
+<span class="token function">touch</span> init.pp
+<span class="token comment" spellcheck="true"># sudo vim /etc/puppet/modules/apache2/manifests/init.pp</span>
+
+<span class="token comment" spellcheck="true"># 比如要给下面的机器安装apache, </span>
+<span class="token comment" spellcheck="true"># 一组资源就是一个类</span>
+class apache2<span class="token punctuation">{</span>
+    package<span class="token punctuation">{</span><span class="token string">'apache2'</span><span class="token keyword">:</span>   <span class="token comment" spellcheck="true"># 软件包</span>
+        ensure<span class="token operator">=</span><span class="token operator">></span>installeds,
+    <span class="token punctuation">}</span>
+    service<span class="token punctuation">{</span><span class="token string">'apache2'</span><span class="token keyword">:</span>   <span class="token comment" spellcheck="true"># apache的服务是否启动</span>
+        ensure<span class="token operator">=</span><span class="token operator">></span>ture,
+        ensure<span class="token operator">=</span><span class="token operator">></span>ture,
+        require<span class="token operator">=</span><span class="token operator">></span>Package<span class="token punctuation">[</span><span class="token string">'apache2'</span><span class="token punctuation">]</span>,  <span class="token comment" spellcheck="true"># 包的名称</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>服务端配置-2</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 上面的配置文件定义了资源，那么这里确定要给哪些服务器安装哪个资源</span>
+<span class="token comment" spellcheck="true"># 选择哪个资源</span>
+<span class="token function">cd</span> manifests
+<span class="token function">touch</span> site.pp
+
+<span class="token comment" spellcheck="true"># sudo vim /etc/puppet/manifests/site.pp</span>
+<span class="token comment" spellcheck="true"># 解析这个节点(通过域名解析到对应ip,只要那些计算机在这个域名即可)</span>
+node <span class="token string">'client.lab.com'</span> <span class="token punctuation">{</span>
+        include apache2   <span class="token comment" spellcheck="true"># 选择下发哪些资源。这里以推送apache2资源为例</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 重启服务</span>
+systemctl restart puppetmaster.service
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>客户端配置</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># puppet的客户端和服务端是通过证书来通信等操作的</span>
+
+<span class="token comment" spellcheck="true"># sudo vim /etc/default/puppet          默认没有，自己新建</span>
+    START<span class="token operator">=</span>yes
+
+<span class="token comment" spellcheck="true"># 重启服务（会自动向puppet服务端发起请求申请证书）</span>
+systemctl restart puppet.service
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>客户端证书前面请求测试</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在查看客户端的指纹信息</span>
+<span class="token function">sudo</span> puppet agent --figerprint
+<span class="token comment" spellcheck="true"># 服务端下面下发证书后，然后在客户端测试一下，获取证书</span>
+<span class="token function">sudo</span> puppet agent --test
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>服务端请求查看签名</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在服务端查看哪些客户端跟我发起证书请求了</span>
+<span class="token function">sudo</span> puppet cert list
+<span class="token comment" spellcheck="true"># 在服务端使用自己的私钥给对应的机器进行签名(sign)</span>
+<span class="token function">sudo</span> puppet cert sign client.lab.com
+
+<span class="token comment" spellcheck="true"># 客户端查看证书下发进度： sudo puppet agent --test</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>完成上面的步骤(资源的下发配置，证书的请求与签名下发，重启服务)之后，在客户端查看<code>apache2</code>的服务已经安装好并启用了</p>
+<p>日志状态信息查看</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看状态</span>
+systemctl status puppet.service
+
+/var/log/syslog
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面关于puppet只是简单的一小部分，后续高级用法，请自行探索</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn" rel="external nofollow noreferrer">浮生</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn/posts/11524/">http://www.xpshuai.cn/posts/11524/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.xpshuai.cn" target="_blank">浮生</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/Ubuntu/">
+                                    <span class="chip bg-color">Ubuntu</span>
+                                </a>
+                            
+                                <a href="/tags/远程管理/">
+                                    <span class="chip bg-color">远程管理</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd75ec1a5864747376f6f',
+        clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
+        repo: 'https://github.com/shuai06/gittalks.git',
+        owner: 'SHUAI06',
+        admin: "shuai06",
+        id: '2020-03-31T13-31-13',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/16425/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="ubuntu server-DNS服务">
+                        
+                        <span class="card-title">ubuntu server-DNS服务</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            DNS服务
+您是谁家老小
+
+域名解析原理DNS：将容易基于的主机名映射到IP地址计算机命名规范：
+
+Netbiso名称（微软）
+Hostname
+DNS分布式名称系统(但是不同的dns服务器是有层级关系的，呈树状结构)
+
+DNS服务结构：
+
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/DNS/">
+                        <span class="chip bg-color">DNS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/17232/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="黑暗引擎">
+                        
+                        <span class="card-title">黑暗引擎</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一. shodan1.简单介绍Shodan，是一个暗黑系的谷歌，作为一个针对网络设备的搜索引擎，它可以在极短的时间内在全球设备中搜索到你想找的设备信息。对于渗透工作者来说，就是一个辅助我们寻找靶机的好助手。
+2.内置语法# Shodan的参
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/渗透测试/">
+                        <span class="chip bg-color">渗透测试</span>
+                    </a>
+                    
+                    <a href="/tags/黑暗引擎/">
+                        <span class="chip bg-color">黑暗引擎</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 浮生<br />'
+            + '文章作者: 浮生<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://www.xpshuai.cn" target="_blank">浮生</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">325.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "4";
+                    var startDate = "20";
+                    var startHour = "15";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beianbeian.com/beianxinxi/816345dfd53e0153acde20c5bb1dd1b0.html" target="_blank">冀ICP备18027796号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shuai06" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2944282625@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2944282625" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2944282625" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

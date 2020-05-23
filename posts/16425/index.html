@@ -1,0 +1,1721 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ubuntu server-DNS服务, 浮生">
+    <meta name="description" content="侠之大者，为国为民">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ubuntu server-DNS服务 | 浮生</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">浮生</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">浮生</div>
+        <div class="logo-desc">
+            
+            侠之大者，为国为民
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shuai06" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shuai06" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ubuntu server-DNS服务</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
+                            </a>
+                        
+                            <a href="/tags/DNS/">
+                                <span class="chip bg-color">DNS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-12
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="DNS服务"><a href="#DNS服务" class="headerlink" title="DNS服务"></a>DNS服务</h1><blockquote>
+<p>您是谁家老小</p>
+</blockquote>
+<h2 id="域名解析原理"><a href="#域名解析原理" class="headerlink" title="域名解析原理"></a><font color="red">域名解析原理</font></h2><p>DNS：将容易基于的主机名映射到IP地址<br><strong>计算机命名规范：</strong></p>
+<ul>
+<li>Netbiso名称（微软）</li>
+<li>Hostname</li>
+<li>DNS分布式名称系统(但是不同的dns服务器是有层级关系的，呈树状结构)</li>
+</ul>
+<p><strong>DNS服务结构：</strong></p>
+<ul>
+<li>域名          比如：sina.com.cn</li>
+<li>FQDN(fully qualified domain names )     比如:<a href="http://www.sina.com.cn" target="_blank" rel="noopener">www.sina.com.cn</a>  即主机名(www)+域名(sina.com.cn)</li>
+</ul>
+<p><strong>DNS记录类型</strong></p>
+<table>
+<thead>
+<tr>
+<th>记录类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NS</td>
+<td>域名服务器记录(找a.com与里面的域名对应的ip的话，就要去问域名服务器,问他www的对应的主机的ip地址是多少)，一个域可以有多个域名服务器(<code>dig a.com ns</code>)</td>
+</tr>
+<tr>
+<td>A</td>
+<td>主机记录(域名解析到ip地址)</td>
+</tr>
+<tr>
+<td>CNAME</td>
+<td>别名记录(给域名指向另一个A记录的域名,可以叠加)</td>
+</tr>
+<tr>
+<td>MX</td>
+<td>邮件交换记录</td>
+</tr>
+<tr>
+<td>PTR</td>
+<td>指针记录（反向查询）</td>
+</tr>
+<tr>
+<td>SOA</td>
+<td>起始授权记录(soa记录对应的域名服务器，才是合法的)</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/ubuntu-server-DNS服务/20200405094807682_18444.png" alt=""></p>
+<p><strong>DNS命名空间</strong><br><img src="/ubuntu-server-DNS服务/20200405100714099_17972.png" alt=""><br><code>www.ubuntu.com.</code>严格来说是有点的，但是为了方便，最后面不写点也可以</p>
+<p><strong>DNS查询：</strong> 逐级委派<br>由机构<code>LCANN</code>负责管理, 负责根域<code>.</code></p>
+<h2 id="DNS查询寻结构"><a href="#DNS查询寻结构" class="headerlink" title="DNS查询寻结构"></a><font color="red">DNS查询寻结构</font></h2><p><strong>三种DNS服务器：</strong></p>
+<ol>
+<li>Master(DNS域里面中，master服务器可以修改DNS记录，在master上做得修改也会自动同步到其他slave等dns服务器) 一般只设置一台</li>
+<li>Slave（数据文件来自master的同步）  – 前两者两种服务器都会保存dns记录类型</li>
+<li>Cache    （不保存任何记录，一般都是运营商提供的，跟下面的dns查询有关系，意义：本个区域内有缓存了减少dns会话的流量，提高了效率，减轻了带宽占用，超出生命周期之后才会再次查询）<ol>
+<li>TTL<br>4.Forward（转发类型的，比如会去转发给本地运营商的dns服务器(比如家用无线路由器会企业的域控)，而不是自己去进行递归查询啥的）<br><img src="/ubuntu-server-DNS服务/20200405101258270_2676.png" alt=""></li>
+</ol>
+</li>
+</ol>
+<p>同时是三种角色</p>
+<h5 id="安装DNS服务"><a href="#安装DNS服务" class="headerlink" title="安装DNS服务"></a>安装DNS服务</h5><p>使用最广的DNS服务的软件包：<code>BIND（Berkley Internet Naming Daemon）</code><br>在ubuntu上：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装bind(即软件包) 9是版本，dnsutils是用来检查的软件包</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> bind9 dnsutils
+
+<span class="token comment" spellcheck="true"># DNS服务区只保存和解析本域各种域名记录</span>
+<span class="token comment" spellcheck="true"># DNS服务都包含13个根域名服务器地址   </span>
+<span class="token function">cat</span> /etc/bind/db.root    <span class="token comment" spellcheck="true"># -> ipv4和ipv6地址(AAAA记录)</span>
+    <span class="token comment" spellcheck="true"># 事实分布于世界的数百台根域服务器，不只是13个（国内是有根域服务器的）</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>DNS服务器的DNS服务器配置</strong><br>自己做迭代<br>指定递归域名服务器（自建尽量禁用其他地址来连接我们递归查询功能, 除非查询的是域内的域名）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 见 DNS主备部署</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>DNS默认服务端口</strong><br>TCP 53  / UDP 53</p>
+<blockquote>
+<p>这里是以<code>Bind</code>软件包为例</p>
+</blockquote>
+<p><strong>还有其他软件包：</strong></p>
+<ol>
+<li>Djbdns<ul>
+<li>衍生版本：Dbndns, ndjbsns</li>
+</ul>
+</li>
+<li>dhamasq<ul>
+<li>DNS + DHCP打包的轻量解决方案 –&gt; 经常用于<code>无线渗透，搭建无线AP</code><br>3.PowerDNS</li>
+<li>模块化开源DNS服务器软件</li>
+</ul>
+</li>
+</ol>
+<h2 id="DNS主备部署"><a href="#DNS主备部署" class="headerlink" title="DNS主备部署"></a><font color="red">DNS主备部署</font></h2><p>对于dns服务器本身的dns地址可以执行运营商等的地址</p>
+<h3 id="正向区域"><a href="#正向区域" class="headerlink" title="正向区域"></a><font color="green">正向区域</font></h3><h4 id="配置Master-DNS服务器"><a href="#配置Master-DNS服务器" class="headerlink" title="配置Master DNS服务器"></a>配置<code>Master</code> DNS服务器</h4><h6 id="执行区域文件（正向区域-–-gt-域名解析为ip）"><a href="#执行区域文件（正向区域-–-gt-域名解析为ip）" class="headerlink" title="执行区域文件（正向区域 –> 域名解析为ip）"></a>执行区域文件（正向区域 –&gt; 域名解析为ip）</h6><blockquote>
+<p>企业内部自用， 一般一个域中会有两个DNS服务器</p>
+</blockquote>
+<p>1.</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/bind/named.conf.local</span>
+
+<span class="token comment" spellcheck="true"># zone定义一个区域， type类型，指定存具体记录的文件</span>
+zone <span class="token string">"lab.com"</span><span class="token punctuation">{</span>
+    <span class="token function">type</span> master<span class="token punctuation">;</span>
+    <span class="token function">file</span> <span class="token string">"/etc/bind/db.lab.com"</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.编辑区域文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 拷贝一个现有的区域文件模板，进行修改(也可手动创建)</span>
+<span class="token function">cp</span> db.local db.lab.com
+
+<span class="token function">sudo</span> vim db.lab.com
+<span class="token comment" spellcheck="true"># 文件内容</span>
+<span class="token punctuation">;</span> BIND data <span class="token function">file</span> <span class="token keyword">for</span> lab.com loopback interface
+<span class="token punctuation">;</span>
+<span class="token variable">$TTL</span>    604800    <span class="token comment" spellcheck="true"># 允许缓存DNS服务器的缓存时长，单位s， 1D ->一天,12h -> 12小时</span>
+@    IN    SOA    soa.lab.com. root.localhost. <span class="token punctuation">(</span>  <span class="token comment" spellcheck="true"># @表示本域的域名，   IN ->互联网记录类型， SOA起始授权记录; root.localhost.管理员邮箱地址(点就是@ ->root.lab.com.), 括号多行内容</span>
+                  2        <span class="token punctuation">;</span> Serial    <span class="token comment" spellcheck="true"># 版本号，如果slave的与master服务器字段值相同则不同步数据，不同则同步数据</span>
+             604800        <span class="token punctuation">;</span> Refresh    <span class="token comment" spellcheck="true"># slave向master的更新周期</span>
+              86400        <span class="token punctuation">;</span> Retry     <span class="token comment" spellcheck="true"># 重试周期</span>
+            2419200        <span class="token punctuation">;</span> Expire    <span class="token comment" spellcheck="true"># 最大重试时间</span>
+             604800 <span class="token punctuation">)</span>    <span class="token punctuation">;</span> Negative Cache TTL
+<span class="token punctuation">;</span>
+@    IN    NS    ns1        <span class="token comment" spellcheck="true"># NS记录，dns域的域名服务器的名称</span>
+@    IN    A    10.1.8.128    <span class="token comment" spellcheck="true"># 给哪个域名创建A记录，访问本机的域名解析到哪里</span>
+@    IN    AAAA    ::1     <span class="token comment" spellcheck="true"># ipv6使用的</span>
+ns1    IN    A    10.1.8.10   <span class="token comment" spellcheck="true"># 给域的ns记录域名解析到哪个ip</span>
+soa    IN    A    10.1.8.10
+www    IN    CNAME web       <span class="token comment" spellcheck="true"># 把www.lab.com解析为web.com.lab</span>
+web    IN    CNAME w3        <span class="token comment" spellcheck="true"># 有一个CNAME记录</span>
+w3    IN    A      10.1.8.128 <span class="token comment" spellcheck="true"># 最终解析为A记录的ip</span>
+@    IN    MX 10 mx1     <span class="token comment" spellcheck="true"># 优先级，数字越小优先级越高</span>
+@    IN    MX 10 mx2    
+mx1    IN    A    10.1.8.1   <span class="token comment" spellcheck="true"># 再把mx的域名解析到ip</span>
+mx2    IN    A    10.1.8.2
+<span class="token function">ftp</span> IN    A     10.1.8.128
+<span class="token function">ftp</span> IN    A     10.1.8.129  <span class="token comment" spellcheck="true"># 同一个a记录命名指向不同的ip，不区分优先级，而是轮询</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.重启服务</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart bind9
+<span class="token function">sudo</span> systemctl status bind9
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>4.服务器配置检查</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> named-checkconf   <span class="token comment" spellcheck="true"># 检查语法错误</span>
+
+<span class="token function">sudo</span> named-checkzone lab.com /etc/bind/db.lab.com  <span class="token comment" spellcheck="true"># 正向区域检查</span>
+
+<span class="token function">sudo</span> named-checkzone lab.com /etc/bind/db.lab.com  <span class="token comment" spellcheck="true"># 反向区域检查</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>5.客户端解析验证</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># dig在win上没有</span>
+<span class="token function">ping</span> lab.com
+
+<span class="token function">dig</span> lab.com ns @10.1.8.10  <span class="token comment" spellcheck="true"># 解析ns记录，@dns服务器</span>
+
+<span class="token function">dig</span> www.com @10.1.8.10
+
+<span class="token function">dig</span> com a @10.1.8.100   <span class="token comment" spellcheck="true"># 不指定的话，默认就是a记录</span>
+
+<span class="token function">dig</span> lab.com mx @10.1.8.100
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>客户端解析验证</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># nslookup在linux和win都有</span>
+
+<span class="token function">nslookup</span>
+<span class="token comment" spellcheck="true"># 设置参数 </span>
+server 10.1.8.100    <span class="token comment" spellcheck="true"># dns服务器</span>
+<span class="token keyword">set</span> q<span class="token operator">=</span>ns   <span class="token comment" spellcheck="true"># 查询记录类型</span>
+lab.com    <span class="token comment" spellcheck="true"># 查询目标</span>
+
+<span class="token comment" spellcheck="true">## Windows本机hi进行dns本地缓存， 而Linux本地是不做缓存的</span>
+ipconfig /displaydns   <span class="token comment" spellcheck="true"># 显示本地缓存的dns记录</span>
+ipconfig /flushdns     <span class="token comment" spellcheck="true"># 清空本地缓存的dns记录</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="配置Cache-DNS服务器"><a href="#配置Cache-DNS服务器" class="headerlink" title="配置Cache DNS服务器"></a>配置<code>Cache</code> DNS服务器</h4><p>主配置文件<code>/etc/bind/named.conf</code></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 只是一个入口文件</span>
+include <span class="token string">"/etc/bind/named.conf.options"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#  规范: 【分号结尾】</span>
+include <span class="token string">"/etc/bind/named.conf.local"</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">#</span>
+include <span class="token string">"/etc/bind/named.conf.default-zones"</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="全局转发DNS服务器"><a href="#全局转发DNS服务器" class="headerlink" title="全局转发DNS服务器"></a>全局转发DNS服务器</h6><p>对于不属于我们域的解析转发给其他dns服务器  （我们内部的nds服务器不知道怎么解析之后要去找谁）<br>配置转发器的文件: <code>vim /etc/bind/named.conf.options</code><br>1.全局转发：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">acl <span class="token string">"local"</span><span class="token punctuation">{</span>   <span class="token comment" spellcheck="true"># options 块之前</span>
+    10.1.8.0/24；    <span class="token comment" spellcheck="true"># 本地网段(为公司内部的地址提供服务)</span>
+<span class="token punctuation">}</span>； 
+options <span class="token punctuation">{</span>
+    recursion <span class="token function">yes</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true"># recursion即递归查询(公网上的dns服务器一般是禁止递归查询的)</span>
+    allow-recursion <span class="token punctuation">{</span> local<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 允许对我发起递归查询的地址范围</span>
+    listen-on <span class="token punctuation">{</span> 10.0.2.53<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 指定侦听的地址</span>
+    forwarders <span class="token punctuation">{</span>
+        9.9.9.9<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 全局性的转发器，转发给谁</span>
+        8.8.8.8<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>sudo systemctl restart bind9.service</code></p>
+<p>2.局部转发</p>
+<pre class="line-numbers language-bash"><code class="language-bash">zone <span class="token string">"sina.com.cn"</span> <span class="token punctuation">{</span>   <span class="token comment" spellcheck="true"># 创建一个域名</span>
+    <span class="token function">type</span> forward<span class="token punctuation">;</span>
+    forwarders <span class="token punctuation">{</span>
+        202.99.96.68<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#局部转发，针对某个域名转发给某一个ip</span>
+        202.106.0.20<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>sudo systemctl restart bind9.service</code></p>
+<p>解析过之后，就有了缓存，在一定时间内就不会转发再进行请求了  </p>
+<h3 id="反向区域"><a href="#反向区域" class="headerlink" title="反向区域"></a><font color="green">反向区域</font></h3><h4 id="配置Master-DNS服务器-1"><a href="#配置Master-DNS服务器-1" class="headerlink" title="配置Master DNS服务器"></a>配置<code>Master DNS</code>服务器</h4><h6 id="（i反向区域-ip解析为域名-–-gt-反垃圾邮件）"><a href="#（i反向区域-ip解析为域名-–-gt-反垃圾邮件）" class="headerlink" title="（i反向区域: ip解析为域名 –> 反垃圾邮件）"></a>（i反向区域: ip解析为域名 –&gt; 反垃圾邮件）</h6><p>反垃圾邮件：攻击者伪造域内邮件发送恶意文件；检查外部的邮件是否是从真正的邮件服务器发送过来的<br>1.</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/bind/named.conf.local</span>
+
+<span class="token comment" spellcheck="true"># zone定义一个区域， type类型，指定存具体记录的文件</span>
+zone <span class="token string">"8.1.10.in-addr-arpa"</span><span class="token punctuation">{</span>  <span class="token comment" spellcheck="true"># 反着写,这里一个网段的地址10.1.8就写为8.1.10</span>
+    <span class="token function">type</span> master<span class="token punctuation">;</span>
+    <span class="token function">file</span> <span class="token string">"/etc/bind/db.10.1.8"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 拷贝一个模板文件</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> /etc/bind/db.127 /etc/bind/db.10.1.8
+
+<span class="token comment" spellcheck="true"># 重启服务</span>
+<span class="token function">sudo</span> systemctl restart bind9
+<span class="token function">sudo</span> systemctl status bind9
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 编辑反向区域配置文件</span>
+vim /etc/bind/db.10.1.8
+<span class="token comment" spellcheck="true"># 文件内容</span>
+<span class="token punctuation">;</span>
+<span class="token punctuation">;</span> BIND reverse data <span class="token function">file</span> <span class="token keyword">for</span> local loopback interface
+<span class="token punctuation">;</span>
+<span class="token variable">$TTL</span>    604800
+@   IN  SOA ns.lab.com. root.lab.com. <span class="token punctuation">(</span>
+                  1     <span class="token punctuation">;</span> Serial
+             604800     <span class="token punctuation">;</span> Refresh
+              86400     <span class="token punctuation">;</span> Retry
+            2419200     <span class="token punctuation">;</span> Expire
+              604800 <span class="token punctuation">)</span>   <span class="token punctuation">;</span> Negative Cache TTL
+<span class="token punctuation">;</span>
+@   IN  NS  ns.lab.com.   <span class="token comment" spellcheck="true"># 本地的ns记录</span>
+10   IN  PTR ns.lab.com.   <span class="token comment" spellcheck="true"># PTR 反向指针记录</span>
+145     IN    PTR        mx1.lab.com     <span class="token comment" spellcheck="true">#145即10.1.8.145</span>
+2     IN    PTR        mx2.lab.com    
+2     IN    PTR        w3.lab.com    <span class="token comment" spellcheck="true"># 一个ip也可以解析为多个域名</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4.检测一下反向解析是否正常</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">dig</span> -x 10.1.8.2@10.1.8.2
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="配置Slave-DNS服务器"><a href="#配置Slave-DNS服务器" class="headerlink" title="配置Slave DNS服务器"></a>配置<code>Slave</code> DNS服务器</h4><ul>
+<li>为例实现冗余容错(防止某台dns服务器宕机)，通常会为每个与安装多个Slave DNS服务器  </li>
+<li>修改记录只能在Master DNS服务器(<code>一个域内只允许有一个</code>)上操作，通过<code>版本号</code>(Serial)通知Slave服务器同步  (所以。作为master的管理员，配置更新之后需要手动修改版本号的值)</li>
+<li>安全考虑<ul>
+<li>服务器全局<code>禁止区域传输</code>（同步本域所有DNS记录）</li>
+<li>只允许指定IP，指定区域的Slave服务器进行区域传输</li>
+<li>区域数据同步使用TCP 53端口</li>
+</ul>
+</li>
+</ul>
+<p>1.</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># dig进行区域传输获取信息  axfr(黑客最喜欢拿的)</span>
+<span class="token function">dig</span> @10.1.8.10 lab.com axfr
+
+<span class="token comment" spellcheck="true">## 禁止区域传输：</span>
+<span class="token comment" spellcheck="true"># 全局配置文件   </span>
+<span class="token comment" spellcheck="true"># sudo vim named.conf.options</span>
+<span class="token comment" spellcheck="true"># 在option中添加：</span>
+allow-transfer <span class="token punctuation">{</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true"># 重启</span>
+
+<span class="token comment" spellcheck="true"># 禁用之后，不影响dig来查询某记录，只是拒绝一次性把记录拿走</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.继续修改master服务器配置</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/bind/named.conf.local</span>
+<span class="token comment" spellcheck="true"># 在正向/反向zone字段里面都要添加</span>
+allow-transfer <span class="token punctuation">{</span> 10.0.2.54<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 允许10.0.2.54 -> 就是slave服务器</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3.继续修改master服务器配置</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># vim /etc/bind/db.lab.com</span>
+<span class="token comment" spellcheck="true"># 增加一条NS记录和A记录    </span>
+@    IN    NS    ns2
+ns2    IN    A    10.1.8.20
+
+
+<span class="token comment" spellcheck="true"># 编辑反向的域名解析记录</span>
+<span class="token comment" spellcheck="true"># vim db.10.1.8</span>
+20    IN    PTR    ns2.lab.com.
+
+
+<span class="token comment" spellcheck="true"># 重启服务</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4.安装slave dns服务器并配置</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> vim /etc/bind/named.conf.options
+<span class="token comment" spellcheck="true"># 内容</span>
+acl <span class="token string">"local"</span><span class="token punctuation">{</span>   <span class="token comment" spellcheck="true"># </span>
+    10.1.8.0/24；    
+<span class="token punctuation">}</span>； 
+options <span class="token punctuation">{</span>
+    recursion <span class="token function">yes</span><span class="token punctuation">;</span>   
+    allow-recursion <span class="token punctuation">{</span> local<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>  
+    listen-on <span class="token punctuation">{</span> 10.0.8.20<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 侦听自己的</span>
+    allow-transfer <span class="token punctuation">{</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    forwarders <span class="token punctuation">{</span>
+        9.9.9.9<span class="token punctuation">;</span>  
+        8.8.8.8<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true"># 重启服务</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>5.slave dns服务器上创建区域</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/bind/named.conf.local</span>
+
+<span class="token comment" spellcheck="true"># 正向zone区域（和master上的对应好）</span>
+zone <span class="token string">"lab.com"</span><span class="token punctuation">{</span>
+    <span class="token function">type</span> slave<span class="token punctuation">;</span>
+    <span class="token function">file</span> <span class="token string">"db.lab.com"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 不能使用绝对路径(区域文件不用手动创建)</span>
+    masters <span class="token punctuation">{</span> 10.1.8.10<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 反向区域</span>
+zone <span class="token string">"8.1.10.in-addr.arpa"</span><span class="token punctuation">{</span>
+    <span class="token function">type</span> slave<span class="token punctuation">;</span>
+    <span class="token function">file</span> <span class="token string">"db.lab.com"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 不能使用绝对路径</span>
+    masters <span class="token punctuation">{</span> 10.1.8.10<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment" spellcheck="true"># 重启服务</span>
+
+
+<span class="token comment" spellcheck="true">#区域文件db.lab.com不用手动创建</span>
+<span class="token comment" spellcheck="true"># 会自动从master上同步下来</span>
+<span class="token comment" spellcheck="true"># 位置在 /var/cache/bind/   而且文件是加了密的</span>
+
+<span class="token comment" spellcheck="true"># 查看slave dns服务器的情况</span>
+<span class="token function">grep</span> bind /var/log/syslog
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>记录更新通知</strong><br>Slave服务器到达更新周期<br>客户端数据加密保存（不能直接修改）<br>Master服务器通知版本号</p>
+<p>master服务器的dns配置更新之后，一定要手动修改版本号，然后重启</p>
+<p>在区域配置文件配置（master服务器的dns配置更新之后会通知slave服务器）：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/bind/named.conf.local</span>
+<span class="token comment" spellcheck="true"># 正反向zone都要配置</span>
+also-notify <span class="token punctuation">{</span> 10.1.8.20<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn" rel="external nofollow noreferrer">浮生</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn/posts/16425/">http://www.xpshuai.cn/posts/16425/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.xpshuai.cn" target="_blank">浮生</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
+                                </a>
+                            
+                                <a href="/tags/DNS/">
+                                    <span class="chip bg-color">DNS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd75ec1a5864747376f6f',
+        clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
+        repo: 'https://github.com/shuai06/gittalks.git',
+        owner: 'SHUAI06',
+        admin: "shuai06",
+        id: '2020-04-12T21-01-58',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/50043/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="ubuntu server-文件服务">
+                        
+                        <span class="card-title">ubuntu server-文件服务</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文件服务
+我的就是你的 -  你的还是你的
+
+网络诞生最初的动因是去中心化和资源共享文件是初期最主要的资源共享形式（把文件存放在集中的位置供大家访问）  
+去中心化是另外一个话题
+
+早期的军事需求
+现在的信任需求
+
+FTP服务最古老的就是F
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/文件服务/">
+                        <span class="chip bg-color">文件服务</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/11524/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="ubuntu server-远程管理">
+                        
+                        <span class="card-title">ubuntu server-远程管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第七章-远程管理
+看我遥控你
+
+远程访问方式为什么要远程管理？服务器大多部署与专门的机房：
+
+电磁、噪声、氧气、温度湿度等都不适宜人类长期居住
+避免闲杂人等结束业务服务器
+
+远程管理
+
+不同的操作系统都支持远程管理技术
+命令行远程管理工具
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/远程管理/">
+                        <span class="chip bg-color">远程管理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 浮生<br />'
+            + '文章作者: 浮生<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://www.xpshuai.cn" target="_blank">浮生</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">325.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "4";
+                    var startDate = "20";
+                    var startHour = "15";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beianbeian.com/beianxinxi/816345dfd53e0153acde20c5bb1dd1b0.html" target="_blank">冀ICP备18027796号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shuai06" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2944282625@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2944282625" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2944282625" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

