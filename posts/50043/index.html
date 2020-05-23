@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -714,7 +626,7 @@ hide_ids<span class="token operator">=</span>YES        <span class="token comme
 <span class="token comment" spellcheck="true"># 被动模式连接</span>
 <span class="token function">ftp</span> -p 192.168.0.130
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/ubuntu-server-文件服务/20200413153011895_32240.png" alt=""></p>
+<p><img src="/posts/50043/20200413153011895_32240.png" alt=""></p>
 <p>限定<code>被动模式</code>数据通信端口</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/vsftpd.conf   新增配置</span>
 <span class="token comment" spellcheck="true"># 开放一个端口的范围(尽量少开) </span>
@@ -1006,7 +918,7 @@ net user g:  \\host\private         <span class="token comment" spellcheck="true
 
 net config workstation 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>共享名称以<code>$</code>结尾的，在win上会认为隐藏共享(Linux上还是会显示)<br><img src="/ubuntu-server-文件服务/20200414155510404_5305.png" alt=""></p>
+<p>共享名称以<code>$</code>结尾的，在win上会认为隐藏共享(Linux上还是会显示)<br><img src="/posts/50043/20200414155510404_5305.png" alt=""></p>
 <h6 id="二-配置公开访问的Samba服务-开放共享文件件"><a href="#二-配置公开访问的Samba服务-开放共享文件件" class="headerlink" title="二. 配置公开访问的Samba服务(开放共享文件件)"></a>二. 配置公开访问的Samba服务(开放共享文件件)</h6><p>将不提供登录账号的用户映射为guest，无需输入密码  </p>
 <p>1.配置文件</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#配置文件/etc/samba/smb.conf    </span>
@@ -1301,8 +1213,8 @@ testparm        <span class="token comment" spellcheck="true"># 检测</span>
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-04-14T16-48-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1519,10 +1431,6 @@ DNS服务结构：
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>

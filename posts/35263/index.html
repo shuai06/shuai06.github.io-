@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -1388,13 +1300,13 @@ mstsc 192.168.128:3389  <span class="token comment" spellcheck="true"># 等方�
 <li>跟踪用户的DNS查询次数。如果达到阈值，就生成相应的报告</li>
 <li>阻止ICMP</li>
 </ul>
-<h6 id="各种隧道技术的优劣"><a href="#各种隧道技术的优劣" class="headerlink" title="各种隧道技术的优劣"></a>各种隧道技术的优劣</h6><p><img src="/内网第三章-隐藏隧道通信技术/20200516154814996_1523296228.png" alt=""><br>根据实际环境选择技术<br>DNS+SSH隧道结合</p>
+<h6 id="各种隧道技术的优劣"><a href="#各种隧道技术的优劣" class="headerlink" title="各种隧道技术的优劣"></a>各种隧道技术的优劣</h6><p><img src="/posts/35263/20200516154814996_1523296228.png" alt=""><br>根据实际环境选择技术<br>DNS+SSH隧道结合</p>
 <h2 id="SOCKS代理"><a href="#SOCKS代理" class="headerlink" title="SOCKS代理 "></a><font color="red">SOCKS代理 </font></h2><p><strong>常见的网络场景</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash">1.服务器在内网，可以任意访问外部网络
 2.服务器在内网，可以访问外部网络，但服务器安装了防火墙来拒绝敏感端口的连接
 3.服务器在内网，对外只开放了部分端口<span class="token punctuation">(</span>如80端口<span class="token punctuation">)</span>，且服务器不能访问外部网络
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="/内网第三章-隐藏隧道通信技术/20200516172238149_1110777522.png" alt=""><br><img src="/内网第三章-隐藏隧道通信技术/20200516172346684_1234877527.png" alt=""></p>
+<p><img src="/posts/35263/20200516172238149_1110777522.png" alt=""><br><img src="/posts/35263/20200516172346684_1234877527.png" alt=""></p>
 <p>SOCKS是一种代理服务，可简单的将一端的系统连接另一端。<br>SOCKS支持多种协议。<br>SOCKS分为SOCKS4和SOCKS5。SOCKS4只支持TCP协议，SOCKS5不仅支持TCP/UDP，还支持各种身份验证机制等，标准端口为1080。<br>SOCKS能与目标内网计算机进行通信，避免多次使用端口转发。</p>
 <h6 id="常见SOCKS代理工具"><a href="#常见SOCKS代理工具" class="headerlink" title="常见SOCKS代理工具"></a>常见SOCKS代理工具</h6><p>可理解为增强版的lcx。他在服务端监听一个端口，当有新连接出现时，会先从SOCKS协议中解析出目标的URL的目标端口，再执行lcx的具体功能<br>socks代理工具尽量选则小且命令行的</p>
 <p><strong>1. EarthWorm(EW)</strong><br>跨平台，SOCKS5架构，能以正向、反向、多级级联等方式建立网络隧道<br>下载地址：<a href="https://github.com/rootkiter/EarthWorm" target="_blank" rel="noopener">https://github.com/rootkiter/EarthWorm</a><br>新版本<code>Termite</code>: <a href="https://github.com/rootkiter/Termite" target="_blank" rel="noopener">https://github.com/rootkiter/Termite</a></p>
@@ -1959,8 +1871,8 @@ DownloadString<span class="token punctuation">(</span><span class="token punctua
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-05-16T21-47-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -2170,10 +2082,6 @@ DownloadString<span class="token punctuation">(</span><span class="token punctua
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>

@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -583,8 +495,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Python-DBA-API"><a href="#Python-DBA-API" class="headerlink" title="Python DBA API"></a>Python DBA API</h2><h6 id="包含的内容"><a href="#包含的内容" class="headerlink" title="包含的内容"></a>包含的内容</h6><p><img src="/python-数据库编程/1.png"></p>
-<h6 id="访问数据库流程"><a href="#访问数据库流程" class="headerlink" title="访问数据库流程"></a>访问数据库流程</h6><p><img src="/python-数据库编程/2.png"></p>
+                <h2 id="Python-DBA-API"><a href="#Python-DBA-API" class="headerlink" title="Python DBA API"></a>Python DBA API</h2><h6 id="包含的内容"><a href="#包含的内容" class="headerlink" title="包含的内容"></a>包含的内容</h6><p><img src="/posts/57831/1.png"></p>
+<h6 id="访问数据库流程"><a href="#访问数据库流程" class="headerlink" title="访问数据库流程"></a>访问数据库流程</h6><p><img src="/posts/57831/2.png"></p>
 <h4 id="与MySQL"><a href="#与MySQL" class="headerlink" title="与MySQL"></a>与MySQL</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pymysql
 
 db_config <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -626,7 +538,7 @@ db_config <span class="token operator">=</span> <span class="token punctuation">
     cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
     conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="cursor对象支持的方法"><a href="#cursor对象支持的方法" class="headerlink" title="cursor对象支持的方法"></a>cursor对象支持的方法</h6><p><img src="/python-数据库编程/3.png"></p>
+<h6 id="cursor对象支持的方法"><a href="#cursor对象支持的方法" class="headerlink" title="cursor对象支持的方法"></a>cursor对象支持的方法</h6><p><img src="/posts/57831/3.png"></p>
 <h4 id="与MongoDB"><a href="#与MongoDB" class="headerlink" title="与MongoDB"></a>与MongoDB</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pymongo <span class="token keyword">import</span> <span class="token operator">*</span>
 
 <span class="token comment" spellcheck="true">#建立连接</span>
@@ -996,8 +908,8 @@ mc<span class="token punctuation">.</span>delete_multi<span class="token punctua
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-02-24T14-01-04',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1199,10 +1111,6 @@ GIL 锁:   任何python进程中，一次永远只有一个线程运行
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>

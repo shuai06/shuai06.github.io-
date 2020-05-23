@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -640,15 +552,15 @@
 </tr>
 </tbody>
 </table>
-<p><img src="/ubuntu-server-DNS服务/20200405094807682_18444.png" alt=""></p>
-<p><strong>DNS命名空间</strong><br><img src="/ubuntu-server-DNS服务/20200405100714099_17972.png" alt=""><br><code>www.ubuntu.com.</code>严格来说是有点的，但是为了方便，最后面不写点也可以</p>
+<p><img src="/posts/16425/20200405094807682_18444.png" alt=""></p>
+<p><strong>DNS命名空间</strong><br><img src="/posts/16425/20200405100714099_17972.png" alt=""><br><code>www.ubuntu.com.</code>严格来说是有点的，但是为了方便，最后面不写点也可以</p>
 <p><strong>DNS查询：</strong> 逐级委派<br>由机构<code>LCANN</code>负责管理, 负责根域<code>.</code></p>
 <h2 id="DNS查询寻结构"><a href="#DNS查询寻结构" class="headerlink" title="DNS查询寻结构"></a><font color="red">DNS查询寻结构</font></h2><p><strong>三种DNS服务器：</strong></p>
 <ol>
 <li>Master(DNS域里面中，master服务器可以修改DNS记录，在master上做得修改也会自动同步到其他slave等dns服务器) 一般只设置一台</li>
 <li>Slave（数据文件来自master的同步）  – 前两者两种服务器都会保存dns记录类型</li>
 <li>Cache    （不保存任何记录，一般都是运营商提供的，跟下面的dns查询有关系，意义：本个区域内有缓存了减少dns会话的流量，提高了效率，减轻了带宽占用，超出生命周期之后才会再次查询）<ol>
-<li>TTL<br>4.Forward（转发类型的，比如会去转发给本地运营商的dns服务器(比如家用无线路由器会企业的域控)，而不是自己去进行递归查询啥的）<br><img src="/ubuntu-server-DNS服务/20200405101258270_2676.png" alt=""></li>
+<li>TTL<br>4.Forward（转发类型的，比如会去转发给本地运营商的dns服务器(比如家用无线路由器会企业的域控)，而不是自己去进行递归查询啥的）<br><img src="/posts/16425/20200405101258270_2676.png" alt=""></li>
 </ol>
 </li>
 </ol>
@@ -1192,8 +1104,8 @@ also-notify <span class="token punctuation">{</span> 10.1.8.20<span class="token
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-04-12T21-01-58',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1415,10 +1327,6 @@ FTP服务最古老的就是F
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>

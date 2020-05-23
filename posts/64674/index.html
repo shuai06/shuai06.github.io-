@@ -127,49 +127,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -270,51 +227,6 @@
 			
 			友情链接
 		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
           
         </li>
         
@@ -656,7 +568,7 @@ Juju
 <li>需要硬件支持(BIOS设置开启)</li>
 <li>CPU特性 Hypervision</li>
 </ul>
-<h3 id="KVM"><a href="#KVM" class="headerlink" title="KVM"></a>KVM</h3><p><strong>Kernel-based Virtual Machine（KVM）</strong><br><img src="/ubuntu-server-虚拟化/20200510201008473_557028487.png" alt=""><br>把<code>KVM</code>和<code>QEMU</code>结合在一起<br>通过<code>libvirt</code>库实现Linux与虚拟化通信的接口</p>
+<h3 id="KVM"><a href="#KVM" class="headerlink" title="KVM"></a>KVM</h3><p><strong>Kernel-based Virtual Machine（KVM）</strong><br><img src="/posts/64674/20200510201008473_557028487.png" alt=""><br>把<code>KVM</code>和<code>QEMU</code>结合在一起<br>通过<code>libvirt</code>库实现Linux与虚拟化通信的接口</p>
 <p><strong>验证硬件平台支持虚拟化拓展(较新的硬件全部支持)</strong><br>四种方法</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># F1</span>
 <span class="token function">egrep</span> -c <span class="token string">'(vmx|svm)'</span> /proc/cpuinfo  <span class="token comment" spellcheck="true"># 结果不为0即支持</span>
@@ -705,7 +617,7 @@ lscpu
 <span class="token comment" spellcheck="true"># 2.也有字符界面的客户端管理工具</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>网卡桥接配置</strong><br>默认虚拟机网络模式为NAT（可以访问外部网络，但外部计算机无法访问虚拟机），可以使用<code>网桥</code>实现VM被外部网络访问</p>
-<p><img src="/ubuntu-server-虚拟化/20200510211152045_955020812.png" alt=""></p>
+<p><img src="/posts/64674/20200510211152045_955020812.png" alt=""></p>
 <p>网桥的配置</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/netplan/50-cloud-init.yaml</span>
 <span class="token comment" spellcheck="true"># 新增配置</span>
@@ -1082,8 +994,8 @@ cloud-localds user-data.img cloud-config  <span class="token comment" spellcheck
     let gitalk = new Gitalk({
         clientID: 'd75ec1a5864747376f6f',
         clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
-        repo: 'https://github.com/shuai06/gittalks.git',
-        owner: 'SHUAI06',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
         admin: "shuai06",
         id: '2020-05-10T22-18-38',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -1303,10 +1215,6 @@ SDN -&gt; 软件定义网络
 
 
 <!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
 
 
     </div>
