@@ -595,7 +595,7 @@ mysql -h 19.168.0.112 -u root
 <span class="token keyword">show</span> <span class="token keyword">full</span> <span class="token keyword">columns</span> <span class="token keyword">from</span> users<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>查询</strong></p>
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> frm users <span class="token keyword">where</span> age <span class="token operator">&lt;</span><span class="token number">20</span> <span class="token operator">and</span> age <span class="token operator">></span><span class="token number">16</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> frm users <span class="token keyword">where</span> age <span class="token operator">&lt;</span><span class="token number">20</span> <span class="token operator">and</span> age <span class="token operator">&gt;</span><span class="token number">16</span><span class="token punctuation">;</span>
 <span class="token keyword">select</span> name<span class="token punctuation">,</span>pass <span class="token keyword">from</span> users <span class="token keyword">order</span> <span class="token keyword">by</span> age<span class="token punctuation">;</span>
 <span class="token keyword">select</span> name<span class="token punctuation">,</span>pass <span class="token keyword">from</span> users <span class="token keyword">order</span> <span class="token keyword">by</span> age <span class="token keyword">desc</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 降序</span>
 
@@ -638,18 +638,18 @@ mysql -h 19.168.0.112 -u root
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> student FROP teacher_name<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h4><h6 id="备份导出"><a href="#备份导出" class="headerlink" title="备份导出"></a>备份导出</h6><p>备份库，表</p>
-<pre class="line-numbers language-bash"><code class="language-bash">mysqldump -u root -p tes_db  <span class="token operator">></span>db_back.sql
-mysqldump -u root -p test_db <span class="token function">users</span> <span class="token operator">></span>db_back.sql
-mysqldump --all-databases -u root -p <span class="token operator">></span>all_db_back.sql
+<pre class="line-numbers language-bash"><code class="language-bash">mysqldump -u root -p tes_db  <span class="token operator">&gt;</span>db_back.sql
+mysqldump -u root -p test_db <span class="token function">users</span> <span class="token operator">&gt;</span>db_back.sql
+mysqldump --all-databases -u root -p <span class="token operator">&gt;</span>all_db_back.sql
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>备份指定数据</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true"># 先进入sql命令终端，进行导出</span>
-<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> users<span class="token punctuation">;</span> <span class="token operator">></span> q<span class="token punctuation">.</span>sql
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> users<span class="token punctuation">;</span> <span class="token operator">&gt;</span> q<span class="token punctuation">.</span>sql
 <span class="token comment" spellcheck="true">## 或者</span>
 <span class="token comment" spellcheck="true"># 1. 先把sql语句保存为文件，</span>
-echo <span class="token string">'select * from users;'</span> <span class="token operator">></span> q<span class="token punctuation">.</span>sql
+echo <span class="token string">'select * from users;'</span> <span class="token operator">&gt;</span> q<span class="token punctuation">.</span>sql
 <span class="token comment" spellcheck="true"># 2.然后执行来进行导出</span>
-mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p test  <span class="token operator">&lt;</span> q<span class="token punctuation">.</span>sql  <span class="token operator">></span><span class="token keyword">out</span><span class="token punctuation">.</span>csv
+mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p test  <span class="token operator">&lt;</span> q<span class="token punctuation">.</span>sql  <span class="token operator">&gt;</span><span class="token keyword">out</span><span class="token punctuation">.</span>csv
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>导出CSV</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'%secure%'</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 先找到备份路径，找到secure_file_priv路径就是默认导出的路径</span>
@@ -785,7 +785,7 @@ local    all    postgres    md5
 psql -U postgres -W -d db_name
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>配置文件</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">/etc/postgresql/<span class="token operator">&lt;</span>version<span class="token operator">></span>/main    <span class="token comment" spellcheck="true"># 配置文件目录</span>
+<pre class="line-numbers language-bash"><code class="language-bash">/etc/postgresql/<span class="token operator">&lt;</span>version<span class="token operator">&gt;</span>/main    <span class="token comment" spellcheck="true"># 配置文件目录</span>
 /etc/postgresql/10/main/pg_ident.conf    <span class="token comment" spellcheck="true"># IDENT身份认证配置</span>
 /etc/postgresql/10/main/postgresql.conf    <span class="token comment" spellcheck="true"># 网络身份认证配置</span>
     <span class="token comment" spellcheck="true"># listen_address='*'        # IPV6 '::'</span>
@@ -1500,7 +1500,7 @@ sudo t
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">325.3k</span>&nbsp;字
+                class="white-color">326.3k</span>&nbsp;字
             
             
             
@@ -1668,6 +1668,34 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+    
+        <script src="//code.tidio.co/xfg3rji2iq4povfdtfxiwk4smqduoso6.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
     
 
     

@@ -571,7 +571,7 @@
 
 <span class="token comment" spellcheck="true"># DNS服务区只保存和解析本域各种域名记录</span>
 <span class="token comment" spellcheck="true"># DNS服务都包含13个根域名服务器地址   </span>
-<span class="token function">cat</span> /etc/bind/db.root    <span class="token comment" spellcheck="true"># -> ipv4和ipv6地址(AAAA记录)</span>
+<span class="token function">cat</span> /etc/bind/db.root    <span class="token comment" spellcheck="true"># -&gt; ipv4和ipv6地址(AAAA记录)</span>
     <span class="token comment" spellcheck="true"># 事实分布于世界的数百台根域服务器，不只是13个（国内是有根域服务器的）</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>DNS服务器的DNS服务器配置</strong><br>自己做迭代<br>指定递归域名服务器（自建尽量禁用其他地址来连接我们递归查询功能, 除非查询的是域内的域名）</p>
@@ -614,8 +614,8 @@ zone <span class="token string">"lab.com"</span><span class="token punctuation">
 <span class="token comment" spellcheck="true"># 文件内容</span>
 <span class="token punctuation">;</span> BIND data <span class="token function">file</span> <span class="token keyword">for</span> lab.com loopback interface
 <span class="token punctuation">;</span>
-<span class="token variable">$TTL</span>    604800    <span class="token comment" spellcheck="true"># 允许缓存DNS服务器的缓存时长，单位s， 1D ->一天,12h -> 12小时</span>
-@    IN    SOA    soa.lab.com. root.localhost. <span class="token punctuation">(</span>  <span class="token comment" spellcheck="true"># @表示本域的域名，   IN ->互联网记录类型， SOA起始授权记录; root.localhost.管理员邮箱地址(点就是@ ->root.lab.com.), 括号多行内容</span>
+<span class="token variable">$TTL</span>    604800    <span class="token comment" spellcheck="true"># 允许缓存DNS服务器的缓存时长，单位s， 1D -&gt;一天,12h -&gt; 12小时</span>
+@    IN    SOA    soa.lab.com. root.localhost. <span class="token punctuation">(</span>  <span class="token comment" spellcheck="true"># @表示本域的域名，   IN -&gt;互联网记录类型， SOA起始授权记录; root.localhost.管理员邮箱地址(点就是@ -&gt;root.lab.com.), 括号多行内容</span>
                   2        <span class="token punctuation">;</span> Serial    <span class="token comment" spellcheck="true"># 版本号，如果slave的与master服务器字段值相同则不同步数据，不同则同步数据</span>
              604800        <span class="token punctuation">;</span> Refresh    <span class="token comment" spellcheck="true"># slave向master的更新周期</span>
               86400        <span class="token punctuation">;</span> Retry     <span class="token comment" spellcheck="true"># 重试周期</span>
@@ -775,7 +775,7 @@ allow-transfer <span class="token punctuation">{</span> none<span class="token p
 <p>2.继续修改master服务器配置</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/bind/named.conf.local</span>
 <span class="token comment" spellcheck="true"># 在正向/反向zone字段里面都要添加</span>
-allow-transfer <span class="token punctuation">{</span> 10.0.2.54<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 允许10.0.2.54 -> 就是slave服务器</span>
+allow-transfer <span class="token punctuation">{</span> 10.0.2.54<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true"># 允许10.0.2.54 -&gt; 就是slave服务器</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>3.继续修改master服务器配置</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># vim /etc/bind/db.lab.com</span>
@@ -1442,7 +1442,7 @@ FTP服务最古老的就是F
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">325.3k</span>&nbsp;字
+                class="white-color">326.3k</span>&nbsp;字
             
             
             
@@ -1610,6 +1610,34 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+    
+        <script src="//code.tidio.co/xfg3rji2iq4povfdtfxiwk4smqduoso6.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
     
 
     

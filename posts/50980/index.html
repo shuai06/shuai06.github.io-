@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    911
+                    912
                 </div>
                 
 
@@ -506,7 +506,7 @@
 <h6 id="创建设备文件"><a href="#创建设备文件" class="headerlink" title="创建设备文件"></a>创建设备文件</h6><p>下面所有的<code>04e8</code>改成自己的识别号, <code>android.rules</code>文件名可自定义</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> ~/.android
 <span class="token comment" spellcheck="true"># 注意你的设备号</span>
-<span class="token keyword">echo</span> 0x04e8 <span class="token operator">></span> ~/.android/adb_usb.ini
+<span class="token keyword">echo</span> 0x04e8 <span class="token operator">&gt;</span> ~/.android/adb_usb.ini
 <span class="token function">sudo</span> <span class="token function">touch</span> /etc/udev/rules.d/android.rules
 <span class="token function">sudo</span> gedit /etc/udev/rules.d/android.rules
 
@@ -1259,7 +1259,7 @@ GIL 锁:   任何python进程中，一次永远只有一个线程运行
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">325.3k</span>&nbsp;字
+                class="white-color">326.3k</span>&nbsp;字
             
             
             
@@ -1427,6 +1427,34 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+    
+        <script src="//code.tidio.co/xfg3rji2iq4povfdtfxiwk4smqduoso6.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
     
 
     

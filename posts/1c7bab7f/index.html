@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    191
+                    198
                 </div>
                 
 
@@ -524,10 +524,10 @@ n <span class="token operator">=</span> f<span class="token punctuation">(</span
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'gun runing'</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> m<span class="token operator">*</span>m
 
-temp <span class="token operator">=</span>  f1<span class="token punctuation">(</span>gun<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 返回f2函数体   # f1 runing  -> f2  ->temp</span>
-n<span class="token operator">=</span> temp<span class="token punctuation">(</span> <span class="token number">5</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># f2( 5)  ->  ' f2 running '  -> return  func(y) +1</span>
-            <span class="token comment" spellcheck="true">#  func(y) ===  gun(m) -> gun runing   ->  5*5</span>
-            <span class="token comment" spellcheck="true">#  return  25 +1  -> 26</span>
+temp <span class="token operator">=</span>  f1<span class="token punctuation">(</span>gun<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 返回f2函数体   # f1 runing  -&gt; f2  -&gt;temp</span>
+n<span class="token operator">=</span> temp<span class="token punctuation">(</span> <span class="token number">5</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># f2( 5)  -&gt;  ' f2 running '  -&gt; return  func(y) +1</span>
+            <span class="token comment" spellcheck="true">#  func(y) ===  gun(m) -&gt; gun runing   -&gt;  5*5</span>
+            <span class="token comment" spellcheck="true">#  return  25 +1  -&gt; 26</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
 
@@ -1103,7 +1103,7 @@ def  f1(func):
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">325.3k</span>&nbsp;字
+                class="white-color">326.3k</span>&nbsp;字
             
             
             
@@ -1271,6 +1271,34 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+    
+        <script src="//code.tidio.co/xfg3rji2iq4povfdtfxiwk4smqduoso6.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
     
 
     
