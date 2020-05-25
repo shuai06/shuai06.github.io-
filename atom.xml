@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-05-25T07:21:32.465Z</updated>
+  <updated>2020-05-25T07:33:41.242Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.xpshuai.cn/posts/58846/"/>
     <id>http://www.xpshuai.cn/posts/58846/</id>
     <published>2020-05-25T07:12:44.000Z</published>
-    <updated>2020-05-25T07:21:32.465Z</updated>
+    <updated>2020-05-25T07:33:41.242Z</updated>
     
     <summary type="html">
     
@@ -79,7 +79,7 @@
     <link href="http://www.xpshuai.cn/posts/35263/"/>
     <id>http://www.xpshuai.cn/posts/35263/</id>
     <published>2020-05-16T13:47:03.000Z</published>
-    <updated>2020-05-23T02:36:57.857Z</updated>
+    <updated>2020-05-25T08:24:28.357Z</updated>
     
     <summary type="html">
     
@@ -122,9 +122,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
       <category term="安全加固" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/"/>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
     
   </entry>
   
