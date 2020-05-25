@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-05-25T12:04:41.198Z</updated>
+  <updated>2020-05-25T12:12:41.261Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.xpshuai.cn/posts/64672/"/>
     <id>http://www.xpshuai.cn/posts/64672/</id>
     <published>2020-05-25T10:02:10.000Z</published>
-    <updated>2020-05-25T12:04:41.198Z</updated>
+    <updated>2020-05-25T12:12:41.261Z</updated>
     
     <summary type="html">
     
@@ -33,6 +33,14 @@
     
     </summary>
     
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="phpMyadmin" scheme="http://www.xpshuai.cn/tags/phpMyadmin/"/>
+    
+      <category term="secure-file-priv" scheme="http://www.xpshuai.cn/tags/secure-file-priv/"/>
     
   </entry>
   
