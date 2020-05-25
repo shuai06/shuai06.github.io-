@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-05-25T07:33:41.242Z</updated>
+  <updated>2020-05-25T12:04:41.198Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>phpMyAdmin突破secure-file-priv写WebShell</title>
+    <link href="http://www.xpshuai.cn/posts/64672/"/>
+    <id>http://www.xpshuai.cn/posts/64672/</id>
+    <published>2020-05-25T10:02:10.000Z</published>
+    <updated>2020-05-25T12:04:41.198Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.查看&lt;code&gt;secure_file_priv&lt;/code&gt;值&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;show global variables like &lt;sp
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>绕过CDN寻找真实IP</title>
@@ -122,9 +142,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="安全加固" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/"/>
-    
       <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
+    
+      <category term="安全加固" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/"/>
     
   </entry>
   
@@ -560,36 +580,6 @@
       <category term="日志" scheme="http://www.xpshuai.cn/tags/%E6%97%A5%E5%BF%97/"/>
     
       <category term="异地备份" scheme="http://www.xpshuai.cn/tags/%E5%BC%82%E5%9C%B0%E5%A4%87%E4%BB%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-文件服务</title>
-    <link href="http://www.xpshuai.cn/posts/50043/"/>
-    <id>http://www.xpshuai.cn/posts/50043/</id>
-    <published>2020-04-14T08:48:09.000Z</published>
-    <updated>2020-05-23T02:41:20.799Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;文件服务&quot;&gt;&lt;a href=&quot;#文件服务&quot; class=&quot;headerlink&quot; title=&quot;文件服务&quot;&gt;&lt;/a&gt;文件服务&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;我的就是你的 -  你的还是你的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;网络诞生最初的动因是去
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="文件服务" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
