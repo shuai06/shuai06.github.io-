@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-05-25T12:12:41.261Z</updated>
+  <updated>2020-05-25T16:01:44.013Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jupyter Notebook 未授权访问漏洞简单复现</title>
+    <link href="http://www.xpshuai.cn/posts/59687/"/>
+    <id>http://www.xpshuai.cn/posts/59687/</id>
+    <published>2020-05-25T15:12:17.000Z</published>
+    <updated>2020-05-25T16:01:44.013Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;简介及危害&quot;&gt;&lt;a href=&quot;#简介及危害&quot; class=&quot;headerlink&quot; title=&quot;简介及危害&quot;&gt;&lt;/a&gt;简介及危害&lt;/h4&gt;&lt;p&gt;Jupyter Notebook(此前被称为 IPython notebook)是一一个交互式笔记本,支支持运行行行
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="Jupyter Notebook" scheme="http://www.xpshuai.cn/tags/Jupyter-Notebook/"/>
+    
+  </entry>
   
   <entry>
     <title>phpMyAdmin突破secure-file-priv写WebShell</title>
@@ -558,36 +585,6 @@
       <category term="安全" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8/"/>
     
       <category term="代码审计" scheme="http://www.xpshuai.cn/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux日志异地备份</title>
-    <link href="http://www.xpshuai.cn/posts/52918/"/>
-    <id>http://www.xpshuai.cn/posts/52918/</id>
-    <published>2020-04-16T07:49:02.000Z</published>
-    <updated>2020-05-23T02:57:37.087Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;日志的异地备份&quot;&gt;&lt;a href=&quot;#日志的异地备份&quot; class=&quot;headerlink&quot; title=&quot;日志的异地备份&quot;&gt;&lt;/a&gt;日志的异地备份&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;日志服务器的建立尤其重要&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这里使
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="日志" scheme="http://www.xpshuai.cn/tags/%E6%97%A5%E5%BF%97/"/>
-    
-      <category term="异地备份" scheme="http://www.xpshuai.cn/tags/%E5%BC%82%E5%9C%B0%E5%A4%87%E4%BB%BD/"/>
     
   </entry>
   
