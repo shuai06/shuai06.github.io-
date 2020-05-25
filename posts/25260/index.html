@@ -560,7 +560,7 @@ docker info   <span class="token comment" spellcheck="true"># 查看运行了几
 <span class="token comment" spellcheck="true"># Registry: 应用程序的仓库(基本linux映像，)</span>
 
 
-<span class="token comment" spellcheck="true"># 搜索镜像(有官方有个人的: 用户名/容器名) --&gt; 建议下载官方的image然后自己打造容器</span>
+<span class="token comment" spellcheck="true"># 搜索镜像(有官方有个人的: 用户名/容器名) --> 建议下载官方的image然后自己打造容器</span>
 docker search apache2
 
 <span class="token comment" spellcheck="true"># 下载镜像</span>
@@ -683,7 +683,7 @@ ctrl+p, ctrl+Q
 
 
 <span class="token comment" spellcheck="true">## 服务自动启动(或者手动把下面内容输入进去)</span>
-<span class="token keyword">echo</span> <span class="token string">'/etc/init.d/apache2 start'</span> <span class="token operator">&gt;&gt;</span> /etc/bash/rc
+<span class="token keyword">echo</span> <span class="token string">'/etc/init.d/apache2 start'</span> <span class="token operator">>></span> /etc/bash/rc
 
 <span class="token comment" spellcheck="true">## 基于配置好的容器创建新的镜像</span>
 docker commit ubuntu xps/apache1:0.1  <span class="token comment" spellcheck="true"># 创建了新的image</span>
@@ -696,10 +696,10 @@ docker commit ubuntu xps/apache1:0.1  <span class="token comment" spellcheck="tr
 <p>这里还是以apacha2为例<br>1.先写配置文件</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># vim Dockerfile</span>
 FROM ubuntu     <span class="token comment" spellcheck="true"># 从官方下载镜像</span>
-MAINTAINER xps <span class="token operator">&lt;</span>xps@admin.com<span class="token operator">&gt;</span>
+MAINTAINER xps <span class="token operator">&lt;</span>xps@admin.com<span class="token operator">></span>
 RUN apt update<span class="token punctuation">;</span> apt dist-upgrade -y
 RUN apt <span class="token function">install</span> -y apache2 vim
-RUN <span class="token keyword">echo</span> <span class="token string">'/etc/init.d/apache2 start'</span> <span class="token operator">&gt;&gt;</span> /etc/bash/rc
+RUN <span class="token keyword">echo</span> <span class="token string">'/etc/init.d/apache2 start'</span> <span class="token operator">>></span> /etc/bash/rc
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2.基于dockerfile来创建容器</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 标签自己定义即可, 最后的点(.) 表示当前目录下的dockerfile</span>
@@ -1400,7 +1400,7 @@ curl 1.1.1.1
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

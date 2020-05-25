@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    58 分
+                    57 分
                 </div>
                 
 
@@ -533,20 +533,20 @@
 2表示标准错误输出
 
 <span class="token comment" spellcheck="true">## 输入输出重定向</span>
-<span class="token comment" spellcheck="true"># &gt;, &gt;&gt;</span>
-<span class="token operator">&gt;</span> 默认为标准输出重定向，与 1<span class="token operator">&gt;</span> 相同
-2<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1 把标准错误输出 重定向到 标准输出.
-<span class="token operator">&amp;</span><span class="token operator">&gt;</span>a.txt 把标准输出 和 标准错误输出 都重定向到文件中
+<span class="token comment" spellcheck="true"># >, >></span>
+<span class="token operator">></span> 默认为标准输出重定向，与 1<span class="token operator">></span> 相同
+2<span class="token operator">></span><span class="token operator">&amp;</span>1 把标准错误输出 重定向到 标准输出.
+<span class="token operator">&amp;</span><span class="token operator">></span>a.txt 把标准输出 和 标准错误输出 都重定向到文件中
 
-<span class="token comment" spellcheck="true"># 2&gt;, 2&gt;&gt;   错误输出最佳</span>
-<span class="token comment" spellcheck="true"># 2&gt;&gt;&amp;1, &amp;&gt;   描述符为2的内容输入到描述符为1的内容(&amp;&gt; 是混合输出)</span>
+<span class="token comment" spellcheck="true"># 2>, 2>>   错误输出最佳</span>
+<span class="token comment" spellcheck="true"># 2>>&amp;1, &amp;>   描述符为2的内容输入到描述符为1的内容(&amp;> 是混合输出)</span>
 <span class="token function">cat</span> <span class="token operator">&lt;</span> /etc/hosts  <span class="token comment" spellcheck="true">#（没加任何参数） 和不加&lt;的机制不一样</span>
-<span class="token function">cat</span> <span class="token operator">&lt;</span> /etc/hosts <span class="token operator">&gt;</span> test/aaa.txt  <span class="token comment" spellcheck="true"># 相当于copy文件内容</span>
+<span class="token function">cat</span> <span class="token operator">&lt;</span> /etc/hosts <span class="token operator">></span> test/aaa.txt  <span class="token comment" spellcheck="true"># 相当于copy文件内容</span>
 <span class="token function">cat</span> <span class="token operator">&lt;&lt;</span> EOF   <span class="token comment" spellcheck="true"># 输入内容让cat来执行</span>
-<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span>EOF <span class="token operator">&gt;</span> file1   <span class="token comment" spellcheck="true"># 把一会输入的文件放到文件里面去 </span>
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span>EOF <span class="token operator">></span> file1   <span class="token comment" spellcheck="true"># 把一会输入的文件放到文件里面去 </span>
 
 <span class="token comment" spellcheck="true"># 混合重定向  输出到/dev/null就是什么都不显示到终端</span>
-<span class="token operator">&amp;</span><span class="token operator">&gt;</span> /dev/null      
+<span class="token operator">&amp;</span><span class="token operator">></span> /dev/null      
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>2.一些快捷键</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ^R   搜索历史命令</span>
@@ -786,7 +786,7 @@ ctrl +c <span class="token comment" spellcheck="true"># 杀掉的是前台进程
 
 <span class="token comment" spellcheck="true">## 比如下面的例子;</span>
 <span class="token comment" spellcheck="true"># bash test.sh 111 222 333</span>
-<span class="token function">ping</span> -c1 <span class="token variable">$1</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null
+<span class="token function">ping</span> -c1 <span class="token variable">$1</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span>           <span class="token comment" spellcheck="true"># 如果`上一条命令`返回值等于0(正常执行)   -eq</span>
 <span class="token keyword">then</span>
     <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$1</span> is up"</span>
@@ -820,7 +820,7 @@ $$    <span class="token comment" spellcheck="true"># 当前进程的PID        
 <span class="token comment" spellcheck="true"># 第一个参数是文件，从中读取ip然后ping</span>
 <span class="token keyword">for</span> ip <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> $1<span class="token variable">`</span></span>
 <span class="token keyword">do</span>
-    <span class="token function">ping</span> -c1 ip $<span class="token operator">&gt;</span>/dev/null
+    <span class="token function">ping</span> -c1 ip $<span class="token operator">></span>/dev/null
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>          
         <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is up"</span>
     <span class="token keyword">else</span>
@@ -890,7 +890,7 @@ today <span class="token operator">=</span> <span class="token variable"><span c
 <h5 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h5><blockquote>
 <p>变量赋值，等号两边不能有空格</p>
 </blockquote>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ping</span> -c1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null <span class="token operator">&amp;&amp;</span> <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is up"</span> <span class="token operator">||</span> <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is down"</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ping</span> -c1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null <span class="token operator">&amp;&amp;</span> <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is up"</span> <span class="token operator">||</span> <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is down"</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="变量引用"><a href="#变量引用" class="headerlink" title="变量引用"></a>变量引用</h5><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 引用</span>
 1. $变量
@@ -1024,7 +1024,7 @@ back_dir<span class="token operator">=</span>/var/mysql_bak
 -lt  小于
 -eq  等于
 -ne  不等于
--ge  <span class="token operator">&gt;=</span>
+-ge  <span class="token operator">>=</span>
 -le  <span class="token operator">&lt;=</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#安装软件，先判断是否为root用户</span>
@@ -1036,7 +1036,7 @@ apt <span class="token function">install</span> apache2
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>例子：用户输入(read)用户名，创建这个用户</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">read</span> -p <span class="token string">"input the user name:  "</span> user
-<span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null
+<span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>     <span class="token comment" spellcheck="true"># 如果用户存在</span>
     <span class="token keyword">echo</span> <span class="token string">"user <span class="token variable">$user</span> already exists"</span>
 <span class="token keyword">else</span>
@@ -1053,7 +1053,7 @@ dick_use<span class="token operator">=</span>`df -Th <span class="token operator
 mail_user<span class="token operator">=</span>alice
 warn_file<span class="token operator">=</span>/tmp/disk_warn.txt
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$dick_use</span> -gt 90 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
-    <span class="token keyword">echo</span> <span class="token string">"<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%F:%H<span class="token variable">`</span></span> disk: <span class="token variable">${dick_use}</span>%"</span> <span class="token operator">&gt;</span>warn_file
+    <span class="token keyword">echo</span> <span class="token string">"<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%F:%H<span class="token variable">`</span></span> disk: <span class="token variable">${dick_use}</span>%"</span> <span class="token operator">></span>warn_file
 <span class="token keyword">fi</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token variable">$disk_warn</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>      <span class="token comment" spellcheck="true"># 将报错文件发送给邮件用户</span>
@@ -1070,7 +1070,7 @@ warn_file<span class="token operator">=</span>/tmp/disk_warn.txt
 <span class="token operator">==</span>
 <span class="token operator">!=</span>
 <span class="token punctuation">[</span> -n <span class="token string">"hhh"</span> <span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 长度不是0</span>
-<span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$user</span>"</span> <span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 长度为0  (变量为空/未定义 =&gt; 都是0)</span>
+<span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">$user</span>"</span> <span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 长度为0  (变量为空/未定义 => 都是0)</span>
 -a     <span class="token comment" spellcheck="true"># 并且    [1 -lt 1 -a 5 -gt 10]</span>
 -r     <span class="token comment" spellcheck="true"># 或者</span>
 <span class="token operator">&amp;&amp;</span>
@@ -1163,7 +1163,7 @@ esac
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>例子1：删除用户</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">read</span> -p <span class="token string">"请输入要删除的用户名： "</span> user
-<span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null
+<span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">&amp;</span>? -ne 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
     <span class="token keyword">echo</span> <span class="token string">"no suc user: <span class="token variable">$user</span>"</span>
     <span class="token keyword">exit</span> 1    <span class="token comment" spellcheck="true"># 返回1（意思是错误退出）</span>
@@ -1185,7 +1185,7 @@ esac
 <span class="token function">command</span> -v <span class="token function">ls</span>
 
 cmd1<span class="token operator">=</span>/bin/date
-<span class="token keyword">if</span> <span class="token function">command</span> -v <span class="token variable">$cmd1</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null<span class="token punctuation">;</span><span class="token keyword">then</span>
+<span class="token keyword">if</span> <span class="token function">command</span> -v <span class="token variable">$cmd1</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null<span class="token punctuation">;</span><span class="token keyword">then</span>
     <span class="token comment" spellcheck="true"># 神马都不做： 只加一个冒号</span>
     <span class="token keyword">:</span>
 <span class="token keyword">else</span>
@@ -1245,7 +1245,7 @@ EOF
 <span class="token comment" spellcheck="true">#1. 业务服务器不允许直接连接，允许通过跳板机连接</span>
 <span class="token comment" spellcheck="true">#2. 业务服务器不允许root用户直接登录</span>
 
-<span class="token comment" spellcheck="true">### 复杂版jumpserver(对用户行为进行行为/记录)  ---&gt; 使用Python脚本</span>
+<span class="token comment" spellcheck="true">### 复杂版jumpserver(对用户行为进行行为/记录)  ---> 使用Python脚本</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>例子4：实现系统管理工具箱</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
@@ -1323,13 +1323,13 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
 <p>拓展： 查看脚本运行时间:  <code>time ./a.sh</code></p>
 <p>例子1： for循环ping机器</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 重定向</span>
-<span class="token operator">&gt;</span>ip.txt
+<span class="token operator">></span>ip.txt
 <span class="token comment" spellcheck="true"># {2..254}  集合，  另一个序列: seq `2 254`</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">{</span>2<span class="token punctuation">..</span>254<span class="token punctuation">}</span>
 <span class="token keyword">do</span>
     <span class="token punctuation">{</span>
     <span class="token variable">$ip</span> <span class="token operator">=</span> 192.168.111.<span class="token variable">$i</span>
-    <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null   <span class="token comment" spellcheck="true"># -W等待多少时间</span>
+    <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null   <span class="token comment" spellcheck="true"># -W等待多少时间</span>
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
         <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">|</span> <span class="token function">tee</span> -a ping.txt
     <span class="token keyword">fi</span>
@@ -1342,7 +1342,7 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># {2..254}  集合，  另一个序列: seq `2 254`</span>
 <span class="token keyword">for</span> ip <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> ips.txt<span class="token variable">`</span></span>
 <span class="token keyword">do</span>
-    <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null   <span class="token comment" spellcheck="true"># -W等待多少时间</span>
+    <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null   <span class="token comment" spellcheck="true"># -W等待多少时间</span>
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
         <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is up!"</span> 
     <span class="token keyword">else</span> 
@@ -1375,7 +1375,7 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">seq</span> -w  $number<span class="token variable">`</span></span>
 <span class="token keyword">do</span>
     user <span class="token operator">=</span> <span class="token variable">$prefix</span>%i
-    <span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dv/null
+    <span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dv/null
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
         <span class="token keyword">echo</span> <span class="token string">"user <span class="token variable">$user</span> already exists"</span>
     <span class="token keyword">else</span>
@@ -1401,7 +1401,7 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
     <span class="token keyword">echo</span> <span class="token string">"error file"</span>
     <span class="token keyword">exit</span> 2
 <span class="token keyword">fi</span>
-<span class="token comment" spellcheck="true"># 开始(两列 -- &gt; 把密码和用户名分开)</span>
+<span class="token comment" spellcheck="true"># 开始(两列 -- > 把密码和用户名分开)</span>
 <span class="token comment" spellcheck="true"># 应该：重新定义分隔符</span>
 <span class="token comment" spellcheck="true"># IFS内部字段分隔符,比如下面的回车</span>
 <span class="token comment" spellcheck="true"># IFS = $'\n'  </span>
@@ -1414,12 +1414,12 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
     <span class="token keyword">fi</span>
     user <span class="token operator">=</span> `echo <span class="token string">"<span class="token variable">$line</span>"</span> <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'print &amp;1'</span><span class="token variable"><span class="token variable">`</span>
     pass <span class="token operator">=</span> <span class="token variable">`</span></span><span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$line</span>"</span> <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'print &amp;2'</span>`
-    <span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dv/null
+    <span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dv/null
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
         <span class="token keyword">echo</span> <span class="token string">"user <span class="token variable">$user</span> already exists"</span>
     <span class="token keyword">else</span>
         <span class="token function">useradd</span> <span class="token variable">$user</span>
-        <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$pass</span>"</span> <span class="token operator">|</span> --stdin <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null    <span class="token comment" spellcheck="true"># 将密码作为标准输入</span>
+        <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$pass</span>"</span> <span class="token operator">|</span> --stdin <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null    <span class="token comment" spellcheck="true"># 将密码作为标准输入</span>
         <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
             <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$user</span> is created."</span>
         <span class="token keyword">fi</span>
@@ -1432,16 +1432,16 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
 <span class="token keyword">for</span> ip <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> ip.txt<span class="token variable">)</span></span>
 <span class="token keyword">do</span>
     <span class="token punctuation">{</span>
-        <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null
+        <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null
         <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
             <span class="token function">ssh</span> <span class="token variable">$ip</span> <span class="token keyword">echo</span> <span class="token string">"123"</span> <span class="token operator">|</span><span class="token function">passwd</span> --stdin <span class="token variable">$user</span>   <span class="token comment" spellcheck="true"># 采用的公钥认证</span>
             <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
-                <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">&gt;&gt;</span>success_<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> + %F<span class="token variable">`</span></span>.txt
+                <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">>></span>success_<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> + %F<span class="token variable">`</span></span>.txt
             <span class="token keyword">else</span>
-                <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">&gt;&gt;</span>failed_<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> + %F<span class="token variable">`</span></span>.txt
+                <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">>></span>failed_<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> + %F<span class="token variable">`</span></span>.txt
             <span class="token keyword">fi</span>
         <span class="token keyword">else</span>
-            <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">&gt;&gt;</span>failed_<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> + %F<span class="token variable">`</span></span>.txt
+            <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">>></span>failed_<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> + %F<span class="token variable">`</span></span>.txt
         <span class="token keyword">fi</span>
 
     <span class="token punctuation">}</span><span class="token operator">&amp;</span>
@@ -1468,12 +1468,12 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
 
     user <span class="token operator">=</span> `echo <span class="token variable">$line</span><span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'{printf <span class="token variable">$1</span>}'</span><span class="token variable"><span class="token variable">`</span>
     pass <span class="token operator">=</span> <span class="token variable">`</span></span><span class="token keyword">echo</span> <span class="token variable">$line</span><span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'{printf <span class="token variable">$2</span>}'</span>`
-    <span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null
+    <span class="token function">id</span> <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
         <span class="token keyword">echo</span> <span class="token string">"user <span class="token variable">$user</span> already exists"</span>
     <span class="token keyword">else</span>
         <span class="token function">useradd</span> <span class="token variable">$user</span>
-        <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$pass</span>"</span> <span class="token operator">|</span> --stdin <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null    <span class="token comment" spellcheck="true"># 将密码作为标准输入</span>
+        <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$pass</span>"</span> <span class="token operator">|</span> --stdin <span class="token variable">$user</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null    <span class="token comment" spellcheck="true"># 将密码作为标准输入</span>
         <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
             <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$user</span> is created."</span>
         <span class="token keyword">fi</span>
@@ -1485,14 +1485,14 @@ sh -vx 02.sh   <span class="token comment" spellcheck="true"># 仅调试的方�
 <p>例子2：while实现连接测试</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 只要ping通就一直ping（【条件为true时候一直执行循环】）</span>
 ip<span class="token operator">=</span>192.168.0.5
-<span class="token keyword">while</span> <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">do</span>
+<span class="token keyword">while</span> <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">do</span>
     <span class="token function">sleep</span> 1
 <span class="token keyword">done</span>
 <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is down!"</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>例子3：until 实现连接测试</p>
 <pre class="line-numbers language-bash"><code class="language-bash">ip<span class="token operator">=</span>192.168.0.5
-<span class="token keyword">until</span> <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">do</span>
+<span class="token keyword">until</span> <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">do</span>
     <span class="token function">sleep</span> 1
 <span class="token keyword">done</span>
 <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is up!"</span>   
@@ -1511,7 +1511,7 @@ ip<span class="token operator">=</span>192.168.0.5
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>例子1：until实现数值运算</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># i=1</span>
-<span class="token keyword">until</span> <span class="token punctuation">[</span> <span class="token variable">$i</span> -gt 100 <span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># &gt;100</span>
+<span class="token keyword">until</span> <span class="token punctuation">[</span> <span class="token variable">$i</span> -gt 100 <span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># >100</span>
 <span class="token keyword">do</span>
     <span class="token keyword">let</span> sum+<span class="token operator">=</span><span class="token variable">$i</span>
     <span class="token keyword">let</span> i++
@@ -1544,7 +1544,7 @@ i<span class="token operator">=</span>1
 <span class="token keyword">do</span>
     <span class="token punctuation">{</span>
         ip<span class="token operator">=</span>192.168.0.<span class="token variable">$i</span>
-        <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null
+        <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null
         <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
             <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is up."</span>
         <span class="token keyword">else</span>
@@ -1560,8 +1560,8 @@ i<span class="token operator">=</span>1
 <span class="token comment" spellcheck="true"># 进程使用文件描述符来管理打开的文件（位置： /proc/进程id/fd/）</span>
 <span class="token comment" spellcheck="true"># $$是当前进程</span>
 
-<span class="token function">exec</span> 6<span class="token operator">&lt;</span><span class="token operator">&gt;</span> /file1    <span class="token comment" spellcheck="true"># 1.手动指定描述符来 打开文件</span>
-<span class="token keyword">echo</span> <span class="token string">"111"</span> <span class="token operator">&gt;&gt;</span> /proc/$$/fd/6    <span class="token comment" spellcheck="true"># 2.写入到了file1</span>
+<span class="token function">exec</span> 6<span class="token operator">&lt;</span><span class="token operator">></span> /file1    <span class="token comment" spellcheck="true"># 1.手动指定描述符来 打开文件</span>
+<span class="token keyword">echo</span> <span class="token string">"111"</span> <span class="token operator">>></span> /proc/$$/fd/6    <span class="token comment" spellcheck="true"># 2.写入到了file1</span>
 <span class="token comment" spellcheck="true"># 3.删除file1</span>
 <span class="token comment" spellcheck="true"># 4.然后查看文件句柄:</span>
 ll /proc/$$/fd
@@ -1576,7 +1576,7 @@ ll /proc/$$/fd
 <span class="token comment" spellcheck="true">## 匿名管道(一个终端内使用) |</span>
 <span class="token comment" spellcheck="true">## 跨终端使用   mkfifo</span>
 <span class="token function">mkfifo</span>  /tmp/fifo1   <span class="token comment" spellcheck="true"># 创建</span>
-ll /dev <span class="token operator">&gt;</span> /tmp/fifo1 <span class="token comment" spellcheck="true"># 把dev重定向到管道中，另一个终端就可以用了</span>
+ll /dev <span class="token operator">></span> /tmp/fifo1 <span class="token comment" spellcheck="true"># 把dev重定向到管道中，另一个终端就可以用了</span>
 <span class="token comment" spellcheck="true"># 另一个终端使用： </span>
 <span class="token function">grep</span> <span class="token string">'sda'</span> /tmp/fifo1 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1585,12 +1585,12 @@ ll /dev <span class="token operator">&gt;</span> /tmp/fifo1 <span class="token c
 tmp_fifofile<span class="token operator">=</span>/tmp/$$.fifo
 
 <span class="token function">mkfifo</span> <span class="token variable">$tmp_fifofile</span>
-<span class="token function">exec</span> 8<span class="token operator">&lt;</span><span class="token operator">&gt;</span> <span class="token variable">$tmp_fifofile</span>
+<span class="token function">exec</span> 8<span class="token operator">&lt;</span><span class="token operator">></span> <span class="token variable">$tmp_fifofile</span>
 <span class="token function">rm</span> <span class="token variable">$tmp_fifofile</span>
 
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">seq</span> $thread<span class="token variable">`</span></span>
 <span class="token keyword">do</span>
-    <span class="token keyword">echo</span> <span class="token operator">&gt;</span><span class="token operator">&amp;</span>8   <span class="token comment" spellcheck="true"># 操作的是文件描述符（）</span>
+    <span class="token keyword">echo</span> <span class="token operator">></span><span class="token operator">&amp;</span>8   <span class="token comment" spellcheck="true"># 操作的是文件描述符（）</span>
 <span class="token keyword">done</span>
 
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">{</span>1<span class="token punctuation">..</span>254<span class="token punctuation">}</span>
@@ -1598,13 +1598,13 @@ tmp_fifofile<span class="token operator">=</span>/tmp/$$.fifo
     <span class="token function">read</span> -u 8    <span class="token comment" spellcheck="true"># -u 是读取文件描述符内容（逐行）</span>
     <span class="token punctuation">{</span>
         ip<span class="token operator">=</span>192.168.0.<span class="token variable">$i</span>
-        <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null
+        <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null
         <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
             <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is up."</span>
         <span class="token keyword">else</span>
             <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span> is down."</span>
         <span class="token keyword">fi</span>
-        <span class="token keyword">echo</span> <span class="token operator">&gt;</span><span class="token operator">&amp;</span>8  <span class="token comment" spellcheck="true"># 有借有还（借一个还一个，不能让文件描述符里面空）</span>
+        <span class="token keyword">echo</span> <span class="token operator">></span><span class="token operator">&amp;</span>8  <span class="token comment" spellcheck="true"># 有借有还（借一个还一个，不能让文件描述符里面空）</span>
     <span class="token punctuation">}</span><span class="token operator">&amp;</span>
 <span class="token keyword">done</span>
 <span class="token function">wait</span>
@@ -1679,7 +1679,7 @@ spawn <span class="token function">scp</span> -r /etc/xxx <span class="token var
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># shell与expect一起用</span>
 <span class="token comment" spellcheck="true">#!/bin/bash</span>
 
-<span class="token operator">&gt;</span>ip.txt
+<span class="token operator">></span>ip.txt
 passwd<span class="token operator">=</span>123
 
 <span class="token comment" spellcheck="true">#测试expect有没有装(以centos为例)</span>
@@ -1699,7 +1699,7 @@ rpm -q <span class="token function">expect</span> <span class="token operator">&
         ip<span class="token operator">=</span>192.168.0.<span class="token variable">$i</span>
         pign -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span>/dev/null
         <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
-            <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">&gt;&gt;</span> ip.txt
+            <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">>></span> ip.txt
             <span class="token comment" spellcheck="true"># 开始expect</span>
             /usr/bin/expect <span class="token operator">&lt;&lt;</span>-EOF
             <span class="token keyword">set</span> <span class="token function">timeout</span> 10
@@ -1719,13 +1719,13 @@ rpm -q <span class="token function">expect</span> <span class="token operator">&
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 上一个例子, 已经实现了公钥认证，后面的操作就可以使用shell了，基本不用expect了</span>
 <span class="token comment" spellcheck="true"># 重启之后查看机器的ip，直接用get_ip.sh脚本（就不用了一个一个去看了）</span>
 <span class="token comment" spellcheck="true">#!/bin/bash</span>
-<span class="token operator">&gt;</span>ping.txt
+<span class="token operator">></span>ping.txt
 <span class="token comment" spellcheck="true"># {2..254}  集合，  另一个序列: seq `2 254`</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token punctuation">{</span>2<span class="token punctuation">..</span>254<span class="token punctuation">}</span>
 <span class="token keyword">do</span>
     <span class="token punctuation">{</span>
     <span class="token variable">$ip</span> <span class="token operator">=</span> 192.168.111.<span class="token variable">$i</span>
-    <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">&gt;</span>/dev/null  
+    <span class="token function">ping</span> -c1 -W1 <span class="token variable">$ip</span> <span class="token operator">&amp;</span><span class="token operator">></span>/dev/null  
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
         <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$ip</span>"</span> <span class="token operator">|</span> <span class="token function">tee</span> -a ping.txt
     <span class="token keyword">fi</span>
@@ -2079,7 +2079,7 @@ result<span class="token operator">=</span><span class="token variable"><span cl
 <span class="token function">grep</span> <span class="token string">'c*'</span> /etc/passwd   <span class="token comment" spellcheck="true"># c出现0次或者多次</span>
 <span class="token function">egrep</span> <span class="token string">'c+'</span> /etc/passwd   <span class="token comment" spellcheck="true"># +要使用egrep或反斜杠</span>
 
-vim中替换： <span class="token variable"><span class="token variable">`</span>:%s/\<span class="token operator">&lt;</span><span class="token punctuation">[</span>tT<span class="token punctuation">]</span>om\<span class="token operator">&gt;</span>/TOM/g<span class="token variable">`</span></span>    <span class="token comment" spellcheck="true"># 尖括号括起来的是单词</span>
+vim中替换： <span class="token variable"><span class="token variable">`</span>:%s/\<span class="token operator">&lt;</span><span class="token punctuation">[</span>tT<span class="token punctuation">]</span>om\<span class="token operator">></span>/TOM/g<span class="token variable">`</span></span>    <span class="token comment" spellcheck="true"># 尖括号括起来的是单词</span>
 
 <span class="token comment" spellcheck="true">## 例子：</span>
 <span class="token function">grep</span> <span class="token string">"sh$"</span> /etc/passwd
@@ -2097,7 +2097,7 @@ $        行位定位符                    love$
 <span class="token punctuation">[</span>^<span class="token punctuation">]</span>        匹配不再指定组内的一个字符     <span class="token punctuation">[</span>^a-z0-9<span class="token punctuation">]</span>ove
 \        用来转义元字符                love\.
 \<span class="token operator">&lt;</span>        词首定位符                    \<span class="token operator">&lt;</span>love
-\<span class="token operator">&gt;</span>        词尾定位符                    love\<span class="token operator">&gt;</span>
+\<span class="token operator">></span>        词尾定位符                    love\<span class="token operator">></span>
 \<span class="token punctuation">(</span><span class="token punctuation">..</span>\<span class="token punctuation">)</span>  匹配稍后使用的字符的标签         :%s/172.16.130.1/172.16.130.5/
                                      :%s/\<span class="token punctuation">(</span>172.16.130.\<span class="token punctuation">)</span>1/\15/
                                      :%s/\<span class="token punctuation">(</span>172.\<span class="token punctuation">)</span>\<span class="token punctuation">(</span>16.\<span class="token punctuation">)</span>\<span class="token punctuation">(</span>130.\<span class="token punctuation">)</span>1/\1\2\35/
@@ -2112,7 +2112,7 @@ x\<span class="token punctuation">{</span>m,n\<span class="token punctuation">}<
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p> 2.拓展正则表达式元字符</p>
 <pre class="line-numbers language-bash"><code class="language-bash">+                匹配一个或多个前导字符        <span class="token punctuation">[</span>a-z<span class="token punctuation">]</span>+ove
-?                匹配零个或一个前导字符        lo?ve   <span class="token comment" spellcheck="true"># o出现0次或1次    ss -an |egrep ':80:22\&gt;'</span>
+?                匹配零个或一个前导字符        lo?ve   <span class="token comment" spellcheck="true"># o出现0次或1次    ss -an |egrep ':80:22\>'</span>
 a<span class="token operator">|</span>b              匹配a或b                        love<span class="token operator">|</span>hate
 <span class="token punctuation">(</span><span class="token punctuation">)</span>                组 字符                         loveablle<span class="token operator">|</span>rs    love<span class="token punctuation">(</span>able<span class="token operator">|</span>rs<span class="token punctuation">)</span>ov+  <span class="token punctuation">(</span>ov<span class="token punctuation">)</span>+   ov+   <span class="token comment" spellcheck="true"># 里面内容作为一个整体</span>
 <span class="token punctuation">(</span><span class="token punctuation">..</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">..</span><span class="token punctuation">)</span>\1\2    标签匹配字符                    <span class="token punctuation">(</span>love<span class="token punctuation">)</span>able\1er      <span class="token comment" spellcheck="true"># 不带斜线</span>
@@ -2169,7 +2169,7 @@ ll <span class="token operator">|</span><span class="token function">grep</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用的元字符</p>
-<pre class="line-numbers language-bash"><code class="language-bash">grep：     使用基本元字符集  ^, $, ., *, <span class="token punctuation">[</span><span class="token punctuation">]</span>, <span class="token punctuation">[</span>^<span class="token punctuation">]</span>, \<span class="token operator">&lt;</span>\<span class="token operator">&gt;</span>, \<span class="token punctuation">(</span>\<span class="token punctuation">)</span>,  \<span class="token punctuation">{</span>\<span class="token punctuation">}</span>, \+, 
+<pre class="line-numbers language-bash"><code class="language-bash">grep：     使用基本元字符集  ^, $, ., *, <span class="token punctuation">[</span><span class="token punctuation">]</span>, <span class="token punctuation">[</span>^<span class="token punctuation">]</span>, \<span class="token operator">&lt;</span>\<span class="token operator">></span>, \<span class="token punctuation">(</span>\<span class="token punctuation">)</span>,  \<span class="token punctuation">{</span>\<span class="token punctuation">}</span>, \+, 
 egrep：       使用扩展元字符集  ?, +, <span class="token punctuation">{</span><span class="token punctuation">}</span>, <span class="token operator">|</span>, <span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 <span class="token comment" spellcheck="true">#</span>
@@ -2220,7 +2220,7 @@ nmap --help <span class="token operator">|</span><span class="token function">gr
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>支持正则表达式</strong></p>
 <p>支持的元字符</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 基本元字符集: ^, $, ., *, [], [^], \&lt;\&gt;, \(\), \{\} </span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 基本元字符集: ^, $, ., *, [], [^], \&lt;\>, \(\), \{\} </span>
 <span class="token comment" spellcheck="true"># 扩展元字符集: ?, +, {}, |, ()</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>使用扩展元字符的方式</p>
@@ -2244,7 +2244,7 @@ nmap --help <span class="token operator">|</span><span class="token function">gr
 <span class="token function">sed</span> -r <span class="token string">'s/root/xps/gi'</span> /etc/test  <span class="token comment" spellcheck="true"># i  忽略大小写</span>
 
 <span class="token function">sed</span> -r <span class="token string">'/root/d'</span> /etc/test   <span class="token comment" spellcheck="true"># 没有s就是查找， 查找带root的行，然后删除</span>
-<span class="token function">sed</span> -r <span class="token string">'\#root#d'</span> /etc/test   # 查找：可以使用#等符号--<span class="token operator">&gt;</span>不一定要斜线，但是前面要加\转义；查找替换:不用转义
+<span class="token function">sed</span> -r <span class="token string">'\#root#d'</span> /etc/test   # 查找：可以使用#等符号--<span class="token operator">></span>不一定要斜线，但是前面要加\转义；查找替换:不用转义
 
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -2358,7 +2358,7 @@ x         交换暂存缓冲区域模式空间的内容
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>模式空间/暂存空间</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 小写是覆盖，大写是追加</span>
-模式空间   h  H --<span class="token operator">&gt;</span>    暂存空间
+模式空间   h  H --<span class="token operator">></span>    暂存空间
 模式空间   <span class="token operator">&lt;</span>--- g  G   暂存空间    
 
 
@@ -2456,7 +2456,7 @@ tac a.txt   <span class="token comment" spellcheck="true"># 从后往前倒序�
 <span class="token function">awk</span> <span class="token string">'BEGIN{FS=":"} /root/{print <span class="token variable">$3</span>}'</span> /etc/passwd
 
 <span class="token comment" spellcheck="true"># command |awk 'pattern {action}' </span>
-<span class="token function">df</span> -P <span class="token operator">|</span><span class="token function">grep</span> <span class="token string">'/'</span> <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'<span class="token variable">$4</span>'</span><span class="token operator">&gt;</span>25000 <span class="token punctuation">{</span>print <span class="token variable">$4</span><span class="token punctuation">}</span>    <span class="token comment" spellcheck="true"># 除去第一行，如果大于25000就打印第四列</span>
+<span class="token function">df</span> -P <span class="token operator">|</span><span class="token function">grep</span> <span class="token string">'/'</span> <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'<span class="token variable">$4</span>'</span><span class="token operator">></span>25000 <span class="token punctuation">{</span>print <span class="token variable">$4</span><span class="token punctuation">}</span>    <span class="token comment" spellcheck="true"># 除去第一行，如果大于25000就打印第四列</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>awk工作原理</strong></p>
@@ -2515,7 +2515,7 @@ tac a.txt   <span class="token comment" spellcheck="true"># 从后往前倒序�
 
 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>   比较表达式
 <span class="token comment" spellcheck="true"># 用于比较 数字 与 字符串</span>
-<span class="token comment" spellcheck="true"># &gt;     &lt;    == </span>
+<span class="token comment" spellcheck="true"># >     &lt;    == </span>
 <span class="token function">awk</span> -F: <span class="token string">'<span class="token variable">$3</span> == 0'</span> /etc/passwd
 <span class="token function">awk</span> -F: <span class="token string">'<span class="token variable">$3</span> == "/xps/"'</span> /etc/passwd  <span class="token comment" spellcheck="true"># == 全部等于</span>
 <span class="token function">awk</span> -F: <span class="token string">'<span class="token variable">$3</span> ~ /xps/'</span> /etc/passwd  <span class="token comment" spellcheck="true"># 正则匹配</span>
@@ -2525,16 +2525,16 @@ tac a.txt   <span class="token comment" spellcheck="true"># 从后往前倒序�
 
 
 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>   条件表达式
-<span class="token function">awk</span> -F: <span class="token string">'<span class="token variable">$3</span>&gt;200{print <span class="token variable">$0</span>}'</span> /etc/passwd  <span class="token comment" spellcheck="true"># $3大于200的，$0</span>
+<span class="token function">awk</span> -F: <span class="token string">'<span class="token variable">$3</span>>200{print <span class="token variable">$0</span>}'</span> /etc/passwd  <span class="token comment" spellcheck="true"># $3大于200的，$0</span>
 
-<span class="token function">awk</span> -F: <span class="token string">'{ if(<span class="token variable">$3</span>&gt;200) {print <span class="token variable">$0</span>} }'</span> /etc/passwd  <span class="token comment" spellcheck="true"># 推荐这么写 { if(){cmd1;cmd2} else{} }</span>
-<span class="token function">awk</span> -F: <span class="token string">'{ if(<span class="token variable">$3</span>&gt;200) {print <span class="token variable">$0</span>} else{print <span class="token variable">$1</span>} }'</span> /etc/passwd 
+<span class="token function">awk</span> -F: <span class="token string">'{ if(<span class="token variable">$3</span>>200) {print <span class="token variable">$0</span>} }'</span> /etc/passwd  <span class="token comment" spellcheck="true"># 推荐这么写 { if(){cmd1;cmd2} else{} }</span>
+<span class="token function">awk</span> -F: <span class="token string">'{ if(<span class="token variable">$3</span>>200) {print <span class="token variable">$0</span>} else{print <span class="token variable">$1</span>} }'</span> /etc/passwd 
 
 
 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>   算数运算
 <span class="token comment" spellcheck="true">#awk都按浮点数方式执行算数运算</span>
-<span class="token function">awk</span> -F: <span class="token string">'<span class="token variable">$3</span> * 10 &gt; 500'</span> /etc/passwd    
-<span class="token function">awk</span> -F: <span class="token string">'{ if(<span class="token variable">$3*10</span>&gt;500){print <span class="token variable">$0</span>} }'</span> /etc/passwd    <span class="token comment" spellcheck="true"># 如果$3*10&gt;500，就...</span>
+<span class="token function">awk</span> -F: <span class="token string">'<span class="token variable">$3</span> * 10 > 500'</span> /etc/passwd    
+<span class="token function">awk</span> -F: <span class="token string">'{ if(<span class="token variable">$3*10</span>>500){print <span class="token variable">$0</span>} }'</span> /etc/passwd    <span class="token comment" spellcheck="true"># 如果$3*10>500，就...</span>
 
 
 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>   逻辑操作符和复合模式
@@ -2556,7 +2556,7 @@ tac a.txt   <span class="token comment" spellcheck="true"># 从后往前倒序�
 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span> 条件编程
 <span class="token function">awk</span> -F<span class="token string">":"</span> <span class="token string">'{if(){} else if(){} else{}}'</span> <span class="token function">passwd</span>
 
-<span class="token function">awk</span> -F<span class="token string">":"</span> <span class="token string">'{if(<span class="token variable">$3</span>&gt;0 &amp;&amp; <span class="token variable">$3</span>&lt;1000){count++}} END{print count}'</span> /etc/passwd   <span class="token comment" spellcheck="true"># 统计系统用户数</span>
+<span class="token function">awk</span> -F<span class="token string">":"</span> <span class="token string">'{if(<span class="token variable">$3</span>>0 &amp;&amp; <span class="token variable">$3</span>&lt;1000){count++}} END{print count}'</span> /etc/passwd   <span class="token comment" spellcheck="true"># 统计系统用户数</span>
 
 <span class="token function">awk</span> -F<span class="token string">":"</span> <span class="token string">'{if(<span class="token variable">$3</span>==0){count++}} else{i++} END{print "管理员个数："count; print "系统用户个数:"i}'</span> /etc/passwd 
 
@@ -2610,27 +2610,27 @@ tac a.txt   <span class="token comment" spellcheck="true"># 从后往前倒序�
 ss -ant <span class="token operator">|</span><span class="token function">grep</span> :80 <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'{access_stat[<span class="token variable">$2</span>]++} END{for(i in access_stat){print i,access_stat[i]}}'</span> 
 
 
-<span class="token comment" spellcheck="true">### 3.统计当前访问的每个IP的数量 &lt;当前实时状态 netstat, ss&gt;</span>
+<span class="token comment" spellcheck="true">### 3.统计当前访问的每个IP的数量 &lt;当前实时状态 netstat, ss></span>
 <span class="token function">netstat</span> -ant <span class="token operator">|</span><span class="token function">grep</span> :80 <span class="token operator">|</span><span class="token function">awk</span> -F: <span class="token string">'{ip_count[<span class="token variable">$8</span>]++} END{for(i in ip_count){print i,ip_count[i]}}'</span> 
 <span class="token comment" spellcheck="true"># 下面这个有点复杂了，不推荐用</span>
 ss -ant <span class="token operator">|</span><span class="token function">grep</span> :80 <span class="token operator">|</span><span class="token function">awk</span> -F: <span class="token string">'!/LISTEN/{ip_count[<span class="token variable"><span class="token variable">$(</span>NF-1<span class="token variable">)</span></span>]++} END{for(i in ip_count){print i,ip_count[i]}}'</span> <span class="token operator">|</span><span class="token function">sort</span> 0k2 -rn <span class="token operator">|</span><span class="token function">head</span> 5
 
 
-<span class="token comment" spellcheck="true">### 4.统计Apache/Nginx日志中某一天的PV量 &lt;统计日志&gt;</span>
+<span class="token comment" spellcheck="true">### 4.统计Apache/Nginx日志中某一天的PV量 &lt;统计日志></span>
 <span class="token function">grep</span> <span class="token string">'07/Aug/2019'</span> access.log <span class="token operator">|</span><span class="token function">wc</span> -l    <span class="token comment" spellcheck="true"># wc -l  统计行数</span>
 
 
-<span class="token comment" spellcheck="true">### 4.统计Apache/Nginx日志中某一天不通IP的PV量 &lt;统计日志&gt;</span>
+<span class="token comment" spellcheck="true">### 4.统计Apache/Nginx日志中某一天不通IP的PV量 &lt;统计日志></span>
 <span class="token function">grep</span> <span class="token string">'07/Aug/2019'</span> access.log <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'{ips[<span class="token variable">$1</span>]++} END{for(i in ips){print i, ips[i]}}'</span> <span class="token operator">|</span><span class="token function">sort</span> -k2 -rn <span class="token operator">|</span> <span class="token function">head</span>
 
 <span class="token function">awk</span> <span class="token string">'/22/\Mar\/2019/{ips[<span class="token variable">$1</span>]++} END{for(i in ips){print i, ips[i]}}'</span>
 
-<span class="token comment" spellcheck="true"># &gt;100的才打印（此方法有点low，可用下面的几种方法）</span>
-<span class="token function">awk</span> <span class="token string">'/22/\Mar\/2019/{ips[<span class="token variable">$1</span>]++} END{for(i in ips){print i, ips[i]}}'</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'<span class="token variable">$2</span>&gt;100'</span> <span class="token operator">|</span><span class="token function">sort</span> -k2 -rn <span class="token operator">|</span> <span class="token function">head</span>  
+<span class="token comment" spellcheck="true"># >100的才打印（此方法有点low，可用下面的几种方法）</span>
+<span class="token function">awk</span> <span class="token string">'/22/\Mar\/2019/{ips[<span class="token variable">$1</span>]++} END{for(i in ips){print i, ips[i]}}'</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'<span class="token variable">$2</span>>100'</span> <span class="token operator">|</span><span class="token function">sort</span> -k2 -rn <span class="token operator">|</span> <span class="token function">head</span>  
 
-<span class="token function">awk</span> <span class="token string">'/22/\Mar\/2019/{ips[<span class="token variable">$1</span>]++} END{for(i in ips){if(ips[i]&gt;100){print i, ips[i]}}}'</span> <span class="token operator">|</span> 
-<span class="token comment" spellcheck="true"># &gt;100的才打印</span>
-<span class="token function">awk</span> <span class="token string">'<span class="token variable">$2</span>&gt;100'</span> <span class="token operator">|</span><span class="token function">sort</span> -k2 -rn <span class="token operator">|</span> <span class="token function">head</span>  
+<span class="token function">awk</span> <span class="token string">'/22/\Mar\/2019/{ips[<span class="token variable">$1</span>]++} END{for(i in ips){if(ips[i]>100){print i, ips[i]}}}'</span> <span class="token operator">|</span> 
+<span class="token comment" spellcheck="true"># >100的才打印</span>
+<span class="token function">awk</span> <span class="token string">'<span class="token variable">$2</span>>100'</span> <span class="token operator">|</span><span class="token function">sort</span> -k2 -rn <span class="token operator">|</span> <span class="token function">head</span>  
 
 
 <span class="token comment" spellcheck="true">#【思路】 将要统计的字段作为数组的索引</span>
@@ -2652,10 +2652,10 @@ var<span class="token operator">=</span>bash
 <span class="token keyword">echo</span> <span class="token string">"unix script"</span> <span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'gsub(/unix/, "'</span><span class="token string">"<span class="token variable">$var</span>\"'"</span><span class="token punctuation">)</span><span class="token string">'
 
 #
-df -h |awk '</span><span class="token punctuation">{</span> if<span class="token punctuation">(</span>int<span class="token punctuation">(</span><span class="token variable">$5</span><span class="token punctuation">)</span><span class="token operator">&gt;</span>10<span class="token punctuation">)</span><span class="token punctuation">{</span>print <span class="token variable">$6</span><span class="token string">":"</span><span class="token variable">$5</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token string">'
+df -h |awk '</span><span class="token punctuation">{</span> if<span class="token punctuation">(</span>int<span class="token punctuation">(</span><span class="token variable">$5</span><span class="token punctuation">)</span><span class="token operator">></span>10<span class="token punctuation">)</span><span class="token punctuation">{</span>print <span class="token variable">$6</span><span class="token string">":"</span><span class="token variable">$5</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token string">'
 # 再函数外面单引号情况下
 i=10
-df -h |awk '</span><span class="token punctuation">{</span> if<span class="token punctuation">(</span>int<span class="token punctuation">(</span><span class="token variable">$5</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token string">''</span><span class="token string">'<span class="token variable">$i</span>'</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">{</span>print <span class="token variable">$6</span><span class="token string">":"</span><span class="token variable">$5</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token string">'
+df -h |awk '</span><span class="token punctuation">{</span> if<span class="token punctuation">(</span>int<span class="token punctuation">(</span><span class="token variable">$5</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token string">''</span><span class="token string">'<span class="token variable">$i</span>'</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">{</span>print <span class="token variable">$6</span><span class="token string">":"</span><span class="token variable">$5</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token string">'
 
 
 # 3.建议： -v
@@ -3259,7 +3259,7 @@ tcpdump -i ens33 -s 0 -w file
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

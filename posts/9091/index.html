@@ -670,7 +670,7 @@ bridge_stop off   <span class="token comment" spellcheck="true">#关闭生成树
 <li>高可用、负载平衡、高吞吐量</li>
 </ul>
 <h4 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h4><p>在虚拟机做实验：先给虚拟机添加至少两块网卡<br>1.</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token keyword">echo</span> bonding <span class="token operator">&gt;&gt;</span> /etc/modules        <span class="token comment" spellcheck="true"># 添加内核支持</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token keyword">echo</span> bonding <span class="token operator">>></span> /etc/modules        <span class="token comment" spellcheck="true"># 添加内核支持</span>
 <span class="token function">sudo</span> modprobe bonding       <span class="token comment" spellcheck="true"># 手动加载内核(临时)， modeprobe加载bonding</span>
 <span class="token function">ifconfig</span> -a    <span class="token comment" spellcheck="true"># 可以看到自动生成了一个bonding0的网卡(但是没有up)</span>
 <span class="token function">sudo</span> systemctl stop networking     
@@ -1464,7 +1464,7 @@ ftp服务FTP服务： ftp服务我分为两种情况，第一种是使用系统�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

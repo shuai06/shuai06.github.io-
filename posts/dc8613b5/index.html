@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    424
+                    415
                 </div>
                 
 
@@ -518,13 +518,13 @@
 <h6 id="info"><a href="#info" class="headerlink" title="info"></a>info</h6><p>GUN不太喜欢慢，因此开发了<code>info</code><br>有时候优于man，有时不是<br><code>info ls</code></p>
 <p><code>/usr/share/doc</code> # 部分软件包没有列入man或者info的文档</p>
 <h6 id="cmd-–help-h"><a href="#cmd-–help-h" class="headerlink" title="cmd –help / -h"></a>cmd –help / -h</h6><p>绝大部分的不成文规定，并不都是，比如<code>ls -h</code></p>
-<h4 id="Shell输入与输出"><a href="#Shell输入与输出" class="headerlink" title="Shell输入与输出"></a>Shell输入与输出</h4><h6 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h6><pre class="line-numbers language-shell"><code class="language-shell">ls a/ &gt; file   # 会覆盖
+<h4 id="Shell输入与输出"><a href="#Shell输入与输出" class="headerlink" title="Shell输入与输出"></a>Shell输入与输出</h4><h6 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h6><pre class="line-numbers language-shell"><code class="language-shell">ls a/ > file   # 会覆盖
 
-ls a &gt;&gt; file    # 追加
+ls a >> file    # 追加
 
 head /proc/cpuinfo 
 
-head  &lt; /proc/cpuinfo    # 输入重定向
+head  < /proc/cpuinfo    # 输入重定向
 
 
 #
@@ -535,13 +535,13 @@ head  &lt; /proc/cpuinfo    # 输入重定向
 <span class="token function">ifconfig</span> <span class="token operator">|</span> <span class="token function">grep</span> inet <span class="token operator">|</span> <span class="token function">awk</span><span class="token string">'{print <span class="token variable">$2</span>}'</span> <span class="token operator">|</span> <span class="token function">awk</span> -F. <span class="token string">'{print <span class="token variable">$2</span>}'</span>   <span class="token comment" spellcheck="true"># -F 指定分隔符，这里以.分割</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h6 id="标准错误-stderr-报错包含重要信息"><a href="#标准错误-stderr-报错包含重要信息" class="headerlink" title="标准错误 stderr(报错包含重要信息)"></a>标准错误 stderr(报错包含重要信息)</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 写脚本的时候有用，可以把错误信息报错到某个文件</span>
-<span class="token function">ls</span> /abc 2<span class="token operator">&gt;</span>e   <span class="token comment" spellcheck="true"># 2:标准错误      1:标准输出          0:标准输入</span>
+<span class="token function">ls</span> /abc 2<span class="token operator">></span>e   <span class="token comment" spellcheck="true"># 2:标准错误      1:标准输出          0:标准输入</span>
 <span class="token function">ls</span> 0<span class="token operator">&lt;</span> a/
-<span class="token function">ls</span> 1<span class="token operator">&gt;</span> file1
-<span class="token function">ls</span> b 2<span class="token operator">&gt;</span> err1
+<span class="token function">ls</span> 1<span class="token operator">></span> file1
+<span class="token function">ls</span> b 2<span class="token operator">></span> err1
 
 
-<span class="token function">ls</span> a/ <span class="token operator">&gt;</span> f1 2<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1   <span class="token comment" spellcheck="true"># 标准输出、标准错误都输出到文件f1  （&amp;1代表标准输出）</span>
+<span class="token function">ls</span> a/ <span class="token operator">></span> f1 2<span class="token operator">></span><span class="token operator">&amp;</span>1   <span class="token comment" spellcheck="true"># 标准输出、标准错误都输出到文件f1  （&amp;1代表标准输出）</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="常见报错信息"><a href="#常见报错信息" class="headerlink" title="常见报错信息"></a>常见报错信息</h6><p><img src="/posts/dc8613b5/error.png"></p>
 <script>
@@ -1115,7 +1115,7 @@ COMMAND: 命令名称
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

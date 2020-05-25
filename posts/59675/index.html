@@ -692,7 +692,7 @@ queue<span class="token punctuation">.</span>task_done<span class="token punctua
             <span class="token keyword">if</span> self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>full<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
                 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"当前队列长度{}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>qsize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span>item<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 只要队列没满， 向队列存入数据</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"生产者%s ==&gt; 已经生产 %s, 并将其加入到了队列中"</span> <span class="token operator">%</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>current_thread<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"生产者%s ==> 已经生产 %s, 并将其加入到了队列中"</span> <span class="token operator">%</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>current_thread<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 
 <span class="token keyword">class</span> <span class="token class-name">Consumer</span><span class="token punctuation">(</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -703,7 +703,7 @@ queue<span class="token punctuation">.</span>task_done<span class="token punctua
     <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
             item <span class="token operator">=</span> self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 只要队列不为空， 就从队列中取出数据</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"消费者 ==&gt; 从队列中取出 %s"</span> <span class="token operator">%</span>item<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"消费者 ==> 从队列中取出 %s"</span> <span class="token operator">%</span>item<span class="token punctuation">)</span>
             self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>task_done<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 告诉队列，这个任务执行完成了</span>
 
 
@@ -1338,7 +1338,7 @@ C/S网络编程Server端进行设置，首先创建一个通信端点，让serve
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

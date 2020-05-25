@@ -520,7 +520,7 @@
             self<span class="token punctuation">.</span>balance <span class="token operator">+=</span> amount
 
     <span class="token keyword">def</span> <span class="token function">withdraw</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> amount<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 取款</span>
-        <span class="token keyword">if</span> amount <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>balance<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> amount <span class="token operator">></span> self<span class="token punctuation">.</span>balance<span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'余额不足'</span><span class="token punctuation">)</span>
         <span class="token keyword">else</span><span class="token punctuation">:</span>
             self<span class="token punctuation">.</span>balance <span class="token operator">-=</span> amount
@@ -560,12 +560,12 @@ v <span class="token operator">=</span> getattr<span class="token punctuation">(
 <span class="token comment" spellcheck="true">#setattr()      setattr(i,'name','vvv'')  自动转换成i.name = 'vvv'         'name'这里是一个字符串</span>
 <span class="token comment" spellcheck="true">#delattr()      delattr(i,'name')     删除                                   'name'这里是一个字符串    转化成del i.name</span>
 
-<span class="token comment" spellcheck="true">#__class__      可以得到一个类实例所属的类对象,print(a.__class__)   &lt;class '__main__.Account'&gt;   不是类名</span>
+<span class="token comment" spellcheck="true">#__class__      可以得到一个类实例所属的类对象,print(a.__class__)   &lt;class '__main__.Account'>   不是类名</span>
 <span class="token comment" spellcheck="true">#__doc__       注释文档写了之后,可以help出来   如:print(help(Account))</span>
                 <span class="token comment" spellcheck="true">#  注释存储在了__doc__里   如: print(Account.__doc__)可以打印其文档注释</span>
 
 <span class="token comment" spellcheck="true">#__dict__      一个存储了对象属性的字典 把该变量空间的打印出来</span>
-                <span class="token comment" spellcheck="true">#  例:print(a.__dict__)  &gt;&gt;{'balance': 12500, 'name': 'xps', 'number': '6217'}</span>
+                <span class="token comment" spellcheck="true">#  例:print(a.__dict__)  >>{'balance': 12500, 'name': 'xps', 'number': '6217'}</span>
                 <span class="token comment" spellcheck="true">#类也可以   print(Account.__dict__)</span>
 <span class="token comment" spellcheck="true">#__name__</span>
 
@@ -1210,7 +1210,7 @@ https://blog.csdn.net/zhang644720213/article/details/92849717
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

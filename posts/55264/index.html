@@ -533,8 +533,8 @@ auth required /lib/security/<span class="token variable">$ISA</span>/pam_wheel.s
 <pre class="line-numbers language-bash"><code class="language-bash">hard core 0 hard rss 5000 hard nproc 20
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="五-Banner伪装"><a href="#五-Banner伪装" class="headerlink" title="五.Banner伪装"></a>五.Banner伪装</h4><p>1)入侵者通常通过操作系统、服务及应用程序版本来攻击, 漏洞列表和攻击程也是按此来分类, 所以我们有必要作点手脚来加大入侵的难度。所以编辑<code>/etc/rc.d/rc.local</code>如下:</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"Kernel <span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -r<span class="token variable">)</span></span> on <span class="token variable">$a</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>"</span> <span class="token operator">&gt;</span>/etc/issue <span class="token keyword">echo</span> <span class="token string">"Kernel \r on an \m"</span> <span class="token operator">&gt;&gt;</span>
-/etc/issue <span class="token function">cp</span> -f /etc/issue /etc/issue.net <span class="token keyword">echo</span> <span class="token operator">&gt;&gt;</span> /etc/issue
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"Kernel <span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -r<span class="token variable">)</span></span> on <span class="token variable">$a</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>"</span> <span class="token operator">></span>/etc/issue <span class="token keyword">echo</span> <span class="token string">"Kernel \r on an \m"</span> <span class="token operator">>></span>
+/etc/issue <span class="token function">cp</span> -f /etc/issue /etc/issue.net <span class="token keyword">echo</span> <span class="token operator">>></span> /etc/issue
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>2)对于Apache的配置文件,找到<code>ServerTokens</code>和<code>ServerSignature</code>两个directive,修改其默认属性<br>如下,使用不回显版本号: </p>
 <pre class="line-numbers language-bash"><code class="language-bash">ServerTokens prod ServerSignature Off
@@ -860,15 +860,16 @@ INPUT -j DROP
                     <div class="summary block-with-text">
                         
                             内网第三章-隐藏隧道通信技术内网连通性判断  常用判断方法1.ICMP协议
-ping &lt;IP&gt;
+ping &lt;IP>
 
 2.TCP协议
-nc -zv &lt;IP&gt; &lt;port&gt;
+nc -zv &lt;IP> &lt;port>
 
 3.HTTP协议
 curl ip:port
 
-4.
+4.DNS协议
+# 1
                         
                     </div>
                     <div class="publish-info">
@@ -1156,7 +1157,7 @@ SDN -&gt; 软件定义网络
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">326.3k</span>&nbsp;字
+                class="white-color">326.7k</span>&nbsp;字
             
             
             

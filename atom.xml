@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-05-23T02:42:25.204Z</updated>
+  <updated>2020-05-25T07:21:32.465Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>绕过CDN寻找真实IP</title>
+    <link href="http://www.xpshuai.cn/posts/58846/"/>
+    <id>http://www.xpshuai.cn/posts/58846/</id>
+    <published>2020-05-25T07:12:44.000Z</published>
+    <updated>2020-05-25T07:21:32.465Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在没有CDN的情况下，直接&lt;code&gt;ping&lt;/code&gt;或&lt;code&gt;nslookup&lt;/code&gt;或&lt;code&gt;dig&lt;/code&gt;即可得到真实IP地址，但是有的站点使用了CDN。&lt;br&gt;两种简单检测有无CDN的方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;多地ping&lt;/li&gt;
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="CDN" scheme="http://www.xpshuai.cn/tags/CDN/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu server-安全相关设置</title>
@@ -563,36 +590,6 @@
       <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
     
       <category term="文件服务" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-DNS服务</title>
-    <link href="http://www.xpshuai.cn/posts/16425/"/>
-    <id>http://www.xpshuai.cn/posts/16425/</id>
-    <published>2020-04-12T13:01:58.000Z</published>
-    <updated>2020-05-23T02:40:44.658Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;DNS服务&quot;&gt;&lt;a href=&quot;#DNS服务&quot; class=&quot;headerlink&quot; title=&quot;DNS服务&quot;&gt;&lt;/a&gt;DNS服务&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;您是谁家老小&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;域名解析原理&quot;&gt;&lt;a h
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="DNS" scheme="http://www.xpshuai.cn/tags/DNS/"/>
     
   </entry>
   
