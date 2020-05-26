@@ -510,21 +510,21 @@
                 <h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><blockquote>
 <p>有了新武器，并不表示旧武器没有用</p>
 </blockquote>
-<p><strong>题外话</strong><br><img src="/posts/25260/20200510223525320_174889579.png" alt></p>
-<p><strong>容器</strong><br><img src="/posts/25260/20200510225525049_1760370298.png" alt></p>
+<p><strong>题外话</strong><br><img src="/posts/25260/20200510223525320_174889579.png" alt=""></p>
+<p><strong>容器</strong><br><img src="/posts/25260/20200510225525049_1760370298.png" alt=""></p>
 <p>SDN -&gt; 软件定义网络</p>
 <p>容器 -&gt; 基于操作系统内核，共享宿主机的CPU<br>        -&gt; 操作系统的进程之间进行隔离<br>        -&gt; 安全性比虚拟机差一些<br>         -&gt; 可移植性</p>
-<p><strong>什么是容器</strong><br>有个感性的认识即可，现在还没有明确的统一定义，根据不同产品具体理解<br><img src="/posts/25260/20200510230949837_2077847896.png" alt></p>
-<p><img src="/posts/25260/20200510231620776_117992917.png" alt></p>
-<p><img src="/posts/25260/20200511102236109_1751941655.png" alt></p>
-<p><img src="/posts/25260/20200511103008352_761812684.png" alt></p>
-<h4 id="常见的容器技术"><a href="#常见的容器技术" class="headerlink" title="常见的容器技术"></a>常见的容器技术</h4><p><strong>Docker vs LXD/LXC</strong><br><img src="/posts/25260/20200511103208058_29787066.png" alt></p>
-<p><img src="/posts/25260/20200511103734465_306114851.png" alt><br>不同容器的程序的pid可以相同</p>
-<p><img src="/posts/25260/20200511104628559_66294885.png" alt><br>越狱</p>
+<p><strong>什么是容器</strong><br>有个感性的认识即可，现在还没有明确的统一定义，根据不同产品具体理解<br><img src="/posts/25260/20200510230949837_2077847896.png" alt=""></p>
+<p><img src="/posts/25260/20200510231620776_117992917.png" alt=""></p>
+<p><img src="/posts/25260/20200511102236109_1751941655.png" alt=""></p>
+<p><img src="/posts/25260/20200511103008352_761812684.png" alt=""></p>
+<h4 id="常见的容器技术"><a href="#常见的容器技术" class="headerlink" title="常见的容器技术"></a>常见的容器技术</h4><p><strong>Docker vs LXD/LXC</strong><br><img src="/posts/25260/20200511103208058_29787066.png" alt=""></p>
+<p><img src="/posts/25260/20200511103734465_306114851.png" alt=""><br>不同容器的程序的pid可以相同</p>
+<p><img src="/posts/25260/20200511104628559_66294885.png" alt=""><br>越狱</p>
 <h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><blockquote>
 <p>应用程序方面的容器</p>
 </blockquote>
-<p><img src="/posts/25260/20200511104948809_1439233734.png" alt></p>
+<p><img src="/posts/25260/20200511104948809_1439233734.png" alt=""></p>
 <p>Docker引擎只可以直接运行在Linux系统上</p>
 <pre class="line-numbers language-bash"><code class="language-bash">利用<span class="token string">'Boot2Docker'</span>等适配器帮助，使用轻量级<span class="token string">'Linux vm'</span>可在mac和微软系统上运行
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -586,10 +586,10 @@ docker rmi busybox:1-musl
 <li><code>映像层</code>所有的Docker映像都源自于一个<code>基础镜像</code>(Debian/Ubuntu)  –&gt; 只读，不可修改i</li>
 <li>其他的功能模块附加于基础影像形成最终程序</li>
 </ul>
-<p><img src="/posts/25260/20200511111809612_1403827030.png" alt></p>
+<p><img src="/posts/25260/20200511111809612_1403827030.png" alt=""></p>
 <ul>
 <li>Docker images 是构建Docker container的基础</li>
-<li>Docker 层/容器层<br><img src="/posts/25260/20200511112309748_1071300544.png" alt></li>
+<li>Docker 层/容器层<br><img src="/posts/25260/20200511112309748_1071300544.png" alt=""></li>
 </ul>
 <p>每个映像有唯一的ID(SHA256/  取前6字节来显示)</p>
 <pre class="line-numbers language-bash"><code class="language-bash">docker images
@@ -621,7 +621,7 @@ docker <span class="token function">rm</span> d751d48a6d0a
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>pull的时候，默认会去一个人url地址寻找镜像</p>
 <p>Docker Resigtry相当于目录，Repository相当于具体文件位置</p>
-<p>可以自建映像库<br><img src="/posts/25260/20200511143726490_328609255.png" alt></p>
+<p>可以自建映像库<br><img src="/posts/25260/20200511143726490_328609255.png" alt=""></p>
 <h6 id="Docker使用"><a href="#Docker使用" class="headerlink" title="Docker使用"></a>Docker使用</h6><p>基本命令</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 运行镜像后交互登录入容器（这里基于ubuntu）</span>
 <span class="token comment" spellcheck="true"># --name  修改容器的默认名字，指定</span>
