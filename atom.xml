@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-05-25T16:01:44.013Z</updated>
+  <updated>2020-05-26T06:01:03.938Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,151 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Jenkins一些安全问题</title>
+    <link href="http://www.xpshuai.cn/posts/63696/"/>
+    <id>http://www.xpshuai.cn/posts/63696/</id>
+    <published>2020-05-26T04:25:43.000Z</published>
+    <updated>2020-05-26T06:01:03.938Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;漏洞简介及危害&quot;&gt;&lt;a href=&quot;#漏洞简介及危害&quot; class=&quot;headerlink&quot; title=&quot;漏洞简介及危害&quot;&gt;&lt;/a&gt;漏洞简介及危害&lt;/h4&gt;&lt;p&gt;默认情况下 Jenkins面面板中用户可以选择执行脚本界面来操作一些系统层命令,攻击者可通过未授权访
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="Jenkins" scheme="http://www.xpshuai.cn/tags/Jenkins/"/>
+    
+      <category term=" CVE-2017-1000353" scheme="http://www.xpshuai.cn/tags/CVE-2017-1000353/"/>
+    
+      <category term="CVE-2018-1000861" scheme="http://www.xpshuai.cn/tags/CVE-2018-1000861/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Atlassian Crowd未授权访问漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/4469/"/>
+    <id>http://www.xpshuai.cn/posts/4469/</id>
+    <published>2020-05-26T03:12:38.000Z</published>
+    <updated>2020-05-26T04:18:32.297Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;漏洞概述&quot;&gt;&lt;a href=&quot;#漏洞概述&quot; class=&quot;headerlink&quot; title=&quot;漏洞概述&quot;&gt;&lt;/a&gt;漏洞概述&lt;/h4&gt;&lt;p&gt;Atlassian Crowd和Atlassian Crowd Data Center都是澳大利亚Atlassian公司的产
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="远程命令执行" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CouchDB未授权访问&amp;命令执行</title>
+    <link href="http://www.xpshuai.cn/posts/78/"/>
+    <id>http://www.xpshuai.cn/posts/78/</id>
+    <published>2020-05-26T02:20:43.000Z</published>
+    <updated>2020-05-26T03:04:17.361Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;漏洞简介以及危害&quot;&gt;&lt;a href=&quot;#漏洞简介以及危害&quot; class=&quot;headerlink&quot; title=&quot;漏洞简介以及危害&quot;&gt;&lt;/a&gt;漏洞简介以及危害&lt;/h4&gt;&lt;p&gt;Apache CouchDB是一个开源数据库,专注于易用性和成为”完全拥抱web的数据库”。
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="CouchDB" scheme="http://www.xpshuai.cn/tags/CouchDB/"/>
+    
+      <category term="命令执行" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+      <category term="CVE-2017-12635" scheme="http://www.xpshuai.cn/tags/CVE-2017-12635/"/>
+    
+      <category term="CVE-2017-12636" scheme="http://www.xpshuai.cn/tags/CVE-2017-12636/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop未授权访问漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/59457/"/>
+    <id>http://www.xpshuai.cn/posts/59457/</id>
+    <published>2020-05-26T02:14:47.000Z</published>
+    <updated>2020-05-26T02:17:09.620Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;漏洞简介以及危害&quot;&gt;&lt;a href=&quot;#漏洞简介以及危害&quot; class=&quot;headerlink&quot; title=&quot;漏洞简介以及危害&quot;&gt;&lt;/a&gt;漏洞简介以及危害&lt;/h4&gt;&lt;p&gt;Hadoop是一个由Apache基金会所开发的分布式系统基础架构,由于服务器器直接在开放了了
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="Hadoop" scheme="http://www.xpshuai.cn/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis漏洞利用</title>
+    <link href="http://www.xpshuai.cn/posts/6291/"/>
+    <id>http://www.xpshuai.cn/posts/6291/</id>
+    <published>2020-05-26T01:52:09.000Z</published>
+    <updated>2020-05-26T01:55:42.228Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h2&gt;&lt;p&gt;1.下载编译&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;langua
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="redis" scheme="http://www.xpshuai.cn/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jupyter Notebook 未授权访问漏洞简单复现</title>
     <link href="http://www.xpshuai.cn/posts/59687/"/>
     <id>http://www.xpshuai.cn/posts/59687/</id>
     <published>2020-05-25T15:12:17.000Z</published>
-    <updated>2020-05-25T16:01:44.013Z</updated>
+    <updated>2020-05-26T00:56:21.754Z</updated>
     
     <summary type="html">
     
@@ -437,154 +577,6 @@
       <category term="内网" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E7%BD%91/"/>
     
       <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-LDAP</title>
-    <link href="http://www.xpshuai.cn/posts/45429/"/>
-    <id>http://www.xpshuai.cn/posts/45429/</id>
-    <published>2020-05-07T08:23:59.000Z</published>
-    <updated>2020-05-23T02:41:02.862Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;LDAP&quot;&gt;&lt;a href=&quot;#LDAP&quot; class=&quot;headerlink&quot; title=&quot;LDAP&quot;&gt;&lt;/a&gt;LDAP&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;看书前先看目录&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;理解&quot;&gt;&lt;a href=&quot;#理
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="LDAP" scheme="http://www.xpshuai.cn/tags/LDAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server- ubuntu-server-数据库管理服务</title>
-    <link href="http://www.xpshuai.cn/posts/677/"/>
-    <id>http://www.xpshuai.cn/posts/677/</id>
-    <published>2020-05-01T05:10:10.000Z</published>
-    <updated>2020-05-23T02:41:29.711Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;ubuntu-server-数据库管理服务&quot;&gt;&lt;a href=&quot;#ubuntu-server-数据库管理服务&quot; class=&quot;headerlink&quot; title=&quot;ubuntu-server-数据库管理服务&quot;&gt;&lt;/a&gt;ubuntu-server-数据库管理服务&lt;/
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="ubuntu-server-数据库管理服务" scheme="http://www.xpshuai.cn/tags/ubuntu-server-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-LAMP</title>
-    <link href="http://www.xpshuai.cn/posts/45152/"/>
-    <id>http://www.xpshuai.cn/posts/45152/</id>
-    <published>2020-05-01T05:09:37.000Z</published>
-    <updated>2020-05-23T02:40:54.494Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;LAMP&quot;&gt;&lt;a href=&quot;#LAMP&quot; class=&quot;headerlink&quot; title=&quot;LAMP&quot;&gt;&lt;/a&gt;LAMP&lt;/h1&gt;&lt;h2 id=&quot;LAMP环境安装WordPress&quot;&gt;&lt;a href=&quot;#LAMP环境安装WordPress&quot; class=&quot;he
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="LMAP" scheme="http://www.xpshuai.cn/tags/LMAP/"/>
-    
-      <category term="LEMP" scheme="http://www.xpshuai.cn/tags/LEMP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-Web服务</title>
-    <link href="http://www.xpshuai.cn/posts/6291/"/>
-    <id>http://www.xpshuai.cn/posts/6291/</id>
-    <published>2020-04-28T10:11:19.000Z</published>
-    <updated>2020-05-23T02:41:11.783Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;WWW介绍&quot;&gt;&lt;a href=&quot;#WWW介绍&quot; class=&quot;headerlink&quot; title=&quot;WWW介绍&quot;&gt;&lt;/a&gt;&lt;font color=&quot;red&quot;&gt;WWW介绍&lt;/font&gt;&lt;/h2&gt;&lt;p&gt;www 万维网&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;静态网站：所有人看到的内
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="Ubuntu" scheme="http://www.xpshuai.cn/tags/Ubuntu/"/>
-    
-      <category term="Web服务" scheme="http://www.xpshuai.cn/tags/Web%E6%9C%8D%E5%8A%A1/"/>
-    
-      <category term="Apache" scheme="http://www.xpshuai.cn/tags/Apache/"/>
-    
-      <category term="Nginx" scheme="http://www.xpshuai.cn/tags/Nginx/"/>
-    
-      <category term="Tomcat" scheme="http://www.xpshuai.cn/tags/Tomcat/"/>
-    
-      <category term="反向代理" scheme="http://www.xpshuai.cn/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【PHP代码审计】 那些年我们一起挖掘SQL注入--集合</title>
-    <link href="http://www.xpshuai.cn/posts/43402/"/>
-    <id>http://www.xpshuai.cn/posts/43402/</id>
-    <published>2020-04-17T12:10:37.000Z</published>
-    <updated>2020-05-23T02:47:00.930Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h6 id=&quot;仅仅是简单把网上的文章放在一起，方便自己学习&quot;&gt;&lt;a href=&quot;#仅仅是简单把网上的文章放在一起，方便自己学习&quot; class=&quot;headerlink&quot; title=&quot;仅仅是简单把网上的文章放在一起，方便自己学习&quot;&gt;&lt;/a&gt;仅仅是简单把网上的文章放在一起，方便自己
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="安全" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="代码审计" scheme="http://www.xpshuai.cn/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
     
   </entry>
   
