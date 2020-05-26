@@ -719,14 +719,14 @@ password      required    pam_pwhistory.so.remember<span class="token operator">
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>特殊权限</strong></p>
 <ol>
-<li><p>Setuid(4)<br>主要针对可执行程序<br>一旦设置了suid之后：任何用户执行程序时都具备使用属主的权限<br>设置：<code>chmod u+s a.sh</code>或<code>chmod 4777 /bin/cat</code> (前面三个二进制, 二进制为100,即4；第二种数值方式对链接不生效)<br>比如使用<code>passwd</code>修改自己密码的时候修改的是shadow文件(他的属主是root)，它就是设置了<code>s</code>权限<br><img src="/posts/19367/20200318203240319_8090.png" alt=""></p>
+<li><p>Setuid(4)<br>主要针对可执行程序<br>一旦设置了suid之后：任何用户执行程序时都具备使用属主的权限<br>设置：<code>chmod u+s a.sh</code>或<code>chmod 4777 /bin/cat</code> (前面三个二进制, 二进制为100,即4；第二种数值方式对链接不生效)<br>比如使用<code>passwd</code>修改自己密码的时候修改的是shadow文件(他的属主是root)，它就是设置了<code>s</code>权限<br><img src="/posts/19367/20200318203240319_8090.png" alt></p>
 <blockquote>
 <p>如果不太懂，尽量不要随便设置suid，否则后患无穷</p>
 </blockquote>
 </li>
-<li><p>Setgid(2)<br>主要针对可执行程序和目录<br>对于程序一旦设置了sgid：任何用户执行程序时都具备使用属组的权限<br>应用于目录时：可实现<code>共享文件访问效果</code>(新建文件的数组集成目录属组):  一个用户再在里面新建文件之后，一个组里的用户就都可以共享<br>设置：<code>chmod g+s code/</code>或<code>sudo chmod 2775 /bin/cat</code><br>设置完之后，数组位置权限就多了s权限<br><img src="/posts/19367/20200318203113628_4438.png" alt=""></p>
+<li><p>Setgid(2)<br>主要针对可执行程序和目录<br>对于程序一旦设置了sgid：任何用户执行程序时都具备使用属组的权限<br>应用于目录时：可实现<code>共享文件访问效果</code>(新建文件的数组集成目录属组):  一个用户再在里面新建文件之后，一个组里的用户就都可以共享<br>设置：<code>chmod g+s code/</code>或<code>sudo chmod 2775 /bin/cat</code><br>设置完之后，数组位置权限就多了s权限<br><img src="/posts/19367/20200318203113628_4438.png" alt></p>
 </li>
-<li><p>stick bit(1)<br><code>针对目录</code>的受限删除位（root、属主可以删）<br>典型例子：<code>/tmp</code>目录<br>设置： <code>chmod o+t code/</code><br>加了stick位(其他用户的位置)，自己创建的文件只有自己能删除，别人无法删除<br><img src="/posts/19367/20200318202916501_30856.png" alt=""></p>
+<li><p>stick bit(1)<br><code>针对目录</code>的受限删除位（root、属主可以删）<br>典型例子：<code>/tmp</code>目录<br>设置： <code>chmod o+t code/</code><br>加了stick位(其他用户的位置)，自己创建的文件只有自己能删除，别人无法删除<br><img src="/posts/19367/20200318202916501_30856.png" alt></p>
 </li>
 </ol>
 <h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a><font color="red">权限管理</font></h2><h6 id="掩码"><a href="#掩码" class="headerlink" title="掩码"></a>掩码</h6><p>决定文件和目录的<code>默认权限</code>  </p>
