@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-05-26T06:01:51.842Z</updated>
+  <updated>2020-05-26T10:34:50.832Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tomcat常见漏洞复现</title>
+    <link href="http://www.xpshuai.cn/posts/40402/"/>
+    <id>http://www.xpshuai.cn/posts/40402/</id>
+    <published>2020-05-26T08:55:00.000Z</published>
+    <updated>2020-05-26T10:34:50.832Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;后台管理页面弱口令&quot;&gt;&lt;a href=&quot;#后台管理页面弱口令&quot; class=&quot;headerlink&quot; title=&quot;后台管理页面弱口令&quot;&gt;&lt;/a&gt;后台管理页面弱口令&lt;/h4&gt;&lt;p&gt;默认：&lt;code&gt;http://127.0.0.1:8080/manager/htm
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
+    
+      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jboss常见漏洞复现</title>
+    <link href="http://www.xpshuai.cn/posts/60637/"/>
+    <id>http://www.xpshuai.cn/posts/60637/</id>
+    <published>2020-05-26T07:57:44.000Z</published>
+    <updated>2020-05-26T08:40:37.957Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;JBoss-5-x-6-x-反序列化漏洞-CVE-2017-12149&quot;&gt;&lt;a href=&quot;#JBoss-5-x-6-x-反序列化漏洞-CVE-2017-12149&quot; class=&quot;headerlink&quot; title=&quot;JBoss 5.x/6.x 反序列化漏洞( 
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
+    
+      <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
+    
+  </entry>
   
   <entry>
     <title>Jenkins一些安全问题</title>
@@ -522,61 +578,6 @@
       <category term="全局锁" scheme="http://www.xpshuai.cn/tags/%E5%85%A8%E5%B1%80%E9%94%81/"/>
     
       <category term="GIL" scheme="http://www.xpshuai.cn/tags/GIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DDoS入门学习</title>
-    <link href="http://www.xpshuai.cn/posts/64661/"/>
-    <id>http://www.xpshuai.cn/posts/64661/</id>
-    <published>2020-05-08T06:50:36.000Z</published>
-    <updated>2020-05-23T02:57:07.266Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;之前以为DDos很简单，现在发现学问还是大滴很呢！！！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;理论&quot;&gt;&lt;a href=&quot;#理论&quot; class=&quot;headerlink&quot; title=&quot;理论&quot;&gt;&lt;/a&gt;理论&lt;/h2&gt;&lt;h4 id=&quot;DDO
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="DDos" scheme="http://www.xpshuai.cn/tags/DDos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>内网第二章-内网基础信息搜集</title>
-    <link href="http://www.xpshuai.cn/posts/54461/"/>
-    <id>http://www.xpshuai.cn/posts/54461/</id>
-    <published>2020-05-08T03:21:55.000Z</published>
-    <updated>2020-05-23T02:36:51.469Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;二-内网信息收集&quot;&gt;&lt;a href=&quot;#二-内网信息收集&quot; class=&quot;headerlink&quot; title=&quot;二 . 内网信息收集&quot;&gt;&lt;/a&gt;二 . 内网信息收集&lt;/h1&gt;&lt;h4 id=&quot;本机信息收集&quot;&gt;&lt;a href=&quot;#本机信息收集&quot; class=&quot;head
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="内网" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E7%BD%91/"/>
-    
-      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
     
   </entry>
   
