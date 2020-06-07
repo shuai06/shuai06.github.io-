@@ -340,7 +340,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -357,6 +357,62 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/1e68cff8/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Linux存储结构与磁盘划分">
+                            
+                            <span class="card-title">Linux存储结构与磁盘划分</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                存储结构与磁盘划分/boot 开机所需文件—内核、开机菜单以及所需配置文件等
+/dev 以文件形式存放任何设备与接口  # 
+/etc 配置文件   #
+/home 用户家目录   # 
+/bin 存放单用户模式下还可以操作的命令
+/lib
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Linux/">
+                            <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                        <a href="/tags/rhel/">
+                            <span class="chip bg-color">rhel</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -628,12 +684,12 @@ create user 'newuser'@'localhost' identified by 'password';
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/数据库/">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
                         <a href="/tags/mysql/">
                             <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/数据库/">
+                            <span class="chip bg-color">数据库</span>
                         </a>
                         
                     </div>
@@ -785,12 +841,12 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/数据库/">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
                         <a href="/tags/mysql/">
                             <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/数据库/">
+                            <span class="chip bg-color">数据库</span>
                         </a>
                         
                     </div>
@@ -840,12 +896,12 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/MongoDB/">
-                            <span class="chip bg-color">MongoDB</span>
-                        </a>
-                        
                         <a href="/tags/数据库/">
                             <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                        <a href="/tags/MongoDB/">
+                            <span class="chip bg-color">MongoDB</span>
                         </a>
                         
                     </div>
@@ -963,70 +1019,6 @@ dbfilenam
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/8045626e/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="urllib库的基本使用">
-                            
-                            <span class="card-title">urllib库的基本使用</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                urllib是Python自带的标准库，无需安装，直接可以用。
-
-提供了如下功能：
-网页请求
-响应获取
-代理和cookie设置
-异常处理
-URL解析
-
-爬虫所需要的功能，基本上在urllib中都能找到，学习这个标准库，可以更加深入的理解后面
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-11-21
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/爬虫/" class="post-category">
-                                    爬虫
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/爬虫/">
-                            <span class="chip bg-color">爬虫</span>
-                        </a>
-                        
-                        <a href="/tags/python/">
-                            <span class="chip bg-color">python</span>
-                        </a>
-                        
-                        <a href="/tags/urllib/">
-                            <span class="chip bg-color">urllib</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1044,7 +1036,7 @@ URL解析
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">9 / 10</div>
+            <div class="center-align b-text-gray">9 / 11</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1072,7 +1064,7 @@ URL解析
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">333.7k</span>&nbsp;字
+                class="white-color">336.1k</span>&nbsp;字
             
             
             
