@@ -568,7 +568,7 @@ Juju
 <li>需要硬件支持(BIOS设置开启)</li>
 <li>CPU特性 Hypervision</li>
 </ul>
-<h3 id="KVM"><a href="#KVM" class="headerlink" title="KVM"></a>KVM</h3><p><strong>Kernel-based Virtual Machine（KVM）</strong><br><img src="/posts/64674/20200510201008473_557028487.png" alt=""><br>把<code>KVM</code>和<code>QEMU</code>结合在一起<br>通过<code>libvirt</code>库实现Linux与虚拟化通信的接口</p>
+<h3 id="KVM"><a href="#KVM" class="headerlink" title="KVM"></a>KVM</h3><p><strong>Kernel-based Virtual Machine（KVM）</strong><br><img src="/posts/64674/20200510201008473_557028487.png" alt><br>把<code>KVM</code>和<code>QEMU</code>结合在一起<br>通过<code>libvirt</code>库实现Linux与虚拟化通信的接口</p>
 <p><strong>验证硬件平台支持虚拟化拓展(较新的硬件全部支持)</strong><br>四种方法</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># F1</span>
 <span class="token function">egrep</span> -c <span class="token string">'(vmx|svm)'</span> /proc/cpuinfo  <span class="token comment" spellcheck="true"># 结果不为0即支持</span>
@@ -617,7 +617,7 @@ lscpu
 <span class="token comment" spellcheck="true"># 2.也有字符界面的客户端管理工具</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>网卡桥接配置</strong><br>默认虚拟机网络模式为NAT（可以访问外部网络，但外部计算机无法访问虚拟机），可以使用<code>网桥</code>实现VM被外部网络访问</p>
-<p><img src="/posts/64674/20200510211152045_955020812.png" alt=""></p>
+<p><img src="/posts/64674/20200510211152045_955020812.png" alt></p>
 <p>网桥的配置</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/netplan/50-cloud-init.yaml</span>
 <span class="token comment" spellcheck="true"># 新增配置</span>

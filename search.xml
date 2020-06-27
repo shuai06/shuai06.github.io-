@@ -22,8 +22,8 @@
       </categories>
       <tags>
         <tag>渗透测试</tag>
-        <tag>中间件漏洞</tag>
         <tag>tomcat</tag>
+        <tag>中间件漏洞</tag>
       </tags>
   </entry>
   <entry>
@@ -36,8 +36,8 @@
       <tags>
         <tag>渗透测试</tag>
         <tag>未授权访问</tag>
-        <tag>JBoss</tag>
         <tag>中间件漏洞</tag>
+        <tag>JBoss</tag>
       </tags>
   </entry>
   <entry>
@@ -62,8 +62,8 @@
         <category>渗透测试</category>
       </categories>
       <tags>
-        <tag>Atlassian Crowd</tag>
         <tag>未授权访问</tag>
+        <tag>Atlassian Crowd</tag>
         <tag>远程命令执行</tag>
       </tags>
   </entry>
@@ -75,8 +75,8 @@
         <category>渗透测试</category>
       </categories>
       <tags>
-        <tag>未授权访问</tag>
         <tag>CouchDB</tag>
+        <tag>未授权访问</tag>
         <tag>命令执行</tag>
         <tag>CVE-2017-12635</tag>
         <tag>CVE-2017-12636</tag>
@@ -1250,8 +1250,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
         <tag>数据库</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -1285,8 +1285,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
         <tag>数据库</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -1297,8 +1297,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>MongoDB</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -1326,19 +1326,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[virtualenv]]></title>
-    <url>%2Fposts%2F9c06d95c%2F</url>
-    <content type="text"><![CDATA[注意： # 腾讯云的源有时候不行，可以更换源 pip3 install virtualenv -i https://pypi.doubanio.com/simple/ --user 搭建虚拟环境 先安装 virtualenv, 再安装 virtualenvwrapperpip install virtaulenv pip install virtualenvwrapper 设置虚拟的环境变量 . 先找到 virtualenvwrapper.sh 文件find / -name "virtualenvwrapper.sh" 写入 .bashrc 文件export WORKON_HOME=$HOME/.virtualenvs source 这里写起前面找出来的文件 基本命令 # 创建虚拟环境 mkvirtualenv pyenv # 删除虚拟机环境 rmvirtualenv pyenv # 进入虚拟环境 workon pyenv # 推出虚拟环境 deactivate # 创建虚拟环境的是时候，指定 Python 版本 mkvirtualenv 如果报如下错误： ERROR: virtualenvwrapper could not find virtualenv in your path 因为是被安装在默认的Python目录下，添加软链接即可 ln -s /usr/bin/python36/bin/virtualenv /usr/local/bin/virtualenv 批处理安装库：requirements.txtpip freeze 冻结出所有包与版本号 导出：pip freeze &gt; requirements.txt 再安装: pip install -r requirements.txt 虚拟环境： windows激活虚拟环境 ：pycharm自动激活 cd 虚拟环境目录venv/Scripts/ active linux激活虚拟环境 ：source ./venv/bin/active document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>virtualenv</tag>
-        <tag>虚拟环境</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[urllib库的基本使用]]></title>
     <url>%2Fposts%2F8045626e%2F</url>
     <content type="text"><![CDATA[urllib是Python自带的标准库，无需安装，直接可以用。 提供了如下功能： 网页请求 响应获取 代理和cookie设置 异常处理 URL解析 爬虫所需要的功能，基本上在urllib中都能找到，学习这个标准库，可以更加深入的理解后面更加便利的requests库。 urllib库 urlopen 语法 urllib.request.urlopen(url,data=None,[timeout,]*,cafile=None,capath=None,cadefault=False,context=None) #url:访问的网址 #data:额外的数据，如header，form data 用法 # request:GET import urllib.request response = urllib.request.urlopen('http://www.baidu.com') print(response.read().decode('utf-8')) # request: POST # http测试：http://httpbin.org/ import urllib.parse import urllib.request data = bytes(urllib.parse.urlencode({'word':'hello'}),encoding='utf8') response = urllib.request.urlopen('http://httpbin.org/post',data=data) print(response.read()) # 超时设置 import urllib.request response = urllib.request.urlopen('http://httpbin.org/get',timeout=1) print(response.read()) import socket import urllib.request import urllib.error try: response = urllib.request.urlopen('http://httpbin.org/get',timeout=0.1) except urllib.error.URLError as e: if isinstance(e.reason,socket.timeout): print('TIME OUT') 响应 # 响应类型 import urllib.open response = urllib.request.urlopen('https:///www.python.org') print(type(response)) # 状态码， 响应头 import urllib.request response = urllib.request.urlopen('https://www.python.org') print(response.status) print(response.getheaders()) # 获取响应头 print(response.getheader('Server')) # 得到指定的响应头 Request 声明一个request对象，该对象可以包括header等信息，然后用urlopen打开。 # 简单例子 import urllib.request request = urllib.request.Requests('https://python.org') response = urllib.request.urlopen(request) print(response.read().decode('utf-8')) # 增加header from urllib import request, parse url = 'http://httpbin.org/post' headers = { 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36' 'Host':'httpbin.org' } # 构造POST表格 dict = { 'name':'Germey' } data = bytes(parse.urlencode(dict),encoding='utf8') req = request.Request(url=url,data=data,headers=headers,method='POST') response = request.urlopen(req) print(response.read()).decode('utf-8') # 或者随后增加header from urllib import request, parse url = 'http://httpbin.org/post' dict = { 'name':'Germey' } req = request.Request(url=url,data=data,method='POST') req.add_hader('User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36') response = request.urlopen(req) print(response.read().decode('utf-8')) Handler：处理更加复杂的页面 代理 import urllib.request proxy_handler = urllib.request.ProxyHandler({ 'http':'http://127.0.0.1:9743' 'https':'https://127.0.0.1.9743' }) opener = urllib.request.build_openner(proxy_handler) response = opener.open('http://www.baidu.com') print(response.read()) Cookie:客户端用于记录用户身份,维持登录信息 import http.cookiejar, urllib.request cookie = http.cookiejar.CookieJar() handler = urllib.request.HTTPCookieProcessor(cookie) opener = urllib.request.build_opener(handler) response = opener.open("http://www.baidu.com") for item in cookie: print(item.name+"="+item.value) # 保存cooki为文本 import http.cookiejar, urllib.request filename = "cookie.txt" # 保存类型有很多种 ## 类型1 cookie = http.cookiejar.MozillaCookieJar(filename) ## 类型2 cookie = http.cookiejar.LWPCookieJar(filename) handler = urllib.request.HTTPCookieProcessor(cookie) opener = urllib.request.build_opener(handler) response = opener.open("http://www.baidu.com") # 使用相应的方法读取 import http.cookiejar, urllib.request cookie = http.cookiejar.LWPCookieJar() cookie.load('cookie.txt', ignore_discard=True, ignore_expires=True) handler = urllib.request.HTTPCookieProcessor(cookie) opener = urllib.request.build_opener(handler) response = opener.open("http://www.baidu.com") 异常处理 捕获异常，保证程序稳定运行 # 访问不存在的页面 from urllib import request, error try: response = request.urlopen('http://cuiqingcai.com/index.htm') except error.URLError as e: print(e.reason) # 先捕获子类错误 from urllib imort request, error try: response = request.urlopen('http://cuiqingcai.com/index.htm') except error.HTTPError as e: print(e.reason, e.code, e.headers, sep='\n') except error.URLError as e: print(e.reason) else: print("Request Successfully') # 判断原因 import socket import urllib.request import urllib.error try: response = urllib.request.urlopen('http://httpbin.org/get',timeout=0.1) except urllib.error.URLError as e: if isinstance(e.reason, socket.timeout): print('TIME OUT') URL解析 主要是一个工具模块，可用于为爬虫提供URL。 urlparse:拆分URL urlib.parse.urlparse(urlstring,scheme='', allow_fragments=True) # scheme: 协议类型 # 是否忽略’#‘部分 举个例子 from urllib import urlparse result = urlparse("https://edu.hellobi.com/course/157/play/lesson/2580") result ##ParseResult(scheme='https', netloc='edu.hellobi.com', path='/course/157/play/lesson/2580', params='', query='', fragment='') urlunparse:拼接URL，为urlparse的反向操作 from urllib.parse import urlunparse data = ['http','www.baidu.com','index.html','user','a=6','comment'] print(urlunparse(data)) urljoin:拼接两个URL urljoin urlencode:字典对象转换成GET请求对象 from urllib.parse import urlencode params = { 'name':'germey', 'age': 22 } base_url = 'http://www.baidu.com?' url = base_url + urlencode(params) print(url) 最后还有一个robotparse，解析网站允许爬取的部分。 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
@@ -1349,6 +1336,19 @@
         <tag>爬虫</tag>
         <tag>python</tag>
         <tag>urllib</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[virtualenv]]></title>
+    <url>%2Fposts%2F9c06d95c%2F</url>
+    <content type="text"><![CDATA[注意： # 腾讯云的源有时候不行，可以更换源 pip3 install virtualenv -i https://pypi.doubanio.com/simple/ --user 搭建虚拟环境 先安装 virtualenv, 再安装 virtualenvwrapperpip install virtaulenv pip install virtualenvwrapper 设置虚拟的环境变量 . 先找到 virtualenvwrapper.sh 文件find / -name "virtualenvwrapper.sh" 写入 .bashrc 文件export WORKON_HOME=$HOME/.virtualenvs source 这里写起前面找出来的文件 基本命令 # 创建虚拟环境 mkvirtualenv pyenv # 删除虚拟机环境 rmvirtualenv pyenv # 进入虚拟环境 workon pyenv # 推出虚拟环境 deactivate # 创建虚拟环境的是时候，指定 Python 版本 mkvirtualenv 如果报如下错误： ERROR: virtualenvwrapper could not find virtualenv in your path 因为是被安装在默认的Python目录下，添加软链接即可 ln -s /usr/bin/python36/bin/virtualenv /usr/local/bin/virtualenv 批处理安装库：requirements.txtpip freeze 冻结出所有包与版本号 导出：pip freeze &gt; requirements.txt 再安装: pip install -r requirements.txt 虚拟环境： windows激活虚拟环境 ：pycharm自动激活 cd 虚拟环境目录venv/Scripts/ active linux激活虚拟环境 ：source ./venv/bin/active document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>virtualenv</tag>
+        <tag>虚拟环境</tag>
       </tags>
   </entry>
   <entry>
@@ -1376,9 +1376,45 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[ArcgisEngine实现地图浏览]]></title>
+    <url>%2Fposts%2F1a728c4f%2F</url>
+    <content type="text"><![CDATA[全图 private void FullExtentTSButton_Click(object sender, EventArgs e) { mainMapControl.Extent = mainMapControl.FullExtent; } 等比例放大 private void btnZoomInStep_Click(object sender, EventArgs e) { IEnvelope pEnvelope; pEnvelope = mainMapControl.Extent; pEnvelope.Expand(0.5, 0.5, true); //放大2倍 mainMapControl.Extent = pEnvelope; mainMapControl.ActiveView.Refresh(); } 等比例缩小 private void btnZoomIOutStep_Click(object sender, EventArgs e) { IActiveView pActiveView = mainMapControl.ActiveView; IPoint centerPoint = new PointClass(); centerPoint.PutCoords((pActiveView.Extent.XMin + pActiveView.Extent.XMax) / 2, (pActiveView.Extent.YMax + pActiveView.Extent.YMin) / 2); IEnvelope envlop = pActiveView.Extent; envlop.Expand(1.5, 1.5, true); //与放大的区别在于Expand的参数不同 pActiveView.Extent.CenterAt(centerPoint); pActiveView.Extent = envlop; pActiveView.Refresh(); //如果觉得乱的话，直接修改放大的参数也将就可以 非万不得已不用 //IEnvelope pEnvelope; //pEnvelope = mainMapControl.Extent; //pEnvelope.Expand(1.5, 1.5, true); //放大2倍 //mainMapControl.Extent = pEnvelope; //mainMapControl.ActiveView.Refresh(); } 上一视图 // 定义全局变量 IExtentStack pExtentStack; private void PreViewTSButton_Click(object sender, EventArgs e) { pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到前一视图，第一个视图没有前视图 if (pExtentStack.CanUndo()) { pExtentStack.Undo(); //撤销到上一视图范围 NextViewTSButton.Enabled = true; //后一视图可以使用 if (!pExtentStack.CanUndo()) { PreViewTSButton.Enabled = false; //前一视图不能使用 } } mainMapControl.ActiveView.Refresh(); } 下一视图 private void NextViewTSButton_Click(object sender, EventArgs e) { pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到后一视图，最后一个视图没有后一视图 if (pExtentStack.CanRedo()) //如果可以重做下一视图 { pExtentStack.Redo(); //重做到下一视图 PreViewTSButton.Enabled = true; //上一视图按钮可以使用 if (!pExtentStack.CanRedo()) //如果不可以重做下一视图 { NextViewTSButton.Enabled = false; //下一视图不能用 } } mainMapControl.ActiveView.Refresh(); } document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcEngine</tag>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ArcEngine初识 -- 打开地图]]></title>
+    <url>%2Fposts%2F210c46ef%2F</url>
+    <content type="text"><![CDATA[一句代码 创建winform程序 必须要添加LicenseControl控件 TOCControl视图控件 =&gt; 属性,设置关联属性绑定(Buddy)到地图控件上 ToolbalControl工具条控件 伙伴控价 =&gt; 设置关联属性绑定到地图控件上 MapControl地图控件 也可以设置属性设置默认打开的地图 引用ESRI.ArcGIS.Version 在主程序代码中加入：//在窗口加载前添加 绑定产品码 // 注意是 program.cs文件 ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop); 才能正常运行 常见的AE控价 PageLayoutControl 布局视图 TOOControl 内容列表 MapControl 数据视图 打开地图文档F1 自己写的//打开mxd文档 F1 try { //实例化一个对象 OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = "地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt";|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf"/文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; // 存储打开的文件路径 //判断如果文件正常打开 if (open.ShowDialog() == DialogResult.OK) { // 获取文件路径 path+name string fileName = open.FileName; // 数据窗口加载地图文档 axMapControl1.LoadMxFile(fileName); // 刷新一下页面 axMapControl1.ActiveView.Refresh(); // 伙伴控件可以通过下面的方式来进行绑定 axTOCControl1.SetBuddyControl(axMapControl1); } } catch(Exception) { MessageBox.Show("请打开正确的文档!", "提醒", MessageBoxButtons.OK, MessageBoxIcon.Information); } } F2 使用IMapControl接口的LoadMxFile方法 OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = "地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt;|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf";//文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; // 存储打开的文件路径 open.ShowDialog(); //文件名 string fileName = open.FileName; if (fileName == "") { return; } //检查地图文档有效性 if (mainMapControl.CheckMxFile(fileName)) { mainMapControl.LoadMxFile(fileName); mainMapControl.ActiveView.Refresh(); } else { MessageBox.Show(fileName + "是无效的地图文档!", "信息提示"); return; } F3 使用IMapDocument接口// using ESRI.ArcGIS.Carto; OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = @"地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt;|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf";//文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; //打开窗口 open.ShowDialog(); // 存储打开的文件路径 string fileName = open.FileName; if (mainMapControl.CheckMxFile(fileName)) { //将数据载入pMapDocument并与Map控件关联 IMapDocument pMapDocument = new MapDocument(); // using ESRI.ArcGIS.Carto; pMapDocument.Open(fileName, ""); //获取Map地图中激活的地图文档 mainMapControl.Map = pMapDocument.ActiveView.FocusMap; mainMapControl.ActiveView.Refresh(); } F4 使用ControlsOpenDocCommandClass类库资源 =》 适合比赛用//using ESRI.ArcGIS.Controls; ICommand command = new ControlsOpenDocCommandClass(); //using ESRI.ArcGIS.Controls; command.OnCreate(mainMapControl.Object); command.OnClick(); mainTOCControl.SetBuddyControl(mainMapControl); 待改进之处： 窗口的大小以及出现的位置，美化 Form的name随着文档的名字改变 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcEngine</tag>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ArcEngine文件保存功能]]></title>
     <url>%2Fposts%2Fdb6b7e01%2F</url>
     <content type="text"><![CDATA[地图文档保存问题：空文档也能保存private void saveToolStrip_Click(object sender, EventArgs e) { try { string sMxdFileName = mainMapControl.DocumentFilename; IMapDocument pMapDocument = new MapDocumentClass(); //检查文档是否为空以及有效性 if (sMxdFileName != null && mainMapControl.CheckMxFile(sMxdFileName)) { if (pMapDocument.get_IsReadOnly(sMxdFileName)) { MessageBox.Show("地图本当为只读，不能保存！"); pMapDocument.Close(); return; } else { SaveFileDialog pSaveFileDialog = new System.Windows.Forms.SaveFileDialog(); pSaveFileDialog.Title = "请选择保存路径"; pSaveFileDialog.Filter = "ArcMap文档(*.mxd)|*.mxd|ArcMap模板(*.mxt)|*.mxt"; //当相同的文件存在是提示错误 pSaveFileDialog.OverwritePrompt = true; pSaveFileDialog.RestoreDirectory = true; if (pSaveFileDialog.ShowDialog() == DialogResult.OK) { //获取名字 sMxdFileName = pSaveFileDialog.FileName; } else { return; } pMapDocument.New(sMxdFileName); pMapDocument.ReplaceContents(mainMapControl.Map as IMxdContents); //保存为绝对路径 pMapDocument.Save(pMapDocument.UsesRelativePaths, true); pMapDocument.Close(); MessageBox.Show("保存文档成功"); } } } catch (Exception ex) { MessageBox.Show(ex.Message); } } 地图文档另存为1private void saveAsToolStrip_Click(object sender, EventArgs e) { try { SaveFileDialog pSaveDialog = new System.Windows.Forms.SaveFileDialog(); pSaveDialog.Title = "另存为"; pSaveDialog.OverwritePrompt = true;//当相同的文件存在是提示错误 pSaveDialog.Filter = "ArcMap文档(*.mxd)|*.mxd|ArcMap模板(*.mxt)|*.mxt"; pSaveDialog.RestoreDirectory = true; if (pSaveDialog.ShowDialog() == DialogResult.OK) { string sFilePath = pSaveDialog.FileName; IMapDocument pMapDocument = new MapDocumentClass(); pMapDocument.New(sFilePath); pMapDocument.ReplaceContents(mainMapControl.Map as IMxdContents); pMapDocument.Save(true, true); pMapDocument.Close(); } } catch (Exception ex) { MessageBox.Show(ex.Message); } } 地图另存为2 ICommand command = new ControlsSaveAsDocCommandClass(); command.OnCreate(mainMapControl.Object); command.OnClick(); document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcEngine</tag>
+        <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ArcEngine同步数据视图与布局视图]]></title>
+    <url>%2Fposts%2F4c9b4c5b%2F</url>
+    <content type="text"><![CDATA[// 数据视图与布局视图同步 private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_OnAfterScreenDrawEvent e) { IActiveView pActiveView = (IActiveView)mainPageLayoutControl1.ActiveView.FocusMap; IDisplayTransformation displayTransformation = pActiveView.ScreenDisplay.DisplayTransformation; displayTransformation.VisibleBounds = mainMapControl.Extent; mainPageLayoutControl1.ActiveView.Refresh(); CopyToPageLayout(); // 调用下面的函数 } // CopyToPageLayout() 布局视图与数据视图同步 private void CopyToPageLayout() { IObjectCopy pObjectCopy = new ObjectCopyClass(); object copyFromMap = mainMapControl.Map; object copiedMap = pObjectCopy.Copy(copyFromMap); // 复制地图到copiedMap中 object copyToMap = mainPageLayoutControl1.ActiveView.FocusMap; pObjectCopy.Overwrite(copiedMap, ref copyToMap); // 复制地图 mainPageLayoutControl1.ActiveView.Refresh(); } document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
       <categories>
         <category>GIS</category>
       </categories>
@@ -1401,18 +1437,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ArcgisEngine实现地图浏览]]></title>
-    <url>%2Fposts%2F1a728c4f%2F</url>
-    <content type="text"><![CDATA[全图 private void FullExtentTSButton_Click(object sender, EventArgs e) { mainMapControl.Extent = mainMapControl.FullExtent; } 等比例放大 private void btnZoomInStep_Click(object sender, EventArgs e) { IEnvelope pEnvelope; pEnvelope = mainMapControl.Extent; pEnvelope.Expand(0.5, 0.5, true); //放大2倍 mainMapControl.Extent = pEnvelope; mainMapControl.ActiveView.Refresh(); } 等比例缩小 private void btnZoomIOutStep_Click(object sender, EventArgs e) { IActiveView pActiveView = mainMapControl.ActiveView; IPoint centerPoint = new PointClass(); centerPoint.PutCoords((pActiveView.Extent.XMin + pActiveView.Extent.XMax) / 2, (pActiveView.Extent.YMax + pActiveView.Extent.YMin) / 2); IEnvelope envlop = pActiveView.Extent; envlop.Expand(1.5, 1.5, true); //与放大的区别在于Expand的参数不同 pActiveView.Extent.CenterAt(centerPoint); pActiveView.Extent = envlop; pActiveView.Refresh(); //如果觉得乱的话，直接修改放大的参数也将就可以 非万不得已不用 //IEnvelope pEnvelope; //pEnvelope = mainMapControl.Extent; //pEnvelope.Expand(1.5, 1.5, true); //放大2倍 //mainMapControl.Extent = pEnvelope; //mainMapControl.ActiveView.Refresh(); } 上一视图 // 定义全局变量 IExtentStack pExtentStack; private void PreViewTSButton_Click(object sender, EventArgs e) { pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到前一视图，第一个视图没有前视图 if (pExtentStack.CanUndo()) { pExtentStack.Undo(); //撤销到上一视图范围 NextViewTSButton.Enabled = true; //后一视图可以使用 if (!pExtentStack.CanUndo()) { PreViewTSButton.Enabled = false; //前一视图不能使用 } } mainMapControl.ActiveView.Refresh(); } 下一视图 private void NextViewTSButton_Click(object sender, EventArgs e) { pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到后一视图，最后一个视图没有后一视图 if (pExtentStack.CanRedo()) //如果可以重做下一视图 { pExtentStack.Redo(); //重做到下一视图 PreViewTSButton.Enabled = true; //上一视图按钮可以使用 if (!pExtentStack.CanRedo()) //如果不可以重做下一视图 { NextViewTSButton.Enabled = false; //下一视图不能用 } } mainMapControl.ActiveView.Refresh(); } document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ArcEngine</tag>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[MongoDB初试及基本操作]]></title>
     <url>%2Fposts%2F28f19af%2F</url>
     <content type="text"><![CDATA[分布式：一个任务分成多个子任务完成 （副手） 集群：一个任务由多态服务器同时服务 大数据 文档结构，海量数据，大容量存储，高校存储大量二进制文件 场景： 1.需要不断扩容； 2.新应用，需求会变，数据模型无法确定； 3.高可用（不宕机） 4.需要整合多个外部数据源 SQL术语 MongoDB术语 解释说明 database database 数据库 table collection 数据库表/集合 row document 数据记录行/文档 column field 字段/域 index index 索引 table joins 表连接，MongoDB不支持 primary key primary key 主键，MongoDB自动将_id字段设置为主键 文档：就是一个对象，由键值对构成，是json的一种扩展 Bson形式 字段(域)之间可以是不同类型: {‘book’:’xxx’, ‘hero’:’yyy’}` {'name':'sjz', 'age':18} 下载完成后，将可执行文件添加到PATH路径中 export PATH=/user/local/mondodb/bin:$PATH 服务端mongod 配置文件位置 etc/mongod.conf 默认端口 27017 查看端口： ss -tnl 数据库服务启动/停止/重启 sudo service mongodb start/stop/restart 查看状态： sudo service mongodb status 客户端启动 mongo 连接mongodb: # 进入 mongo # 退出 exit 或者 ctrl + c 或 quit() 数据库级操作：1.查看所有数据库 show dbs 2.创建数据库 use mydb # 创建之后，如果不插入数据的话， show dbs是看不到刚建立的数据库的 3.显示当前数据库 db 4.删除数据库 db.dropDatabase() # 注意大小写 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
@@ -1420,32 +1444,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ArcEngine同步数据视图与布局视图]]></title>
-    <url>%2Fposts%2F4c9b4c5b%2F</url>
-    <content type="text"><![CDATA[// 数据视图与布局视图同步 private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_OnAfterScreenDrawEvent e) { IActiveView pActiveView = (IActiveView)mainPageLayoutControl1.ActiveView.FocusMap; IDisplayTransformation displayTransformation = pActiveView.ScreenDisplay.DisplayTransformation; displayTransformation.VisibleBounds = mainMapControl.Extent; mainPageLayoutControl1.ActiveView.Refresh(); CopyToPageLayout(); // 调用下面的函数 } // CopyToPageLayout() 布局视图与数据视图同步 private void CopyToPageLayout() { IObjectCopy pObjectCopy = new ObjectCopyClass(); object copyFromMap = mainMapControl.Map; object copiedMap = pObjectCopy.Copy(copyFromMap); // 复制地图到copiedMap中 object copyToMap = mainPageLayoutControl1.ActiveView.FocusMap; pObjectCopy.Overwrite(copiedMap, ref copyToMap); // 复制地图 mainPageLayoutControl1.ActiveView.Refresh(); } document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ArcEngine</tag>
-        <tag>GIS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ArcEngine初识 -- 打开地图]]></title>
-    <url>%2Fposts%2F210c46ef%2F</url>
-    <content type="text"><![CDATA[一句代码 创建winform程序 必须要添加LicenseControl控件 TOCControl视图控件 =&gt; 属性,设置关联属性绑定(Buddy)到地图控件上 ToolbalControl工具条控件 伙伴控价 =&gt; 设置关联属性绑定到地图控件上 MapControl地图控件 也可以设置属性设置默认打开的地图 引用ESRI.ArcGIS.Version 在主程序代码中加入：//在窗口加载前添加 绑定产品码 // 注意是 program.cs文件 ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop); 才能正常运行 常见的AE控价 PageLayoutControl 布局视图 TOOControl 内容列表 MapControl 数据视图 打开地图文档F1 自己写的//打开mxd文档 F1 try { //实例化一个对象 OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = "地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt";|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf"/文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; // 存储打开的文件路径 //判断如果文件正常打开 if (open.ShowDialog() == DialogResult.OK) { // 获取文件路径 path+name string fileName = open.FileName; // 数据窗口加载地图文档 axMapControl1.LoadMxFile(fileName); // 刷新一下页面 axMapControl1.ActiveView.Refresh(); // 伙伴控件可以通过下面的方式来进行绑定 axTOCControl1.SetBuddyControl(axMapControl1); } } catch(Exception) { MessageBox.Show("请打开正确的文档!", "提醒", MessageBoxButtons.OK, MessageBoxIcon.Information); } } F2 使用IMapControl接口的LoadMxFile方法 OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = "地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt;|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf";//文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; // 存储打开的文件路径 open.ShowDialog(); //文件名 string fileName = open.FileName; if (fileName == "") { return; } //检查地图文档有效性 if (mainMapControl.CheckMxFile(fileName)) { mainMapControl.LoadMxFile(fileName); mainMapControl.ActiveView.Refresh(); } else { MessageBox.Show(fileName + "是无效的地图文档!", "信息提示"); return; } F3 使用IMapDocument接口// using ESRI.ArcGIS.Carto; OpenFileDialog open = new OpenFileDialog(); //设置参数 //检查文件是否存在 open.CheckFileExists = true; open.Title = "打开地图文档"; // 不允许多个文件同时打开 open.Multiselect = false; // 存储时打开的文件路径 open.RestoreDirectory = true; //打开文件格式 open.Filter = @"地图文档(*.mxd)|*.mxd;|ArcMap模板(*.mxt)|*.mxt;|所有地图格式(*.mxd;*.mxt;*.pmf)|*.mxd;*.mxt;*.pmf";//文件过滤条件 open.Multiselect = false;//禁止多选 open.RestoreDirectory = true; //打开窗口 open.ShowDialog(); // 存储打开的文件路径 string fileName = open.FileName; if (mainMapControl.CheckMxFile(fileName)) { //将数据载入pMapDocument并与Map控件关联 IMapDocument pMapDocument = new MapDocument(); // using ESRI.ArcGIS.Carto; pMapDocument.Open(fileName, ""); //获取Map地图中激活的地图文档 mainMapControl.Map = pMapDocument.ActiveView.FocusMap; mainMapControl.ActiveView.Refresh(); } F4 使用ControlsOpenDocCommandClass类库资源 =》 适合比赛用//using ESRI.ArcGIS.Controls; ICommand command = new ControlsOpenDocCommandClass(); //using ESRI.ArcGIS.Controls; command.OnCreate(mainMapControl.Object); command.OnClick(); mainTOCControl.SetBuddyControl(mainMapControl); 待改进之处： 窗口的大小以及出现的位置，美化 Form的name随着文档的名字改变 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ArcEngine</tag>
-        <tag>GIS</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>

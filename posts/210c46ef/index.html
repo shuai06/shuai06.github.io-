@@ -916,20 +916,21 @@ ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop);
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/4c9b4c5b/">
+                <a href="/posts/1a728c4f/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ArcEngine同步数据视图与布局视图">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ArcgisEngine实现地图浏览">
                         
-                        <span class="card-title">ArcEngine同步数据视图与布局视图</span>
+                        <span class="card-title">ArcgisEngine实现地图浏览</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // 数据视图与布局视图同步
-private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_OnAfterScreenDrawEvent e)
+                            全图    private void FullExtentTSButton_Click(object sender, EventArgs e)
+        {
+            mainMapControl.Extent = ma
                         
                     </div>
                     <div class="publish-info">
@@ -970,22 +971,23 @@ private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/eb2e44a3/">
+                <a href="/posts/db6b7e01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ArcEngine&#34;万能&#34;&#34;加载数据方法">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="ArcEngine文件保存功能">
                         
-                        <span class="card-title">ArcEngine&#34;万能&#34;&#34;加载数据方法</span>
+                        <span class="card-title">ArcEngine文件保存功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            下面介绍一种“万能”加载数据的办法： 
-// 加载很多种数据
-ICommand command = new ControlsAddDataCommandClass();
-command.OnCreate(mainMapControl.Obj
+                            地图文档保存问题：空文档也能保存private void saveToolStrip_Click(object sender, EventArgs e)
+        {
+            try
+            {
+   
                         
                     </div>
                     <div class="publish-info">
