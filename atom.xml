@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-07-08T06:01:33.105Z</updated>
+  <updated>2020-07-11T15:15:53.729Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ubuntu sever-邮件服务</title>
+    <link href="http://www.xpshuai.cn/posts/36278/"/>
+    <id>http://www.xpshuai.cn/posts/36278/</id>
+    <published>2020-07-11T15:15:23.000Z</published>
+    <updated>2020-07-11T15:15:53.729Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;直到今天，Emai仍然是互联网上最重要的信息传递方式之一&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;电子邮件基础&quot;&gt;&lt;a href=&quot;#电子邮件基础&quot; class=&quot;headerlink&quot; title=&quot; 电子邮件基础&quot;&gt;&lt;/a&gt;&lt;fon
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ubuntu sever-聊天服务</title>
     <link href="http://www.xpshuai.cn/posts/43174/"/>
     <id>http://www.xpshuai.cn/posts/43174/</id>
     <published>2020-07-08T05:55:23.000Z</published>
-    <updated>2020-07-08T06:01:33.105Z</updated>
+    <updated>2020-07-08T06:02:08.605Z</updated>
     
     <summary type="html">
     
@@ -36,9 +64,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
-    
       <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
+    
+      <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -173,9 +201,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
-    
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
     
       <category term="远程命令执行" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
     
@@ -200,9 +228,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
       <category term="CouchDB" scheme="http://www.xpshuai.cn/tags/CouchDB/"/>
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
       <category term="命令执行" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
     
@@ -544,32 +572,6 @@
     
     
       <category term="PowerShel" scheme="http://www.xpshuai.cn/tags/PowerShel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Metasploit初学-散记</title>
-    <link href="http://www.xpshuai.cn/posts/48093/"/>
-    <id>http://www.xpshuai.cn/posts/48093/</id>
-    <published>2020-05-09T09:15:16.000Z</published>
-    <updated>2020-05-22T18:58:04.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;MSF&quot;&gt;&lt;a href=&quot;#MSF&quot; class=&quot;headerlink&quot; title=&quot;MSF&quot;&gt;&lt;/a&gt;MSF&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;最牛X的地方是：支持整个渗透测试过程&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;理论方面&quot;&gt;&lt;a
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="Metasploit" scheme="http://www.xpshuai.cn/tags/Metasploit/"/>
     
   </entry>
   
