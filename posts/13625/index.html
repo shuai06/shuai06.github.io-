@@ -528,7 +528,7 @@ nc -l -p 4444
 nc -nv 1.1.1.1 4444
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/posts/13625/20200314183944624_25250.png" alt=""></p>
+<p><img src="http://image.xpshuai.cn/nc_use.png" alt></p>
 <h6 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h6><p><strong>远程电子取证</strong> (原则:尽可能少修改被审计系统的状态，避免影响证据)<br>就可以用<code>nc</code>来操作:<br>我的电脑: <code>nc -l -p 3333</code>  监听<br>被审计系统:<code>ls -l | nc -nv 1.1.1.1 3333</code> 输出到我的电脑</p>
 <p>我的电脑: <code>nc -l -p 3333 &gt; ps.txt</code>   输出结果重定向到文件<br>被审计系统:<code>ps -ef | nc -nv 1.1.1.1 3333 -q 1</code>    参数-q: 输出完成之后过1秒就断开</p>
 <p>题外话：<code>lsof</code> 查看已经打开的文件</p>

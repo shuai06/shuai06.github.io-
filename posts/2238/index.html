@@ -569,7 +569,7 @@ nmp use
 <span class="token comment" spellcheck="true">#接下来运行就可以了</span>
 node index.js
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二-模块-包-与CommonJS"><a href="#二-模块-包-与CommonJS" class="headerlink" title="二. 模块(包)与CommonJS"></a>二. 模块(包)与CommonJS</h2><p><img src="/posts/2238/commonjs.png" alt=""></p>
+<h2 id="二-模块-包-与CommonJS"><a href="#二-模块-包-与CommonJS" class="headerlink" title="二. 模块(包)与CommonJS"></a>二. 模块(包)与CommonJS</h2><p><img src="http://image.xpshuai.cn/commonjs.png" alt></p>
 <h4 id="Node-js三种模块"><a href="#Node-js三种模块" class="headerlink" title="Node.js三种模块"></a>Node.js三种模块</h4><ol>
 <li><p><strong>内置的Node.js模块</strong></p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> os <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// require 载入模块</span>
@@ -1453,7 +1453,7 @@ console<span class="token punctuation">.</span><span class="token function">time
 <span class="token comment" spellcheck="true">//这里没加异步，按照串行顺序依次下来的</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="六-Socket"><a href="#六-Socket" class="headerlink" title="六. Socket"></a>六. Socket</h2><p><img src="/posts/2238/socket.png"></p>
+<h2 id="六-Socket"><a href="#六-Socket" class="headerlink" title="六. Socket"></a>六. Socket</h2><p><img src="http://image.xpshuai.cn/socket.png"></p>
 <h4 id="1-基于net模块实现socket"><a href="#1-基于net模块实现socket" class="headerlink" title="1). 基于net模块实现socket"></a>1). 基于<code>net</code>模块实现socket</h4><p><strong>聊天案例</strong></p>
 <p>server.js</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> net <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span>
@@ -1795,15 +1795,15 @@ security:
 <h5 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h5><blockquote>
 <p>与mysql语法对比：<a href="https://www.jb51.net/article/65626.htm?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">https://www.jb51.net/article/65626.htm?tdsourcetag=s_pctim_aiomsg</a></p>
 </blockquote>
-<h6 id="术语、概念"><a href="#术语、概念" class="headerlink" title="术语、概念"></a>术语、概念</h6><p><img src="/posts/2238/mysql.png" alt=""></p>
-<p><img src="/posts/2238/mysql2.png" alt=""></p>
+<h6 id="术语、概念"><a href="#术语、概念" class="headerlink" title="术语、概念"></a>术语、概念</h6><p><img src="http://image.xpshuai.cn/socket.png" alt></p>
+<p><img src="http://image.xpshuai.cn/mysql2.png" alt></p>
 <p><strong>MongoDB集合</strong></p>
 <p>一个数据库可以有多个集合(对应mysql的table)</p>
 <p><strong>MongoDB文档</strong></p>
 <p>键值对</p>
 <p>如：<code>{'name':'xps', 'like':['code','play']}</code></p>
 <p><strong>MongoDB数据类型</strong></p>
-<p><img src="/posts/2238/type.png" alt=""></p>
+<p><img src="http://image.xpshuai.cn/type.png" alt></p>
 <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h6 id="1-数据库操作"><a href="#1-数据库操作" class="headerlink" title="1.数据库操作"></a>1.数据库操作</h6><p>查看帮助</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">help</span>
 db.help<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1839,17 +1839,17 @@ db.getName<span class="token punctuation">(</span><span class="token punctuation
 <pre class="line-numbers language-bash"><code class="language-bash">db.dropDatabase<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h6 id="2-集合（Collection）操作"><a href="#2-集合（Collection）操作" class="headerlink" title="2.集合（Collection）操作"></a>2.集合（Collection）操作</h6><p>….写了半天，忘了保存，算了，放图片吧….</p>
-<p><img src="/posts/2238/collec.png"></p>
+<p><img src="http://image.xpshuai.cn/collec.png"></p>
 <h6 id="3-文档操作"><a href="#3-文档操作" class="headerlink" title="3.文档操作"></a>3.文档操作</h6><p>对集合内数据增删改查</p>
-<p><img src="/posts/2238/q0.png"></p>
+<p><img src="http://image.xpshuai.cn/collec.png"></p>
 <p>删除</p>
 <pre class="line-numbers language-bash"><code class="language-bash">db.user.remove<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token keyword">:</span><span class="token string">'xps'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 db.user.delete<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token keyword">:</span><span class="token string">'xps'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 db.user.deleteMany<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token keyword">:</span><span class="token string">'xps'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="/posts/2238/q1.png"></p>
-<p><img src="/posts/2238/q2.png"></p>
-<p><img src="/posts/2238/q3.png"></p>
+<p><img src="http://image.xpshuai.cn/q1.png"></p>
+<p><img src="http://image.xpshuai.cn/q2.png"></p>
+<p><img src="http://image.xpshuai.cn/q3.png"></p>
 <h2 id="八-Express框架"><a href="#八-Express框架" class="headerlink" title="八. Express框架"></a>八. Express框架</h2><blockquote>
 <p>一个node.js的web框架</p>
 </blockquote>

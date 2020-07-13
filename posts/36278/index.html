@@ -581,7 +581,7 @@
 <blockquote>
 <p>最基本的：MTA+MDA+MUA</p>
 </blockquote>
-<p>典型命令：<br><img src="_v_images/20200709154359910_22410.png" alt=""></p>
+<p>典型命令：<br><img src="http://image.xpshuai.cn/ubuntu_mail_cmd.png" alt></p>
 <h6 id="3-其他邮箱访问方式"><a href="#3-其他邮箱访问方式" class="headerlink" title="3. 其他邮箱访问方式"></a>3. 其他邮箱访问方式</h6><pre><code>Web Mail
 WAPI（ 微软专有邮箱协议）
 </code></pre><h6 id="4-Fetchmail"><a href="#4-Fetchmail" class="headerlink" title="4. Fetchmail"></a>4. Fetchmail</h6><pre><code>自己本地邮箱服务器 &lt;- 运行商邮件服务器(POP3 / IMAP)
@@ -808,10 +808,10 @@ $<span class="token punctuation">[</span><span class="token string">'setup_passw
 <p><strong>创建虚拟域、邮箱账号</strong></p>
 <ul>
 <li>域名清单 – 新建域</li>
-<li>虚拟用户清单 – 新建邮箱（别名）<br><img src="_v_images/20200710215749565_7901.png" alt=""></li>
+<li>虚拟用户清单 – 新建邮箱（别名）<br><img src="http://image.xpshuai.cn/ubuntu_mail_virtual.png" alt></li>
 </ul>
-<p><img src="_v_images/20200710215834596_12054.png" alt=""></p>
-<p><img src="_v_images/20200710215933529_3774.png" alt=""></p>
+<p><img src="http://image.xpshuai.cn/ubuntu_mail_virtual2.png" alt></p>
+<p><img src="http://image.xpshuai.cn/ubuntu_mail_virtual3.png" alt></p>
 <h6 id="6-集成Postfix"><a href="#6-集成Postfix" class="headerlink" title="6.集成Postfix"></a>6.集成Postfix</h6><blockquote>
 <p>以下命令以root权限运行</p>
 <pre class="line-numbers language-bash"><code class="language-bash">apt <span class="token function">install</span> Postfix Postfix-mysql sasl2-bin    <span class="token comment" spellcheck="true"># sasl来实现身份认证</span>
