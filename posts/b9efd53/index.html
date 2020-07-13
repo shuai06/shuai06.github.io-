@@ -499,10 +499,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="/posts/b9efd53/20200126205055895_1655667133.png" alt></p>
-<p><img src="/posts/b9efd53/20200126210117946_1080742536.png" alt></p>
-<p><img src="/posts/b9efd53/20200126210349356_2002672330.png" alt></p>
-<h4 id="DPKG包管理器（本地）"><a href="#DPKG包管理器（本地）" class="headerlink" title="DPKG包管理器（本地）"></a>DPKG包管理器（本地）</h4><p><img src="/posts/b9efd53/20200126210801883_1750439429.png" alt></p>
+                <p><img src="/posts/b9efd53/20200126205055895_1655667133.png" alt=""></p>
+<p><img src="/posts/b9efd53/20200126210117946_1080742536.png" alt=""></p>
+<p><img src="/posts/b9efd53/20200126210349356_2002672330.png" alt=""></p>
+<h4 id="DPKG包管理器（本地）"><a href="#DPKG包管理器（本地）" class="headerlink" title="DPKG包管理器（本地）"></a>DPKG包管理器（本地）</h4><p><img src="/posts/b9efd53/20200126210801883_1750439429.png" alt=""></p>
 <p>​     </p>
 <p><code>dpkg -l</code> 导出软件包，在新系统上安装<br><code>dpkg -L xxd</code>  查看某个软件包在电脑上包含哪些文件<br><code>dpkg -S /usr/.../man1</code>  看这个文件来自哪个软件包<br><code>dpkg -i xxxname_version_架构.deb</code> 安装      // 架构(amd64, i386)<br><code>dpkg --print-architecture</code>  查看系统的支持的架构<br><code>dpkg --print-foreign-architectures</code>   查看系统是否支持其他的架构    </p>
 <p><code>cat /var/lib/dpkg/arch</code>   查看系统是否可以拓展支持其他架构类型<br> <code></code>  可以让系统支持其他类型架构<br><code>dpkg --remove-architecture i386</code>   删除支持某个架构</p>
@@ -568,16 +568,16 @@ apt showsrc nmap  <span class="token comment" spellcheck="true"># 查看源代�
 
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="多手动练习，少赋值"><a href="#多手动练习，少赋值" class="headerlink" title="多手动练习，少赋值"></a>多手动练习，少赋值</h1><h2 id="APT更新源配置"><a href="#APT更新源配置" class="headerlink" title="APT更新源配置"></a>APT更新源配置</h2><p><strong>推荐使用官方更新源</strong><br><img src="/posts/b9efd53/20200127152919657_1859338354.png" alt></p>
+<h1 id="多手动练习，少赋值"><a href="#多手动练习，少赋值" class="headerlink" title="多手动练习，少赋值"></a>多手动练习，少赋值</h1><h2 id="APT更新源配置"><a href="#APT更新源配置" class="headerlink" title="APT更新源配置"></a>APT更新源配置</h2><p><strong>推荐使用官方更新源</strong><br><img src="/posts/b9efd53/20200127152919657_1859338354.png" alt=""></p>
 <p>deb   指的是安装包文件<br>deb-src  是deb相关的，还没有编译成deb的源文件  </p>
 <p>生产环境中，尽量用前两种类型的  </p>
-<p><strong>第三方库  </strong><br><img src="/posts/b9efd53/20200127153629331_1188888659.png" alt></p>
+<p><strong>第三方库  </strong><br><img src="/posts/b9efd53/20200127153629331_1188888659.png" alt=""></p>
 <p>apt-key add<br>apt-ket del</p>
-<h6 id="PPA"><a href="#PPA" class="headerlink" title="PPA"></a>PPA</h6><p><img src="/posts/b9efd53/20200127154253164_223311205.png" alt></p>
+<h6 id="PPA"><a href="#PPA" class="headerlink" title="PPA"></a>PPA</h6><p><img src="/posts/b9efd53/20200127154253164_223311205.png" alt=""></p>
 <h6 id="SNAP包管理"><a href="#SNAP包管理" class="headerlink" title="SNAP包管理"></a>SNAP包管理</h6><blockquote>
 <p>发展趋势非常好</p>
 </blockquote>
-<p><img src="/posts/b9efd53/20200127155257588_792061499.png" alt></p>
+<p><img src="/posts/b9efd53/20200127155257588_792061499.png" alt=""></p>
 <h6 id="SNAP包管理-1"><a href="#SNAP包管理-1" class="headerlink" title="SNAP包管理"></a>SNAP包管理</h6><p>可以先安装snap: <code>apt install snap</code>  </p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> snap <span class="token function">find</span> nmap
 
