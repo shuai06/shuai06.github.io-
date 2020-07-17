@@ -340,7 +340,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
 </script>
 
 
@@ -357,6 +357,65 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/a208ada/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="弹出地图并缩放到指定经纬度">
+                            
+                            <span class="card-title">弹出地图并缩放到指定经纬度</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                点击【地图查看】，弹出地图，并缩放到当前某一xx的范围效果大致是这样(图没了)：
+
+
+
+
+先把弹窗的页面元素写出来
+
+&lt;!--弹出层时背景层DIV-->
+&lt;div id="fade" class="black_overlay">
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-09
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/GIS/" class="post-category">
+                                    GIS
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/GIS/">
+                            <span class="chip bg-color">GIS</span>
+                        </a>
+                        
+                        <a href="/tags/webgis/">
+                            <span class="chip bg-color">webgis</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -970,61 +1029,6 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/589bc01a/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="MongoDB简单的curd">
-                            
-                            <span class="card-title">MongoDB简单的curd</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ﻿集合创建：db.createCollection("test_col,",{capped:true, size:10})
-
-# "test_col"  表名字(集合名字)
-# capped， 默认false，不设置上限，true设置上限
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-12-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/数据库/" class="post-category">
-                                    数据库
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/MongoDB/">
-                            <span class="chip bg-color">MongoDB</span>
-                        </a>
-                        
-                        <a href="/tags/数据库/">
-                            <span class="chip bg-color">数据库</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1070,7 +1074,7 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">341.9k</span>&nbsp;字
+                class="white-color">345k</span>&nbsp;字
             
             
             
