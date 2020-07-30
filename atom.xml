@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-07-17T12:57:22.686Z</updated>
+  <updated>2020-07-30T14:47:59.686Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu server-引导过程</title>
+    <link href="http://www.xpshuai.cn/posts/24845/"/>
+    <id>http://www.xpshuai.cn/posts/24845/</id>
+    <published>2020-07-30T14:38:20.000Z</published>
+    <updated>2020-07-30T14:47:59.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;BIOS-UEFI&quot;&gt;&lt;a href=&quot;#BIOS-UEFI&quot; class=&quot;headerlink&quot; title=&quot;BIOS/UEFI&quot;&gt;&lt;/a&gt;BIOS/UEFI&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;打开黑箱看看里面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="引导过程" scheme="http://www.xpshuai.cn/tags/%E5%BC%95%E5%AF%BC%E8%BF%87%E7%A8%8B/"/>
+    
+      <category term="BIOS" scheme="http://www.xpshuai.cn/tags/BIOS/"/>
+    
+      <category term="UEFI" scheme="http://www.xpshuai.cn/tags/UEFI/"/>
+    
+      <category term="grub" scheme="http://www.xpshuai.cn/tags/grub/"/>
+    
+      <category term="内核" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E6%A0%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu server-代理&amp;VPN</title>
@@ -71,9 +109,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
-    
       <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
     
   </entry>
   
@@ -97,9 +135,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
-    
       <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
+    
+      <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -553,35 +591,6 @@
       <category term="KVM" scheme="http://www.xpshuai.cn/tags/KVM/"/>
     
       <category term="虚拟化" scheme="http://www.xpshuai.cn/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-版本控制</title>
-    <link href="http://www.xpshuai.cn/posts/52930/"/>
-    <id>http://www.xpshuai.cn/posts/52930/</id>
-    <published>2020-05-10T07:14:50.000Z</published>
-    <updated>2020-05-22T18:43:28.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;107-版本控制&quot;&gt;&lt;a href=&quot;#107-版本控制&quot; class=&quot;headerlink&quot; title=&quot;107-版本控制&quot;&gt;&lt;/a&gt;107-版本控制&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="Git" scheme="http://www.xpshuai.cn/tags/Git/"/>
-    
-      <category term="GitLab" scheme="http://www.xpshuai.cn/tags/GitLab/"/>
     
   </entry>
   
