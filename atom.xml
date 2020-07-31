@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-07-30T14:47:59.686Z</updated>
+  <updated>2020-07-31T09:04:41.961Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ubuntu server-远程管理 Webmin&amp;usermin&amp;Xrdp</title>
+    <link href="http://www.xpshuai.cn/posts/40012/"/>
+    <id>http://www.xpshuai.cn/posts/40012/</id>
+    <published>2020-07-31T06:38:04.000Z</published>
+    <updated>2020-07-31T09:04:41.961Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Webmin&quot;&gt;&lt;a href=&quot;#Webmin&quot; class=&quot;headerlink&quot; title=&quot;Webmin&quot;&gt;&lt;/a&gt;Webmin&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;基于WEB的系统远程管理&lt;ul&gt;
+&lt;li&gt;基于图形化的友好操作界面&lt;/li&gt;
+&lt;li&gt;多开启一个
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="Webmin" scheme="http://www.xpshuai.cn/tags/Webmin/"/>
+    
+      <category term="usermin" scheme="http://www.xpshuai.cn/tags/usermin/"/>
+    
+      <category term="Xrdp" scheme="http://www.xpshuai.cn/tags/Xrdp/"/>
+    
+      <category term="远程管理" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu server-Zabbix</title>
+    <link href="http://www.xpshuai.cn/posts/60461/"/>
+    <id>http://www.xpshuai.cn/posts/60461/</id>
+    <published>2020-07-31T06:34:27.000Z</published>
+    <updated>2020-07-31T06:41:03.615Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Zabbix – 最流行的开源的企业级监控系统之一&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;基本可对全平台，全系统做监控：网络设备、操作系统、应用程序&lt;/li&gt;
+&lt;li&gt;Unix、L inux、Windows、MacOS&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="Zabbix" scheme="http://www.xpshuai.cn/tags/Zabbix/"/>
+    
+      <category term="监控" scheme="http://www.xpshuai.cn/tags/%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ubuntu server-引导过程</title>
     <link href="http://www.xpshuai.cn/posts/24845/"/>
     <id>http://www.xpshuai.cn/posts/24845/</id>
     <published>2020-07-30T14:38:20.000Z</published>
-    <updated>2020-07-30T14:47:59.686Z</updated>
+    <updated>2020-07-30T14:48:44.179Z</updated>
     
     <summary type="html">
     
@@ -189,9 +256,9 @@
     
       <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
-    
       <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
+    
+      <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
     
   </entry>
   
@@ -218,9 +285,9 @@
     
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
-      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
-    
       <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
+    
+      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
     
   </entry>
   
@@ -528,69 +595,6 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
     
       <category term="安全加固" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-容器</title>
-    <link href="http://www.xpshuai.cn/posts/25260/"/>
-    <id>http://www.xpshuai.cn/posts/25260/</id>
-    <published>2020-05-11T08:33:51.000Z</published>
-    <updated>2020-05-22T18:43:10.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;容器&quot;&gt;&lt;a href=&quot;#容器&quot; class=&quot;headerlink&quot; title=&quot;容器&quot;&gt;&lt;/a&gt;容器&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;有了新武器，并不表示旧武器没有用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;题外话&lt;/strong
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="容器" scheme="http://www.xpshuai.cn/tags/%E5%AE%B9%E5%99%A8/"/>
-    
-      <category term="Docker" scheme="http://www.xpshuai.cn/tags/Docker/"/>
-    
-      <category term="LXD" scheme="http://www.xpshuai.cn/tags/LXD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-虚拟化</title>
-    <link href="http://www.xpshuai.cn/posts/64674/"/>
-    <id>http://www.xpshuai.cn/posts/64674/</id>
-    <published>2020-05-10T14:18:38.000Z</published>
-    <updated>2020-05-22T18:43:22.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;云计算&quot;&gt;&lt;a href=&quot;#云计算&quot; class=&quot;headerlink&quot; title=&quot; 云计算 &quot;&gt;&lt;/a&gt;&lt;font color=&quot;red&quot;&gt; 云计算 &lt;/font&gt;&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;资源就像水龙头里的水，按需索取&lt;/p&gt;
-&lt;/bl
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="KVM" scheme="http://www.xpshuai.cn/tags/KVM/"/>
-    
-      <category term="虚拟化" scheme="http://www.xpshuai.cn/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/"/>
     
   </entry>
   
