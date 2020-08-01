@@ -485,7 +485,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.9k
                 </div>
                 
 
@@ -568,7 +568,19 @@ Juju
 <li>需要硬件支持(BIOS设置开启)</li>
 <li>CPU特性 Hypervision</li>
 </ul>
-<h3 id="KVM"><a href="#KVM" class="headerlink" title="KVM"></a>KVM</h3><p><strong>Kernel-based Virtual Machine（KVM）</strong><br><img src="/posts/64674/20200510201008473_557028487.png" alt=""><br>把<code>KVM</code>和<code>QEMU</code>结合在一起<br>通过<code>libvirt</code>库实现Linux与虚拟化通信的接口</p>
+<h3 id="KVM"><a href="#KVM" class="headerlink" title="KVM"></a>KVM</h3><p><strong>Kernel-based Virtual Machine（KVM）</strong></p>
+<ul>
+<li>基于内核的虚拟机(KVM)和快速仿真器(QEMU)组成的虚拟化套件( QEMU/KVM )</li>
+<li>QEMU/KVM在没有硬件虚拟化支持下，虚拟机需要运行在QEMU模拟器中</li>
+<li>有硬件虚拟化支持下，<strong>接近硬件物理机速度运行</strong></li>
+<li>虚拟化扩展决定性能( virtualization extensions )</li>
+<li>Ubuntu默认内建支持的虚拟化方案</li>
+<li>内建于Linux内核( Intel 的kvm-intel.ko或AMD的kvm-amd.ko )</li>
+<li>libvirt库是Linux与虚拟化通信的统一 接口</li>
+<li>处理在主机和客户机之间分离任务所需的低级指令</li>
+<li><strong>无法并行运行VirtualBox和KVM虛拟机</strong>，它们会抢占CPU的虚拟化功能</li>
+</ul>
+<p>把<code>KVM</code>和<code>QEMU</code>结合在一起<br>通过<code>libvirt</code>库实现Linux与虚拟化通信的接口</p>
 <p><strong>验证硬件平台支持虚拟化拓展(较新的硬件全部支持)</strong><br>四种方法</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># F1</span>
 <span class="token function">egrep</span> -c <span class="token string">'(vmx|svm)'</span> /proc/cpuinfo  <span class="token comment" spellcheck="true"># 结果不为0即支持</span>
@@ -1041,9 +1053,11 @@ cloud-localds user-data.img cloud-config  <span class="token comment" spellcheck
 有了新武器，并不表示旧武器没有用
 
 题外话
+
 容器
+
 SDN -&gt; 软件定义网络
-容器 -&gt; 基于操作系统内核，共享宿主机的CPU        -&gt; 操作系统的进程之间进行隔离        -&gt; 安全性比虚拟机
+容器 -&gt; 基于操作系统内核，共享宿主机的CPU        -&gt; 操作系统的进程之间进行隔离        -&gt; 安全性比虚
                         
                     </div>
                     <div class="publish-info">
@@ -1330,7 +1344,7 @@ SDN -&gt; 软件定义网络
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">353.9k</span>&nbsp;字
+                class="white-color">355k</span>&nbsp;字
             
             
             

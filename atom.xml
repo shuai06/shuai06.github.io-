@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-01T03:30:38.455Z</updated>
+  <updated>2020-08-01T08:42:41.335Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ubuntu server-入侵检测IDS</title>
+    <link href="http://www.xpshuai.cn/posts/35785/"/>
+    <id>http://www.xpshuai.cn/posts/35785/</id>
+    <published>2020-08-01T03:41:09.000Z</published>
+    <updated>2020-08-01T08:42:41.335Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;入侵检测-IDS&quot;&gt;&lt;a href=&quot;#入侵检测-IDS&quot; class=&quot;headerlink&quot; title=&quot;入侵检测(IDS)&quot;&gt;&lt;/a&gt;入侵检测(IDS)&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;安全的关键在于看见&lt;/li&gt;
+&lt;li&gt;入侵检测( Intrusion Det
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="IDS" scheme="http://www.xpshuai.cn/tags/IDS/"/>
+    
+      <category term="Tripwire" scheme="http://www.xpshuai.cn/tags/Tripwire/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ubuntu server-网络工具</title>
     <link href="http://www.xpshuai.cn/posts/63455/"/>
     <id>http://www.xpshuai.cn/posts/63455/</id>
     <published>2020-08-01T03:30:46.000Z</published>
-    <updated>2020-08-01T03:30:38.455Z</updated>
+    <updated>2020-08-01T09:19:27.083Z</updated>
     
     <summary type="html">
     
@@ -248,7 +275,7 @@
     <link href="http://www.xpshuai.cn/posts/43174/"/>
     <id>http://www.xpshuai.cn/posts/43174/</id>
     <published>2020-07-08T05:55:23.000Z</published>
-    <updated>2020-07-21T05:03:21.376Z</updated>
+    <updated>2020-08-01T09:28:58.663Z</updated>
     
     <summary type="html">
     
@@ -266,6 +293,27 @@
       <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
     
       <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.xpshuai.cn/posts/0/"/>
+    <id>http://www.xpshuai.cn/posts/0/</id>
+    <published>2020-06-14T02:51:09.294Z</published>
+    <updated>2020-08-01T08:59:06.081Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;title: shell脚本基本知识&lt;br&gt;categories: Linux&lt;br&gt;tags:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux&lt;/li&gt;
+&lt;li&gt;Shell&lt;br&gt;abbrlink: 44249&lt;br&gt;date: 2020-03-16 17:01:17&lt;br&gt;keywords:&lt;br&gt;description:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.xpshuai.cn/title.jpg&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
     
   </entry>
   
@@ -469,7 +517,7 @@
     <link href="http://www.xpshuai.cn/posts/6/"/>
     <id>http://www.xpshuai.cn/posts/6/</id>
     <published>2020-05-26T01:52:09.000Z</published>
-    <updated>2020-05-25T22:11:16.000Z</updated>
+    <updated>2020-08-01T08:56:48.810Z</updated>
     
     <summary type="html">
     
@@ -544,64 +592,6 @@
       <category term="phpMyadmin" scheme="http://www.xpshuai.cn/tags/phpMyadmin/"/>
     
       <category term="secure-file-priv" scheme="http://www.xpshuai.cn/tags/secure-file-priv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>绕过CDN寻找真实IP</title>
-    <link href="http://www.xpshuai.cn/posts/58846/"/>
-    <id>http://www.xpshuai.cn/posts/58846/</id>
-    <published>2020-05-25T07:12:44.000Z</published>
-    <updated>2020-05-24T23:33:40.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在没有CDN的情况下，直接&lt;code&gt;ping&lt;/code&gt;或&lt;code&gt;nslookup&lt;/code&gt;或&lt;code&gt;dig&lt;/code&gt;即可得到真实IP地址，但是有的站点使用了CDN。&lt;br&gt;两种简单检测有无CDN的方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;多地ping&lt;/li&gt;
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="CDN" scheme="http://www.xpshuai.cn/tags/CDN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-安全相关设置</title>
-    <link href="http://www.xpshuai.cn/posts/19808/"/>
-    <id>http://www.xpshuai.cn/posts/19808/</id>
-    <published>2020-05-20T05:12:19.000Z</published>
-    <updated>2020-05-22T18:42:24.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;142-安全设置&quot;&gt;&lt;a href=&quot;#142-安全设置&quot; class=&quot;headerlink&quot; title=&quot;142-安全设置&quot;&gt;&lt;/a&gt;142-安全设置&lt;/h1&gt;&lt;p&gt;Linux默认安装已经很安全，当很多的了解安全仍非常必要&lt;br&gt;打造一个相当安全的系统（增加
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="UFW" scheme="http://www.xpshuai.cn/tags/UFW/"/>
-    
-      <category term="文件加密" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6%E5%8A%A0%E5%AF%86/"/>
-    
-      <category term="AppArmor" scheme="http://www.xpshuai.cn/tags/AppArmor/"/>
-    
-      <category term="ClamAV" scheme="http://www.xpshuai.cn/tags/ClamAV/"/>
     
   </entry>
   
