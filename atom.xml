@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-01T01:26:50.664Z</updated>
+  <updated>2020-08-01T03:30:38.455Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ubuntu server-网络工具</title>
+    <link href="http://www.xpshuai.cn/posts/63455/"/>
+    <id>http://www.xpshuai.cn/posts/63455/</id>
+    <published>2020-08-01T03:30:46.000Z</published>
+    <updated>2020-08-01T03:30:38.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;网络带宽&quot;&gt;&lt;a href=&quot;#网络带宽&quot; class=&quot;headerlink&quot; title=&quot;网络带宽&quot;&gt;&lt;/a&gt;网络带宽&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;开测试防火墙性能NetIO&lt;/li&gt;
+&lt;li&gt;光纤专线的带宽是否缩水&lt;/li&gt;
+&lt;li&gt;实际承受的流量&lt;/li&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="带宽监测" scheme="http://www.xpshuai.cn/tags/%E5%B8%A6%E5%AE%BD%E7%9B%91%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ubuntu server-Rkhunter</title>
     <link href="http://www.xpshuai.cn/posts/53417/"/>
     <id>http://www.xpshuai.cn/posts/53417/</id>
-    <published>2020-07-31T09:29:35.000Z</published>
-    <updated>2020-08-01T01:26:50.664Z</updated>
+    <published>2020-08-01T01:29:35.000Z</published>
+    <updated>2020-08-01T02:44:43.225Z</updated>
     
     <summary type="html">
     
@@ -287,9 +317,9 @@
     
       <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
-    
       <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
+    
+      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
     
   </entry>
   
@@ -316,9 +346,9 @@
     
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
-      <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
-    
       <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
+    
+      <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
     
   </entry>
   
@@ -370,9 +400,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
       <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
       <category term="远程命令执行" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
     
@@ -397,9 +427,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="CouchDB" scheme="http://www.xpshuai.cn/tags/CouchDB/"/>
-    
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="CouchDB" scheme="http://www.xpshuai.cn/tags/CouchDB/"/>
     
       <category term="命令执行" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
     
@@ -572,35 +602,6 @@
       <category term="AppArmor" scheme="http://www.xpshuai.cn/tags/AppArmor/"/>
     
       <category term="ClamAV" scheme="http://www.xpshuai.cn/tags/ClamAV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>内网第三章-隐藏隧道通信技术</title>
-    <link href="http://www.xpshuai.cn/posts/35263/"/>
-    <id>http://www.xpshuai.cn/posts/35263/</id>
-    <published>2020-05-16T13:47:03.000Z</published>
-    <updated>2020-05-25T00:24:28.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;内网第三章-隐藏隧道通信技术&quot;&gt;&lt;a href=&quot;#内网第三章-隐藏隧道通信技术&quot; class=&quot;headerlink&quot; title=&quot;内网第三章-隐藏隧道通信技术&quot;&gt;&lt;/a&gt;内网第三章-隐藏隧道通信技术&lt;/h1&gt;&lt;h2 id=&quot;内网连通性判断&quot;&gt;&lt;a href=
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="内网" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E7%BD%91/"/>
-    
-      <category term="隧道技术" scheme="http://www.xpshuai.cn/tags/%E9%9A%A7%E9%81%93%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="端口转发" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/"/>
     
   </entry>
   

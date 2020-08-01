@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.2k
                 </div>
                 
 
@@ -518,13 +518,29 @@ tcp_scoket <span class="token operator">=</span> socket<span class="token punctu
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>套接字对象的方法：</strong></p>
 <p>服务端套接字函数：</p>
-<p><img src="/posts/15426/20200224115918247_1326600052.png"></p>
+<p><img src="http://image.xpshuai.cn/socket01%20.png"></p>
 <p>公共用途套接字函数：</p>
-<p><img src="/posts/15426/20200224120055141_721974743.png"></p>
-<blockquote>
+<p><img src="http://image.xpshuai.cn/socket02.png"></p>
 <p>创建连接之后要关闭</p>
-</blockquote>
-<h6 id="实例"><a href="#实例" class="headerlink" title="实例:"></a>实例:</h6><p><img src="/posts/15426/20200224120328176_1633754561.png"></p>
+<h6 id="实例"><a href="#实例" class="headerlink" title="实例:"></a>实例:</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1.创建-个TCP服务器</span>
+SS. <span class="token operator">=</span> socket<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#创建服务器套接字</span>
+ss.bind<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#把地址绑定到套接字上</span>
+s.listen<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#监听连接</span>
+inf loop<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">#服务器无限循环</span>
+    CS.<span class="token operator">=</span> ss.accept<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#接受客户端连接</span>
+cmmon loop<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">#通信循环</span>
+    s.recy0/cs.send0    <span class="token comment" spellcheck="true">#对话(接受与发送)</span>
+cs.close0    <span class="token comment" spellcheck="true">#关闭客户端套接字</span>
+
+
+<span class="token comment" spellcheck="true">## 2、创建一个TCP客户端</span>
+cs.socket<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#创建客户端套接字</span>
+cs.connect<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#尝试连接套接字</span>
+common loop:    <span class="token comment" spellcheck="true">#通信循环</span>
+    cs.recx0/cs.send<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#对话(接受与发送)</span>
+cs.close<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#关闭客户端套接字</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>反弹Shell：</strong></p>
 <p>在客户端获取服务端的shell</p>
 <p>1.获取Linux的shell：</p>
@@ -1389,7 +1405,7 @@ recv 阻塞:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">352.9k</span>&nbsp;字
+                class="white-color">353.9k</span>&nbsp;字
             
             
             
