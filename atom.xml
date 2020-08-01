@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-07-31T09:04:41.961Z</updated>
+  <updated>2020-08-01T01:26:50.664Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ubuntu server-Rkhunter</title>
+    <link href="http://www.xpshuai.cn/posts/53417/"/>
+    <id>http://www.xpshuai.cn/posts/53417/</id>
+    <published>2020-07-31T09:29:35.000Z</published>
+    <updated>2020-08-01T01:26:50.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;谣言&quot;&gt;&lt;a href=&quot;#谣言&quot; class=&quot;headerlink&quot; title=&quot;谣言&quot;&gt;&lt;/a&gt;谣言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Linux系统很安全，从不感染病毒&lt;/li&gt;
+&lt;li&gt;已知的恶意软件没有Windows系统多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="Rkhunter" scheme="http://www.xpshuai.cn/tags/Rkhunter/"/>
+    
+      <category term="安全检查" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ubuntu server-远程管理 Webmin&amp;usermin&amp;Xrdp</title>
     <link href="http://www.xpshuai.cn/posts/40012/"/>
     <id>http://www.xpshuai.cn/posts/40012/</id>
     <published>2020-07-31T06:38:04.000Z</published>
-    <updated>2020-07-31T09:04:41.961Z</updated>
+    <updated>2020-07-31T09:06:58.109Z</updated>
     
     <summary type="html">
     
@@ -40,13 +71,13 @@
     
       <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
     
+      <category term="远程管理" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
+    
       <category term="Webmin" scheme="http://www.xpshuai.cn/tags/Webmin/"/>
     
       <category term="usermin" scheme="http://www.xpshuai.cn/tags/usermin/"/>
     
       <category term="Xrdp" scheme="http://www.xpshuai.cn/tags/Xrdp/"/>
-    
-      <category term="远程管理" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
@@ -55,7 +86,7 @@
     <link href="http://www.xpshuai.cn/posts/60461/"/>
     <id>http://www.xpshuai.cn/posts/60461/</id>
     <published>2020-07-31T06:34:27.000Z</published>
-    <updated>2020-07-31T06:41:03.615Z</updated>
+    <updated>2020-07-31T09:06:58.115Z</updated>
     
     <summary type="html">
     
@@ -570,31 +601,6 @@
       <category term="隧道技术" scheme="http://www.xpshuai.cn/tags/%E9%9A%A7%E9%81%93%E6%8A%80%E6%9C%AF/"/>
     
       <category term="端口转发" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux安全加固(初级)</title>
-    <link href="http://www.xpshuai.cn/posts/55264/"/>
-    <id>http://www.xpshuai.cn/posts/55264/</id>
-    <published>2020-05-11T09:54:47.000Z</published>
-    <updated>2020-05-22T18:58:26.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Linux安全加固&quot;&gt;&lt;a href=&quot;#Linux安全加固&quot; class=&quot;headerlink&quot; title=&quot;Linux安全加固&quot;&gt;&lt;/a&gt;Linux安全加固&lt;/h1&gt;&lt;h4 id=&quot;一、安装和升级&quot;&gt;&lt;a href=&quot;#一、安装和升级&quot; class=&quot;he
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="安全加固" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E5%8A%A0%E5%9B%BA/"/>
     
   </entry>
   
