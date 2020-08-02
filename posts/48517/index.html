@@ -1203,8 +1203,8 @@ Shellabbrlink: 44249date: 2020-03-16 17:01:17keywords:description:
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -1216,7 +1216,7 @@ Shellabbrlink: 44249date: 2020-03-16 17:01:17keywords:description:
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

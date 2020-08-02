@@ -1091,8 +1091,8 @@ ping 127.0.0.1 如果能通，说明本机的TCP/IP协议已经配置成功啦ar
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -1104,7 +1104,7 @@ ping 127.0.0.1 如果能通，说明本机的TCP/IP协议已经配置成功啦ar
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

@@ -1250,8 +1250,8 @@ C/S网络编程Server端进行设置，首先创建一个通信端点，让serve
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -1263,7 +1263,7 @@ C/S网络编程Server端进行设置，首先创建一个通信端点，让serve
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

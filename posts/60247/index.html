@@ -1136,8 +1136,8 @@ Chardet 字符编码探测器，可以自动检测文本、网页、
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -1149,7 +1149,7 @@ Chardet 字符编码探测器，可以自动检测文本、网页、
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

@@ -855,12 +855,12 @@ requests<span class="token punctuation">.</span>post<span class="token punctuati
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/未授权访问/">
-                        <span class="chip bg-color">未授权访问</span>
-                    </a>
-                    
                     <a href="/tags/CouchDB/">
                         <span class="chip bg-color">CouchDB</span>
+                    </a>
+                    
+                    <a href="/tags/未授权访问/">
+                        <span class="chip bg-color">未授权访问</span>
                     </a>
                     
                     <a href="/tags/命令执行/">
@@ -1027,8 +1027,8 @@ requests<span class="token punctuation">.</span>post<span class="token punctuati
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -1040,7 +1040,7 @@ requests<span class="token punctuation">.</span>post<span class="token punctuati
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
