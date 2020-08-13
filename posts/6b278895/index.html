@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    743
+                    751
                 </div>
                 
 
@@ -513,8 +513,8 @@
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'gun runing'</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> m<span class="token operator">*</span>m
 
-<span class="token comment" spellcheck="true">## @f1  ->   f1( gun) -> f2</span>
-n<span class="token operator">=</span>gun<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#   gun(5) -> 就是在运行  f2(5)</span>
+<span class="token comment" spellcheck="true">## @f1  -&gt;   f1( gun) -&gt; f2</span>
+n<span class="token operator">=</span>gun<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">#   gun(5) -&gt; 就是在运行  f2(5)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
 
 
@@ -537,7 +537,7 @@ n<span class="token operator">=</span>gun<span class="token punctuation">(</span
         <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%dx%d=%2s'</span><span class="token operator">%</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span>i<span class="token punctuation">,</span>i<span class="token operator">*</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span>end <span class="token operator">=</span> <span class="token string">' '</span><span class="token punctuation">)</span>
         <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#@run_time -> run_time(test2)  -> new_fun</span>
+<span class="token comment" spellcheck="true">#@run_time -&gt; run_time(test2)  -&gt; new_fun</span>
 n <span class="token operator">=</span> test2<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#就相当于运行new_time(5)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h6><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 写一个login函数  然后写一个装饰器，模拟登录过程：让程序延迟3秒 在延迟过程中输出正在验证</span>
@@ -578,8 +578,8 @@ login<span class="token punctuation">(</span><span class="token punctuation">)</
 n <span class="token operator">=</span>  test<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#    self.func : test 函数体</span>
 n<span class="token punctuation">(</span><span class="token punctuation">)</span>           <span class="token comment" spellcheck="true">#   n()  调用test（）</span>
 
-<span class="token comment" spellcheck="true">#  1.  @Tset_Class  ：  Tset_Class( test )  -> 相当于：t = Tset_Class( test )</span>
-<span class="token comment" spellcheck="true">#  2.  test()  ->  相当于：   调用实例的call方法 -> 返回 self.func函数体</span>
+<span class="token comment" spellcheck="true">#  1.  @Tset_Class  ：  Tset_Class( test )  -&gt; 相当于：t = Tset_Class( test )</span>
+<span class="token comment" spellcheck="true">#  2.  test()  -&gt;  相当于：   调用实例的call方法 -&gt; 返回 self.func函数体</span>
 <span class="token comment" spellcheck="true">#  3.  n =  test()   ，n()  调用test（）</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="类中常见的几种装饰器"><a href="#类中常见的几种装饰器" class="headerlink" title="类中常见的几种装饰器"></a>类中常见的几种装饰器</h6><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -839,7 +839,7 @@ t<span class="token punctuation">.</span>show<span class="token punctuation">(</
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1200,7 +1200,7 @@ def fx(x):
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">355k</span>&nbsp;字
+                class="white-color">358.6k</span>&nbsp;字
             
             
             

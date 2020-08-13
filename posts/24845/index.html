@@ -665,7 +665,7 @@ grub-mkpasswd-pbkdf2    <span class="token comment" spellcheck="true"># 输入�
 <span class="token comment" spellcheck="true"># 此方法不适合远程托管到IDC机房的机器（一重启在grup时就要输入密码，此时SSH还未连接）</span>
 
 <span class="token comment" spellcheck="true"># 指定启动项用户</span>
-menuentry --<span class="token operator">></span> --users xps
+menuentry --<span class="token operator">&gt;</span> --users xps
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="其他BootLoader-LILO-Grub之外的"><a href="#其他BootLoader-LILO-Grub之外的" class="headerlink" title="其他BootLoader(LILO, Grub之外的)"></a>其他BootLoader(LILO, Grub之外的)</h4><p><strong>1.SYSL INUX</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash">从FAT分区引导系统的BootLoader <span class="token punctuation">(</span>U盘启动时<span class="token punctuation">)</span>
@@ -749,10 +749,10 @@ menuentry --<span class="token operator">></span> --users xps
 <p>除了运行级，SysV也使用启动脚本控制程序启动、停止<br>启动脚本存放于<code>/etc/init.d/</code>中，通过<code>/etc/rcX.d/</code>目录调用(X 运行级)<br>脚本文件名<code>S: Start</code>; <code>K: Kill/Stop</code>，<code>数字表示优先级</code>(依赖顺序)<br>通过具体脚本启动停止程序稍嫌麻烦，系统包含工具指定脚本的运行级</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 给我们提供了管理工具</span>
 <span class="token function">chkconfig</span> / update-rc.d  <span class="token comment" spellcheck="true">#用于查看和修改程序的运行级(RedHat / Debian)</span>
-<span class="token function">chkconfig</span> --list <span class="token operator">&lt;</span>program_name<span class="token operator">></span>    <span class="token comment" spellcheck="true">#查看</span>
-<span class="token function">chkconfig</span> -- levels 12345 <span class="token operator">&lt;</span>program_name<span class="token operator">></span> on    <span class="token comment" spellcheck="true">#设置</span>
-update-rc.d program defaults / update rc.d <span class="token operator">&lt;</span>program_name<span class="token operator">></span> remove
-update- -rc.d -f <span class="token operator">&lt;</span>program_name<span class="token operator">></span> start 40 2 34 5. stop 80 0 1 6. <span class="token comment" spellcheck="true">#具体运行级别和顺序(在那几个级别启动这个程序，在那几个级别stop这个程序)  40、80指在具体运行级中程序的启动顺序(0-99)</span>
+<span class="token function">chkconfig</span> --list <span class="token operator">&lt;</span>program_name<span class="token operator">&gt;</span>    <span class="token comment" spellcheck="true">#查看</span>
+<span class="token function">chkconfig</span> -- levels 12345 <span class="token operator">&lt;</span>program_name<span class="token operator">&gt;</span> on    <span class="token comment" spellcheck="true">#设置</span>
+update-rc.d program defaults / update rc.d <span class="token operator">&lt;</span>program_name<span class="token operator">&gt;</span> remove
+update- -rc.d -f <span class="token operator">&lt;</span>program_name<span class="token operator">&gt;</span> start 40 2 34 5. stop 80 0 1 6. <span class="token comment" spellcheck="true">#具体运行级别和顺序(在那几个级别启动这个程序，在那几个级别stop这个程序)  40、80指在具体运行级中程序的启动顺序(0-99)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>action字段</strong>(在Ubuntu中已经找不到了)</p>
 <ul>
@@ -861,7 +861,7 @@ wall xxxxxxx   <span class="token comment" spellcheck="true"># 给所有登录�
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>默认target</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 系统引导后默认启动的target(default.target)</span>
-/lib/systemd/system/default.target -<span class="token operator">></span> graphical.target    <span class="token comment" spellcheck="true"># 只需对目标做个软链接</span>
+/lib/systemd/system/default.target -<span class="token operator">&gt;</span> graphical.target    <span class="token comment" spellcheck="true"># 只需对目标做个软链接</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>systemctl程序</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 常用参数</span>
@@ -1138,7 +1138,7 @@ lsdev    <span class="token comment" spellcheck="true"># 查看以上综合参�
 
 <span class="token comment" spellcheck="true">## 修改内核参数</span>
 <span class="token function">cat</span> /proc/sys/net/ipv4/ip_forward/        <span class="token comment" spellcheck="true"># 如：开启路由功能，查看</span>
-<span class="token keyword">echo</span> 1 <span class="token operator">></span> /proc/sys/net/ipv4/ip_forward    <span class="token comment" spellcheck="true"># 如：开启路由功能，修改</span>
+<span class="token keyword">echo</span> 1 <span class="token operator">&gt;</span> /proc/sys/net/ipv4/ip_forward    <span class="token comment" spellcheck="true"># 如：开启路由功能，修改</span>
 
 sysctl net.ipv4.ip_ forward1    <span class="token comment" spellcheck="true"># 或者使用命令，查看</span>
 /sysctl -W net.ipv4.ip_ _forward<span class="token operator">=</span>1   <span class="token comment" spellcheck="true"># 使用命令开启，修改</span>
@@ -1377,7 +1377,7 @@ sysctl net.ipv4.ip_ forward1    <span class="token comment" spellcheck="true"># 
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1756,7 +1756,7 @@ Unix、L inux、Windows、MacOS
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">355k</span>&nbsp;字
+                class="white-color">358.6k</span>&nbsp;字
             
             
             

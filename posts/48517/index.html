@@ -627,13 +627,13 @@ tcping<span class="token punctuation">.</span>exe ‐n 1 192<span class="token p
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h6 id="5-基于powershell"><a href="#5-基于powershell" class="headerlink" title="5.基于powershell"></a>5.基于powershell</h6><pre class="line-numbers language-powershell"><code class="language-powershell"><span class="token comment" spellcheck="true">## 一句话扫描:</span>
 <span class="token comment" spellcheck="true">#单IP:</span>
-445 <span class="token punctuation">|</span> <span class="token operator">%</span><span class="token punctuation">{</span> <span class="token function">echo</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new‐object Net<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">)</span><span class="token punctuation">.</span>Connect<span class="token punctuation">(</span><span class="token string">"192.168.1.119"</span><span class="token punctuation">,</span><span class="token variable">$_</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">"<span class="token variable">$_</span> is open"</span><span class="token punctuation">}</span> 2><span class="token variable">$null</span>
+445 <span class="token punctuation">|</span> <span class="token operator">%</span><span class="token punctuation">{</span> <span class="token function">echo</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new‐object Net<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">)</span><span class="token punctuation">.</span>Connect<span class="token punctuation">(</span><span class="token string">"192.168.1.119"</span><span class="token punctuation">,</span><span class="token variable">$_</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">"<span class="token variable">$_</span> is open"</span><span class="token punctuation">}</span> 2&gt;<span class="token variable">$null</span>
 
 <span class="token comment" spellcheck="true">#多ip:</span>
-1<span class="token punctuation">.</span><span class="token punctuation">.</span>5 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span> <span class="token variable">$a</span> = <span class="token variable">$_</span><span class="token punctuation">;</span> 445 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span><span class="token function">echo</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new‐objectNet<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">)</span><span class="token punctuation">.</span>Connect<span class="token punctuation">(</span><span class="token string">"192.168.1.<span class="token variable">$a</span>"</span><span class="token punctuation">,</span><span class="token variable">$_</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">"Port <span class="token variable">$_</span> is open"</span><span class="token punctuation">}</span>2><span class="token variable">$null</span><span class="token punctuation">}</span>
+1<span class="token punctuation">.</span><span class="token punctuation">.</span>5 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span> <span class="token variable">$a</span> = <span class="token variable">$_</span><span class="token punctuation">;</span> 445 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span><span class="token function">echo</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new‐objectNet<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">)</span><span class="token punctuation">.</span>Connect<span class="token punctuation">(</span><span class="token string">"192.168.1.<span class="token variable">$a</span>"</span><span class="token punctuation">,</span><span class="token variable">$_</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">"Port <span class="token variable">$_</span> is open"</span><span class="token punctuation">}</span>2&gt;<span class="token variable">$null</span><span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">#多port,多IP:</span>
-118<span class="token punctuation">.</span><span class="token punctuation">.</span>119 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span> <span class="token variable">$a</span> = <span class="token variable">$_</span><span class="token punctuation">;</span> <span class="token function">write</span>‐host <span class="token string">"‐‐‐‐‐‐"</span><span class="token punctuation">;</span> <span class="token function">write</span>‐host <span class="token string">"192.168.1.<span class="token variable">$a</span>"</span><span class="token punctuation">;</span> 80<span class="token punctuation">,</span>445 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span><span class="token function">echo</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new‐object Net<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">)</span><span class="token punctuation">.</span>Connect<span class="token punctuation">(</span><span class="token string">"192.168.1.<span class="token variable">$a</span>"</span><span class="token punctuation">,</span><span class="token variable">$_</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">"Port <span class="token variable">$_</span> is open"</span><span class="token punctuation">}</span> 2><span class="token variable">$null</span><span class="token punctuation">}</span>
+118<span class="token punctuation">.</span><span class="token punctuation">.</span>119 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span> <span class="token variable">$a</span> = <span class="token variable">$_</span><span class="token punctuation">;</span> <span class="token function">write</span>‐host <span class="token string">"‐‐‐‐‐‐"</span><span class="token punctuation">;</span> <span class="token function">write</span>‐host <span class="token string">"192.168.1.<span class="token variable">$a</span>"</span><span class="token punctuation">;</span> 80<span class="token punctuation">,</span>445 <span class="token punctuation">|</span> <span class="token operator">%</span> <span class="token punctuation">{</span><span class="token function">echo</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>new‐object Net<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">)</span><span class="token punctuation">.</span>Connect<span class="token punctuation">(</span><span class="token string">"192.168.1.<span class="token variable">$a</span>"</span><span class="token punctuation">,</span><span class="token variable">$_</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">"Port <span class="token variable">$_</span> is open"</span><span class="token punctuation">}</span> 2&gt;<span class="token variable">$null</span><span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="基于MSF发现内网存活主机"><a href="#基于MSF发现内网存活主机" class="headerlink" title=" 基于MSF发现内网存活主机 "></a><font color="red"> 基于MSF发现内网存活主机 </font></h4><h6 id="一"><a href="#一" class="headerlink" title="一"></a>一</h6><p>search搜索</p>
 <pre class="line-numbers language-bash"><code class="language-bash">search scanner type:auxiliary
@@ -681,13 +681,13 @@ hosts ‐S 192    <span class="token comment" spellcheck="true"># 搜索关键�
 <p>hosts ‐h  查看参数：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">‐a,‐‐add Add the hosts instead of searching
 ‐d,‐‐delete Delete the hosts instead of searching
-‐c <span class="token operator">&lt;</span>col1,col2<span class="token operator">></span> Only show the given columns <span class="token punctuation">(</span>see list below<span class="token punctuation">)</span>
-‐C <span class="token operator">&lt;</span>col1,col2<span class="token operator">></span> Only show the given columns <span class="token keyword">until</span> the next restart <span class="token punctuation">(</span>se
+‐c <span class="token operator">&lt;</span>col1,col2<span class="token operator">&gt;</span> Only show the given columns <span class="token punctuation">(</span>see list below<span class="token punctuation">)</span>
+‐C <span class="token operator">&lt;</span>col1,col2<span class="token operator">&gt;</span> Only show the given columns <span class="token keyword">until</span> the next restart <span class="token punctuation">(</span>se
 e list below<span class="token punctuation">)</span>
 ‐h,‐‐help Show this <span class="token function">help</span> information
 ‐u,‐‐up Only show hosts <span class="token function">which</span> are up
-‐o <span class="token operator">&lt;</span>file<span class="token operator">></span> Send output to a <span class="token function">file</span> <span class="token keyword">in</span> csv <span class="token function">format</span>
-‐O <span class="token operator">&lt;</span>column<span class="token operator">></span> Order rows by specified column number
+‐o <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span> Send output to a <span class="token function">file</span> <span class="token keyword">in</span> csv <span class="token function">format</span>
+‐O <span class="token operator">&lt;</span>column<span class="token operator">&gt;</span> Order rows by specified column number
 ‐R,‐‐rhosts Set RHOSTS from the results of the search
 ‐S,‐‐search Search string to filter by
 ‐i,‐‐info Change the info of a host
@@ -704,22 +704,22 @@ windows/gather/enum_domains
 windows/gather/enum_ad_user_comments
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>1.基于<code>windows/gather/arp_scanner</code>发现内网存活主机</p>
-<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">></span> run windows/gather/arp_scanner RHOSTS<span class="token operator">=</span>192.168.1.110‐120 THREADS<span class="token operator">=</span>20
+<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">&gt;</span> run windows/gather/arp_scanner RHOSTS<span class="token operator">=</span>192.168.1.110‐120 THREADS<span class="token operator">=</span>20
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>2.基于<code>windows/gather/enum_ad_computers</code>发现域中存活主机</p>
-<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">></span> run windows/gather/enum_ad_computers
+<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">&gt;</span> run windows/gather/enum_ad_computers
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>3.基于<code>windows/gather/enum_computers</code>发现域中存活主机</p>
-<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">></span> run windows/gather/enum_computers
+<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">&gt;</span> run windows/gather/enum_computers
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>4.基于<code>windows/gather/enum_domain</code>发现域中存活主机</p>
-<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">></span> run windows/gather/enum_domain
+<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">&gt;</span> run windows/gather/enum_domain
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>5.基于<code>windows/gather/enum_domains</code> 发现域中存活主机</p>
-<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">></span> run windows/gather/enum_domains
+<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">&gt;</span> run windows/gather/enum_domains
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>6.基于<code>windows/gather/enum_ad_user_comments</code>发现域中存活主机</p>
-<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">></span> run windows/gather/enum_ad_user_comments
+<pre class="line-numbers language-bash"><code class="language-bash">meterpreter <span class="token operator">&gt;</span> run windows/gather/enum_ad_user_comments
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><code>POST</code>下相关模块如下：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">linux/gather/enum_network
@@ -940,7 +940,7 @@ windows/gather/enum_snmp
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1017,7 +1017,7 @@ windows/gather/enum_snmp
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/0/">
+                <a href="/posts/1/">
                     <div class="card-image">
                         
                         
@@ -1291,7 +1291,7 @@ Shellabbrlink: 44249date: 2020-03-16 17:01:17keywords:description:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">355k</span>&nbsp;字
+                class="white-color">358.6k</span>&nbsp;字
             
             
             

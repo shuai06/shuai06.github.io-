@@ -622,7 +622,7 @@ apt <span class="token function">install</span> <span class="token function">git
 <span class="token function">git</span> pull    <span class="token comment" spellcheck="true"># 服务端数据存储结构与客户端不同(数据库)</span>
 
 <span class="token comment" spellcheck="true"># 撤销文件的变更(不仅仅对文件，对版本也可撤销)</span>
-<span class="token function">git</span> checkout <span class="token operator">&lt;</span>file<span class="token operator">></span>    <span class="token comment" spellcheck="true"># 回退最近的版本</span>
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>    <span class="token comment" spellcheck="true"># 回退最近的版本</span>
 
 <span class="token comment" spellcheck="true"># 比对来查看文件的修改变化</span>
 <span class="token function">git</span> <span class="token function">diff</span> index.html    
@@ -641,7 +641,7 @@ tig    <span class="token comment" spellcheck="true"># 直接查看历史版本(
 <span class="token comment" spellcheck="true"># 如果验证没问题，先回到最新状态</span>
 <span class="token function">git</span> checkout master
 
-<span class="token comment" spellcheck="true"># 回滚(只是回滚那一个版本的所做的变更, 不是回退到那，也不影响之后的版本)  --> 从当前最新版本的基础山，去掉前面某一个版本中所做的变更</span>
+<span class="token comment" spellcheck="true"># 回滚(只是回滚那一个版本的所做的变更, 不是回退到那，也不影响之后的版本)  --&gt; 从当前最新版本的基础山，去掉前面某一个版本中所做的变更</span>
 <span class="token function">git</span> revert master ddwe23e353c0d6665406e7c07djaoid2d
 
 
@@ -662,7 +662,7 @@ systemctl reload apache2
 </blockquote>
 <p><strong>创建并同步新库</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 1.在本地新建(已有库)，然后关联到github仓库</span>
-<span class="token keyword">echo</span> <span class="token string">"# new"</span> <span class="token operator">>></span> README.md
+<span class="token keyword">echo</span> <span class="token string">"# new"</span> <span class="token operator">&gt;&gt;</span> README.md
 <span class="token function">git</span> init
 <span class="token function">git</span> add README.md
 <span class="token function">git</span> commit -m <span class="token string">"first"</span>
@@ -682,7 +682,7 @@ systemctl reload apache2
 <span class="token comment" spellcheck="true"># 现在本地创建已有库也行(参照同步到github库)</span>
 <span class="token function">git</span> clone https://github.com/user_name.github.io
 <span class="token function">cd</span> user_name.github.io/
-<span class="token keyword">echo</span> <span class="token string">"hello world"</span> <span class="token operator">></span> index.html    <span class="token comment" spellcheck="true"># 可以在本地设置好页面(静态网站)，再上传</span>
+<span class="token keyword">echo</span> <span class="token string">"hello world"</span> <span class="token operator">&gt;</span> index.html    <span class="token comment" spellcheck="true"># 可以在本地设置好页面(静态网站)，再上传</span>
 <span class="token function">git</span> add <span class="token keyword">.</span>
 <span class="token function">git</span> commit -m <span class="token string">"init commit"</span>
 <span class="token function">git</span> remote add origin https://github.com/user_name.github.io
@@ -690,8 +690,8 @@ systemctl reload apache2
 
 <span class="token comment" spellcheck="true"># 浏览器访问 https://user_name.github.io</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="SSH-Key连接库"><a href="#SSH-Key连接库" class="headerlink" title="SSH Key连接库"></a>SSH Key连接库</h4><pre class="line-numbers language-bash"><code class="language-bash">Clonr or Download -<span class="token operator">></span>    CLone with SSH
-Setting -<span class="token operator">></span>    Deploy keys    -<span class="token operator">></span> Add
+<h4 id="SSH-Key连接库"><a href="#SSH-Key连接库" class="headerlink" title="SSH Key连接库"></a>SSH Key连接库</h4><pre class="line-numbers language-bash"><code class="language-bash">Clonr or Download -<span class="token operator">&gt;</span>    CLone with SSH
+Setting -<span class="token operator">&gt;</span>    Deploy keys    -<span class="token operator">&gt;</span> Add
 <span class="token function">git</span> clone <span class="token function">git</span> @github.com:xps/test.git
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="GitLab"><a href="#GitLab" class="headerlink" title="GitLab"></a>GitLab</h4><p>GitLab是开源的Git库Web界面（包含团队写协作工具 GitLab mattermost -&gt;即时聊天沟通的）<br>基于Ruby语言开发的Web应用程序<br>所有组件全部打包集成（Postgresql, redis, nginx, logrotate, Sidekiq, Unicron）<br>如果想要要支持MySQL数据库，社区版需要手动安装<br>安装需求</p>
@@ -746,10 +746,10 @@ fitlab-ctl show-config    <span class="token comment" spellcheck="true"># 显示
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>F2: 默认是支持普通用户自助注册的(不建议，因为一般是在企业内部使用)</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 限制/禁用普通用户自助注册</span>
-管理员登录 -<span class="token operator">></span> 扳手图标<span class="token punctuation">(</span>全局设置<span class="token punctuation">)</span> -<span class="token operator">></span> Setting
-Sign-up Restrictions<span class="token punctuation">(</span>注册限制<span class="token punctuation">)</span>  -<span class="token operator">></span> Sign-up <span class="token function">enable</span> 不选中   <span class="token comment" spellcheck="true"># 禁用自助；只允许手动创建帐号</span>
-Send confirmation email on sign-up    -<span class="token operator">></span> 指定邮箱域名白名单<span class="token punctuation">(</span>*.lab.com<span class="token punctuation">)</span>
-Doamin Blacklist -<span class="token operator">></span> 设置黑名单
+管理员登录 -<span class="token operator">&gt;</span> 扳手图标<span class="token punctuation">(</span>全局设置<span class="token punctuation">)</span> -<span class="token operator">&gt;</span> Setting
+Sign-up Restrictions<span class="token punctuation">(</span>注册限制<span class="token punctuation">)</span>  -<span class="token operator">&gt;</span> Sign-up <span class="token function">enable</span> 不选中   <span class="token comment" spellcheck="true"># 禁用自助；只允许手动创建帐号</span>
+Send confirmation email on sign-up    -<span class="token operator">&gt;</span> 指定邮箱域名白名单<span class="token punctuation">(</span>*.lab.com<span class="token punctuation">)</span>
+Doamin Blacklist -<span class="token operator">&gt;</span> 设置黑名单
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>建库</strong><br>设置(私有,内部,公开) -&gt; 选择库成员(设置–&gt;成员-&gt;设置用户权限和期限)，clone，同步<br>默认是http协议访问，可以改为ssh公钥访问</p>
 <p>一定程度上支持中文(settings -&gt; Perferences -&gt; Language)</p>
@@ -761,7 +761,7 @@ full name 修改
 email 修改, 且不公开
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>帐号名称</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">Account -<span class="token operator">></span> root修改为别的  <span class="token comment" spellcheck="true"># 安全</span>
+<pre class="line-numbers language-bash"><code class="language-bash">Account -<span class="token operator">&gt;</span> root修改为别的  <span class="token comment" spellcheck="true"># 安全</span>
 <span class="token comment" spellcheck="true"># 帐号(路径这里才是)</span>
 修改得隐蔽一点
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -773,7 +773,7 @@ Add Key        <span class="token comment" spellcheck="true"># 拷贝公钥到gi
 <p><strong>禁止普通用户建库</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash">设置用户可创建0个库<span class="token punctuation">(</span>Project<span class="token punctuation">)</span>
 
-Accoumt and Limit Settings -<span class="token operator">></span> Default projects limit -<span class="token operator">></span> 0
+Accoumt and Limit Settings -<span class="token operator">&gt;</span> Default projects limit -<span class="token operator">&gt;</span> 0
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>Let’s Encrypt证书更新</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 自动更新时间</span>
@@ -999,7 +999,7 @@ letsencrypt<span class="token punctuation">[</span><span class="token string">'a
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1376,7 +1376,7 @@ letsencrypt<span class="token punctuation">[</span><span class="token string">'a
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">355k</span>&nbsp;字
+                class="white-color">358.6k</span>&nbsp;字
             
             
             

@@ -549,8 +549,8 @@ systemctl status inetd.service
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ubuntu中ssh-server和ssh-client都默认安装了</span>
 <span class="token function">sudo</span> apt <span class="token function">install</span> openssh-server  <span class="token comment" spellcheck="true"># openssh是个工具套件(包含了sftp,scp等)</span>
 
-<span class="token comment" spellcheck="true"># sftp(替代了sftp)  &lt;--->  ftp(明文传输,不太安全)</span>
-<span class="token comment" spellcheck="true"># scp(替代了rcp)   &lt;--->  rcp(远程拷贝文件,明文传输,不太安全)</span>
+<span class="token comment" spellcheck="true"># sftp(替代了sftp)  &lt;---&gt;  ftp(明文传输,不太安全)</span>
+<span class="token comment" spellcheck="true"># scp(替代了rcp)   &lt;---&gt;  rcp(远程拷贝文件,明文传输,不太安全)</span>
 
 
 <span class="token comment" spellcheck="true">#查看服务状态</span>
@@ -623,7 +623,7 @@ ssh-keygen -p -f ~/.ssh/id_rsa    <span class="token comment" spellcheck="true">
 ~/.ssh/id_rsa.pub  <span class="token comment" spellcheck="true"># 公钥</span>
 <span class="token comment" spellcheck="true">#ps：know_hosts是连接过的主机</span>
 
-<span class="token comment" spellcheck="true"># 3.把公钥文件-->传送到目标服务器上(服务器上会变成.ssh/authorized_key)</span>
+<span class="token comment" spellcheck="true"># 3.把公钥文件--&gt;传送到目标服务器上(服务器上会变成.ssh/authorized_key)</span>
 ssh-copy-id  xps@192.168.0.10  <span class="token comment" spellcheck="true">#如果有多个，-i选择公钥</span>
 
 
@@ -714,7 +714,7 @@ host mail1
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装</span>
 apt <span class="token function">install</span> fail2ban
 
-<span class="token comment" spellcheck="true"># 默认主配置文件，软件更新时被覆盖(`所以一般不会使用它`)   jail --> 监狱</span>
+<span class="token comment" spellcheck="true"># 默认主配置文件，软件更新时被覆盖(`所以一般不会使用它`)   jail --&gt; 监狱</span>
 /etc/fail2ban/jail.conf
 <span class="token comment" spellcheck="true"># 本地配置文件，软件更新不被覆盖，优先级更高（`一般常修改这个文件`） 复制一份：cp jail.conf jail.local</span>
 /etc/fail2ban/jail.local
@@ -852,12 +852,12 @@ vim /etv/hosts
 <span class="token comment" spellcheck="true"># 一组资源就是一个类</span>
 class apache2<span class="token punctuation">{</span>
     package<span class="token punctuation">{</span><span class="token string">'apache2'</span><span class="token keyword">:</span>   <span class="token comment" spellcheck="true"># 软件包</span>
-        ensure<span class="token operator">=</span><span class="token operator">></span>installeds,
+        ensure<span class="token operator">=</span><span class="token operator">&gt;</span>installeds,
     <span class="token punctuation">}</span>
     service<span class="token punctuation">{</span><span class="token string">'apache2'</span><span class="token keyword">:</span>   <span class="token comment" spellcheck="true"># apache的服务是否启动</span>
-        ensure<span class="token operator">=</span><span class="token operator">></span>ture,
-        ensure<span class="token operator">=</span><span class="token operator">></span>ture,
-        require<span class="token operator">=</span><span class="token operator">></span>Package<span class="token punctuation">[</span><span class="token string">'apache2'</span><span class="token punctuation">]</span>,  <span class="token comment" spellcheck="true"># 包的名称</span>
+        ensure<span class="token operator">=</span><span class="token operator">&gt;</span>ture,
+        ensure<span class="token operator">=</span><span class="token operator">&gt;</span>ture,
+        require<span class="token operator">=</span><span class="token operator">&gt;</span>Package<span class="token punctuation">[</span><span class="token string">'apache2'</span><span class="token punctuation">]</span>,  <span class="token comment" spellcheck="true"># 包的名称</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1120,7 +1120,7 @@ systemctl status puppet.service
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1490,7 +1490,7 @@ DNS服务结构：
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">355k</span>&nbsp;字
+                class="white-color">358.6k</span>&nbsp;字
             
             
             
