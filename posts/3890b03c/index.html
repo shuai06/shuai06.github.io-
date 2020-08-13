@@ -628,11 +628,11 @@ intval() 函数用于获取变量的整数值。
 </blockquote>
 <p><strong>.htaccess文件</strong></p>
 <p>1.先上传一个<code>.htaccess</code>文件，内容如下：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FilesMatch</span> <span class="token attr-name">"jpg"</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FilesMatch</span> <span class="token attr-name">"jpg"</span><span class="token punctuation">></span></span>
 
 SetHandler application/x-httpd-php
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FilesMatch</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>FilesMatch</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2.然后再上传一个info.php, burp拦截数据包修改filename为<code>info.jpg</code>   / 或者直接上图片马， url访问图片路径，正常解析</p>
 <h2 id="Pass-05"><a href="#Pass-05" class="headerlink" title="Pass-05"></a>Pass-05</h2><p><img src="http://image.xpshuai.cn/20200217223711503_294591319.png"></p>
@@ -806,7 +806,7 @@ SetHandler application/x-httpd-php
 $ext = image_type_to_extension($info[2]);  # 获取后缀jpeg  ,   $info[2] 是文件类型
 
 
-if(stripos($types,$ext)&gt;=0)  # 是否在白名单中
+if(stripos($types,$ext)>=0)  # 是否在白名单中
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="绕过-12"><a href="#绕过-12" class="headerlink" title="绕过"></a>绕过</h6><p>上传图片马，</p>
 <p>打开测试页面，直接包含<code>include</code>file=’文件.jpg’, 就是当成php解析</p>
@@ -852,13 +852,13 @@ if(stripos($types,$ext)&gt;=0)  # 是否在白名单中
 
 <span class="token variable">$myfile</span> <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">"shell.php"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string">"Unable to open file!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token variable">$txt</span> <span class="token operator">=</span> <span class="token string">"&lt;?php  phpinfo();   ?&gt;\n"</span><span class="token punctuation">;</span>
+<span class="token variable">$txt</span> <span class="token operator">=</span> <span class="token string">"&lt;?php  phpinfo();   ?>\n"</span><span class="token punctuation">;</span>
 
 <span class="token function">fwrite</span><span class="token punctuation">(</span><span class="token variable">$myfile</span><span class="token punctuation">,</span> <span class="token variable">$txt</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token function">fclose</span><span class="token punctuation">(</span><span class="token variable">$myfile</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token delimiter">?&gt;</span>
+<span class="token delimiter">?></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后，如果已知新建文件的路径，可以直接访问</p>
 <p>​            如果不知道，可以抓取数据包查看</p>
@@ -923,13 +923,13 @@ Content-Type: application/octet-stream
 
 $myfile = fopen("shell.php", "w") or die("Unable to open file!");
 
-$txt = "&lt;?php  phpinfo();   ?&gt;\n";
+$txt = "&lt;?php  phpinfo();   ?>\n";
 
 fwrite($myfile, $txt);
 
 fclose($myfile);
 
-?&gt;
+?>
 
 -----------------------------6696274297634
 
@@ -958,7 +958,7 @@ pool<span class="token punctuation">.</span>join<span class="token punctuation">
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>只是把burp换成了python，其他操作方法是一样的</p>
 <h6 id="修复问题"><a href="#修复问题" class="headerlink" title="修复问题"></a>修复问题</h6><p>应该先判断文件类型，再移动</p>
-<h2 id="Pass-19"><a href="#Pass-19" class="headerlink" title="Pass - 19"></a>Pass - 19</h2><pre class="line-numbers language-php"><code class="language-php"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">cls_rename_file</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//是否用$im_path成功给$upload_file重命名</span>
+<h2 id="Pass-19"><a href="#Pass-19" class="headerlink" title="Pass - 19"></a>Pass - 19</h2><pre class="line-numbers language-php"><code class="language-php"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token property">cls_rename_file</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//是否用$im_path成功给$upload_file重命名</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>和第18关有点类似，都对关键进行了重命名，由于我们是利用burp不断的发送相同的包，那么一旦有两个包同时传到这边是，那么系统对一个重命名时，另一个刚好“逃脱”了，那么上传成功。</p>
 <h6 id="绕过-16"><a href="#绕过-16" class="headerlink" title="绕过"></a>绕过</h6><p>在这关是一个<code>白名单</code>，<code>利用了appche的一个解析漏洞</code>，它会将 “<code>.php.7z</code> 当作<code>.php</code>来解析，而刚好 “ .php.7z ”又属于白名单，</p>
@@ -1609,7 +1609,7 @@ https://blog.csdn.net/zhang644720213/article/details/92849717
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             

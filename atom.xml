@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-13T07:37:56.589Z</updated>
+  <updated>2020-08-13T07:57:14.866Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.xpshuai.cn/posts/3409/"/>
     <id>http://www.xpshuai.cn/posts/3409/</id>
     <published>2020-08-12T08:54:30.000Z</published>
-    <updated>2020-08-13T07:37:56.589Z</updated>
+    <updated>2020-08-13T07:57:14.866Z</updated>
     
     <summary type="html">
     
@@ -289,9 +289,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
-    
       <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
+    
+      <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -315,9 +315,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
-    
       <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
     
   </entry>
   
@@ -473,9 +473,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
-    
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
+    
+      <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
     
       <category term="远程命令执行" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
     
@@ -500,9 +500,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
       <category term="CouchDB" scheme="http://www.xpshuai.cn/tags/CouchDB/"/>
+    
+      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
       <category term="命令执行" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
     

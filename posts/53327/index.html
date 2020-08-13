@@ -552,7 +552,7 @@ git pull
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>   <strong>Post方法：</strong><br>就不是通过url来扫描了，而是body来进行扫描</p>
 <pre class="line-numbers language-shell"><code class="language-shell"> -r request.txt    # 使用http请求文件进行注入（burpsuite拦截的请求数据包复制保存到文件, 存在注入的位置用*标出）
- -l  log.txt       #  使用burpsuite log文件 （使用burpsuite:option-&gt; Misc -&gt;logging -&gt; 这里选择Proxy-&gt; 这里选择requests-&gt; 选择log文件保存位置 ）
+ -l  log.txt       #  使用burpsuite log文件 （使用burpsuite:option-> Misc ->logging -> 这里选择Proxy-> 这里选择requests-> 选择log文件保存位置 ）
  --force-ssl       #  支持Https，即听过https来进行请求，或在url域名后+443端口也可以
  -c  sqlmap.conf   #  扫描配置文件（把扫描配置写到里面，把它引用即可）
 
@@ -565,10 +565,10 @@ git pull
 <pre class="line-numbers language-bash"><code class="language-bash">--data<span class="token operator">=</span><span class="token string">"user=xx&amp;pswd=yy"</span>   <span class="token comment" spellcheck="true"># 数据（对于post请求：除了保存请求头的方法，也可以这样data加参数， 也支持get方法：参数放--data后面）</span>
 --param-del<span class="token operator">=</span><span class="token string">";"</span>   <span class="token comment" spellcheck="true"># 变量分隔符(若多个变量不是以&amp;分割),如：参数以分号分割   --data="name=1;id=11" --param-del=";"</span>
 --cookie <span class="token string">"xxxxxxxxx"</span> --level<span class="token operator">=</span>2 <span class="token comment" spellcheck="true"># 带上cookie头(level=2时才会检查cookie是否存在注入点)        参数: set-cookie / --drop-set-cookie 是否丢弃上一个cookie,使用新的cookie</span>
-<span class="token comment" spellcheck="true">#cookie ---&gt; 登陆后才能访问的页面</span>
+<span class="token comment" spellcheck="true">#cookie ---> 登陆后才能访问的页面</span>
 --user-agent<span class="token operator">=</span><span class="token string">"xxxxxxxxxx"</span>   <span class="token comment" spellcheck="true">#  指定ua头</span>
 --random-agent --level<span class="token operator">=</span>3  <span class="token comment" spellcheck="true"># 随机ua头字典: /usr/share/sqlmap/txt/user-agents.txt,  win下：sqlmap/data/txt/user-agents.txt</span>
-<span class="token comment" spellcheck="true">#--level&gt;=3   # 才会检查user-agent头是否存在sql注入</span>
+<span class="token comment" spellcheck="true">#--level>=3   # 才会检查user-agent头是否存在sql注入</span>
 
 <span class="token comment" spellcheck="true">#app/waf/IPS/IDS过滤异常的ua头，sqlmap会报错</span>
 
@@ -576,7 +576,7 @@ git pull
 --level<span class="token operator">=</span>5  <span class="token comment" spellcheck="true"># 才会检查host头是否存在sql注入(一般不建议设置这么高)</span>
 
 --referrer --level<span class="token operator">=</span>3     <span class="token comment" spellcheck="true"># 检查referrer</span>
---level <span class="token operator">&gt;=</span>3   <span class="token comment" spellcheck="true"># 才会检查referrer是否存在sql注入</span>
+--level <span class="token operator">>=</span>3   <span class="token comment" spellcheck="true"># 才会检查referrer是否存在sql注入</span>
 
 --headers<span class="token operator">=</span><span class="token string">"host:www.a.com\nUser-Agent:xps"</span>   <span class="token comment" spellcheck="true"># 额外的自定义的headers（\n是换行，注意大小写）</span>
 --headers<span class="token operator">=</span><span class="token string">"X-Forwarded-For:* "</span> --dbs --batch 
@@ -614,7 +614,7 @@ git pull
 --retries<span class="token operator">=</span><span class="token string">"5"</span>      <span class="token comment" spellcheck="true"># 连接超时重试次数，默认3次</span>
 --randomsize<span class="token operator">=</span><span class="token string">"id"</span>    <span class="token comment" spellcheck="true"># 长度、类型与原始值保持一致的前提下，指定每次请求随机取值 的参数name（对id随机取值,但长度与原始是一致的）</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash"><code class="language-bash">--scope         <span class="token comment" spellcheck="true"># 过滤日志(burp的request日志--&gt;option,Logging,proxy,requests)内容， 通过正则筛选扫描对象；</span>
+<pre class="line-numbers language-bash"><code class="language-bash">--scope         <span class="token comment" spellcheck="true"># 过滤日志(burp的request日志-->option,Logging,proxy,requests)内容， 通过正则筛选扫描对象；</span>
 -l burp.log  --scope<span class="token operator">=</span><span class="token string">"{www}?\.target\.{com|net|org}"</span> --level<span class="token operator">=</span>3
 
 --safe-url / --safe-freq     <span class="token comment" spellcheck="true"># 检测和盲注阶段会产生大量失败请求，服务端可能因此销毁session。</span>
@@ -690,7 +690,7 @@ git pull
 -D dvwa -T <span class="token function">users</span> --dump
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h4><p>是基于字典的</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># mysql &lt;5.0没有information_schema库    ， mysql&gt;=5.0如果无权读取...</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># mysql &lt;5.0没有information_schema库    ， mysql>=5.0如果无权读取...</span>
 <span class="token comment" spellcheck="true"># access 无权读物MSysyObjects库</span>
 --common-tables
 --common-columns   <span class="token comment" spellcheck="true"># (Access系统表无列信息)</span>
@@ -1378,7 +1378,7 @@ nlte
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             

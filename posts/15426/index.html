@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    8 分
                 </div>
                 
 
@@ -600,7 +600,7 @@ tcp_cient<span class="token punctuation">.</span>connect<span class="token punct
 
 <span class="token comment" spellcheck="true"># 数据交互循环</span>
 <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> msg<span class="token punctuation">:</span>
         tcp_cient<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 只能发送 bytes 类型的数据</span>
         data <span class="token operator">=</span> tcp_cient<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>BUFSIZE<span class="token punctuation">)</span>
@@ -621,7 +621,7 @@ tcp_cient<span class="token punctuation">.</span>connect<span class="token punct
 <p>server.py</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 服务端：
-阻塞套接字：  ---&gt;  阻塞套接字不能和多个客户端进行通信
+阻塞套接字：  --->  阻塞套接字不能和多个客户端进行通信
 """</span>
 <span class="token keyword">import</span> socket
 
@@ -675,7 +675,7 @@ tcp_cient<span class="token punctuation">.</span>connect<span class="token punct
 
 <span class="token comment" spellcheck="true"># 数据交互循环</span>
 <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> msg<span class="token punctuation">:</span>
         tcp_cient<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 只能发送 bytes 类型的数据</span>
         data <span class="token operator">=</span> tcp_cient<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>BUFSIZE<span class="token punctuation">)</span>
@@ -1405,7 +1405,7 @@ recv 阻塞:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             

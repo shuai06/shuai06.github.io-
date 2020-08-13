@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    195
+                    192
                 </div>
                 
 
@@ -537,7 +537,7 @@ c <span class="token operator">=</span> socket<span class="token punctuation">.<
 c<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'&gt;&gt;&gt;'</span><span class="token punctuation">)</span>
+    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span>
     <span class="token keyword">if</span> msg<span class="token punctuation">:</span>
         c<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 只能发送 bytes 类型的数据   encode将中文的变成byte的</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -1118,7 +1118,7 @@ from multiprocessing.pool import
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             

@@ -786,16 +786,16 @@ vim ~/client-configs/base.conf
     OUTPUT_DIR<span class="token operator">=</span>~/client-configs/files
     BASE_CONFIG<span class="token operator">=</span>~/client-configs/base.conf
     <span class="token function">cat</span> <span class="token variable">${BASE_CONFIG}</span> \
-    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo-e <span class="token string">'&lt;ca&gt;'</span><span class="token punctuation">)</span>\
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo-e <span class="token string">'&lt;ca>'</span><span class="token punctuation">)</span>\
     <span class="token variable">${KEY_ DIR}</span>/ca.crt \
-    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/ca&gt;\n&lt;cert&gt;'</span><span class="token punctuation">)</span>\
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/ca>\n&lt;cert>'</span><span class="token punctuation">)</span>\
     S<span class="token punctuation">{</span>KEY_ DIR<span class="token punctuation">}</span>/<span class="token variable">${1}</span>.crt \        <span class="token comment" spellcheck="true"># ${1} 是脚本运行时的参数</span>
-    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/cert&gt;\n&lt;key&gt;'</span><span class="token punctuation">)</span>\
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/cert>\n&lt;key>'</span><span class="token punctuation">)</span>\
     S<span class="token punctuation">{</span>KEY_ DIR/<span class="token variable">${1}</span>.key\
-    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo e <span class="token string">'&lt;/key&gt;\n&lt;tls-auth&gt;'</span><span class="token punctuation">)</span>I
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo e <span class="token string">'&lt;/key>\n&lt;tls-auth>'</span><span class="token punctuation">)</span>I
     <span class="token variable">${KEY_DIR}</span>/ta.key\
-    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/tls-auth&gt;'</span><span class="token punctuation">)</span> \
-    <span class="token operator">&gt;</span> <span class="token variable">${OUTPUT_ DIR}</span>/<span class="token variable">${1}</span>.ovpn
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/tls-auth>'</span><span class="token punctuation">)</span> \
+    <span class="token operator">></span> <span class="token variable">${OUTPUT_ DIR}</span>/<span class="token variable">${1}</span>.ovpn
 
 
 <span class="token function">chmod</span> 700 ~/client-configs/make_config.sh
@@ -828,7 +828,7 @@ vim client.ovpn
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>4.建立VPN连接</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 命令行方式</span>
-<span class="token function">sudo</span> openvpn --config client_1.ovpn <span class="token operator">&gt;</span> /dev/null 2<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
+<span class="token function">sudo</span> openvpn --config client_1.ovpn <span class="token operator">></span> /dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
 
 <span class="token comment" spellcheck="true">## ubuntu图形化方式</span>
 <span class="token comment" spellcheck="true"># 先安装openvpn的gnome小插件</span>
@@ -1285,12 +1285,12 @@ https://tunnelblick.net/downloads. html
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/邮件服务/">
-                        <span class="chip bg-color">邮件服务</span>
-                    </a>
-                    
                     <a href="/tags/ubuntu-server/">
                         <span class="chip bg-color">ubuntu server</span>
+                    </a>
+                    
+                    <a href="/tags/邮件服务/">
+                        <span class="chip bg-color">邮件服务</span>
                     </a>
                     
                 </div>
@@ -1476,7 +1476,7 @@ https://tunnelblick.net/downloads. html
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             

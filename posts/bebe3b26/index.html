@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    432
+                    430
                 </div>
                 
 
@@ -503,9 +503,9 @@
         // OnMapReplaced当mapcontrol1中的地图被替换时，该方法自动加载主空间中所有的图层对象到鹰眼
         private void mainMapControl_OnMapReplaced(object sender, IMapControlEvents2_OnMapReplacedEvent e)
         {
-            if (mainMapControl.Map.LayerCount &gt; 0)
+            if (mainMapControl.Map.LayerCount > 0)
             {
-                for (int i = 0; i &lt; mainMapControl.Map.LayerCount; i++)
+                for (int i = 0; i < mainMapControl.Map.LayerCount; i++)
                 {
                     // 加载
                     eyeMapControl.AddLayer(mainMapControl.get_Layer(i));
@@ -966,20 +966,21 @@ b
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4c9b4c5b/">
+                <a href="/posts/1a728c4f/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ArcEngine同步数据视图与布局视图">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ArcgisEngine实现地图浏览">
                         
-                        <span class="card-title">ArcEngine同步数据视图与布局视图</span>
+                        <span class="card-title">ArcgisEngine实现地图浏览</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // 数据视图与布局视图同步
-private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_OnAfterScreenDrawEvent e)
+                            全图    private void FullExtentTSButton_Click(object sender, EventArgs e)
+        {
+            mainMapControl.Extent = ma
                         
                     </div>
                     <div class="publish-info">
@@ -1192,7 +1193,7 @@ private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">358.6k</span>&nbsp;字
+                class="white-color">357.5k</span>&nbsp;字
             
             
             
