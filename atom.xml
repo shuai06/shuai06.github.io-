@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-13T10:00:56.473Z</updated>
+  <updated>2020-08-15T07:55:40.093Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>iptables包过滤与网络地址转换</title>
+    <link href="http://www.xpshuai.cn/posts/23022/"/>
+    <id>http://www.xpshuai.cn/posts/23022/</id>
+    <published>2020-08-14T01:50:06.000Z</published>
+    <updated>2020-08-15T07:55:40.093Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;iptables&quot;&gt;&lt;a href=&quot;#iptables&quot; class=&quot;headerlink&quot; title=&quot;iptables&quot;&gt;&lt;/a&gt;iptables&lt;/h2&gt;&lt;h4 id=&quot;功能&quot;&gt;&lt;a href=&quot;#功能&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+      <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
+    
+      <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>masscan</title>
     <link href="http://www.xpshuai.cn/posts/39667/"/>
     <id>http://www.xpshuai.cn/posts/39667/</id>
     <published>2020-08-13T09:49:04.000Z</published>
-    <updated>2020-08-13T10:00:56.473Z</updated>
+    <updated>2020-08-13T14:47:23.198Z</updated>
     
     <summary type="html">
     
@@ -319,9 +346,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
-    
       <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
+    
+      <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -345,9 +372,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
-    
       <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
     
   </entry>
   
@@ -564,34 +591,6 @@
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
       <category term="Hadoop" scheme="http://www.xpshuai.cn/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>redis漏洞利用</title>
-    <link href="http://www.xpshuai.cn/posts/6/"/>
-    <id>http://www.xpshuai.cn/posts/6/</id>
-    <published>2020-05-26T01:52:09.000Z</published>
-    <updated>2020-08-01T08:56:48.810Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h2&gt;&lt;p&gt;1.下载编译&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;langua
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
-      <category term="redis" scheme="http://www.xpshuai.cn/tags/redis/"/>
     
   </entry>
   
