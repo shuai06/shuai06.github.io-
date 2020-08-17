@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-17T09:25:35.605Z</updated>
+  <updated>2020-08-17T14:18:39.591Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>深X服 EDR终端检测系统RCE漏洞复现</title>
+    <link href="http://www.xpshuai.cn/posts/37031/"/>
+    <id>http://www.xpshuai.cn/posts/37031/</id>
+    <published>2020-08-17T14:11:48.000Z</published>
+    <updated>2020-08-17T14:18:39.591Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h4&gt;&lt;p&gt;深信服终端检测响应平台EDR，围绕终端资产安全生命周期，通过预防、防御、检测、响应赋予终端更为细致的隔离策略、更为精准的查杀能力、更为持续的
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="RCE" scheme="http://www.xpshuai.cn/tags/RCE/"/>
+    
+      <category term="深信服" scheme="http://www.xpshuai.cn/tags/%E6%B7%B1%E4%BF%A1%E6%9C%8D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hping3</title>
     <link href="http://www.xpshuai.cn/posts/18271/"/>
     <id>http://www.xpshuai.cn/posts/18271/</id>
     <published>2020-08-17T08:43:48.000Z</published>
-    <updated>2020-08-17T09:25:35.605Z</updated>
+    <updated>2020-08-17T09:59:09.770Z</updated>
     
     <summary type="html">
     
@@ -51,7 +76,7 @@
     <link href="http://www.xpshuai.cn/posts/26997/"/>
     <id>http://www.xpshuai.cn/posts/26997/</id>
     <published>2020-08-17T08:42:53.000Z</published>
-    <updated>2020-08-17T09:01:12.668Z</updated>
+    <updated>2020-08-17T09:59:09.771Z</updated>
     
     <summary type="html">
     
@@ -99,11 +124,11 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
       <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
     
       <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
-    
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
@@ -410,9 +435,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
-    
       <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
     
   </entry>
   
@@ -436,9 +461,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
-    
       <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
+    
+      <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
@@ -511,9 +536,9 @@
     
       <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
-    
       <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
+    
+      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
     
   </entry>
   
@@ -540,9 +565,9 @@
     
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
-      <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
-    
       <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
+    
+      <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
     
   </entry>
   
@@ -572,33 +597,6 @@
       <category term=" CVE-2017-1000353" scheme="http://www.xpshuai.cn/tags/CVE-2017-1000353/"/>
     
       <category term="CVE-2018-1000861" scheme="http://www.xpshuai.cn/tags/CVE-2018-1000861/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Atlassian Crowd未授权访问漏洞</title>
-    <link href="http://www.xpshuai.cn/posts/4469/"/>
-    <id>http://www.xpshuai.cn/posts/4469/</id>
-    <published>2020-05-26T03:12:38.000Z</published>
-    <updated>2020-05-25T22:01:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;漏洞概述&quot;&gt;&lt;a href=&quot;#漏洞概述&quot; class=&quot;headerlink&quot; title=&quot;漏洞概述&quot;&gt;&lt;/a&gt;漏洞概述&lt;/h4&gt;&lt;p&gt;Atlassian Crowd和Atlassian Crowd Data Center都是澳大利亚Atlassian公司的产
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
-      <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
-    
-      <category term="远程命令执行" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
     
   </entry>
   
