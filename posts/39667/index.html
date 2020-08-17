@@ -439,12 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/masscan/">
-                                <span class="chip bg-color">masscan</span>
-                            </a>
-                        
                             <a href="/tags/端口扫描/">
                                 <span class="chip bg-color">端口扫描</span>
+                            </a>
+                        
+                            <a href="/tags/masscan/">
+                                <span class="chip bg-color">masscan</span>
                             </a>
                         
                             <a href="/tags/信息搜集/">
@@ -481,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    575
+                    676
                 </div>
                 
 
@@ -525,7 +525,17 @@ masscan -iL ip.txt -p80,443,3306 --banners --append-output  -oJ result.json  --m
 
 <span class="token comment" spellcheck="true"># Note: 发包速率(--max-rate)不要太大，且Linux下比Windows速度快</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+--adapter-ip     <span class="token comment" spellcheck="true"># 指定发包的IP地址</span>
+--adapter-port     <span class="token comment" spellcheck="true"># 指定发包的源端口</span>
+--adapter-mac    <span class="token comment" spellcheck="true"># 指定发包的源MAC地址</span>
+--router-mac     <span class="token comment" spellcheck="true"># 指定网关的MAC地址</span>
+--exclude         <span class="token comment" spellcheck="true"># IP地址范围黑名单,防止masscan扫描</span>
+--excludefile    <span class="token comment" spellcheck="true"># 指定IP地址范围黑名单文件</span>
+--includefile,-iL <span class="token comment" spellcheck="true"># 读取一个范围列表进行扫描</span>
+--wait            <span class="token comment" spellcheck="true"># 指定发送完包之后的等待时间,默认为10秒</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h6 id="Python脚本解析masscan扫描结果"><a href="#Python脚本解析masscan扫描结果" class="headerlink" title="Python脚本解析masscan扫描结果"></a>Python脚本解析masscan扫描结果</h6><blockquote>
 <p>是基于json输出格式(-OJ)的</p>
 </blockquote>
@@ -682,12 +692,12 @@ masscan -iL ip.txt -p80,443,3306 --banners --append-output  -oJ result.json  --m
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/masscan/">
-                                    <span class="chip bg-color">masscan</span>
-                                </a>
-                            
                                 <a href="/tags/端口扫描/">
                                     <span class="chip bg-color">端口扫描</span>
+                                </a>
+                            
+                                <a href="/tags/masscan/">
+                                    <span class="chip bg-color">masscan</span>
                                 </a>
                             
                                 <a href="/tags/信息搜集/">
@@ -927,16 +937,16 @@ iptables -t filter -nvL    # -t显示哪个表
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/防火墙/">
-                        <span class="chip bg-color">防火墙</span>
-                    </a>
-                    
                     <a href="/tags/iptables/">
                         <span class="chip bg-color">iptables</span>
                     </a>
                     
                     <a href="/tags/NAT/">
                         <span class="chip bg-color">NAT</span>
+                    </a>
+                    
+                    <a href="/tags/防火墙/">
+                        <span class="chip bg-color">防火墙</span>
                     </a>
                     
                 </div>
@@ -1185,7 +1195,7 @@ site
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">359.3k</span>&nbsp;字
+                class="white-color">361.9k</span>&nbsp;字
             
             
             

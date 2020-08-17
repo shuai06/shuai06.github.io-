@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-15T07:55:40.093Z</updated>
+  <updated>2020-08-17T09:25:35.605Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,75 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hping3</title>
+    <link href="http://www.xpshuai.cn/posts/18271/"/>
+    <id>http://www.xpshuai.cn/posts/18271/</id>
+    <published>2020-08-17T08:43:48.000Z</published>
+    <updated>2020-08-17T09:25:35.605Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;hping3主要是测试防火墙的拦截规则，对网络设备进行测试&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;主要功能&quot;&gt;&lt;a href=&quot;#主要功能&quot; class=&quot;headerlink&quot; title=&quot;主要功能&quot;&gt;&lt;/a&gt;主要功能&lt;/h4&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="hping3" scheme="http://www.xpshuai.cn/tags/hping3/"/>
+    
+      <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
+    
+      <category term="DDOS" scheme="http://www.xpshuai.cn/tags/DDOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nbtscan</title>
+    <link href="http://www.xpshuai.cn/posts/26997/"/>
+    <id>http://www.xpshuai.cn/posts/26997/</id>
+    <published>2020-08-17T08:42:53.000Z</published>
+    <updated>2020-08-17T09:01:12.668Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;当我们处于局域网中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用来探测内网存活主机&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;kali中已经安装了：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers languag
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="nbtscan" scheme="http://www.xpshuai.cn/tags/nbtscan/"/>
+    
+      <category term="主机存活探测" scheme="http://www.xpshuai.cn/tags/%E4%B8%BB%E6%9C%BA%E5%AD%98%E6%B4%BB%E6%8E%A2%E6%B5%8B/"/>
+    
+      <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>iptables包过滤与网络地址转换</title>
     <link href="http://www.xpshuai.cn/posts/23022/"/>
     <id>http://www.xpshuai.cn/posts/23022/</id>
     <published>2020-08-14T01:50:06.000Z</published>
-    <updated>2020-08-15T07:55:40.093Z</updated>
+    <updated>2020-08-15T07:56:42.012Z</updated>
     
     <summary type="html">
     
@@ -35,11 +99,11 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
       <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
     
       <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
+    
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
@@ -48,7 +112,7 @@
     <link href="http://www.xpshuai.cn/posts/39667/"/>
     <id>http://www.xpshuai.cn/posts/39667/</id>
     <published>2020-08-13T09:49:04.000Z</published>
-    <updated>2020-08-13T14:47:23.198Z</updated>
+    <updated>2020-08-17T08:41:29.616Z</updated>
     
     <summary type="html">
     
@@ -65,9 +129,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="masscan" scheme="http://www.xpshuai.cn/tags/masscan/"/>
-    
       <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
+    
+      <category term="masscan" scheme="http://www.xpshuai.cn/tags/masscan/"/>
     
       <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
     
@@ -147,9 +211,9 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
       <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
     
       <category term="带宽监测" scheme="http://www.xpshuai.cn/tags/%E5%B8%A6%E5%AE%BD%E7%9B%91%E6%B5%8B/"/>
     
@@ -447,9 +511,9 @@
     
       <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
-    
       <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
+    
+      <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
     
   </entry>
   
@@ -476,9 +540,9 @@
     
       <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
     
-      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
-    
       <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
+    
+      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
     
   </entry>
   
@@ -535,62 +599,6 @@
       <category term="Atlassian Crowd" scheme="http://www.xpshuai.cn/tags/Atlassian-Crowd/"/>
     
       <category term="远程命令执行" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CouchDB未授权访问&amp;命令执行</title>
-    <link href="http://www.xpshuai.cn/posts/78/"/>
-    <id>http://www.xpshuai.cn/posts/78/</id>
-    <published>2020-05-26T02:20:43.000Z</published>
-    <updated>2020-07-13T06:41:48.075Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;漏洞简介以及危害&quot;&gt;&lt;a href=&quot;#漏洞简介以及危害&quot; class=&quot;headerlink&quot; title=&quot;漏洞简介以及危害&quot;&gt;&lt;/a&gt;漏洞简介以及危害&lt;/h4&gt;&lt;p&gt;Apache CouchDB是一个开源数据库,专注于易用性和成为”完全拥抱web的数据库”。
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="CouchDB" scheme="http://www.xpshuai.cn/tags/CouchDB/"/>
-    
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
-      <category term="命令执行" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
-    
-      <category term="CVE-2017-12635" scheme="http://www.xpshuai.cn/tags/CVE-2017-12635/"/>
-    
-      <category term="CVE-2017-12636" scheme="http://www.xpshuai.cn/tags/CVE-2017-12636/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop未授权访问漏洞</title>
-    <link href="http://www.xpshuai.cn/posts/59457/"/>
-    <id>http://www.xpshuai.cn/posts/59457/</id>
-    <published>2020-05-26T02:14:47.000Z</published>
-    <updated>2020-07-13T01:07:45.086Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;漏洞简介以及危害&quot;&gt;&lt;a href=&quot;#漏洞简介以及危害&quot; class=&quot;headerlink&quot; title=&quot;漏洞简介以及危害&quot;&gt;&lt;/a&gt;漏洞简介以及危害&lt;/h4&gt;&lt;p&gt;Hadoop是一个由Apache基金会所开发的分布式系统基础架构,由于服务器器直接在开放了了
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
-      <category term="Hadoop" scheme="http://www.xpshuai.cn/tags/Hadoop/"/>
     
   </entry>
   

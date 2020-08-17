@@ -439,16 +439,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/防火墙/">
-                                <span class="chip bg-color">防火墙</span>
-                            </a>
-                        
                             <a href="/tags/iptables/">
                                 <span class="chip bg-color">iptables</span>
                             </a>
                         
                             <a href="/tags/NAT/">
                                 <span class="chip bg-color">NAT</span>
+                            </a>
+                        
+                            <a href="/tags/防火墙/">
+                                <span class="chip bg-color">防火墙</span>
                             </a>
                         
                     </div>
@@ -738,16 +738,16 @@ firewall-cmd reload
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/防火墙/">
-                                    <span class="chip bg-color">防火墙</span>
-                                </a>
-                            
                                 <a href="/tags/iptables/">
                                     <span class="chip bg-color">iptables</span>
                                 </a>
                             
                                 <a href="/tags/NAT/">
                                     <span class="chip bg-color">NAT</span>
+                                </a>
+                            
+                                <a href="/tags/防火墙/">
+                                    <span class="chip bg-color">防火墙</span>
                                 </a>
                             
                         </div>
@@ -942,59 +942,62 @@ firewall-cmd reload
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/23022/">
+                <a href="/posts/26997/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="iptables包过滤与网络地址转换">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="nbtscan">
                         
-                        <span class="card-title">iptables包过滤与网络地址转换</span>
+                        <span class="card-title">nbtscan</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            iptables功能4个表raw和mangle，nat,filter（后两个表用的多）
-iptables -t filter -nvL    # -t显示哪个表
+                            
+当我们处于局域网中
 
-三个链(Chain)：INPUT,FORAWRD(转发规则链),OUTPUT
+
+用来探测内网存活主机
+
+kali中已经安装了：
+root@xps:~# whereis nbtscan
+nbtscan: /usr/bin/nbtscan /usr/share/man/man1/nbtscan.1
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/防火墙/">
-                        <span class="chip bg-color">防火墙</span>
+                    <a href="/tags/nbtscan/">
+                        <span class="chip bg-color">nbtscan</span>
                     </a>
                     
-                    <a href="/tags/iptables/">
-                        <span class="chip bg-color">iptables</span>
+                    <a href="/tags/主机存活探测/">
+                        <span class="chip bg-color">主机存活探测</span>
                     </a>
                     
-                    <a href="/tags/NAT/">
-                        <span class="chip bg-color">NAT</span>
+                    <a href="/tags/网络工具/">
+                        <span class="chip bg-color">网络工具</span>
                     </a>
                     
                 </div>
@@ -1046,12 +1049,12 @@ masscan号称是世界上最快的扫描软件，可以在3分钟内扫描整个
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/masscan/">
-                        <span class="chip bg-color">masscan</span>
-                    </a>
-                    
                     <a href="/tags/端口扫描/">
                         <span class="chip bg-color">端口扫描</span>
+                    </a>
+                    
+                    <a href="/tags/masscan/">
+                        <span class="chip bg-color">masscan</span>
                     </a>
                     
                     <a href="/tags/信息搜集/">
@@ -1241,7 +1244,7 @@ masscan号称是世界上最快的扫描软件，可以在3分钟内扫描整个
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">359.3k</span>&nbsp;字
+                class="white-color">361.9k</span>&nbsp;字
             
             
             
