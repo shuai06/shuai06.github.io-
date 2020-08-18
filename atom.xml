@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-17T14:18:39.591Z</updated>
+  <updated>2020-08-18T02:24:45.946Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>php变量覆盖</title>
+    <link href="http://www.xpshuai.cn/posts/50639/"/>
+    <id>http://www.xpshuai.cn/posts/50639/</id>
+    <published>2020-08-18T01:30:00.000Z</published>
+    <updated>2020-08-18T02:24:45.946Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;可以用自定义的参数值替换原有变量值的情况称为变量覆盖漏洞&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;$
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="变量覆盖" scheme="http://www.xpshuai.cn/tags/%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>isset数组绕过</title>
+    <link href="http://www.xpshuai.cn/posts/57106/"/>
+    <id>http://www.xpshuai.cn/posts/57106/</id>
+    <published>2020-08-18T00:40:08.000Z</published>
+    <updated>2020-08-18T01:09:53.749Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;1-数组返回NULL绕过&quot;&gt;&lt;a href=&quot;#1-数组返回NULL绕过&quot; class=&quot;headerlink&quot; title=&quot;1.数组返回NULL绕过&quot;&gt;&lt;/a&gt;1.数组返回NULL绕过&lt;/h4&gt;&lt;pre class=&quot;line-numbers language
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="isset" scheme="http://www.xpshuai.cn/tags/isset/"/>
+    
+      <category term="数组绕过" scheme="http://www.xpshuai.cn/tags/%E6%95%B0%E7%BB%84%E7%BB%95%E8%BF%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深X服 EDR终端检测系统RCE漏洞复现</title>
     <link href="http://www.xpshuai.cn/posts/37031/"/>
     <id>http://www.xpshuai.cn/posts/37031/</id>
     <published>2020-08-17T14:11:48.000Z</published>
-    <updated>2020-08-17T14:18:39.591Z</updated>
+    <updated>2020-08-17T14:18:52.646Z</updated>
     
     <summary type="html">
     
@@ -539,64 +591,6 @@
       <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
     
       <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jboss常见漏洞复现</title>
-    <link href="http://www.xpshuai.cn/posts/60637/"/>
-    <id>http://www.xpshuai.cn/posts/60637/</id>
-    <published>2020-05-26T07:57:44.000Z</published>
-    <updated>2020-07-13T01:20:43.999Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;JBoss-5-x-6-x-反序列化漏洞-CVE-2017-12149&quot;&gt;&lt;a href=&quot;#JBoss-5-x-6-x-反序列化漏洞-CVE-2017-12149&quot; class=&quot;headerlink&quot; title=&quot;JBoss 5.x/6.x 反序列化漏洞( 
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
-      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
-    
-      <category term="JBoss" scheme="http://www.xpshuai.cn/tags/JBoss/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jenkins一些安全问题</title>
-    <link href="http://www.xpshuai.cn/posts/63696/"/>
-    <id>http://www.xpshuai.cn/posts/63696/</id>
-    <published>2020-05-26T04:25:43.000Z</published>
-    <updated>2020-07-13T01:27:59.043Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;漏洞简介及危害&quot;&gt;&lt;a href=&quot;#漏洞简介及危害&quot; class=&quot;headerlink&quot; title=&quot;漏洞简介及危害&quot;&gt;&lt;/a&gt;漏洞简介及危害&lt;/h4&gt;&lt;p&gt;默认情况下 Jenkins面面板中用户可以选择执行脚本界面来操作一些系统层命令,攻击者可通过未授权访
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="未授权访问" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/"/>
-    
-      <category term="Jenkins" scheme="http://www.xpshuai.cn/tags/Jenkins/"/>
-    
-      <category term=" CVE-2017-1000353" scheme="http://www.xpshuai.cn/tags/CVE-2017-1000353/"/>
-    
-      <category term="CVE-2018-1000861" scheme="http://www.xpshuai.cn/tags/CVE-2018-1000861/"/>
     
   </entry>
   
