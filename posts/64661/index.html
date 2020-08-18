@@ -505,7 +505,7 @@
 <h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><h4 id="DDOS简介"><a href="#DDOS简介" class="headerlink" title="DDOS简介"></a>DDOS简介</h4><p>DDOS(Distributed Denial of Service)，又称分布式拒绝服务攻击。<br>是指处于不同位置的多个攻击者同时向一个或数个目标发动攻击，或者一个攻击者控制了位于不同位置的多台机器并利用这些机器对受害者同时实施攻击。由于攻击的发出点是分布在不同地方的，这类攻击称为分布式拒绝服务攻击，其中的攻击者可以有多个。<br>分布式拒绝服务攻击方式在进行攻击的时候，可以对源IP地址进行伪造，这样就使得这种攻击在发生的时候隐蔽性是非常好的，同时要对攻击进行检测也是非常困难的，因此这种攻击方式也成为了非常难以防范的攻击。</p>
 <h4 id="DDOS危害"><a href="#DDOS危害" class="headerlink" title="DDOS危害"></a>DDOS危害</h4><p>出口带宽堵死<br>游戏掉线导致客户流失<br>服务器连接数多，连接资源被耗尽<br>服务器卡、慢、死机、无法连接</p>
 <h4 id="流量特点"><a href="#流量特点" class="headerlink" title="流量特点"></a>流量特点</h4><p>IP地址随机或固定某些IP段随机<br>没有完整完成三次握手<br>地址多数是伪造的<br>请求数量大、快</p>
-<h4 id="DDOS攻击类型与防御"><a href="#DDOS攻击类型与防御" class="headerlink" title="DDOS攻击类型与防御"></a>DDOS攻击类型与防御</h4><h6 id="1-Smurf攻击"><a href="#1-Smurf攻击" class="headerlink" title="1.Smurf攻击"></a>1.Smurf攻击</h6><p>攻击者向网关(网络广播地址)发送ICMP请求包，并将该ICMP请求报文的源地址伪造成受害主机IP地址，目的地址为广播地址。路由器在接受到该数据包，发现目的地址是广播地址，就会将该数据包广播出去，局域网内所有的存活主机都会受到一个ICMP请求包，源地址是受害主机IP。接下来受害主机就会收到该网络内所有主机发来的ICMP应答报文，通过大量返回的ICMP应答报文来淹没受害主机，最终导致网络阻塞，受害主机崩溃。下面是smurf攻击示意图（盗的图）<br><img src="http://image.xpshuai.cn/smurf%E6%94%BB%E5%87%BB.png" alt=""></p>
+<h4 id="DDOS攻击类型与防御"><a href="#DDOS攻击类型与防御" class="headerlink" title="DDOS攻击类型与防御"></a>DDOS攻击类型与防御</h4><h6 id="1-Smurf攻击"><a href="#1-Smurf攻击" class="headerlink" title="1.Smurf攻击"></a>1.Smurf攻击</h6><p>攻击者向网关(网络广播地址)发送ICMP请求包，并将该ICMP请求报文的源地址伪造成受害主机IP地址，目的地址为广播地址。路由器在接受到该数据包，发现目的地址是广播地址，就会将该数据包广播出去，局域网内所有的存活主机都会受到一个ICMP请求包，源地址是受害主机IP。接下来受害主机就会收到该网络内所有主机发来的ICMP应答报文，通过大量返回的ICMP应答报文来淹没受害主机，最终导致网络阻塞，受害主机崩溃。下面是smurf攻击示意图（盗的图）<br><img src="http://image.xpshuai.cn/smurf%E6%94%BB%E5%87%BB.png" alt></p>
 <p><strong>防护方案：</strong></p>
 <ul>
 <li>禁止路由器广播ICMP请求包；</li>
@@ -517,7 +517,7 @@
 <h6 id="3-Land-Attack（着陆攻击）"><a href="#3-Land-Attack（着陆攻击）" class="headerlink" title="3.Land Attack（着陆攻击）"></a>3.Land Attack（着陆攻击）</h6><p>攻击者发动Land Attack攻击时，需要先发出一个SYN数据包，并将数据包的源IP与目的IP都设置成要攻击的目标IP，这样目标在接收到SYN数据包后，会根据源IP回应一个SYN+ACK数据包，即和自己建立一个空连接，然后到达idel超时时间时，才会释放这个连接。攻击者发送大量这样的数据包，从而耗尽目标的TCP连接池，最终导致拒绝服务。</p>
 <p>Kali Linux提供的很多工具，都可以实现伪造包的功能，如<code>hping3</code>。</p>
 <p><strong>防御方案：</strong><br>这种攻击对早期系统有效。通过防火墙、路由设备，建立规则，丢弃源地址和目标地址相同的SYN、SYN+ACK的TCP。</p>
-<h6 id="4-YN-FLOOD攻击"><a href="#4-YN-FLOOD攻击" class="headerlink" title="4.YN FLOOD攻击"></a>4.YN FLOOD攻击</h6><p>SYN FLOOD攻击是在TCP三次握手过程中产生的。<br>攻击者通过发送大量伪造的带有SYN标志位的TCP报文，与目标主机建立了很多<code>虚假的半开连接</code>，在服务器返回SYN+ACK数据包后，攻击者不对其做出响应，也就是<code>不返回ACK数据包给服务器</code>，这样服务器就会一直等待直到超时。这种攻击方式会使目标服务器连接资源耗尽、链路堵塞，从而达到拒绝服务的目的<br><img src="http://image.xpshuai.cn/syn.png" alt=""></p>
+<h6 id="4-YN-FLOOD攻击"><a href="#4-YN-FLOOD攻击" class="headerlink" title="4.YN FLOOD攻击"></a>4.YN FLOOD攻击</h6><p>SYN FLOOD攻击是在TCP三次握手过程中产生的。<br>攻击者通过发送大量伪造的带有SYN标志位的TCP报文，与目标主机建立了很多<code>虚假的半开连接</code>，在服务器返回SYN+ACK数据包后，攻击者不对其做出响应，也就是<code>不返回ACK数据包给服务器</code>，这样服务器就会一直等待直到超时。这种攻击方式会使目标服务器连接资源耗尽、链路堵塞，从而达到拒绝服务的目的<br><img src="http://image.xpshuai.cn/syn.png" alt></p>
 <p><strong>防御：</strong></p>
 <ul>
 <li>SYNCheck：使用防护设备，3次握手变成了6次握手，由防护设备检测SYN请求是否合法，通过后再由防护设备将报文转发给服务器，后续报文仍由防护设备代理。</li>
@@ -559,8 +559,8 @@
 <li>通过网络层或者借助运营商实施 ACL 来防御；</li>
 <li>关闭现在 NTP 服务的 monlist 功能，在ntp.conf配置文件中增加disable monitor选项。</li>
 </ul>
-<h6 id="8-DNS放大攻击"><a href="#8-DNS放大攻击" class="headerlink" title="8.DNS放大攻击"></a>8.DNS放大攻击</h6><p>DNS报文格式(借个图)：<br><img src="http://image.xpshuai.cn/DNS%E6%8A%A5%E6%96%87.png" alt=""></p>
-<p>首先，攻击者向僵尸网络发出指令，使僵尸网络中的每一台主机均发出一个伪造源地址的DNS查询请求包，这些请求包查询类型设置为ANY，因为这种类型会请求所有的记录，这些记录会在返回的响应包中，也就是说这种数据包的大小较其他类型是最大的。<br>接着查询类型设为递归查询，为什么不是迭代查询呢，仔细看两种查询的过程图可发现，如果迭代查询第一个请求的DNS服务器没有查询到结果，那么第一个请求的服务器会返回另一个DNS服务器IP，让请求主机向这个IP去继续查询，然而攻击者的数据包源地址是伪造的，所以并不会发起第二次查询，因为第一次查询根本就不是它发起的；而递归查询却是在查询到结果之后，才返回给查询请求发起者。<br>利用这两个特点，攻击者就可以成功发起DNS放大攻击。这种普通的查询请求可以将攻击流量放大2~10倍，如果想增大攻击倍数，可以使用RFC 2671中定义的DNS拓展机制EDNS0。未使用EDNS0时，若响应包大小小于512字节，就使用UDP封装数据；若响应包大小超过512字节，就使用TCP连接或者服务器截断响应报文，丢弃超过512字节的部分，并把TC位置1。这两种方式都不利于进行DNS放大攻击。然而在开启EDNS0机制后，增加了OPT RR字段，这两个字段包含了能够处理的最大UDP报文大小信息，所以攻击者将这个信息设置的很大，服务器就会根据这个信息生成响应报文。最后看一下DNS放大攻击演示图<br><img src="http://image.xpshuai.cn/DNS%E6%94%BE%E5%A4%A7%E6%94%BB%E5%87%BB.png" alt=""></p>
+<h6 id="8-DNS放大攻击"><a href="#8-DNS放大攻击" class="headerlink" title="8.DNS放大攻击"></a>8.DNS放大攻击</h6><p>DNS报文格式(借个图)：<br><img src="http://image.xpshuai.cn/DNS%E6%8A%A5%E6%96%87.png" alt></p>
+<p>首先，攻击者向僵尸网络发出指令，使僵尸网络中的每一台主机均发出一个伪造源地址的DNS查询请求包，这些请求包查询类型设置为ANY，因为这种类型会请求所有的记录，这些记录会在返回的响应包中，也就是说这种数据包的大小较其他类型是最大的。<br>接着查询类型设为递归查询，为什么不是迭代查询呢，仔细看两种查询的过程图可发现，如果迭代查询第一个请求的DNS服务器没有查询到结果，那么第一个请求的服务器会返回另一个DNS服务器IP，让请求主机向这个IP去继续查询，然而攻击者的数据包源地址是伪造的，所以并不会发起第二次查询，因为第一次查询根本就不是它发起的；而递归查询却是在查询到结果之后，才返回给查询请求发起者。<br>利用这两个特点，攻击者就可以成功发起DNS放大攻击。这种普通的查询请求可以将攻击流量放大2~10倍，如果想增大攻击倍数，可以使用RFC 2671中定义的DNS拓展机制EDNS0。未使用EDNS0时，若响应包大小小于512字节，就使用UDP封装数据；若响应包大小超过512字节，就使用TCP连接或者服务器截断响应报文，丢弃超过512字节的部分，并把TC位置1。这两种方式都不利于进行DNS放大攻击。然而在开启EDNS0机制后，增加了OPT RR字段，这两个字段包含了能够处理的最大UDP报文大小信息，所以攻击者将这个信息设置的很大，服务器就会根据这个信息生成响应报文。最后看一下DNS放大攻击演示图<br><img src="http://image.xpshuai.cn/DNS%E6%94%BE%E5%A4%A7%E6%94%BB%E5%87%BB.png" alt></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 四个步骤</span>
 1.攻击者使用受损端点将带有欺骗性IP地址的UDP数据包发送到DNS recursor<span class="token punctuation">(</span>递归<span class="token punctuation">)</span>。数据包上的欺骗地址指向受害者的真实IP地址。
 2.每个UDP数据包都向DNS解析器发出请求，通常会传递诸如“ANY”之类的参数，以便接收可能的最大响应。
@@ -1250,7 +1250,7 @@ net localgro
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">363.3k</span>&nbsp;字
+                class="white-color">365.5k</span>&nbsp;字
             
             
             

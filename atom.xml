@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-18T02:24:45.946Z</updated>
+  <updated>2020-08-18T07:52:42.834Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,92 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>开源情报信息搜索(OSINT)</title>
+    <link href="http://www.xpshuai.cn/posts/37/"/>
+    <id>http://www.xpshuai.cn/posts/37/</id>
+    <published>2020-08-18T06:52:18.000Z</published>
+    <updated>2020-08-18T07:52:42.834Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;搜索引擎语法&quot;&gt;&lt;a href=&quot;#搜索引擎语法&quot; class=&quot;headerlink&quot; title=&quot;搜索引擎语法&quot;&gt;&lt;/a&gt;搜索引擎语法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;百度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;谷歌&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;必应&lt;/p
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="情报信息搜索" scheme="http://www.xpshuai.cn/tags/%E6%83%85%E6%8A%A5%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="Githun Hacking" scheme="http://www.xpshuai.cn/tags/Githun-Hacking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开放漏洞情报</title>
+    <link href="http://www.xpshuai.cn/posts/28882/"/>
+    <id>http://www.xpshuai.cn/posts/28882/</id>
+    <published>2020-08-18T06:51:51.000Z</published>
+    <updated>2020-08-18T06:58:15.333Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;常用网站&quot;&gt;&lt;a href=&quot;#常用网站&quot; class=&quot;headerlink&quot; title=&quot;常用网站&quot;&gt;&lt;/a&gt;常用网站&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;CVE&lt;/li&gt;
+&lt;li&gt;Exploit-DB&lt;/li&gt;
+&lt;li&gt;CX Security&lt;/li&gt;
+&lt;li&gt;CN
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="开放漏洞情报" scheme="http://www.xpshuai.cn/tags/%E5%BC%80%E6%94%BE%E6%BC%8F%E6%B4%9E%E6%83%85%E6%8A%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字典生成-pydictor</title>
+    <link href="http://www.xpshuai.cn/posts/31240/"/>
+    <id>http://www.xpshuai.cn/posts/31240/</id>
+    <published>2020-08-18T06:28:31.000Z</published>
+    <updated>2020-08-18T06:49:28.892Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt; 一个强大实用的黑客暴力破解字典建立工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;地址：&lt;a href=&quot;https://github.com/LandGrey/pydictor.git&quot; target=&quot;_blank&quot; rel=&quot;noopene
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>php变量覆盖</title>
     <link href="http://www.xpshuai.cn/posts/50639/"/>
     <id>http://www.xpshuai.cn/posts/50639/</id>
     <published>2020-08-18T01:30:00.000Z</published>
-    <updated>2020-08-18T02:24:45.946Z</updated>
+    <updated>2020-08-18T06:18:56.698Z</updated>
     
     <summary type="html">
     
@@ -48,7 +129,7 @@
     <link href="http://www.xpshuai.cn/posts/57106/"/>
     <id>http://www.xpshuai.cn/posts/57106/</id>
     <published>2020-08-18T00:40:08.000Z</published>
-    <updated>2020-08-18T01:09:53.749Z</updated>
+    <updated>2020-08-18T06:18:56.697Z</updated>
     
     <summary type="html">
     
@@ -219,13 +300,14 @@
     <link href="http://www.xpshuai.cn/posts/3409/"/>
     <id>http://www.xpshuai.cn/posts/3409/</id>
     <published>2020-08-12T08:54:30.000Z</published>
-    <updated>2020-08-13T07:57:14.866Z</updated>
+    <updated>2020-08-18T08:31:43.891Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;高级操作符&quot;&gt;&lt;a href=&quot;#高级操作符&quot; class=&quot;headerlink&quot; title=&quot;高级操作符&quot;&gt;&lt;/a&gt;高级操作符&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概
+        &lt;h2 id=&quot;基本&quot;&gt;&lt;a href=&quot;#基本&quot; class=&quot;headerlink&quot; title=&quot;基本&quot;&gt;&lt;/a&gt;基本&lt;/h2&gt;&lt;p&gt;通配符&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;language-
       
     
     </summary>
@@ -516,81 +598,6 @@
       <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
     
       <category term="聊天服务" scheme="http://www.xpshuai.cn/tags/%E8%81%8A%E5%A4%A9%E6%9C%8D%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://www.xpshuai.cn/posts/1/"/>
-    <id>http://www.xpshuai.cn/posts/1/</id>
-    <published>2020-06-14T02:51:09.294Z</published>
-    <updated>2020-08-03T01:08:03.803Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;title: shell脚本基本知识&lt;br&gt;categories: Linux&lt;br&gt;tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Linux&lt;/li&gt;
-&lt;li&gt;Shell&lt;br&gt;abbrlink: 44249&lt;br&gt;date: 2020-03-16 17:01:17&lt;br&gt;keywords:&lt;br&gt;description:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://image.xpshuai.cn/title.jpg&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>发现内网存活主机方法-简单整理</title>
-    <link href="http://www.xpshuai.cn/posts/48517/"/>
-    <id>http://www.xpshuai.cn/posts/48517/</id>
-    <published>2020-06-07T02:57:47.000Z</published>
-    <updated>2020-06-06T19:00:26.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;基于UDP发现内网存活主机&quot;&gt;&lt;a href=&quot;#基于UDP发现内网存活主机&quot; class=&quot;headerlink&quot; title=&quot;基于UDP发现内网存活主机  &quot;&gt;&lt;/a&gt;&lt;font color=&quot;red&quot;&gt;基于UDP发现内网存活主机  &lt;/font&gt;&lt;/h4&gt;
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="内网" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E7%BD%91/"/>
-    
-      <category term="探测主机存活" scheme="http://www.xpshuai.cn/tags/%E6%8E%A2%E6%B5%8B%E4%B8%BB%E6%9C%BA%E5%AD%98%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tomcat常见漏洞复现</title>
-    <link href="http://www.xpshuai.cn/posts/40402/"/>
-    <id>http://www.xpshuai.cn/posts/40402/</id>
-    <published>2020-05-26T08:55:00.000Z</published>
-    <updated>2020-08-04T07:24:51.660Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;后台管理页面弱口令&quot;&gt;&lt;a href=&quot;#后台管理页面弱口令&quot; class=&quot;headerlink&quot; title=&quot;后台管理页面弱口令&quot;&gt;&lt;/a&gt;后台管理页面弱口令&lt;/h4&gt;&lt;p&gt;默认：&lt;code&gt;http://127.0.0.1:8080/manager/htm
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="tomcat" scheme="http://www.xpshuai.cn/tags/tomcat/"/>
-    
-      <category term="中间件漏洞" scheme="http://www.xpshuai.cn/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
     
   </entry>
   

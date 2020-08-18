@@ -477,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -499,7 +499,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="高级操作符"><a href="#高级操作符" class="headerlink" title="高级操作符"></a>高级操作符</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>将学习如下的高级操作符：</strong></p>
+                <h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><p>通配符</p>
+<pre class="line-numbers language-bash"><code class="language-bash">通配符                语义                说明                    示例
++                包含关键词        +前面必须要有一个空格             admin +login
+-                排除关键词        -前面必须要有一个空格             mysql -csdn
+~                同义词             ~前面必须要有一个空格          mysql -csdn
+*                模糊查询        *代替任意字符                    mysql**
+<span class="token string">""</span>                强调                                         <span class="token string">"mysql"</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="高级操作符"><a href="#高级操作符" class="headerlink" title="高级操作符"></a>高级操作符</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>将学习如下的高级操作符：</strong></p>
 <ul>
 <li>intitle, allintitle</li>
 <li>related</li>
@@ -620,7 +629,9 @@ PPT
 <p>查找特定的文件：<code>filetype:log inurl:ws_ftp.log</code>，使用filetype和inurl来查找</p>
 <p>服务器版本：<code>intitle:index.of server at</code></p>
 <p>服务器版本：<code>intitle:index.of Apache/1.3.24 Server at</code> 等（其他服务器…）</p>
-<p>#### </p>
+<p>搜索目标是否有列目录</p>
+<pre class="line-numbers language-bash"><code class="language-bash">site:<span class="token string">"xpshuai.cn"</span> intext:index of/ <span class="token operator">|</span> <span class="token punctuation">..</span>/ <span class="token operator">|</span> Parent Directory
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h4><p>目录遍历：<code>intitle:index.of inurl:"/admin/"</code>和<code>intitle:index.of inurl:"/var/www/"</code>等等</p>
 <p>递增置换（“取一个数并用下一个更大的或者更小的数来替代这个数”的形象的说法）</p>
 <p>拓展遍历（用于查找文件名相同，但是拓展名不同的文件如备份文件–&gt;一旦你找到了HTM文件，就可以应用置换技术来查找具有相同的文件名，但扩展名不同的文件）</p>
@@ -1248,7 +1259,7 @@ masscan号称是世界上最快的扫描软件，可以在3分钟内扫描整个
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">363.3k</span>&nbsp;字
+                class="white-color">365.5k</span>&nbsp;字
             
             
             
