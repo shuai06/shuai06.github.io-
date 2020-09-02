@@ -477,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    16 分
                 </div>
                 
 
@@ -591,6 +591,29 @@ iface inet static
 <blockquote>
 <p>Note： VmWare对网络的支持要好于VirtualBox(比如有些网络的配置可能有限制)</p>
 </blockquote>
+<h6 id="Ubuntu-1804配置静态ip"><a href="#Ubuntu-1804配置静态ip" class="headerlink" title="Ubuntu 1804配置静态ip"></a>Ubuntu 1804配置静态ip</h6><p>ubuntu18.04 server，启用了新的网络工具<code>netplan</code>，对于命令行配置网络参数跟之前的版本有比较大的差别，现在介绍如下：</p>
+<ol>
+<li>其网络配置文件是放在<code>/etc/netplan/50-cloud-init.yaml</code>, 缺省是用dhcp方式，如果要配置静态地址，则需要修改此文件的想关内容，见如下的例子：</li>
+</ol>
+<pre class="line-numbers language-bash"><code class="language-bash">network:
+    ethernets:
+        ens33:
+            addresses: <span class="token punctuation">[</span>192.168.1.20/24<span class="token punctuation">]</span>
+            dhcp4: <span class="token boolean">false</span>
+            gateway4: 192.168.1.1
+            nameservers:
+            addresses: <span class="token punctuation">[</span>192.168.1.1<span class="token punctuation">]</span>
+            optional: <span class="token boolean">true</span>
+            version: 2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.使其生效的方法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> netplan apply
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果配置有问题会报错，如果没问题，则会新的配置会立即生效。</p>
+<blockquote>
+<p>注意：此方法只是针对ubuntu18.04 Server版，对于18.04 desktop它缺省是使用NetworkManger来进行管理，可使用图形界面进行配置，其网络配置文件是保存在：/etc/NetworkManager/system-connections目录下的，跟Server版区别还是比较大的。</p>
+</blockquote>
+<p>netplan 工具还有其它比较丰富的功能，详细可参见其的说明文档。</p>
 <h2 id="DNS配置"><a href="#DNS配置" class="headerlink" title="DNS配置"></a>DNS配置</h2><h6 id="DNS配置文件"><a href="#DNS配置文件" class="headerlink" title="DNS配置文件"></a>DNS配置文件</h6><p><code>/etc/resolve.conf</code>    </p>
 <pre class="line-numbers language-bash"><code class="language-bash">/etc/resolve.conf    <span class="token comment" spellcheck="true"># DNS设置（软连接）</span>
 格式:
@@ -1464,7 +1487,7 @@ ftp服务FTP服务： ftp服务我分为两种情况，第一种是使用系统�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">366k</span>&nbsp;字
+                class="white-color">366.3k</span>&nbsp;字
             
             
             
