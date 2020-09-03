@@ -477,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.1k
+                    4.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    17 分
                 </div>
                 
 
@@ -596,16 +596,42 @@ iface inet static
 <li>其网络配置文件是放在<code>/etc/netplan/50-cloud-init.yaml</code>, 缺省是用dhcp方式，如果要配置静态地址，则需要修改此文件的想关内容，见如下的例子：</li>
 </ol>
 <pre class="line-numbers language-bash"><code class="language-bash">network:
+    version: 2
     ethernets:
         ens33:
-            addresses: <span class="token punctuation">[</span>192.168.1.20/24<span class="token punctuation">]</span>
+            addresses: <span class="token punctuation">[</span>192.168.1.20/24<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 可以是这种数组形式[1.1.1.1, 192.168.1.20/24]也可以是下面那样</span>
             dhcp4: <span class="token boolean">false</span>
             gateway4: 192.168.1.1
             nameservers:
-            addresses: <span class="token punctuation">[</span>192.168.1.1<span class="token punctuation">]</span>
-            optional: <span class="token boolean">true</span>
-            version: 2
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                addresses: <span class="token punctuation">[</span>192.168.1.1<span class="token punctuation">]</span>
+                optional: <span class="token boolean">true</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>或者下面这个格式(可能更清晰，有<code>ipv6</code>)</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># the datasource.  Changes to it will not persist across an instance.</span>
+<span class="token comment" spellcheck="true"># To disable cloud-init's network configuration capabilities, write a file</span>
+<span class="token comment" spellcheck="true"># /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:</span>
+<span class="token comment" spellcheck="true"># network: {config: disabled}</span>
+<span class="token comment" spellcheck="true"># 前几项必填，其他根据需要填写</span>
+network:
+    version: 2
+    ethernets:
+        eth0:
+            addresses:
+                - 公共ipv4地址/20掩码
+                - 私有ipv4地址/16
+                - 公共ipv6地址/64
+            dhcp4: <span class="token boolean">false</span>
+            gateway4: <span class="token string">"公共ipv4网关"</span>
+            gateway6: 公共ipv6网关
+            match:
+                macaddress: MAC地址<span class="token punctuation">(</span>不必须<span class="token punctuation">)</span>
+            nameservers:    <span class="token comment" spellcheck="true"># DNS</span>
+                addresses:
+                    - <span class="token string">"67.207.67.2"</span>
+                    - <span class="token string">"67.207.67.3"</span>
+            set-name: eth0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2.使其生效的方法：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> netplan apply
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1487,7 +1513,7 @@ ftp服务FTP服务： ftp服务我分为两种情况，第一种是使用系统�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">366.3k</span>&nbsp;字
+                class="white-color">366.4k</span>&nbsp;字
             
             
             
