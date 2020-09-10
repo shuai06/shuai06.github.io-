@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-08-23T07:27:11.326Z</updated>
+  <updated>2020-09-10T07:39:33.867Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>frp</title>
+    <link href="http://www.xpshuai.cn/posts/23493/"/>
+    <id>http://www.xpshuai.cn/posts/23493/</id>
+    <published>2020-09-10T06:56:45.000Z</published>
+    <updated>2020-09-10T07:39:33.867Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;下载地址：&lt;a href=&quot;https://github.com/fatedier/frp.git&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/fatedier/frp.git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;跨平台，根据自己
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="frp" scheme="http://www.xpshuai.cn/tags/frp/"/>
+    
+      <category term="内网穿透" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+      <category term="端口转发" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XSL Script Processing</title>
+    <link href="http://www.xpshuai.cn/posts/45834/"/>
+    <id>http://www.xpshuai.cn/posts/45834/</id>
+    <published>2020-09-10T04:23:14.000Z</published>
+    <updated>2020-09-10T06:20:27.726Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;XSL是指扩展样式表语言(Extension Stylesheet Language)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;msxsl.exe&lt;/code&gt;是微软用于命令行下处理XSL的一个程序，所以通过他，我们可以执行JavaScript进而执行系统命令，下载地址：&lt;a href=
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="XSL Script Processing" scheme="http://www.xpshuai.cn/tags/XSL-Script-Processing/"/>
+    
+      <category term="MSXSL.exe" scheme="http://www.xpshuai.cn/tags/MSXSL-exe/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用anydesk做远控</title>
+    <link href="http://www.xpshuai.cn/posts/15621/"/>
+    <id>http://www.xpshuai.cn/posts/15621/</id>
+    <published>2020-09-10T02:12:45.000Z</published>
+    <updated>2020-09-10T03:05:29.140Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;anydesk是类似teamviewer的远程管理软件，但是他不用安装且体积小&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;场景举例&quot;&gt;&lt;a href=&quot;#场景举例&quot; class=&quot;headerlink&quot; title=&quot;场景举例&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="远控" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E6%8E%A7/"/>
+    
+      <category term="anydesk" scheme="http://www.xpshuai.cn/tags/anydesk/"/>
+    
+  </entry>
   
   <entry>
     <title>mailsniper.ps1</title>
@@ -499,105 +581,6 @@
       <category term="Zabbix" scheme="http://www.xpshuai.cn/tags/Zabbix/"/>
     
       <category term="监控" scheme="http://www.xpshuai.cn/tags/%E7%9B%91%E6%8E%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-引导过程</title>
-    <link href="http://www.xpshuai.cn/posts/24845/"/>
-    <id>http://www.xpshuai.cn/posts/24845/</id>
-    <published>2020-07-30T14:38:20.000Z</published>
-    <updated>2020-07-30T14:48:44.179Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;BIOS-UEFI&quot;&gt;&lt;a href=&quot;#BIOS-UEFI&quot; class=&quot;headerlink&quot; title=&quot;BIOS/UEFI&quot;&gt;&lt;/a&gt;BIOS/UEFI&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;打开黑箱看看里面&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/tags/Linux/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="引导过程" scheme="http://www.xpshuai.cn/tags/%E5%BC%95%E5%AF%BC%E8%BF%87%E7%A8%8B/"/>
-    
-      <category term="BIOS" scheme="http://www.xpshuai.cn/tags/BIOS/"/>
-    
-      <category term="UEFI" scheme="http://www.xpshuai.cn/tags/UEFI/"/>
-    
-      <category term="grub" scheme="http://www.xpshuai.cn/tags/grub/"/>
-    
-      <category term="内核" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E6%A0%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-代理&amp;VPN</title>
-    <link href="http://www.xpshuai.cn/posts/39742/"/>
-    <id>http://www.xpshuai.cn/posts/39742/</id>
-    <published>2020-07-17T12:54:42.000Z</published>
-    <updated>2020-07-17T12:57:22.686Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;你看见的不是你真的看见的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;时间、带宽、管控都影响网络使用体验&lt;/li&gt;
-&lt;li&gt;作为改善技术，VPN/代理和突破限制改善体验&lt;/li&gt;
-&lt;li&gt;区别：代理主要提高访问&lt;code&gt;速度&lt;/code
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="代理" scheme="http://www.xpshuai.cn/tags/%E4%BB%A3%E7%90%86/"/>
-    
-      <category term="VPN" scheme="http://www.xpshuai.cn/tags/VPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu sever-邮件服务</title>
-    <link href="http://www.xpshuai.cn/posts/36278/"/>
-    <id>http://www.xpshuai.cn/posts/36278/</id>
-    <published>2020-07-11T15:15:23.000Z</published>
-    <updated>2020-07-13T07:17:51.898Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;直到今天，Emai仍然是互联网上最重要的信息传递方式之一&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;电子邮件基础&quot;&gt;&lt;a href=&quot;#电子邮件基础&quot; class=&quot;headerlink&quot; title=&quot; 电子邮件基础&quot;&gt;&lt;/a&gt;&lt;fon
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="ubuntu server" scheme="http://www.xpshuai.cn/tags/ubuntu-server/"/>
-    
-      <category term="邮件服务" scheme="http://www.xpshuai.cn/tags/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   
