@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-09-10T07:39:33.867Z</updated>
+  <updated>2020-09-13T11:58:55.292Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>毕业随想</title>
+    <link href="http://www.xpshuai.cn/posts/4544/"/>
+    <id>http://www.xpshuai.cn/posts/4544/</id>
+    <published>2020-09-13T11:02:58.000Z</published>
+    <updated>2020-09-13T11:58:55.292Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;本文纯粹是我毕业之后一些内心的想法，想到哪写到哪&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;自打毕业以来，心情就很烦闷，一直想找个机会写写，但是每到提笔就不知道从何写起。&lt;/p&gt;
+&lt;p&gt;每天朝九晚六的，下班就回到出租屋，偶尔出去锻炼锻炼，一点动力也
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://www.xpshuai.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="随笔" scheme="http://www.xpshuai.cn/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="碎碎念" scheme="http://www.xpshuai.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="毕业" scheme="http://www.xpshuai.cn/tags/%E6%AF%95%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>frp</title>
     <link href="http://www.xpshuai.cn/posts/23493/"/>
     <id>http://www.xpshuai.cn/posts/23493/</id>
     <published>2020-09-10T06:56:45.000Z</published>
-    <updated>2020-09-10T07:39:33.867Z</updated>
+    <updated>2020-09-10T08:11:38.137Z</updated>
     
     <summary type="html">
     
@@ -49,7 +80,7 @@
     <link href="http://www.xpshuai.cn/posts/45834/"/>
     <id>http://www.xpshuai.cn/posts/45834/</id>
     <published>2020-09-10T04:23:14.000Z</published>
-    <updated>2020-09-10T06:20:27.726Z</updated>
+    <updated>2020-09-10T08:11:38.135Z</updated>
     
     <summary type="html">
     
@@ -75,7 +106,7 @@
     <link href="http://www.xpshuai.cn/posts/15621/"/>
     <id>http://www.xpshuai.cn/posts/15621/</id>
     <published>2020-09-10T02:12:45.000Z</published>
-    <updated>2020-09-10T03:05:29.140Z</updated>
+    <updated>2020-09-10T08:11:38.138Z</updated>
     
     <summary type="html">
     
@@ -548,39 +579,6 @@
       <category term="usermin" scheme="http://www.xpshuai.cn/tags/usermin/"/>
     
       <category term="Xrdp" scheme="http://www.xpshuai.cn/tags/Xrdp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-Zabbix</title>
-    <link href="http://www.xpshuai.cn/posts/60461/"/>
-    <id>http://www.xpshuai.cn/posts/60461/</id>
-    <published>2020-07-31T06:34:27.000Z</published>
-    <updated>2020-07-31T09:06:58.115Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Zabbix – 最流行的开源的企业级监控系统之一&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;基本可对全平台，全系统做监控：网络设备、操作系统、应用程序&lt;/li&gt;
-&lt;li&gt;Unix、L inux、Windows、MacOS&lt;/li&gt;
-&lt;
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="Zabbix" scheme="http://www.xpshuai.cn/tags/Zabbix/"/>
-    
-      <category term="监控" scheme="http://www.xpshuai.cn/tags/%E7%9B%91%E6%8E%A7/"/>
     
   </entry>
   
