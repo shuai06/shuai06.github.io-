@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-09-13T11:58:55.292Z</updated>
+  <updated>2020-09-19T23:17:50.708Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>返校考六级</title>
+    <link href="http://www.xpshuai.cn/posts/20779/"/>
+    <id>http://www.xpshuai.cn/posts/20779/</id>
+    <published>2020-09-19T22:53:29.000Z</published>
+    <updated>2020-09-19T23:17:50.708Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  今年的六级考试，也因为疫情原因推迟到了九月份，故2020届毕业生也有了一次毕业之后再次进入到校园的一次小机会。&lt;/p&gt;
+&lt;p&gt;  上午等待朋友的到来，然后一起听了听听力，背了背作文，然后中午一起去吃了麻辣拌。可能中午在家睡的时间太长，以致于匆匆忙忙赶着去考场，下午三点开
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://www.xpshuai.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="碎碎念" scheme="http://www.xpshuai.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="返校的诱惑" scheme="http://www.xpshuai.cn/tags/%E8%BF%94%E6%A0%A1%E7%9A%84%E8%AF%B1%E6%83%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>毕业随想</title>
     <link href="http://www.xpshuai.cn/posts/4544/"/>
     <id>http://www.xpshuai.cn/posts/4544/</id>
     <published>2020-09-13T11:02:58.000Z</published>
-    <updated>2020-09-13T11:58:55.292Z</updated>
+    <updated>2020-09-13T11:59:14.221Z</updated>
     
     <summary type="html">
     
@@ -39,9 +65,9 @@
       <category term="生活" scheme="http://www.xpshuai.cn/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="随笔" scheme="http://www.xpshuai.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="碎碎念" scheme="http://www.xpshuai.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+      <category term="随笔" scheme="http://www.xpshuai.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
       <category term="毕业" scheme="http://www.xpshuai.cn/tags/%E6%AF%95%E4%B8%9A/"/>
     
@@ -149,9 +175,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
-    
       <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
+    
+      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
     
   </entry>
   
@@ -396,11 +422,11 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
       <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
     
       <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
-    
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
@@ -428,9 +454,9 @@
     
       <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
     
-      <category term="masscan" scheme="http://www.xpshuai.cn/tags/masscan/"/>
-    
       <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
+    
+      <category term="masscan" scheme="http://www.xpshuai.cn/tags/masscan/"/>
     
   </entry>
   
@@ -545,40 +571,6 @@
       <category term="Rkhunter" scheme="http://www.xpshuai.cn/tags/Rkhunter/"/>
     
       <category term="安全检查" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-远程管理 Webmin&amp;usermin&amp;Xrdp</title>
-    <link href="http://www.xpshuai.cn/posts/40012/"/>
-    <id>http://www.xpshuai.cn/posts/40012/</id>
-    <published>2020-07-31T06:38:04.000Z</published>
-    <updated>2020-07-31T09:06:58.109Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Webmin&quot;&gt;&lt;a href=&quot;#Webmin&quot; class=&quot;headerlink&quot; title=&quot;Webmin&quot;&gt;&lt;/a&gt;Webmin&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;基于WEB的系统远程管理&lt;ul&gt;
-&lt;li&gt;基于图形化的友好操作界面&lt;/li&gt;
-&lt;li&gt;多开启一个
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="远程管理" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="Webmin" scheme="http://www.xpshuai.cn/tags/Webmin/"/>
-    
-      <category term="usermin" scheme="http://www.xpshuai.cn/tags/usermin/"/>
-    
-      <category term="Xrdp" scheme="http://www.xpshuai.cn/tags/Xrdp/"/>
     
   </entry>
   
