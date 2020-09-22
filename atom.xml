@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-09-19T23:18:10.676Z</updated>
+  <updated>2020-09-22T14:27:03.470Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows sc命令与权限维持</title>
+    <link href="http://www.xpshuai.cn/posts/65109/"/>
+    <id>http://www.xpshuai.cn/posts/65109/</id>
+    <published>2020-09-22T14:16:57.000Z</published>
+    <updated>2020-09-22T14:27:03.470Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;sc&lt;/code&gt;命令用来创建和删除windows服务&lt;/p&gt;
+&lt;h4 id=&quot;使用SC命令创建windows服务&quot;&gt;&lt;a href=&quot;#使用SC命令创建windows服务&quot; class=&quot;headerlink&quot; title=&quot;使用SC命令创建windows服务
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="sc" scheme="http://www.xpshuai.cn/tags/sc/"/>
+    
+      <category term="添加服务" scheme="http://www.xpshuai.cn/tags/%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="权限维持" scheme="http://www.xpshuai.cn/tags/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows命令行下载文件方法</title>
+    <link href="http://www.xpshuai.cn/posts/54938/"/>
+    <id>http://www.xpshuai.cn/posts/54938/</id>
+    <published>2020-09-22T12:50:27.000Z</published>
+    <updated>2020-09-22T14:14:55.691Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;当我们通过Web方式获取了一个Shell，而目标主机是Windows，我们下面后门文件到目标主机&lt;strong&gt;一般有两种方式：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;远程下载文件到本地，然后再执行；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;远程下载执行，执行过程没有
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="命令行下载文件" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/"/>
+    
+      <category term="shell" scheme="http://www.xpshuai.cn/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>返校考六级</title>
@@ -422,11 +479,11 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
       <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
     
       <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
+    
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
@@ -510,67 +567,6 @@
       <category term="IDS" scheme="http://www.xpshuai.cn/tags/IDS/"/>
     
       <category term="Tripwire" scheme="http://www.xpshuai.cn/tags/Tripwire/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-网络工具</title>
-    <link href="http://www.xpshuai.cn/posts/63455/"/>
-    <id>http://www.xpshuai.cn/posts/63455/</id>
-    <published>2020-08-01T03:30:46.000Z</published>
-    <updated>2020-08-01T09:19:27.083Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;网络带宽&quot;&gt;&lt;a href=&quot;#网络带宽&quot; class=&quot;headerlink&quot; title=&quot;网络带宽&quot;&gt;&lt;/a&gt;网络带宽&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;开测试防火墙性能NetIO&lt;/li&gt;
-&lt;li&gt;光纤专线的带宽是否缩水&lt;/li&gt;
-&lt;li&gt;实际承受的流量&lt;/li&gt;
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="带宽监测" scheme="http://www.xpshuai.cn/tags/%E5%B8%A6%E5%AE%BD%E7%9B%91%E6%B5%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-Rkhunter</title>
-    <link href="http://www.xpshuai.cn/posts/53417/"/>
-    <id>http://www.xpshuai.cn/posts/53417/</id>
-    <published>2020-08-01T01:29:35.000Z</published>
-    <updated>2020-08-01T02:44:43.225Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;谣言&quot;&gt;&lt;a href=&quot;#谣言&quot; class=&quot;headerlink&quot; title=&quot;谣言&quot;&gt;&lt;/a&gt;谣言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Linux系统很安全，从不感染病毒&lt;/li&gt;
-&lt;li&gt;已知的恶意软件没有Windows系统多&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="Rkhunter" scheme="http://www.xpshuai.cn/tags/Rkhunter/"/>
-    
-      <category term="安全检查" scheme="http://www.xpshuai.cn/tags/%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5/"/>
     
   </entry>
   
