@@ -186,9 +186,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>防火墙</tag>
         <tag>iptables</tag>
         <tag>NAT</tag>
-        <tag>防火墙</tag>
       </tags>
   </entry>
   <entry>
@@ -320,8 +320,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>邮件服务</tag>
         <tag>ubuntu server</tag>
+        <tag>邮件服务</tag>
       </tags>
   </entry>
   <entry>
@@ -332,8 +332,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>ubuntu server</tag>
         <tag>聊天服务</tag>
+        <tag>ubuntu server</tag>
       </tags>
   </entry>
   <entry>
