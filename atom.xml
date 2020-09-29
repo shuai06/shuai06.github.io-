@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-09-22T14:27:03.470Z</updated>
+  <updated>2020-09-22T14:27:38.755Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.xpshuai.cn/posts/65109/"/>
     <id>http://www.xpshuai.cn/posts/65109/</id>
     <published>2020-09-22T14:16:57.000Z</published>
-    <updated>2020-09-22T14:27:03.470Z</updated>
+    <updated>2020-09-22T14:27:38.755Z</updated>
     
     <summary type="html">
     
@@ -96,37 +96,6 @@
       <category term="碎碎念" scheme="http://www.xpshuai.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
       <category term="返校的诱惑" scheme="http://www.xpshuai.cn/tags/%E8%BF%94%E6%A0%A1%E7%9A%84%E8%AF%B1%E6%83%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>毕业随想</title>
-    <link href="http://www.xpshuai.cn/posts/4544/"/>
-    <id>http://www.xpshuai.cn/posts/4544/</id>
-    <published>2020-09-13T11:02:58.000Z</published>
-    <updated>2020-09-13T11:59:14.221Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;本文纯粹是我毕业之后一些内心的想法，想到哪写到哪&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;自打毕业以来，心情就很烦闷，一直想找个机会写写，但是每到提笔就不知道从何写起。&lt;/p&gt;
-&lt;p&gt;每天朝九晚六的，下班就回到出租屋，偶尔出去锻炼锻炼，一点动力也
-      
-    
-    </summary>
-    
-      <category term="生活" scheme="http://www.xpshuai.cn/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="随笔" scheme="http://www.xpshuai.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="碎碎念" scheme="http://www.xpshuai.cn/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-      <category term="毕业" scheme="http://www.xpshuai.cn/tags/%E6%AF%95%E4%B8%9A/"/>
     
   </entry>
   
@@ -479,11 +448,11 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
       <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
     
       <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
-    
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
@@ -567,6 +536,36 @@
       <category term="IDS" scheme="http://www.xpshuai.cn/tags/IDS/"/>
     
       <category term="Tripwire" scheme="http://www.xpshuai.cn/tags/Tripwire/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu server-网络工具</title>
+    <link href="http://www.xpshuai.cn/posts/63455/"/>
+    <id>http://www.xpshuai.cn/posts/63455/</id>
+    <published>2020-08-01T03:30:46.000Z</published>
+    <updated>2020-08-01T09:19:27.083Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;网络带宽&quot;&gt;&lt;a href=&quot;#网络带宽&quot; class=&quot;headerlink&quot; title=&quot;网络带宽&quot;&gt;&lt;/a&gt;网络带宽&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;开测试防火墙性能NetIO&lt;/li&gt;
+&lt;li&gt;光纤专线的带宽是否缩水&lt;/li&gt;
+&lt;li&gt;实际承受的流量&lt;/li&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="带宽监测" scheme="http://www.xpshuai.cn/tags/%E5%B8%A6%E5%AE%BD%E7%9B%91%E6%B5%8B/"/>
     
   </entry>
   
