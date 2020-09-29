@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="内网第三章-隐藏隧道通信技术, 技术博客">
-    <meta name="description" content="怎奈何剑胆琴心终为梦">
+    <meta name="description" content="怎奈剑胆琴心终为梦">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -144,7 +144,7 @@
         <div class="logo-name">剑胆琴心</div>
         <div class="logo-desc">
             
-            怎奈何剑胆琴心终为梦
+            怎奈剑胆琴心终为梦
             
         </div>
     </div>
@@ -2008,12 +2008,12 @@ DownloadString<span class="token punctuation">(</span><span class="token punctua
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
                     <a href="/tags/安全加固/">
                         <span class="chip bg-color">安全加固</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -2112,7 +2112,7 @@ DownloadString<span class="token punctuation">(</span><span class="token punctua
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('1'),
-            headingSelector: 'h2, h3, h4, h6'
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -2124,7 +2124,7 @@ DownloadString<span class="token punctuation">(</span><span class="token punctua
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4, h6').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
