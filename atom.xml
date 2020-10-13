@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-09-22T14:27:38.755Z</updated>
+  <updated>2020-10-13T05:38:26.938Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FTP两种模式</title>
+    <link href="http://www.xpshuai.cn/posts/57750/"/>
+    <id>http://www.xpshuai.cn/posts/57750/</id>
+    <published>2020-10-13T05:13:12.000Z</published>
+    <updated>2020-10-13T05:38:26.938Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;主被动模式，阐述的是数据传输过程&lt;/p&gt;
+&lt;p&gt;主被动模式，选择权在客户机上！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所谓主或被，是站在服务器角度说的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;主动模式&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="FTP" scheme="http://www.xpshuai.cn/categories/FTP/"/>
+    
+    
+      <category term="FTP" scheme="http://www.xpshuai.cn/tags/FTP/"/>
+    
+      <category term="文件传输协议" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/"/>
+    
+      <category term="主动模式 被动模式" scheme="http://www.xpshuai.cn/tags/%E4%B8%BB%E5%8A%A8%E6%A8%A1%E5%BC%8F-%E8%A2%AB%E5%8A%A8%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows sc命令与权限维持</title>
@@ -536,36 +570,6 @@
       <category term="IDS" scheme="http://www.xpshuai.cn/tags/IDS/"/>
     
       <category term="Tripwire" scheme="http://www.xpshuai.cn/tags/Tripwire/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-网络工具</title>
-    <link href="http://www.xpshuai.cn/posts/63455/"/>
-    <id>http://www.xpshuai.cn/posts/63455/</id>
-    <published>2020-08-01T03:30:46.000Z</published>
-    <updated>2020-08-01T09:19:27.083Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;网络带宽&quot;&gt;&lt;a href=&quot;#网络带宽&quot; class=&quot;headerlink&quot; title=&quot;网络带宽&quot;&gt;&lt;/a&gt;网络带宽&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;开测试防火墙性能NetIO&lt;/li&gt;
-&lt;li&gt;光纤专线的带宽是否缩水&lt;/li&gt;
-&lt;li&gt;实际承受的流量&lt;/li&gt;
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
-    
-      <category term="带宽监测" scheme="http://www.xpshuai.cn/tags/%E5%B8%A6%E5%AE%BD%E7%9B%91%E6%B5%8B/"/>
     
   </entry>
   
