@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-10-13T05:38:26.938Z</updated>
+  <updated>2020-10-13T05:47:05.007Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.xpshuai.cn/posts/57750/"/>
     <id>http://www.xpshuai.cn/posts/57750/</id>
     <published>2020-10-13T05:13:12.000Z</published>
-    <updated>2020-10-13T05:38:26.938Z</updated>
+    <updated>2020-10-13T05:47:05.007Z</updated>
     
     <summary type="html">
     
@@ -482,11 +482,11 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
       <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
     
       <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
+    
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
