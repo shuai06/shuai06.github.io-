@@ -823,40 +823,59 @@ bond-slaves eth0 eth1         <span class="token comment" spellcheck="true"># �
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>3.配置dhcp服务  </p>
 <blockquote>
-<p>Note：能不安装的服务和软件就不要安装，反非必须，就不启用（缩小攻击面）<br><code>`</code>bash</p>
+<p>Note：能不安装的服务和软件就不要安装，反非必须，就不启用（缩小攻击面）  </p>
 </blockquote>
-<p>##1.先修改配置文件1  </p>
-<p>#sudo vim /etc/default/isc-dhcp-server   # 指定启动DHCP服务的网卡<br>    INTERFACE=”eth0”   # 要启动shcp的网卡name(一般是针对内网的那一块网卡)，可以多个网卡（空格隔开）</p>
-<p>##2.再修改主配置文件（指定地址池和选项） </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">##1.先修改配置文件1  </span>
+<span class="token comment" spellcheck="true">#sudo vim /etc/default/isc-dhcp-server   # 指定启动DHCP服务的网卡</span>
+    INTERFACE<span class="token operator">=</span><span class="token string">"eth0"</span>   <span class="token comment" spellcheck="true"># 要启动shcp的网卡name(一般是针对内网的那一块网卡)，可以多个网卡（空格隔开）</span>
+
+<span class="token comment" spellcheck="true">##2.再修改主配置文件（指定地址池和选项） </span>
+<span class="token comment" spellcheck="true">#sudo vim /etc/dhcp/dhcpd.conf       </span>
+<span class="token comment" spellcheck="true">#option只对dhcp的作用域起效；其他的很对整个服务器起效</span>
+<span class="token comment" spellcheck="true">#一致的配置写在文件起始位置，其他的个性的单独设置在各个网段的位置</span>
+default-lease-time 600<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#租约期限， 单位：s</span>
+max-lease-time 7200<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#最大租约期限(到达时间的一半，就刷新使用期；如果到达最大时间，就重新通过dhcp获取)</span>
+authoritative<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">#启用之后，证明这个是权威的授权dhcp服务器（一般情况下，网络中如果出现其他的dhcp就不会影响了）</span>
+<span class="token comment" spellcheck="true">#配置地址池(可以手动写，也可以在原注释的基础上配置) 网段</span>
+subnet 10.1.8.0 netmask 255.255.255.0 <span class="token punctuation">{</span>
+    range 10.1.8.100 10.1.8.200<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">#可分配的地址段</span>
+    option routers 10.1.8.1<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#网关地址</span>
+    option domain-name-servers 192.168.1.1,192.168.1.2<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#dns服务器地址，多个用逗号隔开; 一般配到这里就够了</span>
+    option ntp-server 1.1.1.1<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">#时间服务器</span>
+    option domain-name <span class="token string">"local.lan"</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">#统一的域名</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">##3.重启服务</span>
+<span class="token punctuation">..</span>.
+
+
+<span class="token comment" spellcheck="true">#客户端一些操作</span>
+ipconfig /all
+ipconfig /release   <span class="token comment" spellcheck="true"># 释放这个ip</span>
+ipconfig /renew    <span class="token comment" spellcheck="true">#重新获取ip</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.特殊情况(指定某个ip只分配给某台计算机，IP保留)    </p>
+<blockquote>
+<p>通过MAC地址来识别<br><code>`</code>bash</p>
+</blockquote>
 <p>#sudo vim /etc/dhcp/dhcpd.conf       </p>
-<p>#option只对dhcp的作用域起效；其他的很对整个服务器起效</p>
-<p>#一致的配置写在文件起始位置，其他的个性的单独设置在各个网段的位置<br>default-lease-time 600;  #租约期限， 单位：s<br>max-lease-time 7200;  #最大租约期限(到达时间的一半，就刷新使用期；如果到达最大时间，就重新通过dhcp获取)<br>authoritative;   #启用之后，证明这个是权威的授权dhcp服务器（一般情况下，网络中如果出现其他的dhcp就不会影响了）</p>
-<p>#配置地址池(可以手动写，也可以在原注释的基础上配置) 网段<br>subnet 10.1.8.0 netmask 255.255.255.0 {<br>    range 10.1.8.100 10.1.8.200;   #可分配的地址段<br>    option routers 10.1.8.1;  #网关地址<br>    option domain-name-servers 192.168.1.1,192.168.1.2;  #dns服务器地址，多个用逗号隔开; 一般配到这里就够了<br>    option ntp-server 1.1.1.1;     #时间服务器<br>    option domain-name “local.lan”;   #统一的域名<br>}</p>
-<p>##3.重启服务<br>…</p>
-<p>#客户端一些操作<br>ipconfig /all<br>ipconfig /release   # 释放这个ip<br>ipconfig /renew    #重新获取ip</p>
-<pre><code>3.特殊情况(指定某个ip只分配给某台计算机，IP保留)  
-
-&gt;通过MAC地址来识别  
+<p>host yourname {<br>    hardware ethernet 00:11:22:33:44:55;<br>    fixed-address 10.1.8.8;   #尽量用上面地址池以外的地址<br>}  </p>
+<p>#保存，重启</p>
+<pre><code>
+###### 日常的维护  
+日志与状态查询  
 ```bash
-#sudo vim /etc/dhcp/dhcpd.conf       
-
-host yourname {
-    hardware ethernet 00:11:22:33:44:55;
-    fixed-address 10.1.8.8;   #尽量用上面地址池以外的地址
-}  
-#保存，重启
-
-</code></pre><h6 id="日常的维护"><a href="#日常的维护" class="headerlink" title="日常的维护"></a>日常的维护</h6><p>日志与状态查询  </p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#服务器地址租约结果（可查看分发详细信息）</span>
-<span class="token function">cat</span> /var/lib/dhcp/dhcpd.leases
-<span class="token comment" spellcheck="true">#系统日志文件(客户端直接关机不会记录，release的时候会记录)</span>
-<span class="token function">tail</span> -f /var/log/syslog
-<span class="token comment" spellcheck="true">#查看服务运行状态</span>
+#服务器地址租约结果（可查看分发详细信息）
+cat /var/lib/dhcp/dhcpd.leases
+#系统日志文件(客户端直接关机不会记录，release的时候会记录)
+tail -f /var/log/syslog
+#查看服务运行状态
 systemctl status isc-dhcp-server.service
-<span class="token comment" spellcheck="true">#客户端来查看获得地址历史(客户端是Linux时)</span>
-<span class="token function">less</span> /var/lib/dhcp/dhcpd.leases
+#客户端来查看获得地址历史(客户端是Linux时)
+less /var/lib/dhcp/dhcpd.leases
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre><p>​    </p>
 <h2 id="NTP服务-（网络时间协议）"><a href="#NTP服务-（网络时间协议）" class="headerlink" title="NTP服务 （网络时间协议）"></a>NTP服务 （网络时间协议）</h2><blockquote>
 <p>时间都去哪了</p>
 </blockquote>
