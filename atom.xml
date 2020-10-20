@@ -235,9 +235,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
-    
       <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
+    
+      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
     
   </entry>
   
@@ -514,9 +514,9 @@
     
       <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
     
-      <category term="masscan" scheme="http://www.xpshuai.cn/tags/masscan/"/>
-    
       <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
+    
+      <category term="masscan" scheme="http://www.xpshuai.cn/tags/masscan/"/>
     
   </entry>
   
