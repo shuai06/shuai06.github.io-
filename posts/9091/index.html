@@ -502,22 +502,23 @@
                 <h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><p><img src="http://image.xpshuai.cn/20200214100233476_240785919.png"></p>
 <p><code>ping 127.0.0.1</code> 如果能通，说明本机的TCP/IP协议已经配置成功啦<br><code>arping</code></p>
 <h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><h6 id="网卡接口"><a href="#网卡接口" class="headerlink" title="网卡接口"></a>网卡接口</h6><p>-enp2s0 (最近使用)、eth0   （以前这么使用）</p>
-<pre><code>#wl 开头的是无线网卡
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#wl 开头的是无线网卡</span>
 
-# ifconfig 命令
-# 查看所有网卡
-ifconfig -a
-    字段意义：MTU,发包，收包，`collisions`发生多少次冲突
+<span class="token comment" spellcheck="true"># ifconfig 命令</span>
+<span class="token comment" spellcheck="true"># 查看所有网卡</span>
+<span class="token function">ifconfig</span> -a
+    字段意义：MTU,发包，收包，<span class="token variable"><span class="token variable">`</span>collisions<span class="token variable">`</span></span>发生多少次冲突
 
-# ip 命令
- ip link     # 查看所有网卡和信息
+<span class="token comment" spellcheck="true"># ip 命令</span>
+ ip <span class="token function">link</span>     <span class="token comment" spellcheck="true"># 查看所有网卡和信息</span>
  ip address
 
-# lshw   查看系统硬件命令
-# 只查看网卡的命令
-sudo lshw -class network
+<span class="token comment" spellcheck="true"># lshw   查看系统硬件命令</span>
+<span class="token comment" spellcheck="true"># 只查看网卡的命令</span>
+<span class="token function">sudo</span> lshw -class network
 
-</code></pre><h6 id="管理网卡"><a href="#管理网卡" class="headerlink" title="管理网卡"></a>管理网卡</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看网卡参数</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="管理网卡"><a href="#管理网卡" class="headerlink" title="管理网卡"></a>管理网卡</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看网卡参数</span>
 sud <span class="token function">ethtool</span> enp0s3
 
 <span class="token comment" spellcheck="true"># -s   配置 ： speed 速度 半双工 </span>
@@ -640,7 +641,7 @@ network:
 <p>注意：此方法只是针对ubuntu18.04 Server版，对于18.04 desktop它缺省是使用NetworkManger来进行管理，可使用图形界面进行配置，其网络配置文件是保存在：/etc/NetworkManager/system-connections目录下的，跟Server版区别还是比较大的。</p>
 </blockquote>
 <p>netplan 工具还有其它比较丰富的功能，详细可参见其的说明文档。</p>
-<h2 id="DNS配置"><a href="#DNS配置" class="headerlink" title="DNS配置"></a>DNS配置</h2><h6 id="DNS配置文件"><a href="#DNS配置文件" class="headerlink" title="DNS配置文件"></a>DNS配置文件</h6><p><code>/etc/resolve.conf</code>    </p>
+<h2 id="DNS配置"><a href="#DNS配置" class="headerlink" title="DNS配置"></a>DNS配置</h2><h6 id="DNS配置文件"><a href="#DNS配置文件" class="headerlink" title="DNS配置文件"></a>DNS配置文件</h6><p><code>/etc/resolve.conf</code>      </p>
 <pre class="line-numbers language-bash"><code class="language-bash">/etc/resolve.conf    <span class="token comment" spellcheck="true"># DNS设置（软连接）</span>
 格式:
     nameserver 114.114.114.114
@@ -649,14 +650,14 @@ network:
     search www.tendawifi.com
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="主机名解析"><a href="#主机名解析" class="headerlink" title="主机名解析"></a>主机名解析</h6><p>1.配置文件 <code>/etc/hosts</code>    优先级别<code>高</code>于resolve.conf里面的dns服务器的信息</p>
+<h6 id="主机名解析"><a href="#主机名解析" class="headerlink" title="主机名解析"></a>主机名解析</h6><p>1.配置文件 <code>/etc/hosts</code>    优先级别<code>高</code>于resolve.conf里面的dns服务器的信息  </p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ip 和名称做解析</span>
 127.0.0.1 localhost
 192.168.0.111 www.qq.com
 <span class="token comment" spellcheck="true"># 现在这里找映射，有的话就不去resolve里面找了</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>2.配置文件 <code>/etc/nsswitch.conf</code>        名称解析顺序配置文件</p>
+<p>2.配置文件 <code>/etc/nsswitch.conf</code>        名称解析顺序配置文件  </p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 按照优先级先后排序来解析  （前面的不满足，才调用后面的）</span>
 - files        /etc/hosts
 - Resolve        全称systemd-resolved.service<span class="token punctuation">(</span>缓存、localhost、本机名<span class="token punctuation">)</span>   （默认安装）
@@ -680,11 +681,11 @@ route -n
 <h2 id="网桥配置"><a href="#网桥配置" class="headerlink" title="网桥配置"></a>网桥配置</h2><blockquote>
 <p>把服务器当交换机用实在是大材小用<br>把多个以太网段以上层透明的方式连接在一起</p>
 </blockquote>
-<p><strong>应用场景：</strong><br>1.可做防火墙<br>2.可以做虚拟机的服务器（搭建云平台，进行虚拟化的时候）<br>3.桥接有线网与无线网（比如我的笔记本：连接网线访问互联网，另外让别人通过我的电脑无线上网，相当于一个AP）<br>4.链路荣誉容错（需启用STP）<br>5.通过网桥管理工具实现 <code>bridge-utils</code></p>
+<p><strong>应用场景： </strong><br>1.可做防火墙<br>2.可以做虚拟机的服务器（搭建云平台，进行虚拟化的时候）<br>3.桥接有线网与无线网（比如我的笔记本：连接网线访问互联网，另外让别人通过我的电脑无线上网，相当于一个AP）<br>4.链路荣誉容错（需启用STP）<br>5.通过网桥管理工具实现 <code>bridge-utils</code>  </p>
 <p><img src="http://image.xpshuai.cn//20200218132001375_1018333933.png"></p>
-<h6 id="在ubunut搭建网桥"><a href="#在ubunut搭建网桥" class="headerlink" title="在ubunut搭建网桥"></a>在ubunut搭建网桥</h6><p>在虚拟机添加2块网卡(一块NAT，另一块随便)</p>
-<p><strong>安装网桥管理包：</strong><br><code>sudo apt install bridge-utils</code></p>
-<p><strong>临时配置网桥：</strong><br>命令： <code>btctl</code></p>
+<h6 id="在ubunut搭建网桥"><a href="#在ubunut搭建网桥" class="headerlink" title="在ubunut搭建网桥"></a>在ubunut搭建网桥</h6><p>在虚拟机添加2块网卡(一块NAT，另一块随便)  </p>
+<p><strong>安装网桥管理包： </strong><br><code>sudo apt install bridge-utils</code> </p>
+<p><strong>临时配置网桥： </strong><br>命令： <code>btctl</code> </p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> btctl addr br0     <span class="token comment" spellcheck="true"># 添加一个网桥的网卡接口</span>
 <span class="token function">sudo</span> btctl addif br0 eth0 eth1  <span class="token comment" spellcheck="true"># 往网桥接口添加2块网卡</span>
 <span class="token comment" spellcheck="true"># sudo ifconfig eth0 down   # 把网卡down掉</span>
@@ -694,7 +695,7 @@ route -n
 <span class="token function">sudo</span> dhclient br0    <span class="token comment" spellcheck="true"># 或者 dhcp自动获取网桥网卡的ip地址</span>
 <span class="token function">sudo</span> route add default gw 1.1.1.10    <span class="token comment" spellcheck="true"># 添加一个网关，就可以访问外网了</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>持久配置网桥：</strong><br>修改配置文件： <code>/etc/network/interfaces</code></p>
+<p><strong>持久配置网桥：</strong><br>修改配置文件： <code>/etc/network/interfaces</code>  </p>
 <pre class="line-numbers language-bash"><code class="language-bash">auto eth0
 iface eth0 inet manual
 
@@ -707,8 +708,8 @@ bridge_ports eth0 eth1  <span class="token comment" spellcheck="true"># 加入�
 bridge_stop off   <span class="token comment" spellcheck="true">#关闭生成树 ,也可以 on开启成树，参与生成树计算</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>修改保存，然后 重启网络服务/重启服务器</p>
-<p><strong>查看网桥运行状态</strong><br><code>sudo brctl show</code><br><strong>查看mac情况</strong><br><code>sudo brctl showmacs br0</code><br><strong>查看生成树情况</strong><br><code>sudo brctl showstp br0</code></p>
+<p>修改保存，然后 重启网络服务/重启服务器  </p>
+<p><strong>查看网桥运行状态 </strong><br><code>sudo brctl show</code><br><strong>查看mac情况</strong><br><code>sudo brctl showmacs br0</code><br><strong>查看生成树情况</strong><br><code>sudo brctl showstp br0</code></p>
 <h2 id="网卡绑定-经常使用"><a href="#网卡绑定-经常使用" class="headerlink" title="网卡绑定   (经常使用)"></a>网卡绑定   (经常使用)</h2><blockquote>
 <p>还记得小时候这段一把筷子的故事吗</p>
 </blockquote>
@@ -718,20 +719,17 @@ bridge_stop off   <span class="token comment" spellcheck="true">#关闭生成树
 <ul>
 <li>高可用、负载平衡、高吞吐量</li>
 </ul>
-<h4 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h4><p>在虚拟机做实验：先给虚拟机添加至少两块网卡<br>1.</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token keyword">echo</span> bonding <span class="token operator">>></span> /etc/modules        <span class="token comment" spellcheck="true"># 添加内核支持</span>
-<span class="token function">sudo</span> modprobe bonding       <span class="token comment" spellcheck="true"># 手动加载内核(临时)， modeprobe加载bonding</span>
-<span class="token function">ifconfig</span> -a    <span class="token comment" spellcheck="true"># 可以看到自动生成了一个bonding0的网卡(但是没有up)</span>
-<span class="token function">sudo</span> systemctl stop networking     
-<span class="token comment" spellcheck="true"># 永久配置，文件</span>
-<span class="token comment" spellcheck="true"># sudo vim /etc/network/interfaces</span>
-bounding    <span class="token comment" spellcheck="true"># 添加一个模块</span>
-<span class="token comment" spellcheck="true"># 重启服务</span>
-<span class="token function">sudo</span> systemctl restart networking     
+<h4 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h4><p>在虚拟机做实验：先给虚拟机添加至少两块网卡  </p>
+<ol>
+<li><p><code>`</code>bash<br>sudo echo bonding &gt;&gt; /etc/modules        # 添加内核支持<br>sudo modprobe bonding       # 手动加载内核(临时)， modeprobe加载bonding<br>ifconfig -a    # 可以看到自动生成了一个bonding0的网卡(但是没有up)<br>sudo systemctl stop networking     </p>
+<h1 id="永久配置，文件"><a href="#永久配置，文件" class="headerlink" title="永久配置，文件"></a>永久配置，文件</h1><h1 id="sudo-vim-etc-network-interfaces"><a href="#sudo-vim-etc-network-interfaces" class="headerlink" title="sudo vim /etc/network/interfaces"></a>sudo vim /etc/network/interfaces</h1><p>bounding    # 添加一个模块</p>
+<h1 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h1><p>sudo systemctl restart networking     </p>
+</li>
+</ol>
+<pre><code>2.配置网卡配置文件  
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>2.配置网卡配置文件</p>
-<pre><code># Mode 1 配置
+```bash
+# Mode 1 配置
 # sudo vim /etc/network/interfaces
 auto eth0 
 iface eth0 inet manual
@@ -754,40 +752,40 @@ bond-slaves none         # 指定作为的的成员的网卡, 这里写none是�
 sudo systemctl restart networking  
 
 
-</code></pre><p>PS: 绑定模式<br>bound-mode</p>
+</code></pre><p>PS: 绑定模式<br>bound-mode  </p>
 <pre><code>1     一个主，一个备(主的故障后才工作)  也叫： active-backup
 </code></pre><h4 id="6种模式"><a href="#6种模式" class="headerlink" title="6种模式"></a>6种模式</h4><h6 id="Mode-0-：-round-robin-轮询"><a href="#Mode-0-：-round-robin-轮询" class="headerlink" title="Mode 0  ： round-robin(轮询)"></a>Mode 0  ： round-robin(轮询)</h6><ul>
 <li>网络流量（数据包） 顺序平均分配给Bond中所有物理网卡（可以同时使用三个网卡发送和接收数据）</li>
 <li>高可用（容错，一个坏了，另一个网卡接管）、负载均衡（多个网卡，单独是，就是拥有了多G的带宽）</li>
 </ul>
 <h6 id="Mode-1-ative-backup"><a href="#Mode-1-ative-backup" class="headerlink" title="Mode 1 : ative-backup"></a>Mode 1 : ative-backup</h6><ul>
-<li>Bond中只有一个网卡Active， 其他网卡全部Stanby（效率并不是很高）</li>
-<li>对外只有一个网卡的MAC地址可见</li>
-<li>高可用<br>实现不了负载均衡，有多个接口也没用</li>
+<li>Bond中只有一个网卡Active， 其他网卡全部Stanby（效率并不是很高）  </li>
+<li>对外只有一个网卡的MAC地址可见  </li>
+<li>高可用<br>实现不了负载均衡，有多个接口也没用  </li>
 </ul>
 <h6 id="Mode-2-balance-XOR"><a href="#Mode-2-balance-XOR" class="headerlink" title="Mode 2:  balance-XOR"></a>Mode 2:  balance-XOR</h6><ul>
 <li>根据源目的MAC/IP/Port进行计算，确定从哪个网卡发出（性能优于Mode0）</li>
 <li>高可用，负载均衡</li>
 </ul>
-<p>（XOR — &gt; 异或）<br>只要不出现故障，不改变mac地址，第一次使用的第一个物理网卡进行的通信，以后所有的通信都是继续使用第一个物理网卡<br>流量不是平均的</p>
+<p>（XOR — &gt; 异或）<br>只要不出现故障，不改变mac地址，第一次使用的第一个物理网卡进行的通信，以后所有的通信都是继续使用第一个物理网卡<br>流量不是平均的  </p>
 <h6 id="Mode-3-broadcast"><a href="#Mode-3-broadcast" class="headerlink" title="Mode 3   broadcast"></a>Mode 3   broadcast</h6><ul>
-<li>发包广播给Bond中所有网卡，提供最短的故障恢复时间，应用连接不中断</li>
-<li>高可用</li>
+<li>发包广播给Bond中所有网卡，提供最短的故障恢复时间，应用连接不中断  </li>
+<li>高可用  </li>
 </ul>
 <h6 id="Mode-4-802-3ad（Dynamic-link-aggregation）"><a href="#Mode-4-802-3ad（Dynamic-link-aggregation）" class="headerlink" title="Mode 4   802.3ad（Dynamic link aggregation）"></a>Mode 4   802.3ad（Dynamic link aggregation）</h6><ul>
-<li>链路聚合LACP组内的网卡使用相同速率、双工设置</li>
+<li>链路聚合LACP组内的网卡使用相同速率、双工设置    </li>
 <li>要求：计算机安装ethtool；交换机支持IEEE802.3ad标准，并进行额外配置</li>
-<li>高可用、负载均衡</li>
+<li>高可用、负载均衡  </li>
 </ul>
 <h6 id="Mode-5-balance-tlb-（Adaptive-transmit-load-balancing）"><a href="#Mode-5-balance-tlb-（Adaptive-transmit-load-balancing）" class="headerlink" title="Mode 5    balance-tlb （Adaptive transmit load balancing）"></a>Mode 5    balance-tlb （Adaptive transmit load balancing）</h6><ul>
 <li>隧道绑定不需要上连交换机额外配置，根据网卡负载出站负载均衡</li>
-<li>高可用、负载均衡</li>
+<li>高可用、负载均衡  </li>
 </ul>
 <h6 id="Mode-6-balance-alb-Adaptive-load-balance"><a href="#Mode-6-balance-alb-Adaptive-load-balance" class="headerlink" title="Mode 6:   balance-alb (Adaptive load balance)"></a>Mode 6:   balance-alb (Adaptive load balance)</h6><ul>
-<li>Mode 5 + balance-rlb (入站流量负载均衡)<ul>
+<li>Mode 5 + balance-rlb (入站流量负载均衡)  <ul>
 <li>Bond驱动拦截本机的ARP响应包，使用不同网卡硬件MAC替换源MAC</li>
 <li>不同的对端使用不同的服务器MAC地址，实现入站负载均衡<ul>
-<li>不需要上连交换机额外配置</li>
+<li>不需要上连交换机额外配置  </li>
 </ul>
 </li>
 </ul>
@@ -809,25 +807,25 @@ bond-slaves eth0 eth1         <span class="token comment" spellcheck="true"># �
 
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="DHCP服务"><a href="#DHCP服务" class="headerlink" title="DHCP服务"></a>DHCP服务</h2><p>通常给客户端自动分配IP地址</p>
+<h2 id="DHCP服务"><a href="#DHCP服务" class="headerlink" title="DHCP服务"></a>DHCP服务</h2><p>通常给客户端自动分配IP地址  </p>
 <h6 id="Dynamic-Host-Configuration-Protocol"><a href="#Dynamic-Host-Configuration-Protocol" class="headerlink" title="Dynamic Host Configuration Protocol"></a>Dynamic Host Configuration Protocol</h6><ul>
-<li>透明的配置网络参数</li>
+<li>透明的配置网络参数  </li>
 <li>IP/掩码、网关、DNS、域名、时间服务器、打印服务器(常用的参数是前三个)</li>
 <li>通过地址租约循环使用IP地址（有租约期，循环利用）</li>
 <li>基于UDP， 标准使用 端口： 67(服务端)，68(客户端)</li>
 </ul>
-<p>ps: 一般企业，dhcp都在核心交换机上，只有当企业网络非常大复杂时候，才会单独使用一个服务器来提供dhcp服务</p>
-<p><strong>请求和分配步骤：</strong><br>1.客户端发生第一个广播(二层，因为此时还没有ip)，数据包：<code>dhcp discover</code><br>2.dhcp服务器回复数据包<code>dhcp offer</code><br>3.客户端就再发一个广播包<code>dhcp request</code><br>4.服务器端发送数据包<code>ack</code>， 包含ip等参数，标记这个ip为已分配</p>
-<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>1.在vmware上，打开虚拟网络设置，以vmnet8为例，关闭vmware自带的dhcp服务（如果同时有两台dhcp服务:使用响应快的服务提供的ip），将这台虚拟机使用nat，<br>让其他虚拟机都使用这台虚拟机的dhcp服务，把这个虚拟机修改为静态ip, 修改配置文件<code>/etc/network/inertface</code>到vmnet8的网段，<code>sudo ip addr fulsh eth0</code>清除原来配置，重启网络服务</p>
-<p>2.安装dhcp服务的软件包</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 这里用的isc的</span>
-<span class="token function">sudo</span> apt <span class="token function">install</span> isc-dhcp-server
+<p>ps: 一般企业，dhcp都在核心交换机上，只有当企业网络非常大复杂时候，才会单独使用一个服务器来提供dhcp服务  </p>
+<p><strong>请求和分配步骤： </strong><br>1.客户端发生第一个广播(二层，因为此时还没有ip)，数据包：<code>dhcp discover</code><br>2.dhcp服务器回复数据包<code>dhcp offer</code><br>3.客户端就再发一个广播包<code>dhcp request</code><br>4.服务器端发送数据包<code>ack</code>， 包含ip等参数，标记这个ip为已分配  </p>
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>1.在vmware上，打开虚拟网络设置，以vmnet8为例，关闭vmware自带的dhcp服务（如果同时有两台dhcp服务:使用响应快的服务提供的ip），将这台虚拟机使用nat，<br>让其他虚拟机都使用这台虚拟机的dhcp服务，把这个虚拟机修改为静态ip, 修改配置文件<code>/etc/network/inertface</code>到vmnet8的网段，<code>sudo ip addr fulsh eth0</code>清除原来配置，重启网络服务  </p>
+<p>2.安装dhcp服务的软件包  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 这里用的isc的  </span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> isc-dhcp-server  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>3.配置dhcp服务</p>
+<p>3.配置dhcp服务  </p>
 <blockquote>
 <p>Note：能不安装的服务和软件就不要安装，反非必须，就不启用（缩小攻击面）<br><code>`</code>bash</p>
 </blockquote>
-<p>##1.先修改配置文件1</p>
+<p>##1.先修改配置文件1  </p>
 <p>#sudo vim /etc/default/isc-dhcp-server   # 指定启动DHCP服务的网卡<br>    INTERFACE=”eth0”   # 要启动shcp的网卡name(一般是针对内网的那一块网卡)，可以多个网卡（空格隔开）</p>
 <p>##2.再修改主配置文件（指定地址池和选项） </p>
 <p>#sudo vim /etc/dhcp/dhcpd.conf       </p>
@@ -836,18 +834,19 @@ bond-slaves eth0 eth1         <span class="token comment" spellcheck="true"># �
 <p>#配置地址池(可以手动写，也可以在原注释的基础上配置) 网段<br>subnet 10.1.8.0 netmask 255.255.255.0 {<br>    range 10.1.8.100 10.1.8.200;   #可分配的地址段<br>    option routers 10.1.8.1;  #网关地址<br>    option domain-name-servers 192.168.1.1,192.168.1.2;  #dns服务器地址，多个用逗号隔开; 一般配到这里就够了<br>    option ntp-server 1.1.1.1;     #时间服务器<br>    option domain-name “local.lan”;   #统一的域名<br>}</p>
 <p>##3.重启服务<br>…</p>
 <p>#客户端一些操作<br>ipconfig /all<br>ipconfig /release   # 释放这个ip<br>ipconfig /renew    #重新获取ip</p>
-<pre><code>3.特殊情况(指定某个ip只分配给某台计算机，IP保留)
-&gt;通过MAC地址来识别
+<pre><code>3.特殊情况(指定某个ip只分配给某台计算机，IP保留)  
+
+&gt;通过MAC地址来识别  
 ```bash
 #sudo vim /etc/dhcp/dhcpd.conf       
 
 host yourname {
     hardware ethernet 00:11:22:33:44:55;
     fixed-address 10.1.8.8;   #尽量用上面地址池以外的地址
-}
+}  
 #保存，重启
 
-</code></pre><h6 id="日常的维护"><a href="#日常的维护" class="headerlink" title="日常的维护"></a>日常的维护</h6><p>日志与状态查询</p>
+</code></pre><h6 id="日常的维护"><a href="#日常的维护" class="headerlink" title="日常的维护"></a>日常的维护</h6><p>日志与状态查询  </p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#服务器地址租约结果（可查看分发详细信息）</span>
 <span class="token function">cat</span> /var/lib/dhcp/dhcpd.leases
 <span class="token comment" spellcheck="true">#系统日志文件(客户端直接关机不会记录，release的时候会记录)</span>
@@ -862,7 +861,7 @@ systemctl status isc-dhcp-server.service
 <p>时间都去哪了</p>
 </blockquote>
 <p><img src="http://image.xpshuai.cn//20200308150835487_32007.png"></p>
-<p><strong>时间表准：</strong></p>
+<p><strong>时间表准： </strong> </p>
 <ul>
 <li>GMT：格林威治标准时间</li>
 <li>UTC：世界协调时间</li>
@@ -874,18 +873,18 @@ systemctl status isc-dhcp-server.service
 <li>客户端程序从时间服务器同步时间</li>
 <li>系统启动时自动同步时间</li>
 <li>网口激活时自动同步运行</li>
-<li>手动同步时间</li>
+<li>手动同步时间  </li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 新版系统，查看客户端时间</span>
-timedatectl
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 新版系统，查看客户端时间  </span>
+timedatectl  
 
-<span class="token comment" spellcheck="true"># RTC时间：硬件时间</span>
+<span class="token comment" spellcheck="true"># RTC时间：硬件时间  </span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>新版系统使用<code>timesyncd</code>客户端同步时间<br>向这个域名请求：ntp.ubuntu.com</p>
+<p>新版系统使用<code>timesyncd</code>客户端同步时间<br>向这个域名请求：ntp.ubuntu.com  </p>
 <pre class="line-numbers language-bash"><code class="language-bash">
-timedatectrl list-timezones   <span class="token comment" spellcheck="true">#列出所有时区</span>
+timedatectrl list-timezones   <span class="token comment" spellcheck="true">#列出所有时区  </span>
 timedatectrl set-timezone    <span class="token comment" spellcheck="true">#设置时区</span>
-timedatectrl set-time <span class="token string">"2019-10-01 18:18:18"</span> <span class="token comment" spellcheck="true">#设置系统时间</span>
+timedatectrl set-time <span class="token string">"2019-10-01 18:18:18"</span> <span class="token comment" spellcheck="true">#设置系统时间  </span>
 
 timedatectl set-ntp <span class="token boolean">true</span>  <span class="token comment" spellcheck="true">#开始网络同步</span>
 systemctl status systemd-timesyncd.service  <span class="token comment" spellcheck="true"># 查看时间服务状态</span>
@@ -904,27 +903,27 @@ hwclock --set --date<span class="token operator">=</span><span class="token stri
 </blockquote>
 <p>apt install ntp  # 安装ntp服务<br>systemctl start ntp  # 启动服务(123端口就被打开了)<br>systemctl status ntp  # 查询服务状态<br>systemctl restart ntp  # 重启服务</p>
 <p>##配置文件（我也要跟上一级的时间服务器同步）<br>vim /etc/ntp.conf</p>
-<p>#如果不使用官方的时间服务器，可以自己指定<br>server 1.1.1.1</p>
+<p>#如果不使用官方的时间服务器，可以自己指定<br>server 1.1.1.1  </p>
 <p>#首选网络时间服务器不可用的时候，使用本机始终作为备用时间源<br>fudge 127.127.1.1 startum 10  # 层级设置低点( startum 10, 这里设置为10层)</p>
 <pre><code>
-配置文件中，主要的时间服务器如下
-&lt;img src="ubuntu server-网络相关知识/20200308171832987_9157.png"&gt;&lt;/img&gt;
+配置文件中，主要的时间服务器如下  
+&lt;img src="http://image.xpshuai.cn/20200308171832987_9157.png"&gt;&lt;/img&gt;
 
 
 
-###### 命令: ntpq -- ntp服务端的查询命令
+###### 命令: ntpq -- ntp服务端的查询命令  
 ```bash
-ntpq -p   
-#命令执行结果详解如下图：
+ntpq -p     
+#命令执行结果详解如下图：  
 </code></pre><p><img src="http://image.xpshuai.cn/20200308172254102_12604.png"><br>每行前面第一个字符含义：</p>
-<pre><code>空  表示无效主机
+<pre><code>空  表示无效主机  
 x   已不再使用
 -   已不再使用
 #   状态良好但为使用
 +   良好且优先使用
 *   首选主同步主机    （一般是startum层级最高的）
 </code></pre><h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#查看日期</span>
-<span class="token function">date</span>
+<span class="token function">date</span>  
 <span class="token comment" spellcheck="true">#设置</span>
 <span class="token function">date</span> --set 1998-11-11  <span class="token comment" spellcheck="true">#手动设置日期（要通过 sudo timedatectl set-ntp 0 来关掉ntp）</span>
 <span class="token function">date</span> --set 21:21:21    <span class="token comment" spellcheck="true">#设置时间</span>
