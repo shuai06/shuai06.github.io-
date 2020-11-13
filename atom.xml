@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-10-13T05:47:05.007Z</updated>
+  <updated>2020-11-13T06:47:25.487Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shiro rememberMe反序列化漏洞(Shiro-550)复现</title>
+    <link href="http://www.xpshuai.cn/posts/40239/"/>
+    <id>http://www.xpshuai.cn/posts/40239/</id>
+    <published>2020-11-13T06:02:25.000Z</published>
+    <updated>2020-11-13T06:47:25.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;漏洞原理&quot;&gt;&lt;a href=&quot;#漏洞原理&quot; class=&quot;headerlink&quot; title=&quot;漏洞原理&quot;&gt;&lt;/a&gt;漏洞原理&lt;/h3&gt;&lt;p&gt;Apache Shiro框架提供了记住密码的功能（RememberMe），用户登录成功后会生成经过加密并编码的cookie。
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Shiro反序列化" scheme="http://www.xpshuai.cn/tags/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>FTP两种模式</title>
@@ -482,11 +507,11 @@
       <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
     
     
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
       <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
     
       <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
+    
+      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
@@ -543,33 +568,6 @@
       <category term="Google hacking" scheme="http://www.xpshuai.cn/tags/Google-hacking/"/>
     
       <category term="搜索引擎" scheme="http://www.xpshuai.cn/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu server-入侵检测IDS</title>
-    <link href="http://www.xpshuai.cn/posts/35785/"/>
-    <id>http://www.xpshuai.cn/posts/35785/</id>
-    <published>2020-08-01T03:41:09.000Z</published>
-    <updated>2020-08-01T09:45:21.841Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;入侵检测-IDS&quot;&gt;&lt;a href=&quot;#入侵检测-IDS&quot; class=&quot;headerlink&quot; title=&quot;入侵检测(IDS)&quot;&gt;&lt;/a&gt;入侵检测(IDS)&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;安全的关键在于看见&lt;/li&gt;
-&lt;li&gt;入侵检测( Intrusion Det
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="IDS" scheme="http://www.xpshuai.cn/tags/IDS/"/>
-    
-      <category term="Tripwire" scheme="http://www.xpshuai.cn/tags/Tripwire/"/>
     
   </entry>
   
