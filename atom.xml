@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2020-12-04T10:05:51.584Z</updated>
+  <updated>2021-01-03T01:37:58.254Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Web安全简要思维导图</title>
+    <link href="http://www.xpshuai.cn/posts/20550/"/>
+    <id>http://www.xpshuai.cn/posts/20550/</id>
+    <published>2021-01-03T01:30:59.000Z</published>
+    <updated>2021-01-03T01:37:58.254Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前几天重新读了一下道哥的《白帽子讲Web安全》，于是做了个粗略的思维导图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.xpshuai.cn/%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2Web%E5%AE%89%E5%85%A8.
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Web安全" scheme="http://www.xpshuai.cn/tags/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="读书笔记" scheme="http://www.xpshuai.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用sz与rz命令在Xshell上下载和上传文件</title>
     <link href="http://www.xpshuai.cn/posts/35401/"/>
     <id>http://www.xpshuai.cn/posts/35401/</id>
     <published>2020-12-04T10:00:08.000Z</published>
-    <updated>2020-12-04T10:05:51.584Z</updated>
+    <updated>2020-12-04T10:06:16.125Z</updated>
     
     <summary type="html">
     
@@ -316,9 +342,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
-    
       <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
+    
+      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
     
   </entry>
   
@@ -502,9 +528,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
-    
       <category term="hping3" scheme="http://www.xpshuai.cn/tags/hping3/"/>
+    
+      <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
     
       <category term="DDOS" scheme="http://www.xpshuai.cn/tags/DDOS/"/>
     
@@ -541,33 +567,6 @@
       <category term="主机存活探测" scheme="http://www.xpshuai.cn/tags/%E4%B8%BB%E6%9C%BA%E5%AD%98%E6%B4%BB%E6%8E%A2%E6%B5%8B/"/>
     
       <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iptables包过滤与网络地址转换</title>
-    <link href="http://www.xpshuai.cn/posts/23022/"/>
-    <id>http://www.xpshuai.cn/posts/23022/</id>
-    <published>2020-08-14T01:50:06.000Z</published>
-    <updated>2020-08-15T07:56:42.012Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;iptables&quot;&gt;&lt;a href=&quot;#iptables&quot; class=&quot;headerlink&quot; title=&quot;iptables&quot;&gt;&lt;/a&gt;iptables&lt;/h2&gt;&lt;h4 id=&quot;功能&quot;&gt;&lt;a href=&quot;#功能&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
-    
-    
-      <category term="iptables" scheme="http://www.xpshuai.cn/tags/iptables/"/>
-    
-      <category term="NAT" scheme="http://www.xpshuai.cn/tags/NAT/"/>
-    
-      <category term="防火墙" scheme="http://www.xpshuai.cn/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
   </entry>
   
