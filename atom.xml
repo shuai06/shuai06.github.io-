@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-01-03T01:37:58.254Z</updated>
+  <updated>2021-01-11T11:18:49.342Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pocsuite简单学习</title>
+    <link href="http://www.xpshuai.cn/posts/63001/"/>
+    <id>http://www.xpshuai.cn/posts/63001/</id>
+    <published>2021-01-11T08:33:20.000Z</published>
+    <updated>2021-01-11T11:18:49.342Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;读读英文…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;pocsuite3 is an open-sourced r
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="开源渗透框架" scheme="http://www.xpshuai.cn/tags/%E5%BC%80%E6%BA%90%E6%B8%97%E9%80%8F%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="pocsuite" scheme="http://www.xpshuai.cn/tags/pocsuite/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web安全简要思维导图</title>
     <link href="http://www.xpshuai.cn/posts/20550/"/>
     <id>http://www.xpshuai.cn/posts/20550/</id>
     <published>2021-01-03T01:30:59.000Z</published>
-    <updated>2021-01-03T01:37:58.254Z</updated>
+    <updated>2021-01-03T02:05:16.921Z</updated>
     
     <summary type="html">
     
@@ -342,9 +370,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
-    
       <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
+    
+      <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
     
   </entry>
   
@@ -533,40 +561,6 @@
       <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
     
       <category term="DDOS" scheme="http://www.xpshuai.cn/tags/DDOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nbtscan</title>
-    <link href="http://www.xpshuai.cn/posts/26997/"/>
-    <id>http://www.xpshuai.cn/posts/26997/</id>
-    <published>2020-08-17T08:42:53.000Z</published>
-    <updated>2020-08-17T09:59:09.771Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;当我们处于局域网中&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;用来探测内网存活主机&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;kali中已经安装了：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers languag
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="nbtscan" scheme="http://www.xpshuai.cn/tags/nbtscan/"/>
-    
-      <category term="主机存活探测" scheme="http://www.xpshuai.cn/tags/%E4%B8%BB%E6%9C%BA%E5%AD%98%E6%B4%BB%E6%8E%A2%E6%B5%8B/"/>
-    
-      <category term="网络工具" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
