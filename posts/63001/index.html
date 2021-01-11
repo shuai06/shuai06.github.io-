@@ -712,7 +712,7 @@ Optimization:
 </li>
 <li>关于CEYE的使用：监视服务以进行安全测试<br>有时一些漏洞的检测并没有数据回显，如SQL盲注，如命令执行无回显等等。这时可以借助DNS查询nslook或者curl来监控数据。CEYE为我们提供了这样一种服务，地址：<a href="http://ceye.io。" target="_blank" rel="noopener">http://ceye.io。</a></li>
 </ul>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>这里以Flask SSTI为例：</p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>这里以Flask SSTI为例：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：使用pocsuite对flask模板注入进行检测和利用
 @author: 剑胆琴心
@@ -823,7 +823,7 @@ register_poc<span class="token punctuation">(</span>FlaskPOCEXP<span class="toke
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="http://image.xpshuai.cn/flask_ssti_verify.png" alt=""></p>
 <p><img src="http://image.xpshuai.cn/flask_ssti_attack.png" alt=""></p>
-<h4 id="command外部参数传递。"><a href="#command外部参数传递。" class="headerlink" title="command外部参数传递。"></a><code>command</code>外部参数传递。</h4><p>改进一下，希望可以接收用户输入的命令行参数，对目标系统实现半交互控制</p>
+<h4 id="command外部参数传递。"><a href="#command外部参数传递。" class="headerlink" title="command外部参数传递。"></a><code>command</code>外部参数传递。</h4><p><strong>改进一下</strong>，希望可以接收用户输入的命令行参数，对目标系统实现半交互控制</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：使用pocsuite对flask模板注入进行检测和利用
 @author: 剑胆琴心
@@ -928,6 +928,10 @@ pocsuite -r flask_ssti_test.py -u http://192.168.0.105:8000  --verify  --command
 register_poc<span class="token punctuation">(</span>FlaskPOCEXP<span class="token punctuation">)</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">pocsuite -r flask_ssti_test.py -u http://192.168.0.105:8000  --verify  --command <span class="token string">'whoami'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="http://image.xpshuai.cn/pocsuite_flask_cmd.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
