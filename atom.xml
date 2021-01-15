@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-01-11T12:49:46.956Z</updated>
+  <updated>2021-01-15T13:10:19.236Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,89 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java学习之异常</title>
+    <link href="http://www.xpshuai.cn/posts/39908/"/>
+    <id>http://www.xpshuai.cn/posts/39908/</id>
+    <published>2021-01-15T13:02:03.000Z</published>
+    <updated>2021-01-15T13:10:19.236Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;常见异常&quot;&gt;&lt;a href=&quot;#常见异常&quot; class=&quot;headerlink&quot; title=&quot;常见异常&quot;&gt;&lt;/a&gt;常见异常&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Error：Java虚拟机无法解决的严重问题，如StackOverflowErroe等，一般不编写针对性代
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java学习" scheme="http://www.xpshuai.cn/tags/Java%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="异常处理" scheme="http://www.xpshuai.cn/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.xpshuai.cn/posts/0/"/>
+    <id>http://www.xpshuai.cn/posts/0/</id>
+    <published>2021-01-15T07:50:00.000Z</published>
+    <updated>2021-01-15T13:13:39.524Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;面向对象概述&quot;&gt;&lt;a href=&quot;#面向对象概述&quot; class=&quot;headerlink&quot; title=&quot;面向对象概述&quot;&gt;&lt;/a&gt;面向对象概述&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;面向对象三大特征：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;封装（Encapsulati
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
+    
+      <category term="面向对象" scheme="http://www.xpshuai.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="OOP" scheme="http://www.xpshuai.cn/tags/OOP/"/>
+    
+      <category term="学习笔记" scheme="http://www.xpshuai.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习之数组</title>
+    <link href="http://www.xpshuai.cn/posts/63254/"/>
+    <id>http://www.xpshuai.cn/posts/63254/</id>
+    <published>2021-01-15T07:49:32.000Z</published>
+    <updated>2021-01-15T13:13:31.913Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;数组(Array)，是多个&lt;strong&gt;相同类型数据&lt;/strong&gt;按&lt;strong&gt;一定顺序排列&lt;/strong&gt;的集合，
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
+    
+      <category term="数组" scheme="http://www.xpshuai.cn/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>pocsuite简单学习</title>
@@ -481,86 +564,6 @@
     
     
       <category term="变量覆盖" scheme="http://www.xpshuai.cn/tags/%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>isset数组绕过</title>
-    <link href="http://www.xpshuai.cn/posts/57106/"/>
-    <id>http://www.xpshuai.cn/posts/57106/</id>
-    <published>2020-08-18T00:40:08.000Z</published>
-    <updated>2020-08-18T06:18:56.697Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;1-数组返回NULL绕过&quot;&gt;&lt;a href=&quot;#1-数组返回NULL绕过&quot; class=&quot;headerlink&quot; title=&quot;1.数组返回NULL绕过&quot;&gt;&lt;/a&gt;1.数组返回NULL绕过&lt;/h4&gt;&lt;pre class=&quot;line-numbers language
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="isset" scheme="http://www.xpshuai.cn/tags/isset/"/>
-    
-      <category term="数组绕过" scheme="http://www.xpshuai.cn/tags/%E6%95%B0%E7%BB%84%E7%BB%95%E8%BF%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深X服 EDR终端检测系统RCE漏洞复现</title>
-    <link href="http://www.xpshuai.cn/posts/37031/"/>
-    <id>http://www.xpshuai.cn/posts/37031/</id>
-    <published>2020-08-17T14:11:48.000Z</published>
-    <updated>2020-08-17T14:18:52.646Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h4&gt;&lt;p&gt;深信服终端检测响应平台EDR，围绕终端资产安全生命周期，通过预防、防御、检测、响应赋予终端更为细致的隔离策略、更为精准的查杀能力、更为持续的
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="RCE" scheme="http://www.xpshuai.cn/tags/RCE/"/>
-    
-      <category term="深信服" scheme="http://www.xpshuai.cn/tags/%E6%B7%B1%E4%BF%A1%E6%9C%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hping3</title>
-    <link href="http://www.xpshuai.cn/posts/18271/"/>
-    <id>http://www.xpshuai.cn/posts/18271/</id>
-    <published>2020-08-17T08:43:48.000Z</published>
-    <updated>2020-08-17T09:59:09.770Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;hping3主要是测试防火墙的拦截规则，对网络设备进行测试&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;主要功能&quot;&gt;&lt;a href=&quot;#主要功能&quot; class=&quot;headerlink&quot; title=&quot;主要功能&quot;&gt;&lt;/a&gt;主要功能&lt;/h4&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="hping3" scheme="http://www.xpshuai.cn/tags/hping3/"/>
-    
-      <category term="端口扫描" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/"/>
-    
-      <category term="DDOS" scheme="http://www.xpshuai.cn/tags/DDOS/"/>
     
   </entry>
   
