@@ -386,7 +386,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -602,6 +602,119 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/27205/">
+                        <div class="card-image">
+                            
+                            <img src="http://image.xpshuai.cn/%E5%A4%9A%E7%BA%BF%E7%A8%8B_%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85.jpg" class="responsive-img" alt="Java学习之多线程">
+                            
+                            <span class="card-title">Java学习之多线程</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                基本概念
+JVM内存结构：
+
+单核CPU和多核CPU的理解：
+
+单核：其实是一种假的多线程。因为在一个时间单元内，也只能执行一个线程的任务。
+多核：如果是多核的话，才能更好的发挥多线程的效率。（现在的服务器都是多核的)
+一个Java应用程序
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-17
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/编程/" class="post-category">
+                                    编程
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/多线程/">
+                            <span class="chip bg-color">多线程</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/48777/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="一条命令修改windows注册表">
+                            
+                            <span class="card-title">一条命令修改windows注册表</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+在网上看到大佬们的文章，我也在此记录以下
+
+这里以修改windows远程桌面端口3389为33333为例子。
+修改注册表，命令如下：
+REG ADD “HKEY_LOCAL_MACHINE\System\CurrentControlSet
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-17
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/渗透测试/">
+                            <span class="chip bg-color">渗透测试</span>
+                        </a>
+                        
+                        <a href="/tags/注册表/">
+                            <span class="chip bg-color">注册表</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1175,114 +1288,6 @@ sc [servername] create Servicename [Optionname= Optionvalues]
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/54938/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Windows命令行下载文件方法">
-                            
-                            <span class="card-title">Windows命令行下载文件方法</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                当我们通过Web方式获取了一个Shell，而目标主机是Windows，我们下面后门文件到目标主机一般有两种方式：
-
-远程下载文件到本地，然后再执行；
-
-远程下载执行，执行过程没有二进制文件落地（这种方式已然成为后门文件下载执行的首要方式）
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-22
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/渗透测试/" class="post-category">
-                                    渗透测试
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/命令行下载文件/">
-                            <span class="chip bg-color">命令行下载文件</span>
-                        </a>
-                        
-                        <a href="/tags/shell/">
-                            <span class="chip bg-color">shell</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/20779/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="返校考六级">
-                            
-                            <span class="card-title">返校考六级</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                  今年的六级考试，也因为疫情原因推迟到了九月份，故2020届毕业生也有了一次毕业之后再次进入到校园的一次小机会。
-  上午等待朋友的到来，然后一起听了听听力，背了背作文，然后中午一起去吃了麻辣拌。可能中午在家睡的时间太长，以致于匆匆忙忙赶
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/生活/" class="post-category">
-                                    生活
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/碎碎念/">
-                            <span class="chip bg-color">碎碎念</span>
-                        </a>
-                        
-                        <a href="/tags/返校的诱惑/">
-                            <span class="chip bg-color">返校的诱惑</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1327,7 +1332,7 @@ sc [servername] create Servicename [Optionname= Optionvalues]
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">391.7k</span>&nbsp;字
+                class="white-color">399.7k</span>&nbsp;字
             
             
             

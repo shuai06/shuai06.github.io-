@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-01-15T13:14:05.157Z</updated>
+  <updated>2021-01-17T08:14:29.019Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java学习之多线程</title>
+    <link href="http://www.xpshuai.cn/posts/27205/"/>
+    <id>http://www.xpshuai.cn/posts/27205/</id>
+    <published>2021-01-17T07:53:26.000Z</published>
+    <updated>2021-01-17T08:14:29.019Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://image.xpshuai.cn/%E5%A4%9A%E7%BA%BF%E7%A8%8B_
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
+    
+      <category term="多线程" scheme="http://www.xpshuai.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一条命令修改windows注册表</title>
+    <link href="http://www.xpshuai.cn/posts/48777/"/>
+    <id>http://www.xpshuai.cn/posts/48777/</id>
+    <published>2021-01-17T06:32:08.000Z</published>
+    <updated>2021-01-17T06:34:05.980Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在网上看到大佬们的文章，我也在此记录以下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这里以修改windows远程桌面端口3389为33333为例子。&lt;/p&gt;
+&lt;p&gt;修改注册表，命令如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers l
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="注册表" scheme="http://www.xpshuai.cn/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Java学习之异常</title>
@@ -47,7 +102,7 @@
     <link href="http://www.xpshuai.cn/posts/3433/"/>
     <id>http://www.xpshuai.cn/posts/3433/</id>
     <published>2021-01-15T07:50:00.000Z</published>
-    <updated>2021-01-15T13:23:40.763Z</updated>
+    <updated>2021-01-15T13:23:57.857Z</updated>
     
     <summary type="html">
     
@@ -453,9 +508,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
-    
       <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
+    
+      <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
     
   </entry>
   
@@ -513,57 +568,6 @@
     
     
       <category term="开放漏洞情报" scheme="http://www.xpshuai.cn/tags/%E5%BC%80%E6%94%BE%E6%BC%8F%E6%B4%9E%E6%83%85%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字典生成-pydictor</title>
-    <link href="http://www.xpshuai.cn/posts/31240/"/>
-    <id>http://www.xpshuai.cn/posts/31240/</id>
-    <published>2020-08-18T06:28:31.000Z</published>
-    <updated>2020-08-18T08:33:31.220Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt; 一个强大实用的黑客暴力破解字典建立工具&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;地址：&lt;a href=&quot;https://github.com/LandGrey/pydictor.git&quot; target=&quot;_blank&quot; rel=&quot;noopene
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>php变量覆盖</title>
-    <link href="http://www.xpshuai.cn/posts/50639/"/>
-    <id>http://www.xpshuai.cn/posts/50639/</id>
-    <published>2020-08-18T01:30:00.000Z</published>
-    <updated>2020-08-18T06:18:56.698Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;可以用自定义的参数值替换原有变量值的情况称为变量覆盖漏洞&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;$
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="变量覆盖" scheme="http://www.xpshuai.cn/tags/%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96/"/>
     
   </entry>
   
