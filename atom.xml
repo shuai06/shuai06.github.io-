@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-01-28T02:34:37.365Z</updated>
+  <updated>2021-01-28T11:38:41.352Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java学习之泛型</title>
+    <link href="http://www.xpshuai.cn/posts/33005/"/>
+    <id>http://www.xpshuai.cn/posts/33005/</id>
+    <published>2021-01-28T11:37:09.000Z</published>
+    <updated>2021-01-28T11:38:41.352Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;为什么要有泛型&quot;&gt;&lt;a href=&quot;#为什么要有泛型&quot; class=&quot;headerlink&quot; title=&quot;为什么要有泛型&quot;&gt;&lt;/a&gt;为什么要有泛型&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;泛型：标签&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;集合容器类在设计阶段
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
+    
+      <category term="泛型" scheme="http://www.xpshuai.cn/tags/%E6%B3%9B%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java学习之集合</title>
     <link href="http://www.xpshuai.cn/posts/29903/"/>
     <id>http://www.xpshuai.cn/posts/29903/</id>
     <published>2021-01-28T01:25:10.000Z</published>
-    <updated>2021-01-28T02:34:37.365Z</updated>
+    <updated>2021-01-28T02:35:38.599Z</updated>
     
     <summary type="html">
     
@@ -543,36 +571,6 @@
       <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
     
       <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开源情报信息搜索(OSINT)</title>
-    <link href="http://www.xpshuai.cn/posts/37/"/>
-    <id>http://www.xpshuai.cn/posts/37/</id>
-    <published>2020-08-18T06:52:18.000Z</published>
-    <updated>2020-08-18T08:33:31.222Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;搜索引擎语法&quot;&gt;&lt;a href=&quot;#搜索引擎语法&quot; class=&quot;headerlink&quot; title=&quot;搜索引擎语法&quot;&gt;&lt;/a&gt;搜索引擎语法&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;百度&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;谷歌&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;必应&lt;/p
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="情报信息搜索" scheme="http://www.xpshuai.cn/tags/%E6%83%85%E6%8A%A5%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="Githun Hacking" scheme="http://www.xpshuai.cn/tags/Githun-Hacking/"/>
     
   </entry>
   
