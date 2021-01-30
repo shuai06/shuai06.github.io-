@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-01-28T11:38:41.352Z</updated>
+  <updated>2021-01-30T14:03:39.486Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java学习之常用类</title>
+    <link href="http://www.xpshuai.cn/posts/1952/"/>
+    <id>http://www.xpshuai.cn/posts/1952/</id>
+    <published>2021-01-30T10:24:20.000Z</published>
+    <updated>2021-01-30T14:03:39.486Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;String类&quot;&gt;&lt;a href=&quot;#String类&quot; class=&quot;headerlink&quot; title=&quot;String类&quot;&gt;&lt;/a&gt;String类&lt;/h3&gt;&lt;h4 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
+    
+      <category term="String" scheme="http://www.xpshuai.cn/tags/String/"/>
+    
+      <category term="StringBuffer" scheme="http://www.xpshuai.cn/tags/StringBuffer/"/>
+    
+      <category term="StringBuilder" scheme="http://www.xpshuai.cn/tags/StringBuilder/"/>
+    
+      <category term="Java比较器" scheme="http://www.xpshuai.cn/tags/Java%E6%AF%94%E8%BE%83%E5%99%A8/"/>
+    
+      <category term="Math" scheme="http://www.xpshuai.cn/tags/Math/"/>
+    
+      <category term="时间类" scheme="http://www.xpshuai.cn/tags/%E6%97%B6%E9%97%B4%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习之枚举类</title>
+    <link href="http://www.xpshuai.cn/posts/31393/"/>
+    <id>http://www.xpshuai.cn/posts/31393/</id>
+    <published>2021-01-30T10:24:06.000Z</published>
+    <updated>2021-01-30T12:34:30.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;枚举类的实现&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;JDK1.5之前需要自定义枚举类&lt;/li&gt;
+&lt;li&gt;JDK 1.
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
+    
+      <category term="学习记录" scheme="http://www.xpshuai.cn/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="枚举类" scheme="http://www.xpshuai.cn/tags/%E6%9E%9A%E4%B8%BE%E7%B1%BB/"/>
+    
+      <category term="Enum" scheme="http://www.xpshuai.cn/tags/Enum/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习之IO流</title>
+    <link href="http://www.xpshuai.cn/posts/62588/"/>
+    <id>http://www.xpshuai.cn/posts/62588/</id>
+    <published>2021-01-30T10:23:54.000Z</published>
+    <updated>2021-01-30T12:29:03.349Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;File类的使用&quot;&gt;&lt;a href=&quot;#File类的使用&quot; class=&quot;headerlink&quot; title=&quot;File类的使用&quot;&gt;&lt;/a&gt;File类的使用&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;java.io.File&lt;/code&gt;类:&lt;strong&gt;文件&lt;/s
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
+    
+      <category term="IO流" scheme="http://www.xpshuai.cn/tags/IO%E6%B5%81/"/>
+    
+      <category term="文件" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6/"/>
+    
+      <category term="学习记录" scheme="http://www.xpshuai.cn/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java学习之泛型</title>
     <link href="http://www.xpshuai.cn/posts/33005/"/>
     <id>http://www.xpshuai.cn/posts/33005/</id>
     <published>2021-01-28T11:37:09.000Z</published>
-    <updated>2021-01-28T11:38:41.352Z</updated>
+    <updated>2021-01-28T11:39:25.174Z</updated>
     
     <summary type="html">
     
@@ -491,86 +588,6 @@
       <category term="内网穿透" scheme="http://www.xpshuai.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
     
       <category term="端口转发" scheme="http://www.xpshuai.cn/tags/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XSL Script Processing</title>
-    <link href="http://www.xpshuai.cn/posts/45834/"/>
-    <id>http://www.xpshuai.cn/posts/45834/</id>
-    <published>2020-09-10T04:23:14.000Z</published>
-    <updated>2020-09-10T08:11:38.135Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;XSL是指扩展样式表语言(Extension Stylesheet Language)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;msxsl.exe&lt;/code&gt;是微软用于命令行下处理XSL的一个程序，所以通过他，我们可以执行JavaScript进而执行系统命令，下载地址：&lt;a href=
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="XSL Script Processing" scheme="http://www.xpshuai.cn/tags/XSL-Script-Processing/"/>
-    
-      <category term="MSXSL.exe" scheme="http://www.xpshuai.cn/tags/MSXSL-exe/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用anydesk做远控</title>
-    <link href="http://www.xpshuai.cn/posts/15621/"/>
-    <id>http://www.xpshuai.cn/posts/15621/</id>
-    <published>2020-09-10T02:12:45.000Z</published>
-    <updated>2020-09-10T08:11:38.138Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;anydesk是类似teamviewer的远程管理软件，但是他不用安装且体积小&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;场景举例&quot;&gt;&lt;a href=&quot;#场景举例&quot; class=&quot;headerlink&quot; title=&quot;场景举例&quot;&gt;&lt;/a&gt;
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="远控" scheme="http://www.xpshuai.cn/tags/%E8%BF%9C%E6%8E%A7/"/>
-    
-      <category term="anydesk" scheme="http://www.xpshuai.cn/tags/anydesk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mailsniper.ps1</title>
-    <link href="http://www.xpshuai.cn/posts/27598/"/>
-    <id>http://www.xpshuai.cn/posts/27598/</id>
-    <published>2020-08-23T07:14:20.000Z</published>
-    <updated>2020-08-23T07:27:11.326Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;下载地址：&lt;a href=&quot;https://github.com/dafthack/MailSniper.git&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/dafthack/MailSni
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="mailsniper.ps1" scheme="http://www.xpshuai.cn/tags/mailsniper-ps1/"/>
-    
-      <category term="信息搜集" scheme="http://www.xpshuai.cn/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/"/>
     
   </entry>
   
