@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-02-06T14:16:39.208Z</updated>
+  <updated>2021-02-25T10:43:46.727Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CVE-2021-21972 vSphere Client RCE复现</title>
+    <link href="http://www.xpshuai.cn/posts/58955/"/>
+    <id>http://www.xpshuai.cn/posts/58955/</id>
+    <published>2021-02-25T10:26:47.000Z</published>
+    <updated>2021-02-25T10:43:46.727Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;vSphere 是 VMware 推出的虚拟化平台套件，包含 ESXi、vCenter Server 等一系列的软件。其中 vCenter 
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="CVE-2021-21972" scheme="http://www.xpshuai.cn/tags/CVE-2021-21972/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="vCenter 6.5-7.0 RCE" scheme="http://www.xpshuai.cn/tags/vCenter-6-5-7-0-RCE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java学习之反射初探</title>
     <link href="http://www.xpshuai.cn/posts/33171/"/>
     <id>http://www.xpshuai.cn/posts/33171/</id>
     <published>2021-02-06T14:01:11.000Z</published>
-    <updated>2021-02-06T14:16:39.208Z</updated>
+    <updated>2021-02-06T14:18:11.695Z</updated>
     
     <summary type="html">
     
@@ -495,9 +522,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="Shiro反序列化" scheme="http://www.xpshuai.cn/tags/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    
       <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="Shiro反序列化" scheme="http://www.xpshuai.cn/tags/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
     
   </entry>
   
@@ -560,35 +587,6 @@
       <category term="添加服务" scheme="http://www.xpshuai.cn/tags/%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1/"/>
     
       <category term="权限维持" scheme="http://www.xpshuai.cn/tags/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows命令行下载文件方法</title>
-    <link href="http://www.xpshuai.cn/posts/54938/"/>
-    <id>http://www.xpshuai.cn/posts/54938/</id>
-    <published>2020-09-22T12:50:27.000Z</published>
-    <updated>2020-09-22T14:14:55.691Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;当我们通过Web方式获取了一个Shell，而目标主机是Windows，我们下面后门文件到目标主机&lt;strong&gt;一般有两种方式：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;远程下载文件到本地，然后再执行；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;远程下载执行，执行过程没有
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="命令行下载文件" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/"/>
-    
-      <category term="shell" scheme="http://www.xpshuai.cn/tags/shell/"/>
     
   </entry>
   
