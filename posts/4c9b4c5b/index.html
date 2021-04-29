@@ -306,6 +306,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -808,21 +821,22 @@ private void CopyToPageLayout()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1a728c4f/">
+                <a href="/posts/980b1709/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ArcgisEngine实现地图浏览">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ArcEngine加载数据">
                         
-                        <span class="card-title">ArcgisEngine实现地图浏览</span>
+                        <span class="card-title">ArcEngine加载数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            全图    private void FullExtentTSButton_Click(object sender, EventArgs e)
+                            加载shapefile数据F1 使用AddShapefile方法 private void 添加ShapefileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainMapControl.Extent = ma
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -850,6 +864,10 @@ private void CopyToPageLayout()
                     
                     <a href="/tags/GIS/">
                         <span class="chip bg-color">GIS</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
                 </div>
