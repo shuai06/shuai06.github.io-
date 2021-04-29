@@ -857,31 +857,33 @@ stream.url<span class="token operator">=</span>file:///etc/shadow
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/7700/">
+                <a href="/posts/36974/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Apache Solr SSRF与任意文件读取漏洞">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Jellyfin任意文件读取漏洞复现(CVE-2021-21402)">
                         
-                        <span class="card-title">Apache Solr SSRF与任意文件读取漏洞</span>
+                        <span class="card-title">Jellyfin任意文件读取漏洞复现(CVE-2021-21402)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言Apache Solr是一个开源的搜索服务，使用Java语言开发，基于Lucene的全文搜索服务器。
-Apache Solr全版本存在一个SSRF与任意文件读取漏洞，因Apache Solr整体默认安装为未授权，且大部分资产都为未授权，
+                            影响版本：Jellyfin&lt;10.7.1
+复现fofa语法title="Jellyfin"
+
+POC# poc_1
+GET /Audio/1/hls/..%5C..%5C..%5C..%5C..%5C..%5CWindows%5Cwi
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-13
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -894,7 +896,6 @@ Apache Solr全版本存在一个SSRF与任意文件读取漏洞，因Apache Solr
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -902,8 +903,8 @@ Apache Solr全版本存在一个SSRF与任意文件读取漏洞，因Apache Solr
                         <span class="chip bg-color">漏洞复现</span>
                     </a>
                     
-                    <a href="/tags/Solr/">
-                        <span class="chip bg-color">Solr</span>
+                    <a href="/tags/Jellyfin/">
+                        <span class="chip bg-color">Jellyfin</span>
                     </a>
                     
                 </div>
@@ -1146,7 +1147,7 @@ Apache Solr全版本存在一个SSRF与任意文件读取漏洞，因Apache Solr
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">443.4k</span>&nbsp;字
+                class="white-color">445.4k</span>&nbsp;字
             
             
             
