@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-05-07T09:59:02.268Z</updated>
+  <updated>2021-05-11T02:02:42.680Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xmind2020存在XSS漏洞可导致命令执行</title>
+    <link href="http://www.xpshuai.cn/posts/45828/"/>
+    <id>http://www.xpshuai.cn/posts/45828/</id>
+    <published>2021-05-11T01:53:59.000Z</published>
+    <updated>2021-05-11T02:02:42.680Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;漏洞描述&quot;&gt;&lt;a href=&quot;#漏洞描述&quot; class=&quot;headerlink&quot; title=&quot;漏洞描述&quot;&gt;&lt;/a&gt;漏洞描述&lt;/h3&gt;&lt;p&gt;Xmind2020 存在XSS漏洞，攻击者可利用该漏洞进行命令执行。由于软件允许用户以文件形式或自定义标题标题的形式存储JS
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="xmind2020" scheme="http://www.xpshuai.cn/tags/xmind2020/"/>
+    
+      <category term="XSS" scheme="http://www.xpshuai.cn/tags/XSS/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言做题记录(入门版)</title>
@@ -539,34 +566,6 @@
       <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
     
       <category term="数组" scheme="http://www.xpshuai.cn/tags/%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pocsuite简单学习</title>
-    <link href="http://www.xpshuai.cn/posts/63001/"/>
-    <id>http://www.xpshuai.cn/posts/63001/</id>
-    <published>2021-01-11T08:33:20.000Z</published>
-    <updated>2021-01-11T12:49:46.956Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;读读英文…&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;pocsuite3 is an open-sourced r
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="开源渗透框架" scheme="http://www.xpshuai.cn/tags/%E5%BC%80%E6%BA%90%E6%B8%97%E9%80%8F%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="pocsuite" scheme="http://www.xpshuai.cn/tags/pocsuite/"/>
     
   </entry>
   

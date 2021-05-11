@@ -340,7 +340,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
 </script>
 
 
@@ -357,6 +357,61 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/b0669918/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="ubuntu彻底卸载mysql并且重新安装">
+                            
+                            <span class="card-title">ubuntu彻底卸载mysql并且重新安装</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                首先删除mysql:
+sudo apt-get remove mysql-*
+然后清理残留的数据
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+它会跳出一个对话框，你选择yes
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/数据库/" class="post-category">
+                                    数据库
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/mysql/">
+                            <span class="chip bg-color">mysql</span>
+                        </a>
+                        
+                        <a href="/tags/ubuntu/">
+                            <span class="chip bg-color">ubuntu</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -844,59 +899,6 @@ b
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/1a728c4f/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ArcgisEngine实现地图浏览">
-                            
-                            <span class="card-title">ArcgisEngine实现地图浏览</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                全图    private void FullExtentTSButton_Click(object sender, EventArgs e)
-        {
-            mainMapControl.Extent = ma
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-11-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GIS/" class="post-category">
-                                    GIS
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ArcEngine/">
-                            <span class="chip bg-color">ArcEngine</span>
-                        </a>
-                        
-                        <a href="/tags/GIS/">
-                            <span class="chip bg-color">GIS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/posts/980b1709/">
                         <div class="card-image">
                             
@@ -955,24 +957,22 @@ b
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/210c46ef/">
+                    <a href="/posts/1a728c4f/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ArcEngine初识 -- 打开地图">
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ArcgisEngine实现地图浏览">
                             
-                            <span class="card-title">ArcEngine初识 -- 打开地图</span>
+                            <span class="card-title">ArcgisEngine实现地图浏览</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一句代码
-创建winform程序
-必须要添加LicenseControl控件
-TOCControl视图控件  =&gt; 属性,设置关联属性绑定(Buddy)到地图控件上
-ToolbalControl工具条控件   伙伴控价  =&gt; 
+                                全图    private void FullExtentTSButton_Click(object sender, EventArgs e)
+        {
+            mainMapControl.Extent = ma
                             
                         </div>
                         <div class="publish-info">
@@ -1010,24 +1010,24 @@ ToolbalControl工具条控件   伙伴控价  =&gt;
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/db6b7e01/">
+                    <a href="/posts/210c46ef/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="ArcEngine文件保存功能">
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ArcEngine初识 -- 打开地图">
                             
-                            <span class="card-title">ArcEngine文件保存功能</span>
+                            <span class="card-title">ArcEngine初识 -- 打开地图</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                地图文档保存问题：空文档也能保存private void saveToolStrip_Click(object sender, EventArgs e)
-        {
-            try
-            {
-   
+                                一句代码
+创建winform程序
+必须要添加LicenseControl控件
+TOCControl视图控件  =&gt; 属性,设置关联属性绑定(Buddy)到地图控件上
+ToolbalControl工具条控件   伙伴控价  =&gt; 
                             
                         </div>
                         <div class="publish-info">
@@ -1108,7 +1108,7 @@ ToolbalControl工具条控件   伙伴控价  =&gt;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">454.4k</span>&nbsp;字
+                class="white-color">455.3k</span>&nbsp;字
             
             
             

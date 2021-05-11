@@ -340,7 +340,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
 </script>
 
 
@@ -357,6 +357,75 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/8cfa1f14/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ubuntu常用快捷键">
+                            
+                            <span class="card-title">ubuntu常用快捷键</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                快捷键
+
+
+
+
+
+
+
+
+
+ctrl + alt + up/down
+快速切换linux虚拟桌面
+
+
+
+Win + a
+
+
+
+
+shift/alt + PrintScreen
+shift:截图（光标变成十字，手动框选）
+alt: 截取当前窗口
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/linux/">
+                            <span class="chip bg-color">linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -978,61 +1047,6 @@ create table new_stud
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/b0669918/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="ubuntu彻底卸载mysql并且重新安装">
-                            
-                            <span class="card-title">ubuntu彻底卸载mysql并且重新安装</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                首先删除mysql:
-sudo apt-get remove mysql-*
-然后清理残留的数据
-dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
-它会跳出一个对话框，你选择yes
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/数据库/" class="post-category">
-                                    数据库
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/mysql/">
-                            <span class="chip bg-color">mysql</span>
-                        </a>
-                        
-                        <a href="/tags/ubuntu/">
-                            <span class="chip bg-color">ubuntu</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1078,7 +1092,7 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">454.4k</span>&nbsp;字
+                class="white-color">455.3k</span>&nbsp;字
             
             
             
