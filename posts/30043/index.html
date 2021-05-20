@@ -916,10 +916,12 @@ k<span class="token operator">=</span><span class="token punctuation">(</span><s
         <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>num<span class="token operator">%</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d是素数。\t"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                count<span class="token operator">++</span><span class="token punctuation">;</span>
                 <span class="token keyword">break</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d是素数。\n"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 
 
     <span class="token punctuation">}</span>
@@ -927,7 +929,7 @@ k<span class="token operator">=</span><span class="token punctuation">(</span><s
 
 <span class="token punctuation">}</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="18-求2-22-222-2222-……，共5项"><a href="#18-求2-22-222-2222-……，共5项" class="headerlink" title="18.求2+22+222+2222+……，共5项"></a>18.求2+22+222+2222+……，共5项</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//18.求2+22+222+2222+……，共5项</span>
 <span class="token keyword">void</span> <span class="token function">cal_222</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
