@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-05-20T01:27:25.023Z</updated>
+  <updated>2021-05-20T07:14:03.056Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>泛微OA weaver.common.Ctrl 任意文件上传漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/20282/"/>
+    <id>http://www.xpshuai.cn/posts/20282/</id>
+    <published>2021-05-20T06:48:04.000Z</published>
+    <updated>2021-05-20T07:14:03.056Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;声明&quot;&gt;&lt;a href=&quot;#声明&quot; class=&quot;headerlink&quot; title=&quot;声明&quot;&gt;&lt;/a&gt;声明&lt;/h3&gt;&lt;p&gt;由于传播、利用此文所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，文章作者不为此承担任何责任。d&lt;/p&gt;
+&lt;h3 id
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="文件上传" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+      <category term="泛微OA" scheme="http://www.xpshuai.cn/tags/%E6%B3%9B%E5%BE%AEOA/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言简单刷题2(未完)</title>
@@ -533,32 +563,6 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
       <category term="注册表" scheme="http://www.xpshuai.cn/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习之异常</title>
-    <link href="http://www.xpshuai.cn/posts/39908/"/>
-    <id>http://www.xpshuai.cn/posts/39908/</id>
-    <published>2021-01-15T13:02:03.000Z</published>
-    <updated>2021-02-06T14:05:52.875Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;常见异常&quot;&gt;&lt;a href=&quot;#常见异常&quot; class=&quot;headerlink&quot; title=&quot;常见异常&quot;&gt;&lt;/a&gt;常见异常&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Error：Java虚拟机无法解决的严重问题，如StackOverflowErroe等，一般不编写针对性代
-      
-    
-    </summary>
-    
-      <category term="Java学习" scheme="http://www.xpshuai.cn/categories/Java%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Java学习" scheme="http://www.xpshuai.cn/tags/Java%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="异常处理" scheme="http://www.xpshuai.cn/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
