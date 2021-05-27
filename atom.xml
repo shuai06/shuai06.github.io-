@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-05-20T07:14:03.056Z</updated>
+  <updated>2021-05-27T06:27:59.653Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>当你想放弃时</title>
+    <link href="http://www.xpshuai.cn/posts/1596/"/>
+    <id>http://www.xpshuai.cn/posts/1596/</id>
+    <published>2021-05-27T06:27:04.000Z</published>
+    <updated>2021-05-27T06:27:59.653Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;How far you have gone is the thing youshould think every time you think ofquitting.lt is not how hard the battleis, but how you are fight
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>泛微OA weaver.common.Ctrl 任意文件上传漏洞</title>
     <link href="http://www.xpshuai.cn/posts/20282/"/>
     <id>http://www.xpshuai.cn/posts/20282/</id>
     <published>2021-05-20T06:48:04.000Z</published>
-    <updated>2021-05-20T07:14:03.056Z</updated>
+    <updated>2021-05-20T07:14:26.342Z</updated>
     
     <summary type="html">
     
@@ -291,9 +310,9 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
-    
       <category term="CVE-2021-21972" scheme="http://www.xpshuai.cn/tags/CVE-2021-21972/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
       <category term="vCenter 6.5-7.0 RCE" scheme="http://www.xpshuai.cn/tags/vCenter-6-5-7-0-RCE/"/>
     
@@ -533,36 +552,6 @@
       <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
     
       <category term="多线程" scheme="http://www.xpshuai.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一条命令修改windows注册表</title>
-    <link href="http://www.xpshuai.cn/posts/48777/"/>
-    <id>http://www.xpshuai.cn/posts/48777/</id>
-    <published>2021-01-17T06:32:08.000Z</published>
-    <updated>2021-01-17T08:15:01.839Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;在网上看到大佬们的文章，我也在此记录以下&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这里以修改windows远程桌面端口3389为33333为例子。&lt;/p&gt;
-&lt;p&gt;修改注册表，命令如下：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers l
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="注册表" scheme="http://www.xpshuai.cn/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
     
   </entry>
   
