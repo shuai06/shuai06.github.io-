@@ -339,7 +339,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/4.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
 </script>
 
 
@@ -360,11 +360,11 @@
                 
                 
                 
-                <a href="/categories/渗透测试/" title="渗透测试: 70">
+                <a href="/categories/渗透测试/" title="渗透测试: 72">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #F9EBEA;">渗透测试
-                        <span class="tag-length">70</span>
+                        <span class="tag-length">72</span>
                     </span>
                 </a>
                 
@@ -432,10 +432,19 @@
                 </a>
                 
                 
+                <a href="/categories/Node-js/" title="Node.js: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">Node.js
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/爬虫/" title="爬虫: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">爬虫
+                            style="background-color: #85C1E9;">爬虫
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -444,17 +453,8 @@
                 <a href="/categories/docker/" title="docker: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #85C1E9;">docker
+                            style="background-color: #F8C471;">docker
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Node-js/" title="Node.js: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8C471;">Node.js
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -468,19 +468,19 @@
                 </a>
                 
                 
-                <a href="/categories/python/" title="python: 1">
+                <a href="/categories/vim/" title="vim: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8C471;">python
+                            style="background-color: #85C1E9;">vim
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/vim/" title="vim: 1">
+                <a href="/categories/python/" title="python: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #85C1E9;">vim
+                            style="background-color: #F8C471;">python
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -532,6 +532,110 @@
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/21856/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="http://image.xpshuai.cn/fastjson.jpg" class="responsive-img" alt="Fastjson反序列化">
+                            
+                            <span class="card-title">Fastjson反序列化</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                简介fastjson 是阿里巴巴的开源JSON解析库，它可以解析 JSON 格式的字符串，支持将 Java Bean 序列化为 JSON 字符串，也可以从 JSON 字符串反序列化到 JavaBean。可以通过反序列化导致远程命令执行。
+漏
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/漏洞复现/">
+                            <span class="chip bg-color">漏洞复现</span>
+                        </a>
+                        
+                        <a href="/tags/Fastjson反序列化/">
+                            <span class="chip bg-color">Fastjson反序列化</span>
+                        </a>
+                        
+                        <a href="/tags/靶场实验/">
+                            <span class="chip bg-color">靶场实验</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/40239/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Shiro rememberMe反序列化漏洞(Shiro-550)复现">
+                            
+                            <span class="card-title">Shiro rememberMe反序列化漏洞(Shiro-550)复现</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                漏洞原理Apache Shiro框架提供了记住密码的功能（RememberMe），用户登录成功后会生成经过加密并编码的cookie。在服务端对rememberMe的cookie值，先base64解码然后AES解密再反序列化，就导致了反序列化
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/漏洞复现/">
+                            <span class="chip bg-color">漏洞复现</span>
+                        </a>
+                        
+                        <a href="/tags/Shiro反序列化/">
+                            <span class="chip bg-color">Shiro反序列化</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1092,110 +1196,6 @@ import_request_variables()使用不当
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/57106/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="isset数组绕过">
-                            
-                            <span class="card-title">isset数组绕过</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1.数组返回NULL绕过&lt;?php 
-
-$flag = "flag";
-if (isset ($_GET['password'])) {
-    if (ereg ("^[a-zA-Z0-9]+$", $_GET['password'
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/渗透测试/" class="post-category">
-                                    渗透测试
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/isset/">
-                            <span class="chip bg-color">isset</span>
-                        </a>
-                        
-                        <a href="/tags/数组绕过/">
-                            <span class="chip bg-color">数组绕过</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/37031/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="深X服 EDR终端检测系统RCE漏洞复现">
-                            
-                            <span class="card-title">深X服 EDR终端检测系统RCE漏洞复现</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                简介深信服终端检测响应平台EDR，围绕终端资产安全生命周期，通过预防、防御、检测、响应赋予终端更为细致的隔离策略、更为精准的查杀能力、更为持续的检测能力、更为快速的处置能力。在应对高级威胁的同时，通过云网端联动协同、威胁情报共享、多层级响应
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/渗透测试/" class="post-category">
-                                    渗透测试
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/RCE/">
-                            <span class="chip bg-color">RCE</span>
-                        </a>
-                        
-                        <a href="/tags/深信服/">
-                            <span class="chip bg-color">深信服</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 </main>
@@ -1240,7 +1240,7 @@ if (isset ($_GET['password'])) {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">465.4k</span>&nbsp;字
+                class="white-color">466.4k</span>&nbsp;字
             
             
             
