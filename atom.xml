@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-06-07T01:53:13.433Z</updated>
+  <updated>2021-06-07T03:32:38.495Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python解析IP地址CIDR的形式</title>
+    <link href="http://www.xpshuai.cn/posts/24151/"/>
+    <id>http://www.xpshuai.cn/posts/24151/</id>
+    <published>2021-06-07T03:28:45.000Z</published>
+    <updated>2021-06-07T03:32:38.495Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;方法1：使用IPy库&quot;&gt;&lt;a href=&quot;#方法1：使用IPy库&quot; class=&quot;headerlink&quot; title=&quot;方法1：使用IPy库&quot;&gt;&lt;/a&gt;方法1：使用IPy库&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-python&quot;
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.xpshuai.cn/categories/Python/"/>
+    
+    
+      <category term="CIDR" scheme="http://www.xpshuai.cn/tags/CIDR/"/>
+    
+      <category term="python" scheme="http://www.xpshuai.cn/tags/python/"/>
+    
+      <category term="IPy" scheme="http://www.xpshuai.cn/tags/IPy/"/>
+    
+      <category term="netaddr" scheme="http://www.xpshuai.cn/tags/netaddr/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux mkfifo命令基本用法</title>
     <link href="http://www.xpshuai.cn/posts/18873/"/>
     <id>http://www.xpshuai.cn/posts/18873/</id>
     <published>2021-06-07T01:36:33.000Z</published>
-    <updated>2021-06-07T01:53:13.433Z</updated>
+    <updated>2021-06-07T01:54:05.840Z</updated>
     
     <summary type="html">
     
@@ -63,11 +92,11 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
-    
       <category term="Apache Zeppelin" scheme="http://www.xpshuai.cn/tags/Apache-Zeppelin/"/>
     
       <category term="未授权任意命令执行" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
   </entry>
   
@@ -92,9 +121,9 @@
     
       <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="Apache Druid远程代码执行漏" scheme="http://www.xpshuai.cn/tags/Apache-Druid%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F/"/>
-    
       <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="Apache Druid远程代码执行漏" scheme="http://www.xpshuai.cn/tags/Apache-Druid%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F/"/>
     
       <category term="CVE-2021-25646" scheme="http://www.xpshuai.cn/tags/CVE-2021-25646/"/>
     
@@ -521,36 +550,6 @@
       <category term="枚举类" scheme="http://www.xpshuai.cn/tags/%E6%9E%9A%E4%B8%BE%E7%B1%BB/"/>
     
       <category term="Enum" scheme="http://www.xpshuai.cn/tags/Enum/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习之IO流</title>
-    <link href="http://www.xpshuai.cn/posts/62588/"/>
-    <id>http://www.xpshuai.cn/posts/62588/</id>
-    <published>2021-01-30T10:23:54.000Z</published>
-    <updated>2021-02-06T14:06:29.476Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;File类的使用&quot;&gt;&lt;a href=&quot;#File类的使用&quot; class=&quot;headerlink&quot; title=&quot;File类的使用&quot;&gt;&lt;/a&gt;File类的使用&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;java.io.File&lt;/code&gt;类:&lt;strong&gt;文件&lt;/s
-      
-    
-    </summary>
-    
-      <category term="Java学习" scheme="http://www.xpshuai.cn/categories/Java%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
-    
-      <category term="IO流" scheme="http://www.xpshuai.cn/tags/IO%E6%B5%81/"/>
-    
-      <category term="文件" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6/"/>
-    
-      <category term="学习记录" scheme="http://www.xpshuai.cn/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   

@@ -882,60 +882,68 @@ prw-rw-r-- 1 ubuntu ubuntu 0 Jun  7 09:47 /tmp/fifo
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/18873/">
+                <a href="/posts/24151/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux mkfifo命令基本用法">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Python解析IP地址CIDR的形式">
                         
-                        <span class="card-title">Linux mkfifo命令基本用法</span>
+                        <span class="card-title">Python解析IP地址CIDR的形式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            先复习下linux命令执行顺序# 通常，终端只能执行一条命令, 如果要执行多条命令
-# 顺序执行多条命令，可以用分号;
-cmd1;cmd2;cmd3
+                            方法1：使用IPy库
+from IPy import IP
+ip = IP('127.0.0.0/30')
+for x in ip:
+    print(x)     
 
-# 条件执行多条命令，使用&amp;&amp;(前一个命令执行成功，即$?=0时，执行下
+
+方法二：使用netaddr库
+CIDR也能直接转成IP地址段
+
+f
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux命令/">
-                        <span class="chip bg-color">Linux命令</span>
+                    <a href="/tags/CIDR/">
+                        <span class="chip bg-color">CIDR</span>
                     </a>
                     
-                    <a href="/tags/命名管道/">
-                        <span class="chip bg-color">命名管道</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/mkfifo/">
-                        <span class="chip bg-color">mkfifo</span>
+                    <a href="/tags/IPy/">
+                        <span class="chip bg-color">IPy</span>
+                    </a>
+                    
+                    <a href="/tags/netaddr/">
+                        <span class="chip bg-color">netaddr</span>
                     </a>
                     
                 </div>
@@ -990,16 +998,16 @@ Fofaicon_hash="960250052"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/漏洞复现/">
-                        <span class="chip bg-color">漏洞复现</span>
-                    </a>
-                    
                     <a href="/tags/Apache-Zeppelin/">
                         <span class="chip bg-color">Apache Zeppelin</span>
                     </a>
                     
                     <a href="/tags/未授权任意命令执行/">
                         <span class="chip bg-color">未授权任意命令执行</span>
+                    </a>
+                    
+                    <a href="/tags/漏洞复现/">
+                        <span class="chip bg-color">漏洞复现</span>
                     </a>
                     
                 </div>
@@ -1185,7 +1193,7 @@ Fofaicon_hash="960250052"
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">467.2k</span>&nbsp;字
+                class="white-color">467.4k</span>&nbsp;字
             
             
             
