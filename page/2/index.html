@@ -340,7 +340,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/1.jpg)');
 </script>
 
 
@@ -357,6 +357,61 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/36974/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Jellyfin任意文件读取漏洞复现(CVE-2021-21402)">
+                            
+                            <span class="card-title">Jellyfin任意文件读取漏洞复现(CVE-2021-21402)</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                影响版本：Jellyfin&lt;10.7.1
+复现fofa语法title="Jellyfin"
+
+POC# poc_1
+GET /Audio/1/hls/..%5C..%5C..%5C..%5C..%5C..%5CWindows%5Cwi
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/漏洞复现/">
+                            <span class="chip bg-color">漏洞复现</span>
+                        </a>
+                        
+                        <a href="/tags/Jellyfin/">
+                            <span class="chip bg-color">Jellyfin</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1012,59 +1067,6 @@ REG ADD “HKEY_LOCAL_MACHINE\System\CurrentControlSet
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/39908/">
-                        <div class="card-image">
-                            
-                            <img src="http://image.xpshuai.cn/java_try_catch.png" class="responsive-img" alt="Java学习之异常">
-                            
-                            <span class="card-title">Java学习之异常</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                常见异常
-Error：Java虚拟机无法解决的严重问题，如StackOverflowErroe等，一般不编写针对性代码进行处理
-
-Exception：其它因编程错误或偶然的外在因素导致的一般性问题，可以伎用针对性的代码进行处理。例如：空指针
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java学习/" class="post-category">
-                                    Java学习
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java学习/">
-                            <span class="chip bg-color">Java学习</span>
-                        </a>
-                        
-                        <a href="/tags/异常处理/">
-                            <span class="chip bg-color">异常处理</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1082,7 +1084,7 @@ Exception：其它因编程错误或偶然的外在因素导致的一般性问�
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">2 / 15</div>
+            <div class="center-align b-text-gray">2 / 16</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1110,7 +1112,7 @@ Exception：其它因编程错误或偶然的外在因素导致的一般性问�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">466.4k</span>&nbsp;字
+                class="white-color">467.2k</span>&nbsp;字
             
             
             
