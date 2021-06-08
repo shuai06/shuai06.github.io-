@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-06-07T03:32:38.495Z</updated>
+  <updated>2021-06-08T06:50:38.517Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用John the Ripper破解密码</title>
+    <link href="http://www.xpshuai.cn/posts/2845/"/>
+    <id>http://www.xpshuai.cn/posts/2845/</id>
+    <published>2021-06-08T06:44:42.000Z</published>
+    <updated>2021-06-08T06:50:38.517Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;John the Ripper&lt;/strong&gt;是一个快速的密码破解工具，用于在已知密文的情况下尝试破解出明文，支持目前大多
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://www.xpshuai.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="John" scheme="http://www.xpshuai.cn/tags/John/"/>
+    
+      <category term="爆破工具" scheme="http://www.xpshuai.cn/tags/%E7%88%86%E7%A0%B4%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="爆破Linux密码" scheme="http://www.xpshuai.cn/tags/%E7%88%86%E7%A0%B4Linux%E5%AF%86%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python解析IP地址CIDR的形式</title>
     <link href="http://www.xpshuai.cn/posts/24151/"/>
     <id>http://www.xpshuai.cn/posts/24151/</id>
     <published>2021-06-07T03:28:45.000Z</published>
-    <updated>2021-06-07T03:32:38.495Z</updated>
+    <updated>2021-06-07T05:06:30.544Z</updated>
     
     <summary type="html">
     
@@ -92,11 +119,11 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
       <category term="Apache Zeppelin" scheme="http://www.xpshuai.cn/tags/Apache-Zeppelin/"/>
     
       <category term="未授权任意命令执行" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
-    
-      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
   </entry>
   
@@ -518,38 +545,6 @@
       <category term="Math" scheme="http://www.xpshuai.cn/tags/Math/"/>
     
       <category term="时间类" scheme="http://www.xpshuai.cn/tags/%E6%97%B6%E9%97%B4%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习之枚举类</title>
-    <link href="http://www.xpshuai.cn/posts/31393/"/>
-    <id>http://www.xpshuai.cn/posts/31393/</id>
-    <published>2021-01-30T10:24:06.000Z</published>
-    <updated>2021-02-06T14:06:13.152Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;枚举类的实现&lt;/strong&gt;&lt;ul&gt;
-&lt;li&gt;JDK1.5之前需要自定义枚举类&lt;/li&gt;
-&lt;li&gt;JDK 1.
-      
-    
-    </summary>
-    
-      <category term="Java学习" scheme="http://www.xpshuai.cn/categories/Java%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
-    
-      <category term="学习记录" scheme="http://www.xpshuai.cn/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    
-      <category term="枚举类" scheme="http://www.xpshuai.cn/tags/%E6%9E%9A%E4%B8%BE%E7%B1%BB/"/>
-    
-      <category term="Enum" scheme="http://www.xpshuai.cn/tags/Enum/"/>
     
   </entry>
   
