@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-06-08T06:50:38.517Z</updated>
+  <updated>2021-07-23T01:54:08.695Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,11 +17,72 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows更换指定文件夹图标</title>
+    <link href="http://www.xpshuai.cn/posts/10937/"/>
+    <id>http://www.xpshuai.cn/posts/10937/</id>
+    <published>2021-07-23T01:37:17.000Z</published>
+    <updated>2021-07-23T01:54:08.695Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前景提示&quot;&gt;&lt;a href=&quot;#前景提示&quot; class=&quot;headerlink&quot; title=&quot;前景提示&quot;&gt;&lt;/a&gt;前景提示&lt;/h3&gt;&lt;p&gt;小学弟要我写这种奇奇怪怪的东西，奇奇怪怪的东西….:laughing:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://im
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://www.xpshuai.cn/categories/Windows/"/>
+    
+    
+      <category term="C#" scheme="http://www.xpshuai.cn/tags/C/"/>
+    
+      <category term="windows" scheme="http://www.xpshuai.cn/tags/windows/"/>
+    
+      <category term="自写小工具" scheme="http://www.xpshuai.cn/tags/%E8%87%AA%E5%86%99%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu server-备份还原</title>
+    <link href="http://www.xpshuai.cn/posts/19058/"/>
+    <id>http://www.xpshuai.cn/posts/19058/</id>
+    <published>2021-07-20T01:49:22.000Z</published>
+    <updated>2021-07-26T09:03:45.633Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;备份还原&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;备份是免于损失的有效手段&lt;br&gt;防火防盗防自己（保持良好睡眠）&lt;br&gt;版本管理也视为一种备份(上下文不同)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;备份还原基础&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="备份还原" scheme="http://www.xpshuai.cn/tags/%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F/"/>
+    
+      <category term="Rsync" scheme="http://www.xpshuai.cn/tags/Rsync/"/>
+    
+      <category term="Bacula" scheme="http://www.xpshuai.cn/tags/Bacula/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用John the Ripper破解密码</title>
     <link href="http://www.xpshuai.cn/posts/2845/"/>
     <id>http://www.xpshuai.cn/posts/2845/</id>
     <published>2021-06-08T06:44:42.000Z</published>
-    <updated>2021-06-08T06:50:38.517Z</updated>
+    <updated>2021-06-08T08:37:17.518Z</updated>
     
     <summary type="html">
     
@@ -62,9 +123,9 @@
       <category term="Python" scheme="http://www.xpshuai.cn/categories/Python/"/>
     
     
-      <category term="CIDR" scheme="http://www.xpshuai.cn/tags/CIDR/"/>
-    
       <category term="python" scheme="http://www.xpshuai.cn/tags/python/"/>
+    
+      <category term="CIDR" scheme="http://www.xpshuai.cn/tags/CIDR/"/>
     
       <category term="IPy" scheme="http://www.xpshuai.cn/tags/IPy/"/>
     
@@ -119,11 +180,11 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
-    
       <category term="Apache Zeppelin" scheme="http://www.xpshuai.cn/tags/Apache-Zeppelin/"/>
     
       <category term="未授权任意命令执行" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
   </entry>
   
@@ -483,68 +544,6 @@
       <category term="Java反射" scheme="http://www.xpshuai.cn/tags/Java%E5%8F%8D%E5%B0%84/"/>
     
       <category term="动态代理" scheme="http://www.xpshuai.cn/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习之网络编程初涉</title>
-    <link href="http://www.xpshuai.cn/posts/46158/"/>
-    <id>http://www.xpshuai.cn/posts/46158/</id>
-    <published>2021-01-31T11:06:48.000Z</published>
-    <updated>2021-02-06T14:06:00.989Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;网络编程概述&quot;&gt;&lt;a href=&quot;#网络编程概述&quot; class=&quot;headerlink&quot; title=&quot;网络编程概述&quot;&gt;&lt;/a&gt;网络编程概述&lt;/h3&gt;&lt;p&gt;Java提供的网络类库，可以实现无痛的网络连接，联网的底层细节被l隐藏在 Java的本机安装系统里，由JVM
-      
-    
-    </summary>
-    
-      <category term="Java学习" scheme="http://www.xpshuai.cn/categories/Java%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
-    
-      <category term="学习笔记" scheme="http://www.xpshuai.cn/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="网络编程" scheme="http://www.xpshuai.cn/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习之常用类</title>
-    <link href="http://www.xpshuai.cn/posts/1952/"/>
-    <id>http://www.xpshuai.cn/posts/1952/</id>
-    <published>2021-01-30T10:24:20.000Z</published>
-    <updated>2021-02-06T14:06:25.878Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;String类&quot;&gt;&lt;a href=&quot;#String类&quot; class=&quot;headerlink&quot; title=&quot;String类&quot;&gt;&lt;/a&gt;String类&lt;/h3&gt;&lt;h4 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-      <category term="Java学习" scheme="http://www.xpshuai.cn/categories/Java%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Java" scheme="http://www.xpshuai.cn/tags/Java/"/>
-    
-      <category term="String" scheme="http://www.xpshuai.cn/tags/String/"/>
-    
-      <category term="StringBuffer" scheme="http://www.xpshuai.cn/tags/StringBuffer/"/>
-    
-      <category term="StringBuilder" scheme="http://www.xpshuai.cn/tags/StringBuilder/"/>
-    
-      <category term="Java比较器" scheme="http://www.xpshuai.cn/tags/Java%E6%AF%94%E8%BE%83%E5%99%A8/"/>
-    
-      <category term="Math" scheme="http://www.xpshuai.cn/tags/Math/"/>
-    
-      <category term="时间类" scheme="http://www.xpshuai.cn/tags/%E6%97%B6%E9%97%B4%E7%B1%BB/"/>
     
   </entry>
   
