@@ -1,0 +1,1704 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ubuntu server-代理&amp;VPN, 技术博客, 网络安全, 信息安全, IT, 计算机, 学习">
+    <meta name="description" content="技术博客, 网络安全, 信息安全, IT, 计算机, 学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ubuntu server-代理&amp;VPN | 剑胆琴心</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">剑胆琴心</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">剑胆琴心</div>
+        <div class="logo-desc">
+            
+            技术博客, 网络安全, 信息安全, IT, 计算机, 学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shuai06" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shuai06" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ubuntu server-代理&amp;VPN</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
+                            </a>
+                        
+                            <a href="/tags/代理/">
+                                <span class="chip bg-color">代理</span>
+                            </a>
+                        
+                            <a href="/tags/VPN/">
+                                <span class="chip bg-color">VPN</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-17
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>你看见的不是你真的看见的</p>
+</blockquote>
+<ul>
+<li>时间、带宽、管控都影响网络使用体验</li>
+<li>作为改善技术，VPN/代理和突破限制改善体验</li>
+<li>区别：代理主要提高访问<code>速度</code>；VPN更注重<code>安全</code>性</li>
+<li>在某些应用场景中，作用非常相似</li>
+<li>作为中间层，双向模拟（翻墙）</li>
+</ul>
+<p>【访问者】 –&gt; 【中间层】 –&gt; 【目标】</p>
+<h2 id="代理-Proxy"><a href="#代理-Proxy" class="headerlink" title="代理(Proxy)"></a><font>代理(Proxy)</font></h2><h4 id="网络代理服务"><a href="#网络代理服务" class="headerlink" title="网络代理服务"></a>网络代理服务</h4><ul>
+<li>客户端访问请求发给Proxy，而非直连目标</li>
+<li>代理转发请求给目标，并将结果返回给客户</li>
+</ul>
+<h4 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h4><p>提高速度、内容控制、安全<br>（代替正常用户来访问资源）</p>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><p>速度、安全、分发<br>（代替一个代理服务器接收资源，转发给后面的代理服务器，然后把后面代理服务器资源分发给用户。比如Nginx反向代理）<br>安全性：反向代理服务器上可以进行安全性过滤，比如waf等</p>
+<h4 id="Squid"><a href="#Squid" class="headerlink" title="Squid"></a>Squid</h4><blockquote>
+<p>全面的一个代理软件</p>
+</blockquote>
+<h6 id="用squid实现正向代理"><a href="#用squid实现正向代理" class="headerlink" title="用squid实现正向代理"></a>用squid实现正向代理</h6><p>1.安装squid</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> squid
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.配置</p>
+<pre class="line-numbers language-bash"><code class="language-bash">vim /etc/squid/squid.conf    <span class="token comment" spellcheck="true"># 主配置文件</span>
+
+<span class="token comment" spellcheck="true"># acl：访问控制列表/资源列表 </span>
+acl localnet src 192.168.0.0/16    <span class="token comment" spellcheck="true"># 先配置内部网段，指定源地址，只给这个网段做代理</span>
+
+acl menhu111 dstdomain .sina.com .sina.com.cn .163.com    <span class="token comment" spellcheck="true"># 目标域名，多个以空格分隔。小心页面元素CSS、图片(有些资源不属于那个域的下面)</span>
+acl xiaban111 <span class="token function">time</span> MTWHFAS 18:00-23:59    <span class="token comment" spellcheck="true"># 定义时间，下班时间，MTWHFAS（周1-7），不限制访问。是服务器本地时间</span>
+<span class="token comment" spellcheck="true"># Mon, Tues, Wednes, tHurs, Fri, sAtur, Sun, D: 工作日</span>
+acl noexes url_regex -i \.exe$    <span class="token comment" spellcheck="true"># URL以exe结尾（-i大小写不敏感）</span>
+acl httpsurls url_regex -i ^https  <span class="token comment" spellcheck="true"># 以 ^URL起始</span>
+acl noporn url_regex -i sex    <span class="token comment" spellcheck="true"># </span>
+acl zipfiles url_regex -i \.zip$
+
+
+<span class="token comment" spellcheck="true"># http访问规则顺序匹配（按前后顺序执行）</span>
+<span class="token comment" spellcheck="true"># 原则：【禁止规则】一定要放在【允许规则】前面</span>
+http_access deny <span class="token operator">!</span>Safe_ports    <span class="token comment" spellcheck="true"># 不是Safe_ports的端口，都禁止</span>
+http_access deny noexes noporn   <span class="token comment" spellcheck="true"># 原则：【禁止规则】一定要放在【允许规则】前面</span>
+http_access deny CONNECT <span class="token operator">!</span>SSL_ports  <span class="token comment" spellcheck="true"># 如果不是SSL_ports的端口，如果发起Connect请求的话，也是禁止的</span>
+http_access allow localhost    <span class="token comment" spellcheck="true"># 允许所有人请求我代理服务器的本地</span>
+http_access allow localnet menhu111 xiaban111    <span class="token comment" spellcheck="true"># 允许本地地址访问后面指定的目标域名</span>
+http_access allow localhost manager    <span class="token comment" spellcheck="true"># 缓存到代理服务器本地</span>
+http_access deny manager
+http_access deny all    <span class="token comment" spellcheck="true"># 除了上面明确允许的，其他的一概禁止(这条规则要放到最后面)</span>
+<span class="token comment" spellcheck="true"># http_access allow all</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.修改完之后，重新加载配置文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">kill</span> -SIGHUP <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> /var/run/squid.pid<span class="token variable">`</span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>默认侦听3128代理端口，在配置文件可以修改</p>
+<pre class="line-numbers language-bash"><code class="language-bash">http_port 3128
+<span class="token comment" spellcheck="true"># 默认侦听所有网卡的所有3128端口,建议不要对公网开放代理</span>
+<span class="token comment" spellcheck="true"># 指定侦听网卡</span>
+http_port 192.168.0.1:3128
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>访问日志</p>
+<pre class="line-numbers language-bash"><code class="language-bash">access_log daemon:/var/log/squid/access.log squid
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>缓存</p>
+<pre class="line-numbers language-bash"><code class="language-bash">cache_dir ufs /var/spool/squid3 100 16 256    <span class="token comment" spellcheck="true"># 缓存路径，多大，周期</span>
+refresh_pattern -i \.<span class="token punctuation">(</span>gif<span class="token operator">|</span>png<span class="token operator">|</span>jpg<span class="token operator">|</span>jpeg<span class="token operator">|</span>ico<span class="token punctuation">)</span>$ 3600 90% 86400    <span class="token comment" spellcheck="true"># 缓存图片</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a><font>VPN</font></h2><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h6 id="企业内部系统不应对外开放"><a href="#企业内部系统不应对外开放" class="headerlink" title="企业内部系统不应对外开放"></a>企业内部系统不应对外开放</h6><ul>
+<li>出差在外的企业员工需要访问公司内部系统</li>
+<li>分公司、合作商需要安全的访问指定企业内部系统</li>
+<li>专线网络费用高昂且不灵活</li>
+<li>远程访问安全性欠缺</li>
+</ul>
+<h6 id="虚拟专用网-VPN-–-Virtual-Private-Network"><a href="#虚拟专用网-VPN-–-Virtual-Private-Network" class="headerlink" title="虚拟专用网(VPN – Virtual Private Network)"></a>虚拟专用网(VPN – Virtual Private Network)</h6><ul>
+<li>基于并不安全的网络线路，通过加密技术构建安全的信息通道（tunnel）</li>
+<li>VPN用户获得如同在内网一样的访问使用体验</li>
+</ul>
+<h6 id="与Proxy相比"><a href="#与Proxy相比" class="headerlink" title="与Proxy相比"></a>与Proxy相比</h6><ul>
+<li>VPN更加安全、成本高、部署难度大</li>
+<li>VPN一旦部署完成后简单使用</li>
+<li>Proxy属于一种中间层，VPN更接近路由（对应用透明，无需设置代理）</li>
+<li>VPN更完善的认证、加密、授权控制</li>
+</ul>
+<h6 id="VPN类型"><a href="#VPN类型" class="headerlink" title="VPN类型"></a>VPN类型</h6><ul>
+<li>PPTP</li>
+<li>L2TP（用的少）</li>
+<li>IPSec（保密性要求很高，过于复杂。常用于网络边界之间）</li>
+<li>SSL（非常适合终端用户）</li>
+</ul>
+<p>OPenVPN</p>
+<ul>
+<li>全特性的开源SSL VPN</li>
+<li>跨平台 Windows、Linux、macox、ios、android</li>
+</ul>
+<h4 id="OpenVPN"><a href="#OpenVPN" class="headerlink" title="OpenVPN"></a>OpenVPN</h4><ul>
+<li>通过非受信网络连接上网时保证安全</li>
+<li>出差员工访问企业内部系统</li>
+<li>伪装为国外地址，规避地理限制和审核（翻墙）</li>
+<li>需要（独立的）证书颁发机构CA，完成PKI架构</li>
+</ul>
+<h6 id="安装-amp-配置"><a href="#安装-amp-配置" class="headerlink" title="安装&amp;配置"></a>安装&amp;配置</h6><blockquote>
+<p>一台VPN服务器，一台CA服务器（每个服务器只做一个用途）</p>
+</blockquote>
+<p>题外话：ubuntu server 1804修改主机名之前，先把<code>/etc/cloud/cloud.conf</code>配置文件中修改为的<code>preserve_hostname</code>修改为true，然后再修改hostname和hosts</p>
+<p>1.安装OpenVPN（在VPN Server）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> openvpn
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.安装EasyRSA(在VPN Server+ 在CA Server)</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ubuntu软件源也有，但是不是最新的，这里去github下载最新的</span>
+<span class="token comment" spellcheck="true"># ca server 和vpn server都需要下载EasyRSA(一个作为客户端一个作为服务端)</span>
+<span class="token function">wget</span> https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.6/EasyRSA-unix-v3.0.6.tgz
+<span class="token function">tar</span> -xvf EasyRSA-unix-v3.0.6.tgz
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.配置安装（在CA服务器上）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> ~/EasyRSA-v3.0.6/
+<span class="token function">cp</span> vars.example vars
+<span class="token comment" spellcheck="true">#vim vars</span>
+    set_var EASYRSA_REQ_COUNTRY  <span class="token string">"CN"</span>
+    set_var EASYRSA_REQ_PROVICE  <span class="token string">"BJ"</span>
+    set_var EASYRSA_REQ_CITY     <span class="token string">"BJ"</span>
+    set_var EASYRSA_REQ_ORG       LAB<span class="token string">""</span>
+    set_var EASYRSA_REQ_EMAIL     <span class="token string">"admin@lab.com"</span>
+    set_var EASYRSA_REQ_OU        <span class="token string">"IT"</span>
+
+<span class="token comment" spellcheck="true"># 初始化PKI架构</span>
+./easyrsa init-pki
+<span class="token comment" spellcheck="true"># 会创建一个pki的目录，以后生成的证书会在这个目录下，证书的私钥会在这个目录下的privte下，证书申请文件会在这个目录下的reqs下</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4.创建证书颁发机构，生成CA公私钥（在CA Server）</p>
+<pre class="line-numbers language-bash"><code class="language-bash">./easyrsa build-ca nopass    <span class="token comment" spellcheck="true">#证书私钥文件的访问密码，但是这里不设置</span>
+<span class="token comment" spellcheck="true"># 下面设置证书的名字，默认不改</span>
+<span class="token comment" spellcheck="true"># ca.crt    公钥证书，用于验证CA前面的其他证书（C/S都需要）</span>
+<span class="token comment" spellcheck="true"># ca.key    CA的私钥，用于前面所有C/S证书（应私密保存）</span>
+<span class="token comment" spellcheck="true"># 证书服务器在不使用时，建议关机</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>5.生成VPN服务器私钥和证书申请文件（在VPN Server）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> EasyRSA-v3.0.6/
+./easyrsa init-pki    <span class="token comment" spellcheck="true"># 只是初始化PKI架构</span>
+./easyrsa gen-req vpnserver nopass    <span class="token comment" spellcheck="true"># 生成证书申请文件，起个名字，设置密码</span>
+<span class="token comment" spellcheck="true"># pki/reqs/vpnserver.req</span>
+<span class="token comment" spellcheck="true"># pki/private/vpnsenver.key    # 私钥文件要好好保存</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> pki/private/vpnserver.key  /etc/openvpn    <span class="token comment" spellcheck="true"># 拷贝私钥文件</span>
+
+<span class="token comment" spellcheck="true"># 将证书请求文件传输至CA签发</span>
+<span class="token function">scp</span> pki/reqs/vpnserver.req  xps@CA_IP:/tmp
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>6.导入并签发VPN服务器证书（在CA Server）</p>
+<pre class="line-numbers language-bash"><code class="language-bash">./easyrsa import-req /tmp/vpnserver.req vpnserver    <span class="token comment" spellcheck="true"># 导入，加一个名字</span>
+./easyrsa sign-req vpnserver vpnserver    <span class="token comment" spellcheck="true"># 签发， pki/issued/vpnserver.crt</span>
+<span class="token comment" spellcheck="true"># 证书类型  server / client</span>
+
+<span class="token comment" spellcheck="true">## 将证书回传至vpnserver</span>
+<span class="token function">scp</span> pki/issued/vpnserver.crt xps@vpnserver_IP:/tmp/    <span class="token comment" spellcheck="true"># vpnserver证书</span>
+<span class="token function">scp</span> pki/ca.crt xps@vpnserver_IP:/tmp/    <span class="token comment" spellcheck="true"># CA公钥证书（自建的证书，要想被信任，必须获得ca服务器的公钥）</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>7.拷贝证书文件（在vpnserver）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> /tmp/<span class="token punctuation">{</span>vpnserver.crt, sa.crt<span class="token punctuation">}</span>  /etc/openvpn
+
+<span class="token comment" spellcheck="true"># 生成Diffie-Hellman密钥（密钥交换）</span>
+./easyrsa gen-dh    <span class="token comment" spellcheck="true"># 生成HMAC签名（TLS完整性校验）   dh.pem </span>
+openvpn --genkey  --secret ta.key    <span class="token comment" spellcheck="true"># 生成安全密钥</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> ta.key /etc/openvpn/
+<span class="token function">sudo</span> <span class="token function">cp</span> pki/dh.pem  /etc/openvpn/
+
+<span class="token comment" spellcheck="true"># 服务端证书设置全部完成</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>8.客户端证书（在VPN Server）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 客户端也要证书来证明自己的身份</span>
+<span class="token comment" spellcheck="true">## 在 VPN服务器上生成客户端证书</span>
+<span class="token comment" spellcheck="true">## 使用脚本批量自动生成客户端配置文件</span>
+<span class="token comment" spellcheck="true">## 生成客户端证书密钥 / 请求文件</span>
+
+<span class="token function">mkdir</span> -p ~/client-configs/keys    <span class="token comment" spellcheck="true"># 证书文件目录</span>
+<span class="token function">chmod</span> -R 700 ~/client-configd     <span class="token comment" spellcheck="true"># 配置文件目录</span>
+<span class="token function">cd</span> ~/EasyRSA-v3.0.6/
+./easyrsa gen-req client_1 nopass    <span class="token comment" spellcheck="true"># client_1</span>
+<span class="token function">cp</span> pki/private/client_1.key  ~/client-configs/keys/
+<span class="token function">scp</span> pki/reqs/client_1.req xps@CA_IP:/tmp/    <span class="token comment" spellcheck="true"># 证书的请求文件</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>9.导入并签发证书（在CA Server）</p>
+<pre class="line-numbers language-bash"><code class="language-bash">./easyrsa import-req /tmp/client_1.key client_1   <span class="token comment" spellcheck="true"># 导入</span>
+./easyrsa sign-req client client_1              <span class="token comment" spellcheck="true"># 签发（证书类型，证书column name）    </span>
+<span class="token function">scp</span> pki/issued/client_1.crt xps@vpnserver_IP:/tmp/
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>10.复制证书文件（在VPN Server）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cp</span> /tmp/client_1.crt  ~/client-configs/keys/
+<span class="token function">cp</span> ~/EasyRSA-v3.0.6/ta.key  ~/client-configs/keys/
+<span class="token function">sudo</span> <span class="token function">cp</span> /etc/openvpn/ca.crt ~/client-configs/keys/
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>客户端证书文件准备完毕，下面步骤都是在VPN服务器上配置</strong></p>
+<p>11.vpn服务器配置文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cp</span> /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz  /etc/openvpn/
+<span class="token function">sudo</span> <span class="token function">gzip</span> -d /etc/openvpn/server.conf.gz
+<span class="token function">sudo</span> vim /etc/openvpn/server.conf    <span class="token comment" spellcheck="true"># 配置文件，根据自己的情况来修改</span>
+    tls-auth ta.key 0
+    key-direction 0
+    cipher AES-256-CBC
+    auth SHA256
+    dh dh.pem
+    user nobody
+    group nogroup
+    <span class="token punctuation">;</span> 下面，强制客户端【所有】流量路由到tun0（我的vpn隧道）
+    push <span class="token string">"redirect-gateway def1 bypass-dhcp"</span>    
+    push <span class="token string">"dhcp-option DNS 202.106.8.20"</span>
+    push <span class="token string">"dhcp-option DNS 8.8.8.8"</span>    <span class="token punctuation">;</span> DNS服务器可设多个
+    <span class="token punctuation">;</span>端口和协议
+    port 443
+    proto tcp    ；如果用TCP的1194，就无需这条
+    explicit-exit-notify 0
+    <span class="token punctuation">;</span>指定服务器证书文件
+    cert vpnserver.crt
+    key vpnserver.key
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>12.启动服务器路由功能</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> vim /etc/sysctl.conf
+    net.opv4.ip_forward <span class="token operator">=</span> 1
+<span class="token function">sudo</span> sysctl -p
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>13.确认默认路由网卡名称</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ip route <span class="token operator">|</span><span class="token function">grep</span> default
+    default via 192.168.8.2  dev enp0s3 proto static
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>14.修改防火墙规则实现NAT</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 连上我的vpn之后，都把我的地址转换为路由绑定网卡的内网的地址，隐藏原本的地址</span>
+<span class="token function">sudo</span> vim /etc/ufw/before.rules    <span class="token comment" spellcheck="true"># 优先级高于普通UFW规则</span>
+    <span class="token comment" spellcheck="true"># START OPENVPN RULES</span>
+    *nat
+    :POSTROUTING ACCEPT <span class="token punctuation">[</span>0:0<span class="token punctuation">]</span>
+    -A POSTROUTING -s 10.8.0.0/8 -o enp0s3 -j MASQUERADE    <span class="token comment" spellcheck="true"># -s 源地址</span>
+    COMMIT
+    <span class="token comment" spellcheck="true"># END OPENVPN RULES</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>15.开启防火墙  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> vim /etc/degault/ufw    <span class="token comment" spellcheck="true"># 防火墙默认未开启转发包，这里开启转发包</span>
+    DEFAULT_FORWARD_POLICY<span class="token operator">=</span><span class="token string">"ACCEPT"</span>    
+
+<span class="token comment" spellcheck="true"># 启动防火墙及规则</span>
+<span class="token function">sudo</span> ufw allow 1194/udp   <span class="token comment" spellcheck="true"># vpn的端口允许</span>
+<span class="token function">sudo</span> ufw allow OpenSSH    <span class="token comment" spellcheck="true"># 否则ssh连接不上了</span>
+<span class="token function">sudo</span> ufw disable
+<span class="token function">sudo</span> ufw <span class="token function">enable</span>
+
+<span class="token comment" spellcheck="true"># 启动OpenVPN服务</span>
+<span class="token function">sudo</span> systemctl start openvpn@server    <span class="token comment" spellcheck="true"># server.conf 的名称一致</span>
+<span class="token function">sudo</span> systemctl status openvpn@server
+<span class="token function">sudo</span> systemctl <span class="token function">enable</span> openvpn@server
+ip addr show tun0    <span class="token comment" spellcheck="true"># 发现多了一个网卡tun0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h6><p>1.配置文件模板（用户只需傻瓜式操作即可，所有证书提前申请好，其他的用脚本方式执行）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p ~/client-configs/files    <span class="token comment" spellcheck="true"># 配置文件存放的目录</span>
+<span class="token function">cp</span> /usr/share/doc/openvpn/examples/sample-config-files/client.conf  ~/client-configs/base.conf
+
+<span class="token comment" spellcheck="true"># Linux客户端有这个文件：  /etc/openvpn/update-resolv-conf </span>
+
+vim ~/client-configs/base.conf
+    <span class="token comment" spellcheck="true"># script-security 2        # 下面三行，仅仅针对Linux客户端(才取消注释)</span>
+    <span class="token comment" spellcheck="true"># up /etc/openvpn/update-resolv-conf</span>
+    <span class="token comment" spellcheck="true"># down /etc/openvpn/update-resolv-conf</span>
+    remote vpnserver_IP 1194
+    proto udp
+    user nobody   
+    group nogroup     <span class="token comment" spellcheck="true"># Centos是nobody</span>
+    <span class="token comment" spellcheck="true"># ca ca.crt</span>
+    <span class="token comment" spellcheck="true"># cert client.key</span>
+    <span class="token comment" spellcheck="true"># key client.key</span>
+    <span class="token comment" spellcheck="true"># tls-auth ta.key 1</span>
+    cipher AES-265-CBC
+    auth SHA256
+    key-direction 1
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.客户端配置脚本</p>
+<pre class="line-numbers language-bash"><code class="language-bash">vim ~/client-configs/make_config.sh    <span class="token comment" spellcheck="true"># 脚本参数为客户端标识名</span>
+    <span class="token comment" spellcheck="true">#!bin/bash</span>
+    KEY_DIR<span class="token operator">=</span>~/client-configs/keys
+    OUTPUT_DIR<span class="token operator">=</span>~/client-configs/files
+    BASE_CONFIG<span class="token operator">=</span>~/client-configs/base.conf
+    <span class="token function">cat</span> <span class="token variable">${BASE_CONFIG}</span> \
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo-e <span class="token string">'&lt;ca>'</span><span class="token punctuation">)</span>\
+    <span class="token variable">${KEY_ DIR}</span>/ca.crt \
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/ca>\n&lt;cert>'</span><span class="token punctuation">)</span>\
+    S<span class="token punctuation">{</span>KEY_ DIR<span class="token punctuation">}</span>/<span class="token variable">${1}</span>.crt \        <span class="token comment" spellcheck="true"># ${1} 是脚本运行时的参数</span>
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/cert>\n&lt;key>'</span><span class="token punctuation">)</span>\
+    S<span class="token punctuation">{</span>KEY_ DIR/<span class="token variable">${1}</span>.key\
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo e <span class="token string">'&lt;/key>\n&lt;tls-auth>'</span><span class="token punctuation">)</span>I
+    <span class="token variable">${KEY_DIR}</span>/ta.key\
+    <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo -e <span class="token string">'&lt;/tls-auth>'</span><span class="token punctuation">)</span> \
+    <span class="token operator">></span> <span class="token variable">${OUTPUT_ DIR}</span>/<span class="token variable">${1}</span>.ovpn
+
+
+<span class="token function">chmod</span> 700 ~/client-configs/make_config.sh
+<span class="token function">cd</span> ~/client-configs
+<span class="token comment" spellcheck="true"># 为每个用户申请证书</span>
+<span class="token function">sudo</span> ./make_config.sh client_1
+    <span class="token comment" spellcheck="true"># 生成client_1.ovpn</span>
+
+<span class="token comment" spellcheck="true"># 分别为每个用户端生成相应证书，然后运行脚本生成配置文件</span>
+<span class="token comment" spellcheck="true"># 将.ovpn配置文件拷贝到客户单</span>
+
+<span class="token comment" spellcheck="true"># 如果是Linux客户端，要把配置文件client.ovpn中下面三行取消注释</span>
+    script-security 2       
+    up /etc/openvpn/update-resolv-conf
+    down /etc/openvpn/update-resolv-conf
+
+<span class="token comment" spellcheck="true"># 如果是Centos系统，配置文件client.ovpn要修改</span>
+group nobody
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.客户端安装</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## Linux客户端安装</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> openvpn
+
+<span class="token comment" spellcheck="true">## Linux客户端</span>
+vim client.ovpn
+    script-security 2      
+    up /etc/openvpn/update-resolv-conf
+    down /etc/openvpn/update-resolv-conf
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4.建立VPN连接</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 命令行方式</span>
+<span class="token function">sudo</span> openvpn --config client_1.ovpn <span class="token operator">></span> /dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
+
+<span class="token comment" spellcheck="true">## ubuntu图形化方式</span>
+<span class="token comment" spellcheck="true"># 先安装openvpn的gnome小插件</span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> metwork-manager-openvpn
+<span class="token function">sudo</span> apt <span class="token function">install</span> metwork-manager-openvpn-gnome
+<span class="token function">sudo</span> systemctl restart network-manager
+设置，网络，VPN，添加，从文件导入ovpn文件
+
+
+<span class="token comment" spellcheck="true">## 其他VPN客户端</span>
+Cisco Concentrator    <span class="token comment" spellcheck="true"># network-manager-vpnc</span>
+Cisco OpenConnect     <span class="token comment" spellcheck="true"># network-manager-openconnect</span>
+PPTP<span class="token punctuation">(</span>Microsoft VPN<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># network-manager-pptp</span>
+stringSwan<span class="token punctuation">(</span>for some IPsec VPNs<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># network-manager-strongswan</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>5.其他平台客户端</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## Windows客户端</span>
+https://openvpn.net/index.php/open-source/downloads.html
+<span class="token comment" spellcheck="true"># C:\Program Files\OpenVPN\config\client2.ovpn</span>
+<span class="token comment" spellcheck="true"># 要以管理员身份运行</span>
+
+<span class="token comment" spellcheck="true">##IOS </span>
+App Store搜索OpenVPN Connect
+
+<span class="token comment" spellcheck="true">## Android</span>
+OpenVPN Connect
+
+<span class="token comment" spellcheck="true">## MacOS</span>
+https://tunnelblick.net/downloads. html
+安装结束自动提示导入客户端配置文件
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="撤销客户端证书"><a href="#撤销客户端证书" class="headerlink" title="撤销客户端证书"></a>撤销客户端证书</h6><p>1.CA Server</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cd</span> EasyRSA-3.0.4/
+./easyrsa revoke client2
+./easyrsa gen-crl    <span class="token comment" spellcheck="true"># 生成证书吊销列表CRL(crl.pem)</span>
+<span class="token function">scp</span> pki/crl.pem xps@vpnserver_IP:/tmp
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.VPN Server</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在vpn server调用</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> /tmp/crl.pem /etc/openvpn
+<span class="token function">sudo</span> <span class="token function">vi</span> /etc/openvpn/server.conf
+    crl-verify crl.pem    <span class="token comment" spellcheck="true"># 最后一行添加吊销指令</span>
+<span class="token function">sudo</span> systemctl restart openvpn@server
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn" rel="external nofollow noreferrer">剑胆琴心</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn/posts/39742/">http://www.xpshuai.cn/posts/39742/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.xpshuai.cn" target="_blank">剑胆琴心</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
+                                </a>
+                            
+                                <a href="/tags/代理/">
+                                    <span class="chip bg-color">代理</span>
+                                </a>
+                            
+                                <a href="/tags/VPN/">
+                                    <span class="chip bg-color">VPN</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd75ec1a5864747376f6f',
+        clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
+        admin: "shuai06",
+        id: '2020-07-17T20-54-42',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/24845/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="ubuntu server-引导过程">
+                        
+                        <span class="card-title">ubuntu server-引导过程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BIOS/UEFI
+打开黑箱看看里面
+
+操作系统是如何启动的
+三个彼此独立但相互关联的过程1.Bios/UEFI自检过程（POST）
+- 加电自检
+- 硬件识别与检测
+
+# UEFI比较新，原理和效果不一样
+
+2.Boot Load加载执行
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/引导过程/">
+                        <span class="chip bg-color">引导过程</span>
+                    </a>
+                    
+                    <a href="/tags/BIOS/">
+                        <span class="chip bg-color">BIOS</span>
+                    </a>
+                    
+                    <a href="/tags/UEFI/">
+                        <span class="chip bg-color">UEFI</span>
+                    </a>
+                    
+                    <a href="/tags/grub/">
+                        <span class="chip bg-color">grub</span>
+                    </a>
+                    
+                    <a href="/tags/内核/">
+                        <span class="chip bg-color">内核</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/36278/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="ubuntu sever-邮件服务">
+                        
+                        <span class="card-title">ubuntu sever-邮件服务</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+直到今天，Emai仍然是互联网上最重要的信息传递方式之一
+
+ 电子邮件基础快速、便捷、通用、异步通信方式1965年最早由MIT发明并开源（最早用于不同主机用户间通信）1971年确定邮件地址以@符号连接（在不同主机之间传递信息）MIME类型
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/邮件服务/">
+                        <span class="chip bg-color">邮件服务</span>
+                    </a>
+                    
+                    <a href="/tags/ubuntu-server/">
+                        <span class="chip bg-color">ubuntu server</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 剑胆琴心<br />'
+            + '文章作者: 剑胆琴心<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://www.xpshuai.cn" target="_blank">剑胆琴心</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">471.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "4";
+                    var startDate = "20";
+                    var startHour = "15";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beianbeian.com/beianxinxi/816345dfd53e0153acde20c5bb1dd1b0.html" target="_blank">冀ICP备18027796号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shuai06" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2944282625@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2944282625" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2944282625" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+        <script src="//code.tidio.co/xfg3rji2iq4povfdtfxiwk4smqduoso6.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

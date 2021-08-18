@@ -1,0 +1,1763 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ubuntu server-网络相关知识, 技术博客, 网络安全, 信息安全, IT, 计算机, 学习">
+    <meta name="description" content="技术博客, 网络安全, 信息安全, IT, 计算机, 学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ubuntu server-网络相关知识 | 剑胆琴心</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">剑胆琴心</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">剑胆琴心</div>
+        <div class="logo-desc">
+            
+            技术博客, 网络安全, 信息安全, IT, 计算机, 学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shuai06" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shuai06" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ubuntu server-网络相关知识</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-03-08
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><p><img src="http://image.xpshuai.cn/20200214100233476_240785919.png"></p>
+<p><code>ping 127.0.0.1</code> 如果能通，说明本机的TCP/IP协议已经配置成功啦<br><code>arping</code></p>
+<h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><h6 id="网卡接口"><a href="#网卡接口" class="headerlink" title="网卡接口"></a>网卡接口</h6><p>-enp2s0 (最近使用)、eth0   （以前这么使用）</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#wl 开头的是无线网卡</span>
+
+<span class="token comment" spellcheck="true"># ifconfig 命令</span>
+<span class="token comment" spellcheck="true"># 查看所有网卡</span>
+<span class="token function">ifconfig</span> -a
+    字段意义：MTU,发包，收包，<span class="token variable"><span class="token variable">`</span>collisions<span class="token variable">`</span></span>发生多少次冲突
+
+<span class="token comment" spellcheck="true"># ip 命令</span>
+ ip <span class="token function">link</span>     <span class="token comment" spellcheck="true"># 查看所有网卡和信息</span>
+ ip address
+
+<span class="token comment" spellcheck="true"># lshw   查看系统硬件命令</span>
+<span class="token comment" spellcheck="true"># 只查看网卡的命令</span>
+<span class="token function">sudo</span> lshw -class network
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="管理网卡"><a href="#管理网卡" class="headerlink" title="管理网卡"></a>管理网卡</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看网卡参数</span>
+sud <span class="token function">ethtool</span> enp0s3
+
+<span class="token comment" spellcheck="true"># -s   配置 ： speed 速度 半双工 </span>
+sud <span class="token function">ethtool</span> -s duplex half <span class="token operator">|</span> full speed 1000
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="网络基本设置"><a href="#网络基本设置" class="headerlink" title="网络基本设置"></a>网络基本设置</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 临时设置IP地址</span>
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> eth0 10.0.0.00 netmask 255.255.255.0
+<span class="token comment" spellcheck="true"># 24位掩码</span>
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> eth0 10.0.0.100/24
+<span class="token comment" spellcheck="true"># 设置网关 gw</span>
+<span class="token function">sudo</span> route add default gw 10.0.0.1 eth0
+<span class="token comment" spellcheck="true"># 网段路由 add-net   （静态路由：去哪个网段，应该怎么转发）</span>
+<span class="token function">sudo</span> route add-net 0.0.0.0 netmask 0.0.0.0 gw 1.1.1.1
+<span class="token comment" spellcheck="true"># 主机路由 add-host    </span>
+<span class="token function">sudo</span> route add-host 2.2.2.2 gw 1.1.1.1
+
+
+
+<span class="token comment" spellcheck="true"># 清除网卡配置</span>
+ip addr fulsh eth0
+
+<span class="token comment" spellcheck="true"># 向网络中要一个IP</span>
+<span class="token function">sudo</span> dhcpclient
+
+<span class="token comment" spellcheck="true"># 禁用网卡</span>
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> eth0 down
+<span class="token comment" spellcheck="true"># 启用网卡</span>
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> eth0 up
+<span class="token comment" spellcheck="true"># 重启网络服务</span>
+<span class="token function">sudo</span> systemctrl restart networking.service
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="网卡配置文件"><a href="#网卡配置文件" class="headerlink" title="网卡配置文件"></a>网卡配置文件</h6><p><code>/etc/network/interfaces</code></p>
+<pre class="line-numbers language-bash"><code class="language-bash">文件字段：
+iface 网卡name inet 网络配置（loopback/dhcp/static）
+
+    <span class="token function">sudo</span> eth0
+    iface eth0 inet static<span class="token operator">|</span>DHCP
+
+    <span class="token comment" spellcheck="true"># pre-up 系统启动中(网卡运行前)  设置为1000M，全双工</span>
+    pre-up/sbin/ethtool -s eth0 speed 1000 duplex full
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="动态获取IP地址"><a href="#动态获取IP地址" class="headerlink" title="动态获取IP地址"></a>动态获取IP地址</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/network/interfaces</span>
+auto eth0
+iface inet dhcp
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="静态IP地址"><a href="#静态IP地址" class="headerlink" title="静态IP地址"></a>静态IP地址</h6><p>一般服务器是静态的IP</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/network/interfaces</span>
+auto eth0
+iface inet static
+    address 192.168.123.9
+    netmask 255.255.255.0        <span class="token comment" spellcheck="true"># 掩码</span>
+    gateway 192.168.123.1        <span class="token comment" spellcheck="true"># 网关</span>
+    dns-nameservers 192.168.123.1 202.99.96.68   <span class="token comment" spellcheck="true"># 一般dns地址写俩</span>
+    <span class="token comment" spellcheck="true"># 上面是基本配置, 下面是额外其他配置项</span>
+    broadcast 192.168.123.255   <span class="token comment" spellcheck="true"># 网段的广播地址</span>
+    <span class="token comment" spellcheck="true"># dns-search  abc.com  # 如果属于某个dns域,就默认去找这个</span>
+    up route add -net 172.16.0.0/24  gw 192.168.23.1 eth0   <span class="token comment" spellcheck="true"># 开机之后,添加一个网段(要指定具体网关)</span>
+    mtu 1460   <span class="token comment" spellcheck="true"># 指定MTU 字节</span>
+    <span class="token comment" spellcheck="true"># hwaddress 00:11:22:33:44:55   # 指定硬件mac地址</span>
+
+<span class="token comment" spellcheck="true"># 刷新,重启网络, 配置文件的网络生效(实在不行就重启计算机)</span>
+<span class="token function">sudo</span> ip address fulsh eth0 
+<span class="token function">sudo</span> systemctrl restart networking.service
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="http://image.xpshuai.cn//20200214114820323_1273216811.png"><br>指定路由<br>清除信息<br>ip addr flush ens32</p>
+<blockquote>
+<p>Note： VmWare对网络的支持要好于VirtualBox(比如有些网络的配置可能有限制)</p>
+</blockquote>
+<h6 id="Ubuntu-1804配置静态ip"><a href="#Ubuntu-1804配置静态ip" class="headerlink" title="Ubuntu 1804配置静态ip"></a>Ubuntu 1804配置静态ip</h6><p>ubuntu18.04 server，启用了新的网络工具<code>netplan</code>，对于命令行配置网络参数跟之前的版本有比较大的差别，现在介绍如下：</p>
+<ol>
+<li>其网络配置文件是放在<code>/etc/netplan/50-cloud-init.yaml</code>, 缺省是用dhcp方式，如果要配置静态地址，则需要修改此文件的想关内容，见如下的例子：</li>
+</ol>
+<pre class="line-numbers language-bash"><code class="language-bash">network:
+    version: 2
+    ethernets:
+        ens33:
+            addresses: <span class="token punctuation">[</span>192.168.1.20/24<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># 可以是这种数组形式[1.1.1.1, 192.168.1.20/24]也可以是下面那样</span>
+            dhcp4: <span class="token boolean">false</span>
+            gateway4: 192.168.1.1
+            nameservers:
+                addresses: <span class="token punctuation">[</span>192.168.1.1<span class="token punctuation">]</span>
+                optional: <span class="token boolean">true</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>或者下面这个格式(可能更清晰，有<code>ipv6</code>)</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># the datasource.  Changes to it will not persist across an instance.</span>
+<span class="token comment" spellcheck="true"># To disable cloud-init's network configuration capabilities, write a file</span>
+<span class="token comment" spellcheck="true"># /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:</span>
+<span class="token comment" spellcheck="true"># network: {config: disabled}</span>
+<span class="token comment" spellcheck="true"># 前几项必填，其他根据需要填写</span>
+network:
+    version: 2
+    ethernets:
+        eth0:
+            addresses:
+                - 公共ipv4地址/20掩码
+                - 私有ipv4地址/16
+                - 公共ipv6地址/64
+            dhcp4: <span class="token boolean">false</span>
+            gateway4: <span class="token string">"公共ipv4网关"</span>
+            gateway6: 公共ipv6网关
+            match:
+                macaddress: MAC地址<span class="token punctuation">(</span>不必须<span class="token punctuation">)</span>
+            nameservers:    <span class="token comment" spellcheck="true"># DNS</span>
+                addresses:
+                    - <span class="token string">"67.207.67.2"</span>
+                    - <span class="token string">"67.207.67.3"</span>
+            set-name: eth0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.使其生效的方法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> netplan apply
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果配置有问题会报错，如果没问题，则会新的配置会立即生效。</p>
+<blockquote>
+<p>注意：此方法只是针对ubuntu18.04 Server版，对于18.04 desktop它缺省是使用NetworkManger来进行管理，可使用图形界面进行配置，其网络配置文件是保存在：/etc/NetworkManager/system-connections目录下的，跟Server版区别还是比较大的。</p>
+</blockquote>
+<p>netplan 工具还有其它比较丰富的功能，详细可参见其的说明文档。</p>
+<h2 id="DNS配置"><a href="#DNS配置" class="headerlink" title="DNS配置"></a>DNS配置</h2><h6 id="DNS配置文件"><a href="#DNS配置文件" class="headerlink" title="DNS配置文件"></a>DNS配置文件</h6><p><code>/etc/resolve.conf</code>      </p>
+<pre class="line-numbers language-bash"><code class="language-bash">/etc/resolve.conf    <span class="token comment" spellcheck="true"># DNS设置（软连接）</span>
+格式:
+    nameserver 114.114.114.114
+    nameserver 127.0.0.53
+    options edns0
+    search www.tendawifi.com
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="主机名解析"><a href="#主机名解析" class="headerlink" title="主机名解析"></a>主机名解析</h6><p>1.配置文件 <code>/etc/hosts</code>    优先级别<code>高</code>于resolve.conf里面的dns服务器的信息  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ip 和名称做解析</span>
+127.0.0.1 localhost
+192.168.0.111 www.qq.com
+<span class="token comment" spellcheck="true"># 现在这里找映射，有的话就不去resolve里面找了</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.配置文件 <code>/etc/nsswitch.conf</code>        名称解析顺序配置文件  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 按照优先级先后排序来解析  （前面的不满足，才调用后面的）</span>
+- files        /etc/hosts
+- Resolve        全称systemd-resolved.service<span class="token punctuation">(</span>缓存、localhost、本机名<span class="token punctuation">)</span>   （默认安装）
+- <span class="token punctuation">[</span>NOTFOUND<span class="token operator">=</span>return<span class="token punctuation">]</span>        结果即权威  （正则表达式）  （当找不给我到的之后，返回）
+- dns                    dns服务器（resolve文件配置的那些）
+- mdns4_minimal            MulticastDNS<span class="token punctuation">(</span>多播dns服务<span class="token punctuation">)</span>     现在很多dns厂家用的就是多播dns服务
+
+<span class="token comment" spellcheck="true"># </span>
+hosts:          files mdns4_minimal <span class="token punctuation">[</span>NOTFOUND<span class="token operator">=</span>return<span class="token punctuation">]</span> dns myhostname
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>关于解析优先级：有的攻击者会修改你hosts文件映射到自己的恶意网址，此时如果把dns的顺序放到hosts前面，他就利用不成了</p>
+</blockquote>
+<h6 id="查看路由"><a href="#查看路由" class="headerlink" title="查看路由"></a>查看路由</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 路由信息</span>
+route -n
+
+<span class="token function">netstat</span> -nr
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="网桥配置"><a href="#网桥配置" class="headerlink" title="网桥配置"></a>网桥配置</h2><blockquote>
+<p>把服务器当交换机用实在是大材小用<br>把多个以太网段以上层透明的方式连接在一起</p>
+</blockquote>
+<p><strong>应用场景： </strong><br>1.可做防火墙<br>2.可以做虚拟机的服务器（搭建云平台，进行虚拟化的时候）<br>3.桥接有线网与无线网（比如我的笔记本：连接网线访问互联网，另外让别人通过我的电脑无线上网，相当于一个AP）<br>4.链路荣誉容错（需启用STP）<br>5.通过网桥管理工具实现 <code>bridge-utils</code>  </p>
+<p><img src="http://image.xpshuai.cn//20200218132001375_1018333933.png"></p>
+<h6 id="在ubunut搭建网桥"><a href="#在ubunut搭建网桥" class="headerlink" title="在ubunut搭建网桥"></a>在ubunut搭建网桥</h6><p>在虚拟机添加2块网卡(一块NAT，另一块随便)  </p>
+<p><strong>安装网桥管理包： </strong><br><code>sudo apt install bridge-utils</code> </p>
+<p><strong>临时配置网桥： </strong><br>命令： <code>btctl</code> </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> btctl addr br0     <span class="token comment" spellcheck="true"># 添加一个网桥的网卡接口</span>
+<span class="token function">sudo</span> btctl addif br0 eth0 eth1  <span class="token comment" spellcheck="true"># 往网桥接口添加2块网卡</span>
+<span class="token comment" spellcheck="true"># sudo ifconfig eth0 down   # 把网卡down掉</span>
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> eth0 0.0.0.0 up    <span class="token comment" spellcheck="true"># 2者的ip变没了</span>
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> eth1 0.0.0.0 up
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> br0 1.1.1.1/24 up   <span class="token comment" spellcheck="true"># 手动配置网桥网卡的ip并up</span>
+<span class="token function">sudo</span> dhclient br0    <span class="token comment" spellcheck="true"># 或者 dhcp自动获取网桥网卡的ip地址</span>
+<span class="token function">sudo</span> route add default gw 1.1.1.10    <span class="token comment" spellcheck="true"># 添加一个网关，就可以访问外网了</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>持久配置网桥：</strong><br>修改配置文件： <code>/etc/network/interfaces</code>  </p>
+<pre class="line-numbers language-bash"><code class="language-bash">auto eth0
+iface eth0 inet manual
+
+auto eth1
+iface eth1 inet manual
+
+auto br0
+iface br0 inet dhcp   <span class="token comment" spellcheck="true"># dncp  ， 也可以static，下面手动配置address，netmask和gateway</span>
+bridge_ports eth0 eth1  <span class="token comment" spellcheck="true"># 加入网卡</span>
+bridge_stop off   <span class="token comment" spellcheck="true">#关闭生成树 ,也可以 on开启成树，参与生成树计算</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改保存，然后 重启网络服务/重启服务器  </p>
+<p><strong>查看网桥运行状态 </strong><br><code>sudo brctl show</code><br><strong>查看mac情况</strong><br><code>sudo brctl showmacs br0</code><br><strong>查看生成树情况</strong><br><code>sudo brctl showstp br0</code></p>
+<h2 id="网卡绑定-经常使用"><a href="#网卡绑定-经常使用" class="headerlink" title="网卡绑定   (经常使用)"></a>网卡绑定   (经常使用)</h2><blockquote>
+<p>还记得小时候这段一把筷子的故事吗</p>
+</blockquote>
+<p>实现多块网卡的绑定，实现高可用、负载均衡、更大发挥能力</p>
+<h6 id="一些常用称呼："><a href="#一些常用称呼：" class="headerlink" title="一些常用称呼："></a>一些常用称呼：</h6><p>Bonding == Port Trunking == Link aggregation(链路聚合)  == Team</p>
+<h6 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h6><p>将多个物理网卡组合为一个逻辑网卡</p>
+<ul>
+<li>高可用、负载平衡、高吞吐量</li>
+</ul>
+<h4 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h4><p>在虚拟机做实验：先给虚拟机添加至少两块网卡    </p>
+<p>1.第一步  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token keyword">echo</span> bonding <span class="token operator">>></span> /etc/modules        <span class="token comment" spellcheck="true"># 添加内核支持</span>
+<span class="token function">sudo</span> modprobe bonding       <span class="token comment" spellcheck="true"># 手动加载内核(临时)， modeprobe加载bonding</span>
+<span class="token function">ifconfig</span> -a    <span class="token comment" spellcheck="true"># 可以看到自动生成了一个bonding0的网卡(但是没有up)</span>
+<span class="token function">sudo</span> systemctl stop networking     
+<span class="token comment" spellcheck="true"># 永久配置，文件</span>
+<span class="token comment" spellcheck="true"># sudo vim /etc/network/interfaces</span>
+bounding    <span class="token comment" spellcheck="true"># 添加一个模块</span>
+<span class="token comment" spellcheck="true"># 重启服务</span>
+<span class="token function">sudo</span> systemctl restart networking     
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.配置网卡配置文件    </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Mode 1 配置</span>
+<span class="token comment" spellcheck="true"># sudo vim /etc/network/interfaces</span>
+auto eth0 
+iface eth0 inet manual
+bond-master  bond0    <span class="token comment" spellcheck="true"># 绑定到哪个bound上</span>
+bond-primary  eth0    <span class="token comment" spellcheck="true"># 默认做的主的网卡</span>
+
+auto eth01
+iface eth01 inet manual
+bond-master  bond0      <span class="token comment" spellcheck="true"># 备的网卡，协商要绑定那个</span>
+
+
+auto bond0
+iface bond0 inet dhcp   <span class="token comment" spellcheck="true"># 让ip地址dhcp； 或者static 手动制定</span>
+bond-mode   1    <span class="token comment" spellcheck="true"># 绑定模式   active-backup</span>
+bond-miimon 100    <span class="token comment" spellcheck="true"># 故障检测间隔： 100ms</span>
+bond-slaves none         <span class="token comment" spellcheck="true"># 指定作为的的成员的网卡, 这里写none是因为：加入在自己物理网卡片段里面写了</span>
+
+--
+<span class="token comment" spellcheck="true"># 重启服务</span>
+<span class="token function">sudo</span> systemctl restart networking  
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PS: 绑定模式<br>bound-mode  </p>
+<pre><code>1     一个主，一个备(主的故障后才工作)  也叫： active-backup
+</code></pre><h4 id="6种模式"><a href="#6种模式" class="headerlink" title="6种模式"></a>6种模式</h4><h6 id="Mode-0-：-round-robin-轮询"><a href="#Mode-0-：-round-robin-轮询" class="headerlink" title="Mode 0  ： round-robin(轮询)"></a>Mode 0  ： round-robin(轮询)</h6><ul>
+<li>网络流量（数据包） 顺序平均分配给Bond中所有物理网卡（可以同时使用三个网卡发送和接收数据）</li>
+<li>高可用（容错，一个坏了，另一个网卡接管）、负载均衡（多个网卡，单独是，就是拥有了多G的带宽）</li>
+</ul>
+<h6 id="Mode-1-ative-backup"><a href="#Mode-1-ative-backup" class="headerlink" title="Mode 1 : ative-backup"></a>Mode 1 : ative-backup</h6><ul>
+<li>Bond中只有一个网卡Active， 其他网卡全部Stanby（效率并不是很高）  </li>
+<li>对外只有一个网卡的MAC地址可见  </li>
+<li>高可用<br>实现不了负载均衡，有多个接口也没用  </li>
+</ul>
+<h6 id="Mode-2-balance-XOR"><a href="#Mode-2-balance-XOR" class="headerlink" title="Mode 2:  balance-XOR"></a>Mode 2:  balance-XOR</h6><ul>
+<li>根据源目的MAC/IP/Port进行计算，确定从哪个网卡发出（性能优于Mode0）</li>
+<li>高可用，负载均衡</li>
+</ul>
+<p>（XOR — &gt; 异或）<br>只要不出现故障，不改变mac地址，第一次使用的第一个物理网卡进行的通信，以后所有的通信都是继续使用第一个物理网卡<br>流量不是平均的  </p>
+<h6 id="Mode-3-broadcast"><a href="#Mode-3-broadcast" class="headerlink" title="Mode 3   broadcast"></a>Mode 3   broadcast</h6><ul>
+<li>发包广播给Bond中所有网卡，提供最短的故障恢复时间，应用连接不中断  </li>
+<li>高可用  </li>
+</ul>
+<h6 id="Mode-4-802-3ad（Dynamic-link-aggregation）"><a href="#Mode-4-802-3ad（Dynamic-link-aggregation）" class="headerlink" title="Mode 4   802.3ad（Dynamic link aggregation）"></a>Mode 4   802.3ad（Dynamic link aggregation）</h6><ul>
+<li>链路聚合LACP组内的网卡使用相同速率、双工设置    </li>
+<li>要求：计算机安装ethtool；交换机支持IEEE802.3ad标准，并进行额外配置</li>
+<li>高可用、负载均衡  </li>
+</ul>
+<h6 id="Mode-5-balance-tlb-（Adaptive-transmit-load-balancing）"><a href="#Mode-5-balance-tlb-（Adaptive-transmit-load-balancing）" class="headerlink" title="Mode 5    balance-tlb （Adaptive transmit load balancing）"></a>Mode 5    balance-tlb （Adaptive transmit load balancing）</h6><ul>
+<li>隧道绑定不需要上连交换机额外配置，根据网卡负载出站负载均衡</li>
+<li>高可用、负载均衡  </li>
+</ul>
+<h6 id="Mode-6-balance-alb-Adaptive-load-balance"><a href="#Mode-6-balance-alb-Adaptive-load-balance" class="headerlink" title="Mode 6:   balance-alb (Adaptive load balance)"></a>Mode 6:   balance-alb (Adaptive load balance)</h6><ul>
+<li>Mode 5 + balance-rlb (入站流量负载均衡)  <ul>
+<li>Bond驱动拦截本机的ARP响应包，使用不同网卡硬件MAC替换源MAC</li>
+<li>不同的对端使用不同的服务器MAC地址，实现入站负载均衡<ul>
+<li>不需要上连交换机额外配置  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="查看bond端口和状态"><a href="#查看bond端口和状态" class="headerlink" title="查看bond端口和状态"></a>查看bond端口和状态</h6><pre><code>cat /proc/net/bonding/bond0
+</code></pre><h6 id="Model-4-配置"><a href="#Model-4-配置" class="headerlink" title="Model 4 配置"></a>Model 4 配置</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># sudo vim /etc/network/interfaces</span>
+auto eth0     <span class="token comment" spellcheck="true"># 其他物理网卡配置项同</span>
+iface eth0 inet manual
+bond-master  boud0    <span class="token comment" spellcheck="true"># 绑定到哪个bound上</span>
+
+auto bon
+d0
+iface bond0 inet dhcp   <span class="token comment" spellcheck="true"># 让ip地址dhcp； 或者static 手动制定</span>
+bond-mode 4    <span class="token comment" spellcheck="true"># 绑定模式   active-backup</span>
+bond-miimon 100    <span class="token comment" spellcheck="true"># 故障检测间隔： 100ms</span>
+bond-lacp-rate 1         <span class="token comment" spellcheck="true"># 每1s发送LACPDU（默认为0，即30s）</span>
+bond-slaves eth0 eth1         <span class="token comment" spellcheck="true"># 指定作为的的成员的网卡</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="DHCP服务"><a href="#DHCP服务" class="headerlink" title="DHCP服务"></a>DHCP服务</h2><p>通常给客户端自动分配IP地址  </p>
+<h6 id="Dynamic-Host-Configuration-Protocol"><a href="#Dynamic-Host-Configuration-Protocol" class="headerlink" title="Dynamic Host Configuration Protocol"></a>Dynamic Host Configuration Protocol</h6><ul>
+<li>透明的配置网络参数  </li>
+<li>IP/掩码、网关、DNS、域名、时间服务器、打印服务器(常用的参数是前三个)</li>
+<li>通过地址租约循环使用IP地址（有租约期，循环利用）</li>
+<li>基于UDP， 标准使用 端口： 67(服务端)，68(客户端)</li>
+</ul>
+<p>ps: 一般企业，dhcp都在核心交换机上，只有当企业网络非常大复杂时候，才会单独使用一个服务器来提供dhcp服务  </p>
+<p><strong>请求和分配步骤： </strong><br>1.客户端发生第一个广播(二层，因为此时还没有ip)，数据包：<code>dhcp discover</code><br>2.dhcp服务器回复数据包<code>dhcp offer</code><br>3.客户端就再发一个广播包<code>dhcp request</code><br>4.服务器端发送数据包<code>ack</code>， 包含ip等参数，标记这个ip为已分配  </p>
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>1.在vmware上，打开虚拟网络设置，以vmnet8为例，关闭vmware自带的dhcp服务（如果同时有两台dhcp服务:使用响应快的服务提供的ip），将这台虚拟机使用nat，<br>让其他虚拟机都使用这台虚拟机的dhcp服务，把这个虚拟机修改为静态ip, 修改配置文件<code>/etc/network/inertface</code>到vmnet8的网段，<code>sudo ip addr fulsh eth0</code>清除原来配置，重启网络服务  </p>
+<p>2.安装dhcp服务的软件包  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 这里用的isc的  </span>
+<span class="token function">sudo</span> apt <span class="token function">install</span> isc-dhcp-server  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>3.配置dhcp服务  </p>
+<blockquote>
+<p>Note：能不安装的服务和软件就不要安装，反非必须，就不启用（缩小攻击面）  </p>
+</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">##1.先修改配置文件1  </span>
+<span class="token comment" spellcheck="true">#sudo vim /etc/default/isc-dhcp-server   # 指定启动DHCP服务的网卡</span>
+    INTERFACE<span class="token operator">=</span><span class="token string">"eth0"</span>   <span class="token comment" spellcheck="true"># 要启动shcp的网卡name(一般是针对内网的那一块网卡)，可以多个网卡（空格隔开）</span>
+
+<span class="token comment" spellcheck="true">##2.再修改主配置文件（指定地址池和选项） </span>
+<span class="token comment" spellcheck="true">#sudo vim /etc/dhcp/dhcpd.conf       </span>
+<span class="token comment" spellcheck="true">#option只对dhcp的作用域起效；其他的很对整个服务器起效</span>
+<span class="token comment" spellcheck="true">#一致的配置写在文件起始位置，其他的个性的单独设置在各个网段的位置</span>
+default-lease-time 600<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#租约期限， 单位：s</span>
+max-lease-time 7200<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#最大租约期限(到达时间的一半，就刷新使用期；如果到达最大时间，就重新通过dhcp获取)</span>
+authoritative<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">#启用之后，证明这个是权威的授权dhcp服务器（一般情况下，网络中如果出现其他的dhcp就不会影响了）</span>
+<span class="token comment" spellcheck="true">#配置地址池(可以手动写，也可以在原注释的基础上配置) 网段</span>
+subnet 10.1.8.0 netmask 255.255.255.0 <span class="token punctuation">{</span>
+    range 10.1.8.100 10.1.8.200<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">#可分配的地址段</span>
+    option routers 10.1.8.1<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#网关地址</span>
+    option domain-name-servers 192.168.1.1,192.168.1.2<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">#dns服务器地址，多个用逗号隔开; 一般配到这里就够了</span>
+    option ntp-server 1.1.1.1<span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">#时间服务器</span>
+    option domain-name <span class="token string">"local.lan"</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">#统一的域名</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">##3.重启服务</span>
+
+
+<span class="token comment" spellcheck="true">#客户端一些操作</span>
+ipconfig /all
+ipconfig /release   <span class="token comment" spellcheck="true"># 释放这个ip</span>
+ipconfig /renew    <span class="token comment" spellcheck="true">#重新获取ip</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.特殊情况(指定某个ip只分配给某台计算机，IP保留)    </p>
+<blockquote>
+<p>通过MAC地址来识别<br><code>`</code>bash</p>
+</blockquote>
+<p>#sudo vim /etc/dhcp/dhcpd.conf       </p>
+<p>host yourname {<br>    hardware ethernet 00:11:22:33:44:55;<br>    fixed-address 10.1.8.8;   #尽量用上面地址池以外的地址<br>}  </p>
+<p>#保存，重启</p>
+<pre><code>
+###### 日常的维护  
+日志与状态查询  
+```bash
+#服务器地址租约结果（可查看分发详细信息）
+cat /var/lib/dhcp/dhcpd.leases
+#系统日志文件(客户端直接关机不会记录，release的时候会记录)
+tail -f /var/log/syslog
+#查看服务运行状态
+systemctl status isc-dhcp-server.service
+#客户端来查看获得地址历史(客户端是Linux时)
+less /var/lib/dhcp/dhcpd.leases
+
+</code></pre><p>​    </p>
+<h2 id="NTP服务-（网络时间协议）"><a href="#NTP服务-（网络时间协议）" class="headerlink" title="NTP服务 （网络时间协议）"></a>NTP服务 （网络时间协议）</h2><blockquote>
+<p>时间都去哪了</p>
+</blockquote>
+<p><img src="http://image.xpshuai.cn//20200308150835487_32007.png"></p>
+<p><strong>时间表准： </strong> </p>
+<ul>
+<li>GMT：格林威治标准时间</li>
+<li>UTC：世界协调时间</li>
+<li>CST：China Standard Time UT+8:00</li>
+</ul>
+<p><img src="http://image.xpshuai.cn/20200308153026228_153.png"></p>
+<h4 id="NTP协议"><a href="#NTP协议" class="headerlink" title="NTP协议"></a>NTP协议</h4><p><img src="http://image.xpshuai.cn/20200308154004613_29225.png"></p>
+<h6 id="NTP客户端"><a href="#NTP客户端" class="headerlink" title="NTP客户端"></a>NTP客户端</h6><ul>
+<li>客户端程序从时间服务器同步时间</li>
+<li>系统启动时自动同步时间</li>
+<li>网口激活时自动同步运行</li>
+<li>手动同步时间  </li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 新版系统，查看客户端时间  </span>
+timedatectl  
+
+<span class="token comment" spellcheck="true"># RTC时间：硬件时间  </span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>新版系统使用<code>timesyncd</code>客户端同步时间<br>向这个域名请求：ntp.ubuntu.com  </p>
+<pre class="line-numbers language-bash"><code class="language-bash">
+timedatectrl list-timezones   <span class="token comment" spellcheck="true">#列出所有时区  </span>
+timedatectrl set-timezone    <span class="token comment" spellcheck="true">#设置时区</span>
+timedatectrl set-time <span class="token string">"2019-10-01 18:18:18"</span> <span class="token comment" spellcheck="true">#设置系统时间  </span>
+
+timedatectl set-ntp <span class="token boolean">true</span>  <span class="token comment" spellcheck="true">#开始网络同步</span>
+systemctl status systemd-timesyncd.service  <span class="token comment" spellcheck="true"># 查看时间服务状态</span>
+
+<span class="token comment" spellcheck="true"># 硬件时间(RTC)与UTC时间同步</span>
+<span class="token function">sudo</span> hwclock -w   <span class="token comment" spellcheck="true"># 将系统时间写入到RTC时间</span>
+<span class="token function">sudo</span> hwlock -s     <span class="token comment" spellcheck="true"># 将硬件</span>
+hwclock --set --date<span class="token operator">=</span><span class="token string">'2019-10-01 18:18:18'</span>
+
+<span class="token comment" spellcheck="true"># 配置文件</span>
+/etc/systemd/timesyncd.conf
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="一个过时的东西-ntpdate"><a href="#一个过时的东西-ntpdate" class="headerlink" title="一个过时的东西(ntpdate)"></a>一个过时的东西(ntpdate)</h6><p><img src="http://image.xpshuai.cn/20200308170606501_6440.png"><br>新版本系统使用<code>timesyncd</code>替换<code>ntpd</code>的客户端功能<br>一旦安装了ntpdate / ntp,   timedatectrl将被禁用</p>
+<h6 id="ntpd-–-客户端-服务器"><a href="#ntpd-–-客户端-服务器" class="headerlink" title="ntpd – 客户端+服务器"></a>ntpd – 客户端+服务器</h6><blockquote>
+<p>把机器设置成时间服务器<br><code>`</code>bash</p>
+</blockquote>
+<p>apt install ntp  # 安装ntp服务<br>systemctl start ntp  # 启动服务(123端口就被打开了)<br>systemctl status ntp  # 查询服务状态<br>systemctl restart ntp  # 重启服务</p>
+<p>##配置文件（我也要跟上一级的时间服务器同步）<br>vim /etc/ntp.conf</p>
+<p>#如果不使用官方的时间服务器，可以自己指定<br>server 1.1.1.1  </p>
+<p>#首选网络时间服务器不可用的时候，使用本机始终作为备用时间源<br>fudge 127.127.1.1 startum 10  # 层级设置低点( startum 10, 这里设置为10层)</p>
+<pre><code>
+配置文件中，主要的时间服务器如下  
+&lt;img src="http://image.xpshuai.cn/20200308171832987_9157.png"&gt;&lt;/img&gt;
+
+
+
+###### 命令: ntpq -- ntp服务端的查询命令  
+```bash
+ntpq -p     
+#命令执行结果详解如下图：  
+</code></pre><p><img src="http://image.xpshuai.cn/20200308172254102_12604.png"><br>每行前面第一个字符含义：</p>
+<pre><code>空  表示无效主机  
+x   已不再使用
+-   已不再使用
+#   状态良好但为使用
++   良好且优先使用
+*   首选主同步主机    （一般是startum层级最高的）
+</code></pre><h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#查看日期</span>
+<span class="token function">date</span>  
+<span class="token comment" spellcheck="true">#设置</span>
+<span class="token function">date</span> --set 1998-11-11  <span class="token comment" spellcheck="true">#手动设置日期（要通过 sudo timedatectl set-ntp 0 来关掉ntp）</span>
+<span class="token function">date</span> --set 21:21:21    <span class="token comment" spellcheck="true">#设置时间</span>
+
+<span class="token function">cat</span> /etc/timezone      <span class="token comment" spellcheck="true">#查看时区</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn" rel="external nofollow noreferrer">剑胆琴心</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn/posts/9091/">http://www.xpshuai.cn/posts/9091/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.xpshuai.cn" target="_blank">剑胆琴心</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd75ec1a5864747376f6f',
+        clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
+        admin: "shuai06",
+        id: '2020-03-08T17-48-37',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/13625/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="工具 - netcat使用">
+                        
+                        <span class="card-title">工具 - netcat使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            netcat使用简介
+侦听模式/传输模式
+可以替代telent  / 获取banner信息
+传输文本信息
+传输文件/目录
+加密传输文件
+远程控制/木马
+加密所有流量
+流媒体服务器
+远程克隆硬盘
+
+基本用法1. 实现telnet / bann
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/渗透测试/">
+                        <span class="chip bg-color">渗透测试</span>
+                    </a>
+                    
+                    <a href="/tags/nc/">
+                        <span class="chip bg-color">nc</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/27104/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="内网渗透">
+                        
+                        <span class="card-title">内网渗透</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            内网分类：
+带域环境的内网
+不带域环境的内网
+
+一些端口文件共享服务端口渗透
+比如学校机房有专门用来下载文件的服务器
+
+ftp服务FTP服务： ftp服务我分为两种情况，第一种是使用系统软件来配置，比如IIS中的FTP文件共享或Linux中
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/渗透测试/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/内网/">
+                        <span class="chip bg-color">内网</span>
+                    </a>
+                    
+                    <a href="/tags/渗透/">
+                        <span class="chip bg-color">渗透</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 剑胆琴心<br />'
+            + '文章作者: 剑胆琴心<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://www.xpshuai.cn" target="_blank">剑胆琴心</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">471.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "4";
+                    var startDate = "20";
+                    var startHour = "15";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beianbeian.com/beianxinxi/816345dfd53e0153acde20c5bb1dd1b0.html" target="_blank">冀ICP备18027796号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shuai06" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2944282625@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2944282625" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2944282625" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+        <script src="//code.tidio.co/xfg3rji2iq4povfdtfxiwk4smqduoso6.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1984 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ubuntu server-引导过程, 技术博客, 网络安全, 信息安全, IT, 计算机, 学习">
+    <meta name="description" content="技术博客, 网络安全, 信息安全, IT, 计算机, 学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ubuntu server-引导过程 | 剑胆琴心</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">剑胆琴心</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">剑胆琴心</div>
+        <div class="logo-desc">
+            
+            技术博客, 网络安全, 信息安全, IT, 计算机, 学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/shuai06" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/shuai06" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ubuntu server-引导过程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/ubuntu/">
+                                <span class="chip bg-color">ubuntu</span>
+                            </a>
+                        
+                            <a href="/tags/引导过程/">
+                                <span class="chip bg-color">引导过程</span>
+                            </a>
+                        
+                            <a href="/tags/BIOS/">
+                                <span class="chip bg-color">BIOS</span>
+                            </a>
+                        
+                            <a href="/tags/UEFI/">
+                                <span class="chip bg-color">UEFI</span>
+                            </a>
+                        
+                            <a href="/tags/grub/">
+                                <span class="chip bg-color">grub</span>
+                            </a>
+                        
+                            <a href="/tags/内核/">
+                                <span class="chip bg-color">内核</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-30
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="BIOS-UEFI"><a href="#BIOS-UEFI" class="headerlink" title="BIOS/UEFI"></a>BIOS/UEFI</h2><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<p>操作系统是如何启动的</p>
+<h6 id="三个彼此独立但相互关联的过程"><a href="#三个彼此独立但相互关联的过程" class="headerlink" title="三个彼此独立但相互关联的过程"></a>三个彼此独立但相互关联的过程</h6><p>1.Bios/UEFI自检过程（POST）</p>
+<pre class="line-numbers language-bash"><code class="language-bash">- 加电自检
+- 硬件识别与检测
+
+<span class="token comment" spellcheck="true"># UEFI比较新，原理和效果不一样</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.Boot Load加载执行过程</p>
+<pre class="line-numbers language-bash"><code class="language-bash">引导加载程序允许您选择想要引导的操作系统
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.操作系统启动过程</p>
+<pre class="line-numbers language-bash"><code class="language-bash">启动各种服务及操作系统本身
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h6><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<p>主板芯片（计算机运行的第一个程序）</p>
+<pre class="line-numbers language-bash"><code class="language-bash">- 执行基本的检查或开机自测<span class="token punctuation">(</span>POST<span class="token punctuation">)</span>
+- 识别连接在计算机上的所有硬件、可用性、底层参数
+        例如内存、硬盘、键盘和显卡等
+- 不同的BIOS可以设置检查参数
+- 轮训硬盘控制器，启动其板载芯片，配置RAID等
+- 引导顺序
+- 不当的配置可导致计算机无法使用
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h6><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<p>较新的主板支持UEFI (2015年以后)</p>
+<pre class="line-numbers language-bash"><code class="language-bash">- 视觉上与BIOS相似，但原理极不相同
+- 运行速度略快于BIOS
+- 创建UEFI是为了克服BIOS的故有缺陷
+    - BIOS运行基于16位处理器，UEFI基于现代处理器
+    - 内存使用量方面，BIOS有 限，UEFI按需要量使用
+    - BIOS只能读取MBR引导操作系统<span class="token punctuation">;</span> UEFI可读取系统安装时划分的独立分区
+    - BIOS支持最大2T的硬盘，UEFI使用GPT分区表，最大支持8-9Z硬盘
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="安全引导-Secure-boot"><a href="#安全引导-Secure-boot" class="headerlink" title="安全引导(Secure-boot)"></a>安全引导(Secure-boot)</h6><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash">- 恶意软件可通过Boot Loader加载到系统中
+- UEFI提供了安全引导 Secure-boot
+- 加载前通过公钥/私钥验证签名的引<span class="token operator">|</span>导加载程序和硬件
+- 64位操作系统支持Secure-boot,某些硬件无法更改操作系统类型（如某些电脑厂商不让电脑装其他系统，他给锁死了，要问好Secure-boot能不能关或在开启Secure-boot时候能不能按其他系统。其实建议Secure-boot开启）
+- 目前绝大多数硬件同时支持BISO/UEFI，可自行选择启动
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="硬盘分区表"><a href="#硬盘分区表" class="headerlink" title="硬盘分区表"></a>硬盘分区表</h6><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash">- 分区表通常位于硬盘起始位置
+- 记录硬盘的划分情况
+    - 两种类型：MBR / GPT
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="http://image.xpshuai.cn/%E5%86%85%E6%A0%B81.png"></p>
+<h2 id="Boot-Loader"><a href="#Boot-Loader" class="headerlink" title="Boot Loader"></a>Boot Loader</h2><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<ul>
+<li>BIOS/UEFI不关系统安装的操作系统</li>
+<li>POST自检结束后，BIOS/UEFI读取硬盘Boot Loader</li>
+<li>读取并执行Boot L oder，由其引|导操作系统</li>
+<li>Linux世界里两大<code>Boot Loader程序</code><ul>
+<li>LILO:基本已被废弃</li>
+<li>GRUB:目前绝大多数发行版采用</li>
+</ul>
+</li>
+</ul>
+<h6 id="BIOS引导过程"><a href="#BIOS引导过程" class="headerlink" title="BIOS引导过程"></a>BIOS引导过程</h6><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<p>BIOS -&gt; Boot Loader (<code>GRUB2</code>)<br>第一阶段：boot.img读取并运行<code>MBR</code>硬盘起始的446字节<br>第二阶段：boot.img 查找并运行core.img (通常位于MBR Gap)<br>                 core.img的任务是访问<code>/boot/grub</code>，加载该目录下的所有模块<br>                 加载启动菜单，自动或手动选择进一步引导的系统内核 </p>
+<h6 id="UEFI引导过程"><a href="#UEFI引导过程" class="headerlink" title="UEFI引导过程"></a>UEFI引导过程</h6><blockquote>
+<p>打开黑箱看看里面</p>
+</blockquote>
+<p>第一阶段</p>
+<ul>
+<li>UEFI读取<code>GPT</code>分区表，找到<code>EFI分区</code>(格式Fat32 / 大小默认537M / boot esp )</li>
+<li>从中读取、执行boot loader代码，加载模块</li>
+<li>命令<code>parted</code> 一<code>print</code> (读的是文件：/boot/efi/EFl/ubuntu/ grubx64.efi)<br><code>`</code>bash<br>sudo parted    <h1 id="查看-分区的信息"><a href="#查看-分区的信息" class="headerlink" title="查看 分区的信息"></a>查看 分区的信息</h1>print</li>
+</ul>
+<h1 id="disk-工具也可来查看分区"><a href="#disk-工具也可来查看分区" class="headerlink" title="disk 工具也可来查看分区"></a>disk 工具也可来查看分区</h1><pre><code>
+第二阶段
+- 查找`/boot/grub/x86_ 64- -efi/core.efi` 执行
+- 生成GRUB2菜单， 选择不同内核引导系统(内核二进制文件:`vmlinuz-&lt;release- number&gt;` )
+- 加载硬件驱动文件initrd.img到内存中，然后控制权交给内核，继续引导
+- 系统加载systemd / upstart / init, 启动各服务
+
+
+
+#### GRUB2
+GRUB是一个强大的多引导加载程序
+```bash
+- Windows --下的引导程序--&gt; ntldr    # 不兼容Linux
+- MacOS ---&gt; Boot Camp
+</code></pre><p>两种启动方式</p>
+<pre class="line-numbers language-bash"><code class="language-bash">-直接查找和加载所需的内核
+-加载另一个引导加载程序
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>操作系统引导的四个核心组件</p>
+<pre class="line-numbers language-bash"><code class="language-bash">内核文件、驱动器名称、内核文件所在分区号、初始化RAM盘
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="GRUB菜单"><a href="#GRUB菜单" class="headerlink" title="GRUB菜单"></a>GRUB菜单</h6><p><strong>GRUB菜单文件</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">/boot/grub/grub.cfg <span class="token punctuation">(</span>自动生成，不可修改<span class="token punctuation">)</span>
+主要来源文件/etc/grub.d/*
+
+菜单定义: menuentry / submenu
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>显示菜单</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">- Vi /etc/default/grub 
+    GRUB_TIMEOUT_STYLE<span class="token operator">=</span>menu    <span class="token comment" spellcheck="true"># 让他显示菜单</span>
+    GRUB_TIMEOUT<span class="token operator">=</span>100    <span class="token comment" spellcheck="true"># 超时时间（100s如果不做选择，就启动默认的）</span>
+ <span class="token function">sudo</span> update-grub
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>单用户模式</strong><br>类似于Windows启动时F8灾难恢复模式<br>BIOS: Shift<br>UEFI: Esc</p>
+<p>GRUB菜单<br>-“<code>e"</code><br>-在引导项最后增加<code>“single"</code><br>-<code>Ctrl+ X</code>    进入</p>
+<p>手动生成GRUB菜单文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> grub-mkconfig --output mygrub.cfg
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>安全风险</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">恶意用户可能修改boot loader, 造成安全问题
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>设置GRUB密码</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vi</span> /etc/grub.d/40_custom    <span class="token comment" spellcheck="true"># custom的文件在更新系统后不会被覆盖</span>
+    <span class="token keyword">set</span> superusers<span class="token operator">=</span>xps
+    password yuanfh pass123
+<span class="token function">sudo</span> update--grub
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上明文存储GRUB密码存在风险隐患</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用工具 grub-mkpasswd-pbkdf2</span>
+grub-mkpasswd-pbkdf2    <span class="token comment" spellcheck="true"># 输入密码，会生成一段密文</span>
+<span class="token function">sudo</span> vim /etc/grub.d/40_custom
+    password_pbkdf2 xps grub.pbkdf2.sha512 <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>    <span class="token comment" spellcheck="true"># 上面的密文放到配置文件中</span>
+
+<span class="token function">sudo</span> update--grub
+
+<span class="token comment" spellcheck="true"># 此方法不适合远程托管到IDC机房的机器（一重启在grup时就要输入密码，此时SSH还未连接）</span>
+
+<span class="token comment" spellcheck="true"># 指定启动项用户</span>
+menuentry --<span class="token operator">></span> --users xps
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="其他BootLoader-LILO-Grub之外的"><a href="#其他BootLoader-LILO-Grub之外的" class="headerlink" title="其他BootLoader(LILO, Grub之外的)"></a>其他BootLoader(LILO, Grub之外的)</h4><p><strong>1.SYSL INUX</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">从FAT分区引导系统的BootLoader <span class="token punctuation">(</span>U盘启动时<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>2.EXTL INUX</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 小型的Linux</span>
+从ext2、ext3、 ext4、 btrfs引导系统的小型BootLoader
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>3.ISOL .INUX</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 光盘启动</span>
+从LiveCD、LiveDVD引导系统的BootLoader
+<span class="token comment" spellcheck="true"># isolinux.bin 映像文件; isolinux.cfg 配置文件</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>4.PXELINUX</strong></p>
+<ul>
+<li>(无盘站–&gt;无硬盘)<code>从网络服务器引导系统</code>的BootLoader</li>
+<li>PXE（Pre-boot eXecution Environment）</li>
+<li>使用DHCP为工作站分配IP</li>
+<li>使用BOOTP加载BootLoader映像</li>
+<li>TFTP将引导映像传输至工作站(基于UDP协议)</li>
+<li><code>/tftpboot/ pxelinux.0</code> : PXE BootLoader</li>
+<li><code>/tftpboot/ pxelinux.cfg</code> :配置文件</li>
+<li>目前新版支持NFS、HTTP、FTP服务器</li>
+</ul>
+<h4 id="系统无法启动"><a href="#系统无法启动" class="headerlink" title="系统无法启动!"></a>系统无法启动!</h4><p><strong>两大问题原因</strong></p>
+<ul>
+<li>内核问题：手动安装内核时缺少模块、库文件(发行版错误)</li>
+<li>驱动器故障：无法读取根驱动器</li>
+</ul>
+<p><strong>处理办法:</strong></p>
+<ul>
+<li>使用先前无故障版本内核引导系统</li>
+<li>单用户模式(指定内核参数)</li>
+<li>对于驱动器故障，可以使用救援盘(CD/DVD、USB) 检修硬盘：<code>fsck /dev/sda1</code></li>
+</ul>
+<p><strong>显示GRUB菜单</strong></p>
+<ul>
+<li>可以开机<code>一直按住ESC键、或SHIFT键</code>（在故障发生时，且没修改过grup菜单显示时）</li>
+</ul>
+<h2 id="操作系统启动"><a href="#操作系统启动" class="headerlink" title="操作系统启动"></a>操作系统启动</h2><blockquote>
+<p>服务/Service (windows) ==后台/daemon (Linux)</p>
+</blockquote>
+<p>INIT：内核引导后运行<code>第一个程序INIT</code>,初始化操作系统并启动服务(直到关机)</p>
+<pre><code>- 内核加载后的初始化进程，用于启动其他程序
+    - 所有服务启动由init 程序处理(`PID=1`) ，所有系统服务进程都是其子进程
+    - `pstree -p 1`  
+    - `/usr/sbin/init -&gt; /lib/ systemd/systemd`  现在的`init`程序早已不是以前那个init，只是沿用，实则是个符号链接
+    - 早期版本配置文件：`/etc/inittab` (`ubuntu无此文件！`)
+</code></pre><p><img src="http://image.xpshuai.cn/%E5%BC%95%E5%AF%BC%E8%BF%87%E7%A8%8B2.png"></p>
+<p><img src="http://image.xpshuai.cn/%E5%BC%95%E5%AF%BC%E8%BF%87%E7%A8%8B3.png"></p>
+<h2 id="三种INIT"><a href="#三种INIT" class="headerlink" title="三种INIT"></a>三种INIT</h2><blockquote>
+<p>接上面</p>
+</blockquote>
+<p><strong>1.SysV / SysV-init</strong><br>源自UNIX System V (目前老版本Linux还在使用)</p>
+<p><strong>2.Upstart</strong><br>兼容SysV，Ubuntu意图用于替换SysV，其他发行版也有使用<br>几乎没有完整实现的Upstart（Ubuntu自己都不用Upstart了）</p>
+<p><strong>3.Systemd</strong><br>目前主流发行版使用<code>systemd-sysv</code>包兼容SysV格式的initd脚本<br>始于2010年，是目前最新的系统初始化后台程序;<br>速度更快，效率更高</p>
+<h4 id="SysV"><a href="#SysV" class="headerlink" title="SysV"></a>SysV</h4><ul>
+<li>分成不同运行级别的一组Shell脚本(哪些程序，什么时候运行)</li>
+<li>每个程序有一个独立的脚本控制其启动或停止</li>
+<li>系统启动时进入一个运行级(一组随系统启动的程序)</li>
+<li>内核启动首先读取运行级别配置文件，决定进入哪个运行级</li>
+<li>运行级别：<pre class="line-numbers language-bash"><code class="language-bash">0  关机
+1  单用户模式<span class="token punctuation">(</span>系统维护<span class="token punctuation">)</span>
+2  Debian多用户图形模式、
+3  多用户文本模式
+4  未定义
+5  RedHat多用户图形模式
+6  重启系统
+<span class="token comment" spellcheck="true"># 不同发行版可能略有不同</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h6 id="在不同运行级下启动程序的方法"><a href="#在不同运行级下启动程序的方法" class="headerlink" title="在不同运行级下启动程序的方法"></a>在不同运行级下启动程序的方法</h6><p><strong>方法1：<code>/etc/ inittab</code>：定义不同运行级下启动的程序，每行定义一个应用程序</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">id:runlevels:action:process
+<span class="token comment" spellcheck="true">#- ID: 包含1-4个字符，唯一标识一个程序</span>
+<span class="token comment" spellcheck="true">#- runlevel: 运行级列表(在哪个运行级中运行该程序，例如: 345)</span>
+<span class="token comment" spellcheck="true">#- action:</span>
+<span class="token comment" spellcheck="true">#- id:3:initdefault: 系统启动后默认进入的运行级</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>方法2：启动脚本</strong><br><code>/etc/init.d/</code>下的脚本<br><code>/etc/rc1.d</code>为例是不同级别1下要运行的程序(符号链接)，<code>K</code>开头表示kill掉,<code>S</code>是启动，后面数字的值代表优先级，最后面代表程序的名称</p>
+<p>除了运行级，SysV也使用启动脚本控制程序启动、停止<br>启动脚本存放于<code>/etc/init.d/</code>中，通过<code>/etc/rcX.d/</code>目录调用(X 运行级)<br>脚本文件名<code>S: Start</code>; <code>K: Kill/Stop</code>，<code>数字表示优先级</code>(依赖顺序)<br>通过具体脚本启动停止程序稍嫌麻烦，系统包含工具指定脚本的运行级</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 给我们提供了管理工具</span>
+<span class="token function">chkconfig</span> / update-rc.d  <span class="token comment" spellcheck="true">#用于查看和修改程序的运行级(RedHat / Debian)</span>
+<span class="token function">chkconfig</span> --list <span class="token operator">&lt;</span>program_name<span class="token operator">></span>    <span class="token comment" spellcheck="true">#查看</span>
+<span class="token function">chkconfig</span> -- levels 12345 <span class="token operator">&lt;</span>program_name<span class="token operator">></span> on    <span class="token comment" spellcheck="true">#设置</span>
+update-rc.d program defaults / update rc.d <span class="token operator">&lt;</span>program_name<span class="token operator">></span> remove
+update- -rc.d -f <span class="token operator">&lt;</span>program_name<span class="token operator">></span> start 40 2 34 5. stop 80 0 1 6. <span class="token comment" spellcheck="true">#具体运行级别和顺序(在那几个级别启动这个程序，在那几个级别stop这个程序)  40、80指在具体运行级中程序的启动顺序(0-99)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>action字段</strong>(在Ubuntu中已经找不到了)</p>
+<ul>
+<li>boot  进程在系统扃动时启动</li>
+<li>bootwait  进程在系统启动时启动，系统会等待它启动完成</li>
+<li>initdefault  系统默认进入的运行级别</li>
+<li>kbrequest  进程在按下特殊的组合键后启动</li>
+<li>once  当进入运行级别时，进程启动一次，后面down了也就不管了</li>
+<li>powerfail  系统关闭时才运行</li>
+<li>powerwait  系统关闭时才运行，系统将等待其运行完成</li>
+<li>respawn  进入运行级时启动，并在终止时重新启动（病毒可以这样，你杀掉之后过一会又会起来）</li>
+<li>sysinit  在boot和bootwait项之前启动</li>
+<li>wait  进程启动一次，系统等待其完成</li>
+</ul>
+<p><strong>查看系统运行级</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">runlevel    <span class="token comment" spellcheck="true"># 显示之前和现在的运行级</span>
+N  5    <span class="token comment" spellcheck="true"># 上面命令的执行结果</span>
+<span class="token comment" spellcheck="true"># N    表示系统【之前】处于原始boot运行级</span>
+<span class="token comment" spellcheck="true"># 5    表示【当前】运行级</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>更改运行级</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">init 6    <span class="token comment" spellcheck="true"># 重启系统(teljinit)</span>
+init 0    <span class="token comment" spellcheck="true"># 关机</span>
+
+<span class="token comment" spellcheck="true"># init的问题在于命令立刻生效。这对个人电脑没有问题，但对多用户环境有影响（可能造成其他用户也...）</span>
+<span class="token comment" spellcheck="true"># 多用户环境，建议使用shutdown、halt、 poweroff、 reboot (时间、通知)</span>
+
+<span class="token comment" spellcheck="true">## 接受别人给发的通知</span>
+mesg y    <span class="token comment" spellcheck="true"># 开启</span>
+mesg    <span class="token comment" spellcheck="true"># 查看</span>
+
+<span class="token function">who</span> -T    <span class="token comment" spellcheck="true"># 第二列终端前面如果有+号，表示他允许别人给他发消息</span>
+
+<span class="token function">write</span> xps tty1     <span class="token comment" spellcheck="true"># 给指定用户在某个指定的终端发送消息</span>
+<span class="token comment" spellcheck="true">#运行后直接写消息就行</span>
+
+wall xxxxxxx   <span class="token comment" spellcheck="true"># 给所有登录用户发消息（广播）</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Upstart"><a href="#Upstart" class="headerlink" title="Upstart"></a>Upstart</h4><ul>
+<li>操作系统的复杂度不断上升，造成SysV脚本越来越复杂</li>
+<li>ubuntu官方开发Upstart用于替换SysV<ul>
+<li>处理可热插拔设备在Linux系统中造成的动态环境</li>
+<li>使用公钥<code>/etc/init/</code>文件夹替代/etc/inittab 和/etc/init.d 中的启动脚本</li>
+<li>每个程序和服务在init文件夹中都有一个<code>&lt;program_name&gt;.conf</code>配置文件</li>
+</ul>
+</li>
+</ul>
+<p>启动和停止服务</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> start/stop bluetooth        <span class="token comment" spellcheck="true"># ubuntu中没有</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>Linux Standard Base (LSB)</strong></p>
+<ul>
+<li>是一些Linux发行版协商共同支持的规范</li>
+<li>目的是在不同Linux发行版之间创建一 致的使用体验</li>
+<li>LSB定义了标准的init命令:·<code>start、 stop、 restart</code></li>
+<li>所有遵循L SB的Linux发行版都应该支持以上命令</li>
+<li>但是Debian等发行方退出了LSB组织，目前ubuntu中不包含<pre class="line-numbers language-bash"><code class="language-bash">lsb_release -a    <span class="token comment" spellcheck="true"># </span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p>Linux世界可能会日趋分裂，统一用户体验的缺失势必提高用户的学习成本</p>
+<h4 id="Sytemd-目前最主流"><a href="#Sytemd-目前最主流" class="headerlink" title="Sytemd(目前最主流)"></a>Sytemd(目前最主流)</h4><ul>
+<li><p>由RedHat开发，并迅速流行于Linux世界</p>
+<ul>
+<li>Systemd 在系统初始化的方式上引入了一个主要的范式转换，并引起了一些争议</li>
+<li>它放弃使用多 个小型初始化脚本，转而<code>使用单一程序</code>，配合每个服务独立的配置文件<ul>
+<li>这违背了早期的Linux哲学(小而专著是性能、稳定、安全性的基础)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>放弃了初始化脚本和运行级，Systemd创造了<code>target / unit</code>的概念</p>
+<ul>
+<li><code>unit</code>用来定义service、action</li>
+<li>由名称、类型、配置文件组成</li>
+<li>常见unit类型<pre class="line-numbers language-bash"><code class="language-bash">automount、 device、 mount、 path、 service、 snapshot、 socket、 target 等等
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>unit的命名方式</p>
+<pre class="line-numbers language-bash"><code class="language-bash">name.type    <span class="token comment" spellcheck="true"># 如sshd.service</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>当前系统已加载的unit</p>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl list- -units     <span class="token comment" spellcheck="true"># 查看</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Systemd 使用service类型的unit 管理后台服务</p>
+<p>target 类型组合多个unit实现同时启动</p>
+<pre class="line-numbers language-bash"><code class="language-bash">例如network.target组合了所有用于启动网卡的unit
+系统初始化过程中，target 类似于SysV中运行级别的概念
+一个target对应- -组service
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>配置unit</strong><br>每个unit需要一个配置文件来定义需要启动、如何启动什么程序<br>配置文件路径<code>/lib/systemd/system/</code>，不同版本，路径不尽相同</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> /lib/systemd/system/ssh.service
+    ExecStart    <span class="token comment" spellcheck="true">#指定运行程序</span>
+    After    <span class="token comment" spellcheck="true">#依赖的服务(先于ssh服务运行的程序)</span>
+    WantedBy    <span class="token comment" spellcheck="true">#指定target (运行级)</span>
+    Restart    <span class="token comment" spellcheck="true">#何时重启</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>tartget配置文件</p>
+<pre class="line-numbers language-bash"><code class="language-bash">定义需要启动的unit<span class="token punctuation">(</span>不定义具体程序<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 以graphical为例</span>
+<span class="token function">cat</span> /lib/systemd/system/graphical.target
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>默认target</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 系统引导后默认启动的target(default.target)</span>
+/lib/systemd/system/default.target -<span class="token operator">></span> graphical.target    <span class="token comment" spellcheck="true"># 只需对目标做个软链接</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>systemctl程序</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 常用参数</span>
+list-unites / start / stop / restart / reload /status /
+<span class="token function">enable</span> / disable    <span class="token comment" spellcheck="true">#计算机每次引导时启动/禁用</span>
+isolate             <span class="token comment" spellcheck="true">#启动指定单元(停止其他所有单元)</span>
+default    <span class="token comment" spellcheck="true">#修改默认target</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>兼容SysV</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 对应的运行级别</span>
+/lib/ systemd/system/runlevel0.target    <span class="token comment" spellcheck="true"># poweroff.target</span>
+/lib/ systemd/ system/ runlevel1.target    <span class="token comment" spellcheck="true"># rescue.target</span>
+/lib/ systemd/ system/ runlevel5.target    <span class="token comment" spellcheck="true"># graphical.target</span>
+/lib/ systemd/ system/ runlevel6.target    <span class="token comment" spellcheck="true"># reboot.target</span>
+
+<span class="token comment" spellcheck="true"># 比如，进入到运行级别1</span>
+systemctl isolate runlevel1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h2><h4 id="Linux系统组成"><a href="#Linux系统组成" class="headerlink" title="Linux系统组成"></a>Linux系统组成</h4><ul>
+<li>Linux内核</li>
+<li>GNU系统工具</li>
+<li>图形化桌面环境</li>
+<li>应用软件</li>
+</ul>
+<h4 id="内核控制计算机软硬件"><a href="#内核控制计算机软硬件" class="headerlink" title="内核控制计算机软硬件"></a>内核控制计算机软硬件</h4><ul>
+<li>由L inus Torvalds(当年是赫尔辛基大学的学生)创造，</li>
+<li>直到目前为止的负责人(Linux Foundation)</li>
+</ul>
+<h4 id="操作系统的核心功能"><a href="#操作系统的核心功能" class="headerlink" title="操作系统的核心功能"></a>操作系统的核心功能</h4><ul>
+<li>管理系统的内存</li>
+<li>管理软件程序</li>
+<li>管理硬件</li>
+<li><p>管理文件系统</p>
+</li>
+<li><p>如何安装内核(其不同的组成部分)？</p>
+</li>
+<li>如何创建新内核(支持新硬件和软件特性)？</li>
+<li>如何管理内核及内核模块？</li>
+</ul>
+<h4 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h4><ul>
+<li>在系统的内存容量限制下，控制程序如何运行</li>
+<li>除管理物理内存，操作系统还负责创建和管理<code>虚拟内存</code><ul>
+<li>虚拟内存并非真实存在，它<code>利用硬盘空间</code>创建并当作真实内存使用(<code>SWAP</code>)</li>
+<li>内核将一段时间不活跃的内容页转储到SWAP，并在需要时重新读入物理内存</li>
+<li><code>Swapping out机制</code>使系统认为自己拥有更多可用的内存空间(降低性能)</li>
+<li>内存空间被分组到称为内存页的块中</li>
+<li>内核定位物理内存或交换空间中的每个内存页</li>
+<li>内核维护内存页表，登记哪些页位于物理内存/SWAP</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://image.xpshuai.cn/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.png"></p>
+<p><strong>查看虚拟内存</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cat</span> / proc/ meminfo    <span class="token comment" spellcheck="true"># 运行实时的数据</span>
+<span class="token comment" spellcheck="true"># </span>
+MemTotal:    2048000 kB    <span class="token comment" spellcheck="true"># 物理内存</span>
+MemFree:    438123 kB      <span class="token comment" spellcheck="true"># 空闲</span>
+MemAvilable    3580848 KB    <span class="token comment" spellcheck="true"># 实际可用的空间</span>
+SwapTotal:     2048000 kB    <span class="token comment" spellcheck="true">#</span>
+SwapFree:    2048000 kB
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Linux系统每个进程的内存彼此独立</p>
+<pre class="line-numbers language-bash"><code class="language-bash">不同进程无法互访彼此内存空间，内核负责维护这种约束
+没有其他进程可以访问内核使用的内存空间
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>共享内存页</p>
+<pre class="line-numbers language-bash"><code class="language-bash">内核可创建共享的内存区域，供多进程共享数据，内核负责验证和准入进程
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看当前系统共享内存页</p>
+<pre class="line-numbers language-bash"><code class="language-bash">ipcs -m    
+
+<span class="token comment" spellcheck="true"># 结果字段：</span>
+owner    <span class="token comment" spellcheck="true">#创建此共享内存段的帐号</span>
+perms    <span class="token comment" spellcheck="true">#共享权限</span>
+key    <span class="token comment" spellcheck="true">#允许其他用户访问此内存段</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="软件程序管理"><a href="#软件程序管理" class="headerlink" title="软件程序管理"></a>软件程序管理</h4><p>运行中的程序称为进程</p>
+<pre class="line-numbers language-bash"><code class="language-bash">内核控制所有进程运行<span class="token punctuation">(</span>前台运行、后台运行<span class="token punctuation">)</span>
+初始化进程<span class="token punctuation">(</span>init<span class="token punctuation">)</span> 负责启动所有其他进程
+内核每启动一个进程，都在内存中为其分配独享的一段内存区域存放数据、代码
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>查看当前进程</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ps</span>
+<span class="token function">ps</span> -ax    <span class="token comment" spellcheck="true"># 建议加参数</span>
+
+<span class="token comment" spellcheck="true">## 显示的字段含义</span>
+<span class="token comment" spellcheck="true"># PID：进程ID</span>
+<span class="token comment" spellcheck="true"># STAT：进程状态(Sleep、 Sleep and Wait、Run)</span>
+<span class="token comment" spellcheck="true"># [process] swapping out    带放括号的都是放到虚拟内存中的</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="硬件管理"><a href="#硬件管理" class="headerlink" title="硬件管理"></a>硬件管理</h4><ul>
+<li><p>与系统通信的所有硬件都需要将驱动植入内核</p>
+<pre class="line-numbers language-bash"><code class="language-bash">内核编译同时包含硬件驱动<span class="token punctuation">(</span>早期唯一方法<span class="token punctuation">)</span>
+驱动程序以内核模块型式加载
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>内核模块是一个自包含的驱动程序库，可动态与内核链接/取消链接</p>
+</li>
+<li>Linux系统的三种硬件设备文件<br><code>`</code>bash</li>
+</ul>
+<ol>
+<li>字符设备文件: 一次只能处理一个字符数据的设备(调制解调器、终端)   c</li>
+<li>块设备文件: 一次能处理一大块数据的设备(硬盘)      b</li>
+<li>网络设备文件:使用包来发送和接收数据的设备(网卡)<br><code>`</code></li>
+</ol>
+<p><strong>Linux为系统上的每个硬件设备创建称为节点的特殊文件</strong></p>
+<ul>
+<li>内核通过<code>唯一的数字对</code>标识每个节点(<code>主</code>、<code>次</code>)</li>
+<li>同类型设备主节点号相同，同一主节点号下，次节点号唯一<br><code>`</code>bash<br>cd /dev &amp;&amp; ls -al sd<em> ttyS</em><h1 id="结果显示"><a href="#结果显示" class="headerlink" title="结果显示"></a>结果显示</h1>brw-rw—- 1 root disk 8, 0 12月5 15:14 sda    # 8，0 主设备标识/次设备标识<br>brw-rw—- 1 root disk 8, 1 12月5 15:14 sda1<br>brw-rw—- 1 root disk 8, 16 12月5 15:14 sdb<br>brw-rw—- 1 root disk 8, 17 12月5 15:14 sdb1<br>crw- -rW—- 1 root uucp 4, 64 12月5 15:14 ttyS0<br>crw-rw—- 1 root uucp 4, 65 12月5 15:14 ttyS1</li>
+</ul>
+<pre><code>
+
+#### 文件系统管理
+文件系统定义OS如何在存储设备上存储数据
+- 分区、格式化
+- Linux 支持包括Windows在内的众多文件系统
+- 内核统一使用Virtual File System (`VFS`) 与不同文件系统进行交互
+
+
+#### 内核的文件构成
+**内核二进制文件**
+- 内核程序本身，BootLoader加载到内存中执行的内容(位于`/boot`或`/`中)
+- 基于编译打包的驱动数量不同，内核=进制文件可能很大
+- 内核二进制文件通常被压缩，以便加载内核时节省内存空间
+- 压缩方式不同，将导致内核二进制文件名称差异
+
+
+| 不同的Linux内核文件 |                         备注                          |
+| ------------------ | ----------------------------------------------------- |
+| bzimage            | （常用）GNU zip压缩的大内核，常被拷贝为4(vmlinuz)        |
+| kernel             | 未压缩                                                |
+| vmlinux            | 未压缩，通常不用作最终的引导版本                         |
+| vmlinuz            | 通用的压缩文件（如ubuntu下：vmlinuz-4.15.0-65-generic） |
+| zimage             | 使用GNU zip压缩的小内核                                |
+|                    |                                                       |
+
+
+#### 内核模块
+**内核直接与硬件交互**
+- 内核与硬件通信需要驱动程序的支持
+- 将硬件驱动和内核的`源码`一并编译成二进制执行文件(体积大)
+- 将驱动编译为二进制的模块对象文件`.ko`， 运行时动态链接
+
+**硬件驱动的发布**
+- 源码：开源精神
+- 二进制文件：保护隐私、功能特性
+
+**内核模块(`modprob`)**
+```bash
+/lib/modules/&lt;version&gt;/kernel/*.ko
+</code></pre><h4 id="内核源码"><a href="#内核源码" class="headerlink" title="内核源码"></a>内核源码</h4><p><strong>获得</strong></p>
+<ul>
+<li>Linux内核开发库(<a href="http://www.kernel.org" target="_blank" rel="noopener">www.kernel.org</a> –&gt; 稳定版、开发版)</li>
+<li>对应Linux发行版的软件库(对本发行版最稳妥，下载方便)</li>
+<li>下载源码解压至<code>/usr/src/linux</code> (内核工具默认查找路径)<pre class="line-numbers language-bash"><code class="language-bash">链接到指定版本 /usr/src/linux-5.3.12    <span class="token comment" spellcheck="true"># 维护多个版本</span>
+/usr/src/kernels    <span class="token comment" spellcheck="true"># Redhat</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h4 id="内核补丁"><a href="#内核补丁" class="headerlink" title="内核补丁"></a>内核补丁</h4><ul>
+<li>针对bug修复和安全补丁的增量内核发行版</li>
+<li>内核补丁版本(<code>针对主版本的补丁</code>)<ul>
+<li>只包含应用于主内核源代码发行版以获得增量发行版的<code>更改</code>(5.3 –&gt; 5.3.1)</li>
+<li>使用<code>patch</code>命令将补丁源码包应用于主源码包，然后重新编译</li>
+</ul>
+</li>
+<li>后续补丁版本(5.3.1 -&gt; 5.3.2)<ul>
+<li>卸载早期版本补丁(<code>patch -R</code>)</li>
+<li>patch新版本补丁</li>
+<li>重新编译</li>
+</ul>
+</li>
+</ul>
+<h4 id="内核头"><a href="#内核头" class="headerlink" title="内核头"></a>内核头</h4><p>Linux内核绝大部分使用C语言编写</p>
+<pre><code>- C语言头文件:编译时需要的库文件
+- 编译内核、模块都需要相同的内核头(库文件)
+</code></pre><p>Ubuntu内核头</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> linux-headers-4.15.0-72-generic
+/usr/src/linux-headers-4.1 5.0-72-generic/include/config/*.h    <span class="token comment" spellcheck="true"># ubuntu</span>
+/usr/src/kernels    <span class="token comment" spellcheck="true"># Redhat</span>
+<span class="token comment" spellcheck="true"># 不同发行版路径不同</span>
+
+<span class="token comment" spellcheck="true"># 查看使用的内核版本</span>
+<span class="token function">uname</span> -r
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="内核文档"><a href="#内核文档" class="headerlink" title="内核文档"></a>内核文档</h4><ul>
+<li>许多独立的文本文件，说明每个源代码文件在内核结构中的作用</li>
+<li>针对内核源码做任何操作之前，建议详细阅读文档</li>
+<li>由于文档体量巨大，通常以独立包形式发布</li>
+<li>文档路径<pre class="line-numbers language-bash"><code class="language-bash">/usr/src/linux/Documentation    <span class="token comment" spellcheck="true"># Ubuntu</span>
+/usr/src/kernels    <span class="token comment" spellcheck="true"># Redhat</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h4 id="内核版本"><a href="#内核版本" class="headerlink" title="内核版本"></a>内核版本</h4><ul>
+<li>七个内核版本命名方式(系统)</li>
+<li>Linus于1991年9月发布了初始Linux内核版本号<font color="red">0</font>.01<ul>
+<li>0表示该版本目的是测试，并非生产环境使用(延用至0.95 – 1 992.3)</li>
+</ul>
+</li>
+<li><p>1994年3月，Linus 发布了Linux 的第一个生产版本<font color="red">1</font>.0 (<code>1.x.y</code>)</p>
+<ul>
+<li>x主版本号(<code>奇数</code>表示测试/开发版本；<code>偶数</code>表示稳定/生产版本)</li>
+<li>y主版本下的补丁版本</li>
+<li>此版本号延用至 1.3 (1995.5)</li>
+</ul>
+</li>
+<li><p>1.3之后Linux内核变化很大，因此下一个版本为<font color="red">2</font>.0 (1996.6)</p>
+</li>
+<li>2.x.y延用1.x.y 的命名方式，直至2.4 (2001.1)</li>
+<li><p>2003.12 Linus发布2.6.0版本，启动了一个新的版本命名系统</p>
+<ul>
+<li>由于2.6内核非常稳定，因此新内核版本格式为2.6.x.y（<code>不再通过奇偶数来区分稳定与否</code>）</li>
+<li>2.6 每个版本都是生产版本(<code>开发版结尾为-rc</code>)</li>
+<li>此版本延用至2.6.39 (2011.5)</li>
+</ul>
+</li>
+<li><p>2011.7 Linus为庆祝Linux内核20岁生日，启动了内核的3.0版本</p>
+<ul>
+<li>3.x.y (开发版在结尾加-rc) -直延用至3.19 (2015.2)</li>
+<li>3.x.y-<font color="red">z</font> 临时特殊补丁版(主要与紧急的安全修复有关)</li>
+</ul>
+</li>
+<li>2015.4发布4.0版本<ul>
+<li>4.x.y (与3.0相同)</li>
+<li>4.x.y-<font color="red">z</font> (y的第z次<code>微调</code>版本)</li>
+</ul>
+</li>
+<li>2019.3发布5.0版本<ul>
+<li>目前最新，命名延用以前</li>
+</ul>
+</li>
+</ul>
+<p>查看内核版本</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uname</span> -r
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="维护内核"><a href="#维护内核" class="headerlink" title="维护内核"></a>维护内核</h4><ul>
+<li>手动编译内核(较少使用，忽略)</li>
+<li>使用发行版包管理器维护内核（建议的方式）</li>
+<li>模块文件<pre class="line-numbers language-bash"><code class="language-bash">/lib/modules/version/kermel/*.ko
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>手动编译内核模块，当升级内核时需要重新编译模块<ul>
+<li>Dynamic Kernel Module Support (<code>DKMS</code>)</li>
+<li>注册自定义模块后，dkms监视内核变化，并自动运行脚本重新编译安装模块</li>
+</ul>
+</li>
+</ul>
+<h4 id="常用模块命令"><a href="#常用模块命令" class="headerlink" title="常用模块命令"></a>常用模块命令</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 已安装模块列表</span>
+lsmod    <span class="token comment" spellcheck="true"># 模块之间存在依赖关系</span>
+
+<span class="token comment" spellcheck="true">#  查看模块详细信息</span>
+modinfo bluetooth    <span class="token comment" spellcheck="true"># 比如查看蓝牙模块的信息</span>
+
+<span class="token comment" spellcheck="true"># 安装/删除模块</span>
+insmod / rmmod    <span class="token comment" spellcheck="true"># 需指定'完整'内核模块文件路径(依赖模块未加载时失败)</span>
+modprobe -r    <span class="token comment" spellcheck="true"># 或者这种方式安装，只需指定模块名，自动安装依赖（比较友好）</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="内核排错"><a href="#内核排错" class="headerlink" title="内核排错"></a>内核排错</h4><p><strong>查看内核版本</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uname</span> -r    <span class="token comment" spellcheck="true"># -a显示全部信息</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>/proc目录</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Linux内核创建的动态伪目录</span>
+<span class="token comment" spellcheck="true"># 在内核运行时查看内核相关的配置、性能</span>
+<span class="token comment" spellcheck="true"># 包含硬件信息</span>
+
+/proc/interrupts    <span class="token comment" spellcheck="true"># 被分配的中断信息</span>
+/proc/ioports    <span class="token comment" spellcheck="true"># I0端口使用情况</span>
+/proc/dma    <span class="token comment" spellcheck="true"># DMA</span>
+
+lsdev    <span class="token comment" spellcheck="true"># 查看以上综合参数的命令，apt install lsdev</span>
+<span class="token function">cat</span> /proc/sys/kernel/version     <span class="token comment" spellcheck="true"># 查看内核参数</span>
+
+
+<span class="token comment" spellcheck="true">## 修改内核参数</span>
+<span class="token function">cat</span> /proc/sys/net/ipv4/ip_forward/        <span class="token comment" spellcheck="true"># 如：开启路由功能，查看</span>
+<span class="token keyword">echo</span> 1 <span class="token operator">></span> /proc/sys/net/ipv4/ip_forward    <span class="token comment" spellcheck="true"># 如：开启路由功能，修改</span>
+
+sysctl net.ipv4.ip_ forward1    <span class="token comment" spellcheck="true"># 或者使用命令，查看</span>
+/sysctl -W net.ipv4.ip_ _forward<span class="token operator">=</span>1   <span class="token comment" spellcheck="true"># 使用命令开启，修改</span>
+
+/etc/sysctl.conf    <span class="token comment" spellcheck="true"># net.ipv4.ip_ forward = 1    修改配置文件，让它永久生效</span>
+
+<span class="token comment" spellcheck="true"># 其他发行版可能在这个目录修改</span>
+/etc/sysctl.d    
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn" rel="external nofollow noreferrer">剑胆琴心</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.xpshuai.cn/posts/24845/">http://www.xpshuai.cn/posts/24845/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.xpshuai.cn" target="_blank">剑胆琴心</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/ubuntu/">
+                                    <span class="chip bg-color">ubuntu</span>
+                                </a>
+                            
+                                <a href="/tags/引导过程/">
+                                    <span class="chip bg-color">引导过程</span>
+                                </a>
+                            
+                                <a href="/tags/BIOS/">
+                                    <span class="chip bg-color">BIOS</span>
+                                </a>
+                            
+                                <a href="/tags/UEFI/">
+                                    <span class="chip bg-color">UEFI</span>
+                                </a>
+                            
+                                <a href="/tags/grub/">
+                                    <span class="chip bg-color">grub</span>
+                                </a>
+                            
+                                <a href="/tags/内核/">
+                                    <span class="chip bg-color">内核</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">如果感觉对您有帮助，请我吃包辣条吧</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd75ec1a5864747376f6f',
+        clientSecret: 'b4751152ca815e8e538c64da23e2a371fa1fb2db',
+        repo: 'hexo-gitalk',
+        owner: 'shuai06',
+        admin: "shuai06",
+        id: '2020-07-30T22-38-20',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/60461/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="ubuntu server-Zabbix">
+                        
+                        <span class="card-title">ubuntu server-Zabbix</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+Zabbix – 最流行的开源的企业级监控系统之一
+
+
+基本可对全平台，全系统做监控：网络设备、操作系统、应用程序
+Unix、L inux、Windows、MacOS
+监控方式：Agent(硬件设备,被监控机器上安装，自己的作为Zabbi
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/Zabbix/">
+                        <span class="chip bg-color">Zabbix</span>
+                    </a>
+                    
+                    <a href="/tags/监控/">
+                        <span class="chip bg-color">监控</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/39742/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ubuntu server-代理&amp;VPN">
+                        
+                        <span class="card-title">ubuntu server-代理&amp;VPN</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+你看见的不是你真的看见的
+
+
+时间、带宽、管控都影响网络使用体验
+作为改善技术，VPN/代理和突破限制改善体验
+区别：代理主要提高访问速度；VPN更注重安全性
+在某些应用场景中，作用非常相似
+作为中间层，双向模拟（翻墙）
+
+【访问者】 –
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ubuntu/">
+                        <span class="chip bg-color">ubuntu</span>
+                    </a>
+                    
+                    <a href="/tags/代理/">
+                        <span class="chip bg-color">代理</span>
+                    </a>
+                    
+                    <a href="/tags/VPN/">
+                        <span class="chip bg-color">VPN</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 剑胆琴心<br />'
+            + '文章作者: 剑胆琴心<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://www.xpshuai.cn" target="_blank">剑胆琴心</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">471.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "4";
+                    var startDate = "20";
+                    var startHour = "15";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beianbeian.com/beianxinxi/816345dfd53e0153acde20c5bb1dd1b0.html" target="_blank">冀ICP备18027796号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shuai06" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2944282625@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2944282625" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2944282625" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+        <script src="//code.tidio.co/xfg3rji2iq4povfdtfxiwk4smqduoso6.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

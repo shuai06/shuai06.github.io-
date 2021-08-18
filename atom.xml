@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>剑胆琴心</title>
+  
+  <subtitle>侠之大者，为国为民</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.xpshuai.cn/"/>
+  <updated>2021-08-18T03:11:29.482Z</updated>
+  <id>http://www.xpshuai.cn/</id>
+  
+  <author>
+    <name>剑胆琴心</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac下node降级</title>
+    <link href="http://www.xpshuai.cn/posts/5227/"/>
+    <id>http://www.xpshuai.cn/posts/5227/</id>
+    <published>2021-08-18T03:03:50.000Z</published>
+    <updated>2021-08-18T03:11:29.482Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;刚把电脑换成M1(别问我为啥不等新的，因为穷)，因为node版本太高，导致&lt;code&gt;hexo d&lt;/code&gt;报错， 网上搜的说是node版本太高了，于是就想着降级。&lt;/p&gt;
+&lt;h4 id=&quot;1-安装node版本管理模块n&quot;&gt;&lt;a href=&quot;#1-安装node版本管理模
+      
+    
+    </summary>
+    
+      <category term="日常问题" scheme="http://www.xpshuai.cn/categories/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/"/>
+    
+    
+      <category term="mac" scheme="http://www.xpshuai.cn/tags/mac/"/>
+    
+      <category term="node降级" scheme="http://www.xpshuai.cn/tags/node%E9%99%8D%E7%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows更换指定文件夹图标</title>
+    <link href="http://www.xpshuai.cn/posts/10937/"/>
+    <id>http://www.xpshuai.cn/posts/10937/</id>
+    <published>2021-07-23T01:37:17.000Z</published>
+    <updated>2021-07-26T09:27:14.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前景提示&quot;&gt;&lt;a href=&quot;#前景提示&quot; class=&quot;headerlink&quot; title=&quot;前景提示&quot;&gt;&lt;/a&gt;前景提示&lt;/h3&gt;&lt;p&gt;小学弟要我写这种奇奇怪怪的东西，奇奇怪怪的东西…. :laughing:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://www.xpshuai.cn/categories/Windows/"/>
+    
+    
+      <category term="C#" scheme="http://www.xpshuai.cn/tags/C/"/>
+    
+      <category term="windows" scheme="http://www.xpshuai.cn/tags/windows/"/>
+    
+      <category term="自写小工具" scheme="http://www.xpshuai.cn/tags/%E8%87%AA%E5%86%99%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu server-备份还原</title>
+    <link href="http://www.xpshuai.cn/posts/19058/"/>
+    <id>http://www.xpshuai.cn/posts/19058/</id>
+    <published>2021-07-20T01:49:22.000Z</published>
+    <updated>2021-07-26T09:04:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;备份还原&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;备份是免于损失的有效手段&lt;br&gt;防火防盗防自己（保持良好睡眠）&lt;br&gt;版本管理也视为一种备份(上下文不同)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;备份还原基础&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="ubuntu" scheme="http://www.xpshuai.cn/tags/ubuntu/"/>
+    
+      <category term="备份还原" scheme="http://www.xpshuai.cn/tags/%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F/"/>
+    
+      <category term="Rsync" scheme="http://www.xpshuai.cn/tags/Rsync/"/>
+    
+      <category term="Bacula" scheme="http://www.xpshuai.cn/tags/Bacula/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用John the Ripper破解密码</title>
+    <link href="http://www.xpshuai.cn/posts/2845/"/>
+    <id>http://www.xpshuai.cn/posts/2845/</id>
+    <published>2021-06-08T06:44:42.000Z</published>
+    <updated>2021-06-08T08:37:16.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;John the Ripper&lt;/strong&gt;是一个快速的密码破解工具，用于在已知密文的情况下尝试破解出明文，支持目前大多
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://www.xpshuai.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="John" scheme="http://www.xpshuai.cn/tags/John/"/>
+    
+      <category term="爆破工具" scheme="http://www.xpshuai.cn/tags/%E7%88%86%E7%A0%B4%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="爆破Linux密码" scheme="http://www.xpshuai.cn/tags/%E7%88%86%E7%A0%B4Linux%E5%AF%86%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python解析IP地址CIDR的形式</title>
+    <link href="http://www.xpshuai.cn/posts/24151/"/>
+    <id>http://www.xpshuai.cn/posts/24151/</id>
+    <published>2021-06-07T03:28:45.000Z</published>
+    <updated>2021-06-07T05:06:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;方法1：使用IPy库&quot;&gt;&lt;a href=&quot;#方法1：使用IPy库&quot; class=&quot;headerlink&quot; title=&quot;方法1：使用IPy库&quot;&gt;&lt;/a&gt;方法1：使用IPy库&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-python&quot;
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://www.xpshuai.cn/categories/Python/"/>
+    
+    
+      <category term="CIDR" scheme="http://www.xpshuai.cn/tags/CIDR/"/>
+    
+      <category term="python" scheme="http://www.xpshuai.cn/tags/python/"/>
+    
+      <category term="IPy" scheme="http://www.xpshuai.cn/tags/IPy/"/>
+    
+      <category term="netaddr" scheme="http://www.xpshuai.cn/tags/netaddr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux mkfifo命令基本用法</title>
+    <link href="http://www.xpshuai.cn/posts/18873/"/>
+    <id>http://www.xpshuai.cn/posts/18873/</id>
+    <published>2021-06-07T01:36:33.000Z</published>
+    <updated>2021-06-07T01:54:04.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;先复习下linux命令执行顺序&quot;&gt;&lt;a href=&quot;#先复习下linux命令执行顺序&quot; class=&quot;headerlink&quot; title=&quot;先复习下linux命令执行顺序&quot;&gt;&lt;/a&gt;先复习下linux命令执行顺序&lt;/h3&gt;&lt;pre class=&quot;line-numb
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.xpshuai.cn/categories/Linux/"/>
+    
+    
+      <category term="Linux命令" scheme="http://www.xpshuai.cn/tags/Linux%E5%91%BD%E4%BB%A4/"/>
+    
+      <category term="命名管道" scheme="http://www.xpshuai.cn/tags/%E5%91%BD%E5%90%8D%E7%AE%A1%E9%81%93/"/>
+    
+      <category term="mkfifo" scheme="http://www.xpshuai.cn/tags/mkfifo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Apache Zeppelin 未授权任意命令执行漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/38991/"/>
+    <id>http://www.xpshuai.cn/posts/38991/</id>
+    <published>2021-05-28T08:33:06.000Z</published>
+    <updated>2021-05-28T08:39:16.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;漏洞描述&quot;&gt;&lt;a href=&quot;#漏洞描述&quot; class=&quot;headerlink&quot; title=&quot;漏洞描述&quot;&gt;&lt;/a&gt;漏洞描述&lt;/h3&gt;&lt;p&gt;Apache Zeppelin 存在未授权的用户访问命令执行接口，导致了任意用户都可以执行恶意命令获取服务器权限&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="Apache Zeppelin" scheme="http://www.xpshuai.cn/tags/Apache-Zeppelin/"/>
+    
+      <category term="未授权任意命令执行" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Apache Druid远程代码执行漏洞复现(CVE-2021-25646)</title>
+    <link href="http://www.xpshuai.cn/posts/49228/"/>
+    <id>http://www.xpshuai.cn/posts/49228/</id>
+    <published>2021-05-28T06:52:41.000Z</published>
+    <updated>2021-05-28T08:39:16.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;漏洞描述&quot;&gt;&lt;a href=&quot;#漏洞描述&quot; class=&quot;headerlink&quot; title=&quot;漏洞描述&quot;&gt;&lt;/a&gt;漏洞描述&lt;/h3&gt;&lt;p&gt;Apache Druid包括执行用户提供的JavaScript的功能嵌入在各种类型请求中的代码。此功能在用于高信任度环境中，
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="Apache Druid远程代码执行漏" scheme="http://www.xpshuai.cn/tags/Apache-Druid%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="CVE-2021-25646" scheme="http://www.xpshuai.cn/tags/CVE-2021-25646/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>当你想放弃时</title>
+    <link href="http://www.xpshuai.cn/posts/1596/"/>
+    <id>http://www.xpshuai.cn/posts/1596/</id>
+    <published>2021-05-27T06:27:04.000Z</published>
+    <updated>2021-05-27T06:28:32.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;How far you have gone is the thing youshould think every time you think ofquitting.lt is not how hard the battleis, but how you are fight
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>泛微OA weaver.common.Ctrl 任意文件上传漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/20282/"/>
+    <id>http://www.xpshuai.cn/posts/20282/</id>
+    <published>2021-05-20T06:48:04.000Z</published>
+    <updated>2021-05-20T07:14:26.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;声明&quot;&gt;&lt;a href=&quot;#声明&quot; class=&quot;headerlink&quot; title=&quot;声明&quot;&gt;&lt;/a&gt;声明&lt;/h3&gt;&lt;p&gt;由于传播、利用此文所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，文章作者不为此承担任何责任。d&lt;/p&gt;
+&lt;h3 id
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="文件上传" scheme="http://www.xpshuai.cn/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+      <category term="泛微OA" scheme="http://www.xpshuai.cn/tags/%E6%B3%9B%E5%BE%AEOA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言简单刷题2(未完)</title>
+    <link href="http://www.xpshuai.cn/posts/26260/"/>
+    <id>http://www.xpshuai.cn/posts/26260/</id>
+    <published>2021-05-20T01:22:52.000Z</published>
+    <updated>2021-05-20T01:27:24.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;61-求两个数的最大公约数和最小公倍数&quot;&gt;&lt;a href=&quot;#61-求两个数的最大公约数和最小公倍数&quot; class=&quot;headerlink&quot; title=&quot;61.    求两个数的最大公约数和最小公倍数&quot;&gt;&lt;/a&gt;61.    求两个数的最大公约数和最小公倍数&lt;/
+      
+    
+    </summary>
+    
+      <category term="C语言" scheme="http://www.xpshuai.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="C语言" scheme="http://www.xpshuai.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="编程刷题" scheme="http://www.xpshuai.cn/tags/%E7%BC%96%E7%A8%8B%E5%88%B7%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>递归求具有n个元素的整型数组R的平均值</title>
+    <link href="http://www.xpshuai.cn/posts/9010/"/>
+    <id>http://www.xpshuai.cn/posts/9010/</id>
+    <published>2021-05-12T11:36:40.000Z</published>
+    <updated>2021-05-12T11:56:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;递归求具有n个元素的整型数组R的平均值&quot;&gt;&lt;a href=&quot;#递归求具有n个元素的整型数组R的平均值&quot; class=&quot;headerlink&quot; title=&quot;递归求具有n个元素的整型数组R的平均值&quot;&gt;&lt;/a&gt;递归求具有n个元素的整型数组R的平均值&lt;/h4&gt;&lt;p&gt;今天
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.xpshuai.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="C语言题" scheme="http://www.xpshuai.cn/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98/"/>
+    
+      <category term="笔记" scheme="http://www.xpshuai.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xmind2020存在XSS漏洞可导致命令执行</title>
+    <link href="http://www.xpshuai.cn/posts/45828/"/>
+    <id>http://www.xpshuai.cn/posts/45828/</id>
+    <published>2021-05-11T01:53:59.000Z</published>
+    <updated>2021-05-11T02:02:54.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;漏洞描述&quot;&gt;&lt;a href=&quot;#漏洞描述&quot; class=&quot;headerlink&quot; title=&quot;漏洞描述&quot;&gt;&lt;/a&gt;漏洞描述&lt;/h3&gt;&lt;p&gt;Xmind2020 存在XSS漏洞，攻击者可利用该漏洞进行命令执行。由于软件允许用户以文件形式或自定义标题标题的形式存储JS
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="xmind2020" scheme="http://www.xpshuai.cn/tags/xmind2020/"/>
+    
+      <category term="XSS" scheme="http://www.xpshuai.cn/tags/XSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言做题记录(入门版)</title>
+    <link href="http://www.xpshuai.cn/posts/30043/"/>
+    <id>http://www.xpshuai.cn/posts/30043/</id>
+    <published>2021-05-07T09:56:57.000Z</published>
+    <updated>2021-05-20T01:51:38.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;1-编写一个程序求三个整数数的最大值&quot;&gt;&lt;a href=&quot;#1-编写一个程序求三个整数数的最大值&quot; class=&quot;headerlink&quot; title=&quot;1.编写一个程序求三个整数数的最大值&quot;&gt;&lt;/a&gt;1.编写一个程序求三个整数数的最大值&lt;/h4&gt;&lt;pre clas
+      
+    
+    </summary>
+    
+      <category term="C语言" scheme="http://www.xpshuai.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="C语言" scheme="http://www.xpshuai.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="编程刷题" scheme="http://www.xpshuai.cn/tags/%E7%BC%96%E7%A8%8B%E5%88%B7%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>流媒体管理服务器存在弱⼝令漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/20730/"/>
+    <id>http://www.xpshuai.cn/posts/20730/</id>
+    <published>2021-04-29T10:34:28.000Z</published>
+    <updated>2021-04-29T10:59:24.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;fofa语句：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;title&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;to
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="弱口令" scheme="http://www.xpshuai.cn/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>⽤友ERP-NC ⽬录遍历漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/55106/"/>
+    <id>http://www.xpshuai.cn/posts/55106/</id>
+    <published>2021-04-29T10:15:26.000Z</published>
+    <updated>2021-04-29T10:59:24.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;漏洞描述&quot;&gt;&lt;a href=&quot;#漏洞描述&quot; class=&quot;headerlink&quot; title=&quot;漏洞描述&quot;&gt;&lt;/a&gt;漏洞描述&lt;/h3&gt;&lt;p&gt;⽤友ERP-NC 存在⽬录遍历漏洞，攻击者可以通过⽬录遍历获取敏感⽂件信息 &lt;/p&gt;
+&lt;h3 id=&quot;fofa语法&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="⽤友ERP-NC" scheme="http://www.xpshuai.cn/tags/%E2%BD%A4%E5%8F%8BERP-NC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>致学弟学妹</title>
+    <link href="http://www.xpshuai.cn/posts/33070/"/>
+    <id>http://www.xpshuai.cn/posts/33070/</id>
+    <published>2021-04-29T07:49:26.000Z</published>
+    <updated>2021-04-29T10:01:26.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;各位学弟学妹好，我是2016级地信的薛彭帅。本来是打算录个小视频的，但由于工作原因没有实现，索性就用简单的文字来表达吧。&lt;/p&gt;
+&lt;p&gt;听说老师们组织你们年轻一届的学生参加行业内的各种比赛，听到之后非常羡慕，都有点想回去再上一次学了&lt;span class=&quot;github-e
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jellyfin任意文件读取漏洞复现(CVE-2021-21402)</title>
+    <link href="http://www.xpshuai.cn/posts/36974/"/>
+    <id>http://www.xpshuai.cn/posts/36974/</id>
+    <published>2021-04-12T23:00:16.000Z</published>
+    <updated>2021-04-29T08:52:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;影响版本：&quot;&gt;&lt;a href=&quot;#影响版本：&quot; class=&quot;headerlink&quot; title=&quot;影响版本：&quot;&gt;&lt;/a&gt;影响版本：&lt;/h3&gt;&lt;p&gt;Jellyfin&amp;lt;10.7.1&lt;/p&gt;
+&lt;h2 id=&quot;复现&quot;&gt;&lt;a href=&quot;#复现&quot; class=&quot;he
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="Jellyfin" scheme="http://www.xpshuai.cn/tags/Jellyfin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Apache Solr SSRF与任意文件读取漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/7700/"/>
+    <id>http://www.xpshuai.cn/posts/7700/</id>
+    <published>2021-03-22T03:46:53.000Z</published>
+    <updated>2021-03-22T04:20:52.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Apache Solr是一个开源的搜索服务，使用Java语言开发，基于Lucene的全文搜索服务器。&lt;/p&gt;
+&lt;p&gt;Apache Solr全
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="Solr" scheme="http://www.xpshuai.cn/tags/Solr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CVE-2021-21972 vSphere Client RCE复现</title>
+    <link href="http://www.xpshuai.cn/posts/58955/"/>
+    <id>http://www.xpshuai.cn/posts/58955/</id>
+    <published>2021-02-25T10:26:47.000Z</published>
+    <updated>2021-02-25T18:04:04.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;vSphere 是 VMware 推出的虚拟化平台套件，包含 ESXi、vCenter Server 等一系列的软件。其中 vCenter 
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="CVE-2021-21972" scheme="http://www.xpshuai.cn/tags/CVE-2021-21972/"/>
+    
+      <category term="vCenter 6.5-7.0 RCE" scheme="http://www.xpshuai.cn/tags/vCenter-6-5-7-0-RCE/"/>
+    
+  </entry>
+  
+</feed>
