@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-08-19T03:35:30.296Z</updated>
+  <updated>2021-08-19T05:04:41.089Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -17,35 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://www.xpshuai.cn/posts/0/"/>
-    <id>http://www.xpshuai.cn/posts/0/</id>
-    <published>2021-08-19T03:35:30.296Z</published>
-    <updated>2021-08-19T03:35:30.296Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;article class=&quot;markdown-body&quot;&gt;&lt;blockquote&gt;
-&lt;p&gt;懒得写正则，就在网上找了找，发现了两个还不错的提取域名的第三方库
-赶紧拿出我的小本本记下，下次用的时候好找
-&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;tldextract&quot;&gt;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>python几个提取域名的库</title>
     <link href="http://www.xpshuai.cn/posts/21812/"/>
     <id>http://www.xpshuai.cn/posts/21812/</id>
     <published>2021-08-19T03:29:13.000Z</published>
-    <updated>2021-08-19T03:41:55.195Z</updated>
+    <updated>2021-08-19T05:04:41.089Z</updated>
     
     <summary type="html">
     
@@ -62,7 +38,7 @@
       <category term="Python" scheme="http://www.xpshuai.cn/categories/Python/"/>
     
     
-      <category term="”Python“" scheme="http://www.xpshuai.cn/tags/%E2%80%9DPython%E2%80%9C/"/>
+      <category term="Python" scheme="http://www.xpshuai.cn/tags/Python/"/>
     
       <category term="提取域名" scheme="http://www.xpshuai.cn/tags/%E6%8F%90%E5%8F%96%E5%9F%9F%E5%90%8D/"/>
     
@@ -289,9 +265,9 @@
     
       <category term="渗透测试" scheme="http://www.xpshuai.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
-    
       <category term="Apache Druid远程代码执行漏" scheme="http://www.xpshuai.cn/tags/Apache-Druid%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F/"/>
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
       <category term="CVE-2021-25646" scheme="http://www.xpshuai.cn/tags/CVE-2021-25646/"/>
     
@@ -543,6 +519,32 @@
       <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
       <category term="Jellyfin" scheme="http://www.xpshuai.cn/tags/Jellyfin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Apache Solr SSRF与任意文件读取漏洞</title>
+    <link href="http://www.xpshuai.cn/posts/7700/"/>
+    <id>http://www.xpshuai.cn/posts/7700/</id>
+    <published>2021-03-22T03:46:53.000Z</published>
+    <updated>2021-03-22T04:20:52.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Apache Solr是一个开源的搜索服务，使用Java语言开发，基于Lucene的全文搜索服务器。&lt;/p&gt;
+&lt;p&gt;Apache Solr全
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+      <category term="Solr" scheme="http://www.xpshuai.cn/tags/Solr/"/>
     
   </entry>
   
