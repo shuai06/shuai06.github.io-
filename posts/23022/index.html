@@ -451,16 +451,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/防火墙/">
+                                <span class="chip bg-color">防火墙</span>
+                            </a>
+                        
                             <a href="/tags/iptables/">
                                 <span class="chip bg-color">iptables</span>
                             </a>
                         
                             <a href="/tags/NAT/">
                                 <span class="chip bg-color">NAT</span>
-                            </a>
-                        
-                            <a href="/tags/防火墙/">
-                                <span class="chip bg-color">防火墙</span>
                             </a>
                         
                     </div>
@@ -750,16 +750,16 @@ firewall-cmd reload
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/防火墙/">
+                                    <span class="chip bg-color">防火墙</span>
+                                </a>
+                            
                                 <a href="/tags/iptables/">
                                     <span class="chip bg-color">iptables</span>
                                 </a>
                             
                                 <a href="/tags/NAT/">
                                     <span class="chip bg-color">NAT</span>
-                                </a>
-                            
-                                <a href="/tags/防火墙/">
-                                    <span class="chip bg-color">防火墙</span>
                                 </a>
                             
                         </div>
@@ -1065,12 +1065,12 @@ masscan号称是世界上最快的扫描软件，可以在3分钟内扫描整个
                         <span class="chip bg-color">端口扫描</span>
                     </a>
                     
-                    <a href="/tags/信息搜集/">
-                        <span class="chip bg-color">信息搜集</span>
-                    </a>
-                    
                     <a href="/tags/masscan/">
                         <span class="chip bg-color">masscan</span>
+                    </a>
+                    
+                    <a href="/tags/信息搜集/">
+                        <span class="chip bg-color">信息搜集</span>
                     </a>
                     
                 </div>
@@ -1379,9 +1379,14 @@ masscan号称是世界上最快的扫描软件，可以在3分钟内扫描整个
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

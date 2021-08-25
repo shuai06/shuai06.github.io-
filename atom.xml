@@ -236,11 +236,11 @@
       <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
+      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
       <category term="Apache Zeppelin" scheme="http://www.xpshuai.cn/tags/Apache-Zeppelin/"/>
     
       <category term="未授权任意命令执行" scheme="http://www.xpshuai.cn/tags/%E6%9C%AA%E6%8E%88%E6%9D%83%E4%BB%BB%E6%84%8F%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
-    
-      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
   </entry>
   

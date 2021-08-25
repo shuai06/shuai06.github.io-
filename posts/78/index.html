@@ -451,12 +451,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/未授权访问/">
-                                <span class="chip bg-color">未授权访问</span>
-                            </a>
-                        
                             <a href="/tags/CouchDB/">
                                 <span class="chip bg-color">CouchDB</span>
+                            </a>
+                        
+                            <a href="/tags/未授权访问/">
+                                <span class="chip bg-color">未授权访问</span>
                             </a>
                         
                             <a href="/tags/命令执行/">
@@ -651,12 +651,12 @@ curl -X PUT http://vulhub:vulhub@your-ip:5984/vultest/_design/vul -d <span class
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/未授权访问/">
-                                    <span class="chip bg-color">未授权访问</span>
-                                </a>
-                            
                                 <a href="/tags/CouchDB/">
                                     <span class="chip bg-color">CouchDB</span>
+                                </a>
+                            
+                                <a href="/tags/未授权访问/">
+                                    <span class="chip bg-color">未授权访问</span>
                                 </a>
                             
                                 <a href="/tags/命令执行/">
@@ -901,12 +901,12 @@ curl -X PUT http://vulhub:vulhub@your-ip:5984/vultest/_design/vul -d <span class
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Atlassian-Crowd/">
-                        <span class="chip bg-color">Atlassian Crowd</span>
-                    </a>
-                    
                     <a href="/tags/未授权访问/">
                         <span class="chip bg-color">未授权访问</span>
+                    </a>
+                    
+                    <a href="/tags/Atlassian-Crowd/">
+                        <span class="chip bg-color">Atlassian Crowd</span>
                     </a>
                     
                     <a href="/tags/远程命令执行/">
@@ -1272,9 +1272,14 @@ curl -X PUT http://vulhub:vulhub@your-ip:5984/vultest/_design/vul -d <span class
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

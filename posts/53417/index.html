@@ -1301,9 +1301,14 @@ WEB应用程序，完成部分服务器日常管理操作
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

@@ -1743,9 +1743,14 @@ logging模块结构logging 在源码中有三个文件,结构如下:
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

@@ -820,23 +820,22 @@ private void CopyToPageLayout()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/210c46ef/">
+                <a href="/posts/980b1709/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ArcEngine初识 -- 打开地图">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ArcEngine加载数据">
                         
-                        <span class="card-title">ArcEngine初识 -- 打开地图</span>
+                        <span class="card-title">ArcEngine加载数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一句代码
-创建winform程序
-必须要添加LicenseControl控件
-TOCControl视图控件  =&gt; 属性,设置关联属性绑定(Buddy)到地图控件上
-ToolbalControl工具条控件   伙伴控价  =&gt; 
+                            加载shapefile数据F1 使用AddShapefile方法 private void 添加ShapefileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -864,6 +863,10 @@ ToolbalControl工具条控件   伙伴控价  =&gt;
                     
                     <a href="/tags/GIS/">
                         <span class="chip bg-color">GIS</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
                 </div>
@@ -1229,9 +1232,14 @@ ToolbalControl工具条控件   伙伴控价  =&gt;
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

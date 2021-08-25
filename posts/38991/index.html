@@ -451,16 +451,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/漏洞复现/">
+                                <span class="chip bg-color">漏洞复现</span>
+                            </a>
+                        
                             <a href="/tags/Apache-Zeppelin/">
                                 <span class="chip bg-color">Apache Zeppelin</span>
                             </a>
                         
                             <a href="/tags/未授权任意命令执行/">
                                 <span class="chip bg-color">未授权任意命令执行</span>
-                            </a>
-                        
-                            <a href="/tags/漏洞复现/">
-                                <span class="chip bg-color">漏洞复现</span>
                             </a>
                         
                     </div>
@@ -602,16 +602,16 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/漏洞复现/">
+                                    <span class="chip bg-color">漏洞复现</span>
+                                </a>
+                            
                                 <a href="/tags/Apache-Zeppelin/">
                                     <span class="chip bg-color">Apache Zeppelin</span>
                                 </a>
                             
                                 <a href="/tags/未授权任意命令执行/">
                                     <span class="chip bg-color">未授权任意命令执行</span>
-                                </a>
-                            
-                                <a href="/tags/漏洞复现/">
-                                    <span class="chip bg-color">漏洞复现</span>
                                 </a>
                             
                         </div>
@@ -1227,9 +1227,14 @@ cmd1;cmd2;cmd3
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

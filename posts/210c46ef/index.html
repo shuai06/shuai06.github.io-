@@ -928,22 +928,21 @@ ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop);
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/980b1709/">
+                <a href="/posts/1a728c4f/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ArcEngine加载数据">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ArcgisEngine实现地图浏览">
                         
-                        <span class="card-title">ArcEngine加载数据</span>
+                        <span class="card-title">ArcgisEngine实现地图浏览</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            加载shapefile数据F1 使用AddShapefile方法 private void 添加ShapefileToolStripMenuItem_Click(object sender, EventArgs e)
+                            全图    private void FullExtentTSButton_Click(object sender, EventArgs e)
         {
-
-
+            mainMapControl.Extent = ma
                         
                     </div>
                     <div class="publish-info">
@@ -973,10 +972,6 @@ ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop);
                         <span class="chip bg-color">GIS</span>
                     </a>
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C#</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -988,20 +983,22 @@ ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.EngineOrDesktop);
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4c9b4c5b/">
+                <a href="/posts/980b1709/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ArcEngine同步数据视图与布局视图">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ArcEngine加载数据">
                         
-                        <span class="card-title">ArcEngine同步数据视图与布局视图</span>
+                        <span class="card-title">ArcEngine加载数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // 数据视图与布局视图同步
-private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_OnAfterScreenDrawEvent e)
+                            加载shapefile数据F1 使用AddShapefile方法 private void 添加ShapefileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -1029,6 +1026,10 @@ private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_
                     
                     <a href="/tags/GIS/">
                         <span class="chip bg-color">GIS</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
                 </div>
@@ -1337,9 +1338,14 @@ private void mainMapControl_OnAfterScreenDraw(object sender, IMapControlEvents2_
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

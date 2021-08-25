@@ -743,12 +743,12 @@ Unix、L inux、Windows、MacOS
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/ubuntu-server/">
-                            <span class="chip bg-color">ubuntu server</span>
-                        </a>
-                        
                         <a href="/tags/邮件服务/">
                             <span class="chip bg-color">邮件服务</span>
+                        </a>
+                        
+                        <a href="/tags/ubuntu-server/">
+                            <span class="chip bg-color">ubuntu server</span>
                         </a>
                         
                     </div>
@@ -807,12 +807,12 @@ IRCI
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/聊天服务/">
-                            <span class="chip bg-color">聊天服务</span>
-                        </a>
-                        
                         <a href="/tags/ubuntu-server/">
                             <span class="chip bg-color">ubuntu server</span>
+                        </a>
+                        
+                        <a href="/tags/聊天服务/">
+                            <span class="chip bg-color">聊天服务</span>
                         </a>
                         
                     </div>
@@ -1090,12 +1090,12 @@ IRCI
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Atlassian-Crowd/">
-                            <span class="chip bg-color">Atlassian Crowd</span>
-                        </a>
-                        
                         <a href="/tags/未授权访问/">
                             <span class="chip bg-color">未授权访问</span>
+                        </a>
+                        
+                        <a href="/tags/Atlassian-Crowd/">
+                            <span class="chip bg-color">Atlassian Crowd</span>
                         </a>
                         
                         <a href="/tags/远程命令执行/">
@@ -1275,9 +1275,14 @@ IRCI
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

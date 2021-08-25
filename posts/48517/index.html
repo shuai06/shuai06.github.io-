@@ -1076,12 +1076,12 @@ IRCI
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/聊天服务/">
-                        <span class="chip bg-color">聊天服务</span>
-                    </a>
-                    
                     <a href="/tags/ubuntu-server/">
                         <span class="chip bg-color">ubuntu server</span>
+                    </a>
+                    
+                    <a href="/tags/聊天服务/">
+                        <span class="chip bg-color">聊天服务</span>
                     </a>
                     
                 </div>
@@ -1448,9 +1448,14 @@ IRCI
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->

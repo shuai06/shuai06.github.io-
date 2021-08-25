@@ -423,20 +423,20 @@
                 </a>
                 
                 
-                <a href="/categories/Python/" title="Python: 24">
+                <a href="/categories/Node-js/" title="Node.js: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">Python
-                        <span class="tag-length">24</span>
+                            style="background-color: #D7BDE2;">Node.js
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Node-js/" title="Node.js: 1">
+                <a href="/categories/Python/" title="Python: 24">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">Node.js
-                        <span class="tag-length">1</span>
+                            style="background-color: #A3E4D7;">Python
+                        <span class="tag-length">24</span>
                     </span>
                 </a>
                 
@@ -582,7 +582,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"渗透测试","max":73},{"name":"GIS","max":73},{"name":"C语言","max":73},{"name":"FTP","max":73},{"name":"Java学习","max":73},{"name":"Linux","max":73},{"name":"数据库","max":73},{"name":"Python","max":73},{"name":"Node.js","max":73},{"name":"爬虫","max":73},{"name":"Windows","max":73},{"name":"docker","max":73},{"name":"日常问题","max":73},{"name":"工具","max":73},{"name":"vim","max":73},{"name":"python","max":73},{"name":"数据结构与算法","max":73},{"name":"生活","max":73},{"name":"编程","max":73},{"name":"GIS ","max":73}],
+            indicator: [{"name":"渗透测试","max":73},{"name":"GIS","max":73},{"name":"C语言","max":73},{"name":"FTP","max":73},{"name":"Java学习","max":73},{"name":"Linux","max":73},{"name":"数据库","max":73},{"name":"Node.js","max":73},{"name":"Python","max":73},{"name":"爬虫","max":73},{"name":"Windows","max":73},{"name":"docker","max":73},{"name":"日常问题","max":73},{"name":"工具","max":73},{"name":"vim","max":73},{"name":"python","max":73},{"name":"数据结构与算法","max":73},{"name":"生活","max":73},{"name":"编程","max":73},{"name":"GIS ","max":73}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -593,7 +593,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [72,8,3,1,11,42,9,24,1,1,1,2,1,2,1,1,1,1,1,1],
+                    value : [72,8,3,1,11,42,9,1,24,1,1,2,1,2,1,1,1,1,1,1],
                     name : '文章分类数量'
                 }
             ]
@@ -743,9 +743,14 @@
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+
 $(function () {
-    searchFunc("/search.json", 'searchInput', 'searchResult');
+    console.log("lets go！");
+    console.log("/");
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
 });
+
+
 </script>
 
     <!-- 回到顶部按钮 -->
