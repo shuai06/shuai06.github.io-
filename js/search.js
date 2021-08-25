@@ -2,16 +2,19 @@ var searchFunc = function (path, search_id, content_id) {
     'use strict';
     $.ajax({
         url: path,
-        dataType: "xml",
-        success: function (xmlResponse) {
+        dataType: "json",
+        success: function (datas) {
             // get the contents from search data
-            var datas = $("entry", xmlResponse).map(function () {
-                return {
-                    title: $("title", this).text(),
-                    content: $("content", this).text(),
-                    url: $("url", this).text()
-                };
-            }).get();
+            // var datas = $("entry", xmlResponse).map(function () {
+            //     return {
+            //         title: $("title", this).text(),
+            //         content: $("content", this).text(),
+            //         url: $("url", this).text()
+            //     };
+            // }).get();
+            console.log("test!");
+            console.log(datas);
+            
             var $input = document.getElementById(search_id);
             var $resultContent = document.getElementById(content_id);
             $input.addEventListener('input', function () {
