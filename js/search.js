@@ -12,7 +12,6 @@ var searchFunc = function (path, search_id, content_id) {
             //         url: $("url", this).text()
             //     };
             // }).get();
-            console.log("test!");
             console.log(datas);
             
             var $input = document.getElementById(search_id);
@@ -25,7 +24,9 @@ var searchFunc = function (path, search_id, content_id) {
                     return;
                 }
                 // perform local searching
-                datas.forEach(function (data) {
+                //datas.forEach(function (data) {
+                for(var data in datas){
+                    //console.log(data);
                     var isMatch = true;
                     var content_index = [];
                     var data_title = data.title.trim().toLowerCase();
@@ -79,7 +80,8 @@ var searchFunc = function (path, search_id, content_id) {
                         }
                         str += "</li>";
                     }
-                });
+                };
+
                 str += "</ul>";
                 $resultContent.innerHTML = str;
             });
