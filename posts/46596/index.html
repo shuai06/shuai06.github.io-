@@ -411,7 +411,6 @@
     }
 
     .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -518,8 +517,8 @@
 
 <span class="token comment" spellcheck="true"># 有弊端（爬虫是不受我们控制的。如果是代理就行了:我们点哪里就扫哪里）</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><h6 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h6><p><img src="http://image.xpshuai.cn/xray%E8%A2%AB%E5%8A%A8%E4%BB%A3%E7%90%86.png" alt></p>
-<h6 id="设置代理步骤"><a href="#设置代理步骤" class="headerlink" title="设置代理步骤"></a>设置代理步骤</h6><p><img src="http://image.xpshuai.cn/xray%E8%AE%BE%E7%BD%AE%E8%A2%AB%E5%8A%A8%E4%BB%A3%E7%90%86.png" alt></p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><h6 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h6><p><img src="http://image.xpshuai.cn/xray%E8%A2%AB%E5%8A%A8%E4%BB%A3%E7%90%86.png" alt=""></p>
+<h6 id="设置代理步骤"><a href="#设置代理步骤" class="headerlink" title="设置代理步骤"></a>设置代理步骤</h6><p><img src="http://image.xpshuai.cn/xray%E8%AE%BE%E7%BD%AE%E8%A2%AB%E5%8A%A8%E4%BB%A3%E7%90%86.png" alt=""></p>
 <p>其中，证书的生成(只要程序位置不变，证书就不需要重新安装)：<code>ca.crt</code>, 然后安装证书</p>
 <p>生成报告后(可以边扫边看)，点击对应条目，我们可以看到具体的请求/响应信息等</p>
 <h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><h4 id="1-常用配置"><a href="#1-常用配置" class="headerlink" title="1.常用配置"></a>1.常用配置</h4><blockquote>
@@ -547,10 +546,10 @@ http:
 #2.socks代理
 http:
   proxy: "socks5://127.0.0.1:1111" # 漏洞扫描时使用的代理
-</code></pre><p><strong>log如果改成<code>debug</code>，可以看到具体发包请求详情：</strong><br><img src="http://image.xpshuai.cn/xray_log.png" alt></p>
+</code></pre><p><strong>log如果改成<code>debug</code>，可以看到具体发包请求详情：</strong><br><img src="http://image.xpshuai.cn/xray_log.png" alt=""></p>
 <p><strong>也可以设置cookie</strong></p>
-<p>大致配置项：<br><img src="http://image.xpshuai.cn/xray_cookie.png" alt></p>
-<h4 id="2-xray与burp联动使用"><a href="#2-xray与burp联动使用" class="headerlink" title="2.xray与burp联动使用"></a>2.xray与burp联动使用</h4><h6 id="（1）Burpsuite作为xray的上游代理（抓取xray发包来学习）"><a href="#（1）Burpsuite作为xray的上游代理（抓取xray发包来学习）" class="headerlink" title="（1）Burpsuite作为xray的上游代理（抓取xray发包来学习）"></a>（1）Burpsuite作为xray的上游代理（<code>抓取xray发包来学习</code>）</h6><p><img src="http://image.xpshuai.cn/xray_after_burp.png" alt></p>
+<p>大致配置项：<br><img src="http://image.xpshuai.cn/xray_cookie.png" alt=""></p>
+<h4 id="2-xray与burp联动使用"><a href="#2-xray与burp联动使用" class="headerlink" title="2.xray与burp联动使用"></a>2.xray与burp联动使用</h4><h6 id="（1）Burpsuite作为xray的上游代理（抓取xray发包来学习）"><a href="#（1）Burpsuite作为xray的上游代理（抓取xray发包来学习）" class="headerlink" title="（1）Burpsuite作为xray的上游代理（抓取xray发包来学习）"></a>（1）Burpsuite作为xray的上游代理（<code>抓取xray发包来学习</code>）</h6><p><img src="http://image.xpshuai.cn/xray_after_burp.png" alt=""></p>
 <p><strong>作用：</strong><br>burp可以拿到xray的数据包（可以学习xray是如何检测的的）</p>
 <p><strong>设置方法：</strong></p>
 <ol>
@@ -559,7 +558,7 @@ http:
 <li>启动xray，设置监听端口为<code>--listen 127.0.0.1:1111</code></li>
 <li>浏览器配置代理为<code>1111</code></li>
 </ol>
-<h6 id="（2）xray作为Burpsuite的上游代理（协助测试）"><a href="#（2）xray作为Burpsuite的上游代理（协助测试）" class="headerlink" title="（2）xray作为Burpsuite的上游代理（协助测试）"></a>（2）xray作为Burpsuite的上游代理（<code>协助测试</code>）</h6><p><img src="http://image.xpshuai.cn/xray_before_burp.png" alt></p>
+<h6 id="（2）xray作为Burpsuite的上游代理（协助测试）"><a href="#（2）xray作为Burpsuite的上游代理（协助测试）" class="headerlink" title="（2）xray作为Burpsuite的上游代理（协助测试）"></a>（2）xray作为Burpsuite的上游代理（<code>协助测试</code>）</h6><p><img src="http://image.xpshuai.cn/xray_before_burp.png" alt=""></p>
 <p><strong>作用：</strong><br>burp可以选择是否放行，forward之后，可以用xray进行扫描</p>
 <p><strong>设置方法：</strong></p>
 <ol>
@@ -571,12 +570,12 @@ http:
 </ol>
 <p><strong>其他方式：</strong><br>使用插件</p>
 <h2 id="使用xray编写自定义poc"><a href="#使用xray编写自定义poc" class="headerlink" title="使用xray编写自定义poc"></a>使用xray编写自定义poc</h2><p>xray是用go语言开发的<br>poc是yaml格式的</p>
-<h6 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h6><p><img src="http://image.xpshuai.cn/xray_poc.png" alt></p>
+<h6 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h6><p><img src="http://image.xpshuai.cn/xray_poc.png" alt=""></p>
 <p>每个规则都是http请求，进行改造</p>
 <h6 id="POC构成"><a href="#POC构成" class="headerlink" title="POC构成"></a>POC构成</h6><ul>
 <li>name</li>
 <li>rules：最关键部分。请求方法,路径,表达式(有唯一的返回值)。支持多条(就会发送几条数据包)</li>
-<li>details：漏洞检测成功之后，输出一些提示信息<br><img src="http://image.xpshuai.cn/poc.png" alt></li>
+<li>details：漏洞检测成功之后，输出一些提示信息<br><img src="http://image.xpshuai.cn/poc.png" alt=""></li>
 </ul>
 <h6 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h6><blockquote>
 <p>看官方文档</p>

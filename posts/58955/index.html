@@ -411,7 +411,6 @@
     }
 
     .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -807,9 +806,9 @@ proxy <span class="token operator">=</span> <span class="token punctuation">{</s
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>1.fofa搜索<code>title="+ ID_VC_Welcome +"</code></p>
 <p>可以用批量脚本通过fofa把所有搜索到的资产下载到本地</p>
-<p><img src="http://image.xpshuai.cn/vmware_vul1.jpg" alt></p>
+<p><img src="http://image.xpshuai.cn/vmware_vul1.jpg" alt=""></p>
 <p>2.然后使用POC验证漏洞：</p>
-<p><img src="http://image.xpshuai.cn/vmware_vul2.jpg" alt></p>
+<p><img src="http://image.xpshuai.cn/vmware_vul2.jpg" alt=""></p>
 <p>3.1 添加一个vsphere-ui用户：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">adduser vsphere-ui
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -818,7 +817,7 @@ proxy <span class="token operator">=</span> <span class="token punctuation">{</s
 <span class="token comment" spellcheck="true"># 然后复制公钥到上面的EXP中去</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>3.对于存在漏洞的资产，使用EXP上传tar文件</p>
-<p><img src="http://image.xpshuai.cn/vmware_vul3.jpg" alt></p>
+<p><img src="http://image.xpshuai.cn/vmware_vul3.jpg" alt=""></p>
 <p>成功上传<code>authorized_keys</code></p>
 <p>4.ssh连接</p>
 <blockquote>
