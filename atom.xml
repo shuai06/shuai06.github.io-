@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xpshuai.cn/"/>
-  <updated>2021-08-19T05:04:41.089Z</updated>
+  <updated>2021-08-26T01:19:25.448Z</updated>
   <id>http://www.xpshuai.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>绕过IP格式限制/SSRF</title>
+    <link href="http://www.xpshuai.cn/posts/64181/"/>
+    <id>http://www.xpshuai.cn/posts/64181/</id>
+    <published>2021-08-26T01:04:43.000Z</published>
+    <updated>2021-08-26T01:19:25.448Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在有些场景可能会遇到绕过ip限制的地方，如ssrf等&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-enclosed-alphanumerics方式&quot;&gt;&lt;a href=&quot;#1-enclosed-alphanumerics方式&quot; class
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="绕过ip限制" scheme="http://www.xpshuai.cn/tags/%E7%BB%95%E8%BF%87ip%E9%99%90%E5%88%B6/"/>
+    
+      <category term="ssrf" scheme="http://www.xpshuai.cn/tags/ssrf/"/>
+    
+  </entry>
   
   <entry>
     <title>python几个提取域名的库</title>
@@ -519,32 +547,6 @@
       <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
     
       <category term="Jellyfin" scheme="http://www.xpshuai.cn/tags/Jellyfin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Apache Solr SSRF与任意文件读取漏洞</title>
-    <link href="http://www.xpshuai.cn/posts/7700/"/>
-    <id>http://www.xpshuai.cn/posts/7700/</id>
-    <published>2021-03-22T03:46:53.000Z</published>
-    <updated>2021-03-22T04:20:52.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Apache Solr是一个开源的搜索服务，使用Java语言开发，基于Lucene的全文搜索服务器。&lt;/p&gt;
-&lt;p&gt;Apache Solr全
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://www.xpshuai.cn/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="漏洞复现" scheme="http://www.xpshuai.cn/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
-    
-      <category term="Solr" scheme="http://www.xpshuai.cn/tags/Solr/"/>
     
   </entry>
   
